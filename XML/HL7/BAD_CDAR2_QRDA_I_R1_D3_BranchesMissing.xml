@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <!--
+    Expected errors:
+      Total errors expected: 5
+    
+      Rule                        Number of errors expected
+      a-67-12808                  3
+      a-1098-7508-c               2
+  -->
+  <!-- 		
+    Title: Schematron test file: Bad with Branches Missing: Quality Reporting Document Architecture Category I Sample 		 	 		 	
+  -->
+  <!-- 	 
+    This sample file contains no narrative. 	 
+    This sample file is not clinically valid - it is for testing purposes only 	 
+    This sample file is informative only. 	
+  -->
+
+  <realmCode code="US" />
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+  <!-- US Realm Header (V2) -->
+  <templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2014-06-09" />
+  <!-- QRDA Category I Framework (V2) -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2014-12-01" />
+  <!-- QDM-Based QRDA (V2) -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.2" extension="2014-12-01" />
+  <!-- This is the globally unique identifier for this QRDA document -->
+  <id root="5b010313-eff2-432c-9909-6193d8416fac" />
+  <!-- QRDA document type code -->
+  <code code="55182-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Quality Measure Report" />
+  <title>QRDA Incidence Report</title>
+  <!-- This is the document creation time -->
+  <effectiveTime value="201112311230-0800" />
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
+  <languageCode code="en-US" />
+  <!-- reported patient -->
+  <recordTarget>
+    <patientRole>
+      <!-- This is the patient's Medical HIC number -->
+      <id extension="111223333A" root="2.16.840.1.113883.4.572" />
+      <addr use="H">
+        <streetAddressLine>2222 Home Street</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="HP" value="tel:(781)555-1212" />
+      <patient>
+        <name><given>Eve</given><family>Everygirl</family></name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" />
+        <birthTime value="20020201" />
+        <maritalStatusCode code="M" displayName="Married" codeSystem="2.16.840.1.113883.5.2"
+          codeSystemName="MaritalStatusCode" />
+        <religiousAffiliationCode code="1013" codeSystem="2.16.840.1.113883.1.11.19185"
+          codeSystemName="HL7 Religious Affiliation " displayName="Christian (non-Catholic, non-specific)" />
+        <raceCode code="2106-3" codeSystem="2.16.840.1.114222.4.11.836" displayName="White" />
+        <ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.114222.4.11.837" displayName="Not Hispanic or Latino" />
+        <languageCommunication>
+          <languageCode code="eng" />
+          <!-- "eng" is ISO 639-2 alpha-3 code for "English" -->
+          <modeCode code="ESP" displayName="Expressed spoken" codeSystem="2.16.840.1.113883.5.60"
+            codeSystemName="LanguageAbilityMode" />
+          <proficiencyLevelCode code="G" displayName="Good" codeSystem="2.16.840.1.113883.5.61"
+            codeSystemName="LanguageAbilityProficiency" />
+          <!-- Patient's preferred language -->
+          <preferenceInd value="true" />
+        </languageCommunication>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <!-- Example of an author who is a person -->
+  <author>
+    <time value="20111231124411+0500" />
+    <assignedAuthor>
+      <id root="2.16.840.1.113883.4.6" extension="123456789" />
+      <code code="200000000X" codeSystem="2.16.840.1.113883.6.101" displayName="Allopathic &amp; Osteopathic Physicians" />
+      <addr use="WP">
+        <streetAddressLine>1020 Healthcare Drive</streetAddressLine>
+        <streetAddressLine>Suite 500</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="WP" value="tel:(555)555-1003" />
+      <!-- Quality Manager -->
+      <assignedPerson>
+        <name>
+          <given>Ann</given>
+          <family>Quality</family>
+          <suffix>RN</suffix>
+        </name>
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+  <!-- Example of an author who is a device -->
+  <author>
+    <time value="20050329224411+0500" />
+    <assignedAuthor>
+      <id extension="KP00017dev" root="2.16.840.1.113883.19.5" />
+      <addr use="WP">
+        <streetAddressLine>21 North Ave.</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="WP" value="tel:(555)555-1003" />
+      <assignedAuthoringDevice>
+        <manufacturerModelName>Good Health Medical Device</manufacturerModelName>
+        <softwareName>Good Health Report Generator</softwareName>
+      </assignedAuthoringDevice>
+    </assignedAuthor>
+  </author>
+  <dataEnterer>
+    <assignedEntity>
+      <id extension="333777777" root="2.16.840.1.113883.4.6" />
+      <addr>
+        <streetAddressLine>1007 Healthcare Drive</streetAddressLine>
+        <city>Portland</city>
+        <state>OR</state>
+        <postalCode>99123</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="WP" value="tel:+1(555)555-1050" />
+      <assignedPerson>
+        <name>
+          <given>Ellen</given>
+          <family>Enter</family>
+        </name>
+      </assignedPerson>
+    </assignedEntity>
+  </dataEnterer>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <!-- National Provider Identifier -->
+        <id root="2.16.840.1.113883.4.6" extension="123456" />
+        <!-- CMS Certification Number -->
+        <id root="2.16.840.1.113883.4.336" extension="1111111" />
+        <!-- Tax ID Number -->
+        <id root="2.16.840.1.113883.4.2" extension="2222222" />
+        <!-- Joint Commission's Health Care Organization (HCO) -->
+        <id root="1.3.6.1.4.1.33895" extension="3333333" />
+        <name>Good Health Hospital</name>
+        <telecom use="WP" value="tel:(555)555-1003" />
+        <addr use="WP">
+          <streetAddressLine>21 North Ave.</streetAddressLine>
+          <city>Burlington</city>
+          <state>MA</state>
+          <postalCode>02368</postalCode>
+          <country>US</country>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <informationRecipient>
+    <intendedRecipient>
+      <id root="2.16.840.1.113883.4.6" extension="111111111" />
+      <informationRecipient>
+        <name>
+          <given>Sara</given>
+          <family>Specialize</family>
+          <suffix qualifier="AC">M.D.</suffix>
+        </name>
+      </informationRecipient>
+      <receivedOrganization>
+        <name>The DoctorsApart Physician Group</name>
+      </receivedOrganization>
+    </intendedRecipient>
+  </informationRecipient>
+  <legalAuthenticator>
+    <time value="201112311230-0800" />
+    <signatureCode code="S" />
+    <assignedEntity>
+      <id root="bc01a5d1-3a34-4286-82cc-43eb04c972a7" />
+      <code code="207QA0505X" displayName="Adult Medicine" codeSystem="2.16.840.1.113883.6.101"
+        codeSystemName="Healthcare Provider Taxonomy" />
+      <addr use="WP">
+        <streetAddressLine>21 North Ave.</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="WP" value="tel:(555)555-1003" />
+      <assignedPerson>
+        <name>
+          <given>Virgil</given>
+          <family>Verify</family>
+          <suffix>MD</suffix>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root="2.16.840.1.113883.19.5" />
+        <name>Good Health Hospital</name>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <participant typeCode="IND">
+    <!-- typeCode "IND" represents an individual -->
+    <associatedEntity classCode="NOK">
+      <!-- classCode "NOK" represents the patient's next of kin-->
+      <addr use="HP">
+        <streetAddressLine>2222 Home Street</streetAddressLine>
+        <city>Beaverton</city>
+        <state>OR</state>
+        <postalCode>97867</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom value="tel:+1(555)555-2008" use="MC" />
+      <associatedPerson>
+        <name>
+          <given>Boris</given>
+          <given qualifier="CL">Bo</given>
+          <family>Betterhalf</family>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  <!-- Entities playing multiple roles are recorded in multiple participants -->
+  <participant typeCode="IND">
+    <associatedEntity classCode="ECO">
+      <!-- classCode "ECON" represents an emergency contact -->
+      <addr use="HP">
+        <streetAddressLine>2222 Home Street</streetAddressLine>
+        <city>Beaverton</city>
+        <state>OR</state>
+        <postalCode>97867</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom value="tel:+1(555)555-2008" use="MC" />
+      <associatedPerson>
+        <name>
+          <given>Boris</given>
+          <given qualifier="CL">Bo</given>
+          <family>Betterhalf</family>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  
+  <documentationOf typeCode="DOC">
+    <serviceEvent classCode="PCPR">
+      <!-- care provision -->
+      <effectiveTime>
+        <low value="20100601" />
+        <high value="20100915" />
+      </effectiveTime>
+      <!-- You can include multiple performers, each with an NPI, TIN, CCN. -->
+      <performer typeCode="PRF">
+        <time>
+          <low value="20020716" />
+          <high value="20070915" />
+        </time>
+        <assignedEntity>
+          <!-- This is the provider NPI -->
+          <id root="2.16.840.1.113883.4.6" extension="111111111" />
+          <code code="207QA0505X" displayName="Adult Medicine" codeSystem="2.16.840.1.113883.6.101"
+            codeSystemName="Healthcare Provider Taxonomy" />
+          <representedOrganization>
+            <!-- This is the organization TIN -->
+            <id root="2.16.840.1.113883.4.2" extension="1234567" />
+            <!-- This is the organization CCN -->
+            <id root="2.16.840.1.113883.4.336" extension="54321" />
+          </representedOrganization>
+        </assignedEntity>
+      </performer>
+    </serviceEvent>
+  </documentationOf>
+  <!-- QRDA Body -->
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <!-- 						 
+            ***************************************************************** 						 
+            Measure Section 						
+            ***************************************************************** 					 
+          -->
+          <!-- This is the templateId for Measure Section -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.2" />
+          <!-- This is the templateId for Measure Section QDM -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.3" />
+          <!-- This is the LOINC code for "Measure document". 
+            This stays the same for all measure section required by QRDA standard -->
+          <code code="55186-1" codeSystem="2.16.840.1.113883.6.1" />
+          <title>Measure Section</title>
+          <text><table border="1" width="100%">
+              <thead>
+                <tr>
+                  <th>eMeasure Title</th>
+                  <th>Version neutral identifier</th>
+                  <th>eMeasure Version Number</th>
+                  <th>NQF eMeasure Number</th>
+                  <th>eMeasure Identifier (MAT)</th>
+                  <th>Version specific identifier</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Children's Asthma Care (CAC-1) Relievers for Inpatient Asthma</td>
+                  <td>dc78ee5d-1487-4d79-84c3-1dfdaff0781c</td>
+                  <td>1</td>
+                  <td>0143</td>
+                  <td>93</td>
+                  <td>8a4d92b2-373f-82e2-0137-7b9e21cc5c8f</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Children's Asthma Care (CAC-2) Systemic Corticosteroids for Inpatient Asthma</td>
+                  <td>d7c71959-3991-457c-b8ea-774238c87248</td>
+                  <td>1</td>
+                  <td>0144</td>
+                  <td>106</td>
+                  <td>8a4d92b2-373f-82e2-0137-baed84f55f93</td>
+                </tr>
+              </tbody>
+            </table></text>
+          <!-- 1..* Organizers, each containing a reference to an eMeasure -->
+          <entry>
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <!-- This is the templateId for Measure Reference -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.98" />
+              <!-- This is the templateId for eMeasure Reference QDM -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.97" />
+              <id root="600be61c-cdd4-4902-945f-a768d1de404e" />
+              <statusCode code="completed" />
+              <!-- Containing isBranch external references -->
+              <!-- Rule: a-67-12808 should fail here (SHALL contain exactly one [1..1] reference (CONF:67-12808) such that it SHALL contain exactly one [1..1] @typeCode="REFR" refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:67-12809).) -->
+              <!--<reference typeCode="REFR">
+                <externalDocument classCode="DOC" moodCode="EVN">
+                  <!-\- This is the version specific identifier for the eMeasure -\->
+                  <id root="2.16.840.1.113883.4.738" extension="12345" />
+                  <!-\- SHOULD: This is the NQF Number, root is an NQF OID and 
+                    for eMeasure Number and extension is the eMeasure's NQF number -\->
+                  <id root="2.16.840.1.113883.3.560.1" extension="0143" />
+                  <!-\- SHOULD: eMeasure Measure Authoring Tool Identifier (not the real root yet-\->
+                  <id root="2.16.840.1.113883.3.560.101.2" extension="93" />
+                  <code code="57024-2" displayName="Health Quality Mesaure Document" codeSystem="2.16.840.1.113883.6.1"
+                    codeSystemName="LOINC" />
+                  <!-\- SHOULD This is the title of the eMeasure -\->
+                  <text>Children's Asthma Care (CAC-2) Systemic Corticosteroids for Inpatient Asthma</text>
+                  <!-\- SHOULD: setId is the eMeasure version neutral id -\->
+                  <setId root="dc78ee5d-1487-4d79-84c3-1dfdaff0781c" />
+                  <!-\- This is the sequential eMeasure Version number -\->
+                  <versionNumber value="1" />
+                </externalDocument>
+              </reference>-->
+            </organizer>
+          </entry>
+          <entry>
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <!-- This is the templateId for Measure Reference -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.98" />
+              <!-- This is the templateId for eMeasure Reference QDM -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.97" />
+              <id root="a8180d5c-a918-494d-a2a1-e2b546167eb5" />
+              <statusCode code="completed" />
+              <!-- Containing isBranch external references -->
+              <reference typeCode="REFR">
+                <externalDocument classCode="DOC" moodCode="EVN">
+                  <!-- This is the version specific identifier for the eMeasure -->
+                  <id root="2.16.840.1.113883.4.738" extension="22222" />
+                  <!-- SHOULD: This is the NQF Number, root is an NQF OID and for eMeasure Number and 
+                    extension is the eMeasure's NQF number -->
+                  <id root="2.16.840.1.113883.3.560.1" extension="0144" />
+                  <!-- SHOULD: eMeasure Measure Authoring Tool Identifier (not the real root yet-->
+                  <id root="2.16.840.1.113883.3.560.101.2" extension="106" />
+                  <code code="57024-2" displayName="Health Quality Mesaure Document" codeSystem="2.16.840.1.113883.6.1"
+                    codeSystemName="LOINC" />
+                  <!-- SHOULD This is the title of the eMeasure -->
+                  <text>Children's Asthma Care (CAC-1) Relievers for Inpatient Asthma</text>
+                  <!-- SHOULD: setId is the eMeasure version neutral id -->
+                  <setId root="d7c71959-3991-457c-b8ea-774238c87248" />
+                  <!-- This is the sequential eMeasure Version number -->
+                  <versionNumber value="1" />
+                </externalDocument>
+              </reference>
+            </organizer>
+          </entry>
+        </section>
+      </component>
+      <!-- 				 
+        ***************************************************************** 				 
+        Reporting Parameters Section 				 
+        ***************************************************************** 			 
+      -->
+      <component>
+        <section>
+          <!-- This is the templateId for Reporting Parameters section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.1" />
+          <code code="55187-9" codeSystem="2.16.840.1.113883.6.1" />
+          <title>Reporting Parameters</title>
+          <text><list>
+              <item>Reporting period: 01 Jan 2011 - 31 Dec 2011</item>
+            </list></text>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <!-- This is the templateId for Reporting Parameters Act -->
+              <templateId root="2.16.840.1.113883.10.20.17.3.8" />
+              <id root="3d7c11cf-b01b-4527-a704-c098c162779d" />
+              <code code="252116004" codeSystem="2.16.840.1.113883.6.96" displayName="Observation Parameters" />
+              <effectiveTime>
+                <low value="20110101" />
+                <high value="20111231" />
+              </effectiveTime>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <!-- 				 
+        ***************************************************************** 				 
+        Patient Data Section QDM (V2) 				 
+        ***************************************************************** 			 
+      -->
+      <component>
+        <section>
+          <!-- Patient Data Section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.4" />
+          <!-- Patient Data Section QDM (V2) -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.1" extension="2014-12-01" />
+          <code code="55188-7" codeSystem="2.16.840.1.113883.6.1" />
+          <title>Patient Data</title>
+          <text />
+          <!-- =============================================== -->
+          <!-- QDM Category: Medication -->
+          <!-- =============================================== -->
+          <!-- QDM Datatype: Medication, Active -->
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <!-- Conforms to C-CDA R2 Medication Activity (V2) -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.16" extension="2014-06-09" />
+              <!-- Medication Active (V2) template -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.41" extension="2014-12-01" />
+              <id root="c0ea7bf3-50e7-4e7a-83a3-e5a9ccbb8541" />
+              <statusCode code="active" />
+              <!-- Rule: a-1098-7508-c should fail here (SHALL contain exactly one [1..1] effectiveTime (CONF:1098-7508) such that it) -->
+              <!--<effectiveTime xsi:type="IVL_TS">
+                <!-\- QDM Attribute: Start datetime -\->
+                <low value="20110301" />
+                <!-\- QDM Attribute: Stop datetime -\->
+                <high value="20120301" />
+              </effectiveTime>-->
+              <!-- QDM Attribute: Frequency -->
+              <effectiveTime xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                <period value="6" unit="h" />
+              </effectiveTime>
+              <!-- QDM Attribute: Route -->
+              <routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus"
+                displayName="ORAL" sdtc:valueSet="1.2.9999" />
+              <!-- QDM Attribute: Dose -->
+              <doseQuantity value="1" />
+              <consumable>
+                <manufacturedProduct classCode="MANU">
+                  <!-- Conforms to C-CDA R2 Medication Information (V2) -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.23" extension="2014-06-09" />
+                  <id root="37bfe02a-3e97-4bd6-9197-bbd0ed0de79e" />
+                  <manufacturedMaterial>
+                    <code code="105152" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm"
+                      displayName="Amoxicillin 60 MG/ML Oral Suspension"
+                      sdtc:valueSet="2.16.840.1.113883.3.464.1003.196.12.1001" />
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+              <!-- QDM Attribute: Patient Preference -->
+              <entryRelationship typeCode="RSON">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.24.3.83" extension="2014-12-01" />
+                  <id root="e3a5f9ac-f97d-4887-95a3-7ee7d9aca16a" />
+                  <code code="77302-8" codeSystem="2.16.840.1.113883.6.1"
+                    displayName="Patient preference for care action" codeSystemName="LOINC" />
+                  <value xsi:type="CD" code="105480006" codeSystem="2.16.840.1.113883.6.96"
+                    displayName="refusal of treatment by patient" codeSystemName="SNOMED CT"
+                    sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.93" />
+                </observation>
+              </entryRelationship>
+              <!-- QDM Attribute: Provider Preference -->
+              <entryRelationship typeCode="RSON">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.24.3.84" extension="2014-12-01" />
+                  <id root="033afa24-82a2-4298-9dda-dea9e60bf44a" />
+                  <code code="77303-6" codeSystem="2.16.840.1.113883.6.1"
+                    displayName="Provider preference for care action" codeSystemName="LOINC" />
+                  <value xsi:type="CD" code="11816003" codeSystem="2.16.840.1.113883.6.96" displayName="diet education"
+                    codeSystemName="SNOMED CT" sdtc:valueSet="2.16.840.1.113883.3.464.1003.195.12.1003" />
+                </observation>
+              </entryRelationship>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

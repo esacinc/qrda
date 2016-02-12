@@ -9,16 +9,25 @@
     This sample file contains an example of each Patient Data Section QDM contained 	 
     template specified in the QRDA I R1 D3 IG. 	 
     This sample file contains no narrative. 	 
-    This sample file is not clinically valid.
+    This sample file is not clinically valid - it is for use by implementers to 	 
+    see a valid (syntactically not clinically) example for each template. 	 
+    This sample file is informative only.
     
-    This file has purposely been modified to cause specific errors with extensions missing
+    This file has purposely been modified to cause specific errors with activity
     
     Rule             Number of errors
-    a-1140-12796              1
-    a-1140-12973              1
-    a-1140-12466              1
+    a-23-3269               1
+    a-23-3270               1
+    a-23-3272               1
+    a-23-3273               1
+    a-23-3274               1
+    a-23-3275               1
+    a-23-18098-c            1
+    a-23-26549              1
+    a-23-26550              1
+    a-23-26551              1
     ______________________________________
-    Total errors              3
+    Total errors            10
   -->
 
   <realmCode code="US" />
@@ -409,15 +418,19 @@
               <item>Reporting period: 01 Jan 2011 - 31 Dec 2011</item>
             </list></text>
           <entry typeCode="DRIV">
-            <act classCode="ACT" moodCode="EVN">
+            <!-- ERROR Activity edited to fail a-23-3269, a-23-3270, a-23-3272, a-23-3273, a-23-3274,
+              a-23-3275, a-23-18098-c, a-23-26549, a-23-26550, a-23-26551
+            -->
+            <act>
               <!-- This is the templateId for Reporting Parameters Act -->
-              <templateId root="2.16.840.1.113883.10.20.17.3.8" />
-              <id root="3d7c11cf-b01b-4527-a704-c098c162779d" />
-              <code code="252116004" codeSystem="2.16.840.1.113883.6.96" displayName="Observation Parameters" />
-              <effectiveTime>
+              <templateId root="2.16.840.1.113883.10.20.17.3.8" extension="2014-12-01"/>
+              <!--<id root="3d7c11cf-b01b-4527-a704-c098c162779d" />-->
+              <code code="252116006" codeSystem="2.16.840.1.113883.6.95" displayName="Observation Parameters" />
+              <code code="252116005" codeSystem="2.16.840.1.113883.6.95" displayName="Observation Parameters" />
+              <!--<effectiveTime>
                 <low value="20110101" />
                 <high value="20111231" />
-              </effectiveTime>
+              </effectiveTime>-->
             </act>
           </entry>
         </section>
@@ -432,10 +445,7 @@
           <!-- Patient Data Section -->
           <templateId root="2.16.840.1.113883.10.20.17.2.4" />
           <!-- Patient Data Section QDM (V2) -->
-          <!-- ERROR - Removed extension date to fail a-1140-12796 which also fails a-1140-12973
-            SHALL contain exactly one [1..1] @extension="2014-12-01" (CONF:1140-28405)
-          -->
-          <templateId root="2.16.840.1.113883.10.20.24.2.1" />
+          <templateId root="2.16.840.1.113883.10.20.24.2.1" extension="2014-12-01" />
           <code code="55188-7" codeSystem="2.16.840.1.113883.6.1" />
           <title>Patient Data</title>
           <text />
@@ -446,10 +456,7 @@
           <entry typeCode="DRIV">
             <observation classCode="OBS" moodCode="EVN">
               <!-- Patient Care Experience (V2) -->
-              <!-- ERROR - Removed extension date to fail a-1140-12466
-                SHALL contain exactly one [1..1] @extension="2014-12-01" (CONF:1140-27290)
-              -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.48" />
+              <templateId root="2.16.840.1.113883.10.20.24.3.48" extension="2014-12-01" />
               <id root="ee6d068d-f209-4913-b999-9efa74358914" />
               <code code="77218-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
                 displayName="Patient satisfaction with healthcare delivery" />

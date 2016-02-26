@@ -4,7 +4,7 @@ THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLU
 Schematron generated from Trifolia on 7/16/2015
 -->
 <!-- 
-2016 CMS QRDA Category I Schematron for Comprehensive End-Stage Renal Disease Care Initiative (CEC), Version 2
+2016 CMS QRDA Category I Schematron for Comprehensive End-Stage Renal Disease Care Initiative (CEC), Version 3
 
 1/27/2016
 Edited the context for rules that included the test for extension in the rules and the extension in the context.
@@ -2959,7 +2959,7 @@ a-1140-28026
       <sch:assert id="a-1182-28421-branch-28417" test="cda:serviceEvent/cda:performer/cda:assignedEntity[count(cda:id[@root='2.16.840.1.113883.4.6'])=1]">This assignedEntity SHALL contain exactly one [1..1] id (CONF:1140-16587_C01) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:1140-16588).</sch:assert>
       <sch:assert id="a-1182-28425-branch-28417" test="cda:serviceEvent/cda:performer/cda:assignedEntity[count(cda:representedOrganization)=1]">This assignedEntity SHALL contain exactly one [1..1] representedOrganization (CONF:1140-16591_C01).</sch:assert>
       <sch:assert id="a-1182-28426-branch-28417" test="cda:serviceEvent/cda:performer/cda:assignedEntity/cda:representedOrganization[count(cda:id[@root='2.16.840.1.113883.4.2'])=1]">This representedOrganization SHALL contain exactly one [1..1] id (CONF:1140-16592_C01) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:1182-43).</sch:assert>
-      <sch:assert id="a-1182-28428-branch-28417" test="cda:serviceEvent/cda:performer[@typeCode='PRF']">Such performers SHALL contain exactly one [1..1] @typeCode="PRF" Performer (CONF:1140-16581).</sch:assert>
+      <sch:assert id="a-1182-28428-branch-28417" test="cda:serviceEvent/cda:performer[@typeCode='PRF']">Such performers SHALL contain exactly one [1..1] @typeCode="PRF" Performer (CONF:1140-16584).</sch:assert>
     </sch:rule>
     <sch:rule id="r-urn-hl7ii-2.16.840.1.113883.10.20.24.1.3-2015-07-01-28417-branch-28417-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:documentationOf[cda:serviceEvent]">
       <sch:extends rule="r-urn-hl7ii-2.16.840.1.113883.10.20.24.1.3-2015-07-01-28417-branch-28417-errors-abstract" />

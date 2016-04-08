@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<sch:schema xmlns:voc="http://www.esacinc.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:ns prefix="voc" uri="http://www.esacinc.com/voc" />
+<sch:schema xmlns:voc="http://www.lantanagroup.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
     <sch:ns prefix="svs" uri="urn:ihe:iti:svs:2008" />
     <sch:ns prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance" />
     <sch:ns prefix="sdtc" uri="urn:hl7-org:sdtc" />
@@ -22,8 +22,8 @@
             <sch:assert id="a-2228-12918" test="count(cda:component)=1">SHALL contain exactly one [1..1] component (CONF:2228-12918).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-code-errors" context="cda:ClinicalDocument/cda:code">
-            <sch:assert id="a-2228-28137" test="count(@code='55182-0')=1">This code SHALL contain exactly one [1..1] @code="55182-0" Quality Measure Report (CONF:2228-28137).</sch:assert>
-            <sch:assert id="a-2228-28138" test="count(@codeSystem='2.16.840.1.113883.6.1')=1">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:2228-28138).</sch:assert>
+            <sch:assert id="a-2228-28137" test="@code='55182-0'">This code SHALL contain exactly one [1..1] @code="55182-0" Quality Measure Report (CONF:2228-28137).</sch:assert>
+            <sch:assert id="a-2228-28138" test="@codeSystem='2.16.840.1.113883.6.1'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:2228-28138).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-recordTarget-errors" context="cda:ClinicalDocument/cda:recordTarget">
             <sch:assert id="a-2228-28387" test="count(cda:patientRole)=1">This recordTarget SHALL contain exactly one [1..1] patientRole (CONF:2228-28387).</sch:assert>

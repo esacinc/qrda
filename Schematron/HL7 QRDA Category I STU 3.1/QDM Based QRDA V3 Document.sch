@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<sch:schema xmlns:voc="http://www.esacinc.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:ns prefix="voc" uri="http://www.esacinc.com/voc" />
+<sch:schema xmlns:voc="http://www.lantanagroup.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
     <sch:ns prefix="svs" uri="urn:ihe:iti:svs:2008" />
     <sch:ns prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance" />
     <sch:ns prefix="sdtc" uri="urn:hl7-org:sdtc" />
@@ -47,11 +47,11 @@
             <sch:assert id="a-2228-16580" test="count(cda:serviceEvent)=1">SHALL contain exactly one [1..1] serviceEvent (CONF:2228-16580).</sch:assert>
         </sch:rule>
         <sch:rule id="QDM_based_QRDA_V3-documentationOf-serviceEvent-errors" context="cda:ClinicalDocument/cda:documentationOf/cda:serviceEvent">
-            <sch:assert id="a-2228-16581" test="count(@classCode='PCPR')=1">This serviceEvent SHALL contain exactly one [1..1] @classCode="PCPR" Care Provision (CONF:2228-16581).</sch:assert>
+            <sch:assert id="a-2228-16581" test="@classCode='PCPR'">This serviceEvent SHALL contain exactly one [1..1] @classCode="PCPR" Care Provision (CONF:2228-16581).</sch:assert>
             <sch:assert id="a-2228-16583" test="count(cda:performer) &gt; 0">This serviceEvent SHALL contain at least one [1..*] performer (CONF:2228-16583).</sch:assert>
         </sch:rule>
         <sch:rule id="QDM_based_QRDA_V3-documentationOf-serviceEvent-performer-errors" context="cda:ClinicalDocument/cda:documentationOf/cda:serviceEvent/cda:performer">
-            <sch:assert id="a-2228-16584" test="count(@typeCode='PRF')=1">Such performers SHALL contain exactly one [1..1] @typeCode="PRF" Performer (CONF:2228-16584).</sch:assert>
+            <sch:assert id="a-2228-16584" test="@typeCode='PRF'">Such performers SHALL contain exactly one [1..1] @typeCode="PRF" Performer (CONF:2228-16584).</sch:assert>
             <sch:assert id="a-2228-16586" test="count(cda:assignedEntity)=1">Such performers SHALL contain exactly one [1..1] assignedEntity (CONF:2228-16586).</sch:assert>
         </sch:rule>
         <sch:rule id="QDM_based_QRDA_V3-documentationOf-serviceEvent-performer-assignedEntity-errors" context="cda:ClinicalDocument/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity">

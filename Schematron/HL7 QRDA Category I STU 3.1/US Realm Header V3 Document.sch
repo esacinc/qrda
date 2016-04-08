@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<sch:schema xmlns:voc="http://www.esacinc.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:ns prefix="voc" uri="http://www.esacinc.com/voc" />
+<sch:schema xmlns:voc="http://www.lantanagroup.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
     <sch:ns prefix="svs" uri="urn:ihe:iti:svs:2008" />
     <sch:ns prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance" />
     <sch:ns prefix="sdtc" uri="urn:hl7-org:sdtc" />
@@ -31,8 +31,8 @@
             <sch:assert id="a-1198-5519" test="count(cda:custodian)=1">SHALL contain exactly one [1..1] custodian (CONF:1198-5519).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-typeId-errors" context="cda:ClinicalDocument/cda:typeId">
-            <sch:assert id="a-1198-5250" test="count(@root='2.16.840.1.113883.1.3')=1">This typeId SHALL contain exactly one [1..1] @root="2.16.840.1.113883.1.3" (CONF:1198-5250).</sch:assert>
-            <sch:assert id="a-1198-5251" test="count(@extension='POCD_HD000040')=1">This typeId SHALL contain exactly one [1..1] @extension="POCD_HD000040" (CONF:1198-5251).</sch:assert>
+            <sch:assert id="a-1198-5250" test="@root='2.16.840.1.113883.1.3'">This typeId SHALL contain exactly one [1..1] @root="2.16.840.1.113883.1.3" (CONF:1198-5250).</sch:assert>
+            <sch:assert id="a-1198-5251" test="@extension='POCD_HD000040'">This typeId SHALL contain exactly one [1..1] @extension="POCD_HD000040" (CONF:1198-5251).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-setId-errors" context="cda:ClinicalDocument/cda:setId">
             <sch:assert id="a-1198-6380" test="count(../cda:versionNumber)=1">If setId is present versionNumber SHALL be present (CONF:1198-6380).</sch:assert>
@@ -94,7 +94,7 @@
             <sch:assert id="a-1198-16790" test="count(cda:assignedPerson)=1 or count(cda:assignedAuthoringDevice)=1">There SHALL be exactly one assignedAuthor/assignedPerson or exactly one assignedAuthor/assignedAuthoringDevice (CONF:1198-16790).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-author-assignedAuthor-code-errors" context="cda:ClinicalDocument/cda:author/cda:assignedAuthor/cda:code">
-            <sch:assert id="a-1198-16788" test="count(@code)=1">The code, if present, SHALL contain exactly one [1..1] @code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy (HIPAA) urn:oid:2.16.840.1.114222.4.11.1066 DYNAMIC (CONF:1198-16788).</sch:assert>
+            <sch:assert id="a-1198-16788" test="@code">The code, if present, SHALL contain exactly one [1..1] @code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy (HIPAA) urn:oid:2.16.840.1.114222.4.11.1066 DYNAMIC (CONF:1198-16788).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-author-assignedAuthor-assignedPerson-errors" context="cda:ClinicalDocument/cda:author/cda:assignedAuthor/cda:assignedPerson">
             <sch:assert id="a-1198-16789" test="count(cda:name) &gt; 0">The assignedPerson, if present, SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-16789).</sch:assert>
@@ -154,7 +154,7 @@
             <sch:assert id="a-1198-5585" test="count(cda:assignedEntity)=1">The legalAuthenticator, if present, SHALL contain exactly one [1..1] assignedEntity (CONF:1198-5585).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-legalAuthenticator-signatureCode-errors" context="cda:ClinicalDocument/cda:legalAuthenticator/cda:signatureCode">
-            <sch:assert id="a-1198-5584" test="count(@code='S')=1">This signatureCode SHALL contain exactly one [1..1] @code="S" (CodeSystem: Participationsignature urn:oid:2.16.840.1.113883.5.89 STATIC) (CONF:1198-5584).</sch:assert>
+            <sch:assert id="a-1198-5584" test="@code='S'">This signatureCode SHALL contain exactly one [1..1] @code="S" (CodeSystem: Participationsignature urn:oid:2.16.840.1.113883.5.89 STATIC) (CONF:1198-5584).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-legalAuthenticator-assignedEntity-errors" context="cda:ClinicalDocument/cda:legalAuthenticator/cda:assignedEntity">
             <sch:assert id="a-1198-5586" test="count(cda:id) &gt; 0">This assignedEntity SHALL contain at least one [1..*] id (CONF:1198-5586).</sch:assert>
@@ -171,7 +171,7 @@
             <sch:assert id="a-1198-5612" test="count(cda:assignedEntity)=1">SHALL contain exactly one [1..1] assignedEntity (CONF:1198-5612).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-authenticator-signatureCode-errors" context="cda:ClinicalDocument/cda:authenticator/cda:signatureCode">
-            <sch:assert id="a-1198-5611" test="count(@code='S')=1">This signatureCode SHALL contain exactly one [1..1] @code="S" (CodeSystem: Participationsignature urn:oid:2.16.840.1.113883.5.89 STATIC) (CONF:1198-5611).</sch:assert>
+            <sch:assert id="a-1198-5611" test="@code='S'">This signatureCode SHALL contain exactly one [1..1] @code="S" (CodeSystem: Participationsignature urn:oid:2.16.840.1.113883.5.89 STATIC) (CONF:1198-5611).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-authenticator-assignedEntity-errors" context="cda:ClinicalDocument/cda:authenticator/cda:assignedEntity">
             <sch:assert id="a-1198-5613" test="count(cda:id) &gt; 0">This assignedEntity SHALL contain at least one [1..*] id (CONF:1198-5613).</sch:assert>
@@ -201,7 +201,7 @@
             <sch:assert id="a-1198-14838" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:1198-14838).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-documentationOf-serviceEvent-performer-errors" context="cda:ClinicalDocument/cda:documentationOf/cda:serviceEvent/cda:performer">
-            <sch:assert id="a-1198-14840" test="count(@typeCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.1.11.19601']/voc:code/@value)=1">The performer, if present, SHALL contain exactly one [1..1] @typeCode, which SHALL be selected from ValueSet x_ServiceEventPerformer urn:oid:2.16.840.1.113883.1.11.19601 STATIC (CONF:1198-14840).</sch:assert>
+            <sch:assert id="a-1198-14840" test="@typeCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.1.11.19601']/voc:code/@value">The performer, if present, SHALL contain exactly one [1..1] @typeCode, which SHALL be selected from ValueSet x_ServiceEventPerformer urn:oid:2.16.840.1.113883.1.11.19601 STATIC (CONF:1198-14840).</sch:assert>
             <sch:assert id="a-1198-14841" test="count(cda:assignedEntity)=1">The performer, if present, SHALL contain exactly one [1..1] assignedEntity (CONF:1198-14841).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-documentationOf-serviceEvent-performer-assignedEntity-errors" context="cda:ClinicalDocument/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity">
@@ -214,7 +214,7 @@
             <sch:assert id="a-1198-16797" test="count(cda:statusCode)=1">This consent SHALL contain exactly one [1..1] statusCode (CONF:1198-16797).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-authorization-consent-statusCode-errors" context="cda:ClinicalDocument/cda:authorization/cda:consent/cda:statusCode">
-            <sch:assert id="a-1198-16798" test="count(@code='completed')=1">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1198-16798).</sch:assert>
+            <sch:assert id="a-1198-16798" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1198-16798).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-componentOf-errors" context="cda:ClinicalDocument/cda:componentOf">
             <sch:assert id="a-1198-9956" test="count(cda:encompassingEncounter)=1">The componentOf, if present, SHALL contain exactly one [1..1] encompassingEncounter (CONF:1198-9956).</sch:assert>
@@ -230,10 +230,10 @@
             <sch:assert id="a-1198-5579" test="count(cda:legalAuthenticator)=1">SHOULD contain zero or one [0..1] legalAuthenticator (CONF:1198-5579).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-confidentialityCode-warnings" context="cda:ClinicalDocument/cda:confidentialityCode">
-            <sch:assert id="a-1198-5259-v" test="count(@code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.1.11.16926']/voc:code/@value)=1">SHALL contain exactly one [1..1] confidentialityCode, which SHOULD be selected from ValueSet HL7 BasicConfidentialityKind urn:oid:2.16.840.1.113883.1.11.16926 STATIC (CONF:1198-5259).</sch:assert>
+            <sch:assert id="a-1198-5259-v" test="@code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.1.11.16926']/voc:code/@value">SHALL contain exactly one [1..1] confidentialityCode, which SHOULD be selected from ValueSet HL7 BasicConfidentialityKind urn:oid:2.16.840.1.113883.1.11.16926 STATIC (CONF:1198-5259).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-recordTarget-patientRole-telecom-warnings" context="cda:ClinicalDocument/cda:recordTarget/cda:patientRole/cda:telecom">
-            <sch:assert id="a-1198-5375" test="count(@use)=1">Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-5375).</sch:assert>
+            <sch:assert id="a-1198-5375" test="@use">Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-5375).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-recordTarget-patientRole-patient-warnings" context="cda:ClinicalDocument/cda:recordTarget/cda:patientRole/cda:patient">
             <sch:assert id="a-1198-5303" test="count(cda:maritalStatusCode)=1">This patient SHOULD contain zero or one [0..1] maritalStatusCode, which SHALL be selected from ValueSet Marital Status urn:oid:2.16.840.1.113883.1.11.12212 DYNAMIC (CONF:1198-5303).</sch:assert>
@@ -248,7 +248,7 @@
             <sch:assert id="a-1198-5382" test="count(cda:telecom) &gt; 0">The guardian, if present, SHOULD contain zero or more [0..*] telecom (CONF:1198-5382).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-recordTarget-patientRole-patient-guardian-telecom-warnings" context="cda:ClinicalDocument/cda:recordTarget/cda:patientRole/cda:patient/cda:guardian/cda:telecom">
-            <sch:assert id="a-1198-7993" test="count(@use)=1">The telecom, if present, SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7993).</sch:assert>
+            <sch:assert id="a-1198-7993" test="@use">The telecom, if present, SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7993).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-recordTarget-patientRole-patient-birthplace-place-addr-warnings" context="cda:ClinicalDocument/cda:recordTarget/cda:patientRole/cda:patient/cda:birthplace/cda:place/cda:addr">
             <sch:assert id="a-1198-5404" test="count(cda:country)=1">This addr SHOULD contain zero or one [0..1] country, which SHALL be selected from ValueSet Country urn:oid:2.16.840.1.113883.3.88.12.80.63 DYNAMIC (CONF:1198-5404).</sch:assert>
@@ -259,10 +259,10 @@
             <sch:assert id="a-1198-5414" test="count(cda:preferenceInd)=1">The languageCommunication, if present, SHOULD contain zero or one [0..1] preferenceInd (CONF:1198-5414).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-recordTarget-patientRole-providerOrganization-id-warnings" context="cda:ClinicalDocument/cda:recordTarget/cda:patientRole/cda:providerOrganization/cda:id">
-            <sch:assert id="a-1198-16820" test="count(@root='2.16.840.1.113883.4.6')=1">Such ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-16820).</sch:assert>
+            <sch:assert id="a-1198-16820" test="@root='2.16.840.1.113883.4.6'">Such ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-16820).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-recordTarget-patientRole-providerOrganization-telecom-warnings" context="cda:ClinicalDocument/cda:recordTarget/cda:patientRole/cda:providerOrganization/cda:telecom">
-            <sch:assert id="a-1198-7994" test="count(@use)=1">Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7994).</sch:assert>
+            <sch:assert id="a-1198-7994" test="@use">Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7994).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-author-assignedAuthor-warnings" context="cda:ClinicalDocument/cda:author/cda:assignedAuthor">
             <sch:assert id="a-1198-5430" test="count(cda:assignedPerson)=1">This assignedAuthor SHOULD contain zero or one [0..1] assignedPerson (CONF:1198-5430).</sch:assert>
@@ -273,25 +273,25 @@
             <sch:assert id="a-1198-16787" test="count(../cda:code)=1">This assignedAuthor SHOULD contain zero or one [0..1] code (CONF:1198-16787).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-author-assignedAuthor-telecom-warnings" context="cda:ClinicalDocument/cda:author/cda:assignedAuthor/cda:telecom">
-            <sch:assert id="a-1198-7995" test="count(@use)=1">Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7995).</sch:assert>
+            <sch:assert id="a-1198-7995" test="@use">Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7995).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-dataEnterer-assignedEntity-id-warnings" context="cda:ClinicalDocument/cda:dataEnterer/cda:assignedEntity/cda:id">
-            <sch:assert id="a-1198-16821" test="count(@root='2.16.840.1.113883.4.6')=1">Such ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-16821).</sch:assert>
+            <sch:assert id="a-1198-16821" test="@root='2.16.840.1.113883.4.6'">Such ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-16821).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-dataEnterer-assignedEntity-telecom-warnings" context="cda:ClinicalDocument/cda:dataEnterer/cda:assignedEntity/cda:telecom">
-            <sch:assert id="a-1198-7996" test="count(@use)=1">Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7996).</sch:assert>
+            <sch:assert id="a-1198-7996" test="@use">Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7996).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-custodian-assignedCustodian-representedCustodianOrganization-id-warnings" context="cda:ClinicalDocument/cda:custodian/cda:assignedCustodian/cda:representedCustodianOrganization/cda:id">
-            <sch:assert id="a-1198-16822" test="count(@root='2.16.840.1.113883.4.6')=1">Such ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-16822).</sch:assert>
+            <sch:assert id="a-1198-16822" test="@root='2.16.840.1.113883.4.6'">Such ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-16822).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-custodian-assignedCustodian-representedCustodianOrganization-telecom-warnings" context="cda:ClinicalDocument/cda:custodian/cda:assignedCustodian/cda:representedCustodianOrganization/cda:telecom">
-            <sch:assert id="a-1198-7998" test="count(@use)=1">This telecom SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7998).</sch:assert>
+            <sch:assert id="a-1198-7998" test="@use">This telecom SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7998).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-legalAuthenticator-assignedEntity-telecom-warnings" context="cda:ClinicalDocument/cda:legalAuthenticator/cda:assignedEntity/cda:telecom">
-            <sch:assert id="a-1198-7999" test="count(@use)=1">Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7999).</sch:assert>
+            <sch:assert id="a-1198-7999" test="@use">Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7999).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-authenticator-assignedEntity-telecom-warnings" context="cda:ClinicalDocument/cda:authenticator/cda:assignedEntity/cda:telecom">
-            <sch:assert id="a-1198-8000" test="count(@use)=1">Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-8000).</sch:assert>
+            <sch:assert id="a-1198-8000" test="@use">Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-8000).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-participant-typeCode-warnings" context="cda:ClinicalDocument/cda:participant[@typeCode='IND']">
             <sch:assert id="a-1198-10007" test="cda:associatedEntity[@classCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.33']/voc:code/@value]">When participant/@typeCode is IND, associatedEntity/@classCode SHOULD be selected from ValueSet 2.16.840.1.113883.11.20.9.33 INDRoleclassCodes STATIC 2011-09-30 (CONF:1198-10007).</sch:assert>
@@ -300,13 +300,13 @@
             <sch:assert id="a-1198-14839" test="count(cda:performer) &gt; 0">This serviceEvent SHOULD contain zero or more [0..*] performer (CONF:1198-14839).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-documentationOf-serviceEvent-performer-functionCode-warnings" context="cda:ClinicalDocument/cda:documentationOf/cda:serviceEvent/cda:performer/cda:functionCode">
-            <sch:assert id="a-1198-32889" test="count(@code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.1.11.10267']/voc:code/@value)=1">The functionCode, if present, SHOULD contain zero or one [0..1] @code, which SHOULD be selected from ValueSet ParticipationFunction urn:oid:2.16.840.1.113883.1.11.10267 STATIC (CONF:1198-32889).</sch:assert>
+            <sch:assert id="a-1198-32889" test="@code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.1.11.10267']/voc:code/@value">The functionCode, if present, SHOULD contain zero or one [0..1] @code, which SHOULD be selected from ValueSet ParticipationFunction urn:oid:2.16.840.1.113883.1.11.10267 STATIC (CONF:1198-32889).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-documentationOf-serviceEvent-performer-assignedEntity-warnings" context="cda:ClinicalDocument/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity">
             <sch:assert id="a-1198-14842" test="count(cda:code)=1">This assignedEntity SHOULD contain zero or one [0..1] code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy (HIPAA) urn:oid:2.16.840.1.114222.4.11.1066 DYNAMIC (CONF:1198-14842).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_V3-documentationOf-serviceEvent-performer-assignedEntity-id-warnings" context="cda:ClinicalDocument/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity/cda:id">
-            <sch:assert id="a-1198-14847" test="count(@root='2.16.840.1.113883.4.6')=1">Such ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-14847).</sch:assert>
+            <sch:assert id="a-1198-14847" test="@root='2.16.840.1.113883.4.6'">Such ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-14847).</sch:assert>
         </sch:rule>
     </sch:pattern>
 </sch:schema>

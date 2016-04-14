@@ -281,18 +281,20 @@ public class FileServiceImpl implements FileService {
 	    ArrayList<String> filenames = new ArrayList<String>();
 	    ArrayList<FileSpec> fileSpecs = new ArrayList<FileSpec>();
 	    // For each file, create a FileSpec object...
-        for (int i = 0; i < listOfFiles.length; i++) {
-          if (listOfFiles[i].isFile()) {
-        	  File thisFile = listOfFiles[i];
-           	  filenames.add(thisFile.getName());
-           	  FileSpec fs = new FileSpec();
-           	  initFileSpec(fs, thisFile,baseDir, subDir);
-           	  if (fs != null) {
-           		  fileSpecs.add(fs);
-           	  }
-          }
-        }
-         return fileSpecs;
+	    if (listOfFiles != null) {
+	        for (int i = 0; i < listOfFiles.length; i++) {
+	          if (listOfFiles[i].isFile()) {
+	        	  File thisFile = listOfFiles[i];
+	           	  filenames.add(thisFile.getName());
+	           	  FileSpec fs = new FileSpec();
+	           	  initFileSpec(fs, thisFile,baseDir, subDir);
+	           	  if (fs != null) {
+	           		  fileSpecs.add(fs);
+	           	  }
+	          }
+	        }
+	    }
+        return fileSpecs;
 	}
 
 	/**

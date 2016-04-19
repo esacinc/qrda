@@ -21,6 +21,7 @@
             <sch:assert id="a-2228-16598" test="count(cda:recordTarget)=1">SHALL contain exactly one [1..1] recordTarget (CONF:2228-16598).</sch:assert>
             <sch:assert id="a-2228-16600" test="count(cda:custodian)=1">SHALL contain exactly one [1..1] custodian (CONF:2228-16600).</sch:assert>
             <sch:assert id="a-2228-12973" test="count(cda:component[count(cda:structuredBody)=1])=1">SHALL contain exactly one [1..1] component (CONF:2228-12973) such that it SHALL contain exactly one [1..1] structuredBody (CONF:2228-17081).</sch:assert>
+            <sch:assert id="a-2228-16579" test="count(cda:documentationOf[count(cda:serviceEvent[@classCode='PCPR'][count(cda:performer[@typeCode='PRF'][count(cda:assignedEntity[count(cda:representedOrganization)=1])=1]) &gt; 0])=1]) &lt;= 1">MAY contain zero or one [0..1] documentationOf (CONF:2228-16579) such that it SHALL contain exactly one [1..1] serviceEvent (CONF:2228-16580). This serviceEvent SHALL contain exactly one [1..1] @classCode="PCPR" Care Provision (CONF:2228-16581). This serviceEvent SHALL contain at least one [1..*] performer (CONF:2228-16583). Such performers SHALL contain exactly one [1..1] @typeCode="PRF" Performer (CONF:2228-16584). Such performers MAY contain zero or one [0..1] time (CONF:2228-16585). Such performers SHALL contain exactly one [1..1] assignedEntity (CONF:2228-16586). This assignedEntity id/@root coupled with the id/@extension represents the individual provider's National Provider Identification number (NPI). This assignedEntity SHOULD contain zero or one [0..1] id (CONF:2228-16587) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:2228-16588). This assignedEntity SHALL contain exactly one [1..1] representedOrganization (CONF:2228-16591). This representedOrganization SHOULD contain zero or one [0..1] id (CONF:2228-16592) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:2228-16593). This representedOrganization SHOULD contain zero or one [0..1] id (CONF:2228-16595) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.336" Facility CMS Certification Number (CONF:2228-16596). SHALL contain exactly one [1..1] @extension (CONF:2228-16597).</sch:assert>
         </sch:rule>
         <sch:rule id="QDM_based_QRDA_V3-recordTarget-errors" context="cda:ClinicalDocument/cda:recordTarget">
             <sch:assert id="a-2228-16856" test="count(cda:patientRole)=1">This recordTarget SHALL contain exactly one [1..1] patientRole (CONF:2228-16856).</sch:assert>
@@ -42,20 +43,6 @@
         <sch:rule id="QDM_based_QRDA_V3-informationRecipient-errors" context="cda:ClinicalDocument/cda:informationRecipient">
             <sch:assert id="a-2228-16704" test="count(cda:intendedRecipient)=1">The informationRecipient, if present, SHALL contain exactly one [1..1] intendedRecipient (CONF:2228-16704).</sch:assert>
             <sch:assert id="a-2228-16705" test="cda:intendedRecipient[count(cda:id) &gt; 0]">This intendedRecipient SHALL contain at least one [1..*] id (CONF:2228-16705).</sch:assert>
-        </sch:rule>
-        <sch:rule id="QDM_based_QRDA_V3-documentationOf-errors" context="cda:ClinicalDocument/cda:documentationOf">
-            <sch:assert id="a-2228-16580" test="count(cda:serviceEvent)=1">SHALL contain exactly one [1..1] serviceEvent (CONF:2228-16580).</sch:assert>
-        </sch:rule>
-        <sch:rule id="QDM_based_QRDA_V3-documentationOf-serviceEvent-errors" context="cda:ClinicalDocument/cda:documentationOf/cda:serviceEvent">
-            <sch:assert id="a-2228-16581" test="@classCode='PCPR'">This serviceEvent SHALL contain exactly one [1..1] @classCode="PCPR" Care Provision (CONF:2228-16581).</sch:assert>
-            <sch:assert id="a-2228-16583" test="count(cda:performer) &gt; 0">This serviceEvent SHALL contain at least one [1..*] performer (CONF:2228-16583).</sch:assert>
-        </sch:rule>
-        <sch:rule id="QDM_based_QRDA_V3-documentationOf-serviceEvent-performer-errors" context="cda:ClinicalDocument/cda:documentationOf/cda:serviceEvent/cda:performer">
-            <sch:assert id="a-2228-16584" test="@typeCode='PRF'">Such performers SHALL contain exactly one [1..1] @typeCode="PRF" Performer (CONF:2228-16584).</sch:assert>
-            <sch:assert id="a-2228-16586" test="count(cda:assignedEntity)=1">Such performers SHALL contain exactly one [1..1] assignedEntity (CONF:2228-16586).</sch:assert>
-        </sch:rule>
-        <sch:rule id="QDM_based_QRDA_V3-documentationOf-serviceEvent-performer-assignedEntity-errors" context="cda:ClinicalDocument/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity">
-            <sch:assert id="a-2228-16591" test="count(cda:representedOrganization)=1">This assignedEntity SHALL contain exactly one [1..1] representedOrganization (CONF:2228-16591).</sch:assert>
         </sch:rule>
         <sch:rule id="QDM_based_QRDA_V3-component-structuredBody-errors" context="cda:ClinicalDocument/cda:component/cda:structuredBody">
             <sch:assert id="a-2228-17082" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.24.2.3']])=1])=1">This structuredBody SHALL contain exactly one [1..1] component (CONF:2228-17082). This component SHALL contain exactly one [1..1] Measure Section QDM (identifier: urn:oid:2.16.840.1.113883.10.20.24.2.3) (CONF:2228-17083).</sch:assert>

@@ -81,7 +81,7 @@ public class QRDA_URIResolver implements URIResolver {
 
 	public QRDA_URIResolver() {
 	    logger.info("QRDA Resolver created, resolving QRDA HOME to: " + QRDA_HOME + ", ISO files in: " + ISO_HOME);
-	    /*   // For debugging...
+	      // For debugging...
 	    Map<String, String> envMap = System.getenv();
 		SortedMap<String, String> sortedEnvMap = new TreeMap<String, String>(envMap);
 		Set<String> keySet = sortedEnvMap.keySet();
@@ -89,7 +89,6 @@ public class QRDA_URIResolver implements URIResolver {
 			String value = envMap.get(key);
 			logger.info("[" + key + "] " + value);
 		}
-	*/
 	  }
 
 

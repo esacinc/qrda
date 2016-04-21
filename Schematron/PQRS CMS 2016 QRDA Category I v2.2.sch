@@ -10,13 +10,14 @@ Updated 4/15/2016
 
 Fixed QRDA-282 where CMS_0051 and CMS_0039 where implemented as separate assertions incorrectly
 Fixed QRDA-279 for missing and incorrect assertions in QRDA Category I Report documentationOf
-Fixed QRDA-299 for missing rule 1140-28008
 Fixed QRDA-275 to combine the assertions into a single one since it is a such that it clause
 Fixed QRDA-286 by adding in both 1098-31880 and 1098-31978 to check for @code='active'
 Fixed QRDA-285 by removing constraints 1098-32910, 1098-32911, 1098-32913
 Fixed QRDA-292 by adding the rule pattern for sdtc:inFulfillmentOf1
-Fixed QRDA-305 by changing the extension on the context to match what is checked in 1140-13821
+Fixed QRDA-305 by changing the extension on rule 1140-13821 to the correct extension
 Fixed QRDA-296 by implementing the test to check for one postalCode
+Fixed QRDA-280 by changing the context on US Realm Patient Name 
+  r-urn-oid-2.16.840.1.113883.10.20.22.5.1.1-errors to only those specified as such
 -->
 <sch:schema xmlns:voc="http://www.lantanagroup.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
@@ -616,7 +617,7 @@ Fixed QRDA-296 by implementing the test to check for one postalCode
       <sch:assert id="a-81-9371-c" test="(cda:name/cda:given and cda:name/cda:family) or (count(cda:name/*)=0 and string-length(normalize-space(string(cda:name)))!=0)">The content of name *SHALL* be either a conformant Patient Name (PTN.US.FIELDED), or a string (CONF:81-9371).</sch:assert>
       <sch:assert id="a-81-9372-c" test="(cda:name/cda:given and cda:name/cda:family) or (count(cda:name/*)=0)">The string *SHALL NOT* contain name parts (CONF:81-9372).</sch:assert>
     </sch:rule>
-    <sch:rule id="r-urn-oid-2.16.840.1.113883.10.20.22.5.1.1-errors" context="//*[cda:name[parent::cda:patient or parent::cda:guardianPerson or parent::cda:assignedPerson or parent::cda:informationRecipient]]">
+    <sch:rule id="r-urn-oid-2.16.840.1.113883.10.20.22.5.1.1-errors" context="//*[cda:name[parent::cda:ClinicalDocument/cda:recordTarget/cda:patientRole/cda:patient or parent::cda:ClinicalDocument/cda:recordtarget/cda:patientRole/cda:patient/cda:guardian/cda:guardianPerson or parent::cda:ClinicalDocument/cda:author/cda:assignedAuthor/cda:assignedPerson or parent::cda:ClinicalDocument/cda:dataEnterer/cda:assignedEntity/cda:assignedPerson or parent::cda:ClinicalDocument/cda:informant/cda:assignedEntity/cda:assignedPerson or parent::cda:ClinicalDocument/cda:legalAuthenticator/cda:assignedEntity/cda:assignedPerson or parent::cda:ClinicalDocument/cda:authenticator/cda:assignedEntity/cda:assignedPerson or parent::cda:ClinicalDocument/cda:informationRecipient/cda:intendedRecipient/cda:informationRecipient]]">
       <sch:extends rule="r-urn-oid-2.16.840.1.113883.10.20.22.5.1.1-errors-abstract" />
     </sch:rule>
   </sch:pattern>
@@ -2349,7 +2350,6 @@ Fixed QRDA-296 by implementing the test to check for one postalCode
       <sch:assert id="a-1140-27740" test="count(cda:effectiveTime[count(cda:low)=1])=1">SHALL contain exactly one [1..1] effectiveTime (CONF:1140-27740) such that it SHALL contain exactly one [1..1] low (CONF:1140-27742).</sch:assert>
       <sch:assert id="a-1140-27741" test="count(cda:effectiveTime[count(cda:period)=1])=1">SHALL contain exactly one [1..1] effectiveTime (CONF:1140-27741) such that it SHALL contain exactly one [1..1] period (CONF:1140-27744).</sch:assert>
       <sch:assert id="a-1140-27745" test="count(cda:author)=1">SHALL contain exactly one [1..1] author (CONF:1140-27745).</sch:assert>
-      <sch:assert id="a-1140-28008" test="count(cda:entryRelationship[@typeCode='RSON'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88']])=1]) &lt;= 1">MAY contain zero or one [0..1] entryRelationship (CONF:1140-28008) such that it SHALL contain exactly one [1..1] @typeCode="RSON" Has reason (CONF:1140-28009). SHALL contain exactly one [1..1] Reason (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.88:2014-12-01) (CONF:1140-28010).</sch:assert>
     </sch:rule>
     <sch:rule id="r-urn-hl7ii-2.16.840.1.113883.10.20.24.3.47-2014-12-01-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.47' and @extension = '2014-12-01']]">
       <sch:extends rule="r-urn-hl7ii-2.16.840.1.113883.10.20.24.3.47-2014-12-01-errors-abstract" />
@@ -3130,12 +3130,12 @@ Fixed QRDA-296 by implementing the test to check for one postalCode
   <sch:pattern id="p-urn-hl7ii-2.16.840.1.113883.10.20.24.3.99-2015-04-05-errors">
     <sch:rule id="r-urn-hl7ii-2.16.840.1.113883.10.20.24.3.99-2015-04-05-errors-abstract" abstract="true">
       <sch:extends rule="r-urn-hl7ii-2.16.840.1.113883.10.20.22.4.43-2014-06-09-errors-abstract" />
-      <sch:assert id="a-1140-13821" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.99'][@extension='2014-12-09'])=1">SHALL contain exactly one [1..1] templateId (CONF:1140-13821) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.99" (CONF:1140-13822). SHALL contain exactly one [1..1] @extension="2014-12-09" (CONF:1140-28374).</sch:assert>
+      <sch:assert id="a-1140-13821" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.99'][@extension='2015-04-05'])=1">SHALL contain exactly one [1..1] templateId (CONF:1140-13821) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.99" (CONF:1140-13822). SHALL contain exactly one [1..1] @extension="2015-04-05" (CONF:1140-28374).</sch:assert>
       <sch:assert id="a-1140-13820" test="@moodCode='RQO'">SHALL contain exactly one [1..1] @moodCode="RQO" Request (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:1140-13820).</sch:assert>
       <sch:assert id="a-1140-13829" test="count(cda:effectiveTime[@xsi:type='IVL_TS'])=1">SHALL contain exactly one [1..1] effectiveTime (CONF:1140-13829).</sch:assert>
       <sch:assert id="a-1140-28373" test="@classCode='SPLY'">SHALL contain exactly one [1..1] @classCode="SPLY" Supply (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1140-28373).</sch:assert>
     </sch:rule>
-    <sch:rule id="r-urn-hl7ii-2.16.840.1.113883.10.20.24.3.99-2015-04-05-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.99' and @extension = '2014-12-09']]">
+    <sch:rule id="r-urn-hl7ii-2.16.840.1.113883.10.20.24.3.99-2015-04-05-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.99' and @extension = '2015-04-05']]">
       <sch:extends rule="r-urn-hl7ii-2.16.840.1.113883.10.20.24.3.99-2015-04-05-errors-abstract" />
     </sch:rule>
   </sch:pattern>

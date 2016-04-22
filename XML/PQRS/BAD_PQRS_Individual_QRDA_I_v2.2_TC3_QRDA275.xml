@@ -189,18 +189,31 @@
   
   <!-- ** TC 3 a-1182-28386 error: SHALL contain exactly one [1..1] 
     @extension (CONF:CMS_0008)  ** -->
-  <participant typeCode="ENT">
-    <associatedEntity classCode="ACCESS">
-      <id root="2.16.840.1.113883.3.2074.1" extension="1234567893"/>
+  
+  <participant typeCode="LOC">
+    <associatedEntity classCode="SDLOC">
+      <id assigningAuthorityName="ONC"
+        root="2.16.840.1.113883.3.2074.1"/>
+      <code code="394730007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+        displayName="healthcare related organization"/>
+      <scopingOrganization>
+        <id root="2.16.840.1.113883.3.249"/>
+      </scopingOrganization>
     </associatedEntity>
   </participant>
   
   <!-- ** TC 3.1 a-1182-28386 error: SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" 
     CMS EHR Certification Number (formerly known as Office of the National Coordinator Certification Number) 
     (CONF:CMS_0006)  ** -->
-  <participant typeCode="ENT">
-    <associatedEntity classCode="ACCESS">
-      <id extension="1234567893"/>
+  <participant typeCode="LOC">
+    <associatedEntity classCode="SDLOC">
+      <id assigningAuthorityName="ONC" extension="CC-2014-900880-3"
+        root="2.16.840.1.113883.19.5"/>
+      <code code="394730007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+        displayName="healthcare related organization"/>
+      <scopingOrganization>
+        <id root="2.16.840.1.113883.3.249"/>
+      </scopingOrganization>
     </associatedEntity>
   </participant>
   

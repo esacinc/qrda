@@ -6,17 +6,16 @@
 	Revision History:  4/20/2016 
 	Description: This test file contains data conformant to the 2016 CMS QRDA SIG and base QRDA-I R1, DSTU R3 IG
 	              for the purposes of testing EP CMS 2016 QRDA Category III v2.2.sch.  
-	Test Case: 3, 3.1
-	Test Conditions: TC 3 - Error - SHALL contain exactly one [1..1] @extension (CONF:CMS_0008)
-	                 TC 3.1 - Error - SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" 
+
+	Test Case: TC 3 - Error - a-1182-28386 - SHALL contain exactly one [1..1] @extension (CONF:CMS_0008)
+	           TC 3.1 - Error - a-1182-28386 - SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" 
                       CMS EHR Certification Number (formerly known as Office of the National Coordinator 
                       Certification Number) (CONF:CMS_0006)  
  
 	This file was modified to test the fix for QRDA-275 and verify the proper assertions
 	 
 	 Rule             	Number of errors
-   a-              		      1
-   a-                       1
+   a-1182-28386             2
    ______________________________________
    Total errors            	2                
 	
@@ -188,7 +187,7 @@
     </assignedEntity>
   </legalAuthenticator>
   
-  <!-- ** TC 3 CONF:CMS_0005 error: SHALL contain exactly one [1..1] 
+  <!-- ** TC 3 a-1182-28386 error: SHALL contain exactly one [1..1] 
     @extension (CONF:CMS_0008)  ** -->
   <participant typeCode="ENT">
     <associatedEntity classCode="ACCESS">
@@ -196,7 +195,7 @@
     </associatedEntity>
   </participant>
   
-  <!-- ** TC 3.1 CONF:CMS_0005 error: SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" 
+  <!-- ** TC 3.1 a-1182-28386 error: SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" 
     CMS EHR Certification Number (formerly known as Office of the National Coordinator Certification Number) 
     (CONF:CMS_0006)  ** -->
   <participant typeCode="ENT">

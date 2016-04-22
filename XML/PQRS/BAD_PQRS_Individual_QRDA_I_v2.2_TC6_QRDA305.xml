@@ -6,13 +6,13 @@
 	Revision History:  4/21/2016 
 	Description: This test file contains data conformant to the 2016 CMS QRDA SIG and base QRDA-I R1, DSTU R3 IG
 	              for the purposes of testing EP CMS 2016 QRDA Category III v2.2.sch.  
-	Test Case: 6
-	Test Conditions: TC 6 - error - CONF:1140-13821 - SHALL contain exactly one [1..1] @extension="2014-12-09" (CONF:1140-28374).
+
+	Test Case: TC 6 - error - a-1140-13821 - SHALL contain exactly one [1..1] @extension="2014-12-09" (CONF:1140-28374).
  
  	This file was modified to test the fix for QRDA-305 and verify the proper assertions
 	 
 	 Rule             	Number of errors
-   a-   		                1
+   a-1140-13821   		      1
    ______________________________________
    Total errors            	1               
 	
@@ -4838,13 +4838,13 @@
               <entryRelationship typeCode="COMP">
                 <supply classCode="SPLY" moodCode="RQO">
                   <!--  Medication Supply Request (V2) template -->
-                  <!-- ** TC 6 CONF:1140-13821 error: SHALL contain exactly 
+                  <!-- ** TC 6 a-1140-13821 error: SHALL contain exactly 
                     one [1..1] @extension="2014-12-09" (CONF:1140-28374)  ** -->
                   <templateId root="2.16.840.1.113883.10.20.24.3.99"
                     extension="2015-04-05"/>
                   <!-- Conforms to C-CDA R2 Planned Supply (V2) template-->
-                  <templateId root="2.16.840.1.113883.10.20.22.4.43
-                    extension="2014-06-09" />
+                  <templateId root="2.16.840.1.113883.10.20.22.4.43"
+                    extension="2014-06-09"/>
                   <id root="50ed595a-dfb6-49f0-8b19-1901b5d01c1a"/>
                   <statusCode code="active"/>
                   <effectiveTime xsi:type="IVL_TS">
@@ -4869,8 +4869,7 @@
                       <manufacturedMaterial>
                         <code code="329498"
                           codeSystem="2.16.840.1.113883.6.88"
-                          displayName="Albuterol 0.09 MG/ACTUAT inhalant solution"
-                          sdtc:valueSet="{$QDMElementValueSetOID}"/>
+                          displayName="Albuterol 0.09 MG/ACTUAT inhalant solution"/>
                       </manufacturedMaterial>
                       <manufacturerOrganization>
                         <name>Medication Factory Inc.</name>

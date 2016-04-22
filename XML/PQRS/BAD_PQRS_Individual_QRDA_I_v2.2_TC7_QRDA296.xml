@@ -6,15 +6,15 @@
 	Revision History:  4/20/2016 
 	Description: This test file contains data conformant to the 2016 CMS QRDA SIG and base QRDA-I R1, DSTU R3 IG
 	              for the purposes of testing EP CMS 2016 QRDA Category III v2.2.sch.  
-	Test Case: 7
-	Test Conditions: TC 7 - warning - CONF:81-7294 warning: SHOULD contain zero or one [0..1] postalCode, 
+
+	Test Case: TC 7 - warning - a-81-7294-c - SHOULD contain zero or one [0..1] postalCode, 
                     which SHOULD be selected from ValueSet PostalCode urn:oid:2.16.840.1.113883.3.88.12.80.2 
                     DYNAMIC (CONF:81-7294).
  
-	 	This file was modified to test the fix for QRDA-296 and verify the proper assertions
+	 This file was modified to test the fix for QRDA-296 and verify the proper assertions
 	 
 	 Rule             	Number of errors
-   a-   		                0
+   a-81-7294-c   		        0
    ______________________________________
    Total errors            	0                
 	
@@ -56,7 +56,7 @@
         <city>Burlington</city>
         <state>MA</state>
         
-        <!-- ** TC 7 CONF:81-7294 warning: SHOULD contain zero or one [0..1] postalCode, 
+        <!-- ** TC 7 a-81-7294-c warning: SHOULD contain zero or one [0..1] postalCode, 
           which SHOULD be selected from ValueSet PostalCode urn:oid:2.16.840.1.113883.3.88.12.80.2 
           DYNAMIC (CONF:81-7294).  ** -->
         

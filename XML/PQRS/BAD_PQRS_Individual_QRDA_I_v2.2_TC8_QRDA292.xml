@@ -2,22 +2,18 @@
 <?xml-stylesheet type="text/xsl" href="cda.xsl"?>
 <!-- ***************** ******************************  
   
-	Filename: BAD_PQRS_Individual_QRDA_I_v2.2_TC2_QRDA280.xml
+	Filename: BAD_PQRS_Individual_QRDA_I_v2.2_TC8_QRDA292.xml
 	Revision History:  4/20/2016 
 	Description: This test file contains data conformant to the 2016 CMS QRDA SIG and base QRDA-I R1, DSTU R3 IG
 	              for the purposes of testing EP CMS 2016 QRDA Category III v2.2.sch.  
-
-	Test Case: TC 2 - No error - Value present in documentationOf/serviceEvent/performer/assignedEntity/assignedPerson/name 
-	                   is not conformant to US Realm Person Name (2.16.840.1.113883.10.20.22.5.1.1)
-	           TC 2.1 - Error - a-81-9371-c - Value present in author/assignedAuthor/assignedName/name is not conformant to US Realm Person 
-	                   Name (2.16.840.1.113883.10.20.22.5.1.1). Does not contain at least one <given>. 
-	           TC 2.2 - Error - a-81-9371-c - Value present in legalAuthenticator/assignedEntity/assignedName/name is not conformant to US Realm Person 
-	                   Name (2.16.840.1.113883.10.20.22.5.1.1). Contains more than one <family>. 
  
-	This file was modified to test the fix for QRDA-280 and verify the proper assertions
+	Test Case: TC 8 - error - SHALL contain exactly one [1..1] @extension="2014-12-01" (CONF:1140-28383)
+	           TC 8.1 - error - SHALL contain exactly one [1..1] sdtc:templateId (CONF:1140-28379)
+ 
+	 	This file was modified to test the fix for QRDA-292 and verify the proper assertions
 	 
 	 Rule             	Number of errors
-   a-81-9371-c   		        2
+   a-1140-28379   		      2
    ______________________________________
    Total errors            	2                
 	
@@ -112,8 +108,7 @@
       <!-- Quality Manager -->
       <assignedPerson>
         <name>
-          <!-- ** TC 2.1 a-81-9371-c error: SHALL contain at least one [1..*] 
-            given (CONF:81-7157)  ** -->
+          <given>Ann</given>
           <family>Quality</family>
           <suffix>RN</suffix>
         </name>
@@ -179,10 +174,7 @@
       <assignedPerson>
         <name>
           <given>Virgil</given>
-          <!-- ** TC 2.2 a-81-9371-c error: SHALL contain exactly one [1..1] 
-            family (CONF:81-7159)  ** -->
           <family>Verify</family>
-          <family>Verify2</family>
           <suffix>MD</suffix>
         </name>
       </assignedPerson>
@@ -211,16 +203,6 @@
                The NPI must be in the correct format. 
                A valid NPI is 10 numeric digits where the 10th digit is a check digit computed using the Luhn algorithm. -->
           <id root="2.16.840.1.113883.4.6" extension="1234567893"/>
-          <assignedPerson>
-            <name>
-              <given>Patricia</given>
-              <given qualifier="CL">Patty</given>
-              <!-- ** TC 2 CONF:81-9368 no error: name element not specified in HL7 QRDA-I IG R3  ** -->
-              <family>Primary</family>
-              <family>Primary2</family>
-              <suffix qualifier="AC">M.D.</suffix>
-            </name>
-          </assignedPerson>
           <representedOrganization>
             <!-- This is the organization TIN -->
             <!-- When the CMS Program Name is "PQRS_MU_INDIVIDUAL", TIN is required and nullFlavor is not allowed. -->
@@ -4082,6 +4064,20 @@
                     sdtc:valueSet="2.16.840.1.113883.3.526.3.389"/>
                 </observation>
               </entryRelationship>
+              <sdtc:inFulfillmentOf1 typeCode="FLFS">
+                <!-- ** TC 8.1 a-1140-28379 error: SHALL contain exactly one [1..1] 
+                  sdtc:templateId (CONF:1140-28379)  ** -->
+                <sdtc:templateId root="2.16.840.1.113883.10.20.24.3.126"
+                  extension="2014-12-01"/>
+                <sdtc:templateId root="2.16.840.1.113883.10.20.24.3.126"
+                  extension="2014-12-01"/>
+                <!-- The classCode and moodCode are the same as the classCode and moodCode
+                  of the Laboratory Test, Order being referenced -->
+                <sdtc:actReference classCode="OBS" moodCode="RQO">
+                  <!-- The id is the same as the id of the Laboratory Test, Order being referenced -->
+                  <sdtc:id root="1fad091f-7b4e-4661-b61c-53f9a82515b6"/>
+                </sdtc:actReference>
+              </sdtc:inFulfillmentOf1>
             </observation>
           </entry>
           <!-- QDM Datatype: Laboratory Test, Recommended -->
@@ -4746,6 +4742,17 @@
                     sdtc:valueSet="2.99.99.99"/>
                 </observation>
               </entryRelationship>
+              <sdtc:inFulfillmentOf1 typeCode="FLFS">
+                <!-- ** TC 8 a-1140-28379 error: SHALL contain exactly one [1..1] @extension="2014-12-01" 
+                  (CONF:1140-28383) ** -->
+                <sdtc:templateId root="2.16.840.1.113883.10.20.24.3.126"/>
+                <!-- The classCode and moodCode are the same as the classCode and moodCode
+                  of the Medication, Order being referenced -->
+                <sdtc:actReference classCode="SBADM" moodCode="RQO">
+                  <!-- The id is the same as the id of the Medication, Order being referenced -->
+                  <sdtc:id root="9a5f4d94-ccad-4d57-80ea-27737545c7bb"/>
+                </sdtc:actReference>
+              </sdtc:inFulfillmentOf1>
             </observation>
           </entry>
           <!-- QDM Attribute: Medication, Order -->

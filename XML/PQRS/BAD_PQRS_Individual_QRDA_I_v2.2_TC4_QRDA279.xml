@@ -6,19 +6,19 @@
 	Revision History:  4/20/2016 
 	Description: This test file contains data conformant to the 2016 CMS QRDA SIG and base QRDA-I R1, DSTU R3 IG
 	              for the purposes of testing EP CMS 2016 QRDA Category III v2.2.sch.  
-	Test Case: 4, 4.1
-	Test Conditions: TC 4 - Error - This serviceEvent SHALL contain exactly one [1..1] 
+
+	Test Case: TC 4 - Error - a-1182-28428-branch-28417 - This serviceEvent SHALL contain exactly one [1..1] 
                     @classCode="PCPR" Care Provision (CONF:1140-16581)
-                   TC 4.1 - Error - Such performers SHALL contain exactly one [1..1] 
+             TC 4.1 - Error - a-1182-28429-branch-28417 - Such performers SHALL contain exactly one [1..1] 
                     @typeCode="PRF" Performer (CONF:1140-16584)
       
 	This file was modified to test the fix for QRDA-279 and verify the proper assertions
 	 
-	 Rule             	Number of errors
-   a-1140-16581   		      1
-   a-1140-16584             1
+	 Rule             	    Number of errors
+   a-1182-28428-branch-28417   	1
+   a-1182-28429-branch-28417    1
    ______________________________________
-   Total errors            	2                
+   Total errors            	    2                
 	
 **************************************************************** -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -189,7 +189,7 @@
   </legalAuthenticator>
 
   <documentationOf typeCode="DOC">
-    <!-- ** TC 4 CONF:1140-16579 error:  This serviceEvent SHALL contain exactly one [1..1] 
+    <!-- ** TC 4 a-1182-28428-branch-28417 error:  This serviceEvent SHALL contain exactly one [1..1] 
       @classCode="PCPR" Care Provision (CONF:1140-16581). ** -->
     <serviceEvent classCode="CASE">
       <!-- care provision -->
@@ -197,7 +197,7 @@
         <low value="20160101"/>
         <high value="20161231"/>
       </effectiveTime>
-      <!-- ** TC 4.1 CONF:1140-16579 error:  Such performers SHALL contain exactly one [1..1] 
+      <!-- ** TC 4.1 a-1182-28429-branch-28417 error:  Such performers SHALL contain exactly one [1..1] 
         @typeCode="PRF" Performer (CONF:1140-16584). ** -->
       <performer typeCode="PPRF">
         <time>

@@ -60,7 +60,7 @@
           which SHOULD be selected from ValueSet PostalCode urn:oid:2.16.840.1.113883.3.88.12.80.2 
           DYNAMIC (CONF:81-7294).  ** -->
         
-        <country>US</country>
+        <country>CA</country>
       </addr>
       <telecom use="HP" value="tel:(781)555-1212"/>
       <patient>

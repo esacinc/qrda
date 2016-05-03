@@ -157,10 +157,15 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 					// If there were failures in the report, count them (there are two types: errors and warnings) and 
 					// store the counts in the test case.
 					if (failures != null) {
+						
+						// Define some format strings for use in reporting status text
+						final String summaryTemplate = "<span class='%s'> &nbsp;%d&nbsp; </span>&nbsp; Assertions failed.";
+						final String specificTemplate= "<span class='%s'> &nbsp;%d&nbsp; </span>&nbsp;%s failures encountered";
+						final String indent = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"; // Yes, yes.  Brute force. I get it.
 						testCase.setErrors(failures);
 						
 						logger.debug("There were " + failures.size() + "failures");
-						testCase.addStatusText(failures.size() + " failures detected");
+						testCase.addStatusText(String.format(summaryTemplate,((failures.size() == 0)?"btn-success":""), failures.size()));
 						int errorCount = 0;
 						int warningCount = 0;
 						for (Failure failure: failures) {
@@ -174,28 +179,29 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 						// Update the status text messages with informative information about the failure counts.
 						testCase.setErrorCount(errorCount);
 						testCase.setWarningCount(warningCount);
-						testCase.addStatusText(String.format("%d Critical/Error failures encountered", errorCount));
+						testCase.addStatusText(String.format(specificTemplate, ((errorCount == 0)?"btn-success":"btn-danger"), errorCount, "Critical/Error"));
 						// A test file may have the expected error (and warning) count in its comments header. 
 						// If so, note if the expected count matches the acutal count.
 						// (Note: the expected counts are determined when the test case is initialized.)
 						if (testCase.getExpectedErrors() >= 0) {
-							testCase.addStatusText(String.format("Expected %d Critical/Error failures", testCase.getExpectedErrors()));	
+							testCase.addStatusText(indent + String.format("Expected %d Critical/Error failures", testCase.getExpectedErrors()));	
 							if (testCase.getExpectedErrors() == testCase.getErrorCount()) {
-								testCase.addStatusText(wrapSuccessSpan("EXPECTED ERRORS = ENCOUNTERED ERRORS"));
+								testCase.addStatusText(indent + wrapSuccessSpan("EXPECTED ERRORS = ENCOUNTERED ERRORS"));
 							}
 							else {
-								testCase.addStatusText(wrapErrorSpan("EXPECTED ERRORS <>  ENCOUNTERED ERRORS"));
+								testCase.addStatusText(indent + wrapErrorSpan("EXPECTED ERRORS <>  ENCOUNTERED ERRORS"));
 							}
 						}
 						
-						testCase.addStatusText(String.format("%d Non-Critical/Warning failures encountered", warningCount));
+						testCase.addStatusText(String.format(specificTemplate, ((warningCount == 0)?"btn-success":"btn-warning"), warningCount, "Non-Critical/Warning"));
+
 						if (testCase.getExpectedWarnings() >= 0) {
-							testCase.addStatusText(String.format("Expected %d Non-Critical/Warning failures", testCase.getExpectedErrors()));
+							testCase.addStatusText(indent + String.format("Expected %d Non-Critical/Warning failures", testCase.getExpectedErrors()));
 							if (testCase.getExpectedWarnings() == testCase.getWarningCount()) {
-								testCase.addStatusText(wrapSuccessSpan("EXPECTED WARNINGS = ENCOUNTERED WARNINGS"));
+								testCase.addStatusText(indent + wrapSuccessSpan("EXPECTED WARNINGS = ENCOUNTERED WARNINGS"));
 							}
 							else {
-								testCase.addStatusText(wrapErrorSpan("EXPECTED WARNINGS <>  ENCOUNTERED WARNINGS"));
+								testCase.addStatusText(indent + wrapErrorSpan("EXPECTED WARNINGS <>  ENCOUNTERED WARNINGS"));
 							}
 
 						}

@@ -218,9 +218,9 @@ POSSIBILITY OF SUCH DAMAGE.
 					    		<li><div class="bg-danger">${loop.index }: <span class="btn-danger"><fmt:message key="workbench.failure.critical"/></span> <a data-toggle="collapse" href="#errorIndex${loop.index}"><fmt:message key="workbench.failure"/> ${failure.id } <span class="caret"></span></a></div>
 					    			<div id="errorIndex${loop.index}" class="panel-collapse collapse">
 					    			   <div class="panel-body">
-					    			     <fmt:message key="workbench.failure.location"/> ${failure.location }<br/>
-										 <fmt:message key="workbench.failure.test"/> ${failure.test }<br/>
-						                 <fmt:message key="workbench.failure.statement"/> ${failure.statement }<br/>
+					    			     <span class='btn-info'><fmt:message key="workbench.failure.location"/> </span> ${failure.location }<br/>
+										 <span class='btn-danger'><fmt:message key="workbench.failure.test"/> ${failure.test }</span><br/>
+						                 <span class='btn-info'><fmt:message key="workbench.failure.statement"/> ${failure.statement }</span><br/>
 						    			 <fmt:message key="workbench.failure.isCritical"/> ${failure.critical }
 						    			</div>		   		    			
 					    			</div>
@@ -244,12 +244,12 @@ POSSIBILITY OF SUCH DAMAGE.
 			    		<ul style="list-style-type:none;">
 					    	<c:forEach items="${testCase.errors }" var="failure" varStatus="loop">
 					    	    <c:if test="${failure.critical == false}">
-					    		<li><div class="bg-warning">${loop.index }: <a data-toggle="collapse" href="#warningIndex${loop.index}"><fmt:message key="workbench.failure"/> ${failure.id } <span class="caret"></span></a></div>
+					    		<li><div class="bg-warning">${loop.index }: <span class="btn-warning"><fmt:message key="workbench.failure.warning"/></span> <a data-toggle="collapse" href="#warningIndex${loop.index}"><fmt:message key="workbench.failure"/> ${failure.id } <span class="caret"></span></a></div>
 					    			<div id="warningIndex${loop.index}" class="panel-collapse collapse">
 					    			   <div class="panel-body">
-					    			     <fmt:message key="workbench.failure.location"/> ${failure.location }<br/>
-										 <fmt:message key="workbench.failure.test"/> ${failure.test }<br/>
-						                 <fmt:message key="workbench.failure.statement"/> ${failure.statement }<br/>
+					    			     <span class='btn-info'><fmt:message key="workbench.failure.location"/></span>  ${failure.location }<br/>
+										 <span class='btn-warning'><fmt:message key="workbench.failure.test"/> ${failure.test }</span><br/>
+						                 <span class='btn-info'><fmt:message key="workbench.failure.statement"/> ${failure.statement }</span><br/>
 						    			 <fmt:message key="workbench.failure.isCritical"/> ${failure.critical }
 						    			</div>		   		    			
 					    			</div>

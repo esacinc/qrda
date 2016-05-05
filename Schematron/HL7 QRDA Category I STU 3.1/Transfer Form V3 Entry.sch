@@ -40,7 +40,7 @@
             <sch:assert id="a-2228-28317-error" test="count(cda:code)=1">This participantRole SHALL contain exactly one [1..1] code (CONF:2228-28317).</sch:assert>
         </sch:rule>
         <sch:rule id="Transfer-Form-participantRole-code-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.81']]/cda:participantRole/cda:code">
-            <sch:assert id="a-2228-28321-error" test="@sdtc:valueSet">This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-28321). </sch:assert>
+            <sch:assert id="a-2228-28321-error" test="@sdtc:valueSet">This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-28321).</sch:assert>
         </sch:rule>
         
     </sch:pattern>

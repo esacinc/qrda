@@ -13,7 +13,7 @@
     
     <sch:pattern id="Patient-data-section-qdm-pattern-errors">
         <sch:rule id="Patient-data-section-qdm-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.24.2.1']]">
-            <sch:assert id="a-2228-12796" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.2.1'][@extension='2016-02-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-12796) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.2.1" (CONF:2228-12797). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-28405).</sch:assert>
+            <sch:assert id="a-2228-12796-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.2.1'][@extension='2016-02-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-12796) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.2.1" (CONF:2228-12797). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-28405).</sch:assert>
         </sch:rule>
     </sch:pattern>
 </sch:schema>

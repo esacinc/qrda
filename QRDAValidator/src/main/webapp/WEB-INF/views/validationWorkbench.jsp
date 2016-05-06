@@ -177,7 +177,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			  
 			  <div id="tabSummaryDiv" class="tab-pane fade in active ">
 				  	<h4 id="xmlTitleSummary"><span><fmt:message key="workbench.title.summary"/></span> <span>${validationResults.name }</span></h4>
-				  	<h3 id="subtitleSummary"><span></span></h3>
+				  	<h5 id="subtitleSummary"><span><fmt:message key="workbench.title.schematron"/></span> <span><b>${validationResults.schematronFilename }</b></span></h5>
 				  	<div class="bg-info"><ul>
 					  	<c:forEach items="${validationResults.statusText}" var="txt">
 					  		<li>${txt }</li>

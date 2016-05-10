@@ -53,7 +53,7 @@
 	
 	<sch:pattern id="Medication_Adverse_Effect_V3-pattern-warnings">
 		<sch:rule id="Medication_Adverse_Effect_V3-warning" context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.43"]]'>
-			<sch:assert id="a-2228-14130-warning" test='count(cda:entryRelationship[@typeCode="MFST"][@inversionInd="true"][count(cda:observation[count(cda:templateId[@root="2.16.840.1.113883.10.20.24.3.85"])=1])=1]) &gt; 0'>
+			<sch:assert id="a-2228-14130-warning" test='count(cda:entryRelationship[@typeCode="MFST"][@inversionInd="true"][count(cda:observation[count(cda:templateId[@root="2.16.840.1.113883.10.20.24.3.85"])=1])=1]) = 1'>
 				SHOULD contain zero or one [0..1] entryRelationship (CONF:2228-14130) such that it
 				Note: QDM Attribute: Reaction
 					SHALL contain exactly one [1..1] @typeCode="MFST" (CONF:2228-14131).

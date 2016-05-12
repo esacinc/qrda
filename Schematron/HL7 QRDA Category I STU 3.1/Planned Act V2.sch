@@ -44,12 +44,10 @@
 	</sch:pattern>
 	
 	<sch:pattern id="Planned_Act_V2-pattern-warnings">
-		<sch:rule id="Planned_Act_V2-author-warnings" context='cda:act[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.39"]]'>
+		<sch:rule id="Planned_Act_V2-warnings" context='cda:act[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.39"]]'>
 			<sch:assert id="a-1098-32020-warning" test='count(cda:author) = 1'>
 				SHOULD contain zero or one [0..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-32020).
 			</sch:assert>
-		</sch:rule>
-		<sch:rule id="Planned_Act_V2-effectiveTime-warnings" context='cda:act[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.39"]]'>
 			<sch:assert id="a-1098-30433-warning" test='count(cda:effectiveTime) = 1'>
 				SHOULD contain zero or one [0..1] effectiveTime (CONF:1098-30433).
 			</sch:assert>

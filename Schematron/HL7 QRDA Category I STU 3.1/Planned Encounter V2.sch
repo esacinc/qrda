@@ -34,8 +34,8 @@
 			</sch:assert>
 		</sch:rule>
 		<sch:rule id="Planned_Encounter_V2-statusCode-errors" context='cda:encounter[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.40"]]/cda:statusCode'>
-			<sch:assert id="a-1098-32019-error" test='@code="active"'>
-				This statusCode SHALL contain exactly one [1..1] @code="active" Active (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-32019).
+			<sch:assert id="a-1098-31880-error" test='@code="active"'>
+				This statusCode SHALL contain exactly one [1..1] @code="active" Active (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-31880).			
 			</sch:assert>
 		</sch:rule>
 	</sch:pattern>

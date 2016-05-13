@@ -1572,7 +1572,7 @@
 									<id root="2a620155-9d11-439e-92b3-5d9815ff4de8"/>
 									<code code="185349003" displayName="encounter for check-up (procedure)" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" sdtc:valueSet="2.16.840.1.113883.3.464.1003.101.12.1048"/>
 									<text>Encounter for check-up (procedure)</text>
-									<statusCode code="active"/>
+									<statusCode code="active1"/>
 									<effectiveTime>
 										<!-- Admission datetime (or encounter start)-->
 										<low value="20150329090000+0500"/>

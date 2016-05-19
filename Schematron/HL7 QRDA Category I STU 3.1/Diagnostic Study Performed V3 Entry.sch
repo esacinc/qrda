@@ -11,10 +11,6 @@
         <sch:active pattern="Diagnostic-Study-Performed-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Diagnostic-Study-Performed-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Diagnostic-Study-Performed-pattern-errors">
         <sch:rule id="Diagnostic-Study-Performed-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.18']]">
             <sch:assert id="a-2228-27369-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27369). </sch:assert>
@@ -36,11 +32,6 @@
         <sch:rule id="Diagnostic-Study-Performed-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.18']]/cda:effectiveTime">
             <sch:assert id="a-2228-12959-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-12959).  </sch:assert>
             <sch:assert id="a-2228-12960-error" test="count(cda:high)=1">This effectiveTime SHALL contain exactly one [1..1] high (CONF:2228-12960). </sch:assert>
-        </sch:rule>
-        
-     </sch:pattern>
-    
-    <sch:pattern id="Diagnostic-Study-Performed-pattern-warnings">
+        </sch:rule>      
     </sch:pattern>
-    
 </sch:schema>

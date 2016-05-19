@@ -11,10 +11,6 @@
         <sch:active pattern="Diagnosis-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Diagnosis-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Diagnosis-pattern-errors">
         <sch:rule id="Diagnosis-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.135']]">
             <sch:assert id="a-2228-28510-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28510).</sch:assert>
@@ -35,8 +31,4 @@
         </sch:rule>
         
     </sch:pattern>
-    
-    <sch:pattern id="Diagnosis-pattern-warnings">
-    </sch:pattern>
-    
 </sch:schema>

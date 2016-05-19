@@ -11,10 +11,6 @@
         <sch:active pattern="Diagnostic-Study-Intolerance-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Diagnostic-Study-Intolerance-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Diagnostic-Study-Intolerance-pattern-errors">
         <sch:rule id="Diagnostic-Study-Intolerance-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.16']]">
             <sch:assert id="a-2228-11733-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-11733). </sch:assert>
@@ -28,10 +24,5 @@
             <sch:assert id="a-2228-16411-error" test="@code='102460003'">This value SHALL contain exactly one [1..1] @code="102460003" Adverse reaction (CONF:2228-16411). </sch:assert>
             <sch:assert id="a-2228-28406-error" test="@codeSystem='2.16.840.1.113883.6.96'">This value SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CONF:2228-28406). </sch:assert>
         </sch:rule>
-
-     </sch:pattern>
-    
-    <sch:pattern id="Diagnostic-Study-Intolerance-pattern-warnings">
     </sch:pattern>
-    
 </sch:schema>

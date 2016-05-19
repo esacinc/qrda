@@ -11,10 +11,6 @@
         <sch:active pattern="Device-Adverse-Event-V3-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Device-Adverse-Event-V3-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Device-Adverse-Event-V3-pattern-errors">
         <sch:rule id="Device-Adverse-Event-V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.5']]">
             <sch:assert id="a-2228-28048-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28048). </sch:assert>
@@ -29,10 +25,5 @@
          <sch:rule id="Device-Adverse-Event-V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.5']]/cda:value">
             <sch:assert id="a-2228-12189-error" test="@code='420134006'">This value SHALL contain exactly one [1..1] @code="420134006" propensity to adverse reactions, which SHALL be selected from CodeSystem SNOMED CT (urn:oid:2.16.840.1.113883.6.96) (CONF:2228-12189). </sch:assert>
         </sch:rule>
- 
-       </sch:pattern>
-    
-    <sch:pattern id="Device-Adverse-Event-V3-pattern-warnings">
     </sch:pattern>
-    
 </sch:schema>

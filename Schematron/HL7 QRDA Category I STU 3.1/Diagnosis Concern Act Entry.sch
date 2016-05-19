@@ -11,10 +11,6 @@
         <sch:active pattern="Diagnosis-Concern-Act-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Diagnosis-Concern-Act-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Diagnosis-Concern-Act-pattern-errors">
         <sch:rule id="Diagnosis-Concern-Act-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.137']]">
             <sch:assert id="a-2228-28148-error" test="@classCode='ACT'">SHALL contain exactly one [1..1] @classCode="ACT" Act (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28148). </sch:assert>
@@ -35,8 +31,4 @@
         </sch:rule>
         
     </sch:pattern>
-    
-    <sch:pattern id="Diagnosis-Concern-Act-pattern-warnings">
-    </sch:pattern>
-    
 </sch:schema>

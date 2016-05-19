@@ -11,10 +11,6 @@
         <sch:active pattern="Device-Intolerance-V3-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Device-Intolerance-V3-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Device-Intolerance-V3-pattern-errors">
         <sch:rule id="Device-Intolerance-V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.8']]">
             <sch:assert id="a-2228-28053-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28053). </sch:assert>
@@ -28,12 +24,6 @@
         <sch:rule id="Device-Intolerance-V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.8']]/cda:value">
             <sch:assert id="a-2228-26936-error" test="@code='420134006'">This value SHALL contain exactly one [1..1] @code="420134006" propensity to adverse reactions (CONF:2228-26936).  </sch:assert>
             <sch:assert id="a-2228-26937-error" test="@codeSystem='2.16.840.1.113883.6.96'">This value SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2228-26937).</sch:assert>
-        </sch:rule>
-
-       
-       </sch:pattern>
-    
-    <sch:pattern id="Device-Intolerance-V3-pattern-warnings">
+        </sch:rule>     
     </sch:pattern>
-    
 </sch:schema>

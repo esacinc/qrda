@@ -11,10 +11,6 @@
         <sch:active pattern="Discharge-Medication-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Discharge-Medication-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Discharge-Medication-pattern-errors">
         <sch:rule id="Discharge-Medication-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.105']]">
             <sch:assert id="a-2228-16550-error" test="@classCode='ACT'">SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-16550). </sch:assert>
@@ -29,10 +25,5 @@
             <sch:assert id="a-2228-28140-error" test="@code='75311-1'">This code SHALL contain exactly one [1..1] @code="75311-1" Discharge medications (CONF:2228-28140). </sch:assert>
             <sch:assert id="a-2228-28141-error" test="@codeSystem='2.16.840.1.113883.6.1'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:2228-28141). </sch:assert>
         </sch:rule>
-
-      </sch:pattern>
-    
-    <sch:pattern id="Discharge-Medication-pattern-warnings">
     </sch:pattern>
-    
 </sch:schema>

@@ -11,10 +11,6 @@
         <sch:active pattern="Device-Applied-V3-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Device-Applied-V3-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Device-Applied-V3-pattern-errors">
         <sch:rule id="Device-Applied-V3-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.7']]">
             <sch:assert id="a-2228-28050-error" test="@classCode='PROC'">SHALL contain exactly one [1..1] @classCode="PROC" Procedure (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28050).  </sch:assert>
@@ -26,14 +22,9 @@
             <sch:assert id="a-2228-12398-error" test="count(cda:participant[@typeCode='DEV'][count(cda:participantRole[@classCode='MANU'][count(cda:playingDevice[@classCode='DEV'][count(cda:code[@sdtc:valueSet])=1])=1])=1])=1">SHALL contain exactly one [1..1] participant (CONF:2228-12396) such that it SHALL contain exactly one [1..1] @typeCode="DEV" device, which SHALL be selected from CodeSystem HL7ParticipationType (urn:oid:2.16.840.1.113883.5.90) (CONF:2228-12397). SHALL contain exactly one [1..1] participantRole (CONF:2228-12398). This participantRole SHALL contain exactly one [1..1] @classCode="MANU" manufactured product, which SHALL be selected from CodeSystem RoleClass (urn:oid:2.16.840.1.113883.5.110) (CONF:2228-12399). This participantRole SHALL contain exactly one [1..1] playingDevice (CONF:2228-12400). This playingDevice SHALL contain exactly one [1..1] @classCode="DEV" device, which SHALL be selected from CodeSystem HL7ParticipationType (urn:oid:2.16.840.1.113883.5.90) (CONF:2228-12401). This playingDevice SHALL contain exactly one [1..1] code (CONF:2228-12402). This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27584).       </sch:assert> 
          </sch:rule>
         
-        <sch:rule id="Device-Adverse-Event-V3-entryRelationship-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.7']]/cda:entryRelationship">
+        <sch:rule id="Device-Applied-V3-entryRelationship-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.7']]/cda:entryRelationship">
             <sch:assert id="a-2228-12404-error" test="@typeCode='RSON'">SHALL contain exactly one [1..1] @typeCode="RSON" has reason, which SHALL be selected from CodeSystem HL7ActRelationshipType (urn:oid:2.16.840.1.113883.5.1002) (CONF:2228-12404).  </sch:assert>
             <sch:assert id="a-2228-27131-error" test="count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2014-12-01']])=1">SHALL contain exactly one [1..1] Reason (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.88:2014-12-01) (CONF:2228-27131).  </sch:assert>
         </sch:rule>
-        
     </sch:pattern>
-    
-    <sch:pattern id="Device-Applied-V3-pattern-warnings">
-    </sch:pattern>
-    
 </sch:schema>

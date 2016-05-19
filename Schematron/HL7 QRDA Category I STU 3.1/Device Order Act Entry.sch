@@ -11,10 +11,6 @@
         <sch:active pattern="Device-Order-Act-V3-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Device-Order-Act-V3-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Device-Order-Act-V3-pattern-errors">
         <sch:rule id="Device-Order-Act-V3-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.130']]">
             <sch:assert id="a-2228-28444-error" test="@classCode='ACT'">SHALL contain exactly one [1..1] @classCode="ACT" Act (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28444). </sch:assert>
@@ -27,11 +23,6 @@
         <sch:rule id="Device-Order-Act-V3-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.130']]/cda:code">
             <sch:assert id="a-2228-28448-error" test="@code='SPLY'">This code SHALL contain exactly one [1..1] @code="SPLY" Supply (CONF:2228-28448).</sch:assert> 
             <sch:assert id="a-2228-28449-error" test="@codeSystem"> This code SHALL contain exactly one [1..1] @codeSystem (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28449). </sch:assert> 
-        </sch:rule>
-            
+        </sch:rule>     
     </sch:pattern>
-    
-    <sch:pattern id="Device-Order-Act-V3-pattern-warnings">
-    </sch:pattern>
-    
 </sch:schema>

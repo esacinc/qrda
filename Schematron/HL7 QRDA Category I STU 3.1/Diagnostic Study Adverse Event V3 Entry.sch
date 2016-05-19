@@ -11,10 +11,6 @@
         <sch:active pattern="Diagnostic-Study-Adverse-Event-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Diagnostic-Study-Adverse-Event-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Diagnostic-Study-Adverse-Event-pattern-errors">
         <sch:rule id="Diagnostic-Study-Adverse-Event-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.15']]">
             <sch:assert id="a-2228-11767-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-11767). </sch:assert>
@@ -28,10 +24,5 @@
             <sch:assert id="a-2228-26938-error" test="@code='281647001'">This value SHALL contain exactly one [1..1] @code="281647001" Adverse reaction (CONF:2228-26938). </sch:assert>
             <sch:assert id="a-2228-26939-error" test="@codeSystem='2.16.840.1.113883.6.96'">This value SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CONF:2228-26939). </sch:assert>
         </sch:rule>
-
      </sch:pattern>
-    
-    <sch:pattern id="Diagnostic-Study-Adverse-Event-pattern-warnings">
-    </sch:pattern>
-    
 </sch:schema>

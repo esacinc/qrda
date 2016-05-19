@@ -11,10 +11,6 @@
         <sch:active pattern="Device-Order-V3-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Device-Order-V3-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Device-Order-V3-pattern-errors">
         <sch:rule id="Device-Order-V3-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.9']]">
             <sch:assert id="a-2228-27723-error" test="@classCode='SPLY'">SHALL contain exactly one [1..1] @classCode="SPLY" Supply (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27723). </sch:assert>
@@ -23,11 +19,5 @@
             <sch:assert id="a-2228-27721-error" test="count(cda:templateId [@root='2.16.840.1.113883.10.20.22.4.119'])=1">SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27721).  </sch:assert>
             <sch:assert id="a-2228-12349-error" test="count(cda:participant[@typeCode='DEV'][count(cda:participantRole[@classCode='MANU'][count(cda:playingDevice[@classCode='DEV'][count(cda:code[@sdtc:valueSet])=1])=1])=1])=1">SHALL contain exactly one [1..1] participant (CONF:2228-12349) such that it SHALL contain exactly one [1..1] @typeCode="DEV" device, which SHALL be selected from CodeSystem HL7ParticipationType (urn:oid:2.16.840.1.113883.5.90) (CONF:2228-12350).SHALL contain exactly one [1..1] participantRole (CONF:2228-12351).This participantRole SHALL contain exactly one [1..1] @classCode="MANU" manufactured product, which SHALL be selected from CodeSystem RoleClass (urn:oid:2.16.840.1.113883.5.110) (CONF:2228-12352).This participantRole SHALL contain exactly one [1..1] playingDevice (CONF:2228-12353).This playingDevice SHALL contain exactly one [1..1] @classCode="DEV" device, which SHALL be selected from CodeSystem HL7ParticipationType (urn:oid:2.16.840.1.113883.5.90) (CONF:2228-12354). This playingDevice SHALL contain exactly one [1..1] code (CONF:2228-12355). This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27586).      </sch:assert> 
          </sch:rule>
-        
-        
     </sch:pattern>
-    
-    <sch:pattern id="Device-Order-V3-pattern-warnings">
-    </sch:pattern>
-    
 </sch:schema>

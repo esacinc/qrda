@@ -11,10 +11,6 @@
         <sch:active pattern="Diagnostic-Study-Recommended-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Diagnostic-Study-Recommended-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Diagnostic-Study-Recommended-pattern-errors">
         <sch:rule id="Diagnostic-Study-Recommended-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.19']]">
             <sch:assert id="a-2228-27406-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27406). </sch:assert>
@@ -27,10 +23,5 @@
         <sch:rule id="Diagnostic-Study-Recommended-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.19']]/cda:code">
             <sch:assert id="a-2228-27620-error" test="@sdtc:valueSet">This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27620). </sch:assert>
          </sch:rule>
-
       </sch:pattern>
-    
-    <sch:pattern id="Diagnostic-Study-Recommended-pattern-warnings">
-    </sch:pattern>
-    
 </sch:schema>

@@ -11,15 +11,11 @@
         <sch:active pattern="Comm-Provider-To-Patient-V3-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Comm-Provider-To-Patient-V3-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Comm-Provider-To-Patient-V3-pattern-errors">
         <sch:rule id="Comm-Provider-To-Patient-V3-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.3']]">
             <sch:assert id="a-2228-11840-error" test="@classCode='ACT'">SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-11840). </sch:assert>
             <sch:assert id="a-2228-11841-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-11841). </sch:assert>
-             <sch:assert id="a-2228-11842-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.3'][@extension='2016-02-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-11842) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.3" (CONF:2228-11843). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27280).</sch:assert>
+            <sch:assert id="a-2228-11842-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.3'][@extension='2016-02-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-11842) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.3" (CONF:2228-11843). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27280).</sch:assert>
             <sch:assert id="a-2228-11845-error" test="count(cda:id)&gt;=1">SHALL contain at least one [1..*] id (CONF:2228-11845).</sch:assert>
             <sch:assert id="a-2228-11846-error" test="count(cda:statusCode[@code='completed'])=1">SHALL contain exactly one [1..1] statusCode="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-11846). </sch:assert>
             <sch:assert id="a-2228-26947-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2228-26947).</sch:assert>
@@ -32,11 +28,7 @@
         </sch:rule>
         <sch:rule id="Comm-Provider-To-Patient-V3-effectiveTime-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.3']]/cda:effectiveTime">
             <sch:assert id="a-2228-27545-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-27545). </sch:assert>
-            <sch:assert id="a-2228-27546-error" test="count(cda:high)&lt;=1">This effectiveTime MAY contain zero or one [0..1] high (CONF:2228-27546). </sch:assert>
         </sch:rule>
     </sch:pattern>
-    
-    <sch:pattern id="Comm-Provider-To-Patient-V3-pattern-warnings">
-    </sch:pattern>
-    
+
 </sch:schema>

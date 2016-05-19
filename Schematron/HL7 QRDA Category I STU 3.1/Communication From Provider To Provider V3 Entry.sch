@@ -11,10 +11,6 @@
         <sch:active pattern="Comm-Provider-To-Provider-V3-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Comm-Provider-To-Provider-V3-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Comm-Provider-To-Provider-V3-pattern-errors">
         <sch:rule id="Comm-Provider-To-Provider-V3-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.4']]">
             <sch:assert id="a-2228-11816-error" test="@classCode='ACT'">SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-11816). </sch:assert>
@@ -33,9 +29,6 @@
         <sch:rule id="Comm-Provider-To-Provider-V3-effectiveTime-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.4']]/cda:effectiveTime">
             <sch:assert id="a-2228-27547-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-27547). </sch:assert>
         </sch:rule>
-    </sch:pattern>
-    
-    <sch:pattern id="Comm-Provider-To-Provider-V3-pattern-warnings">
     </sch:pattern>
     
 </sch:schema>

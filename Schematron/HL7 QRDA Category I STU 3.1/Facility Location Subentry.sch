@@ -41,8 +41,8 @@
     
     <sch:pattern id="Facility-Location-pattern-warnings">
         <sch:rule id="Facility-Location-participantRole-warnings" context="cda:participant[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.100']]/cda:participantRole">
-            <sch:assert id="a-67-13379-warning" test="count(cda:addr)=1">This participantRole SHOULD contain zero or more [0..*] addr (CONF:13379). </sch:assert>
-            <sch:assert id="a-67-13380-warning" test="count(cda:telecom)=1">This participantRole SHOULD contain zero or more [0..*] telecom (CONF:13380). </sch:assert>
+            <sch:assert id="a-67-13379-warning" test="count(cda:addr) &gt; 0">This participantRole SHOULD contain zero or more [0..*] addr (CONF:67-13379). </sch:assert>
+            <sch:assert id="a-67-13380-warning" test="count(cda:telecom) &gt; 0">This participantRole SHOULD contain zero or more [0..*] telecom (CONF:67-13380). </sch:assert>
         </sch:rule>
     </sch:pattern>
     

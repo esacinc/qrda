@@ -11,10 +11,6 @@
         <sch:active pattern="Entry-Reference-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Entry-Reference-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Entry-Reference-pattern-errors">
         <sch:rule id="Entry-Reference-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.122']]">
             <sch:assert id="a-1098-31485-error" test="@classCode='ACT'">SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1098-31485). </sch:assert>
@@ -28,10 +24,5 @@
         <sch:rule id="Entry-Reference-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.122']]/cda:code">
             <sch:assert id="a-1098-31491-error" test="@nullFlavor='NP'">This code SHALL contain exactly one [1..1] @nullFlavor="NP" Not Present (CodeSystem: HL7NullFlavor urn:oid:2.16.840.1.113883.5.1008) (CONF:1098-31491).  </sch:assert>
         </sch:rule>
-        
     </sch:pattern>
-    
-    <sch:pattern id="Entry-Reference-pattern-warnings">
-    </sch:pattern>
-    
 </sch:schema>

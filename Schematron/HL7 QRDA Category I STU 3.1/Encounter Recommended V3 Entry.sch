@@ -11,10 +11,6 @@
         <sch:active pattern="Encounter-Recommended-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Encounter-Recommended-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Encounter-Recommended-pattern-errors">
         <sch:rule id="Encounter-Recommended-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.24']]">
             <sch:assert id="a-2228-27549-error" test="@classCode='ENC'">SHALL contain exactly one [1..1] @classCode="ENC" Encounter (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27549). </sch:assert>
@@ -27,8 +23,4 @@
             <sch:assert id="a-2228-27626-error" test="@sdtc:valueSet">This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27626). </sch:assert>
         </sch:rule>    
     </sch:pattern>
-    
-    <sch:pattern id="Encounter-Recommended-pattern-warnings">
-    </sch:pattern>
-    
 </sch:schema>

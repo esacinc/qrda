@@ -11,10 +11,6 @@
         <sch:active pattern="Encounter-Recommended-Act-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Encounter-Recommended-Act-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Encounter-Recommended-Act-pattern-errors">
         <sch:rule id="Encounter-Recommended-Act-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.134']]">
             <sch:assert id="a-2228-28487-error" test="@classCode='ACT'">SHALL contain exactly one [1..1] @classCode="ACT" Act (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28487). </sch:assert>
@@ -24,8 +20,4 @@
             <sch:assert id="a-2228-28486-error" test="count(cda:entryRelationship[@typeCode='SUBJ'][count(cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.24'][@extension='2016-02-01']])=1])=1">SHALL contain exactly one [1..1] entryRelationship (CONF:2228-28486) such that it SHALL contain exactly one [1..1] @typeCode="SUBJ" has subject (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:2228-28492).  SHALL contain exactly one [1..1] Encounter Recommended (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.24:2016-02-01) (CONF:2228-28493).  </sch:assert>
          </sch:rule>
     </sch:pattern>
-    
-    <sch:pattern id="Encounter-Recommended-Act-pattern-warnings">
-    </sch:pattern>
-    
 </sch:schema>

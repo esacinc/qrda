@@ -19,7 +19,7 @@
 					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.23" (CONF:1098-10506).
 					SHALL contain exactly one [1..1] @extension="2014-06-09" (CONF:1098-32579).
 			</sch:assert>
-			<sch:assert id="a-2228-28564-error" test='count(cda:manufacturedMaterial) = 1'>
+			<sch:assert id="a-1098-7411-error" test='count(cda:manufacturedMaterial) = 1'>
 				SHALL contain exactly one [1..1] manufacturedMaterial (CONF:1098-7411).
 			</sch:assert>
 		</sch:rule>

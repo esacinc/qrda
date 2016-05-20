@@ -19,7 +19,7 @@
 					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.31" (CONF:2228-13744).
 					SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-26556).
 			</sch:assert>
-			<sch:assert id='a-2228-13661-error' test='count(cda:code) = 1'>
+			<sch:assert id='a-2228-13746-error' test='count(cda:code) = 1'>
 				SHALL contain exactly one [1..1] code (CONF:2228-13746).		
 			</sch:assert>
 			<sch:assert id='a-2228-27632-error' test='cda:code/@sdtc:valueSet'>

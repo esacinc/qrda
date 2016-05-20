@@ -9,7 +9,8 @@
 	<sch:pattern id='Laboratory_Test_Order_V3-pattern-errors'>
 		<sch:rule id='Laboratory_Test_Order_V3-errors' context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.37"]]'>
 			<sch:assert id='a-2228-27417-error' test='@classCode="OBS"'>
-				SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27417).			</sch:assert>
+				SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27417).	
+			</sch:assert>
 			<sch:assert id='a-2228-11953-error' test='@moodCode="RQO"'>
 				SHALL contain exactly one [1..1] @moodCode="RQO" Request (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-11953).
 			</sch:assert>

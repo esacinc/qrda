@@ -12,7 +12,8 @@
 	<sch:pattern id="Medication_Administered_V3-pattern-errors">
 		<sch:rule id="Medication_Administered_V3-errors" context='cda:act[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.42"]]'>
 			<sch:assert id="a-2228-12444-error" test='@classCode="ACT"'>
-				SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-12444).			</sch:assert>
+				SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-12444).
+			</sch:assert>
 			<sch:assert id="a-2228-12445-error" test='@moodCode="EVN"'>
 				SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12445).
 			</sch:assert>

@@ -39,12 +39,6 @@
 				This code SHALL contain exactly one [1..1] @code="29545-1" physical examination (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:2228-13242).
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Physical_Exam_Order_V3-effectiveTime-errors" context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.58"]]/cda:effectiveTime'>
-			<sch:assert id="a-67-26934-error" test='count(cda:low)=1'>
-				This effectiveTime SHALL contain exactly one [1..1] low (CONF:67-26934).
-				Note: QDM Attribute: Start Datetime
-			</sch:assert>
-		</sch:rule>
 		<sch:rule id="Physical_Exam_Order_V3-value-errors" context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.58"]]/cda:value[@xsi:type="CD"]'>
 			<sch:assert id="a-2228-27650-error" test='@sdtc:valueSet'>
 				This value SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27650).

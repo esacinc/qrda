@@ -10,7 +10,7 @@
 		<sch:active pattern="Family_History_Organizer_V3-pattern-warnings"/>
 	</sch:phase>
 	<sch:pattern id="Family_History_Organizer_V3-pattern-errors">
-		<sch:rule id="Family_History_Organizer_V3-errors" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.45'][@extension='2015-08-01']]">
+		<sch:rule id="Family_History_Organizer_V3-errors" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.45']]">
 			<sch:assert id="a-1198-8600-error" test="@classCode='CLUSTER'">
 				SHALL contain exactly one [1..1] @classCode="CLUSTER" Cluster (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1198-8600).
 			</sch:assert>

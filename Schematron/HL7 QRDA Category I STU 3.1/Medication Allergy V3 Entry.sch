@@ -42,7 +42,7 @@
 		</sch:rule>
 		
 		<sch:rule id="Medication_Allergy_V3-value-errors" context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.44"]]/cda:value[@xsi:type="CD"]'>
-			<sch:assert id="a-2228-14135-error" test='@code="416098002"'>
+			<sch:assert id="a-2228-14160-error" test='@code="416098002"'>
 				This value SHALL contain exactly one [1..1] @code="416098002" Drug allergy (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2228-14160).
 			</sch:assert>
 		</sch:rule>

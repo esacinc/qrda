@@ -29,7 +29,7 @@
 			<sch:assert id="a-2228-14134-error" test='count(cda:value[@xsi:type="CD"]) = 1'>
 				SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2228-14134).
 			</sch:assert>
-			<sch:assert id="a-2228-12449-error" test='count(cda:participant[@typeCode="CSM"][count(cda:participantRole[@classCode="MANU"][count(cda:playingEntity[@classCode="MMAT"][count(cda:code[@sdtc:valueSet])=1])=1])=1]) = 1'>
+			<sch:assert id="a-2228-27964-error" test='count(cda:participant[@typeCode="CSM"][count(cda:participantRole[@classCode="MANU"][count(cda:playingEntity[@classCode="MMAT"][count(cda:code[@sdtc:valueSet])=1])=1])=1]) = 1'>
 				SHALL contain exactly one [1..1] participant (CONF:2228-27964) such that it
 					SHALL contain exactly one [1..1] @typeCode="CSM" Consumable (CodeSystem: HL7ParticipationType urn:oid:2.16.840.1.113883.5.90) (CONF:2228-27968).
 					SHALL contain exactly one [1..1] participantRole (CONF:2228-27965).

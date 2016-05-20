@@ -11,10 +11,6 @@
         <sch:active pattern="Encounter-Active-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Encounter-Active-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Encounter-Active-pattern-errors">
         <sch:rule id="Encounter-Active-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.21']]">
             <sch:assert id="a-2228-27530-error" test="@classCode='ENC'">SHALL contain exactly one [1..1] @classCode="ENC" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27530).  </sch:assert>
@@ -36,15 +32,6 @@
         <sch:rule id="Encounter-Active-effectiveTime-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.21']]/cda:effectiveTime">
             <sch:assert id="a-2228-26549-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-26549). </sch:assert>
         </sch:rule>
- 
-        <sch:rule id="Encounter-Active-entryRelationship-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.21']]/cda:entryRelationship">
-            <sch:assert id="a-2228-11908-error" test="@typeCode='RSON'">SHALL contain exactly one [1..1] @typeCode="RSON" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:2228-11908).  </sch:assert>
-            <sch:assert id="a-2228-27157-error" test="count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2014-12-01']])=1">SHALL contain exactly one [1..1] Reason (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.88:2014-12-01) (CONF:2228-27157).  </sch:assert>
-        </sch:rule>
-        
-    </sch:pattern>
-    
-    <sch:pattern id="Encounter-Active-pattern-warnings">
     </sch:pattern>
     
 </sch:schema>

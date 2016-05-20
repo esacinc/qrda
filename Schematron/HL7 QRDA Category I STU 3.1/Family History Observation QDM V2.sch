@@ -4,12 +4,15 @@
 	<sch:ns prefix="sdtc" uri="urn:hl7-org:sdtc"/>
 	<sch:ns prefix="cda" uri="urn:hl7-org:v3"/>
 	<sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
+	
 	<sch:phase id="errors">
 		<sch:active pattern="Family_History_Observation_QDM_V2-pattern-errors"/>
 	</sch:phase>
+	
 	<sch:phase id="warnings">
 		<sch:active pattern="Family_History_Observation_QDM_V2-pattern-warnings"/>
 	</sch:phase>
+	
 	<sch:pattern id="Family_History_Observation_QDM_V2-pattern-errors">
 		<sch:rule id="Family_History_Observation_QDM_V2-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.112'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-27685-error" test="@classCode='OBS'">

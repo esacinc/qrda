@@ -25,8 +25,8 @@
             <sch:assert id="a-1198-8715-error" test="count(cda:effectiveTime)=1">SHALL contain exactly one [1..1] effectiveTime (CONF:1198-8715).  </sch:assert>
         </sch:rule>
  
-        <sch:rule id="Encounter-Activity-code-originalText-reference-value-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.49']]/cda:code/cda:originalText/cda:reference/cda:value">
-            <sch:assert id="a-1198-15972-error" test="starts-with(.,'#')">This reference/@value SHALL begin with a '#' and SHALL point to its corresponding narrative (using the approach defined in CDA Release 2, section 4.3.5.1) (CONF:1198-15972).  </sch:assert>
+        <sch:rule id="Encounter-Activity-code-originalText-reference-value-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.49']]/cda:code/cda:originalText/cda:reference">
+            <sch:assert id="a-1198-15972-error" test="starts-with(@value,'#')">This reference/@value SHALL begin with a '#' and SHALL point to its corresponding narrative (using the approach defined in CDA Release 2, section 4.3.5.1) (CONF:1198-15972).  </sch:assert>
         </sch:rule>
         
         <sch:rule id="Encounter-Activity-performer-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.49']]/cda:performer">
@@ -49,7 +49,7 @@
         </sch:rule>
  
         <sch:rule id="Encounter-Activity-code-originalText-reference-warnings" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.49']]/cda:code/cda:originalText/cda:reference">
-            <sch:assert id="a-1198-15971-warning" test="count(cda:value)=1">The reference, if present, SHOULD contain zero or one [0..1] @value (CONF:1198-15971). </sch:assert>
+            <sch:assert id="a-1198-15971-warning" test="@value">The reference, if present, SHOULD contain zero or one [0..1] @value (CONF:1198-15971). </sch:assert>
         </sch:rule>
  
         <sch:rule id="Encounter-Activity-dischargeDispositionCode-warnings" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.49']]/sdtc:dischargeDispositionCode">

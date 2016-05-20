@@ -11,10 +11,6 @@
         <sch:active pattern="Drug-Monitoring-Act-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Drug-Monitoring-Act-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Drug-Monitoring-Act-pattern-errors">
         <sch:rule id="Drug-Monitoring-Act-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.123']]">
             <sch:assert id="a-1098-30823-error" test="@classCode='ACT'">SHALL contain exactly one [1..1] @classCode="ACT" act (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1098-30823). </sch:assert>
@@ -35,10 +31,5 @@
         <sch:rule id="Drug-Monitoring-Act-statusCode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.123']]/cda:statusCode">
             <sch:assert id="a-1098-32358-error" test="@code">This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet ActStatus urn:oid:2.16.840.1.113883.1.11.159331 DYNAMIC (CONF:1098-32358).  </sch:assert>
         </sch:rule>
-        
-      </sch:pattern>
-    
-    <sch:pattern id="Drug-Monitoring-Act-pattern-warnings">
     </sch:pattern>
-    
 </sch:schema>

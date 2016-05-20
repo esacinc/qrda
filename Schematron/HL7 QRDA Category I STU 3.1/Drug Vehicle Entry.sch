@@ -11,10 +11,6 @@
         <sch:active pattern="Drug-Vehicle-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Drug-Vehicle-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Drug-Vehicle-pattern-errors">
         <sch:rule id="Drug-Vehicle-errors" context="cda:participantRole[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.24']]">
             <sch:assert id="a-81-7490-error" test="@classCode='MANU'">SHALL contain exactly one [1..1] @classCode="MANU" (CodeSystem: RoleClass urn:oid:2.16.840.1.113883.5.110 STATIC) (CONF:817490). </sch:assert>
@@ -32,9 +28,5 @@
             <sch:assert id="a-81-7493-error" test="@code">This playingEntity SHALL contain exactly one [1..1] code (CONF:81-7493). </sch:assert>
         </sch:rule>
         
-      </sch:pattern>
-    
-    <sch:pattern id="Drug-Vehicle-pattern-warnings">
     </sch:pattern>
-    
 </sch:schema>

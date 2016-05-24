@@ -16,7 +16,7 @@
     </sch:phase>
     
     <sch:pattern id="Problem-Concern-Act-pattern-errors">
-		<sch:rule id="Problem-Concern-Act-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.3']]">
+		<sch:rule id="Problem-Concern-Act-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.3']]">
 			  <sch:assert id="a-1198-9024-error" test="@classCode='ACT'">SHALL contain exactly one [1..1] @classCode="ACT" Act (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1198-9024).</sch:assert>
 			  <sch:assert id="a-1198-9025-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:1198-9025).</sch:assert>
 			  <sch:assert id="a-1198-16772-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.3'][@extension='2015-08-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:1198-16772) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.3" (CONF:1198-16773). SHALL contain exactly one [1..1] @extension="2015-08-01" (CONF:1198-32509).</sch:assert>

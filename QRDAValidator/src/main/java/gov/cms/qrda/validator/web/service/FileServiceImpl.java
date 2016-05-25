@@ -398,7 +398,7 @@ public class FileServiceImpl implements FileService {
 	 * 
 	 */
 	public void findExpectedErrorText(File file, FileSpec spec) {
-		final Integer MAXLINE = 20;
+		final Integer MAXLINE = 100; // Search only the first 100 lines.
 		try {
 		FileInputStream source = new FileInputStream(file);
 			BufferedReader br = new BufferedReader(new InputStreamReader(source));

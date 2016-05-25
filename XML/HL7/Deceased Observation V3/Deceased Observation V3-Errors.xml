@@ -4,7 +4,7 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
   <!-- 	
-    Errors added to test Communication from Criticality Observation template schematron error assertions - Dan Donahue
+    Errors added to test Deceased Observation template schematron error assertions - Dan Donahue
     Total Errors Expected: 13
           Failure a-1198-14851-error Bad Class Code
           Failure a-1198-14852-error Bad Mood Code

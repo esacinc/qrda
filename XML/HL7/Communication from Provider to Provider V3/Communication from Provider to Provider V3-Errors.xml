@@ -4,7 +4,7 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
   <!-- 	
-    Errors added to test Communication from Provider to Patient V3 template schematron error assertions - Dan Donahue
+    Errors added to test Communication from Provider to Provider V3 template schematron error assertions - Dan Donahue
     Total Errors Expected: 11
           Failure a-2228-11816-error Bad Class Code
           Failure a-2228-11817-error Missing Mood Code

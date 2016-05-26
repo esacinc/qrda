@@ -28,7 +28,7 @@
 			<sch:assert id="a-2228-13254-error" test='count(cda:value[@xsi:type="CD"]) = 1'>
 				SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2228-13254).
 			</sch:assert>
-			<sch:assert id="a-2228-27345-error" test='count(cda:author) = 1'>
+			<sch:assert id="a-2228-27345-error" test='count(cda:author[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.119"]]) = 1'>
 				SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27345).
 				Note: QDM Attribute: Start Datetime, Stop Datetime
 			</sch:assert>

@@ -45,7 +45,7 @@
 			<sch:assert id="a-1098-30440-warning" test='count(cda:effectiveTime) = 1'>
 				SHOULD contain zero or one [0..1] effectiveTime (CONF:1098-30440).
 			</sch:assert>
-			<sch:assert id="a-1098-32045-warning" test='count(cda:author) &gt; 0'>
+			<sch:assert id="a-1098-32045-warning" test='count(cda:author[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.119"]]) &gt; 0'>
 				SHOULD contain zero or more [0..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-32045).
 			</sch:assert>
 			<sch:assert id="a-1098-31032-warning" test='count(cda:code) = 1'>

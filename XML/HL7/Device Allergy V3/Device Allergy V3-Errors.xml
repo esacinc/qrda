@@ -4,7 +4,7 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
   <!-- 	 
-    Errors added to test Deceased Observation template schematron error assertions - Dan Donahue
+    Errors added to test Device Allergy template schematron error assertions - Dan Donahue
     Total Errors Expected: 9
           Failure a-2228-28437-error Bad Class Code
           Failure a-2228-28438-error Bad Mood Code

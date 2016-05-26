@@ -3,18 +3,21 @@
   <!-- 		
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
-  <!-- 
-    Errors added to test Device Adverse Event template schematron error assertions - Dan Donahue
-    Total Errors Expected: 8
-          Failure a-2228-28048-error Bad Class Code
-          Failure a-2228-28047-error Bad Mood Code
-          Failure a-2228-28049-error negationInd present
-          Failure a-2228-12106-error Wrong extension or root
-          Failure a-2228-12111-error More than one value of type CD
-          Failure a-2228-12189-error Missing or incorrect @code value
-          Failure a-2228-12112-error No participant with: typeCode PRD, one role of class MANU and playingDevice with a classCode and a code from sdtc:valueSet
-          Failure a-2228-12119-error More than one entryRelationship with type MST, inversionInd = true and one Reaction
- 
+  <!-- 	 
+    Errors added to test Device Applied template schematron error assertions - Dan Donahue
+    Total Errors Expected: 11
+          Failure a-2228-28050-error Bad Class Code
+          Failure a-2228-28051-error Bad Mood Code
+          Failure a-2228-12391-error Wrong extension or root
+          Failure a-2228-12391-error More than one code
+          Failure a-2228-12415-error Missing or incorrect @code value
+          Failure a-2228-27536-error Missing or incorrect @codeSystem value
+          Failure a-2228-12394-error Missing statusCode = complete
+          Failure a-2228-12395-error More than one effectiveTime
+          Failure a-2228-27537-error Missing low
+          Failure a-2228-27731-error Missing sdtc:valueSet on tagetSiteCode/translation
+          Failure a-2228-12396-error No participant with: typeCode DEV, one role of class MANU and playingDevice with a classCode = DEV and a code from sdtc:valueSet
+  
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -774,11 +777,11 @@
           <!-- =============================================== -->
           <!-- QDM Datatype: Device, Adverse Event -->
           <entry>
-            <observation classCode="OBSErr" moodCode="EVNErr" negationInd="true"> <!-- a-2228-28048-error Bad Class Code, a-2228-28047-error Bad Mood Code, a-2228-28049-error negationInd present -->
+            <observation classCode="OBS" moodCode="EVN">
               <!-- Conforms to C-CDA R2 Substance or Device Allergy - Intolerance Observation (V2) -->
               <templateId root="2.16.840.1.113883.10.20.24.3.90" extension="2014-06-09"/>
               <!-- Device Adverse Event (V3) templateId -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.5" extension="2014-02-01"/> <!-- a-2228-12106-error Wrong extension or root -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.5" extension="2016-02-01"/>
               <id root="e5f26626-b63a-4b4a-9d5a-8a90215ddd5d"/>
               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
               <statusCode code="completed"/>
@@ -790,11 +793,7 @@
               </effectiveTime>
               <value xsi:type="CD" code="420134006" displayName="propensity to adverse reactions"
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/>
-              <!-- a-2228-12111-error More than one value of type CD -->
-              <value xsi:type="CD" code="420134006err" displayName="propensity to adverse reactions"
-                codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/> <!-- a-2228-12189-error incorrect @code value -->
-              <!-- a-2228-12112-error No participant with: typeCode PRD, one role of class MANU and playingDevice with a classCode and a code from sdtc:valueSet -->
-              <participant typeCode="PRDErr">
+              <participant typeCode="PRD">
                 <participantRole classCode="MANU">
                   <playingDevice classCode="DEV">
                     <!-- Device -->
@@ -816,25 +815,6 @@
                   <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"
                     displayName="Assertion"/>
                   <statusCode code="completed"/>
-                  <effectiveTime>
-                    <low value="20110215"/>
-                    <high value="20110415"/>
-                  </effectiveTime>
-                  <value xsi:type="CD" code="404684003" displayName="Nausea"
-                    sdtc:valueSet="1.2.99999"/>
-                </observation>
-              </entryRelationship>
-              <!-- a-2228-12119-error More than one entryRelationship with type MST, inversionInd = true and one Reaction -->
-              <entryRelationship typeCode="MFST" inversionInd="true">
-                <observation classCode="OBS" moodCode="EVN">
-                  <!-- Conforms to C-CDA R2.1 Reaction Observation (V2) -->
-                  <templateId root="2.16.840.1.113883.10.20.22.4.9" extension="2014-06-09"/>
-                  <!-- Reaction (V2) -->
-                  <templateId root="2.16.840.1.113883.10.20.24.3.85" extension="2014-12-01"/>
-                  <id root="80aed311-8af7-401f-ab7f-727260d2b033"/>
-                  <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"
-                    displayName="Assertion"/>
-                  <statusCode code="completedErr"/>
                   <effectiveTime>
                     <low value="20110215"/>
                     <high value="20110415"/>
@@ -898,35 +878,52 @@
 
           <!-- QDM Datatype: Device, Applied -->
           <entry>
-            <procedure classCode="PROC" moodCode="EVN">
+            <procedure classCode="PROCErr" moodCode="EVNErr"> <!-- a-2228-28050-error Bad Class Code, a-2228-28051-error Bad Mood Code -->
               <!-- Conforms to C-CDA R2.1 Procedure Activity Procedure (V2) -->
               <templateId root="2.16.840.1.113883.10.20.22.4.14" extension="2014-06-09"/>
               <!-- Device Applied (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.7" extension="2016-02-01"/>
+              <templateId root="2.16.840.1.113883.10.20.24.3.7" extension="2017-02-01"/> <!-- a-2228-12391-error Wrong extension or root -->
               <id root="20ebe7a7-a493-447d-922b-5d98fa8b96da"/>
               <code code="360030002" displayName="application of device"
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/>
-              <statusCode code="completed"/>
+              <!-- a-2228-12391-error More than one code -->
+              <code code="360030002eRR" displayName="application of device"
+                 codeSystemName="SNOMED-CT"/> <!-- a-2228-12415-error Missing or incorrect @code value, a-2228-27536-error Missing or incorrect @codeSystem value -->
+              <!-- <statusCode code="completed"/> a-2228-12394-error Missing statusCode = complete -->
               <effectiveTime>
                 <!-- QDM Attribute: Start Datetime -->
                 <low value="20150101"/>
                 <!-- QDM Attribute: Removal Datetime -->
                 <high value="20151201"/>
               </effectiveTime>
+              <!-- a-2228-12395-error More than one effectiveTime -->
+              <effectiveTime>
+                <!-- QDM Attribute: Start Datetime -->
+                <!-- <low value="20150101"/> a-2228-27537-error Missing low -->
+                <!-- QDM Attribute: Removal Datetime -->
+                <high value="20151201"/>
+              </effectiveTime>
+              
               <!-- QDM Attribute: Anatomical Approach Site -->
               <approachSiteCode code="14742008" codeSystem="2.16.840.1.113883.6.96"
                 codeSystemName="SNOMED CT" displayName="large intestinal structure"
                 sdtc:valueSet="1.2.9999"/>
               <!-- QDM Attribute: Anatomical Location Site -->
               <targetSiteCode code="71854001" codeSystem="2.16.840.1.113883.6.96"
-                codeSystemName="SNOMED CT" displayName="colon" sdtc:valueSet="1.2.9999"/>
+                codeSystemName="SNOMED CT" displayName="colon" sdtc:valueSet="1.2.9999">
+                <translation code="854981"
+                  displayName="Condition family member HL7.CCDAR2"
+                  codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" /> <!-- a-2228-27731-error Missing sdtc:valueSet on tagetSiteCode/translation -->
+                  <!-- sdtc:valueSet="2.16.840.1.113883.3.88.12.3221.7.2"/> -->
+              </targetSiteCode> 
+              <!-- a-2228-12396-error No participant with: typeCode DEV, one role of class MANU and playingDevice with a classCode = DEV and a code from sdtc:valueSet -->
               <participant typeCode="DEV">
                 <participantRole classCode="MANU">
                   <playingDevice classCode="DEV">
                     <!-- Device -->
                     <code code="401608003" codeSystem="2.16.840.1.113883.6.96"
-                      codeSystemName="SNOMED-CT" displayName="Suprapubic catheter (physical object)"
-                      sdtc:valueSet="2.16.840.1.113883.3.666.5.827"/>
+                      codeSystemName="SNOMED-CT" displayName="Suprapubic catheter (physical object)" />
+                      <!-- sdtc:valueSet="2.16.840.1.113883.3.666.5.827"/> -->
                   </playingDevice>
                 </participantRole>
               </participant>

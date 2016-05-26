@@ -3,19 +3,20 @@
   <!-- 		
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
-  <!-- 
-    Errors added to test Device Adverse Event template schematron error assertions - Dan Donahue
-    Total Errors Expected: 8
-          Failure a-2228-28048-error Bad Class Code
-          Failure a-2228-28047-error Bad Mood Code
-          Failure a-2228-28049-error negationInd present
-          Failure a-2228-12106-error Wrong extension or root
-          Failure a-2228-12111-error More than one value of type CD
-          Failure a-2228-12189-error Missing or incorrect @code value
-          Failure a-2228-12112-error No participant with: typeCode PRD, one role of class MANU and playingDevice with a classCode and a code from sdtc:valueSet
-          Failure a-2228-12119-error More than one entryRelationship with type MST, inversionInd = true and one Reaction
+  <!-- 	 
+    Errors added to test Device Allergy template schematron error assertions - Dan Donahue
+    Total Errors Expected: 9
+          Failure a-2228-28437-error Bad Class Code
+          Failure a-2228-28438-error Bad Mood Code
+          Failure a-2228-28439-error negationInd present
+          Failure a-2228-12134-error Wrong extension or root
+          Failure a-2228-12140-error More than one value of type CD
+          Failure a-2228-12188-error Missing or incorrect @code value
+          Failure a-2228-28440-error Missing or incorrect @codeSystem value
+          Failure a-2228-12141-error No participant with: typeCode PRD, one role of class MANU and playingDevice with a classCode and a code from sdtc:valueSet
+          Failure a-2228-12148-error More than one entryRelationship with type MST, inversionInd = true and one Reaction
  
-    This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
+ This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
     This sample file is informative only. 	
@@ -774,11 +775,11 @@
           <!-- =============================================== -->
           <!-- QDM Datatype: Device, Adverse Event -->
           <entry>
-            <observation classCode="OBSErr" moodCode="EVNErr" negationInd="true"> <!-- a-2228-28048-error Bad Class Code, a-2228-28047-error Bad Mood Code, a-2228-28049-error negationInd present -->
+            <observation classCode="OBS" moodCode="EVN">
               <!-- Conforms to C-CDA R2 Substance or Device Allergy - Intolerance Observation (V2) -->
               <templateId root="2.16.840.1.113883.10.20.24.3.90" extension="2014-06-09"/>
               <!-- Device Adverse Event (V3) templateId -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.5" extension="2014-02-01"/> <!-- a-2228-12106-error Wrong extension or root -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.5" extension="2016-02-01"/>
               <id root="e5f26626-b63a-4b4a-9d5a-8a90215ddd5d"/>
               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
               <statusCode code="completed"/>
@@ -790,11 +791,7 @@
               </effectiveTime>
               <value xsi:type="CD" code="420134006" displayName="propensity to adverse reactions"
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/>
-              <!-- a-2228-12111-error More than one value of type CD -->
-              <value xsi:type="CD" code="420134006err" displayName="propensity to adverse reactions"
-                codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/> <!-- a-2228-12189-error incorrect @code value -->
-              <!-- a-2228-12112-error No participant with: typeCode PRD, one role of class MANU and playingDevice with a classCode and a code from sdtc:valueSet -->
-              <participant typeCode="PRDErr">
+              <participant typeCode="PRD">
                 <participantRole classCode="MANU">
                   <playingDevice classCode="DEV">
                     <!-- Device -->
@@ -824,35 +821,16 @@
                     sdtc:valueSet="1.2.99999"/>
                 </observation>
               </entryRelationship>
-              <!-- a-2228-12119-error More than one entryRelationship with type MST, inversionInd = true and one Reaction -->
-              <entryRelationship typeCode="MFST" inversionInd="true">
-                <observation classCode="OBS" moodCode="EVN">
-                  <!-- Conforms to C-CDA R2.1 Reaction Observation (V2) -->
-                  <templateId root="2.16.840.1.113883.10.20.22.4.9" extension="2014-06-09"/>
-                  <!-- Reaction (V2) -->
-                  <templateId root="2.16.840.1.113883.10.20.24.3.85" extension="2014-12-01"/>
-                  <id root="80aed311-8af7-401f-ab7f-727260d2b033"/>
-                  <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"
-                    displayName="Assertion"/>
-                  <statusCode code="completedErr"/>
-                  <effectiveTime>
-                    <low value="20110215"/>
-                    <high value="20110415"/>
-                  </effectiveTime>
-                  <value xsi:type="CD" code="404684003" displayName="Nausea"
-                    sdtc:valueSet="1.2.99999"/>
-                </observation>
-              </entryRelationship>
             </observation>
           </entry>
 
           <!-- QDM Datatype: Device, Allergy -->
           <entry>
-            <observation classCode="OBS" moodCode="EVN">
+            <observation classCode="OBSErr" moodCode="EVNErr" negationInd="true"> <!-- a-2228-28437-error Bad Class Code, a-2228-28438-error Bad Mood Code, a-2228-28439-error negationInd present -->
               <!-- Conforms to C-CDA R2.1 Substance or Device Allergy - Intolerance Observation (V2) -->
               <templateId root="2.16.840.1.113883.10.20.24.3.90" extension="2014-06-09"/>
               <!-- Device Allergy (V3)-->
-              <templateId root="2.16.840.1.113883.10.20.24.3.6" extension="2016-02-01"/>
+              <templateId root="2.16.840.1.113883.10.20.24.3.6" extension="2015-02-01"/> <!-- a-2228-12134-error Wrong extension or root -->
               <id root="68c53659-2058-47c2-9e80-de5e4aafdaf8"/>
               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
               <statusCode code="completed"/>
@@ -864,9 +842,13 @@
               </effectiveTime>
               <value xsi:type="CD" code="419199007" displayName="allergy to substance"
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/>
+              <!-- a-2228-12140-error More than one value of type CD -->
+              <value xsi:type="CD" code="419199007Err" displayName="allergy to substance"
+                codeSystemName="SNOMED-CT"/> <!-- a-2228-12188-error Missing or incorrect @code value, a-2228-28440-error Missing or incorrect @codeSystem value -->
+              <!-- a-2228-12112-error No participant with: typeCode PRD, one role of class MANU and playingDevice with a classCode and a code from sdtc:valueSet -->
               <participant typeCode="PRD">
                 <participantRole classCode="MANU">
-                  <playingDevice classCode="DEV">
+                  <playingDevice classCode="DEVErr">
                     <!-- Device -->
                     <code code="401608003" codeSystem="2.16.840.1.113883.6.96"
                       codeSystemName="SNOMED-CT" displayName="Suprapubic catheter (physical object)"
@@ -893,6 +875,26 @@
                     sdtc:valueSet="1.2.99999"/>
                 </observation>
               </entryRelationship>
+              <!-- a-2228-12119-error More than one entryRelationship with type MST, inversionInd = true and one Reaction -->
+              <entryRelationship typeCode="MFST" inversionInd="true">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conforms to C-CDA R2.1 Reaction Observation (V2) -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.9" extension="2014-06-09"/>
+                  <!-- Reaction (V2) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.85" extension="2014-12-01"/>
+                  <id root="80aed311-8af7-401f-ab7f-727260d2b033"/>
+                  <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"
+                    displayName="Assertion"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20150215"/>
+                    <high value="20150415"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="404684003" displayName="Nausea"
+                    sdtc:valueSet="1.2.99999"/>
+                </observation>
+              </entryRelationship>
+              
             </observation>
           </entry>
 

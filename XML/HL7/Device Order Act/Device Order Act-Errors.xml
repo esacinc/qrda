@@ -4,7 +4,7 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
   <!-- 	 
-    Errors added to test Device Intolerance template schematron error assertions - Dan Donahue
+    Errors added to test Device Order Act template schematron error assertions - Dan Donahue
     Total Errors Expected: 7
           Failure a-2228-28444-error Bad Class Code
           Failure a-2228-28445-error Bad Mood Code

@@ -60,7 +60,7 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Family_History_Organizer_V3-pattern-may-subject-errors" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.45'][@extension='2015-08-01']]/cda:subject/cda:relatedSubject/cda:subject">
+		<sch:rule id="Family_History_Organizer_V3-pattern-may-subject-errors" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.45']]/cda:subject/cda:relatedSubject/cda:subject">
 				<sch:assert id="a-1198-15981-error" test="count(sdtc:deceasedInd)=1">
 					The subject MAY contain zero or one [0..1] sdtc:deceasedInd. The prefix sdtc: SHALL be bound to the namespace “urn:hl7-org:sdtc”. The use of the namespace provides a necessary extension to CDA R2 for the use of the deceasedInd element (CONF:1198-15981).
 				</sch:assert>
@@ -71,7 +71,7 @@
 	</sch:pattern>
 	
 	<sch:pattern id="Family_History_Organizer_V3-pattern-warnings">
-		<sch:rule id="Family_History_Organizer_QDM_V2-subject-birthTime-warnings" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.45'][@extension='2015-08-01']]">
+		<sch:rule id="Family_History_Organizer_QDM_V2-subject-birthTime-warnings" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.45']]">
 			<sch:assert id="a-1198-15248-warning" test="count(cda:subject/cda:relatedSubject/cda:subject) = 1">
 				This relatedSubject SHOULD contain zero or one [0..1] subject (CONF:1198-15248).			
 			</sch:assert>

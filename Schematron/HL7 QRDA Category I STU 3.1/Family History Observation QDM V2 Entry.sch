@@ -34,7 +34,7 @@
 			</sch:assert>
 		</sch:rule>
 	
-		<sch:rule id="Family_History_Observation_QDM_V2-may-code-translation-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.112'][@extension='2016-02-01']]/cda:code/cda:translation">
+		<sch:rule id="Family_History_Observation_QDM_V2-may-code-translation-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.112']]/cda:code/cda:translation">
 				<sch:assert id="a-2228-27695-error" test="@sdtc:valueSet">
 					This value MAY contain zero or more [0..*] translation (CONF:2228-27691).The translation, if present, SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27695).
 				</sch:assert>
@@ -43,7 +43,7 @@
 	</sch:pattern>
 
 	<sch:pattern id="Family_History_Observation_QDM_V2-pattern-warnings">
-		<sch:rule id="Family_History_Observation_QDM_V2-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.112'][@extension='2016-02-01']]">
+		<sch:rule id="Family_History_Observation_QDM_V2-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.112']]">
 			<sch:assert id="a-12228-27694-warning" test="cda:value[@xsi:type='CD'][@sdtc:valueSet]">
 				This value SHOULD contain zero or one [0..1] @sdtc:valueSet (CONF:2228-27694).
 			</sch:assert>

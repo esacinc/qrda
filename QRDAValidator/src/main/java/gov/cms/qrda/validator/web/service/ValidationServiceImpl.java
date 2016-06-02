@@ -539,6 +539,7 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 			Node text = findSubNode("svrl:text", failure, tc);
 			if (text != null) {
 				String failureText = getNodeText(text);
+				failureText = failureText.replace(". ",".<br/>"); // Make failure text more readable by adding some line breaks
 				fail.setStatement(failureText);
 			}
 			

@@ -84,7 +84,7 @@
         </sch:rule>
         <sch:rule id="QRDA_Category_III-documentationOf-serviceEvent-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1']]/cda:documentationOf/cda:serviceEvent">
             <sch:assert id="a-2226-18172-error" test="@classCode='PCPR'">This serviceEvent SHALL contain exactly one [1..1] @classCode="PCPR" Care Provision (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:2226-18172).</sch:assert>
-            <sch:assert id="a-2226-18173-error" test="count(cda:performer)=1">This serviceEvent SHALL contain at least one [1..*] performer (CONF:2226-18173).</sch:assert>
+            <sch:assert id="a-2226-18173-error" test="count(cda:performer) &gt; 0">This serviceEvent SHALL contain at least one [1..*] performer (CONF:2226-18173).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_III-documentationOf-serviceEvent-performer-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1']]/cda:documentationOf/cda:serviceEvent/cda:performer">
             <sch:assert id="a-2226-18174-error" test="@typeCode='PRF'">Such performers SHALL contain exactly one [1..1] @typeCode="PRF" Performer (CodeSystem: HL7ParticipationType urn:oid:2.16.840.1.113883.5.90 STATIC) (CONF:2226-18174).</sch:assert>

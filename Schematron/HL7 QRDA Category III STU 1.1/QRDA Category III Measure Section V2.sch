@@ -14,7 +14,7 @@
     <sch:pattern id="QRDA_Category_III_Measure-pattern-errors">
         <sch:rule id="QRDA_Category_III_Measure-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.1']]">
             <sch:assert id="a-2226-17284-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.2.1'][@extension='2016-02-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2226-17284) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.2.1" (CONF:2226-17285). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2226-21171).</sch:assert>
-            <sch:assert id="a-2226-17906-error" test="count(cda:entry[count(cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.1'][@extension='2016-02-01']])=1]) &gt; 0"></sch:assert>
+            <sch:assert id="a-2226-17906-error" test="count(cda:entry[count(cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.1'][@extension='2016-02-01']])=1]) &gt; 0">SHALL contain at least one [1..*] entry (CONF:2226-17906) such that it SHALL contain exactly one [1..1] Measure Reference and Results (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.1:2016-02-01) (CONF:2226-17907)</sch:assert>
         </sch:rule>
     </sch:pattern>
 </sch:schema>

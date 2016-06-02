@@ -4,7 +4,8 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
-   Total number of errors expected: 9
+   Total number of errors expected: 7
+   Total number of warning expected: 2
    CONF numbers tested: CONF:1098-30418, CONF:1098-30419, CONF:1098-8583, CONF:1098-32332, CONF:1098-30784, CONF:1098-32333, CONF:1098-30995, CONF:1098-32335, CONF:1098-30785
   -->
 
@@ -469,8 +470,8 @@
 							<!-- ID missing test for CONF:1098-32332. --> 
 							<code-err code="44616-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Pulse oximetry panel" sdtc:valueSet="1.2.9999"/> <!-- Test for CONF:1098-30784 -->
 							<text>Care Goal: Pulse Oximetry greater than 92%</text>
-							<statusCode-err code="active"/> <!-- Test for CONF#: -->
-							<effectiveTime-err> <!-- Test for CONF#: -->
+							<statusCode-err code="active"/> <!-- Test for CONF:1098-32333 -->
+							<effectiveTime-err> <!-- Test for CONF:1098-32335 -->
 								<!-- QDM Attribute: Start datetime -->
 								<low value="20160101"/>
 								<!-- QDM Attribute: Stop datetime -->
@@ -483,7 +484,7 @@
                 whether this is a patient or a provider goal-->
 							<author>
 								<!-- C-CDA R2.1 Author Participation -->
-								<templateId root="2.16.840.1.113883.10.20.22.4.119-err"/> <!-- Test for CONF#: -->
+								<templateId root="2.16.840.1.113883.10.20.22.4.119-err"/> <!-- Test for CONF:1098-30995 -->
 								<time value="201601011130"/>
 								<assignedAuthor>
 									<id root="2.16.840.1.113883.4.6" extension="111111111"/>
@@ -508,7 +509,7 @@
 							<entryRelationship typeCode="REFR"> 
 								<observation classCode="OBS" moodCode="EVN">
 									<!-- Priority Preference -->
-									<templateId root="2.16.840.1.113883.10.20.22.4.143-err"/> <!-- Test for CONF#: -->
+									<templateId root="2.16.840.1.113883.10.20.22.4.143-err"/> <!-- Test for CONF:1098-30785 -->
 									<id root="9a6d1bac-17d3-4195-89a4-1121bc809b4d"/>
 									<code code="225773000" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96"> </code>
 									<effectiveTime value="20130615"/>

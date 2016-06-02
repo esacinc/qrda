@@ -36,11 +36,5 @@
             <sch:assert id="a-1109-19510-error" test="@code='COUNT'">This methodCode SHALL contain exactly one [1..1] @code="COUNT" Count (CONF:1109-19510).</sch:assert>
             <sch:assert id="a-1109-21161-error" test="@codeSystem='2.16.840.1.113883.5.84'">This methodCode SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.5.84" (CodeSystem: ObservationMethod urn:oid:2.16.840.1.113883.5.84) (CONF:1109-21161).</sch:assert>
         </sch:rule>
-        <sch:rule id="Aggregate_count_CMS-referenceRange-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.24']]/cda:referenceRange">
-            <sch:assert id="a-1109-18393-error" test="count(cda:observationRange)=1">The referenceRange, if present, SHALL contain exactly one [1..1] observationRange (CONF:1109-18393).</sch:assert>
-        </sch:rule>
-        <sch:rule id="Aggregate_count_CMS-referenceRange-observationRange-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.24']]/cda:referenceRange/cda:observationRange">
-            <sch:assert id="a-1109-18394-error" test="count(cda:value[@xsi:type='INT'])=1">This observationRange SHALL contain exactly one [1..1] value with @xsi:type="INT" (CONF:1109-18394).</sch:assert>
-        </sch:rule>
     </sch:pattern>
 </sch:schema>

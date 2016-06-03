@@ -38,13 +38,11 @@
             <sch:assert id="a-1098-8253-error" test="count(cda:id)&gt;=1">This assignedEntity SHALL contain at least one [1..*] id (CONF:1098-8253). </sch:assert>
             <sch:assert id="a-1098-8254-error" test="count(cda:addr)&gt;=1">This assignedEntity SHALL contain at least one [1..*] addr (CONF:1098-8254).   </sch:assert>
             <sch:assert id="a-1098-8255-error" test="count(cda:telecom)&gt;=1">This assignedEntity SHALL contain at least one [1..*] telecom (CONF:1098-8255).   </sch:assert>
-        </sch:rule>
-         
+        </sch:rule>        
         <sch:rule id="Procedure-Activity-Observation-performer-assignedEntity-representedOrganization-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.13']]/cda:performer/cda:assignedEntity/cda:representedOrganization">
             <sch:assert id="a-1098-8259-error" test="count(cda:addr)&gt;=1">The representedOrganization, if present, SHALL contain exactly one [1..1] addr (CONF:1098-8259). </sch:assert>
             <sch:assert id="a-1098-8260-error" test="count(cda:telecom)&gt;=1">The representedOrganization, if present, SHALL contain exactly one [1..1] telecom (CONF:1098-8260). </sch:assert>
-        </sch:rule>
-        
+        </sch:rule>        
     </sch:pattern>
     
     <sch:pattern id="Procedure-Activity-Observation-pattern-warnings">
@@ -53,12 +51,10 @@
             <sch:assert id="a-1098-8250-warning" test="count(cda:targetSiteCode)&gt;=1">SHOULD contain zero or more [0..*] targetSiteCode, which SHALL be selected from ValueSet Body Site urn:oid:2.16.840.1.113883.3.88.12.3221.8.9 DYNAMIC (CONF:1098-8250). </sch:assert>
             <sch:assert id="a-1098-8251-warning" test="count(cda:performer)&gt;=1">SHOULD contain zero or more [0..*] performer (CONF:1098-8251). </sch:assert>
             <sch:assert id="a-1098-32478-warning" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']])&gt;=1">SHOULD contain at least one [1..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-32478). </sch:assert>
-        </sch:rule>
-        
+        </sch:rule>       
         <sch:rule id="Procedure-Activity-Observation-code-warnings" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.13']]/cda:code">
             <sch:assert id="a-1098-19198-warning" test="count(cda:originalText)=1">This code SHOULD contain zero or one [0..1] originalText (CONF:1098-19198). </sch:assert>
-        </sch:rule>  
- 
+        </sch:rule>   
         <sch:rule id="Procedure-Activity-Observation-code-originalText-warnings" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.13']]/cda:code/cda:originalText">
             <sch:assert id="a-1098-19199-warning" test="count(cda:reference)=1">The originalText, if present, SHOULD contain zero or one [0..1] reference (CONF:1098-19199). </sch:assert>
         </sch:rule>  
@@ -70,8 +66,7 @@
         </sch:rule>  
         <sch:rule id="Procedure-Activity-Observation-performer-assignedEntity-representedOrganization-warnings" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.13']]/cda:performer/cda:assignedEntity/cda:representedOrganization">
             <sch:assert id="a-1098-8257-warning" test="count(cda:id)&gt;=1">The representedOrganization, if present, SHOULD contain zero or more [0..*] id (CONF:1098-8257). </sch:assert>
-        </sch:rule>   
-        
-        
+        </sch:rule>           
     </sch:pattern>
+    
 </sch:schema>

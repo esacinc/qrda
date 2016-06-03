@@ -23,12 +23,10 @@
 			  <sch:assert id="a-1098-8584-error" test="count(cda:id) &gt;= 1">SHALL contain at least one [1..*] id (CONF:1098-8584).</sch:assert>
 			  <sch:assert id="a-1098-30453-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:1098-30453).</sch:assert>
 			  <sch:assert id="a-1098-31030-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code, which SHOULD be selected from CodeSystem LOINC (urn:oid:2.16.840.1.113883.6.1) (CONF:1098-31030).</sch:assert>
-		</sch:rule>
-        
+		</sch:rule>       
         <sch:rule id="Planned-Observation-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.44']]/cda:statusCode">
 			  <sch:assert id="a-1098-32032-error" test="@code='active'">This statusCode SHALL contain exactly one [1..1] @code="active" Active (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-32032).</sch:assert>
-        </sch:rule>               
-        
+        </sch:rule>                      
     </sch:pattern>
     
     <sch:pattern id="Planned-Observation-pattern-warnings">
@@ -38,4 +36,5 @@
 			<sch:assert id="a-1098-32044" test="count(cda:targetSiteCode) &gt;= 1">SHOULD contain zero or more [0..*] targetSiteCode, which SHALL be selected from ValueSet Body Site urn:oid:2.16.840.1.113883.3.88.12.3221.8.9 DYNAMIC (CONF:1098-32044).</sch:assert>
 		</sch:rule>
      </sch:pattern>
+    
 </sch:schema>

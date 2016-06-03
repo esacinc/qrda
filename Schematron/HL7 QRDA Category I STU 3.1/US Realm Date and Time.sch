@@ -16,7 +16,8 @@
     </sch:phase>
     
     <sch:pattern id="US-Realm-Date-and-Time-pattern-errors">
-        <sch:rule id="US-Realm-Date-and-Time-effectiveTime-errors" context="//* [cda:effectiveTime[parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]]]">
+        <sch:rule id="US-Realm-Date-and-Time-effectiveTime-errors" context="//* [cda:effectiveTime[parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]
+            or parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]]]">
             <sch:assert id="a-81-10127-e-error" test="string-length(@value)&gt;=8">*SHALL* be precise to the day (CONF:81-10127).</sch:assert>
         </sch:rule>
         <sch:rule id="US-Realm-Date-and-Time-errors" context="//* [cda:time[parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]/cda:author

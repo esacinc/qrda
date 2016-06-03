@@ -9,9 +9,6 @@
 	<sch:phase id="errors">
 		<sch:active pattern="QRDA_Category_III_Payer_Supplemental_Data_Element_CMS_EP_V2-pattern-errors"/>
 	</sch:phase>
-	<sch:phase id="warnings">
-		<sch:active pattern="QRDA_Category_III_Payer_Supplemental_Data_Element_CMS_EP_V2-pattern-warnings"/>
-	</sch:phase>
 	
 	<sch:pattern id="QRDA_Category_III_Payer_Supplemental_Data_Element_CMS_EP_V2-pattern-errors">
 		<sch:rule id="QRDA_Category_III_Payer_Supplemental_Data_Element_CMS_EP_V2-errors" context='cda:observation[cda:templateId[@root = "2.16.840.1.113883.10.20.27.3.18"]]'>

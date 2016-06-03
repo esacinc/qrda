@@ -11,18 +11,11 @@
         <sch:active pattern="US-Realm-Patient-Name-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="US-Realm-Patient-Name-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="US-Realm-Patient-Name-pattern-errors">
-        <sch:rule id="US-Realm-Patient-Name-errors" context="cda:name[cda:templateId[@root='2.16.840.1.113883.10.20.22.5.1']]">
+        <sch:rule id="US-Realm-Patient-Name-errors" context="//* [cda:name[parent::cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.123']]/cda:participant/cda:participantRole/cda:playingEntity]]">
             <sch:assert id="a-81-7159-error" test="count(cda:family[@xsi:type='ST'])=1">SHALL contain exactly one [1..1] family (CONF:81-7159).</sch:assert>
             <sch:assert id="a-81-7157-error" test="count(cda:given[@xsi:type='ST']) &gt;=1">SHALL contain at least one [1..*] given (CONF:81-7157).</sch:assert>
          </sch:rule>
-    </sch:pattern>
-    
-    <sch:pattern id="US-Realm-Patient-Name-pattern-warnings">
     </sch:pattern>
     
 </sch:schema>

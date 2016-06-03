@@ -51,11 +51,6 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Medication_Dispense_V2-may-addr-errors" context='cda:supply[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.18"]]/cda:performer/cda:assignedEntity/cda:addr'>
-			<sch:assert id="a-1098-10565-error" test='(count(cda:city) = 1) and (count(cda:streetAddressLine) = 1)'>
-				The content of addr SHALL be a conformant US Realm Address (AD.US.FIELDED) (2.16.840.1.113883.10.20.22.5.2) (CONF:1098-10565).
-			</sch:assert>
-		</sch:rule>
 	</sch:pattern>
 	
 	<sch:pattern id="Medication_Dispense_V2-pattern-warnings">

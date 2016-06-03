@@ -11,7 +11,7 @@
 			<sch:assert id='a-67-12979-error' test='@classCode="CLUSTER"'>
 				SHALL contain exactly one [1..1] @classCode="CLUSTER" cluster (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:67-12979).			
 			</sch:assert>
-			<sch:assert id='a-67-12980-error' test='@moodCode="INT"'>
+			<sch:assert id='a-67-12980-error' test='@moodCode="EVN"'>
 				SHALL contain exactly one [1..1] @moodCode="EVN" event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:67-12980).
 			</sch:assert>
 			<sch:assert id='a-67-19532-error' test='count(cda:templateId[@root="2.16.840.1.113883.10.20.24.3.98"]) = 1'>
@@ -21,7 +21,7 @@
 			<sch:assert id='a-67-26992-error' test='count(cda:id) &gt; 0'>
 				SHALL contain at least one [1..*] id (CONF:67-26992).			
 			</sch:assert>
-			<sch:assert id='a-67-12981-error' test='cda:code[@statusCode="completed"]'>
+			<sch:assert id='a-67-12981-error' test='cda:statusCode[@code="completed"]'>
 				SHALL contain exactly one [1..1] statusCode="completed" completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:67-12981).
 			</sch:assert>
 			<sch:assert id='a-67-12982-error' test='count(cda:reference[@typeCode="REFR"][count(cda:externalDocument)=1])=1'>

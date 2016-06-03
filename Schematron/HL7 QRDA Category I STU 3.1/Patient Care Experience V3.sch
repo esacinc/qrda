@@ -6,15 +6,11 @@
 	<sch:ns prefix="cda" uri="urn:hl7-org:v3" />
 	
 	<sch:phase id="errors">
-		<sch:active pattern="Medication_Supply_Order_V2-pattern-errors" />
+		<sch:active pattern="Patient_care_experience-pattern-errors" />
 	</sch:phase>
 	
-	<sch:phase id="warnings">
-		<sch:active pattern="Medication_Supply_Order_V2-pattern-warnings" />
-	</sch:phase>
-	
-	<sch:pattern id="Medication_Supply_Order_V2-pattern-errors">
-		<sch:rule id="Medication_Supply_Order_V2-errors" context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.48"]]'>
+	<sch:pattern id="Patient_care_experience-pattern-errors">
+		<sch:rule id="Patient_care_experience-errors" context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.48"]]'>
 			<sch:assert id="a-2228-12464-error" test='@classCode="OBS"'>
 				SHALL contain exactly one [1..1] @classCode="OBS" observation, which SHALL be selected from CodeSystem HL7ActClass (urn:oid:2.16.840.1.113883.5.6) (CONF:2228-12464).			
 			</sch:assert>
@@ -46,7 +42,7 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Medication_Supply_Order_V2-code-errors" context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.48"]]/cda:code'>
+		<sch:rule id="Patient_care_experience-code-errors" context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.48"]]/cda:code'>
 			<sch:assert id="a-2228-13037-error" test='@code="77218-6"'>
 				This code SHALL contain exactly one [1..1] @code="77218-6" Patient satisfaction with healthcare delivery (CONF:2228-13037).
 			</sch:assert>
@@ -55,15 +51,14 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Medication_Supply_Order_V2-effectiveTime-errors" context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.48"]]/cda:effectiveTime'>
+		<sch:rule id="Patient_care_experience-effectiveTime-errors" context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.48"]]/cda:effectiveTime'>
 			<sch:assert id="a-2228-27553-error" test='count(cda:low) = 1'>
 				This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-27553).
-				Note: QDM Attribute: Start Datetime
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Supply_Order_V2-value-errors" context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.48"]]/cda:value"'>
-			<sch:assert id="a-2228-27647-error" test='count(cda:low) = 1'>
+		<sch:rule id="Patient_care_experience-value-errors" context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.48"]]/cda:value'>
+			<sch:assert id="a-2228-27647-error" test='@sdtc:valueSet'>
 				This value SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27647).
 			</sch:assert>
 		</sch:rule>

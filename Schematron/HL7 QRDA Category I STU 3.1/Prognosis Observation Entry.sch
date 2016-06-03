@@ -11,10 +11,6 @@
         <sch:active pattern="Prognosis-Observation-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Prognosis-Observation-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Prognosis-Observation-pattern-errors">
         <sch:rule id="Prognosis-Observation-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.113']]">
             <sch:assert id="a-1098-29035-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-29035).</sch:assert>
@@ -28,15 +24,10 @@
         <sch:rule id="Prognosis-Observation-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.113']]/cda:code">
             <sch:assert id="a-1098-29468-error" test="@code='75328-5'">This code SHALL contain exactly one [1..1] @code="75328-5" Prognosis (CONF:1098-29468). </sch:assert>
             <sch:assert id="a-1098-31349-error" test="@codeSystem='2.16.840.1.113883.6.1'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:1098-31349). </sch:assert>
-        </sch:rule>
-        
+        </sch:rule>       
         <sch:rule id="Prognosis-Observation-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.113']]/cda:statusCode">
             <sch:assert id="a-1098-31351-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-31351).</sch:assert>
-        </sch:rule>
-        
+        </sch:rule>       
      </sch:pattern>
-    
-    <sch:pattern id="Prognosis-Observation-pattern-warnings">
-    </sch:pattern>
-    
+   
 </sch:schema>

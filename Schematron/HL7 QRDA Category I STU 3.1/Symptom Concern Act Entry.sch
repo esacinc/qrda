@@ -10,11 +10,7 @@
     <sch:phase id="errors">
         <sch:active pattern="Symptom-Concern-Act-pattern-errors" />
     </sch:phase>
-    
-    <sch:phase id="warnings">
-        <sch:active pattern="Symptom-Concern-Act-pattern-warnings" />
-    </sch:phase>
-    
+   
     <sch:pattern id="Symptom-Concern-Act-pattern-errors">
         <sch:rule id="Symptom-Concern-Act-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.138']]">
             <sch:assert id="a-2228-28547-error" test="@classCode='ACT'">SHALL contain exactly one [1..1] @classCode="ACT" Act (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28547). </sch:assert>
@@ -31,7 +27,5 @@
             <sch:assert id="a-2228-28546-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-28546).  </sch:assert>
          </sch:rule>
     </sch:pattern>
-    
-    <sch:pattern id="Symptom-Concern-Act-pattern-warnings">
-    </sch:pattern>
+
 </sch:schema>

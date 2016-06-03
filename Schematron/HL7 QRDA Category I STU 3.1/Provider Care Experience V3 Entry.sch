@@ -11,10 +11,6 @@
         <sch:active pattern="Provider-Care-Experience-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Provider-Care-Experience-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Provider-Care-Experience-pattern-errors">
         <sch:rule id="Provider-Care-Experience-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.67']]">
 		  <sch:assert id="a-2228-12479-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" observation, which SHALL be selected from CodeSystem HL7ActClass (urn:oid:2.16.840.1.113883.5.6) (CONF:2228-12479).</sch:assert>
@@ -26,24 +22,17 @@
 		  <sch:assert id="a-2228-12486-error" test="count(cda:statusCode[@code='completed'])=1">SHALL contain exactly one [1..1] statusCode="completed", which SHALL be selected from CodeSystem ActStatus (urn:oid:2.16.840.1.113883.5.14) (CONF:2228-12486).</sch:assert>
 		  <sch:assert id="a-2228-12487-error" test="count(cda:effectiveTime)=1">SHALL contain exactly one [1..1] effectiveTime (CONF:2228-12487).</sch:assert>
 		  <sch:assert id="a-2228-12572-error" test="count(cda:value[@xsi:type='CD'])=1">SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2228-12572).</sch:assert>
-
-		  
-		</sch:rule>
-        
+		</sch:rule>        
         <sch:rule id="Provider-Care-Experience-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.67']]/cda:code">
 		  <sch:assert id="a-2228-27562-error" test="@code='77219-4'">This code SHALL contain exactly one [1..1] @code="77219-4" Provider satisfaction with healthcare delivery (CONF:2228-27562).</sch:assert>
 		  <sch:assert id="a-2228-27563-error" test="@codeSystem='2.16.840.1.113883.6.1'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:2228-27563).</sch:assert>
        </sch:rule>               
         <sch:rule id="Provider-Care-Experience-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.67']]/cda:effectiveTime">
 		  <sch:assert id="a-2228-28435-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-28435).</sch:assert>
-       </sch:rule>
-         
+       </sch:rule>         
         <sch:rule id="Provider-Care-Experience-value-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.67']]/cda:value[@xsi:type='CD']">
 		  <sch:assert id="a-2228-27655-error" test="@sdtc:valueSet">This value SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27655).</sch:assert>
-        </sch:rule>
-        
+        </sch:rule>       
       </sch:pattern>
     
-    <sch:pattern id="Provider-Care-Experience-pattern-warnings">
-    </sch:pattern>
 </sch:schema>

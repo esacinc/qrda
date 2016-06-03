@@ -32,19 +32,17 @@
         </sch:rule>               
         <sch:rule id="Reaction-Observation-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.9']]/cda:statusCode">
             <sch:assert id="a-1098-19114-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:1098-19114).</sch:assert>
-        </sch:rule>
-            
+        </sch:rule>            
     </sch:pattern>
     
     <sch:pattern id="Reaction-Observation-pattern-warnings">
         <sch:rule id="Reaction-Observation-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.9']]">
             <sch:assert id="a-1098-7332-warning" test="count(cda:effectiveTime)=1">SHOULD contain zero or one [0..1] effectiveTime (CONF:1098-7332). </sch:assert>
-         </sch:rule>
-        
+         </sch:rule>        
         <sch:rule id="Reaction-Observation-effectiveTime-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.9']]/cda:effectiveTime">
             <sch:assert id="a-1098-7333-warning" test="count(cda:low)=1">The effectiveTime, if present, SHOULD contain zero or one [0..1] low (CONF:1098-7333).</sch:assert>
             <sch:assert id="a-1098-7334-warning" test="count(cda:high)=1">The effectiveTime, if present, SHOULD contain zero or one [0..1] high (CONF:1098-7334).</sch:assert>
-       </sch:rule>
-        
+       </sch:rule>       
     </sch:pattern>
+    
 </sch:schema>

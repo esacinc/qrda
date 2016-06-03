@@ -11,10 +11,6 @@
         <sch:active pattern="Procedure-Adverse-Event-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Procedure-Adverse-Event-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Procedure-Adverse-Event-pattern-errors">
         <sch:rule id="Procedure-Adverse-Event-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.61']]">
             <sch:assert id="a-2228-11373-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-11373).</sch:assert>
@@ -23,14 +19,10 @@
             <sch:assert id="a-2228-11377-error" test="count(cda:id)=1">SHALL contain exactly one [1..1] id (CONF:2228-11377).</sch:assert>
             <sch:assert id="a-2228-16419-error" test="count(cda:value[@xsi:type='CD'])=1">SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2228-16419).</sch:assert>
             <sch:assert id="a-2228-11385-error" test="count(cda:entryRelationship[@typeCode='CAUS'][@inversionInd='true'][count(cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.64' and @extension = '2016-02-01']])=1])=1">SHALL contain exactly one [1..1] entryRelationship (CONF:2228-11385) such that it SHALL contain exactly one [1..1] Procedure Performed (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.64:2016-02-01) (CONF:2228-27147). SHALL contain exactly one [1..1] @typeCode="CAUS" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:2228-11386). SHALL contain exactly one [1..1] @inversionInd="true" (CONF:2228-11387).</sch:assert>
-        </sch:rule>
-        
+        </sch:rule>       
         <sch:rule id="Procedure-Adverse-Event-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.61']]/cda:value[@xsi:type='CD']">
             <sch:assert id="a-2228-16420-error" test="@code='281647001'">This value SHALL contain exactly one [1..1] @code="281647001" Adverse reaction (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2228-16420).</sch:assert>
         </sch:rule>
-     </sch:pattern>
-    
-    <sch:pattern id="Procedure-Adverse-Event-pattern-warnings">
-    </sch:pattern>
-    
+   </sch:pattern>
+     
 </sch:schema>

@@ -11,11 +11,7 @@
         <sch:active pattern="Transfer-To-Act-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Transfer-To-Act-pattern-warnings" />
-    </sch:phase>
-    
-    <sch:pattern id="Transfer-To-Act-pattern-errors">
+   <sch:pattern id="Transfer-To-Act-pattern-errors">
         <sch:rule id="Transfer-To-Act-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.142']]">
             <sch:assert id="a-2228-28426-error" test="@classCode='ACT'">SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28426).  </sch:assert>
             <sch:assert id="a-2228-28427-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-28427).  </sch:assert>
@@ -33,6 +29,4 @@
          </sch:rule>
      </sch:pattern>
     
-    <sch:pattern id="Transfer-To-Act-pattern-warnings">
-    </sch:pattern>
 </sch:schema>

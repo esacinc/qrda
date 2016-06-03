@@ -10,11 +10,7 @@
     <sch:phase id="errors">
         <sch:active pattern="Reason-pattern-errors" />
     </sch:phase>
-    
-    <sch:phase id="warnings">
-        <sch:active pattern="Reason-pattern-warnings" />
-    </sch:phase>
-    
+     
     <sch:pattern id="Reason-pattern-errors">
         <sch:rule id="Reason-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88']]">
             <sch:assert id="a-1140-11357-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1140-11357).</sch:assert>
@@ -38,10 +34,8 @@
          </sch:rule>
         <sch:rule id="Reason-value-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88']]/cda:value">
             <sch:assert id="a-1140-27657-error" test="@sdtc:valueSet">This value SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:1140-27657). </sch:assert>
-        </sch:rule>
-        
+        </sch:rule>       
     </sch:pattern>
     
-    <sch:pattern id="Reason-pattern-warnings">
-    </sch:pattern>
+ 
 </sch:schema>

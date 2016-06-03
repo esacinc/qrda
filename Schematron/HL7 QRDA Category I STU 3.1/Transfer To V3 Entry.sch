@@ -10,11 +10,7 @@
     <sch:phase id="errors">
         <sch:active pattern="Transfer-To-pattern-errors" />
     </sch:phase>
-    
-    <sch:phase id="warnings">
-        <sch:active pattern="Transfer-To-pattern-warnings" />
-    </sch:phase>
-    
+   
     <sch:pattern id="Transfer-To-pattern-errors">
         <sch:rule id="Transfer-To-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.82']]">
             <sch:assert id="a-2228-28358-error" test="@classCode='ENC'">SHALL contain exactly one [1..1] @classCode="ENC" Encounter (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28358).  </sch:assert>
@@ -32,6 +28,4 @@
         </sch:rule>
     </sch:pattern>
     
-    <sch:pattern id="Transfer-To-pattern-warnings">
-    </sch:pattern>
 </sch:schema>

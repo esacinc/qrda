@@ -25,15 +25,13 @@
        </sch:rule>
         <sch:rule id="Product-Instance-scopingEntity-errors" context="cda:participantRole[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.37']]/cda:scopingEntity">
             <sch:assert id="a-81-7908-error" test="count(cda:id)&gt;=1">This scopingEntity SHALL contain at least one [1..*] id (CONF:81-7908).   </sch:assert>
-        </sch:rule>
-        
+        </sch:rule>       
      </sch:pattern>
     
     <sch:pattern id="Product-Instance-pattern-warnings">
-         <sch:rule id="Product-Instance-playindDevice-warnings" context="cda:participantRole[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.37']]/cda:playingDevice">
+         <sch:rule id="Product-Instance-playingDevice-warnings" context="cda:participantRole[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.37']]/cda:playingDevice">
              <sch:assert id="a-81-16837-warning" test="count(cda:code)=1">This playingDevice SHOULD contain zero or one [0..1] code (CONF:81-16837).  </sch:assert>
-        </sch:rule>
-        
+        </sch:rule>        
     </sch:pattern>
     
 </sch:schema>

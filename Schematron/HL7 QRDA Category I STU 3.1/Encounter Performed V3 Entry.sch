@@ -19,15 +19,14 @@
             <sch:assert id="a-2228-27624-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2228-27624). </sch:assert>
             <sch:assert id="a-2228-11874-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:2228-11874). </sch:assert>
             <sch:assert id="a-2228-11876-error" test="count(cda:effectiveTime)=1">SHALL contain exactly one [1..1] effectiveTime (CONF:2228-11876). </sch:assert>
-        </sch:rule>
-        
+        </sch:rule>      
         <sch:rule id="Encounter-Performed-code-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.23']]/cda:code">
             <sch:assert id="a-2228-27625-error" test="@sdtc:valueSet">This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27625). </sch:assert>
         </sch:rule>
-
         <sch:rule id="Encounter-Performed-effectiveTime-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.23']]/cda:effectiveTime">
             <sch:assert id="a-2228-11877-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-11877).  </sch:assert>
             <sch:assert id="a-2228-11878-error" test="count(cda:high)=1">This effectiveTime SHALL contain exactly one [1..1] high (CONF:2228-11878).  </sch:assert>
         </sch:rule>
     </sch:pattern>
+    
 </sch:schema>

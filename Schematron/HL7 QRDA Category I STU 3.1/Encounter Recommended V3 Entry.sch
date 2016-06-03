@@ -23,4 +23,5 @@
             <sch:assert id="a-2228-27626-error" test="@sdtc:valueSet">This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27626). </sch:assert>
         </sch:rule>    
     </sch:pattern>
+    
 </sch:schema>

@@ -18,11 +18,11 @@
             <sch:assert id="a-2228-11769-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.15'][@extension='2016-02-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-11769) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.15" (CONF:2228-11770). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27012). </sch:assert>
             <sch:assert id="a-2228-16408-error" test="count(cda:value[@xsi:type='CD'])=1">SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2228-16408). </sch:assert>
             <sch:assert id="a-2228-11779-error" test="count(cda:entryRelationship[@typeCode='CAUS'][@inversionInd='true'] [count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.18' ][@extension='2016-02-01']])=1])=1">SHALL contain exactly one [1..1] entryRelationship (CONF:2228-11779) such that it SHALL contain exactly one [1..1] @typeCode="CAUS" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:2228-11780). SHALL contain exactly one [1..1] @inversionInd="true" (CONF:2228-11781).  SHALL contain exactly one [1..1] Diagnostic Study Performed (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.18:2016-02-01) (CONF:2228-27149). </sch:assert>     
-        </sch:rule>
-        
+        </sch:rule>        
         <sch:rule id="Diagnostic-Study-Adverse-Event-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.15']]/cda:value">
             <sch:assert id="a-2228-26938-error" test="@code='281647001'">This value SHALL contain exactly one [1..1] @code="281647001" Adverse reaction (CONF:2228-26938). </sch:assert>
             <sch:assert id="a-2228-26939-error" test="@codeSystem='2.16.840.1.113883.6.96'">This value SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CONF:2228-26939). </sch:assert>
         </sch:rule>
      </sch:pattern>
+    
 </sch:schema>

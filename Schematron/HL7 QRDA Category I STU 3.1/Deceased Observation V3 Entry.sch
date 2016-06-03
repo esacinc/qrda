@@ -33,14 +33,12 @@
         <sch:rule id="Deceased-Observation-V3-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.79']]/cda:statusCode">
             <sch:assert id="a-1198-19095-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:1198-19095). </sch:assert>
         </sch:rule>
-        
         <sch:rule id="Deceased-Observation-V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.79']]/cda:value">
             <sch:assert id="a-1198-15142-error" test="@code='419099009'">This value SHALL contain exactly one [1..1] @code="419099009" Dead (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96 STATIC) (CONF:1198-15142).</sch:assert>
         </sch:rule>
-        
         <sch:rule id="Deceased-Observation-V3-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.79']]/cda:effectiveTime">
             <sch:assert id="a-1198-14874-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:1198-14874). </sch:assert>
-         </sch:rule>
+        </sch:rule>
     </sch:pattern>
     
     <sch:pattern id="Deceased-Observation-V3-pattern-warnings">

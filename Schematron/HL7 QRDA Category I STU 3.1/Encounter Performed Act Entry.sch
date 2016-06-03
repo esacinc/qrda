@@ -20,4 +20,5 @@
             <sch:assert id="a-2228-11874-error" test="count(cda:entryRelationship[@typeCode='SUBJ'][count(cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.23'][@extension='2016-02-01']])=1])=1">SHALL contain exactly one [1..1] entryRelationship (CONF:2228-28476) such that it SHALL contain exactly one [1..1] @typeCode="SUBJ" has subject (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:2228-28481). SHALL contain exactly one [1..1] Encounter Performed (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.23:2016-02-01) (CONF:2228-28482).  </sch:assert>
          </sch:rule>
     </sch:pattern>
+    
 </sch:schema>

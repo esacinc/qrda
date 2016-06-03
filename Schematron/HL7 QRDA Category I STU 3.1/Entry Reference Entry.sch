@@ -17,12 +17,12 @@
             <sch:assert id="a-1098-31486-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:1098-31486 </sch:assert>
             <sch:assert id="a-1098-31487-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.122'])=1">SHALL contain exactly one [1..1] templateId (CONF:1098-31487) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.122" (CONF:1098-31488). </sch:assert>
             <sch:assert id="a-1098-31489-error" test="count(cda:id)&gt;=1">SHALL contain at least one [1..*] id (CONF:1098-31489).  </sch:assert>
-            <sch:assert id="a-1098-31490-error" test="count(cda:code) =1">SHALL contain exactly one [1..1] code (CONF:1098-31490). </sch:assert>
-            <sch:assert id="a-1098-31498-error" test="count(cda:statusCode) =1">SHALL contain exactly one [1..1] code (CONF:1098-31498). </sch:assert>
-         </sch:rule>
-        
+            <sch:assert id="a-1098-31490-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:1098-31490). </sch:assert>
+            <sch:assert id="a-1098-31498-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] code (CONF:1098-31498). </sch:assert>
+         </sch:rule>       
         <sch:rule id="Entry-Reference-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.122']]/cda:code">
             <sch:assert id="a-1098-31491-error" test="@nullFlavor='NP'">This code SHALL contain exactly one [1..1] @nullFlavor="NP" Not Present (CodeSystem: HL7NullFlavor urn:oid:2.16.840.1.113883.5.1008) (CONF:1098-31491).  </sch:assert>
         </sch:rule>
     </sch:pattern>
+    
 </sch:schema>

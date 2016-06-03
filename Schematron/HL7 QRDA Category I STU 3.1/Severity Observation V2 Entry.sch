@@ -10,11 +10,7 @@
     <sch:phase id="errors">
         <sch:active pattern="Severity-Observation-pattern-errors" />
     </sch:phase>
-    
-    <sch:phase id="warnings">
-        <sch:active pattern="Severity-Observation-pattern-warnings" />
-    </sch:phase>
-    
+
     <sch:pattern id="Severity-Observation-pattern-errors">
         <sch:rule id="Severity-Observation-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.8']]">
             <sch:assert id="a-1098-7345-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-7345). </sch:assert>
@@ -33,6 +29,4 @@
         </sch:rule>
     </sch:pattern>
     
-    <sch:pattern id="Severity-Observation-pattern-warnings">
-    </sch:pattern>
 </sch:schema>

@@ -39,8 +39,7 @@
         <sch:rule id="Result-Observation-referenceRange-observationRange-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.2']]/cda:referenceRange/cda:observationRange">
             <sch:assert id="a-1198-7152-error" test="count(cda:code)=0">This observationRange SHALL NOT contain [0..0] code (CONF:1198-7152). </sch:assert>
             <sch:assert id="a-1198-32175-error" test="count(cda:value)=1">This observationRange SHALL contain exactly one [1..1] value (CONF:1198-32175). </sch:assert>
-        </sch:rule>
-        
+        </sch:rule>        
     </sch:pattern>
     
     <sch:pattern id="Result-Observation-pattern-warnings">
@@ -48,7 +47,7 @@
             <sch:assert id="a-1198-7147-warning" test="count(cda:interpretationCode)&gt;=1">SHOULD contain zero or more [0..*] interpretationCode (CONF:1198-7147).  </sch:assert>
             <sch:assert id="a-1198-7149-warning" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']])&gt;=1">SHOULD contain zero or more [0..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1198-7149). </sch:assert>
             <sch:assert id="a-1198-7150-warning" test="count(cda:referenceRange)&gt;=1">SHOULD contain zero or more [0..*] referenceRange (CONF:1198-7150). </sch:assert>
-         </sch:rule>
-            
+         </sch:rule>            
     </sch:pattern>
+    
 </sch:schema>

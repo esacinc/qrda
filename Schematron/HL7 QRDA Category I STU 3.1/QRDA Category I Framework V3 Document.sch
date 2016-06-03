@@ -43,4 +43,5 @@
             <sch:assert id="a-2228-12924-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.17.2.4']])=1])=1">This structuredBody SHALL contain exactly one [1..1] component (CONF:2228-12924) such that it SHALL contain exactly one [1..1] Patient Data Section (identifier: urn:oid:2.16.840.1.113883.10.20.17.2.4) (CONF:2228-17080).</sch:assert>
         </sch:rule>
     </sch:pattern>
+    
 </sch:schema>

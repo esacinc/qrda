@@ -23,8 +23,7 @@
             <sch:assert id="a-2228-27309-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2228-27309).</sch:assert>
             <sch:assert id="a-2228-27305-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:2228-27305).</sch:assert>
             <sch:assert id="a-2228-11669-error" test="count(cda:effectiveTime)=1">SHALL contain exactly one [1..1] effectiveTime (CONF:2228-11669).</sch:assert>
-        </sch:rule>
-        
+        </sch:rule>        
         <sch:rule id="Procedure-Performed-code-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.64']]/cda:code">
             <sch:assert id="a-2228-27310-error" test="@sdtc:valueSet">This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27310).</sch:assert>
         </sch:rule>
@@ -40,19 +39,16 @@
         </sch:rule>
         <sch:rule id="Procedure-Performed-targetSiteCode-translation-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.64']]/cda:targetSiteCode/cda:translation">
             <sch:assert id="a-2228-27766-error" test="@sdtc:valueSet">The translation, if present, SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27766).  </sch:assert>
-        </sch:rule>
-        
+        </sch:rule>       
      </sch:pattern>
     
     <sch:pattern id="Procedure-Performed-pattern-warnings">
         <sch:rule id="Procedure-Performed-warnings" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.64']]">
-            <sch:assert id="a-2228-27312-warning" test="count(cda:targetSiteCode)&gt;=1">SHOULD contain zero or more [0..*] targetSiteCode (CONF:2228-27312).</sch:assert>
-            
+            <sch:assert id="a-2228-27312-warning" test="count(cda:targetSiteCode)&gt;=1">SHOULD contain zero or more [0..*] targetSiteCode (CONF:2228-27312).</sch:assert>           
         </sch:rule>
          <sch:rule id="Procedure-Performed-targetSiteCode-warnings" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.64']]/cda:targetSiteCode">
              <sch:assert id="a-2228-27314-warning" test="@sdtc:valueSet">The targetSiteCode, if present, SHOULD contain zero or one [0..1] @sdtc:valueSet (CONF:2228-27314). </sch:assert>
-        </sch:rule>
-        
+        </sch:rule>       
     </sch:pattern>
     
 </sch:schema>

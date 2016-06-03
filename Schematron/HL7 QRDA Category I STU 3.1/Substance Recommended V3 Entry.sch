@@ -11,10 +11,6 @@
         <sch:active pattern="Substance-Recommended-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Substance-Recommended-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Substance-Recommended-pattern-errors">
         <sch:rule id="Substance-Recommended-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.75']]">
             <sch:assert id="a-2228-27495-error" test="@classCode='SBADM'">SHALL contain exactly one [1..1] @classCode="SBADM" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27495).</sch:assert>
@@ -37,6 +33,4 @@
         </sch:rule>
     </sch:pattern>
     
-    <sch:pattern id="Substance-Recommended-pattern-warnings">
-    </sch:pattern>
 </sch:schema>

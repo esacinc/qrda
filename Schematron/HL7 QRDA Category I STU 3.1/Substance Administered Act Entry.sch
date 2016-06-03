@@ -11,10 +11,6 @@
         <sch:active pattern="Substance-Administered-Act-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Substance-Administered-Act-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Substance-Administered-Act-pattern-errors">
         <sch:rule id="Substance-Administered-Act-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.118']]">
             <sch:assert id="a-1098-31500-error" test="@classCode='ACT'">SHALL contain exactly one [1..1] @classCode="ACT" Act (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1098-31500).  </sch:assert>
@@ -30,6 +26,4 @@
         </sch:rule>
      </sch:pattern>
     
-    <sch:pattern id="Substance-Administered-Act-pattern-warnings">
-    </sch:pattern>
 </sch:schema>

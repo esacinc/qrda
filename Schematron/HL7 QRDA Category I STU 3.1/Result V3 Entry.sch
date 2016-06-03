@@ -11,10 +11,6 @@
         <sch:active pattern="Result-pattern-errors" />
     </sch:phase>
     
-    <sch:phase id="warnings">
-        <sch:active pattern="Result-pattern-warnings" />
-    </sch:phase>
-    
     <sch:pattern id="Result-pattern-errors">
         <sch:rule id="Result-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.87']]">
             <sch:assert id="a-2228-7323-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.87'][@extension='2016-02-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-11672) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.87" (CONF:2228-11673). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27035). </sch:assert>
@@ -27,6 +23,5 @@
          </sch:rule>               
       </sch:pattern>
     
-    <sch:pattern id="Result-pattern-warnings">
-    </sch:pattern>
+
 </sch:schema>

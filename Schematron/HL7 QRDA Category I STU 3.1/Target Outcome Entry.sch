@@ -31,4 +31,5 @@
             <sch:assert id="a-1140-28390-warning" test="@sdtc:valueSet">This code SHOULD contain zero or one [0..1] @sdtc:valueSet (CONF:1140-28390).  </sch:assert>
         </sch:rule>
     </sch:pattern>
+    
 </sch:schema>

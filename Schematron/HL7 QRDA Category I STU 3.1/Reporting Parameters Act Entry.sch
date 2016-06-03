@@ -10,11 +10,7 @@
     <sch:phase id="errors">
         <sch:active pattern="Reporting-Parameters-Act-pattern-errors" />
     </sch:phase>
-    
-    <sch:phase id="warnings">
-        <sch:active pattern="Reporting-Parameters-Act-pattern-warnings" />
-    </sch:phase>
-    
+   
     <sch:pattern id="Reporting-Parameters-Act-pattern-errors">
         <sch:rule id="Reporting-Parameters-Act-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]">
             <sch:assert id="a-23-3269-error" test="@classCode='ACT'">SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:23-3269). </sch:assert>
@@ -34,6 +30,4 @@
         </sch:rule>
      </sch:pattern>
     
-    <sch:pattern id="Reporting-Parameters-Act-pattern-warnings">
-    </sch:pattern>
 </sch:schema>

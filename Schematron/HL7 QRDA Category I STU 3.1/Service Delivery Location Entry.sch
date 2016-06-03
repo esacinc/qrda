@@ -30,7 +30,7 @@
         <sch:rule id="Service-Delivery-Location-warnings" context="cda:participationRole[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.32']]">
             <sch:assert id="a-81-7760-warning" test="count(cda:addr)&gt;=1">SHOULD contain zero or more [0..*] addr (CONF:7760).</sch:assert>
             <sch:assert id="a-81-7761-warning" test="count(cda:telecom)=1">SHOULD contain zero or more [0..*] telecom (CONF:7761). </sch:assert>
-        </sch:rule>
-        
+        </sch:rule>       
     </sch:pattern>
+    
 </sch:schema>

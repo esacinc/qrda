@@ -33,15 +33,14 @@
         </sch:rule>
         <sch:rule id="Radiation-Dosage-And-Duration-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.91']]/cda:effectiveTime">
             <sch:assert id="a-1140-27319-error" test="cda:width or (cda:low and cda:high) or (cda:low and cda:width)or (cda:width and cda:high)">One of the following combinations SHALL be present: @width, @low and @high, @low and @width or @width and @high. @width by itself shall only be used when no start or end time is known. For example, when one knows that the duration of radiation needs to be 30 minutes, but one may not yet know when the start time will be eg. in a Procedure Order (CONF:1140-27319).</sch:assert>
-        </sch:rule>               
-            
+        </sch:rule>                          
     </sch:pattern>
     
     <sch:pattern id="Radiation-Dosage-And-Duration-pattern-warnings">
         <sch:rule id="Radiation-Dosage-And-Duration-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.91']]">
             <sch:assert id="a-1140-13286-warning" test="count(cda:effectiveTime)=1">SHOULD contain zero or one [0..1] effectiveTime (CONF:1140-13286).  </sch:assert>
             <sch:assert id="a-1140-13287-warning" test="count(cda:value)=1">SHOULD contain zero or one [0..1] value (CONF:1140-13287). </sch:assert>
-        </sch:rule>
-        
+        </sch:rule>       
     </sch:pattern>
+    
 </sch:schema>

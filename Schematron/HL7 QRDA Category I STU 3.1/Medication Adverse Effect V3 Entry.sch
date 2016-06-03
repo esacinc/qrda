@@ -41,7 +41,7 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Medication_Adverse_Effect_V3-code-errors" context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.43"]]/cda:value[@xsi:type="CD"]'>
+		<sch:rule id="Medication_Adverse_Effect_V3-value-errors" context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.43"]]/cda:value[@xsi:type="CD"]'>
 			<sch:assert id="a-2228-14135-error" test='@code="419511003"'>
 				This value SHALL contain exactly one [1..1] @code="419511003" Propensity to adverse reactions to drug (disorder) (CONF:2228-14135).
 			</sch:assert>

@@ -4,10 +4,10 @@
 	<sch:ns prefix="sdtc" uri="urn:hl7-org:sdtc"/>
 	<sch:ns prefix="cda" uri="urn:hl7-org:v3"/>
 	<sch:phase id='errors'>
-		<sch:active pattern='Functional_Status_Order_V3-pattern-errors'/>
+		<sch:active pattern='Functional_Status_Performed_V3-pattern-errors'/>
 	</sch:phase>
-	<sch:pattern id='Functional_Status_Order_V3-pattern-errors'>
-		<sch:rule id='Functional_Status_Order_V3-errors' context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.26"]]'>
+	<sch:pattern id='Functional_Status_Performed_V3-pattern-errors'>
+		<sch:rule id='Functional_Status_Performed_V3-errors' context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.26"]]'>
 			<sch:assert id='a-2228-27372-error' test='@classCode="OBS"'>
 				SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27372).			
 			</sch:assert>
@@ -37,7 +37,7 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id='Functional_Status_Order_V3-may-methodCode-errors' context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.26"][@extension="2016-02-01"]]/cda:methodCode'>
+		<sch:rule id='Functional_Status_Performed_V3-may-methodCode-errors' context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.26"][@extension="2016-02-01"]]/cda:methodCode'>
 			<sch:assert id='a-2228-27718-error' test='@sdtc:valueSet'>
 				The methodCode, if present, SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27718).
 			</sch:assert>

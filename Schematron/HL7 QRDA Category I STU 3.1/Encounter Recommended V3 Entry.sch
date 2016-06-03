@@ -17,7 +17,7 @@
             <sch:assert id="a-2228-11911-error" test="@moodCode='INT'">SHALL contain exactly one [1..1] @moodCode="INT" Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-11911).</sch:assert>
             <sch:assert id="a-2228-11912-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.24'][@extension='2016-02-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-11912) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.24" (CONF:2228-11913).  SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27066). </sch:assert>
             <sch:assert id="a-2228-11915-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2228-11915). </sch:assert>
-            <sch:assert id="a-2228-11874-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']])=1">SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27347). </sch:assert>
+            <sch:assert id="a-2228-27347-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']])=1">SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27347). </sch:assert>
          </sch:rule>
         <sch:rule id="Encounter-Recommended-code-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.24']]/cda:code">
             <sch:assert id="a-2228-27626-error" test="@sdtc:valueSet">This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27626). </sch:assert>

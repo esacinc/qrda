@@ -52,7 +52,6 @@
 		<sch:rule id="Medication_Allergy_V3-warning" context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.24.3.44"]]'>
 			<sch:assert id="a-2228-14155-warning" test='count(cda:entryRelationship[@typeCode="MFST"][@inversionInd="true"][count(cda:observation[count(cda:templateId[@root="2.16.840.1.113883.10.20.24.3.85"])=1])=1]) = 1'>
 				SHOULD contain zero or one [0..1] entryRelationship (CONF:2228-14155) such that it
-				Note: QDM Attribute: Reaction
 					SHALL contain exactly one [1..1] @typeCode="MFST" (CONF:2228-14156).
 					SHALL contain exactly one [1..1] @inversionInd="true" (CONF:2228-14157).
 					SHALL contain exactly one [1..1] Reaction (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.85:2014-12-01) (CONF:2228-27125).

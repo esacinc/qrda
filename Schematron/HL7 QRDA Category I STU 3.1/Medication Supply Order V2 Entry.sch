@@ -32,9 +32,6 @@
 			<sch:assert id='a-1098-7432-error' test='count(cda:statusCode) = 1'>
 				SHALL contain exactly one [1..1] statusCode (CONF:1098-7432).
 			</sch:assert>
-			<sch:assert id='a-1098-30995-error' test='count(cda:author[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.119"]]) = 1'>
-				SHALL contain at least one [1..*] author (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-30995).
-			</sch:assert>
 		</sch:rule>
 		<sch:rule id='Medication_Supply_Order_V2-statusCode-errors' context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.17"]]/cda:statusCode'>
 			<sch:assert id='a-1098-32362-error' test='@code'>
@@ -42,9 +39,8 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Supply_Order_V2-may-errors" context='cda:supply[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.17"]]/cda:entryRelationship'>
+		<sch:rule id="Medication_Supply_Order_V2-may-entryRelationship-errors" context='cda:supply[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.17"]]/cda:entryRelationship'>
 			<sch:assert id="a-1098-7442-error" test='parent::node()[cda:entryRelationship[@typeCode="SUBJ"][@inversionInd="true"][cda:act[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.20"][@extension="2014-06-09"]]]]'>
-				MAY contain zero or one [0..1] entryRelationship (CONF:1098-7442).
 					The entryRelationship, if present, SHALL contain exactly one [1..1] @typeCode="SUBJ" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:1098-7444).
 					The entryRelationship, if present, SHALL contain exactly one [1..1] @inversionInd="true" True (CONF:1098-7445).
 					The entryRelationship, if present, SHALL contain exactly one [1..1] Instruction (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.20:2014-06-09) (CONF:1098-31391).

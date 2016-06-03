@@ -32,9 +32,6 @@
      </sch:pattern>
     
     <sch:pattern id="Procedure-Recommended-pattern-warnings">
-        <sch:rule id="Procedure-Recommended-warnings" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.65']]">
-            <sch:assert id="a-2228-27312-warning" test="count(cda:targetSiteCode)&gt;=1">SHOULD contain zero or more [0..*] targetSiteCode (CONF:2228-27312).</sch:assert>           
-        </sch:rule>
          <sch:rule id="Procedure-Recommended-targetSiteCode-warnings" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.65']]/cda:targetSiteCode">
              <sch:assert id="a-2228-27728-warning" test="@sdtc:valueSet">The targetSiteCode, if present, SHOULD contain zero or one [0..1] @sdtc:valueSet (CONF:2228-27728). </sch:assert>
         </sch:rule>       

@@ -14,7 +14,7 @@
     <sch:pattern id="Transfer-To-pattern-errors">
         <sch:rule id="Transfer-To-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.82']]">
             <sch:assert id="a-2228-28358-error" test="@classCode='ENC'">SHALL contain exactly one [1..1] @classCode="ENC" Encounter (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28358).  </sch:assert>
-            <sch:assert id="a-2228-28410-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.82'])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-13182) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.82" (CONF:2228-13183). </sch:assert>
+            <sch:assert id="a-2228-13182-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.82'])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-13182) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.82" (CONF:2228-13183). </sch:assert>
             <sch:assert id="a-2228-28360-error" test="count(cda:id)&gt;=1">SHALL contain at least one [1..*] id (CONF:2228-28360).</sch:assert>
             <sch:assert id="a-2228-28352-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2228-28352).  </sch:assert>
             <sch:assert id="a-2228-28353-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:2228-28353). </sch:assert>

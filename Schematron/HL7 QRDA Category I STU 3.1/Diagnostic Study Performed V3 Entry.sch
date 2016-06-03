@@ -19,19 +19,17 @@
             <sch:assert id="a-2228-27617-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2228-27617). </sch:assert>
             <sch:assert id="a-2228-12956-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:2228-12956).  </sch:assert>     
             <sch:assert id="a-2228-12958-error" test="count(cda:effectiveTime)=1">SHALL contain exactly one [1..1] effectiveTime (CONF:2228-12958).   </sch:assert>     
-        </sch:rule>
-        
+        </sch:rule>       
         <sch:rule id="Diagnostic-Study-Performed-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.18']]/cda:code">
             <sch:assert id="a-2228-27618-error" test="@sdtc:valueSet">This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27618). </sch:assert>
          </sch:rule>
-
         <sch:rule id="Diagnostic-Study-Performed-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.18']]/cda:statusCode">
             <sch:assert id="a-2228-12957-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-12957). </sch:assert>
-        </sch:rule>
-        
+        </sch:rule>       
         <sch:rule id="Diagnostic-Study-Performed-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.18']]/cda:effectiveTime">
             <sch:assert id="a-2228-12959-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-12959).  </sch:assert>
             <sch:assert id="a-2228-12960-error" test="count(cda:high)=1">This effectiveTime SHALL contain exactly one [1..1] high (CONF:2228-12960). </sch:assert>
         </sch:rule>      
     </sch:pattern>
+    
 </sch:schema>

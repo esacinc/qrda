@@ -18,11 +18,11 @@
             <sch:assert id="a-2228-28441-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.130'])=1"> SHALL contain at least one [1..*] templateId (CONF:2228-28441) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.130" (CONF:2228-28447).  </sch:assert>
             <sch:assert id="a-2228-28442-error" test="count(cda:code) =1">SHALL contain exactly one [1..1] code (CONF:2228-28442).</sch:assert> 
             <sch:assert id="a-2228-28443-error" test="count(cda:entryRelationship[@typeCode='SUBJ'] [count(cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.9' and @extension = '2016-02-01']])=1])=1">SHALL contain exactly one [1..1] entryRelationship (CONF:2228-28443) such that it SHALL contain exactly one [1..1] @typeCode="SUBJ" Has subject (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:2228-28450). SHALL contain exactly one [1..1] Device Order (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.9:2016-02-01) (CONF:2228-28451). </sch:assert>
-        </sch:rule>
-        
+        </sch:rule>       
         <sch:rule id="Device-Order-Act-V3-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.130']]/cda:code">
             <sch:assert id="a-2228-28448-error" test="@code='SPLY'">This code SHALL contain exactly one [1..1] @code="SPLY" Supply (CONF:2228-28448).</sch:assert> 
             <sch:assert id="a-2228-28449-error" test="@codeSystem"> This code SHALL contain exactly one [1..1] @codeSystem (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28449). </sch:assert> 
         </sch:rule>     
     </sch:pattern>
+    
 </sch:schema>

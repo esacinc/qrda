@@ -19,16 +19,13 @@
             <sch:assert id="a-2228-28144-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:2228-28144).</sch:assert>
             <sch:assert id="a-2228-28210-error" test="count(cda:effectiveTime)=1">SHALL contain exactly one [1..1] effectiveTime (CONF:2228-28210). </sch:assert>
             <sch:assert id="a-2228-28142-error" test="count(cda:entryRelationship[@typeCode='SUBJ'] [count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.135' ]])=1])=1">SHALL contain exactly one [1..1] entryRelationship (CONF:2228-28142) such that it  SHALL contain exactly one [1..1] @typeCode="SUBJ" Has subject (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:2228-28151).  SHALL contain exactly one [1..1] Diagnosis (identifier: urn:oid:2.16.840.1.113883.10.20.24.3.135) (CONF:2228-28145).  </sch:assert>
-            
         </sch:rule>
-        
-        <sch:rule id="Diagnosis-Concern-Act-statusCode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.137']]/cda:statusCode">
+         <sch:rule id="Diagnosis-Concern-Act-statusCode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.137']]/cda:statusCode">
             <sch:assert id="a-2228-28150-error" test="@code='active'">This statusCode SHALL contain exactly one [1..1] @code="active" Active (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-28150).  </sch:assert>
          </sch:rule>
-
         <sch:rule id="Diagnosis-Concern-Act-effectiveTime-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.137']]/cda:effectiveTime">
             <sch:assert id="a-2228-28211-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-28211). </sch:assert>
-        </sch:rule>
-        
+        </sch:rule>       
     </sch:pattern>
+    
 </sch:schema>

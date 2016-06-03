@@ -27,4 +27,5 @@
             <sch:assert id="a-2228-27557-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-27557). Note: QDM Attribute: Start Datetime</sch:assert>
         </sch:rule>
   </sch:pattern>
+    
 </sch:schema>

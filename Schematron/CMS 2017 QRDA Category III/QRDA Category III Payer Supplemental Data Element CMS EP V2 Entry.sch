@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
 <sch:schema xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-	<sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
 	<sch:ns prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance" />
 	<sch:ns prefix="sdtc" uri="urn:hl7-org:sdtc" />
 	<sch:ns prefix="cda" uri="urn:hl7-org:v3" />
@@ -49,7 +48,7 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="QRDA_Category_III_Payer_Supplemental_Data_Element_CMS_EP_V2-code-errors" context='cda:organizer[cda:templateId[@root = "2.16.840.1.113883.10.20.27.3.18"]]/cda:code'>
+		<sch:rule id="QRDA_Category_III_Payer_Supplemental_Data_Element_CMS_EP_V2-code-errors" context='cda:observation[cda:templateId[@root = "2.16.840.1.113883.10.20.27.3.18"]]/cda:code'>
 			<sch:assert id="a-2226-21159-error" test='@code="48768-6"'> 
 				This code SHALL contain exactly one [1..1] @code="48768-6" Payment source  (CONF:2226-21159).
 			</sch:assert>
@@ -58,19 +57,19 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="QRDA_Category_III_Payer_Supplemental_Data_Element_CMS_EP_V2-statusCode-errors" context='cda:organizer[cda:templateId[@root = "2.16.840.1.113883.10.20.27.3.18"]]/cda:statusCode'>
+		<sch:rule id="QRDA_Category_III_Payer_Supplemental_Data_Element_CMS_EP_V2-statusCode-errors" context='cda:observation[cda:templateId[@root = "2.16.840.1.113883.10.20.27.3.18"]]/cda:statusCode'>
 			<sch:assert id="a-2226-18107-error" test='@code="completed"'> 
 				This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:2226-18107).
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="QRDA_Category_III_Payer_Supplemental_Data_Element_CMS_EP_V2-value-errors" context='cda:organizer[cda:templateId[@root = "2.16.840.1.113883.10.20.27.3.18"]]/cda:value'>
+		<sch:rule id="QRDA_Category_III_Payer_Supplemental_Data_Element_CMS_EP_V2-value-errors" context='cda:observation[cda:templateId[@root = "2.16.840.1.113883.10.20.27.3.18"]]/cda:value'>
 			<sch:assert id="a-2233-711230-error" test='count(cda:translation)=1'> 
 				This value SHALL contain exactly one [1..1] translation (CONF:2233-711230).
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="QRDA_Category_III_Payer_Supplemental_Data_Element_CMS_EP_V2-translation-errors" context='cda:organizer[cda:templateId[@root = "2.16.840.1.113883.10.20.27.3.18"]]/cda:value/cda:translation'>
+		<sch:rule id="QRDA_Category_III_Payer_Supplemental_Data_Element_CMS_EP_V2-translation-errors" context='cda:observation[cda:templateId[@root = "2.16.840.1.113883.10.20.27.3.18"]]/cda:value/cda:translation'>
 			<sch:assert id="a-2226-19548-error" test='@code and @nullFlavor="OTH"'> 
 				This translation SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet CMS Payer Groupings urn:oid:2.16.840.1.113883.3.249.14.102 (CONF:2233-711231).
 				This value SHALL contain exactly one [1..1] @nullFlavor="OTH" (CONF:2233-711229).

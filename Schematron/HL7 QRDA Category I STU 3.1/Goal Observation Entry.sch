@@ -38,7 +38,6 @@
 		</sch:rule>
 		<sch:rule id='Goal_Observation-may-reference-errors' context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.121"]]/cda:reference'>
 			<sch:assert id='a-1098-32754-error' test='parent::node()[cda:reference[@typeCode="REFR"][count(cda:externalDocument[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.115"][@extension="2014-06-09"]])=1]]'>
-				MAY contain zero or more [0..*] reference (CONF:1098-32754).
 					The reference, if present, SHALL contain exactly one [1..1] @typeCode="REFR" Refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:1098-32755).
 					The reference, if present, SHALL contain exactly one [1..1] External Document Reference (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.115:2014-06-09) (CONF:1098-32756).
 			</sch:assert>
@@ -47,12 +46,12 @@
 	
 	<sch:pattern id='Goal_Observation-pattern-warnings'>
 		<sch:rule id='Goal_Observation-codesystem-code-warnings' context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.121"]]/cda:code'>
-			<sch:assert id='a-1098-30784-warning' test='@codeSystem="2.16.840.1.113883.6.1"'>
+			<sch:assert id='a-1098-30784-c-warning' test='@codeSystem="2.16.840.1.113883.6.1"'>
 				SHALL contain exactly one [1..1] code, which SHOULD be selected from CodeSystem LOINC (urn:oid:2.16.840.1.113883.6.1) (CONF:1098-30784).
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id='Goal_Observation-effectiveTime-entryRelationship-warnings' context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.121"]]'>
+		<sch:rule id='Goal_Observation-warnings' context='cda:observation[cda:templateId[@root="2.16.840.1.113883.10.20.22.4.121"]]'>
 			<sch:assert id='a-1098-32335-warning' test='count(cda:effectiveTime) = 1'>
 				SHOULD contain zero or one [0..1] effectiveTime (CONF:1098-32335).
 			</sch:assert>

@@ -17,10 +17,10 @@
 			<sch:assert id="a-1140-13820-error" test="@moodCode='RQO'">
 				SHALL contain exactly one [1..1] @moodCode='RQO' Request (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:1140-13820).			
 			</sch:assert>
-			<sch:assert id="a-1140-13821-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.99'][@extension='2014-12-09']) = 1">
+			<sch:assert id="a-1140-13821-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.99'][@extension='2015-04-05']) = 1">
 				SHALL contain exactly one [1..1] templateId (CONF:1140-13821) such that it
 					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.24.3.99' (CONF:1140-13822).
-					SHALL contain exactly one [1..1] @extension='2014-12-09' (CONF:1140-28374).
+					SHALL contain exactly one [1..1] @extension='2015-04-05' (CONF:1140-28374).
 			</sch:assert>
 			<sch:assert id="a-1140-13829-error" test="count(cda:effectiveTime) = 1">
 				SHALL contain exactly one [1..1] effectiveTime (CONF:1140-13829).

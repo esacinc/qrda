@@ -3,7 +3,6 @@
 	<sch:ns prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance"/>
 	<sch:ns prefix="sdtc" uri="urn:hl7-org:sdtc"/>
 	<sch:ns prefix="cda" uri="urn:hl7-org:v3"/>
-	<sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
 	
 	<sch:phase id="errors">
 		<sch:active pattern="Family_History_Observation_QDM_V2-pattern-errors"/>
@@ -42,8 +41,8 @@
 	</sch:pattern>
 
 	<sch:pattern id="Family_History_Observation_QDM_V2-pattern-warnings">
-		<sch:rule id="Family_History_Observation_QDM_V2-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.112']]">
-			<sch:assert id="a-2228-27694-warning" test="cda:value[@xsi:type='CD'][@sdtc:valueSet]">
+		<sch:rule id="Family_History_Observation_QDM_V2-value-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.112']]/cda:value">
+			<sch:assert id="a-2228-27694-warning" test="@sdtc:valueSet">
 				This value SHOULD contain zero or one [0..1] @sdtc:valueSet (CONF:2228-27694).
 			</sch:assert>
 		</sch:rule>

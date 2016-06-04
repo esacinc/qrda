@@ -22,7 +22,7 @@
 			<sch:assert id="a-2228-28652-error" test="count(cda:statusCode) = 1">
 				SHALL contain exactly one [1..1] statusCode (CONF:2228-28652).
 			</sch:assert>
-			<sch:assert id="a-2228-28655-error" test="cda:statusCode/@code='active'">
+			<sch:assert id="a-2228-28655-error" test="cda:statusCode[@code='active']">
 				This statusCode SHALL contain exactly one [1..1] @code='active' (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-28655).
 			</sch:assert>
 		</sch:rule>

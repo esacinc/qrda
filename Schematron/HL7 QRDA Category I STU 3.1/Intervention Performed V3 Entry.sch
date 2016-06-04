@@ -24,7 +24,7 @@
 			<sch:assert id="a-2228-27633-error" test="count(cda:code) = 1">
 				SHALL contain exactly one [1..1] code (CONF:2228-27633).
 			</sch:assert>
-			<sch:assert id="a-2228-27634-error" test="cda:code/@sdtc:valueSet">
+			<sch:assert id="a-2228-27634-error" test="cda:code[@sdtc:valueSet]">
 				This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27634).			
 			</sch:assert>
 			<sch:assert id="a-2228-27362-error" test="cda:statusCode">

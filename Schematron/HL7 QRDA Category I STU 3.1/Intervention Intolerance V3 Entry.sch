@@ -27,7 +27,7 @@
 			<sch:assert id="a-2228-16414-error" test="cda:value[@xsi:type='CD']">
 				SHALL contain exactly one [1..1] value with @xsi:type='CD' (CONF:2228-16414).			
 			</sch:assert>
-			<sch:assert id="a-2228-16415-error" test="cda:value/@code='102460003'">
+			<sch:assert id="a-2228-16415-error" test="cda:value[@code='102460003']">
 				This value SHALL contain exactly one [1..1] @code='102460003' Decreased tolerance (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2228-16415).			
 			</sch:assert>
 			<sch:assert id="a-2228-13679-error" test="count(cda:entryRelationship[@typeCode='CAUS'][@inversionInd='true'][count(cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.32'][@extension='2016-02-01']])=1])=1">

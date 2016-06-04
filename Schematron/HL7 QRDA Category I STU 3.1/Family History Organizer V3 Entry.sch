@@ -43,13 +43,13 @@
 			<sch:assert id="a-1198-15246-error" test="count(cda:subject/cda:relatedSubject/cda:code) = 1">
 				This relatedSubject SHALL contain exactly one [1..1] code (CONF:1198-15246).			
 			</sch:assert>
-			<sch:assert id="a-1198-15247-error" test="cda:subject/cda:relatedSubject/cda:code/@code">
+			<sch:assert id="a-1198-15247-error" test="cda:subject/cda:relatedSubject/cda:code[@code]">
 				This code SHALL contain exactly one [1..1] @code, which SHOULD be selected from ValueSet Family Member Value Set urn:oid:2.16.840.1.113883.1.11.19579 DYNAMIC (CONF:1198-15247).			
 			</sch:assert>
 			<sch:assert id="a-1198-15974-error" test="count(cda:subject/cda:relatedSubject/cda:subject/cda:administrativeGenderCode) = 1">
 				The subject, if present, SHALL contain exactly one [1..1] administrativeGenderCode (CONF:1198-15974).			
 			</sch:assert>
-			<sch:assert id="a-1198-15975-error" test="cda:subject/cda:relatedSubject/cda:subject/cda:administrativeGenderCode/@code">
+			<sch:assert id="a-1198-15975-error" test="cda:subject/cda:relatedSubject/cda:subject/cda:administrativeGenderCode[@code]">
 				This administrativeGenderCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet Administrative Gender (HL7 V3) urn:oid:2.16.840.1.113883.1.11.1 DYNAMIC (CONF:1198-15975).
 			</sch:assert>
 			<sch:assert id="a-1198-32428-error" test="count(cda:component) &gt; 0">

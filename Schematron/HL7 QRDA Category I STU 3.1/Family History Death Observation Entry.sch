@@ -23,22 +23,22 @@
             <sch:assert id="a-81-19141-error" test="count(cda:code)=1">
                 SHALL contain exactly one [1..1] code (CONF:81-19141).
             </sch:assert>
-            <sch:assert id="a-81-19142-error" test="cda:code/@code ='ASSERTION'">
+            <sch:assert id="a-81-19142-error" test="cda:code[@code ='ASSERTION']">
                 This code SHALL contain exactly one [1..1] @code="ASSERTION" Assertion (CONF:81-19142).
             </sch:assert>
-            <sch:assert id="a-81-26504-error" test="cda:code/@codeSystem='2.16.840.1.113883.5.4'">
+            <sch:assert id="a-81-26504-error" test="cda:code[@codeSystem='2.16.840.1.113883.5.4']">
                 This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.5.4" (CodeSystem: ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:81-26504).
             </sch:assert>
             <sch:assert id="a-81-8625-error" test="count(cda:statusCode)=1">
                 SHALL contain exactly one [1..1] statusCode (CONF:81-8625).
             </sch:assert>
-            <sch:assert id="a-81-19097-error" test="cda:statusCode/@code='completed'">
+            <sch:assert id="a-81-19097-error" test="cda:statusCode[@code='completed']">
                 This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:81-19097).            
             </sch:assert>
             <sch:assert id="a-81-8626-error" test="count(cda:value[@xsi:type='CD'])=1">
                 SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:81-8626).
             </sch:assert>
-            <sch:assert id="a-81-26470-error" test="cda:value/@code='419099009'">
+            <sch:assert id="a-81-26470-error" test="cda:value[@code='419099009']">
                 This value SHALL contain exactly one [1..1] @code="419099009" Dead (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96 STATIC) (CONF:81-26470).            
             </sch:assert>
         </sch:rule>

@@ -46,7 +46,7 @@
 	
 	<sch:pattern id="Family_History_Observation_V3-pattern-warnings">
 		<sch:rule id="Family_History_Observation_V3-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.46']]">
-			<sch:assert id="a-1198-32427-v-warning" test="cda:code/@code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.3221.7.2']/voc:code/@value">
+			<sch:assert id="a-1198-32427-v-warning" test="cda:code[@code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.3221.7.2']/voc:code/@value]">
 				SHALL contain exactly one [1..1] code, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2012-06-01 (CONF:1198-32427).
 			</sch:assert>
 			<sch:assert id="a-1198-32847-v-warning" test="(cda:code/cda:translation/@sdtc:valueSet='2.16.840.1.113883.3.88.12.3221.7.2')">

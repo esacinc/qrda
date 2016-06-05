@@ -22,21 +22,26 @@
 			<sch:assert id="a-2228-27628-error" test="count(cda:code) = 1">
 				SHALL contain exactly one [1..1] code (CONF:2228-27628).
 			</sch:assert>
-			<sch:assert id="a-2228-27629-error" test="cda:code[@sdtc:valueSet]">
-				This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27629).
-			</sch:assert>
 			<sch:assert id="a-2228-12758-error" test="count(cda:statusCode) = 1">
 				SHALL contain exactly one [1..1] statusCode (CONF:2228-12758).
 			</sch:assert>
 			<sch:assert id="a-2228-12760-error" test="count(cda:effectiveTime) = 1">
 				SHALL contain exactly one [1..1] effectiveTime (CONF:2228-12760).
-					This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-27560).
-					Note: QDM Attribute: Start Datetime
-					This effectiveTime MAY contain zero or one [0..1] high (CONF:2228-27561).
-					Note: QDM Attribute: Stop Datetime
 			</sch:assert>
 		</sch:rule>
 
+		<sch:rule id="Functional_Status_Performed_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.26']]/cda:code">
+			<sch:assert id="a-2228-27629-error" test="@sdtc:valueSet">
+				This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27629).
+			</sch:assert>
+		</sch:rule>
+		
+		<sch:rule id="Functional_Status_Performed_V3-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.26']]/cda:effectiveTime">
+			<sch:assert id="a-2228-27560-error" test="count(cda:low)=1">
+				This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-27560).
+			</sch:assert>
+		</sch:rule>
+			
 		<sch:rule id="Functional_Status_Performed_V3-may-methodCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.26'][@extension='2016-02-01']]/cda:methodCode">
 			<sch:assert id="a-2228-27718-error" test="@sdtc:valueSet">
 				The methodCode, if present, SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27718).

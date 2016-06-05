@@ -27,21 +27,30 @@
 			<sch:assert id="a-2228-27637-error" test="count(cda:code) = 1">
 				SHALL contain exactly one [1..1] code (CONF:2228-27637).			
 			</sch:assert>
-			<sch:assert id="a-2228-27638-error" test="cda:code[@sdtc:valueSet]">
-				This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27638).			
-			</sch:assert>
 			<sch:assert id="a-2228-11709-error" test="count(cda:statusCode)=1">
 				SHALL contain exactly one [1..1] statusCode (CONF:2228-11709).
 			</sch:assert>
-			<sch:assert id="a-2228-11710-error" test="cda:statusCode[@code='completed']">
-				This statusCode SHALL contain exactly one [1..1] @code='completed' (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-11710).			
-			</sch:assert>
 			<sch:assert id="a-2228-11711-error" test="count(cda:effectiveTime) = 1">
 				SHALL contain exactly one [1..1] effectiveTime (CONF:2228-11711).
-					This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-11712).
-					Note: QDM Attribute: Start Datetime
-					This effectiveTime SHALL contain exactly one [1..1] high (CONF:2228-11713).
-					Note: QDM Attribute: Stop Datetime
+			</sch:assert>
+		</sch:rule>
+		
+		<sch:rule id="Laboratory_Test_Performed_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.38']]/cda:code">
+			<sch:assert id="a-2228-27638-error" test="@sdtc:valueSet">
+				This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27638).			
+			</sch:assert>
+		</sch:rule>
+		<sch:rule id="Laboratory_Test_Performed_V3-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.38']]/cda:statusCode">
+			<sch:assert id="a-2228-11710-error" test="@code='completed'">
+				This statusCode SHALL contain exactly one [1..1] @code='completed' (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-11710).			
+			</sch:assert>
+		</sch:rule>
+		<sch:rule id="Laboratory_Test_Performed_V3-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.38']]/cda:effectiveTime">
+			<sch:assert id="a-2228-11712-error" test="count(cda:low)=1">
+				This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-11712).
+			</sch:assert>
+			<sch:assert id="a-2228-11713-error" test="count(cda:high)=1">
+				This effectiveTime SHALL contain exactly one [1..1] high (CONF:2228-11713).
 			</sch:assert>
 		</sch:rule>
 	</sch:pattern>

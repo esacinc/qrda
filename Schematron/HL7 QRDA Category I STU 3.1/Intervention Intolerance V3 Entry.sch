@@ -27,14 +27,16 @@
 			<sch:assert id="a-2228-16414-error" test="cda:value[@xsi:type='CD']">
 				SHALL contain exactly one [1..1] value with @xsi:type='CD' (CONF:2228-16414).			
 			</sch:assert>
-			<sch:assert id="a-2228-16415-error" test="cda:value[@code='102460003']">
-				This value SHALL contain exactly one [1..1] @code='102460003' Decreased tolerance (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2228-16415).			
-			</sch:assert>
 			<sch:assert id="a-2228-13679-error" test="count(cda:entryRelationship[@typeCode='CAUS'][@inversionInd='true'][count(cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.32'][@extension='2016-02-01']])=1])=1">
 				SHALL contain exactly one [1..1] entryRelationship (CONF:2228-13679) such that it
 					SHALL contain exactly one [1..1] @typeCode='CAUS' (CodeSystem: HL7ParticipationType urn:oid:2.16.840.1.113883.5.90) (CONF:2228-13680).
 					SHALL contain exactly one [1..1] @inversionInd='true' (CONF:2228-13681).
 					SHALL contain exactly one [1..1] Intervention Performed (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.32:2016-02-01) (CONF:2228-13683).
+			</sch:assert>
+		</sch:rule>
+		<sch:rule id="Intervention_Intolerance_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.30']]/value">
+			<sch:assert id="a-2228-16415-error" test="@code='102460003'">
+				This value SHALL contain exactly one [1..1] @code='102460003' Decreased tolerance (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2228-16415).			
 			</sch:assert>
 		</sch:rule>
 	</sch:pattern>

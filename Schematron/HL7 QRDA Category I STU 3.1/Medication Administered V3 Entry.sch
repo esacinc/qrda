@@ -33,10 +33,6 @@
 			</sch:assert>
 			<sch:assert id="a-2228-26714-error" test="count(cda:effectiveTime) = 1">
 				SHALL contain exactly one [1..1] effectiveTime (CONF:2228-26714).
-					This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-28552).
-					Note: QDM Attribute: Start Datetime
-					This effectiveTime MAY contain zero or one [0..1] high (CONF:2228-28553).
-					Note: QDM Attribute: Stop Datetime
 			</sch:assert>
 			<sch:assert id="a-2228-12454-error" test="count(cda:entryRelationship[@typeCode='COMP'][cda:substanceAdministration[@moodCode='EVN'][cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16']]]) &gt; 0">
 				SHALL contain at least one [1..*] entryRelationship (CONF:2228-12454) such that it
@@ -57,6 +53,11 @@
 		<sch:rule id="Medication_Administered_V3-statuscode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42']]/cda:statusCode">
 			<sch:assert id="a-2228-13241-error" test="@code='completed'">
 				This statusCode SHALL contain exactly one [1..1] @code='completed' (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-13241).			
+			</sch:assert>
+		</sch:rule>
+		<sch:rule id="Medication_Administered_V3-low-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42']]/cda:low">
+			<sch:assert id="a-2228-28552-error" test="count(cda:low) = 1">
+				This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-28552).
 			</sch:assert>
 		</sch:rule>
 	</sch:pattern>

@@ -24,14 +24,8 @@
 			<sch:assert id="a-2228-27633-error" test="count(cda:code) = 1">
 				SHALL contain exactly one [1..1] code (CONF:2228-27633).
 			</sch:assert>
-			<sch:assert id="a-2228-27634-error" test="cda:code[@sdtc:valueSet]">
-				This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27634).			
-			</sch:assert>
 			<sch:assert id="a-2228-27362-error" test="cda:statusCode">
 				SHALL contain exactly one [1..1] statusCode (CONF:2228-27362).			
-			</sch:assert>
-			<sch:assert id="a-2228-27363-error" test="cda:statusCode[@code='completed']">
-				This statusCode SHALL contain exactly one [1..1] @code='completed' Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-27363).			
 			</sch:assert>
 			<sch:assert id="a-2228-13611-error" test="count(cda:effectiveTime) = 1">
 				SHALL contain exactly one [1..1] effectiveTime (CONF:2228-13611).
@@ -39,6 +33,16 @@
 					Note: QDM Attribute: Start Datetime
 					This effectiveTime MAY contain zero or one [0..1] high (CONF:2228-13613).
 					Note: QDM Attribute: Stop Datetime
+			</sch:assert>
+		</sch:rule>
+		<sch:rule id="Intervention_Performed_V3-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.32']]/cda:code">
+			<sch:assert id="a-2228-27634-error" test="@sdtc:valueSet">
+				This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27634).			
+			</sch:assert>
+		</sch:rule>
+		<sch:rule id="Intervention_Performed_V3-statusCode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.32']]/cda:statusCode">
+			<sch:assert id="a-2228-27363-error" test="@code='completed'">
+				This statusCode SHALL contain exactly one [1..1] @code='completed' Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-27363).			
 			</sch:assert>
 		</sch:rule>
 	</sch:pattern>

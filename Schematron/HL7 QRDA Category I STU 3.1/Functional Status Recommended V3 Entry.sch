@@ -22,11 +22,14 @@
 			<sch:assert id="a-2228-27630-error" test="count(cda:code) = 1">
 				SHALL contain exactly one [1..1] code (CONF:2228-27630)
 			</sch:assert>
-			<sch:assert id="a-2228-27631-error" test="cda:code[@sdtc:valueSet]">
-				This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27631).
-			</sch:assert>
 			<sch:assert id="a-2228-27348-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']]) = 1">
 				SHALL contain exactly one [1..1] Author Participation author(identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27348).
+			</sch:assert>
+		</sch:rule>
+		
+		<sch:rule id="Functional_Status_Recommended_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.27']]/cda:code">
+			<sch:assert id="a-2228-27631-error" test="@sdtc:valueSet">
+				This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27631).
 			</sch:assert>
 		</sch:rule>
 	</sch:pattern>

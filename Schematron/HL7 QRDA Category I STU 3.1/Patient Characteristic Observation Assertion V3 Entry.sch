@@ -52,10 +52,6 @@
 				This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-27670).
 				Note: QDM Attribute: Start Datetime
 			</sch:assert>
-			<sch:assert id="a-2228-27671-error" test="count(cda:high)=1">
-				This effectiveTime MAY contain zero or one [0..1] high (CONF:2228-27671).
-				Note: QDM Attribute: Stop Datetime
-			</sch:assert>
 		</sch:rule>
 		<sch:rule id="Patient_Characteristic_Observation_Assertion_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.103']]/cda:value[@xsi:type='CD']">
 			<sch:assert id="a-2228-27672-error" test="@sdtc:valueSet">

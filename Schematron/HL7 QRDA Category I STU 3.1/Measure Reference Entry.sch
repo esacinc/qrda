@@ -8,6 +8,9 @@
 	<sch:phase id="errors">
 		<sch:active pattern="Measure_Reference-pattern-errors"/>
 	</sch:phase>
+	<sch:phase id="warnings">
+		<sch:active pattern="Measure_Reference-pattern-warnings"/>
+	</sch:phase>
 	<sch:pattern id="Measure_Reference-pattern-errors">
 		<sch:rule id="Measure_Reference-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.98']]">
 			<sch:assert id="a-67-12979-error" test="@classCode='CLUSTER'">
@@ -40,6 +43,14 @@
 				This externalDocument SHALL contain at least one [1..*] id (CONF:67-12985) such that it
 					SHALL contain exactly one [1..1] @root (CONF:67-12986).
 					This ID references an ID of the Quality Measure (CONF:67-27008).
+			</sch:assert>
+		</sch:rule>
+	</sch:pattern>
+	<sch:pattern id="Measure_Reference-pattern-warnings">
+		<sch:rule id="Measure_Reference-externalDocument-warnings" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.98']]/cda:reference/cda:externalDocument">
+			<sch:assert id="a-67-12997-error" test="count(cda:text) &gt; 0">
+				This externalDocument SHOULD contain zero or one [0..1] text (CONF:67-12997).
+					This text is the title of the eMeasure (CONF:67-12998).
 			</sch:assert>
 		</sch:rule>
 	</sch:pattern>

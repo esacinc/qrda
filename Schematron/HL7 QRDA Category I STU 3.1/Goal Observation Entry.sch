@@ -37,9 +37,11 @@
 			</sch:assert>
 		</sch:rule>
 		<sch:rule id="Goal_Observation-may-reference-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.121']]/cda:reference">
-			<sch:assert id="a-1098-32754-error" test="parent::node()[cda:reference[@typeCode='REFR'][count(cda:externalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.115'][@extension='2014-06-09']])=1]]">
-					The reference, if present, SHALL contain exactly one [1..1] @typeCode="REFR" Refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:1098-32755).
-					The reference, if present, SHALL contain exactly one [1..1] External Document Reference (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.115:2014-06-09) (CONF:1098-32756).
+			<sch:assert id="a-1098-32754-error" test="@typeCode='REFR'">
+				The reference, if present, SHALL contain exactly one [1..1] @typeCode="REFR" Refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:1098-32755).
+			</sch:assert>
+			<sch:assert id="a-1098-32756-error" test="count(cda:externalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.115'][@extension='2014-06-09']])=1">
+				The reference, if present, SHALL contain exactly one [1..1] External Document Reference (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.115:2014-06-09) (CONF:1098-32756).
 			</sch:assert>
 		</sch:rule>
 	</sch:pattern>

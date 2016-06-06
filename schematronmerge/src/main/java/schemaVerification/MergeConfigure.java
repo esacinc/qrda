@@ -35,13 +35,14 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.Properties;
-
+//import java.util.EProperties;
+// Use EProperties to suppoirt Command line arguments in a standard way
+import net.jmatrix.eproperties.EProperties;
 
 public class MergeConfigure {
 
 	private static String defaultName = "HL7_core_STU3.1_schematron.properties";
-	private Properties properties = new Properties();
+	private Properties properties = new EProperties();
 	private boolean propsLoaded = false;
 	private String propertiesFileName = defaultName;
 	
@@ -101,7 +102,7 @@ public class MergeConfigure {
 			System.err.println(".");
 			
 			filename = legalPropertyFileNames.get(0);
-			System.err.println("Will try use  " + filename + " as the properties file");
+			System.err.println("Will try to use  " + filename + " as the properties file");
 		}
 		return(filename);
 	}

@@ -24,7 +24,7 @@
 			<sch:assert id="a-2228-14573-error" test="count(cda:value[@xsi:type='CD']) = 1">
 				SHALL contain exactly one [1..1] value with @xsi:type='CD' (CONF:2228-14573).
 			</sch:assert>
-			<sch:assert id="a-2228-13973-error" test="count(cda:entryRelationship[@typeCode='CAUS'][@inversionInd='true'][cda:observation[count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.38'][@extension='2016-02-01'])=1]])=1">
+			<sch:assert id="a-2228-13973-error" test="count(cda:entryRelationship[@typeCode='CAUS'][@inversionInd='true'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.38'][@extension='2016-02-01']])=1])=1">
 				SHALL contain exactly one [1..1] entryRelationship (CONF:2228-13973) such that it
 					SHALL contain exactly one [1..1] @typeCode='CAUS' (CodeSystem: HL7ParticipationType urn:oid:2.16.840.1.113883.5.90) (CONF:2228-13974).
 					SHALL contain exactly one [1..1] @inversionInd='true' (CONF:2228-13975).

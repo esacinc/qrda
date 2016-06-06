@@ -12,7 +12,7 @@
 		<sch:active pattern="Measure_Reference-pattern-warnings"/>
 	</sch:phase>
 	<sch:pattern id="Measure_Reference-pattern-errors">
-		<sch:rule id="Measure_Reference-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.98']]">
+		<sch:rule id="Measure_Reference-errors" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.98']]">
 			<sch:assert id="a-67-12979-error" test="@classCode='CLUSTER'">
 				SHALL contain exactly one [1..1] @classCode='CLUSTER' cluster (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:67-12979).			
 			</sch:assert>
@@ -35,7 +35,7 @@
 					SHALL contain exactly one [1..1] externalDocument (CONF:67-12984).
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Measure_Reference-externalDocument-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.98']]/cda:reference/cda:externalDocument">
+		<sch:rule id="Measure_Reference-externalDocument-errors" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.98']]/cda:reference/cda:externalDocument">
 			<sch:assert id="a-67-19534-error" test="@classCode='DOC'">
 				This externalDocument SHALL contain exactly one [1..1] @classCode='DOC' Document (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:67-19534).
 			</sch:assert>
@@ -47,7 +47,7 @@
 		</sch:rule>
 	</sch:pattern>
 	<sch:pattern id="Measure_Reference-pattern-warnings">
-		<sch:rule id="Measure_Reference-externalDocument-warnings" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.98']]/cda:reference/cda:externalDocument">
+		<sch:rule id="Measure_Reference-externalDocument-warnings" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.98']]/cda:reference/cda:externalDocument">
 			<sch:assert id="a-67-12997-error" test="count(cda:text) &gt; 0">
 				This externalDocument SHOULD contain zero or one [0..1] text (CONF:67-12997).
 					This text is the title of the eMeasure (CONF:67-12998).

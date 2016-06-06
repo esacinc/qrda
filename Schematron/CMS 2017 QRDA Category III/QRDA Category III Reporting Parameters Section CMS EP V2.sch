@@ -12,7 +12,7 @@
     </sch:phase>
     
     <sch:pattern id="QRDA_Category_III_Reporting_Parameters_CMS-pattern-errors">
-        <sch:rule id="QRDA_Category_III_Reporting_Parameters-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.6']]">
+        <sch:rule id="QRDA_Category_III_Reporting_Parameters_CMS-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.6']]">
             <sch:assert id="a-2233-711278-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.2.6'][@extension='2016-03-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-711278) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.2.6" (CONF:2233-711279). SHALL contain exactly one [1..1] @extension="2016-03-01" (CONF:2233-711306).</sch:assert>
             <sch:assert id="a-2233-14611-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.17.2.1'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-14611) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.17.2.1" (CONF:2233-14612).</sch:assert>
             <sch:assert id="a-2233-18323-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.2.2'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-18323) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.2.2" (CONF:2233-18324).</sch:assert>

@@ -3130,12 +3130,12 @@ Fixed QRDA-280 by changing the context on US Realm Patient Name
   <sch:pattern id="p-urn-hl7ii-2.16.840.1.113883.10.20.24.3.99-2015-04-05-errors">
     <sch:rule id="r-urn-hl7ii-2.16.840.1.113883.10.20.24.3.99-2015-04-05-errors-abstract" abstract="true">
       <sch:extends rule="r-urn-hl7ii-2.16.840.1.113883.10.20.22.4.43-2014-06-09-errors-abstract" />
-      <sch:assert id="a-1140-13821" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.99'][@extension='2015-04-05'])=1">SHALL contain exactly one [1..1] templateId (CONF:1140-13821) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.99" (CONF:1140-13822). SHALL contain exactly one [1..1] @extension="2015-04-05" (CONF:1140-28374).</sch:assert>
+      <sch:assert id="a-1140-13821" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.99'][@extension='2014-12-09'])=1">SHALL contain exactly one [1..1] templateId (CONF:1140-13821) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.99" (CONF:1140-13822). SHALL contain exactly one [1..1] @extension="2014-12-09" (CONF:1140-28374).</sch:assert>
       <sch:assert id="a-1140-13820" test="@moodCode='RQO'">SHALL contain exactly one [1..1] @moodCode="RQO" Request (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:1140-13820).</sch:assert>
       <sch:assert id="a-1140-13829" test="count(cda:effectiveTime[@xsi:type='IVL_TS'])=1">SHALL contain exactly one [1..1] effectiveTime (CONF:1140-13829).</sch:assert>
       <sch:assert id="a-1140-28373" test="@classCode='SPLY'">SHALL contain exactly one [1..1] @classCode="SPLY" Supply (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1140-28373).</sch:assert>
     </sch:rule>
-    <sch:rule id="r-urn-hl7ii-2.16.840.1.113883.10.20.24.3.99-2015-04-05-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.99' and @extension = '2015-04-05']]">
+    <sch:rule id="r-urn-hl7ii-2.16.840.1.113883.10.20.24.3.99-2015-04-05-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.99' and @extension = '2014-12-09']]">
       <sch:extends rule="r-urn-hl7ii-2.16.840.1.113883.10.20.24.3.99-2015-04-05-errors-abstract" />
     </sch:rule>
   </sch:pattern>

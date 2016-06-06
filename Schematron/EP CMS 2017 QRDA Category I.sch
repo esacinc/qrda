@@ -157,6 +157,21 @@
     <sch:active pattern="US_Realm-pattern-errors" />
     <sch:active pattern="US-Realm-Patient-Name-pattern-errors" />
     <sch:active pattern="US-Realm-Person-Name-pattern-errors" />
+    <sch:active pattern="QRDA_Category_I_Patient_Data_Section_QDM_V3_CMS_EP_pattern-errors" />
+    <sch:active pattern="QRDA_Category_I_Reporting_Parameters_Section_CMS_EP-pattern-errors" />
+    <sch:active pattern="QRDA_Category_I_Report_CMS-pattern-errors" />
+    <sch:active pattern="Reporting-Parameters-Act-CMS-pattern-errors" />
+    <sch:active pattern="p-validate_PQ-errors" />
+    <sch:active pattern="p-validate_REAL-errors" />
+    <sch:active pattern="p-validate_CS-errors" />
+    <sch:active pattern="p-validate_CD_CE-errors" />
+    <sch:active pattern="p-validate_TS-errors" />
+    <sch:active pattern="p-validate_NPI_format-errors" />
+    <sch:active pattern="p-validate_TIN_format-errors" />
+    <sch:active pattern="p-validate_II-errors" />
+    <sch:active pattern="p-validate_ST-errors" />
+    <sch:active pattern="p-validate_INT-errors" />
+    <sch:active pattern="p-validate_BL-errors" />
   </sch:phase>
   <sch:phase id="warnings">
     <sch:active pattern="Act_intolerance_Adverse_Event_V3-pattern-warnings" />
@@ -211,6 +226,7 @@
     <sch:active pattern="US-Realm-Address-pattern-warnings" />
     <sch:active pattern="US-Realm-Date-and-Time-pattern-warnings" />
     <sch:active pattern="US_Realm-pattern-warnings" />
+    <sch:active pattern="QRDA_Category_I_Report_CMS-pattern-warnings" />
   </sch:phase>
   <sch:pattern id="Act_intolerance_Adverse_Event_V3-pattern-errors">
     <sch:rule id="Act_intolerance_Adverse_Event_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.104']]">
@@ -3488,6 +3504,182 @@
     <sch:rule id="US-Realm-Person-Name-name-errors" context="//* [cda:name[parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]/cda:recordTarget/cda:patientRole/cda:patient             or parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:recordTarget/cda:patientRole/cda:patient             or parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]/cda:recordTarget/cda:patientRole/cda:patient/cda:guardian/cda:guardianPerson             or parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]/cda:author/cda:assignedAuthor/cda:assignedPerson             or parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]/cda:dataEnterer/cda:assignedEntity/cda:assignedPerson             or parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]/cda:informationRecipient/cda:intendedRecipient/cda:informationRecipient             or parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]/cda:legalAuthenticator/cda:assignedEntity/cda:assignedPerson]]">
       <sch:assert id="a-81-9371-error" test="(cda:given and cda:family) or (count(cda:name/*)=0 and string-length(normalize-space(string(cda:name)))!=0)">The content of name SHALL be either a conformant Patient Name (PTN.US.FIELDED), or a string (CONF:81-9371).</sch:assert>
       <sch:assert id="a-81-9372-error" test="(cda:given and cda:family) or (count(cda:name/*)=0)">The string SHALL NOT contain name parts (CONF:81-9372).</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="QRDA_Category_I_Patient_Data_Section_QDM_V3_CMS_EP_pattern-errors">
+    <sch:rule id="QRDA_Category_I_Patient_Data_Section_QDM_V3_CMS_EP-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.24.2.1.1']]">
+      <sch:assert id="a-CMS_0036-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.2.1'][@extension='2016-03-01']) = 1">SHALL contain exactly one [1..1] templateId (CONF:CMS_0036) such that it
+					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.24.2.1.1" (CONF:CMS_0037).
+					SHALL contain exactly one [1..1] @extension='2016-03-01" (CONF:CMS_0038).</sch:assert>
+      <sch:assert id="a-2228-14430_C01-error" test="count(cda:entry[count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.55']])=1]) &gt; 0">SHALL contain at least one [1..*] entry (CONF:2228-14430_C01) such that it
+					SHALL contain exactly one [1..1] Patient Characteristic Payer (identifier: urn:oid:2.16.840.1.113883.10.20.24.3.55) (CONF:2228-14431).</sch:assert>
+      <sch:assert id="a-CMS_0051-error" test="count(cda:entry[count(//cda:templateId[@root!='2.16.840.1.113883.10.20.24.3.55']) = 1]) &gt; 0">SHALL contain at least one [1..*] entry (CONF:CMS_0051) such that it
+					SHALL contain exactly one [1..1] entry template that is other than the Patient Characteristic Payer (identifier: urn:oid:2.16.840.1.113883.10.20.24.3.55) (CONF:CMS_0039).</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="QRDA_Category_I_Reporting_Parameters_Section_CMS_EP-pattern-errors">
+    <sch:rule id="QRDA_Category_I_Reporting_Parameters_Section_CMS_EP-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.17.2.1.1']]">
+      <sch:assert id="a-CMS_0040-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.17.2.1.1'][@extension='2016-03-01']) = 1">SHALL contain exactly one [1..1] templateId (CONF:CMS_0040) such that it
+					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.17.2.1.1" (CONF:CMS_0041).
+					SHALL contain exactly one [1..1] @extension='2016-03-01" (CONF:CMS_0042).</sch:assert>
+      <sch:assert id="a-CMS_0023-error" test="count(cda:entry[count(cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1'][@extension='2016-03-01']])=1]) = 1">SHALL contain exactly one [1..1] entry (CONF:CMS_0023) such that it
+					SHALL contain exactly one [1..1] Reporting Parameters Act - CMS (identifier: urn:hl7ii:2.16.840.1.113883.10.20.17.3.8.1:2016-03-01) (CONF:CMS_0024).</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="QRDA_Category_I_Report_CMS-pattern-warnings">
+    <sch:rule id="QRDA_Category_I_Report_CMS-effectiveTime-warnings" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:effectiveTime">
+      <sch:assert id="a-81-10128-c-warning" test="string-length(@value)&gt;=12">*SHOULD* be precise to the minute (CONF:81-10128).</sch:assert>
+      <sch:assert id="a-81-10130-c-warning" test="string-length(@value)&lt;10 or ( string-length(@value)&gt;=10 and (contains(@value,'+') or contains(@value,'-')))">If more precise than day, *SHOULD* include time-zone offset (CONF:81-10130).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-legalAuthenticator-assignedEntity-representedOrganization-warnings" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:legalAuthenticator/cda:assignedEntity/cda:representedOrganization">
+      <sch:assert id="a-2239-28485-warning" test="count(cda:name)=1">The representedOrganization, if present, SHOULD contain zero or one [0..1] name (CONF:2239-28485).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-documentationOf-serviceEvent-performer-assignedEntity-warnings" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity">
+      <sch:assert id="a-2228-16587-error" test="count(cda:id[@root='2.16.840.1.113883.4.6'])=1">This assignedEntity SHOULD contain zero or one [0..1] id (CONF:2228-16587) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:2228-16588).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-documentationOf-serviceEvent-performer-assignedEntity-representedOrganization-warnings" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity/cda:representedOrganization">
+      <sch:assert id="a-2228-16592-error" test="count(cda:id)=1">This representedOrganization SHOULD contain zero or one [0..1] id (CONF:2228-16592).</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="QRDA_Category_I_Report_CMS-pattern-errors">
+    <sch:rule id="QRDA_Category_I_Report_CMS-errors" context="cda:ClinicalDocument">
+      <sch:assert id="a-CMS_0001-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:CMS_0001) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.1.3" (CONF:CMS_0002). SHALL contain exactly one [1..1] @extension="2016-03-01" (CONF:CMS_0003).</sch:assert>
+      <sch:assert id="a-2228-16703-error" test="count(cda:informationRecipient)=1">SHALL contain exactly one [1..1] informationRecipient (CONF:2228-16703).</sch:assert>
+      <sch:assert id="a-2228-16579_C01-error" test="count(cda:documentationOf[count(cda:serviceEvent)=1])=1">SHALL contain exactly one [1..1] documentationOf (CONF:2228-16579_C01) such that it SHALL contain exactly one [1..1] serviceEvent (CONF:2228-16580).</sch:assert>
+      <sch:assert id="a-2239-28472-error" test="count(cda:component)=1">SHALL contain exactly one [1..1] component (CONF:2239-28472).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-effectiveTime-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:effectiveTime">
+      <sch:assert id="a-81-10127-c-error" test="string-length(@value)&gt;=8">SHALL be precise to the day (CONF:81-10127).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-languageCode-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:languageCode">
+      <sch:assert id="a-CMS_0010-error" test="@code='en'">This languageCode SHALL contain exactly one [1..1] @code="en" (CONF:CMS_0010).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-recordTarget-patientRole-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:recordTarget/cda:patientRole">
+      <sch:assert id="a-CMS_0009-error" test="count(cda:id[@root][@extension])=1">This patientRole SHALL contain exactly one [1..1] id (CONF:CMS_0009) such that it SHALL contain exactly one [1..1] @root (CONF:CMS_0053). SHALL contain exactly one [1..1] @extension (CONF:CMS_0103). SHALL contain exactly one Patient Identifier Number (CONF:CMS_0007).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-recordTarget-patientRole-patient-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:recordTarget/cda:patientRole/cda:patient">
+      <sch:assert id="a-1198-5284_C01-error" test="count(cda:name)=1">This patient SHALL contain exactly one [1..1] US Realm Person Name (PN.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5284_C01).</sch:assert>
+      <sch:assert id="a-CMS_0011-error" test="count(cda:administrativeGenderCode)=1">This patient SHALL contain exactly one [1..1] administrativeGenderCode, which SHALL be selected from ValueSet ONC Administrative Sex urn:oid:2.16.840.1.113762.1.4.1 DYNAMIC (CONF:CMS_0011).</sch:assert>
+      <sch:assert id="a-CMS_0013-error" test="count(cda:raceCode)=1">This patient SHALL contain exactly one [1..1] raceCode, which SHALL be selected from ValueSet Race urn:oid:2.16.840.1.114222.4.11.836 DYNAMIC (CONF:CMS_0013).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-recordTarget-patientRole-patient-birthTime-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:recordTarget/cda:patientRole/cda:patient/cda:birthTime">
+      <sch:assert id="a-1198-5300_C01-error" test="string-length(@value)&gt;=8">SHALL be precise to day (CONF:1198-5300_C01).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-informationRecipient-intendedRecipient-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:informationRecipient/cda:intendedRecipient">
+      <sch:assert id="a-2228-16705_C01-error" test="count(cda:id)=1">This intendedRecipient SHALL contain exactly one [1..1] id (CONF:2228-16705_C01).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-informationRecipient-intendedRecipient-id-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:informationRecipient/cda:intendedRecipient/cda:id">
+      <sch:assert id="a-CMS_0043-error" test="not(@nullFlavor)">This id SHALL NOT contain [0..0] @nullFlavor (CONF:CMS_0043).</sch:assert>
+      <sch:assert id="a-CMS_0025-error" test="@root='2.16.840.1.113883.3.249.7'">This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.7" (CONF:CMS_0025).</sch:assert>
+      <sch:assert id="a-CMS_0026-error" test="@extension=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.249.14.103']/voc:code/@value">This id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet QRDA-I CMS Program Name urn:oid:2.16.840.1.113883.3.249.14.103 STATIC 2016-03-01 (CONF:CMS_0026).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-legalAuthenticator-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:legalAuthenticator">
+      <sch:assert id="a-CMS_0100-error" test="count(cda:assignedEntity)=1">This legalAuthenticator SHALL contain exactly one [1..1] assignedEntity (CONF:CMS_0100).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-legalAuthenticator-assignedEntity-representedOrganization-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:legalAuthenticator/cda:assignedEntity/cda:representedOrganization">
+      <sch:assert id="a-2239-28484-error" test="count(cda:id) &gt; 0">The representedOrganization, if present, SHALL contain at least one [1..*] id (CONF:2239-28484).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-participant-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:participant">
+      <sch:assert id="a-CMS_0004-error" test="count(cda:associatedEntity)=1">The participant, if present, SHALL contain exactly one [1..1] associatedEntity (CONF:CMS_0004).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-participant-associatedEntity-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:participant/cda:associatedEntity">
+      <sch:assert id="a-CMS_0005-error" test="count(cda:id[not(@nullFlavor)][@root='2.16.840.1.113883.3.2074.1'][@extension])=1">This associatedEntity SHALL contain exactly one [1..1] id (CONF:CMS_0005) such that it SHALL NOT contain [0..0] @nullFlavor (CONF:CMS_0052). SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" CMS EHR Certification Number (formerly known as Office of the National Coordinator Certification Number) (CONF:CMS_0006). SHALL contain exactly one [1..1] @extension (CONF:CMS_0008).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-component-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:component">
+      <sch:assert id="a-2239-28473-error" test="count(cda:structuredBody)=1">This component SHALL contain exactly one [1..1] structuredBody (CONF:2239-28473).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-component-structuredBody-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:component/cda:structuredBody">
+      <sch:assert id="a-2239-28474-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.17.2.1.1'][@extension='2016-03-01']])=1]) &gt; 0">This structuredBody SHALL contain at least one [1..*] component (CONF:2239-28474) such that it SHALL contain exactly one [1..1] Reporting Parameters Section - CMS (identifier: urn:hl7ii:2.16.840.1.113883.10.20.17.2.1.1:2016-03-01) (CONF:2239-28475).</sch:assert>
+      <sch:assert id="a-2239-28476-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.24.2.1.1'][@extension='2016-03-01']])=1]) &gt; 0">This structuredBody SHALL contain at least one [1..*] component (CONF:2239-28476) such that it SHALL contain exactly one [1..1] Patient Data Section QDM (V3) - CMS (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.2.1.1:2016-03-01) (CONF:2239-28477).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-documentationOf-serviceEvent-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:documentationOf/cda:serviceEvent">
+      <sch:assert id="a-2228-16583_C01-error" test="count(cda:performer)=1">This serviceEvent SHALL contain exactly one [1..1] performer (CONF:2228-16583_C01).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-documentationOf-serviceEvent-performer-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:documentationOf/cda:serviceEvent/cda:performer">
+      <sch:assert id="a-2228-16584-error" test="@typeCode='PRF'">Such performers SHALL contain exactly one [1..1] @typeCode="PRF" Performer (CONF:2228-16584).</sch:assert>
+      <sch:assert id="a-2228-16586-error" test="count(cda:assignedEntity)=1">Such performers SHALL contain exactly one [1..1] assignedEntity (CONF:2228-16586).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-documentationOf-serviceEvent-performer-assignedEntity-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity">
+      <sch:assert id="a-2228-16587_C01-error" test="count(cda:id[@root='2.16.840.1.113883.4.6'])=1">This assignedEntity SHALL contain exactly one [1..1] id (CONF:2228-16587_C01) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:2228-16588).</sch:assert>
+      <sch:assert id="a-2228-16591-error" test="count(cda:representedOrganization)=1">This assignedEntity SHALL contain exactly one [1..1] representedOrganization (CONF:2228-16591).</sch:assert>
+    </sch:rule>
+    <sch:rule id="QRDA_Category_I_Report_CMS-documentationOf-serviceEvent-performer-assignedEntity-representedOrganization-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity/cda:representedOrganization">
+      <sch:assert id="a-2228-16592_C01-error" test="count(cda:id[@root='2.16.840.1.113883.4.2'][@extension])=1">This representedOrganization SHALL contain exactly one [1..1] id (CONF:2228-16592_C01) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:2228-16593). SHALL contain exactly one [1..1] @extension (CONF:CMS_0102).</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="Reporting-Parameters-Act-CMS-pattern-errors">
+    <sch:rule id="Reporting-Parameters-Act-CMS-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1']]">
+      <sch:assert id="a-CMS_0044-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1'][@extension='2016-03-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:CMS_0044) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.17.3.8.1" (CONF:CMS_0045) SHALL contain exactly one [1..1] @extension="2016-03-01" (CONF:CMS_0046)</sch:assert>
+    </sch:rule>
+    <sch:rule id="Reporting-Parameters-Act-CMS-effectiveTime-low-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1']]/cda:effectiveTime/cda:low">
+      <sch:assert id="a-CMS_0048-error" test="@value">This low SHALL contain exactly one [1..1] @value (CONF:CMS_0048).</sch:assert>
+      <sch:assert id="a-CMS_0027-error" test="string-length(@value)&gt;=8">SHALL be precise to day (CONF:CMS_0027).</sch:assert>
+    </sch:rule>
+    <sch:rule id="Reporting-Parameters-Act-CMS-effectiveTime-high-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1']]/cda:effectiveTime/cda:high">
+      <sch:assert id="a-CMS_0050-error" test="@value">This high SHALL contain exactly one [1..1] @value (CONF:CMS_0050).</sch:assert>
+      <sch:assert id="a-CMS_0028-error" test="string-length(@value)&gt;=8">SHALL be precise to day (CONF:CMS_0028).</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="p-validate_PQ-errors">
+    <sch:rule id="r-validate_PQ-errors" context="//cda:value[@xsi:type='PQ']|cda:quantity">
+      <sch:assert id="a-validate_PQ-c-error" test="((@value and @unit) or @nullFlavor) and not (@value and @nullFlavor) and not(@unit and @nullFlavor) and not(not(@value) and @unit)">Data types of PQ SHALL have either @value or @nullFlavor but SHALL NOT have both @value and @nullFlavor. If @value is present then @unit SHALL be present but @unit SHALL NOT be present if @value is not present. (Rule: validate_PQ)</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="p-validate_REAL-errors">
+    <sch:rule id="r-validate_REAL-errors" context="//cda:value[@xsi:type='REAL']">
+      <sch:assert id="a-validate_REAL-c-error" test="(@value or @nullFlavor) and not (@value and @nullFlavor)">Data types of REAL SHALL NOT have both @value and @nullFlavor. (Rule: validate_REAL)</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="p-validate_CS-errors">
+    <sch:rule id="r-validate_CS-errors" context="//cda:value[@xsi:type='CS']|cda:regionOfInterest/cda:code|cda:languageCode|cda:realmCode">
+      <sch:assert id="a-validate_CS-c-error" test="(@code or @nullFlavor) and not (@code and @nullFlavor)">Data types of CS SHALL have either @code or @nullFlavor but SHALL NOT have both @code and @nullFlavor (Rule: validate_CS)</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="p-validate_CD_CE-errors">
+    <sch:rule id="r-validate_CD_CE-errors" context="//cda:code|cda:value[@xsi:type='CD']|cda:value[@xsi:type='CE']|cda:administrationUnitCode|cda:administrativeGenderCode|cda:awarenessCode|cda:confidentialityCode|cda:dischargeDispositionCode|cda:ethnicGroupCode|cda:functionCode|cda:interpretationCode|cda:maritalStatusCode|cda:methodCode|cda:modeCode|cda:priorityCode|cda:proficiencyLevelCode|cda:RaceCode|cda:religiousAffiliationCode|cda:routeCode|cda:standardIndustryClassCode">
+      <sch:assert id="a-validate_CD_CE-c-error" test="(parent::cda:regionOfInterest) or ((@code or @nullFlavor or (@codeSystem and @nullFlavor='OTH')) and not(@code and @nullFlavor) and not(@codeSystem and @nullFlavor!='OTH'))">Data types of CD or CE SHALL have either @code or @nullFlavor or both (@codeSystem and @nullFlavor="OTH") but SHALL NOT have both @code and @nullFlavor and SHALL NOT have @codeSystem and @nullFlavor not equal to "OTH" (Rule: validate_CD_CE)</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="p-validate_TS-errors">
+    <sch:rule id="r-validate_TS-errors-abstract" context="//cda:birthTime | //cda:time | //cda:effectiveTime | //cda:time/cda:low | //cda:time/cda:high | //cda:effectiveTime/cda:low | //cda:effectiveTime/cda:high">
+      <sch:assert id="a-validate_TS-c-error" test="count(@value | @nullFlavor)&lt;2">Data types of TS SHALL have either @value or @nullFlavor but SHALL NOT have @value and @nullFlavor. (Rule: validate_TS)</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="p-validate_NPI_format-errors">
+    <sch:rule id="r-validate_NPI_format-errors" context="//cda:id[@root='2.16.840.1.113883.4.6']">
+      <sch:let name="s" value="normalize-space(@extension)" />
+      <sch:let name="n" value="string-length($s)" />
+      <sch:let name="sum" value="24 + (number(substring($s, $n - 1, 1))*2) mod 10 + floor(number(substring($s, $n - 1,1))*2 div 10) + number(substring($s, $n - 2, 1)) +(number(substring($s, $n - 3, 1))*2) mod 10 + floor(number(substring($s, $n - 3,1))*2 div 10) + number(substring($s, $n - 4, 1)) + (number(substring($s, $n - 5, 1))*2) mod 10 + floor(number(substring($s, $n - 5,1))*2 div 10) + number(substring($s, $n - 6, 1)) + (number(substring($s, $n - 7, 1))*2) mod 10 + floor(number(substring($s, $n - 7,1))*2 div 10) + number(substring($s, $n - 8, 1)) + (number(substring($s, $n - 9, 1))*2) mod 10 + floor(number(substring($s, $n - 9,1))*2 div 10)" />
+      <sch:assert id="r-validate_NPI_format-errors-1-c-error" test="not(@extension) or $n = 10">The NPI should have 10 digits. (Rule: p-validate_NPI_format)</sch:assert>
+      <sch:assert id="r-validate_NPI_format-errors-2-c-error" test="not(@extension) or number($s)=$s">The NPI should be composed of all digits. (Rule: p-validate_NPI_format)</sch:assert>
+      <sch:assert id="r-validate_NPI_format-errors-3-c-error" test="not(@extension) or number(substring($s, $n, 1)) = (10 - ($sum mod 10)) mod 10">The NPI should have a correct checksum, using the Luhn algorithm. (Rule: p-validate_NPI_format)</sch:assert>
+      <sch:assert id="r-validate_NPI_format-errors-4-c-error" test="count(@extension|@nullFlavor)=1">The NPI should have @extension or @nullFlavor, but not both. (Rule: p-validate_NPI_format)</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="p-validate_TIN_format-errors">
+    <sch:rule id="r-validate_TIN_format-errors-abstract" context="//cda:id[@root='2.16.840.1.113883.4.2']">
+      <sch:assert id="a-validate_TIN_format-1-c-error" test="not(@extension) or ((number(@extension)=@extension) and string-length(@extension)=9)">When a Tax Identification Number is used, the provided TIN must be in valid format (9 decimal digits).  (Rule: validate_TIN_format)</sch:assert>
+      <sch:assert id="a-validate_TIN_format-2-c-error" test="count(@extension|@nullFlavor)=1">The TIN SHALL have either @extension or @nullFlavor, but not both. (Rule: p-validate_TIN_format)</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="p-validate_II-errors">
+    <sch:rule id="r-validate_II-errors" context="//cda:value[@xsi:type='II']|cda:id|cda:setId|cda:templateId">
+      <sch:assert id="a-validate_II-c-error" test="(@root or @nullFlavor or (@root and @nullFlavor) or (@root and @extension)) and not (@root and @extension and @nullFlavor)">Data types of II SHALL have either @root or @nullFlavor or (@root and @nullFlavor) or (@root and @extension) but SHALL NOT have all three of (@root and @extension and @nullFlavor) (Rule: validate_II)</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="p-validate_ST-errors">
+    <sch:rule id="r-validate_ST-errors" context="//cda:value[@xsi:type='ST']|cda:title|cda:lotNumberText|cda:derivationExpr">
+      <sch:assert id="a-validate_ST-c-error" test="string-length()&gt;=1 or @nullFlavor">Data types of ST SHALL either not be empty or have @nullFlavor. (Rule: validate_ST)</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="p-validate_INT-errors">
+    <sch:rule id="r-validate_INT-errors" context="//cda:value[@xsi:type='INT']|cda:sequenceNumber|cda:versionNumber">
+      <sch:assert id="a-validate_INT-c-error" test="(@value or @nullFlavor) and not (@value and @nullFlavor)">Data types of INT SHALL NOT have both @value and @nullFlavor. (Rule: validate_INT)</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="p-validate_BL-errors">
+    <sch:rule id="r-validate_BL-errors" context="//cda:value[@xsi:type='BL']|cda:contextConductionInd|inversionInd|negationInd|independentInd|seperatableInd|preferenceInd">
+      <sch:assert id="a-validate_BL-c-error" test="(@value or @nullFlavor) and not(@value and @nullFlavor)">Data types of BL SHALL have either @value or @nullFlavor but SHALL NOT have both @value and @nullFlavor (Rule: validate_BL)</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

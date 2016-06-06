@@ -26,7 +26,7 @@
             <sch:assert id="a-1098-8299-error" test="count(cda:effectiveTime)=1">SHALL contain exactly one [1..1] effectiveTime (CONF:1098-8299).</sch:assert>
          </sch:rule>
         <sch:rule id="Procedure-Activity-Act-code-originalText-reference-value-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.12']]/cda:code/cda:originalText/cda:reference[@value]">
-            <sch:assert id="a-1098-19189-error" test="starts-with(@value, '#')">This reference/@value *SHALL* begin with a '#' and *SHALL* point to its corresponding narrative (using the approach defined in CDA Release 2, section 4.3.5.1) (CONF:1098-19189).</sch:assert>
+            <sch:assert id="a-1098-19189-error" test="starts-with(@value, '#')">This reference/@value SHALL begin with a '#' and SHALL point to its corresponding narrative (using the approach defined in CDA Release 2, section 4.3.5.1) (CONF:1098-19189).</sch:assert>
         </sch:rule>               
         <sch:rule id="Procedure-Activity-Act-statusCode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.12']]/cda:statusCode">
             <sch:assert id="a-1098-32364-error" test="@code">This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet ProcedureAct statusCode urn:oid:2.16.840.1.113883.11.20.9.22 STATIC 2014-04-23 (CONF:1098-32364). </sch:assert>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -124,10 +122,16 @@
             <artifactId>jdom2</artifactId>
             <version>2.0.6</version>
         </dependency>
+
+<!--  Add this in to get the extended property file handling
+
         <dependency>
             <groupId>net.jmatrix</groupId>
-            <artifactId>jproperties</artifactId>
-            <version>0.9.0</version>
+            <artifactId>eproperties</artifactId>
+            <version>1.10-r56m</version>
         </dependency>
+
+
+ -->
     </dependencies>
 </project>

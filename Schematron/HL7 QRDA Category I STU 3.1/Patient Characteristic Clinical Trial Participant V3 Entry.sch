@@ -17,6 +17,9 @@
 			<sch:assert id="a-2228-12526-error" test="@moodCode='EVN'">
 				SHALL contain exactly one [1..1] @moodCode='EVN' event, which SHALL be selected from CodeSystem ActMood (urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12526).			
 			</sch:assert>
+			<sch:assert id="a-2228-28086-error" test="not(@negationInd)">
+				SHALL NOT contain [0..0] @negationInd (CONF:2228-28086).			
+			</sch:assert>
 			<sch:assert id="a-2228-12537-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.51'][@extension='2016-02-01']) = 1">
 				SHALL contain exactly one [1..1] templateId (CONF:2228-12537) such that it
 					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.24.3.51' (CONF:2228-12538).
@@ -29,7 +32,7 @@
 				SHALL contain exactly one [1..1] code (CONF:2228-13041).
 			</sch:assert>
 			<sch:assert id="a-2228-13042-error" test="count(cda:statusCode) = 1">
-				SHALL contain exactly one [1..1] statusCode='active' (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-13042).
+				SHALL contain exactly one [1..1] statusCode (CONF:2228-13042).
 			</sch:assert>
 			<sch:assert id="a-2228-12536-error" test="count(cda:effectiveTime) = 1">
 				SHALL contain exactly one [1..1] effectiveTime (CONF:2228-12536).
@@ -47,16 +50,19 @@
 				This code SHALL contain exactly one [1..1] @codeSystem='2.16.840.1.113883.5.4' (CodeSystem: ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:2228-28131).
 			</sch:assert>
 		</sch:rule>
+
+		<sch:rule id="Patient_Characteristic_Clinical_Trial_Participant_V3-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.51']]/cda:statusCode">
+			<sch:assert id="a-2228-13042-c-error" test="@code='active'">
+				SHALL contain exactly one [1..1] code="active" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-13042).
+			</sch:assert>
+		</sch:rule>
+		
 		<sch:rule id="Patient_Characteristic_Clinical_Trial_Participant_V3-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.51']]/cda:effectiveTime">
 			<sch:assert id="a-2228-27668-error" test="count(cda:low)=1">
 				This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-27668).
-				Note: QDM Attribute: Start Datetime
-			</sch:assert>
-			<sch:assert id="a-2228-27669-error" test="count(cda:high)=1">
-				This effectiveTime MAY contain zero or one [0..1] high (CONF:2228-27669).
-				Note: QDM Attribute: Stop Datetime
 			</sch:assert>
 		</sch:rule>
+		
 		<sch:rule id="Patient_Characteristic_Clinical_Trial_Participant_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.51']]/cda:value[@xsi:type='CD']">
 			<sch:assert id="a-2228-27648-error" test="@sdtc:valueSet">
 				This value SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27648).

@@ -25,9 +25,16 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE
 */
 
+
+// This code implements the logic to configure what files will be 
+// merged into an aggregated schematron
+// At present it is works with property files.
+// SDV ESAC
+
 package schemaVerification;
 
 import java.util.List;
+import java.util.Properties;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -35,63 +42,38 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
-//import java.util.EProperties;
+
+// import java.util.EProperties;
 // Use EProperties to suppoirt Command line arguments in a standard way
-import net.jmatrix.eproperties.EProperties;
+// import net.jmatrix.eproperties.EProperties;
 
 public class MergeConfigure {
 
 	private static String defaultName = "HL7_core_STU3.1_schematron.properties";
-	private Properties properties = new EProperties();
-	private boolean propsLoaded = false;
-	private String propertiesFileName = defaultName;
-	
-	
+
 
 	private static  List<String> legalPropertyFileNames = Arrays.asList("HL7_core_STU3.1_schematron.properties", 
-			                                                            "HQR_CMS_2017_schematron.properties",
-			                                                            "PQRS_CMS_2017_schematron.properties");
+			                                                    "HQR_CMS_2017_schematron.properties",
+			                                                     "PQRS_CMS_2017_schematron.properties");
 		
 	private static  List<String> legalmergedNames = Arrays.asList("HL7 QRDA Category I STU3.1.sch", 
-                                                                  "EH CMS 2017 QRDA Category I.sch",
-                                                                  "EP CMS 2017 QRDA Category I.sch");
-	
-	
-	public static void main (String[] args){
-		
-		MergeConfigure tool = new MergeConfigure();
-		
-		String[] files = tool.getFilesToMergeFromPropertiesFile();
-		for (String f : files){
-			System.out.println(f);
-		}
-		
-	}
-	
-	public String getPropertiesFileName() {
-		return(propertiesFileName);
-	}
-	
-	public MergeConfigure (String filename){
-		filename = checkPropFilename(filename);
-		propertiesFileName = filename;
-	}
-	
-	public MergeConfigure (){
-		String filename = defaultName;
-		filename = checkPropFilename(filename);
-		propertiesFileName = filename;
-	}
-	
-	public static String getbaseFileName(String fullpath){
-		Path p = Paths.get(fullpath);
-		String file = p.getFileName().toString();
-		return(file);
-	}
+								      "EH CMS 2017 QRDA Category I.sch",
+                                                                      "EP CMS 2017 QRDA Category I.sch");
 	
 
+
+    //	private Properties properties     = new EProperties();
+	private Properties properties     = new Properties();
 	
-	public static String checkPropFilename(String filename){
+	private boolean propsLoaded       = false;
+	
+	private String propertiesFileName = defaultName;
+	
+	private String getPropertiesFileName() { 
+		return (propertiesFileName);
+	}
+	
+	private static String checkPropFilename(String filename){
 		String baseFileName = getbaseFileName(filename);
 		
 		if (!legalPropertyFileNames.contains(baseFileName)) {
@@ -106,8 +88,14 @@ public class MergeConfigure {
 		}
 		return(filename);
 	}
+
+	private static String getbaseFileName(String fullpath){
+		Path p = Paths.get(fullpath);
+		String file = p.getFileName().toString();
+		return(file);
+	}
 	
-	public void loadPropertiesFile(){
+	private void loadPropertiesFile(){
 		try {
 			File file = new File(getPropertiesFileName());
 			FileInputStream fileInput = new FileInputStream(file);
@@ -128,7 +116,41 @@ public class MergeConfigure {
 		}		
 	}
 	
-	public String[] getFilesToMergeFromPropertiesFile(){
+
+	// Make this a JUnit test that tests for 
+	// (a) files to merge
+	// (b) name of merged file retreival 
+	public static void main (String[] args){
+		
+		MergeConfigure tool = new MergeConfigure();
+		
+		// (a)
+		String[] files = tool.getFilesToMerge();
+		for (String f : files){
+			System.out.println(f);
+		}
+		
+		// (b)
+		String fileName = tool.getMergedFileName();
+		
+	}
+	
+	
+	
+	
+	public MergeConfigure (String filename){
+		filename = checkPropFilename(filename);
+		propertiesFileName = filename;
+	}
+	
+	public MergeConfigure (){
+		String filename = defaultName;
+		filename = checkPropFilename(filename);
+		propertiesFileName = filename;
+	}
+	
+
+	public String[] getFilesToMerge(){
 		if (!propsLoaded) loadPropertiesFile();
 		int nof = 0;
 	
@@ -161,7 +183,7 @@ public class MergeConfigure {
 	}
 
 	
-	String getMergedFileNameFromPropertiesFile(){
+	public String getMergedFileName(){
 		String mergedFileName = "missing";
 		
 		if (!propsLoaded) loadPropertiesFile();

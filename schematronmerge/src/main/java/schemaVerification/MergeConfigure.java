@@ -35,39 +35,56 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
-//import java.util.EProperties;
-// Use EProperties to suppoirt Command line arguments in a standard way
-import net.jmatrix.eproperties.EProperties;
+import java.util.Properties;
+
 
 public class MergeConfigure {
 
-	private static String defaultName = "HL7_core_STU3.1_schematron.properties";
-	private Properties properties = new EProperties();
+	//private static String defaultName = "HL7 QRDA Category I STU 3.1.properties";
+	private static String defaultName = "HL7 QRDA Category III STU 1.1.properties";
+	private Properties properties = new Properties();
 	private boolean propsLoaded = false;
 	private String propertiesFileName = defaultName;
 	
 	
-
-	private static  List<String> legalPropertyFileNames = Arrays.asList("HL7_core_STU3.1_schematron.properties", 
-			                                                            "HQR_CMS_2017_schematron.properties",
-			                                                            "PQRS_CMS_2017_schematron.properties");
-		
-	private static  List<String> legalmergedNames = Arrays.asList("HL7 QRDA Category I STU3.1.sch", 
-                                                                  "EH CMS 2017 QRDA Category I.sch",
-                                                                  "EP CMS 2017 QRDA Category I.sch");
+    // DD: Make this public so that SchematronMerge bean can process all of the properties files in sequence.
+	public static  List<String> legalPropertyFileNames = Arrays.asList(  "HL7 QRDA Category I STU 3.1.properties",
+		                                                                  "HL7 QRDA Category III STU 1.1.properties",
+		                                                                  "EP CMS 2017 QRDA Category I.properties",
+		                                                                  "EP CMS 2017 QRDA Category III.properties",
+		                                                                  "EH CMS 2017 QRDA Category I.properties");
+	
+	// DD: Removed checking the merge name in the properties file against this list, so this list no longer really needed.	
+	private static  List<String> legalmergedNames = Arrays.asList("HL7 QRDA Category I STU 3.1.sch",
+                                                                  "HL7 QRDA Category III STU 1.1.sch",
+                                                                  "EP CMS 2017 QRDA Category I.sch",
+                                                                  "EP CMS 2017 QRDA Category III.sch",
+                                                                  "EH CMS 2017 QRDA Category I.sch");
 	
 	
 	public static void main (String[] args){
 		
-		MergeConfigure tool = new MergeConfigure();
 		
-		String[] files = tool.getFilesToMergeFromPropertiesFile();
-		for (String f : files){
-			System.out.println(f);
+		// DD: Loop through each properties file in the filenames list, and perform the merge config.
+		for (int i = 0; i < legalPropertyFileNames.size(); i++) {
+			MergeConfigure tool = new MergeConfigure();
+			tool.propertiesFileName = legalPropertyFileNames.get(i);
+			System.out.println("Prop file: " + tool.propertiesFileName);
+			tool.propsLoaded = false;
+			String[] files = tool.getFilesToMergeFromPropertiesFile();
+			for (String f : files){
+				System.out.println(f);
+			}
 		}
 		
 	}
 	
+	// DD: New method allowing SchematronMerge bean to run several merges in succession.
+	public void setupSchematronMerge(int i) {
+		propsLoaded = false;
+		propertiesFileName = legalPropertyFileNames.get(i);
+	}
+	// DD: Accessor for propertiesFile name currently being processed
 	public String getPropertiesFileName() {
 		return(propertiesFileName);
 	}
@@ -102,7 +119,7 @@ public class MergeConfigure {
 			System.err.println(".");
 			
 			filename = legalPropertyFileNames.get(0);
-			System.err.println("Will try to use  " + filename + " as the properties file");
+			System.err.println("Will try use  " + filename + " as the properties file");
 		}
 		return(filename);
 	}
@@ -174,7 +191,10 @@ public class MergeConfigure {
 				baseFileName = getbaseFileName(mergedFileName);
 		}
 		
-		if (!legalmergedNames.contains(baseFileName)) {
+		// DD: This check isn't really needed if we assume we have the correct sch names in the properties file. 
+		/*
+		  if (!legalmergedNames.contains(baseFileName)) {
+		 
 			
 			System.err.println("Property file has merged file as  " + mergedFileName );
 			
@@ -185,7 +205,7 @@ public class MergeConfigure {
 			
 			System.exit(-1);
 		}
-		
+		*/
 		
 		return (mergedFileName);
 	}

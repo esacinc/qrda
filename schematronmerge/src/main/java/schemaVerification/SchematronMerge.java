@@ -55,7 +55,7 @@ public class SchematronMerge {
 
 private SAXBuilder builder = new SAXBuilder();
 	
-// Cretes the files associated with the Schematrons to be merged
+// Creates the files associated with the Schematrons to be merged
 // exits if all files are not valid - otherwise returns array of references to files
 
 public File[]  createFiles(String[] files){
@@ -63,7 +63,7 @@ public File[]  createFiles(String[] files){
 	for (int i = 0 ; i < files.length; i++) {
 		File xFile = new File(files[i]);
 		xmlFiles[i]  = xFile;
-		//Check that the  two schematron files are valid names
+		// Check that the  two schematron files are valid names
 		if(!xFile.exists() ) { 
 			System.err.println ("File " + files[i]+ " is invalid - schematron does not exist");
 			System.exit(1);
@@ -223,42 +223,49 @@ public static void main(String[] args) {
 		
 	
 	 PrintStream console = System.out;
-			
-	String[] files = configTool.getFilesToMergeFromPropertiesFile();
-	String mergedFileName = configTool.getMergedFileNameFromPropertiesFile();
 	
-	Document mergedDoc = merger.merge(files);
+	 // DD: Loop through each propertes file in the list of properties files managed in the MergeConfigure bean.
+	 // Process the merge laid out in each file.
+	 for (int i =0; i < MergeConfigure.legalPropertyFileNames.size(); i++) {
+		 
+		configTool.setupSchematronMerge(i);
+		System.out.println("---- Processsing properties file: " + configTool.getPropertiesFileName());
+		String[] files = configTool.getFilesToMergeFromPropertiesFile();
+		String mergedFileName = configTool.getMergedFileNameFromPropertiesFile();
+		
+		Document mergedDoc = merger.merge(files);
+		
+		
+		OutputStream output = null;
+		try {
+			output = new FileOutputStream(mergedFileName);
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		PrintStream printOut = new PrintStream(output);
 	
+		
+		System.setOut(printOut);
+		
+		
+		
+		
+		// Actually output the merged file by redirecting stdout
+		
+	    try {
 	
-	OutputStream output = null;
-	try {
-		output = new FileOutputStream(mergedFileName);
-	} catch (FileNotFoundException e1) {
-		// TODO Auto-generated catch block
-		e1.printStackTrace();
+	      new XMLOutputter(Format.getPrettyFormat()).output(mergedDoc, System.out);
+	    }
+	    catch (IOException e) {
+	      System.err.println(e);
+	    }
+	
+	   
+		// Redirect stdout back to the console
+	   System.setOut(console);
+	   System.out.println("     Wrote merged Schematron file to " + mergedFileName  );
 	}
-	PrintStream printOut = new PrintStream(output);
-
-	
-	System.setOut(printOut);
-	
-	
-	
-	
-	// Actually output the merged file by redirecting stdout
-	
-    try {
-
-      new XMLOutputter(Format.getPrettyFormat()).output(mergedDoc, System.out);
-    }
-    catch (IOException e) {
-      System.err.println(e);
-    }
-
-   
-	// Redirect stdout back to the console
-   System.setOut(console);
-   System.out.println("Wrote merged Schematron file to " + mergedFileName  );
 }
 
 

@@ -36,7 +36,6 @@
 			</sch:assert>
 			<sch:assert id="a-2228-27745-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']])=1">
 				SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27745).
-				Note: QDM Attribute: Signed Datetime, Start Datetime, Stop Datetime
 			</sch:assert>
 		</sch:rule>
 

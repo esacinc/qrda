@@ -27,7 +27,7 @@
 			<sch:assert id="a-2228-28567-error" test="count(cda:code) = 1">
 				SHALL contain exactly one [1..1] code (CONF:2228-28567).
 			</sch:assert>
-			<sch:assert id="a-2228-28557-error" test="count(cda:entryRelationship[@typeCode='SUBJ'][count(cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45']])=1]) = 1">
+			<sch:assert id="a-2228-28557-error" test="count(cda:entryRelationship[@typeCode='SUBJ'][count(cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2016-02-01']])=1]) = 1">
 				SHALL contain exactly one [1..1] entryRelationship (CONF:2228-28557) such that it
 					SHALL contain exactly one [1..1] @typeCode='SUBJ' has subject (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:2228-28561).
 					SHALL contain exactly one [1..1] Medication Dispensed (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.45:2016-02-01) (CONF:2228-28566).

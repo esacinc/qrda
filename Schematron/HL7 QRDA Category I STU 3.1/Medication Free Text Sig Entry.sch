@@ -20,7 +20,6 @@
 			</sch:assert>
 			<sch:assert id="a-1198-32771-error" test="@moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.18']/voc:code/@value">
 				SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet MoodCodeEvnInt urn:oid:2.16.840.1.113883.11.20.9.18 STATIC 2011-04-03 (CONF:1198-32771).
-				Note: moodCode must match the parent substanceAdministration EVN or INT 
 			</sch:assert>
 			<sch:assert id="a-1198-32753-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']) = 1">
 				SHALL contain exactly one [1..1] templateId (CONF:1198-32753) such that it
@@ -70,7 +69,7 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Free_Text_Sig-manufacturedLabeledDrug-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:consumable/cda:manufacturedLabeledDrug">
+		<sch:rule id="Medication_Free_Text_Sig-manufacturedLabeledDrug-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:consumable/cda:manufacturedProduct/cda:manufacturedLabeledDrug">
 			<sch:assert id="a-1198-32779-error" test="@nullFlavor='NA'">
 				This manufacturedLabeledDrug SHALL contain exactly one [1..1] @nullFlavor='NA' Not Applicable (CONF:1198-32779).
 			</sch:assert>

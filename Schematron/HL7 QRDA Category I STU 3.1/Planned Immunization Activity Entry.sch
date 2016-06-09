@@ -52,10 +52,9 @@
 	</sch:pattern>
 	
 	<sch:pattern id="Planned_Immunization_Activity-pattern-warnings">
-		<sch:rule id="Planned_Immunization_Activity-warnings" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.120']]/cda:doseQuantity">
-			<sch:assert id="a-1098-32129-warning" test="@unit">
-				MAY contain zero or one [0..1] doseQuantity (CONF:1098-32129).
-					The doseQuantity, if present, SHOULD contain zero or one [0..1] @unit, which SHALL be selected from ValueSet UnitsOfMeasureCaseSensitive urn:oid:2.16.840.1.113883.1.11.12839 DYNAMIC (CONF:1098-32130).
+		<sch:rule id="Planned_Immunization_Activity-doseQuantity-warnings" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.120']]/cda:doseQuantity">
+			<sch:assert id="a-1098-32130-warning" test="@unit">
+				The doseQuantity, if present, SHOULD contain zero or one [0..1] @unit, which SHALL be selected from ValueSet UnitsOfMeasureCaseSensitive urn:oid:2.16.840.1.113883.1.11.12839 DYNAMIC (CONF:1098-32130).
 			</sch:assert>
 		</sch:rule>
 	</sch:pattern>

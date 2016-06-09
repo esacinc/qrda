@@ -24,7 +24,7 @@
             <sch:assert id="a-2228-27577-error" test="@sdtc:valueSet">This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27577). </sch:assert>
         </sch:rule>
         <sch:rule id="Care-Goal-V3-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.1']]/cda:effectiveTime">
-            <sch:assert id="a-2228-27557-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-27557). Note: QDM Attribute: Start Datetime</sch:assert>
+            <sch:assert id="a-2228-27557-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-27557). </sch:assert>
         </sch:rule>
   </sch:pattern>
     

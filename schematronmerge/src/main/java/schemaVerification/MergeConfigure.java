@@ -117,9 +117,10 @@ public class MergeConfigure {
 	}
 	
 
-	// Make this a JUnit test that tests for 
+	// Made this a JUnit test that tests for 
 	// (a) files to merge
 	// (b) name of merged file retreival 
+	/*
 	public static void main (String[] args){
 		
 		MergeConfigure tool = new MergeConfigure();
@@ -135,7 +136,7 @@ public class MergeConfigure {
 		
 	}
 	
-	
+	*/
 	
 	
 	public MergeConfigure (String filename){
@@ -198,7 +199,7 @@ public class MergeConfigure {
 		
 		if (!legalmergedNames.contains(baseFileName)) {
 			
-			System.err.println("Property file has merged file as  " + mergedFileName );
+			System.err.println("Property file has merged file named  " + mergedFileName );
 			
 			System.err.println("Must be one of " );
 			for (String s : legalmergedNames) System.err.println(s + " ");

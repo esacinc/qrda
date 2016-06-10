@@ -14,7 +14,7 @@
 	
 	<sch:pattern id="QRDA_Category_III_Measure_Reference_and_Results_CMS_EP_V2-pattern-errors">
 		<sch:rule id="QRDA_Category_III_Measure_Reference_and_Results_CMS_EP_V2-errors" context="cda:organizer[cda:templateId[@root = '2.16.840.1.113883.10.20.27.3.17']]">
-			<sch:assert id="a-2233-17887-error" test="@classCode="CLUSTER""> 
+			<sch:assert id="a-2233-17887-error" test="@classCode='CLUSTER'"> 
 				SHALL contain exactly one [1..1] @classCode="CLUSTER" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:2233-17887).			
 			</sch:assert>
 			<sch:assert id="a-2233-17888-error" test="@moodCode='EVN'"> 

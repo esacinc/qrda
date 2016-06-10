@@ -4,6 +4,7 @@
  	<sch:ns prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance" />
 	<sch:ns prefix="sdtc" uri="urn:hl7-org:sdtc" />
 	<sch:ns prefix="cda" uri="urn:hl7-org:v3" />
+	<sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
 	
 	<sch:phase id="errors">
 		<sch:active pattern="QRDA_Category_III_Payer_Supplemental_Data_Element_CMS_EP_V2-pattern-errors"/>
@@ -22,7 +23,7 @@
 					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.27.3.18" (CONF:2233-711271).
 					SHALL contain exactly one [1..1] @extension='2016-03-01" (CONF:2233-711299).
 			</sch:assert>
-			<sch:assert id="a-2233-18238-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.9'][@extension='2016-02-01']) = 1"> 
+			<sch:assert id="a-2233-18237-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.9'][@extension='2016-02-01']) = 1"> 
 				SHALL contain exactly one [1..1] templateId (CONF:2233-18237) such that it
 					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.27.3.9" (CONF:2233-18238).
 					SHALL contain exactly one [1..1] @extension='2016-02-01" (CONF:2233-21157).
@@ -66,12 +67,14 @@
 			<sch:assert id="a-2233-711230-error" test="count(cda:translation)=1"> 
 				This value SHALL contain exactly one [1..1] translation (CONF:2233-711230).
 			</sch:assert>
+			<sch:assert id="a-2233-711229-error" test="@nullFlavor='OTH'"> 
+				This value SHALL contain exactly one [1..1] @nullFlavor='OTH" (CONF:2233-711229).
+			</sch:assert>
 		</sch:rule>
 
 		<sch:rule id="QRDA_Category_III_Payer_Supplemental_Data_Element_CMS_EP_V2-translation-errors" context="cda:observation[cda:templateId[@root = '2.16.840.1.113883.10.20.27.3.18']]/cda:value/cda:translation">
-			<sch:assert id="a-2233-711229-error" test="@code and @nullFlavor='OTH'"> 
+			<sch:assert id="a-2233-711231-error" test="@code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.249.14.102']/voc:code/@value"> 
 				This translation SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet CMS Payer Groupings urn:oid:2.16.840.1.113883.3.249.14.102 (CONF:2233-711231).
-				This value SHALL contain exactly one [1..1] @nullFlavor='OTH" (CONF:2233-711229).
 			</sch:assert>
 		</sch:rule>
 	</sch:pattern>

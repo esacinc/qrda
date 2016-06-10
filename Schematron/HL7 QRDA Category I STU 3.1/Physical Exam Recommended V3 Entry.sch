@@ -12,21 +12,21 @@
 	<sch:pattern id="Physical_Exam_Recommended_V3-pattern-errors">
 		<sch:rule id="Physical_Exam_Recommended_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.60']]">
 			<sch:assert id="a-2228-27556-error" test="@classCode='OBS'">
-				SHALL contain exactly one [1..1] @classCode='OBS' Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27556).			
+				SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27556).			
 			</sch:assert>
 			<sch:assert id="a-2228-12665-error" test="@moodCode='INT'">
-				SHALL contain exactly one [1..1] @moodCode='INT' Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12665).			
+				SHALL contain exactly one [1..1] @moodCode="INT" Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12665).			
 			</sch:assert>
 			<sch:assert id="a-2228-12666-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.60'][@extension='2016-02-01']) = 1">
 				SHALL contain exactly one [1..1] templateId (CONF:2228-12666) such that it
-					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.24.3.60' (CONF:2228-12667).
-					SHALL contain exactly one [1..1] @extension='2016-02-01' (CONF:2228-27082).
+					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.60" (CONF:2228-12667).
+					SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27082).
 			</sch:assert>
 			<sch:assert id="a-2228-12669-error" test="count(cda:code) = 1">
 				SHALL contain exactly one [1..1] code (CONF:2228-12669).
 			</sch:assert>
 			<sch:assert id="a-2228-13275-error" test="count(cda:value[@xsi:type='CD']) = 1">
-				SHALL contain exactly one [1..1] value with @xsi:type='CD' (CONF:2228-13275).
+				SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2228-13275).
 			</sch:assert>
 			<sch:assert id="a-2228-27351-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']]) = 1">
 				SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27351).
@@ -34,10 +34,10 @@
 		</sch:rule>
 		<sch:rule id="Physical_Exam_Recommended_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.60']]/cda:code">
 			<sch:assert id="a-2228-13274-error" test="@code='29545-1'">
-				This code SHALL contain exactly one [1..1] @code='29545-1' physical examination (CONF:2228-13274).
+				This code SHALL contain exactly one [1..1] @code="29545-1" physical examination (CONF:2228-13274).
 			</sch:assert>
 			<sch:assert id="a-2228-28132-error" test="@codeSystem='2.16.840.1.113883.6.1' ">
-				This code SHALL contain exactly one [1..1] @codeSystem='2.16.840.1.113883.6.1' (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:2228-28132).
+				This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:2228-28132).
 			</sch:assert>
 		</sch:rule>
 		<sch:rule id="Physical_Exam_Recommended_V3-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.60']]/cda:value[@xsi:type='CD']">

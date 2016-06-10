@@ -12,14 +12,14 @@
 	<sch:pattern id="Planned_Coverage-pattern-errors">
 		<sch:rule id="Planned_Coverage-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.129']]">
 			<sch:assert id="a-1098-31945-error" test="@classCode='ACT'">
-				SHALL contain exactly one [1..1] @classCode='ACT' act (CodeSystem: ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:1098-31945).
+				SHALL contain exactly one [1..1] @classCode="ACT" act (CodeSystem: ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:1098-31945).
 			</sch:assert>
 			<sch:assert id="a-1098-31946-error" test="@moodCode='INT'">
-				SHALL contain exactly one [1..1] @moodCode='INT' Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:1098-31946).			
+				SHALL contain exactly one [1..1] @moodCode="INT" Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:1098-31946).			
 			</sch:assert>
 			<sch:assert id="a-1098-31947-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.129']) = 1">
 				SHALL contain exactly one [1..1] templateId (CONF:1098-31947) such that it
-					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.22.4.129' (CONF:1098-31948).
+					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.129" (CONF:1098-31948).
 			</sch:assert>
 			<sch:assert id="a-1098-31950-error" test="count(cda:id) &gt; 0">
 				SHALL contain at least one [1..*] id (CONF:1098-31950).
@@ -32,32 +32,32 @@
 			</sch:assert>
 			<sch:assert id="a-1098-31967-error" test="count(cda:entryRelationship[@typeCode='COMP'][count(cda:act)=1]) = 1">
 				SHALL contain exactly one [1..1] entryRelationship (CONF:1098-31967) such that it
-					SHALL contain exactly one [1..1] @typeCode='COMP' has component (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:1098-31968).
+					SHALL contain exactly one [1..1] @typeCode="COMP" has component (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:1098-31968).
 					SHALL contain exactly one [1..1] act (CONF:1098-31969).
 			</sch:assert>
 		</sch:rule>
 
 		<sch:rule id="Planned_Coverage-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.129']]/cda:code">
 			<sch:assert id="a-1098-31952-error" test="@code='48768-6'">
-				This code SHALL contain exactly one [1..1] @code='48768-6' Payment Sources (CONF:1098-31952).
+				This code SHALL contain exactly one [1..1] @code="48768-6" Payment Sources (CONF:1098-31952).
 			</sch:assert>
 			<sch:assert id="a-1098-31953-error" test="@codeSystem='2.16.840.1.113883.6.1'">
-				This code SHALL contain exactly one [1..1] @codeSystem='2.16.840.1.113883.6.1' (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:1098-31953).
+				This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:1098-31953).
 			</sch:assert>
 		</sch:rule>
 
 		<sch:rule id="Planned_Coverage-statusCode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.129']]/cda:statusCode">
 			<sch:assert id="a-1098-31955-error" test="@code='active'">
-				This statusCode SHALL contain exactly one [1..1] @code='active' Active (CodeSystem: ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:1098-31955).
+				This statusCode SHALL contain exactly one [1..1] @code="active" Active (CodeSystem: ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:1098-31955).
 			</sch:assert>
 		</sch:rule>
 		
 		<sch:rule id="Planned_Coverage-act-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.129']]/cda:entryRelationship/cda:act">
 			<sch:assert id="a-1098-31970-error" test="@classCode='ACT'">
-				This act SHALL contain exactly one [1..1] @classCode='ACT' ACT (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1098-31970).
+				This act SHALL contain exactly one [1..1] @classCode="ACT" ACT (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1098-31970).
 			</sch:assert>
 			<sch:assert id="a-1098-31971-error" test="@moodCode='INT'">
-				This act SHALL contain exactly one [1..1] @moodCode='INT' intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:1098-31971).
+				This act SHALL contain exactly one [1..1] @moodCode="INT" intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:1098-31971).
 			</sch:assert>
 			<sch:assert id="a-1098-31972-error" test="count(cda:id) &gt; 0">
 				This act SHALL contain at least one [1..*] id (CONF:1098-31972).
@@ -69,7 +69,7 @@
 				This act SHALL contain exactly one [1..1] statusCode (CONF:1098-31974).
 			</sch:assert>
 			<sch:assert id="a-1098-31975-error" test="@code='active'">
-				This statusCode SHALL contain exactly one [1..1] @code='active' Active (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-31975).
+				This statusCode SHALL contain exactly one [1..1] @code="active" Active (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-31975).
 			</sch:assert>
 		</sch:rule>
 	</sch:pattern>

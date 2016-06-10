@@ -16,15 +16,15 @@
 	<sch:pattern id="Planned_Act_V2-pattern-errors">
 		<sch:rule id="Planned_Act_V2-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.39']]">
 			<sch:assert id="a-1098-8538-error" test="@classCode='ACT'">
-				SHALL contain exactly one [1..1] @classCode='ACT' (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-8538).
+				SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-8538).
 			</sch:assert>
 			<sch:assert id="a-1098-8539-error" test="@moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.23']/voc:code/@value">
 				SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Act/Encounter/Procedure) urn:oid:2.16.840.1.113883.11.20.9.23 STATIC 2011-09-30 (CONF:1098-8539).			
 			</sch:assert>
 			<sch:assert id="a-1098-30430-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.39'][@extension='2014-06-09']) = 1">
 				SHALL contain exactly one [1..1] templateId (CONF:1098-30430) such that it
-					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.22.4.39' (CONF:1098-30431).
-					SHALL contain exactly one [1..1] @extension='2014-06-09' (CONF:1098-32552).
+					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.39" (CONF:1098-30431).
+					SHALL contain exactly one [1..1] @extension="2014-06-09" (CONF:1098-32552).
 			</sch:assert>
 			<sch:assert id="a-1098-8546-error" test="count(cda:id) &gt; 0">
 				SHALL contain at least one [1..*] id (CONF:1098-8546).
@@ -38,7 +38,7 @@
 		</sch:rule>
 		<sch:rule id="Planned_Act_V2-statusCode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.39']]/cda:statusCode">
 			<sch:assert id="a-1098-32019-error" test="@code='active'">
-				This statusCode SHALL contain exactly one [1..1] @code='active' Active (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-32019).
+				This statusCode SHALL contain exactly one [1..1] @code="active" Active (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-32019).
 			</sch:assert>
 		</sch:rule>
 	</sch:pattern>

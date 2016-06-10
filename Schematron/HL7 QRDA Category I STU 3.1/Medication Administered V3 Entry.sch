@@ -12,15 +12,15 @@
 	<sch:pattern id="Medication_Administered_V3-pattern-errors">
 		<sch:rule id="Medication_Administered_V3-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42']]">
 			<sch:assert id="a-2228-12444-error" test="@classCode='ACT'">
-				SHALL contain exactly one [1..1] @classCode='ACT' (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-12444).
+				SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-12444).
 			</sch:assert>
 			<sch:assert id="a-2228-12445-error" test="@moodCode='EVN'">
-				SHALL contain exactly one [1..1] @moodCode='EVN' (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12445).
+				SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12445).
 			</sch:assert>
 			<sch:assert id="a-2228-12446-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42'][@extension='2016-02-01']) = 1">
 				SHALL contain exactly one [1..1] templateId (CONF:2228-12446) such that it
-					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.24.3.42' (CONF:2228-12447).
-					SHALL contain exactly one [1..1] @extension='2016-02-01' (CONF:2228-27023).
+					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.42" (CONF:2228-12447).
+					SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27023).
 			</sch:assert>
 			<sch:assert id="a-2228-12448-error" test="count(cda:id) &gt; 0">
 				SHALL contain at least one [1..*] id (CONF:2228-12448).
@@ -36,22 +36,22 @@
 			</sch:assert>
 			<sch:assert id="a-2228-12454-error" test="count(cda:entryRelationship[@typeCode='COMP'][count(cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']])=1]) &gt; 0">
 				SHALL contain at least one [1..*] entryRelationship (CONF:2228-12454) such that it
-					SHALL contain exactly one [1..1] @typeCode='COMP' (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:2228-12455).
+					SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:2228-12455).
 					SHALL contain exactly one [1..1] Medication Activity (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.16:2014-06-09) (CONF:2228-12456).
 			</sch:assert>
 		</sch:rule>
 		
 		<sch:rule id="Medication_Administered_V3-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42']]/cda:code">
 			<sch:assert id="a-2228-12450-error" test="@code = '416118004'">
-				This code SHALL contain exactly one [1..1] @code='416118004' administration (CONF:2228-12450).			
+				This code SHALL contain exactly one [1..1] @code="416118004" administration (CONF:2228-12450).			
 			</sch:assert>
 			<sch:assert id="a-2228-28129-error" test="@codeSystem='2.16.840.1.113883.6.96'">
-				This code SHALL contain exactly one [1..1] @codeSystem='2.16.840.1.113883.6.96' (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2228-28129).			
+				This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2228-28129).			
 			</sch:assert>
 		</sch:rule>
 		<sch:rule id="Medication_Administered_V3-statuscode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42']]/cda:statusCode">
 			<sch:assert id="a-2228-13241-error" test="@code='completed'">
-				This statusCode SHALL contain exactly one [1..1] @code='completed' (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-13241).			
+				This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-13241).			
 			</sch:assert>
 		</sch:rule>
 		<sch:rule id="Medication_Administered_V3-effectiveTime-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42']]/cda:effectiveTime">
@@ -61,7 +61,7 @@
 		</sch:rule>
 		<sch:rule id="Medication_Administered_V3-substanceAdministration-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42']]/cda:entryRelationship/cda:substanceAdministration">
 			<sch:assert id="a-2228-12457-error" test="@moodCode='EVN'">
-				This substanceAdministration SHALL contain exactly one [1..1] @moodCode='EVN' (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12457).
+				This substanceAdministration SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12457).
 			</sch:assert>
 		</sch:rule>
 	</sch:pattern>

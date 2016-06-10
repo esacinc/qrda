@@ -11,15 +11,15 @@
 	<sch:pattern id="Intervention_Performed_V3-pattern-errors">
 		<sch:rule id="Intervention_Performed_V3-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.32']]">
 			<sch:assert id="a-2228-27354-error" test="@classCode='ACT'">
-				SHALL contain exactly one [1..1] @classCode='ACT' Act (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27354).			
+				SHALL contain exactly one [1..1] @classCode="ACT" Act (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27354).			
 			</sch:assert>
 			<sch:assert id="a-2228-13590-error" test="@moodCode='EVN'">
-				SHALL contain exactly one [1..1] @moodCode='EVN' Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-13590).			
+				SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-13590).			
 			</sch:assert>
 			<sch:assert id="a-2228-13591-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.32'][@extension='2016-02-01']) = 1">
 				SHALL contain exactly one [1..1] templateId (CONF:2228-13591) such that it
-					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.24.3.32' (CONF:2228-13592).
-					SHALL contain exactly one [1..1] @extension='2016-02-01' (CONF:2228-27144).
+					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.32" (CONF:2228-13592).
+					SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27144).
 			</sch:assert>
 			<sch:assert id="a-2228-27633-error" test="count(cda:code) = 1">
 				SHALL contain exactly one [1..1] code (CONF:2228-27633).
@@ -38,7 +38,7 @@
 		</sch:rule>
 		<sch:rule id="Intervention_Performed_V3-statusCode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.32']]/cda:statusCode">
 			<sch:assert id="a-2228-27363-error" test="@code='completed'">
-				This statusCode SHALL contain exactly one [1..1] @code='completed' Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-27363).			
+				This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-27363).			
 			</sch:assert>
 		</sch:rule>
 		<sch:rule id="Intervention_Performed_V3-effectiveTime-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.32']]/cda:effectiveTime">

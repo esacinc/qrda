@@ -12,12 +12,12 @@
 	<sch:pattern id="Medication_Information_V2-pattern-errors">
 		<sch:rule id="Medication_Information_V2-errors" context="cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.23']]">
 			<sch:assert id="a-1098-7408-error" test="@classCode='MANU'">
-				SHALL contain exactly one [1..1] @classCode='MANU' (CodeSystem: RoleClass urn:oid:2.16.840.1.113883.5.110 STATIC) (CONF:1098-7408).			
+				SHALL contain exactly one [1..1] @classCode="MANU" (CodeSystem: RoleClass urn:oid:2.16.840.1.113883.5.110 STATIC) (CONF:1098-7408).			
 			</sch:assert>
 			<sch:assert id="a-1098-7409-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.23'][@extension='2014-06-09']) = 1">
 				SHALL contain exactly one [1..1] templateId (CONF:1098-7409) such that it
-					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.22.4.23' (CONF:1098-10506).
-					SHALL contain exactly one [1..1] @extension='2014-06-09' (CONF:1098-32579).
+					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.23" (CONF:1098-10506).
+					SHALL contain exactly one [1..1] @extension="2014-06-09" (CONF:1098-32579).
 			</sch:assert>
 			<sch:assert id="a-1098-7411-error" test="count(cda:manufacturedMaterial) = 1">
 				SHALL contain exactly one [1..1] manufacturedMaterial (CONF:1098-7411).

@@ -20,8 +20,8 @@
 			</sch:assert>
 			<sch:assert id="a-1098-7499-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']) = 1">
 				SHALL contain exactly one [1..1] templateId (CONF:1098-7499) such that it
-					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.22.4.16" (CONF:1098-10504).
-					SHALL contain exactly one [1..1] @extension='2014-06-09" (CONF:1098-32498).
+					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.16" (CONF:1098-10504).
+					SHALL contain exactly one [1..1] @extension="2014-06-09" (CONF:1098-32498).
 			</sch:assert>
 			<sch:assert id="a-1098-7500-error" test="count(cda:id) &gt; 0">
 				SHALL contain at least one [1..*] id (CONF:1098-7500).
@@ -73,8 +73,8 @@
 		<sch:rule id="Medication_Active_V2-effectiveTime-warnings" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16']]/cda:effectiveTime">
 			<sch:assert id="a-1098-7513-warning" test="parent::node()[count(cda:effectiveTime[@operator='A'][@xsi:type='PIVL_TS' or 'EIVL_TS'])=1]">
 				SHOULD contain zero or one [0..1] effectiveTime (CONF:1098-7513) such that it
-					SHALL contain exactly one [1..1] @operator='A" (CONF:1098-9106).
-					SHALL contain exactly one [1..1] @xsi:type='PIVL_TS" or "EIVL_TS" (CONF:1098-28499).
+					SHALL contain exactly one [1..1] @operator="A" (CONF:1098-9106).
+					SHALL contain exactly one [1..1] @xsi:type="PIVL_TS" or "EIVL_TS" (CONF:1098-28499).
 			</sch:assert>
 		</sch:rule>
 		

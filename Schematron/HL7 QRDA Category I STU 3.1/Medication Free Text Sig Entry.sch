@@ -16,14 +16,14 @@
 	<sch:pattern id="Medication_Free_Text_Sig-pattern-errors">
 		<sch:rule id="Medication_Free_Text_Sig-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]">
 			<sch:assert id="a-1198-32770-error" test="@classCode='SBADM'">
-				SHALL contain exactly one [1..1] @classCode='SBADM' (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1198-32770).
+				SHALL contain exactly one [1..1] @classCode="SBADM" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1198-32770).
 			</sch:assert>
 			<sch:assert id="a-1198-32771-error" test="@moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.18']/voc:code/@value">
 				SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet MoodCodeEvnInt urn:oid:2.16.840.1.113883.11.20.9.18 STATIC 2011-04-03 (CONF:1198-32771).
 			</sch:assert>
 			<sch:assert id="a-1198-32753-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']) = 1">
 				SHALL contain exactly one [1..1] templateId (CONF:1198-32753) such that it
-					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.22.4.147' (CONF:1198-32772).
+					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.147" (CONF:1198-32772).
 			</sch:assert>
 			<sch:assert id="a-1198-32775-error" test="count(cda:code) = 1">
 				SHALL contain exactly one [1..1] code (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:1198-32775).
@@ -38,10 +38,10 @@
 
 		<sch:rule id="Medication_Free_Text_Sig-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:code">
 			<sch:assert id="a-1198-32780-error" test="@code='76662-6'">
-				This code SHALL contain exactly one [1..1] @code='76662-6' Instructions Medication (CONF:1198-32780).
+				This code SHALL contain exactly one [1..1] @code="76662-6" Instructions Medication (CONF:1198-32780).
 			</sch:assert>
 			<sch:assert id="a-1198-32781-error" test="@codeSystem='2.16.840.1.113883.6.1'">
-				This code SHALL contain exactly one [1..1] @codeSystem='2.16.840.1.113883.6.1' (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1 STATIC) (CONF:1198-32781).
+				This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1 STATIC) (CONF:1198-32781).
 			</sch:assert>
 		</sch:rule>
 
@@ -71,7 +71,7 @@
 
 		<sch:rule id="Medication_Free_Text_Sig-manufacturedLabeledDrug-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:consumable/cda:manufacturedProduct/cda:manufacturedLabeledDrug">
 			<sch:assert id="a-1198-32779-error" test="@nullFlavor='NA'">
-				This manufacturedLabeledDrug SHALL contain exactly one [1..1] @nullFlavor='NA' Not Applicable (CONF:1198-32779).
+				This manufacturedLabeledDrug SHALL contain exactly one [1..1] @nullFlavor="NA" Not Applicable (CONF:1198-32779).
 			</sch:assert>
 		</sch:rule>
 	</sch:pattern>

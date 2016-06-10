@@ -16,15 +16,15 @@
 	<sch:pattern id="Medication_Order_V3-pattern-errors">
 		<sch:rule id="Medication_Order_V3-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.47']]">
 			<sch:assert id="a-2228-27377-error" test="@classCode='SBADM'">
-				SHALL contain exactly one [1..1] @classCode='SBADM' (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27377).			
+				SHALL contain exactly one [1..1] @classCode="SBADM" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27377).			
 			</sch:assert>
 			<sch:assert id="a-2228-12639-error" test="@moodCode='RQO'">
-				SHALL contain exactly one [1..1] @moodCode='RQO' (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12639).			
+				SHALL contain exactly one [1..1] @moodCode="RQO" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12639).			
 			</sch:assert>
 			<sch:assert id="a-2228-12585-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.47'][@extension='2016-02-01']) = 1">
 				SHALL contain exactly one [1..1] templateId (CONF:2228-12585) such that it
-					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.24.3.47' (CONF:2228-12586).
-					SHALL contain exactly one [1..1] @extension='2016-02-01' (CONF:2228-27089).
+					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.47" (CONF:2228-12586).
+					SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27089).
 			</sch:assert>
 			<sch:assert id="a-2228-27740-error" test="count(cda:effectiveTime[count(cda:low)=1]) = 1">
 				SHALL contain exactly one [1..1] effectiveTime (CONF:2228-27740) such that it

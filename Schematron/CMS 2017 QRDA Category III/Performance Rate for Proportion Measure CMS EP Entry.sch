@@ -19,7 +19,7 @@
 			</sch:assert>
 			<sch:assert id="a-1109-711255-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.25']) = 1"> 
 				SHALL contain exactly one [1..1] templateId (CONF:1109-711255) such that it
-					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.27.3.25" (CONF:1109-711256).
+					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.25" (CONF:1109-711256).
 			</sch:assert>
 
 			<sch:assert id="a-1109-19649-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.14']) = 1"> 
@@ -33,7 +33,7 @@
 				SHALL contain exactly one [1..1] statusCode (CONF:1109-18421).
 			</sch:assert>
 			<sch:assert id="a-1109-18399-error" test="count(cda:value[@xsi:type='REAL']) = 1"> 
-				SHALL contain exactly one [1..1] value with @xsi:type='REAL" (CONF:1109-18399).
+				SHALL contain exactly one [1..1] value with @xsi:type="REAL" (CONF:1109-18399).
 			</sch:assert>
 			<sch:assert id="a-1109-711203-error" test="count(cda:reference) = 1"> 
 				SHALL contain exactly one [1..1] reference (CONF:1109-711203).
@@ -66,7 +66,7 @@
 
 		<sch:rule id="QRDA_Category_III_Performance_Rate_for_Proportion_Measure_CMS_EP-reference-errors" context="cda:observation[cda:templateId[@root = '2.16.840.1.113883.10.20.27.3.25']]/cda:reference">
 			<sch:assert id="a-1109-19652-error" test="@typeCode='REFR'"> 
-				This reference SHALL contain exactly one [1..1] @typeCode='REFR" refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:1109-19652).
+				This reference SHALL contain exactly one [1..1] @typeCode="REFR" refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:1109-19652).
 			</sch:assert>
 			<sch:assert id="a-1109-19653-error" test="count(cda:externalObservation)=1"> 
 				This reference SHALL contain exactly one [1..1] externalObservation (CONF:1109-19653).

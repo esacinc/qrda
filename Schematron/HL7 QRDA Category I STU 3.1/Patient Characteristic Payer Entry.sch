@@ -16,14 +16,14 @@
 	<sch:pattern id="Patient_Characteristic_Payer-pattern-errors">
 		<sch:rule id="Patient_Characteristic_Payer-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.55']]">
 			<sch:assert id="a-67-14213-error" test="@classCode='OBS'">
-				SHALL contain exactly one [1..1] @classCode='OBS' (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:67-14213).			
+				SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:67-14213).			
 			</sch:assert>
 			<sch:assert id="a-67-14214-error" test="@moodCode='EVN'">
-				SHALL contain exactly one [1..1] @moodCode='EVN' (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:67-14214).			
+				SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:67-14214).			
 			</sch:assert>
 			<sch:assert id="a-67-12561-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.55']) = 1">
 				SHALL contain exactly one [1..1] templateId (CONF:67-12561) such that it
-					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.24.3.55' (CONF:67-12562).
+					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.55" (CONF:67-12562).
 			</sch:assert>
 			<sch:assert id="a-67-12564-error" test="count(cda:id) &gt; 0">
 				SHALL contain at least one [1..*] id (CONF:67-12564).
@@ -35,16 +35,16 @@
 				SHALL contain exactly one [1..1] effectiveTime (CONF:67-26933).
 			</sch:assert>
 			<sch:assert id="a-67-16710-error" test="count(cda:value[@xsi:type='CD']) = 1">
-				SHALL contain exactly one [1..1] value with @xsi:type='CD', where the code SHALL be selected from ValueSet Payer urn:oid:2.16.840.1.114222.4.11.3591 DYNAMIC (CONF:67-16710).
+				SHALL contain exactly one [1..1] value with @xsi:type="CD", where the code SHALL be selected from ValueSet Payer urn:oid:2.16.840.1.114222.4.11.3591 DYNAMIC (CONF:67-16710).
 			</sch:assert>
 		</sch:rule>
 		
 		<sch:rule id="Patient_Characteristic_Payer-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.55']]/cda:code">
 			<sch:assert id="a-67-14029-error" test="@code='48768-6'">
-				This code SHALL contain exactly one [1..1] @code='48768-6' Payment source (CONF:67-14029).
+				This code SHALL contain exactly one [1..1] @code="48768-6" Payment source (CONF:67-14029).
 			</sch:assert>
 			<sch:assert id="a-67-27009-error" test="@codeSystem='2.16.840.1.113883.6.1'">
-				This code SHALL contain exactly one [1..1] @codeSystem='2.16.840.1.113883.6.1' (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:67-27009).
+				This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:67-27009).
 			</sch:assert>
 		</sch:rule>
 		

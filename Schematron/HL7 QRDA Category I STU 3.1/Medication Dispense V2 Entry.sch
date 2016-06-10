@@ -17,15 +17,15 @@
 	<sch:pattern id="Medication_Dispense_V2-pattern-errors">
 		<sch:rule id="Medication_Dispense_V2-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.18']]">
 			<sch:assert id="a-1098-7451-error" test="@classCode='SPLY'">
-				SHALL contain exactly one [1..1] @classCode='SPLY' (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-7451).	
+				SHALL contain exactly one [1..1] @classCode="SPLY" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-7451).	
 			</sch:assert>
 			<sch:assert id="a-1098-7452-error" test="@moodCode='EVN'">
-				SHALL contain exactly one [1..1] @moodCode='EVN' (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:1098-7452).
+				SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:1098-7452).
 			</sch:assert>
 			<sch:assert id="a-1098-7453-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.18'][@extension='2014-06-09']) = 1">
 				SHALL contain exactly one [1..1] templateId (CONF:1098-7453) such that it
-					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.22.4.18' (CONF:1098-10505).
-					SHALL contain exactly one [1..1] @extension='2014-06-09' (CONF:1098-32580).
+					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.18" (CONF:1098-10505).
+					SHALL contain exactly one [1..1] @extension="2014-06-09" (CONF:1098-32580).
 			</sch:assert>
 			<sch:assert id="a-1098-7454-error" test="count(cda:id) &gt; 0">
 				SHALL contain at least one [1..*] id (CONF:1098-7454).

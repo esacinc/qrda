@@ -16,14 +16,14 @@
 	<sch:pattern id="Planned_Immunization_Activity-pattern-errors">
 		<sch:rule id="Planned_Immunization_Activity-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.120']]">
 			<sch:assert id="a-1098-32091-error" test="@classCode='SBADM'">
-				SHALL contain exactly one [1..1] @classCode='SBADM' (CONF:1098-32091).
+				SHALL contain exactly one [1..1] @classCode="SBADM" (CONF:1098-32091).
 			</sch:assert>
 			<sch:assert id="a-1098-32097-error" test="@moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.24']/voc:code/@value">
 				SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (SubstanceAdministration/Supply) urn:oid:2.16.840.1.113883.11.20.9.24 STATIC 2014-09-01 (CONF:1098-32097).
 			</sch:assert>
 			<sch:assert id="a-1098-32098-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.120']) = 1">
 				SHALL contain exactly one [1..1] templateId (CONF:1098-32098) such that it
-					SHALL contain exactly one [1..1] @root='2.16.840.1.113883.10.20.22.4.120' (CONF:1098-32099).
+					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.120" (CONF:1098-32099).
 			</sch:assert>
 			<sch:assert id="a-1098-32100-error" test="count(cda:id) &gt; 0">
 				SHALL contain at least one [1..*] id (CONF:1098-32100).
@@ -46,7 +46,7 @@
 		</sch:rule>
 		<sch:rule id="Planned_Immunization_Activity-statusCode-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.120']]/cda:statusCode">
 			<sch:assert id="a-1098-32102-error" test="@code='active'">
-				This statusCode SHALL contain exactly one [1..1] @code='active' Active (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-32102).		
+				This statusCode SHALL contain exactly one [1..1] @code="active" Active (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-32102).		
 			</sch:assert>
 		</sch:rule>
 	</sch:pattern>

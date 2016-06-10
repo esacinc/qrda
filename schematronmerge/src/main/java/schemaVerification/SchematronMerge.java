@@ -53,59 +53,69 @@ public class SchematronMerge {
 
 	static protected SAXBuilder builder = new SAXBuilder();
 
-	
 	public static void main(String[] args) {
 
 		SchematronMerge  merger = new SchematronMerge();
-
+		
 		MergeConfigure configTool;
-
-		// The Merged file name and schematron files are taken from the configuration
-		// The file name for the configuration (properties) can either be taken from the first argument to 
-		//  SchematronMerge (if run on the command line or supplied as an Eclipse property)
-
+		
+		// The Merged file name and schematron files are taken from the properties file
+		// The property file name can either be taken from the first argument to SchematronMerge
+		// (if run on the command line or supplied as an Eclipse property)
+		
+		// DD: Not sure if this code is needed given that we process each file in the for-loop, below.
 		if (args.length == 0)
 			configTool = new MergeConfigure();
 		else
 			configTool = new MergeConfigure(args[0]);
-
-
-		PrintStream console = System.out;
-
-		String[] files = configTool.getFilesToMerge();
-		String mergedFileName = configTool.getMergedFileName();
-
-		Document mergedDoc = merger.merge(files);
-
-
-		OutputStream output = null;
-		try {
-			output = new FileOutputStream(mergedFileName);
-		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			
+		
+		 PrintStream console = System.out;
+		
+		// DD: Generate a separate schematron file from each properties filename stored in the MergeConfigure bean 
+		for (int i =0; i < MergeConfigure.legalPropertyFileNames.size(); i++) {
+			 
+			configTool.setupSchematronMerge(i); // DD: Set the config tool's values to process the next properties file.
+			System.out.println("------- Processing properties file: " + configTool.getPropertiesFileName());
+			String[] files = configTool.getFilesToMerge();
+			String mergedFileName = configTool.getMergedFileName();
+			
+			Document mergedDoc = merger.merge(files);
+			
+			
+			OutputStream output = null;
+			try {
+				output = new FileOutputStream(mergedFileName);
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			PrintStream printOut = new PrintStream(output);
+		
+			
+			System.setOut(printOut);
+			
+			
+			
+			
+			// Actually output the merged file by redirecting stdout
+			
+		    try {
+		
+		      new XMLOutputter(Format.getPrettyFormat()).output(mergedDoc, System.out);
+		    }
+		    catch (IOException e) {
+		      System.err.println(e);
+		    }
+		
+		   
+			// Redirect stdout back to the console
+		   System.setOut(console);
+		   System.out.println("        Wrote merged Schematron file to " + mergedFileName  ); // DD: Add spaces for pretty printing
 		}
-		PrintStream printOut = new PrintStream(output);
-
-
-		System.setOut(printOut);
-
-		// Actually output the merged file by redirecting stdout
-
-		try {
-
-			new XMLOutputter(Format.getPrettyFormat()).output(mergedDoc, System.out);
-		}
-		catch (IOException e) {
-			System.err.println(e);
-		}
-
-
-		// Redirect stdout back to the console
-		System.setOut(console);
-		System.out.println("Wrote merged Schematron file to " + mergedFileName  );
 	}
 
+	
 	// Creates the files associated with the Schematrons to be merged
 	// exits if all files are not valid - otherwise returns array of references to files
 

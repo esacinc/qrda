@@ -4,20 +4,16 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
   <!-- 	 
-   Errors added to test Encounter Performed V3 template schematron error assertions - Dan Donahue
-    Total Errors Expected: 10
-          Failure a-2228-27532-error Bad Class Code
-          Failure a-2228-27533-error Bad Mood Code
-          Failure a-2228-11861-error Incorrect extension on template with root id
-          Failure a-2228-27624-error Missing or multiple code
-          Failure a-2228-27625-error Missing or bad @sdtc:valueSet
-          Failure a-2228-11874-error Missing or multiple statusCode
-          Failure a-2228-11875-error statusCode @code not = "completed"
-          Failure a-2228-11876-error Missing or multiple effectiveTime
-          Failure a-2228-11877-error Missing or multiple low
-          Failure a-2228-11878-error Missing or multiple high
-
-    This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
+    Errors added to test Encounter Recommended V3 template schematron error assertions - Dan Donahue
+    Total Errors Expected: 6
+          Failure a-2228-27549-error Bad Class Code
+          Failure a-2228-11911-error Bad Mood Code
+          Failure a-2228-11912-error Incorrect extension on template with root id
+          Failure a-2228-11915-error Missing or multiple code
+          Failure a-2228-27626-error Missing or bad @sdtc:valueSet
+          Failure a-2228-27347-error Missing or multiple Author Participation
+ 
+This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
     This sample file is informative only. 	
@@ -1816,32 +1812,22 @@
               <code code="ENC" codeSystem="2.16.840.1.113883.5.6" displayName="Encounter"
                 codeSystemName="ActClass"/>
               <entryRelationship typeCode="SUBJ">
-                <encounter classCode="ENCErr" moodCode="EVNErr"> <!-- a-2228-27532-error Bad Class Code, a-2228-27533-error Bad Mood Code  -->
+                <encounter classCode="ENC" moodCode="EVN">
                   <!-- Conforms to C-CDA R2.1 Encounter Activity (V3) -->
                   <templateId root="2.16.840.1.113883.10.20.22.4.49" extension="2015-08-01"/>
                   <!-- Encounter Performed (V3) templateId-->
-                  <templateId root="2.16.840.1.113883.10.20.24.3.23" extension="2017-02-01"/> <!-- a-2228-11861-error Incorrect extension on template with root id -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.23" extension="2016-02-01"/>
                   <id root="12345678-9d11-439e-92b3-5d9815ff4de1"/>
                   <code code="4525004" displayName="Emergency Department visit"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
                     sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.292"/>
-                  <!-- a-2228-27624-error Missing or multiple code -->
-                  <code code="4525004Dupe" displayName="Emergency Department visit"
-                    codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    sdtc:valueSetErr="2.16.840.1.113883.3.117.1.7.1.292"/> <!-- a-2228-27625-error Missing or bad @sdtc:valueSet -->
                   <text>Encounter, Performed: Emergency Department Visit</text>
                   <statusCode code="completed"/>
-                  <!-- a-2228-11874-error Missing or multiple statusCode -->
-                  <statusCode code="completedErr"/> <!-- a-2228-11875-error statusCode @code not = "completed" -->
                   <effectiveTime>
                     <!-- QDM Attribute: admission datetime -->
                     <low value="20150301090000+0500"/>
                     <!-- QDM Attribute: discharge datetime -->
                     <high value="20150303103000+0500"/>
-                  </effectiveTime>
-                  <!-- a-2228-11876-error Missing or multiple effectiveTime -->
-                  <effectiveTime>
-                    <!-- a-2228-11877-error Missing or multiple low, a-2228-11878-error Missing or multiple high  -->
                   </effectiveTime>
                   <!-- QDM Attribute: Principal Dianosis -->
                   <entryRelationship typeCode="REFR">
@@ -1904,15 +1890,19 @@
               <code code="ENC" codeSystem="2.16.840.1.113883.5.6" displayName="Encounter"
                 codeSystemName="ActClass"/>
               <entryRelationship typeCode="SUBJ">
-                <encounter classCode="ENC" moodCode="INT">
+                 <encounter classCode="ENCErr" moodCode="INTErr"> <!-- a-2228-27549-error Bad Class Code, a-2228-11911-error Bad Mood Code -->
                   <!-- Conforms to C-CDA R2.1 Planned Encounter (V2) template -->
                   <templateId root="2.16.840.1.113883.10.20.22.4.40" extension="2014-06-09"/>
                   <!-- Encounter Recommended (V3) template -->
-                  <templateId root="2.16.840.1.113883.10.20.24.3.24" extension="2016-02-01"/>
+                  <templateId root="2.16.840.1.113883.10.20.24.3.24" extension="2017-02-01"/> <!-- a-2228-11912-error Incorrect extension on template with root id -->
                   <id root="2a620155-9d11-439e-92b3-5d9815ff4de8"/>
                   <code code="185349003" displayName="encounter for check-up (procedure)"
                     codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96"
                     sdtc:valueSet="2.16.840.1.113883.3.464.1003.101.12.1048"/>
+                  <!-- a-2228-11915-error Missing or multiple code -->
+                  <code code="185349003" displayName="encounter for check-up (procedure)"
+                    codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96"
+                    sdtc:valueSetErr="2.16.840.1.113883.3.464.1003.101.12.1048"/> <!-- a-2228-27626-error Missing or bad @sdtc:valueSet -->
                   <text>Encounter for check-up (procedure)</text>
                   <statusCode code="active"/>
                   <effectiveTime>
@@ -1929,6 +1919,10 @@
                       <id root="2.16.840.1.113883.4.6" extension="111111111"/>
                     </assignedAuthor>
                   </author>
+                  <!-- a-2228-27347-error Missing or multiple Author Participation -->
+                  <author>
+                     <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+                 </author>
                   <participant typeCode="LOC">
                     <participantRole classCode="SDLOC">
                       <code code="31628002" codeSystem="2.16.840.1.113883.6.96"

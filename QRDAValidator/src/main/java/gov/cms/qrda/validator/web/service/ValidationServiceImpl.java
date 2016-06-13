@@ -196,7 +196,7 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 						testCase.addStatusText(String.format(specificTemplate, ((warningCount == 0)?"btn-success":"btn-warning"), warningCount, "Non-Critical/Warning"));
 
 						if (testCase.getExpectedWarnings() >= 0) {
-							testCase.addStatusText(indent + String.format("Expected %d Non-Critical/Warning failures", testCase.getExpectedErrors()));
+							testCase.addStatusText(indent + String.format("Expected %d Non-Critical/Warning failures", testCase.getExpectedWarnings()));
 							if (testCase.getExpectedWarnings() == testCase.getWarningCount()) {
 								testCase.addStatusText(indent + wrapSuccessSpan("EXPECTED WARNINGS = ENCOUNTERED WARNINGS"));
 							}

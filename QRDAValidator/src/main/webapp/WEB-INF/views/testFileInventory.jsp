@@ -64,8 +64,8 @@ POSSIBILITY OF SUCH DAMAGE.
 					      <a href="javascript:void(0)" class="list-group-item" onclick="ajaxShowXMLFile(HL7Base,'${item.filename}','<c:url value="/${item.fileURL }"/>')">
 						      <span class="list-group-item-heading">${item.filename}</span>
 						      <p class="list-group-item-text"><fmt:message key="inventory.uploaded"/> ${item.uploadDate} 
-						      	<c:if test="${item.expectedErrors >=0 }"><fmt:message key="inventory.expectedErrors"/> ${item.expectedErrors } </c:if>
-						      	<c:if test="${item.expectedWarnings >=0 }"><fmt:message key="inventory.expectedWarnings"/> ${item.expectedWarnings } </c:if>
+						      	<c:if test="${item.expectedErrors >=0 }"><br/><fmt:message key="inventory.expectedErrors"/> ${item.expectedErrors } </c:if>
+						      	<c:if test="${item.expectedWarnings >=0 }"><br/><fmt:message key="inventory.expectedWarnings"/> ${item.expectedWarnings } </c:if>
 						      </p>
 					    </a>
 				    </div>

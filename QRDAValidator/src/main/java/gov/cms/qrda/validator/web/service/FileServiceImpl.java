@@ -406,23 +406,25 @@ public class FileServiceImpl implements FileService {
 			Integer lineNum = 0;
 			spec.setExpectedWarnings(-1);
 			spec.setExpectedErrors(-1);
+			boolean errTxtFound = false;
+			boolean warnTxtFound = false;
 			// Search each line of the first MAXLINEs in the file, and search for token error and/or warning text. If found, set value in give FileSpec object
 			while((strLine = br.readLine()) != null && lineNum < MAXLINE) {
 				lineNum++;
 				
 				strLine = strLine.toLowerCase();
 				logger.debug("Line " + lineNum +": " + strLine);
-				if (strLine.contains("total errors expected")) {
+				if (!errTxtFound && strLine.contains("total errors expected")) {
 					String[] split = strLine.trim().split(" ");
-					logger.debug("Totals Errors are: " + split[split.length-1] );
+					logger.debug("Total Errors are: " + split[split.length-1] );
 					spec.setExpectedErrors(Integer.valueOf(split[split.length-1]));
-					break;
+					errTxtFound = true;;
 				}
-				if (strLine.contains("total warnings expected")) {
+				if (!warnTxtFound && strLine.contains("total warnings expected")) {
 					String[] split = strLine.trim().split(" ");
-					logger.debug("Totals Errors are: " + split[split.length-1] );
+					logger.debug("Total Warnings are: " + split[split.length-1] );
 					spec.setExpectedWarnings(Integer.valueOf(split[split.length-1]));
-					break;
+					warnTxtFound = true;
 				}
 			}
 			br.close();

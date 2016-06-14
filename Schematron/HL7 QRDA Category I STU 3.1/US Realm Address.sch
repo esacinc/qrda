@@ -16,7 +16,7 @@
     </sch:phase>
     
     <sch:pattern id="US-Realm-Address-pattern-errors">
-        <sch:rule id="US-Realm-Address-errors" context="//* [cda:addr[parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]/cda:recordTarget/cda:patientRole
+        <sch:rule id="US-Realm-Address-errors" context="cda:addr[parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']/cda:recordTarget/cda:patientRole
             or parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:recordTarget/cda:patientRole
             or parent::cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.18']]/cda:performer/cda:assignedEntity
             or parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]/cda:author/cda:assignedAuthor
@@ -30,7 +30,7 @@
     </sch:pattern>
     
     <sch:pattern id="US-Realm-Address-pattern-warnings">
-        <sch:rule id="US-Realm-Address-warnings" context="//* [cda:addr[parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]/cda:recordTarget/cda:patientRole
+        <sch:rule id="US-Realm-Address-warnings" context="cda:addr[parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']/cda:recordTarget/cda:patientRole
             or parent::cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.18']]/cda:performer/cda:assignedEntity
             or parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]/cda:author/cda:assignedAuthor
             or parent::cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]/cda:dataEnterer/cda:assignedEntity

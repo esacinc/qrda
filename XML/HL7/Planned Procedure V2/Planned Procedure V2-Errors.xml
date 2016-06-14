@@ -4,7 +4,7 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
   <!-- 	 
-    Errors added to test Planned Observation V2 template schematron error assertions - Dan Donahue
+    Errors added to test Planned Procedure V2 template schematron error assertions - Dan Donahue
     Total Errors Expected: 7
           Failure a-1098-8568-error Bad Class Code
           Failure a-1098-8569-error Bad Mood Code

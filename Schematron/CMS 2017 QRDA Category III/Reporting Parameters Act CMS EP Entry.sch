@@ -16,10 +16,14 @@
             <sch:assert id="a-2233-3270-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:2233-3270). </sch:assert>
             <sch:assert id="a-2233-711272-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.23'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-711272) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.23" (CONF:2233-711273). </sch:assert>
             <sch:assert id="a-2233-18098-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-18098) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.17.3.8" (CONF:2233-18099). </sch:assert>
-            <sch:assert id="a-2233-3272-error" test="@code='252116004'">SHALL contain exactly one [1..1] code="252116004" Observation Parameters (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96 STATIC) (CONF:2233-3272). </sch:assert>
+	<sch:assert id="a-2233-3272-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2233-3272).</sch:assert>
             <sch:assert id="a-2233-3273-error" test="count(cda:effectiveTime)=1">SHALL contain exactly one [1..1] effectiveTime (CONF:2233-3273). </sch:assert>
          </sch:rule>
-         <sch:rule id="Reporting-Parameters-Act-CMS-effectiveTime-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.23']]/cda:effectiveTime">
+    	<sch:rule id="Reporting-Parameters-Act-CMS-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.23']]/cda:code">
+    		<sch:assert id="a-2233-26550-error" test="@code='252116004'">This code SHALL contain exactly one [1..1] @code="252116004" Observation Parameters (CONF:2233-26550). </sch:assert>
+    		<sch:assert id="a-2233-26551-error" test="@codeSystem='2.16.840.1.113883.6.96'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2233-26551). </sch:assert>
+    	</sch:rule>
+    	<sch:rule id="Reporting-Parameters-Act-CMS-effectiveTime-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.23']]/cda:effectiveTime">
             <sch:assert id="a-2233-3274-error" test="count(cda:low)=1"> This effectiveTime SHALL contain exactly one [1..1] low (CONF:2233-3274). </sch:assert>
             <sch:assert id="a-2233-3275-error" test="count(cda:high)=1"> This effectiveTime SHALL contain exactly one [1..1] high (CONF:2233-3275). </sch:assert>
         </sch:rule>

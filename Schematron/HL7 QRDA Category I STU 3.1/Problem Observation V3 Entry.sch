@@ -39,7 +39,7 @@
     
     <sch:pattern id="Problem-Observation-pattern-warnings">       
         <sch:rule id="Problem-Observation-participant-participantRole-warnings" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4']]">
- 		  <sch:assert id="a-1198-28221-warning" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']])&gt;=1">SHOULD contain zero or more [0..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1198-31147). </sch:assert>
+            <sch:assert id="a-1198-31147-warning" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']])&gt;=1">SHOULD contain zero or more [0..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1198-31147). </sch:assert>
         </sch:rule>          
     </sch:pattern>
     

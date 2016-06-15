@@ -5,13 +5,13 @@
   -->
 
 <!-- 	 
-    Total Errors Expected: 6
-          Failure a-81-8621-error Bad Class Code
-          Failure a-81-8622-error Bad Mood Code
-          Failure a-81-8623-error Incorrect root on main template - NOT testable
-          Failure a-81-19141-error Missing or bad code
-          Failure a-81-8625-error Missing or multiple statusCode
-          Failure a-81-8626-error Missing or multiple value with @xsi:type="CD"
+	Total Errors Expected: 4
+		Description: This code SHALL contain exactly one [1..1] @code="ASSERTION" Assertion (CONF:81-19142).
+		Description: This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.5.4" (CodeSystem: ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:81-26504).
+		Description: This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:81-19097).
+		Description: This value SHALL contain exactly one [1..1] @code="419099009" Dead (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96 STATIC) (CONF:81-26470).
+	
+	Total Warnings Expected: 0	
 -->          
           
 <!-- 	 
@@ -717,18 +717,15 @@
 										</assignedAuthor>
 									</author>
 									<!-- This finding was the cause of death -->
-									<entryRelationship typeCode="CAUS1">
-										<observation classCode="OBS1" moodCode="EVN1">
+									<entryRelationship typeCode="CAUS">
+										<observation classCode="OBS" moodCode="EVN">
 											<templateId root="2.16.840.1.113883.10.20.22.4.47"/>
-											<templateId root="2.16.840.1.113883.10.20.22.4.47"/>
-											<code1 code="ASSERTION1" codeSystem="2.16.840.1.113883.5.4" />
-											<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" />
-											<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" />
+											<code code="ASSERTION-Err" codeSystem="2.16.840.1.113883.5.4-Err" />
 											<text>
 												<reference value="#FH1prob1comment"/>
 											</text>
-											<statusCode1 code="completed1"/>
-											<value xsi:type="CD1" code="419099009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dead"/>
+											<statusCode code="completed-Err"/>
+											<value xsi:type="CD" code="419099009-Err" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dead"/>
 										</observation>
 									</entryRelationship>
 								</observation>

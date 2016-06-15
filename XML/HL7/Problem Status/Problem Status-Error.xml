@@ -4,21 +4,18 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
   <!-- 	 
-    Errors added to test Planned Procedure V2 template schematron error assertions - Dan Donahue
+    Errors added to test Problem Status (Deprecated) template schematron error assertions - Dan Donahue
     Total Errors Expected: 7
-          Failure a-1098-8568-error Bad Class Code
-          Failure a-1098-8569-error Bad Mood Code
-          Failure a-1098-30444-error Incorrect extension on root template
-          Failure a-1098-8571-error Missing id
-          Failure a-1098-31976-error Missing or multiple code
-          Failure a-1098-30446-error Missing or multiple statusCode
-          Failure a-1098-31978-error Missing or or bad status code @code="active"
-
-    Total Warnings Expected: 2
-          Failure a-1098-30447-warning Missing or multiple effectiveTime
-          Failure a-1098-31979-warning Missing Author Participation
-
-This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
+          Failure a-1098-7357-error Bad Class Code
+          Failure a-1098-7358-error Bad Mood Code
+          Failure a-1098-7359-error Incorrect root on main template - NOT testable
+          Failure a-1098-19162-error Missing or multiple code
+          Failure a-1098-19163-error Missing or bad code @code="33999-4"
+          Failure a-1098-7364-error Missing or multiple statusCode
+          Failure a-1098-19113-error Missing or bad statusCode @code="completed"
+          Failure a-1098-7365-error Missing or multiple value with @xsi:type="CD"
+            
+    This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
     This sample file is informative only. 	
@@ -4139,25 +4136,17 @@ This sample file contains an example of each Patient Data Section QDM contained 
 
           <!-- QDM Datatype: Procedure, Order -->
           <entry typeCode="DRIV">
-             <procedure classCode="PROCErr" moodCodeErr="RQO"> <!-- a-1098-8568-error Bad Class Code, a-1098-8569-error Bad Mood Code -->
+            <procedure classCode="PROC" moodCode="RQO">
               <!-- Conforms to C-CDA R2 Planned Procedure (V2) -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.41" extension="2017-06-09"/> <!--a-1098-30444-error Incorrect extension on root template  -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.41" extension="2014-06-09"/>
               <!-- Procedure Order (V3) -->
               <templateId root="2.16.840.1.113883.10.20.24.3.63" extension="2016-02-01"/>
-              <!-- a-1098-8571-error Missing id -->
-              <!-- <id root="5bc8cc9d-d59a-4dda-99d8-1463b2e71d06"/> -->
-              <!-- a-1098-31976-error Missing or multiple code -->
-              <!--  
+              <id root="5bc8cc9d-d59a-4dda-99d8-1463b2e71d06"/>
               <code code="235326000" displayName="Right hemicolectomy"
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
                 sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.255"/>
-              -->
               <text>Procedure, Order: Right hemicolectomy </text>
               <statusCode code="active"/>
-              <!-- a-1098-30446-error Missing or multiple statusCode -->
-              <statusCode code="activeErr"/> <!-- a-1098-31978-error Missing or or bad status code @code="active" -->
-              <effectiveTime value="20150412"/>
-              <!-- a-1098-30447-warning Missing or multiple effectiveTime -->
               <effectiveTime value="20150412"/>
               <!-- QDM Attribute: Ordinality -->
               <priorityCode code="63161005" codeSystem="2.16.840.1.113883.6.96"
@@ -4177,7 +4166,7 @@ This sample file contains an example of each Patient Data Section QDM contained 
               <!--<targetSiteCode nullFlavor="OTH" codeSystem="2.16.840.1.113883.6.96"><translation code="I21.01" displayName="Term not in Body Site value set" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" sdtc:valueSet="2.16.840.1.113883.3.464.1003.104.12.1001" /></targetSiteCode>-->
               <author>
                 <!-- C-CDA R2.1 Author Participation -->
-                <templateId root="2.16.840.1.113883.10.20.22.4.119Err"/> <!-- a-1098-31979-warning Missing Author Participation -->
+                <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
                 <time value="20120329090000+0500"/>
                 <assignedAuthor>
                   <id root="2.16.840.1.113883.4.6" extension="111111111"/>

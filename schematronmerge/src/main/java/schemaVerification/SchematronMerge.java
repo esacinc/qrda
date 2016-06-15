@@ -37,6 +37,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -59,21 +60,27 @@ public class SchematronMerge {
 		
 		MergeConfigure configTool;
 		
+		List<String> thePropertyFileNames = null;
+		
 		// The Merged file name and schematron files are taken from the properties file
 		// The property file name can either be taken from the first argument to SchematronMerge
 		// (if run on the command line or supplied as an Eclipse property)
 		
 		// DD: Not sure if this code is needed given that we process each file in the for-loop, below.
-		if (args.length == 0)
+		if (args.length == 0) {
 			configTool = new MergeConfigure();
-		else
-			configTool = new MergeConfigure(args[0]);
 			
+		}
+		else {
+			configTool = new MergeConfigure(args);
+			
+		}
+		thePropertyFileNames = MergeConfigure.getPropertyFileNames ();
 		
 		 PrintStream console = System.out;
 		
 		// DD: Generate a separate schematron file from each properties filename stored in the MergeConfigure bean 
-		for (int i =0; i < MergeConfigure.legalPropertyFileNames.size(); i++) {
+		for (int i =0; i < thePropertyFileNames.size(); i++) {
 			 
 			configTool.setupSchematronMerge(i); // DD: Set the config tool's values to process the next properties file.
 			System.out.println("------- Processing properties file: " + configTool.getPropertiesFileName());

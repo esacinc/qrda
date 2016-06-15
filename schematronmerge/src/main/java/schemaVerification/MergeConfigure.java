@@ -60,29 +60,36 @@ public class MergeConfigure {
 			"EP CMS 2017 QRDA Category I.properties",
 			"EP CMS 2017 QRDA Category III.properties",
 			"EH CMS 2017 QRDA Category I.properties");
-
-	// DD: Not using this anymore - trusting that the merge filename listed in the properties files are really the ones they want.
-	private static  List<String> legalmergedNames = Arrays.asList("HL7 QRDA Category I STU 3.1.sch",
-			"HL7 QRDA Category III STU 1.1.sch",
-			"EP CMS 2017 QRDA Category I.sch",
-			"EP CMS 2017 QRDA Category III.sch",
-			"EH CMS 2017 QRDA Category I.sch");
-
-	//	private Properties properties     = new EProperties();
-	private Properties properties     = new Properties();
+	
+	// If actual property file names have been identified (say as command arguments) then
+	// use those property files - otherwise use the default list of file
+	// name given by the static  legalPropertyFileNames SDV
+	public static  List<String> getPropertyFileNames () {
+		if (actualPropertyFileNames == null)
+		 return (legalPropertyFileNames );
+		else
+		 return (actualPropertyFileNames );	
+	}
+	
+	public static  List<String> actualPropertyFileNames = null;
+	
+	private Properties properties     = new EProperties();
 
 	private boolean propsLoaded       = false;
 
 	private String propertiesFileName = defaultName;
 
 
+	// Check to see that the filename for the property
+	// is one of the "legal" names - if not -note the non-standard name
+	// being used for the file
 	private static String checkPropFilename(String filename){
 		String baseFileName = getbaseFileName(filename);
 
 		if (!legalPropertyFileNames.contains(baseFileName)) {
 
 			System.err.println("Property file given as " + filename);
-			System.err.print("Must be one of " );
+			System.err.print("Expecting one of " );
 			for (String s : legalPropertyFileNames) System.err.print(s + " ");
 			System.err.println(".");
 
@@ -92,12 +99,19 @@ public class MergeConfigure {
 		return(filename);
 	}
 
+	// get the basename for use in checking for the standard files
 	private static String getbaseFileName(String fullpath){
 		Path p = Paths.get(fullpath);
 		String file = p.getFileName().toString();
 		return(file);
 	}
 
+	// this is actual worker method it loads the actual propeerty file
+	// Each property file is expected to contain the 
+	//    1) number of file
+	//    2)  a line naming each (schematron) file
+	//    3) The name of the merged files thatholds the  collection of files in (2) that will be merged.
+	//
 	private void loadPropertiesFile(){
 		try {
 			File file = new File(getPropertiesFileName());
@@ -120,38 +134,19 @@ public class MergeConfigure {
 	}
 
 
-	// Made this a JUnit test that tests for 
-	// (a) files to merge
-	// (b) name of merged file retreival 
-	/*
 	public static void main (String[] args){
 
-		MergeConfigure tool = new MergeConfigure();
-
-		// (a)
-		String[] files = tool.getFilesToMerge();
-		for (String f : files){
-			System.out.println(f);
-		}
-
-		// (b)
-		String fileName = tool.getMergedFileName();
-
-	}
-
-	 */
-
-	public static void main (String[] args){
-
-
+		
 		System.out.println("Start....");
 		// DD: Loop through all properties files and process one by one.
-		for (int i = 0; i < legalPropertyFileNames.size(); i++) {
+		for (int i = 0; i < getPropertyFileNames().size(); i++) {
 			MergeConfigure tool = new MergeConfigure();
-			tool.propertiesFileName = legalPropertyFileNames.get(i);
+			
+			tool.propertiesFileName = getPropertyFileNames().get(i);
 			System.out.println("Prop file: " + tool.propertiesFileName);
+			
 			tool.propsLoaded = false;
-			String[] files = tool.getFilesToMergeFromPropertiesFile();
+			String[] files = tool.getFilesToMerge();
 			for (String f : files){
 				System.out.println(f);
 			}
@@ -162,7 +157,7 @@ public class MergeConfigure {
 	// DD:  Public accessor used by schematronMerge bean to set up  a particular properties file for processing.
 	public void setupSchematronMerge(int i) {
 		propsLoaded = false;
-		propertiesFileName = legalPropertyFileNames.get(i);
+		propertiesFileName = getPropertyFileNames().get(i);
 	}
 
 	// DD: Public accessor used by schematronMerge to get the current properties filename being processed.
@@ -170,32 +165,51 @@ public class MergeConfigure {
 		return(propertiesFileName);
 	}
 
+	// The MergeTool can be passed a single file named a property file
 	public MergeConfigure (String filename){
 		filename = checkPropFilename(filename);
 		propertiesFileName = filename;
 	}
 
+	// The MergeTool can be passed a list of property file(s)
+	public MergeConfigure (String[] propFilenames){
+		this(propFilenames[0]);  // start with the first one
+		actualPropertyFileNames = Arrays.asList(propFilenames);
+		
+	}
+	
+	// The MergeTool can be passed no  property file(s), in which case
+	// a set of default files are used that have been deemed as "legal"
 	public MergeConfigure (){
 		String filename = defaultName;
 		filename = checkPropFilename(filename);
 		propertiesFileName = filename;
 	}
 
-
+    // IN the current implementation we see which files to merge
+	// by consulting the properties file
 	public String[] getFilesToMerge(){
+		
+		// if the file hasn't isn't already loaded - then load it
 		if (!propsLoaded) loadPropertiesFile();
 		int nof = 0;
 
-
+		// See how many file are referenced in the property file
 		String value = properties.getProperty("NumberOfFiles");
 
+		// If the file doesn't say how many schematron files there should
+		// be - it is assumed that the property file is in error
 		if (value == null) {
-			System.err.println("The definion of NumberOfFiles parameter is missing from property file named " + getPropertiesFileName());
+			System.err.println("The definion of NumberOfFiles parameter is missing from property file named " + 
+		                        getPropertiesFileName());
 			System.exit(-1);
 		}
 
 		nof = Integer.parseInt(value);
 
+		// Read in the references to the schematron file form
+		// Schematron_1 .. Schematron_<nof> ...
+		
 		String[] filesToMerge = new String [nof];
 		String propName = "Schematron_";
 
@@ -204,7 +218,8 @@ public class MergeConfigure {
 			String propValue = properties.getProperty(thePropName);
 
 			if (propValue == null) {
-				System.err.println("The definion of " + thePropName + " is missing from property file named " + getPropertiesFileName());
+				System.err.println("The definion of " + thePropName + " is missing from property file named " + 
+			                       getPropertiesFileName());
 				System.exit(-1);
 			}
 
@@ -214,7 +229,9 @@ public class MergeConfigure {
 		return (filesToMerge);
 	}
 
-
+	// Returns the string naming the merged file name that will be used to hold
+	// the merged files named by Schematron_1 .. Schematron_<nof> ...
+	
 	public String getMergedFileName(){
 		String mergedFileName = "missing";
 
@@ -227,54 +244,9 @@ public class MergeConfigure {
 		if (mergedFileName != null) {
 			baseFileName = getbaseFileName(mergedFileName);
 		}
-		// DD: Let's not do this check. Rather, assume we have the correct sch names in the properties file
-		/*
-		if (!legalmergedNames.contains(baseFileName)) {
 
-			System.err.println("Property file has merged file named  " + mergedFileName );
-
-			System.err.println("Must be one of " );
-			for (String s : legalmergedNames) System.err.println(s + " ");
-			System.err.println(".");
-
-
-			System.exit(-1);
-		}
-
-		 */
 		return (mergedFileName);
 	}
 
-	public String[] getFilesToMergeFromPropertiesFile(){
-		if (!propsLoaded) loadPropertiesFile();
-		int nof = 0;
-
-
-		String value = properties.getProperty("NumberOfFiles");
-
-		if (value == null) {
-			System.err.println("The definion of NumberOfFiles parameter is missing from property file named " + getPropertiesFileName());
-			System.exit(-1);
-		}
-
-		nof = Integer.parseInt(value);
-
-		String[] filesToMerge = new String [nof];
-		String propName = "Schematron_";
-
-		for (int i = 1; i <= nof ; i++) {
-			String thePropName = propName + i;
-			String propValue = properties.getProperty(thePropName);
-
-			if (propValue == null) {
-				System.err.println("The definion of " + thePropName + " is missing from property file named " + getPropertiesFileName());
-				System.exit(-1);
-			}
-
-			filesToMerge[i-1] = propValue;
-			//System.out.println(i + " " + filesToMerge[i-1] );
-		}
-		return (filesToMerge);
-	}
-
+	
 }

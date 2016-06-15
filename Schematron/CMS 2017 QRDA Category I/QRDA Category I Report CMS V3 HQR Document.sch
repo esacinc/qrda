@@ -21,6 +21,7 @@
             <sch:assert id="a-2228-16703-error" test="count(cda:informationRecipient)=1">SHALL contain exactly one [1..1] informationRecipient (CONF:2228-16703).</sch:assert>
             <sch:assert id="a-2228-16579_C01-error" test="count(cda:documentationOf[count(cda:serviceEvent)=1])=1">SHALL contain exactly one [1..1] documentationOf (CONF:2228-16579_C01) such that it SHALL contain exactly one [1..1] serviceEvent (CONF:2228-16580).</sch:assert>
             <sch:assert id="a-2239-28472-error" test="count(cda:component)=1">SHALL contain exactly one [1..1] component (CONF:2239-28472).</sch:assert>
+            <sch:assert id="a-1198-10003_C01-error" test="count(cda:participant)=1">SHALL contain exactly one [1..1] participant (CONF:1198-10003_C01).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-effectiveTime-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:effectiveTime">
             <sch:assert id="a-81-10127-c-error" test="string-length(@value)&gt;=8">SHALL be precise to the day (CONF:81-10127).</sch:assert>
@@ -46,7 +47,6 @@
             <sch:assert id="a-2228-16705_C01-error" test="count(cda:id)=1">This intendedRecipient SHALL contain exactly one [1..1] id (CONF:2228-16705_C01).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-informationRecipient-intendedRecipient-id-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:informationRecipient/cda:intendedRecipient/cda:id">
-            <sch:assert id="a-CMS_0043-error" test="not(@nullFlavor)">This id SHALL NOT contain [0..0] @nullFlavor (CONF:CMS_0043).</sch:assert>
             <sch:assert id="a-CMS_0025-error" test="@root='2.16.840.1.113883.3.249.7'">This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.7" (CONF:CMS_0025).</sch:assert>
             <sch:assert id="a-CMS_0026-error" test="@extension=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.249.14.103']/voc:code/@value">This id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet QRDA-I CMS Program Name urn:oid:2.16.840.1.113883.3.249.14.103 STATIC 2016-03-01 (CONF:CMS_0026).</sch:assert>
         </sch:rule>
@@ -57,10 +57,10 @@
             <sch:assert id="a-2239-28484-error" test="count(cda:id) &gt; 0">The representedOrganization, if present, SHALL contain at least one [1..*] id (CONF:2239-28484).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-participant-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:participant">
-            <sch:assert id="a-CMS_0004-error" test="count(cda:associatedEntity)=1">The participant, if present, SHALL contain exactly one [1..1] associatedEntity (CONF:CMS_0004).</sch:assert>
+            <sch:assert id="a-CMS_0004-error" test="count(cda:associatedEntity)=1">This participant SHALL contain exactly one [1..1] associatedEntity (CONF:CMS_0004).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-participant-associatedEntity-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:participant/cda:associatedEntity">
-            <sch:assert id="a-CMS_0005-error" test="count(cda:id[not(@nullFlavor)][@root='2.16.840.1.113883.3.2074.1'][@extension])=1">This associatedEntity SHALL contain exactly one [1..1] id (CONF:CMS_0005) such that it SHALL NOT contain [0..0] @nullFlavor (CONF:CMS_0052). SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" CMS EHR Certification Number (formerly known as Office of the National Coordinator Certification Number) (CONF:CMS_0006). SHALL contain exactly one [1..1] @extension (CONF:CMS_0008).</sch:assert>
+            <sch:assert id="a-CMS_0005-error" test="count(cda:id[@root='2.16.840.1.113883.3.2074.1'][@extension])=1">This associatedEntity SHALL contain exactly one [1..1] id (CONF:CMS_0005) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" CMS EHR Certification Number (formerly known as Office of the National Coordinator Certification Number) (CONF:CMS_0006). SHALL contain exactly one [1..1] @extension (CONF:CMS_0008).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-component-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3']]/cda:component">
             <sch:assert id="a-2239-28473-error" test="count(cda:structuredBody)=1">This component SHALL contain exactly one [1..1] structuredBody (CONF:2239-28473).</sch:assert>

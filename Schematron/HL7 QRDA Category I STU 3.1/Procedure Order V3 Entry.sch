@@ -16,32 +16,32 @@
     </sch:phase>
     
     <sch:pattern id="Procedure-Order-pattern-errors">
-        <sch:rule id="Procedure-Order-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.63']]">
+        <sch:rule id="Procedure-Order-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.63'][@extension='2016-02-01']]">
             <sch:assert id="a-2228-27323-error" test="@classCode='PROC'">SHALL contain exactly one [1..1] @classCode="PROC" Procedure (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27323).</sch:assert>
             <sch:assert id="a-2228-11097-error" test="@moodCode='RQO'">SHALL contain exactly one [1..1] @moodCode="RQO" Request (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-11097).</sch:assert>
             <sch:assert id="a-2228-11098-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.63'][@extension='2016-02-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-11098) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.63" (CONF:2228-11099). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27083).</sch:assert>
             <sch:assert id="a-2228-27324-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2228-27324).</sch:assert>
             <sch:assert id="a-2228-27346-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']])=1">SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27346).</sch:assert>
         </sch:rule>       
-        <sch:rule id="Procedure-Order-code-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.63']]/cda:code">
+        <sch:rule id="Procedure-Order-code-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.63'][@extension='2016-02-01']]/cda:code">
             <sch:assert id="a-2228-27330-error" test="@sdtc:valueSet">This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27330).</sch:assert>
         </sch:rule>
-        <sch:rule id="Procedure-Order-priorityCode-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.63']]/cda:priorityCode">
+        <sch:rule id="Procedure-Order-priorityCode-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.63'][@extension='2016-02-01']]/cda:priorityCode">
             <sch:assert id="a-2228-27325-error" test="@sdtc:valueSet">The priorityCode, if present, SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27325). </sch:assert>
         </sch:rule>
-        <sch:rule id="Procedure-Order-methodCode-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.63']]/cda:methodCode">
+        <sch:rule id="Procedure-Order-methodCode-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.63'][@extension='2016-02-01']]/cda:methodCode">
             <sch:assert id="a-2228-27326-error" test="@sdtc:valueSet">The methodCode, if present, SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27326).  </sch:assert>
         </sch:rule>
-        <sch:rule id="Procedure-Order-approachSiteCode-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.63']]/cda:approachSiteCode">
+        <sch:rule id="Procedure-Order-approachSiteCode-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.63'][@extension='2016-02-01']]/cda:approachSiteCode">
             <sch:assert id="a-2228-27331-error" test="@sdtc:valueSet">The approachSiteCode, if present, SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27331). </sch:assert>
         </sch:rule>
-        <sch:rule id="Procedure-Order-targetSiteCode-translation-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.63']]/cda:targetSiteCode/cda:translation">
+        <sch:rule id="Procedure-Order-targetSiteCode-translation-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.63'][@extension='2016-02-01']]/cda:targetSiteCode/cda:translation">
             <sch:assert id="a-2228-27733-error" test="@sdtc:valueSet">The translation, if present, SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27733). </sch:assert>
         </sch:rule>       
      </sch:pattern>
     
     <sch:pattern id="Procedure-Order-pattern-warnings">
-        <sch:rule id="Procedure-Order-targetSiteCode-warnings" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.63']]/cda:targetSiteCode">
+        <sch:rule id="Procedure-Order-targetSiteCode-warnings" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.63'][@extension='2016-02-01']]/cda:targetSiteCode">
             <sch:assert id="a-2228-27732-warning" test="@sdtc:valueSet">The targetSiteCode, if present, SHOULD contain zero or one [0..1] @sdtc:valueSet (CONF:2228-27332). </sch:assert>
         </sch:rule>       
     </sch:pattern>

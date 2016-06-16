@@ -14,7 +14,7 @@
 	</sch:phase>
 	
 	<sch:pattern id="Planned_Act_V2-pattern-errors">
-		<sch:rule id="Planned_Act_V2-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.39']]">
+		<sch:rule id="Planned_Act_V2-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.39'][@extension='2014-06-09']]">
 			<sch:assert id="a-1098-8538-error" test="@classCode='ACT'">
 				SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-8538).
 			</sch:assert>
@@ -36,7 +36,7 @@
 				SHALL contain exactly one [1..1] statusCode (CONF:1098-30432).
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Planned_Act_V2-statusCode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.39']]/cda:statusCode">
+		<sch:rule id="Planned_Act_V2-statusCode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.39'][@extension='2014-06-09']]/cda:statusCode">
 			<sch:assert id="a-1098-32019-error" test="@code='active'">
 				This statusCode SHALL contain exactly one [1..1] @code="active" Active (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-32019).
 			</sch:assert>
@@ -44,7 +44,7 @@
 	</sch:pattern>
 	
 	<sch:pattern id="Planned_Act_V2-pattern-warnings">
-		<sch:rule id="Planned_Act_V2-warnings" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.39']]">
+		<sch:rule id="Planned_Act_V2-warnings" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.39'][@extension='2014-06-09']]">
 			<sch:assert id="a-1098-32020-warning" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']]) = 1">
 				SHOULD contain zero or one [0..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-32020).
 			</sch:assert>
@@ -52,7 +52,7 @@
 				SHOULD contain zero or one [0..1] effectiveTime (CONF:1098-30433).
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Planned_Act_V2-code-warnings" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.39']]/cda:code">
+		<sch:rule id="Planned_Act_V2-code-warnings" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.39'][@extension='2014-06-09']]/cda:code">
 			<sch:assert id="a-1098-32030-warning" test="@codeSystem = '2.16.840.1.113883.6.96' or @codeSystem = '2.16.840.1.113883.6.1'">
 				This code in a Planned Act SHOULD be selected from LOINC (CodeSystem: 2.16.840.1.113883.6.1) OR SNOMED CT (CodeSystem: 2.16.840.1.113883.6.96) (CONF:1098-32030).
 			</sch:assert>

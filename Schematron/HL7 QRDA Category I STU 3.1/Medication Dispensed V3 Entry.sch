@@ -11,7 +11,7 @@
 	</sch:phase>
 
 	<sch:pattern id="Medication_Dispensed_V3-pattern-errors">
-		<sch:rule id="Medication_Dispensed_V3-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45']]">
+		<sch:rule id="Medication_Dispensed_V3-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-27528-error" test="@classCode='SPLY'">
 				SHALL contain exactly one [1..1] @classCode="SPLY" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27528).
 			</sch:assert>
@@ -31,12 +31,12 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Dispensed_V3-statuscode-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45']]/cda:statusCode">
+		<sch:rule id="Medication_Dispensed_V3-statuscode-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2016-02-01']]/cda:statusCode">
 			<sch:assert id="a-2228-19441-error" test="@code='completed'">
 				This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-19441).
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Medication_Dispensed_V3-effectivetime-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45']]/cda:effectiveTime">
+		<sch:rule id="Medication_Dispensed_V3-effectivetime-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2016-02-01']]/cda:effectiveTime">
 			<sch:assert id="a-2228-28555-error" test="count(cda:low) = 1">
 				This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-28555).
 			</sch:assert>

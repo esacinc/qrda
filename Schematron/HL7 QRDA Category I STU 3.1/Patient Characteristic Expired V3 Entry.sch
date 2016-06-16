@@ -10,7 +10,7 @@
 	</sch:phase>
 	
 	<sch:pattern id="Patient_Characteristic_Expired_V3-pattern-errors">
-		<sch:rule id="Patient_Characteristic_Expired_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.54']]">
+		<sch:rule id="Patient_Characteristic_Expired_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.54'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-28087-error" test="@classCode='OBS'">
 				SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28087).			
 			</sch:assert>

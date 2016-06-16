@@ -14,7 +14,7 @@
 	</sch:phase>
 	
 	<sch:pattern id="Medication_Intolerance_V3-pattern-errors">
-		<sch:rule id="Medication_Intolerance_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.46']]">
+		<sch:rule id="Medication_Intolerance_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.46'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-14086-error" test="@classCode='OBS'">
 				SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-14086).			
 			</sch:assert>
@@ -39,13 +39,13 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Intolerance_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.46']]/cda:value">
+		<sch:rule id="Medication_Intolerance_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.46'][@extension='2016-02-01']]/cda:value">
 			<sch:assert id="a-2228-27419-error" test="@code='59037007'">
 				This value SHALL contain exactly one [1..1] @code="59037007" Drug intolerance (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2228-27419).			
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Intolerance_V3-participantRole-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.46']]/cda:participant/cda:participantRole">
+		<sch:rule id="Medication_Intolerance_V3-participantRole-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.46'][@extension='2016-02-01']]/cda:participant/cda:participantRole">
 			<sch:assert id="a-2228-27985-error" test="@classCode='MANU'">
 				This participantRole SHALL contain exactly one [1..1] @classCode="MANU" Manufactured product (CodeSystem: RoleClass urn:oid:2.16.840.1.113883.5.110) (CONF:2228-27985).
 			</sch:assert>
@@ -54,7 +54,7 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Intolerance_V3-playingEntity-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.46']]/cda:participant/cda:participantRole/cda:playingEntity">
+		<sch:rule id="Medication_Intolerance_V3-playingEntity-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.46'][@extension='2016-02-01']]/cda:participant/cda:participantRole/cda:playingEntity">
 			<sch:assert id="a-2228-27986-error" test="@classCode='MMAT'">
 				This playingEntity SHALL contain exactly one [1..1] @classCode="MMAT" Manufactured material (CodeSystem: EntityClass urn:oid:2.16.840.1.113883.5.41) (CONF:2228-27986).
 			</sch:assert>
@@ -63,7 +63,7 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Intolerance_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.46']]/cda:participant/cda:participantRole/cda:playingEntity/cda:code">
+		<sch:rule id="Medication_Intolerance_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.46'][@extension='2016-02-01']]/cda:participant/cda:participantRole/cda:playingEntity/cda:code">
 			<sch:assert id="a-2228-27987-error" test="@sdtc:valueSet">
 				This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27987).
 			</sch:assert>
@@ -71,7 +71,7 @@
 	</sch:pattern>
 	
 	<sch:pattern id="Medication_Intolerance_V3-pattern-warnings">
-		<sch:rule id="Medication_Intolerance_V3-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.46']]">
+		<sch:rule id="Medication_Intolerance_V3-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.46'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-14106-warning" test="count(cda:entryRelationship[@typeCode='MFST'][@inversionInd='true'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.85']])=1]) = 1">
 				SHOULD contain zero or one [0..1] entryRelationship (CONF:2228-14106) such that it
 					SHALL contain exactly one [1..1] @typeCode="MFST" (CONF:2228-14107).

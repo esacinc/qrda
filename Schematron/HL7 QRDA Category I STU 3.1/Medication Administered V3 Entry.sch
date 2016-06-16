@@ -10,7 +10,7 @@
 	</sch:phase>
 	
 	<sch:pattern id="Medication_Administered_V3-pattern-errors">
-		<sch:rule id="Medication_Administered_V3-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42']]">
+		<sch:rule id="Medication_Administered_V3-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-12444-error" test="@classCode='ACT'">
 				SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-12444).
 			</sch:assert>
@@ -41,7 +41,7 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Medication_Administered_V3-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42']]/cda:code">
+		<sch:rule id="Medication_Administered_V3-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42'][@extension='2016-02-01']]/cda:code">
 			<sch:assert id="a-2228-12450-error" test="@code = '416118004'">
 				This code SHALL contain exactly one [1..1] @code="416118004" administration (CONF:2228-12450).			
 			</sch:assert>
@@ -49,17 +49,17 @@
 				This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2228-28129).			
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Medication_Administered_V3-statuscode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42']]/cda:statusCode">
+		<sch:rule id="Medication_Administered_V3-statuscode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42'][@extension='2016-02-01']]/cda:statusCode">
 			<sch:assert id="a-2228-13241-error" test="@code='completed'">
 				This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-13241).			
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Medication_Administered_V3-effectiveTime-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42']]/cda:effectiveTime">
+		<sch:rule id="Medication_Administered_V3-effectiveTime-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42'][@extension='2016-02-01']]/cda:effectiveTime">
 			<sch:assert id="a-2228-28552-error" test="count(cda:low) = 1">
 				This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-28552).
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Medication_Administered_V3-substanceAdministration-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42']]/cda:entryRelationship/cda:substanceAdministration">
+		<sch:rule id="Medication_Administered_V3-substanceAdministration-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.42'][@extension='2016-02-01']]/cda:entryRelationship/cda:substanceAdministration">
 			<sch:assert id="a-2228-12457-error" test="@moodCode='EVN'">
 				This substanceAdministration SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12457).
 			</sch:assert>

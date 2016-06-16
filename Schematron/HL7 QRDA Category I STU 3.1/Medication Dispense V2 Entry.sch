@@ -15,7 +15,7 @@
 	</sch:phase>
 	
 	<sch:pattern id="Medication_Dispense_V2-pattern-errors">
-		<sch:rule id="Medication_Dispense_V2-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.18']]">
+		<sch:rule id="Medication_Dispense_V2-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.18'][@extension='2014-06-09']]">
 			<sch:assert id="a-1098-7451-error" test="@classCode='SPLY'">
 				SHALL contain exactly one [1..1] @classCode="SPLY" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-7451).	
 			</sch:assert>
@@ -38,13 +38,13 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Dispense_V2-statuscode-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.18']]/cda:statusCode">
+		<sch:rule id="Medication_Dispense_V2-statuscode-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.18'][@extension='2014-06-09']]/cda:statusCode">
 			<sch:assert id="a-1098-32361-error" test="@code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.80.64']/voc:code/@value">
 				This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet Medication Fill Status urn:oid:2.16.840.1.113883.3.88.12.80.64 STATIC 2014-04-23 (CONF:1098-32361).
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Medication_Dispense_V2-may-performer-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.18']]/cda:performer">
+		<sch:rule id="Medication_Dispense_V2-may-performer-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.18'][@extension='2014-06-09']]/cda:performer">
 			<sch:assert id="a-1098-7461-error" test="count(cda:assignedEntity) = 1">
 				MAY contain zero or one [0..1] performer (CONF:1098-7461).
 					The performer, if present, SHALL contain exactly one [1..1] assignedEntity (CONF:1098-7467).
@@ -54,7 +54,7 @@
 	</sch:pattern>
 	
 	<sch:pattern id="Medication_Dispense_V2-pattern-warnings">
-		<sch:rule id="Medication_Dispense_V2-warning" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.18']]">
+		<sch:rule id="Medication_Dispense_V2-warning" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.18'][@extension='2014-06-09']]">
 			<sch:assert id="a-1098-7456-warning" test="count(cda:effectiveTime) = 1">
 				SHOULD contain zero or one [0..1] effectiveTime (CONF:1098-7456).
 			</sch:assert>
@@ -66,7 +66,7 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Dispense_V2-may-performer-warnings" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.18']]/cda:performer/cda:assignedEntity">
+		<sch:rule id="Medication_Dispense_V2-may-performer-warnings" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.18'][@extension='2014-06-09']]/cda:performer/cda:assignedEntity">
 			<sch:assert id="a-1098-7468-warning" test="count(cda:addr) = 1">
 				This assignedEntity SHOULD contain zero or one [0..1] US Realm Address (AD.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1098-7468).
 			</sch:assert>

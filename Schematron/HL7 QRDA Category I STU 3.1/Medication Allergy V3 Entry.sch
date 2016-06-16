@@ -14,7 +14,7 @@
 	</sch:phase>
 	
 	<sch:pattern id="Medication_Allergy_V3-pattern-errors">
-		<sch:rule id="Medication_Allergy_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.44']]">
+		<sch:rule id="Medication_Allergy_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.44'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-14136-error" test="@classCode='OBS'">
 				SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-14136).
 			</sch:assert>
@@ -41,7 +41,7 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Medication_Allergy_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.44']]/cda:value[@xsi:type='CD']">
+		<sch:rule id="Medication_Allergy_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.44'][@extension='2016-02-01']]/cda:value[@xsi:type='CD']">
 			<sch:assert id="a-2228-14160-error" test="@code='416098002'">
 				This value SHALL contain exactly one [1..1] @code="416098002" Drug allergy (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2228-14160).
 			</sch:assert>
@@ -49,7 +49,7 @@
 	</sch:pattern>
 	
 	<sch:pattern id="Medication_Allergy_V3-pattern-warnings">
-		<sch:rule id="Medication_Allergy_V3-warning" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.44']]">
+		<sch:rule id="Medication_Allergy_V3-warning" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.44'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-14155-warning" test="count(cda:entryRelationship[@typeCode='MFST'][@inversionInd='true'][count(cda:observation[count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.85'])=1])=1]) = 1">
 				SHOULD contain zero or one [0..1] entryRelationship (CONF:2228-14155) such that it
 					SHALL contain exactly one [1..1] @typeCode="MFST" (CONF:2228-14156).

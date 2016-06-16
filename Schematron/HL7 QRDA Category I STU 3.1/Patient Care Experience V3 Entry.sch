@@ -10,7 +10,7 @@
 	</sch:phase>
 	
 	<sch:pattern id="Patient_care_experience-pattern-errors">
-		<sch:rule id="Patient_care_experience-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.48']]">
+		<sch:rule id="Patient_care_experience-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.48'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-12464-error" test="@classCode='OBS'">
 				SHALL contain exactly one [1..1] @classCode="OBS" observation, which SHALL be selected from CodeSystem HL7ActClass (urn:oid:2.16.840.1.113883.5.6) (CONF:2228-12464).			
 			</sch:assert>
@@ -42,7 +42,7 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Patient_care_experience-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.48']]/cda:code">
+		<sch:rule id="Patient_care_experience-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.48'][@extension='2016-02-01']]/cda:code">
 			<sch:assert id="a-2228-13037-error" test="@code='77218-6'">
 				This code SHALL contain exactly one [1..1] @code="77218-6" Patient satisfaction with healthcare delivery (CONF:2228-13037).
 			</sch:assert>
@@ -51,13 +51,13 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Patient_care_experience-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.48']]/cda:effectiveTime">
+		<sch:rule id="Patient_care_experience-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.48'][@extension='2016-02-01']]/cda:effectiveTime">
 			<sch:assert id="a-2228-27553-error" test="count(cda:low) = 1">
 				This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-27553).
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Patient_care_experience-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.48']]/cda:value">
+		<sch:rule id="Patient_care_experience-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.48'][@extension='2016-02-01']]/cda:value">
 			<sch:assert id="a-2228-27647-error" test="@sdtc:valueSet">
 				This value SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27647).
 			</sch:assert>

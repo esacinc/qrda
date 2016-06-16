@@ -10,7 +10,7 @@
 	</sch:phase>
 	
 	<sch:pattern id="Patient_Characteristic_Observation_Assertion_V3-pattern-errors">
-		<sch:rule id="Patient_Characteristic_Observation_Assertion_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.103']]">
+		<sch:rule id="Patient_Characteristic_Observation_Assertion_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.103'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-16536-error" test="@classCode='OBS'">
 				SHALL contain exactly one [1..1] @classCode="OBS" Observation (CONF:2228-16536).			
 			</sch:assert>
@@ -42,7 +42,7 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Patient_Characteristic_Observation_Assertion_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.103']]/cda:code">
+		<sch:rule id="Patient_Characteristic_Observation_Assertion_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.103'][@extension='2016-02-01']]/cda:code">
 			<sch:assert id="a-2228-16545-error" test="@code='ASSERTION'">
 				This code SHALL contain exactly one [1..1] @code="ASSERTION" (CONF:2228-16545).
 			</sch:assert>
@@ -51,19 +51,19 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Patient_Characteristic_Observation_Assertion_V3-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.103']]/cda:statusCode">
+		<sch:rule id="Patient_Characteristic_Observation_Assertion_V3-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.103'][@extension='2016-02-01']]/cda:statusCode">
 			<sch:assert id="a-2228-16545-c-error" test="@code='Completed'">
 				This statusCode SHALL contain exactly one [1..1] @code="Completed" (CONF:2228-16539)
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Patient_Characteristic_Observation_Assertion_V3-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.103']]/cda:effectiveTime">
+		<sch:rule id="Patient_Characteristic_Observation_Assertion_V3-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.103'][@extension='2016-02-01']]/cda:effectiveTime">
 			<sch:assert id="a-2228-27670-error" test="count(cda:low)=1">
 				This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-27670).
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Patient_Characteristic_Observation_Assertion_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.103']]/cda:value[@xsi:type='CD']">
+		<sch:rule id="Patient_Characteristic_Observation_Assertion_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.103'][@extension='2016-02-01']]/cda:value[@xsi:type='CD']">
 			<sch:assert id="a-2228-27672-error" test="@sdtc:valueSet">
 				This value SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27672).
 			</sch:assert>

@@ -14,7 +14,7 @@
 	</sch:phase>
 	
 	<sch:pattern id="Medication_Supply_Order_V2-pattern-errors">
-		<sch:rule id="Medication_Supply_Order_V2-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.17']]">
+		<sch:rule id="Medication_Supply_Order_V2-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.17'][@extension='2014-06-09']]">
 			<sch:assert id="a-1098-7427-error" test="@classCode='SPLY'">
 				SHALL contain exactly one [1..1] @classCode="SPLY" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-7427).			
 			</sch:assert>
@@ -33,13 +33,13 @@
 				SHALL contain exactly one [1..1] statusCode (CONF:1098-7432).
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Medication_Supply_Order_V2-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.17']]/cda:statusCode">
+		<sch:rule id="Medication_Supply_Order_V2-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.17'][@extension='2014-06-09']]/cda:statusCode">
 			<sch:assert id="a-1098-32362-error" test="@code">
 				This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet ActStatus urn:oid:2.16.840.1.113883.1.11.159331 DYNAMIC (CONF:1098-32362).			
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Supply_Order_V2-may-entryRelationship-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.17']]/cda:entryRelationship">
+		<sch:rule id="Medication_Supply_Order_V2-may-entryRelationship-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.17'][@extension='2014-06-09']]/cda:entryRelationship">
 			<sch:assert id="a-1098-7444-error" test="@typeCode='SUBJ'">
 					The entryRelationship, if present, SHALL contain exactly one [1..1] @typeCode="SUBJ" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:1098-7444).
 			</sch:assert>
@@ -53,7 +53,7 @@
 	</sch:pattern>
 
 	<sch:pattern id="Medication_Supply_Order_V2-pattern-warnings">
-		<sch:rule id="Medication_Supply_Order_V2-effectiveTime-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.17']]">
+		<sch:rule id="Medication_Supply_Order_V2-effectiveTime-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.17'][@extension='2014-06-09']]">
 			<sch:assert id="a-1098-15143-warning" test="count(cda:effectiveTime[count(cda:high)=1]) = 1">
 				SHOULD contain zero or one [0..1] effectiveTime (CONF:1098-15143) such that it
 					SHALL contain exactly one [1..1] high (CONF:1098-15144).

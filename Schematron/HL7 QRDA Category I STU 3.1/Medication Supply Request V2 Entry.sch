@@ -10,7 +10,7 @@
 	</sch:phase>
 	
 	<sch:pattern id="Medication_Supply_Request_V2-pattern-errors">
-		<sch:rule id="Medication_Supply_Request_V2-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.99']]">
+		<sch:rule id="Medication_Supply_Request_V2-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.99'][@extension='2015-04-05']]">
 			<sch:assert id="a-1140-28373-error" test="@classCode='SPLY'">
 				SHALL contain exactly one [1..1] @classCode="SPLY" Supply (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1140-28373).
 			</sch:assert>

@@ -10,7 +10,7 @@
 	</sch:phase>
 
 	<sch:pattern id="Medication_Information_V2-pattern-errors">
-		<sch:rule id="Medication_Information_V2-errors" context="cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.23']]">
+		<sch:rule id="Medication_Information_V2-errors" context="cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.23'][@extension='2014-06-09']]">
 			<sch:assert id="a-1098-7408-error" test="@classCode='MANU'">
 				SHALL contain exactly one [1..1] @classCode="MANU" (CodeSystem: RoleClass urn:oid:2.16.840.1.113883.5.110 STATIC) (CONF:1098-7408).			
 			</sch:assert>
@@ -24,7 +24,7 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Information_V2-manufacturedMaterial-errors" context="cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.23']]/cda:manufacturedMaterial">
+		<sch:rule id="Medication_Information_V2-manufacturedMaterial-errors" context="cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.23'][@extension='2014-06-09']]/cda:manufacturedMaterial">
 			<sch:assert id="a-1098-7412-error" test="count(cda:code) = 1">
 				This manufacturedMaterial SHALL contain exactly one [1..1] code, which SHALL be selected from ValueSet Medication Clinical Drug urn:oid:2.16.840.1.113762.1.4.1010.4 DYNAMIC (CONF:1098-7412).
 			</sch:assert>

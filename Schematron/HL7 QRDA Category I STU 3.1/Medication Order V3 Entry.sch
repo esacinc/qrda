@@ -14,7 +14,7 @@
 	</sch:phase>
 	
 	<sch:pattern id="Medication_Order_V3-pattern-errors">
-		<sch:rule id="Medication_Order_V3-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.47']]">
+		<sch:rule id="Medication_Order_V3-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.47'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-27377-error" test="@classCode='SBADM'">
 				SHALL contain exactly one [1..1] @classCode="SBADM" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27377).			
 			</sch:assert>
@@ -39,7 +39,7 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Order_V3-may-routeCode-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.47']]/cda:routeCode/cda:translation">
+		<sch:rule id="Medication_Order_V3-may-routeCode-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.47'][@extension='2016-02-01']]/cda:routeCode/cda:translation">
 			<sch:assert id="a-2228-27737-error" test="@sdtc:valueSet">
 				The translation, if present, SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27737).
 			</sch:assert>
@@ -47,7 +47,7 @@
 	</sch:pattern>
 	
 	<sch:pattern id="Medication_Order_V3-pattern-warnings">
-		<sch:rule id="Medication_Order_V3-routeCode-warnings" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.47']]/cda:routeCode">
+		<sch:rule id="Medication_Order_V3-routeCode-warnings" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.47'][@extension='2016-02-01']]/cda:routeCode">
 			<sch:assert id="a-2228-27736-warning" test="@sdtc:valueSet">
 				The routeCode, if present, SHOULD contain zero or one [0..1] @sdtc:valueSet (CONF:2228-27736).
 			</sch:assert>

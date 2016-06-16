@@ -21,7 +21,7 @@
             <sch:assert id="a-2233-4143-error" test="count(cda:text)=1">SHALL contain exactly one [1..1] text (CONF:2233-4143).</sch:assert>
             <sch:assert id="a-2233-711303-error" test="count(cda:entry[@typeCode='DRIV'][count(cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.23']])=1])=1">SHALL contain exactly one [1..1] entry (CONF:2233-711303) such that it SHALL contain exactly one [1..1] @typeCode="DRIV" Is derived from (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:2233-711304). SHALL contain exactly one [1..1] Reporting Parameters Act (CMS EP) (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.23:2016-03-01) (CONF:2233-711175).</sch:assert>
         </sch:rule>
-        <sch:rule id="QRDA_Category_III_Reporting_Parameters_CMS-code-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3']]/cda:code">
+        <sch:rule id="QRDA_Category_III_Reporting_Parameters_CMS-code-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.6']]/cda:code">
             <sch:assert id="a-2233-19229-error" test="@code='55187-9'">This code SHALL contain exactly one [1..1] @code="55187-9" Reporting Parameters (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:2233-19229).</sch:assert>
         </sch:rule>
     </sch:pattern>

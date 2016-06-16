@@ -12,7 +12,7 @@
     </sch:phase>
     
     <sch:pattern id="Device-Order-V3-pattern-errors">
-        <sch:rule id="Device-Order-V3-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.9']]">
+        <sch:rule id="Device-Order-V3-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.9'][@extension='2016-02-01']]">
             <sch:assert id="a-2228-27723-error" test="@classCode='SPLY'">SHALL contain exactly one [1..1] @classCode="SPLY" Supply (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27723). </sch:assert>
             <sch:assert id="a-2228-12343-error" test="@moodCode='RQO'">SHALL contain exactly one [1..1] @moodCode="RQO" Request, which SHALL be selected from CodeSystem ActMood (urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12343).  </sch:assert>
             <sch:assert id="a-2228-12344-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.9'][@extension='2016-02-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-12344) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.9" (CONF:2228-12345). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27091). </sch:assert>

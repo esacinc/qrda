@@ -16,7 +16,7 @@
     </sch:phase>
     
     <sch:pattern id="External-Document-Reference-pattern-errors">
-        <sch:rule id="External-Document-Reference-errors" context="cda:externalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.115']]">
+        <sch:rule id="External-Document-Reference-errors" context="cda:externalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.115'][@extension='2014-06-09']]">
             <sch:assert id="a-1098-31931-error" test="@classCode='DOCCLIN'">encounter </sch:assert>
             <sch:assert id="a-1098-31932-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:1098-31932). </sch:assert>
             <sch:assert id="a-1098-32748-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.115'][@extension='2014-06-09'])=1">SHALL contain exactly one [1..1] templateId (CONF:1098-32748) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.115" (CONF:1098-32750).SHALL contain exactly one [1..1] @extension="2014-06-09" (CONF:1098-32749).</sch:assert>
@@ -26,7 +26,7 @@
     </sch:pattern>
     
     <sch:pattern id="External-Document-Reference-pattern-warnings">
-        <sch:rule id="External-Document-Reference-warnings" context="cda:externalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.115']]">
+        <sch:rule id="External-Document-Reference-warnings" context="cda:externalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.115'][@extension='2014-06-09']]">
             <sch:assert id="a-1098-32752-warning" test="count(cda:setId)=1"> SHOULD contain zero or one [0..1] setId (CONF:1098-32752).  </sch:assert>
             <sch:assert id="a-1098-32753-warning" test="count(cda:versionNumber)=1">  SHOULD contain zero or one [0..1] versionNumber (CONF:1098-32753).  </sch:assert>
          </sch:rule>

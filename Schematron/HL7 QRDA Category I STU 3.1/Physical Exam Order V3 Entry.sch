@@ -10,7 +10,7 @@
 	</sch:phase>
 	
 	<sch:pattern id="Physical_Exam_Order_V3-pattern-errors">
-		<sch:rule id="Physical_Exam_Order_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.58']]">
+		<sch:rule id="Physical_Exam_Order_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.58'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-27550-error" test="@classCode='OBS'">
 				SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27550).			
 			</sch:assert>
@@ -33,12 +33,12 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Physical_Exam_Order_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.58']]/cda:code">
+		<sch:rule id="Physical_Exam_Order_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.58'][@extension='2016-02-01']]/cda:code">
 			<sch:assert id="a-2228-13242-error" test="@code='29545-1'">
 				This code SHALL contain exactly one [1..1] @code="29545-1" physical examination (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:2228-13242).
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Physical_Exam_Order_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.58']]/cda:value[@xsi:type='CD']">
+		<sch:rule id="Physical_Exam_Order_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.58'][@extension='2016-02-01']]/cda:value[@xsi:type='CD']">
 			<sch:assert id="a-2228-27650-error" test="@sdtc:valueSet">
 				This value SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27650).
 			</sch:assert>

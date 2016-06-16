@@ -10,7 +10,7 @@
 	</sch:phase>
 	
 	<sch:pattern id="Physical_Exam_Recommended_V3-pattern-errors">
-		<sch:rule id="Physical_Exam_Recommended_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.60']]">
+		<sch:rule id="Physical_Exam_Recommended_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.60'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-27556-error" test="@classCode='OBS'">
 				SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27556).			
 			</sch:assert>
@@ -32,7 +32,7 @@
 				SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27351).
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Physical_Exam_Recommended_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.60']]/cda:code">
+		<sch:rule id="Physical_Exam_Recommended_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.60'][@extension='2016-02-01']]/cda:code">
 			<sch:assert id="a-2228-13274-error" test="@code='29545-1'">
 				This code SHALL contain exactly one [1..1] @code="29545-1" physical examination (CONF:2228-13274).
 			</sch:assert>
@@ -40,7 +40,7 @@
 				This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:2228-28132).
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Physical_Exam_Recommended_V3-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.60']]/cda:value[@xsi:type='CD']">
+		<sch:rule id="Physical_Exam_Recommended_V3-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.60'][@extension='2016-02-01']]/cda:value[@xsi:type='CD']">
 			<sch:assert id="a-2228-27653-error" test="@sdtc:valueSet">
 				This value SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27653).
 			</sch:assert>

@@ -14,7 +14,7 @@
 	</sch:phase>
 	
 	<sch:pattern id="Planned_Encounter_V2-pattern-errors">
-		<sch:rule id="Planned_Encounter_V2-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.40']]">
+		<sch:rule id="Planned_Encounter_V2-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.40'][@extension='2014-06-09']]">
 			<sch:assert id="a-1098-8564-error" test="@classCode='ENC'">
 				SHALL contain exactly one [1..1] @classCode="ENC" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-8564).
 			</sch:assert>
@@ -33,7 +33,7 @@
 				SHALL contain exactly one [1..1] statusCode (CONF:1098-30439).
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Planned_Encounter_V2-statusCode-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.40']]/cda:statusCode">
+		<sch:rule id="Planned_Encounter_V2-statusCode-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.40'][@extension='2014-06-09']]/cda:statusCode">
 			<sch:assert id="a-1098-31880-error" test="@code='active'">
 				This statusCode SHALL contain exactly one [1..1] @code="active" Active (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-31880).
 			</sch:assert>
@@ -41,7 +41,7 @@
 	</sch:pattern>
 	
 	<sch:pattern id="Planned_Encounter_V2-pattern-warnings">
-		<sch:rule id="Planned_Encounter_V2-warnings" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.40']]">
+		<sch:rule id="Planned_Encounter_V2-warnings" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.40'][@extension='2014-06-09']]">
 			<sch:assert id="a-1098-30440-warning" test="count(cda:effectiveTime) = 1">
 				SHOULD contain zero or one [0..1] effectiveTime (CONF:1098-30440).
 			</sch:assert>

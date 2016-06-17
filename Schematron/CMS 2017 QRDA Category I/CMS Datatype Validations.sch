@@ -74,19 +74,19 @@
             <sch:let name="s" value="normalize-space(@extension)" />
             <sch:let name="n" value="string-length($s)" />
             <sch:let name="sum" value="24 + (number(substring($s, $n - 1, 1))*2) mod 10 + floor(number(substring($s, $n - 1,1))*2 div 10) + number(substring($s, $n - 2, 1)) +(number(substring($s, $n - 3, 1))*2) mod 10 + floor(number(substring($s, $n - 3,1))*2 div 10) + number(substring($s, $n - 4, 1)) + (number(substring($s, $n - 5, 1))*2) mod 10 + floor(number(substring($s, $n - 5,1))*2 div 10) + number(substring($s, $n - 6, 1)) + (number(substring($s, $n - 7, 1))*2) mod 10 + floor(number(substring($s, $n - 7,1))*2 div 10) + number(substring($s, $n - 8, 1)) + (number(substring($s, $n - 9, 1))*2) mod 10 + floor(number(substring($s, $n - 9,1))*2 div 10)" />
-            <sch:assert id="r-validate_NPI_format-errors-1-c-error" test="not(@extension) or $n = 10">The NPI should have 10 digits. (Rule: p-validate_NPI_format)</sch:assert>
-            <sch:assert id="r-validate_NPI_format-errors-2-c-error" test="not(@extension) or number($s)=$s">The NPI should be composed of all digits. (Rule: p-validate_NPI_format)</sch:assert>
-            <sch:assert id="r-validate_NPI_format-errors-3-c-error" test="not(@extension) or number(substring($s, $n, 1)) = (10 - ($sum mod 10)) mod 10">
-                The NPI should have a correct checksum, using the Luhn algorithm. (Rule: p-validate_NPI_format)
+            <sch:assert id="a-CMS_0110-error" test="not(@extension) or $n = 10">The NPI should have 10 digits. (CONF: CMS_0110)</sch:assert>
+            <sch:assert id="a-CMS_0111-error" test="not(@extension) or number($s)=$s">The NPI should be composed of all digits. (CONF: CMS_0111)</sch:assert>
+            <sch:assert id="a-CMS_0112-error" test="not(@extension) or number(substring($s, $n, 1)) = (10 - ($sum mod 10)) mod 10">
+                The NPI should have a correct checksum, using the Luhn algorithm. (CONF: CMS_0112)
             </sch:assert>
-            <sch:assert id="r-validate_NPI_format-errors-4-c-error" test="count(@extension|@nullFlavor)=1">The NPI should have @extension or @nullFlavor, but not both. (Rule: p-validate_NPI_format)</sch:assert>
+            <sch:assert id="a-CMS_0113-error" test="count(@extension|@nullFlavor)=1">The NPI should have @extension or @nullFlavor, but not both. (CONF: CMS_0113)</sch:assert>
         </sch:rule>
     </sch:pattern>
     <sch:pattern id="p-validate_TIN_format-errors">
         <sch:rule id="r-validate_TIN_format-errors-abstract" context="//cda:id[@root='2.16.840.1.113883.4.2']">
-            <sch:assert id="a-validate_TIN_format-1-c-error" test="not(@extension) or ((number(@extension)=@extension) and string-length(@extension)=9)">
-                When a Tax Identification Number is used, the provided TIN must be in valid format (9 decimal digits).  (Rule: validate_TIN_format)</sch:assert>
-            <sch:assert id="a-validate_TIN_format-2-c-error" test="count(@extension|@nullFlavor)=1">The TIN SHALL have either @extension or @nullFlavor, but not both. (Rule: p-validate_TIN_format)</sch:assert>
+            <sch:assert id="a-CMS_0114-error" test="not(@extension) or ((number(@extension)=@extension) and string-length(@extension)=9)">
+                When a Tax Identification Number is used, the provided TIN must be in valid format (9 decimal digits).  (CONF: CMS_0114)</sch:assert>
+            <sch:assert id="a-CMS_0115-error" test="count(@extension|@nullFlavor)=1">The TIN SHALL have either @extension or @nullFlavor, but not both. (CONF: CMS_0115)</sch:assert>
         </sch:rule>
     </sch:pattern>
     <sch:pattern id="p-validate_TS-errors">

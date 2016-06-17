@@ -5,7 +5,19 @@
   -->
 <!-- 	 
    Total number of errors expected: 7
-   Total number of warning expected: 2
+	Description: SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1098-30418).
+	Description: SHALL contain exactly one [1..1] @moodCode="GOL" Goal (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:1098-30419).
+	Description: SHALL contain exactly one [1..1] templateId (CONF:1098-8583) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.121" (CONF:1098-10512).
+	Description: SHALL contain at least one [1..*] id (CONF:1098-32332).
+	Description: SHALL contain exactly one [1..1] code, which SHOULD be selected from CodeSystem LOINC (urn:oid:2.16.840.1.113883.6.1) (CONF:1098-30784).
+	Description: SHALL contain exactly one [1..1] statusCode (CONF:1098-32333).
+	Description: SHALL contain at least one [1..*] author (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-30995).
+	(CONF:1098-30786). SHALL contain exactly one [1..1] Priority Preference (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.143) (CONF:1098-30787).
+
+Total number of warning expected: 2
+	Description: SHOULD contain zero or one [0..1] entryRelationship (CONF:1098-30785) such that it SHALL contain exactly one [1..1] @typeCode="REFR" Refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) 		(CONF:1098-30786). SHALL contain exactly one [1..1] Priority Preference (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.143) (CONF:1098-30787).
+	Description: SHOULD contain zero or one [0..1] effectiveTime (CONF:1098-32335).
+   
    CONF numbers tested: CONF:1098-30418, CONF:1098-30419, CONF:1098-8583, CONF:1098-32332, CONF:1098-30784, CONF:1098-32333, CONF:1098-30995, CONF:1098-32335, CONF:1098-30785
   -->
 

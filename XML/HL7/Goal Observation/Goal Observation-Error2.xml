@@ -6,8 +6,13 @@
 
 <!-- 	 
    Total number of errors expected: 3
+	Description: This statusCode SHALL contain exactly one [1..1] @code="active" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-32334).
+	Description: The reference, if present, SHALL contain exactly one [1..1] @typeCode="REFR" Refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:1098-32755).
+	Description: SHALL contain exactly one [1..1] code, which SHOULD be selected from CodeSystem LOINC (urn:oid:2.16.840.1.113883.6.1) (CONF:1098-30784).
+	
    Total number of warning expected: 0
-   CONF numbers tested: CONF:1098-32334, CONF:1098-32754, CONF:1098-30784
+   
+   CONF numbers tested: CONF:1098-32334, CONF:1098-32755, CONF:1098-30784
   -->
 
 <!-- 	 

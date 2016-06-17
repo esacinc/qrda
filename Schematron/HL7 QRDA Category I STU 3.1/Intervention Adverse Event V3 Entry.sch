@@ -7,7 +7,7 @@
 		<sch:active pattern="Intervention_Adverse_Event_V3-pattern-errors"/>
 	</sch:phase>
 	<sch:pattern id="Intervention_Adverse_Event_V3-pattern-errors">
-		<sch:rule id="Intervention_Adverse_Event_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.29']]">
+		<sch:rule id="Intervention_Adverse_Event_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.29'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-13538-error" test="@classCode='OBS'">
 				SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-13538).			
 			</sch:assert>
@@ -33,7 +33,7 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Intervention_Adverse_Event_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.29']]/cda:value">
+		<sch:rule id="Intervention_Adverse_Event_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.29'][@extension='2016-02-01']]/cda:value">
 			<sch:assert id="a-2228-16413-error" test="@code='281647001'">
 				This value SHALL contain exactly one [1..1] @code="281647001" Adverse reaction (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2228-16413).			
 			</sch:assert>

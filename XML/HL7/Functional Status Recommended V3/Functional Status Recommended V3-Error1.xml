@@ -3,6 +3,19 @@
 <!-- 		
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
+
+<!-- 	 
+	Total Errors Expected: 6
+		Description: SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27724).
+		Description: SHALL contain exactly one [1..1] @moodCode="INT" Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12814).
+		Description: SHALL contain exactly one [1..1] templateId (CONF:2228-12815) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.27" (CONF:2228-12816). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27072).
+		Description: SHALL contain exactly one [1..1] code (CONF:2228-27630)
+		Description: SHALL contain exactly one [1..1] Author Participation author(identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27348).
+		Description: This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27631).
+
+	Total Warnings Expected: 0
+-->
+
 <!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 

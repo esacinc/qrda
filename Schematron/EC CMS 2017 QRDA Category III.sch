@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Schematron file generated June 17, 2016
+     Version 0.3 -->
+
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="svs" uri="urn:ihe:iti:svs:2008" />
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
@@ -616,10 +620,10 @@
       <sch:assert id="a-2233-18199-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:2233-18199).</sch:assert>
       <sch:assert id="a-2233-17618-error" test="count(cda:value[@xsi:type='CD'])=1">SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2233-17618).</sch:assert>
       <sch:assert id="a-2233-17619-error" test="count(cda:entryRelationship[@typeCode='SUBJ'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.24']])=1])=1">SHALL contain exactly one [1..1] entryRelationship (CONF:2233-17619) such that it SHALL contain exactly one [1..1] @typeCode="SUBJ" (CONF:2233-17910). SHALL contain exactly one [1..1] @inversionInd="true" (CONF:2233-17911). SHALL contain exactly one [1..1] Aggregate Count (CMS EP) (identifier: urn:oid:2.16.840.1.113883.10.20.27.3.24) (CONF:2233-711198).</sch:assert>
-      <sch:assert id="a-2233-711190-error" test="count(cda:entryRelationship[@typeCode='COMP'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.21'][@extension='2016-03-01']])=1])=1">SHALL contain at least one [1..*] entryRelationship (CONF:2233-711190) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:2233-18137). SHALL contain exactly one [1..1] Sex Supplemental Data Element (CMS EP) (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.21:2016-03-01) (CONF:2233-711181).</sch:assert>
-      <sch:assert id="a-2233-711191-error" test="count(cda:entryRelationship[@typeCode='COMP'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.22']])=1])=1">SHALL contain at least one [1..*] entryRelationship (CONF:2233-711191) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:2233-18144). SHALL contain exactly one [1..1] Ethnicity Supplemental Data Element (CMS EP) (identifier: urn:oid:2.16.840.1.113883.10.20.27.3.22) (CONF:2233-711182).</sch:assert>
-      <sch:assert id="a-2233-711192-error" test="count(cda:entryRelationship[@typeCode='COMP'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.19']])=1])=1">SHALL contain at least one [1..*] entryRelationship (CONF:2233-711192) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:2233-18145). SHALL contain exactly one [1..1] Race Supplemental Data Element (CMS EP) (identifier: urn:oid:2.16.840.1.113883.10.20.27.3.19) (CONF:2233-711183).</sch:assert>
-      <sch:assert id="a-2233-711193-error" test="count(cda:entryRelationship[@typeCode='COMP'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.18'][@extension='2016-03-01']])=1])=1">SHALL contain at least one [1..*] entryRelationship (CONF:2233-711193) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:2233-18146). SHALL contain exactly one [1..1] Payer Supplemental Data Element (CMS EP) (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.18:2016-03-01) (CONF:2233-711184).</sch:assert>
+      <sch:assert id="a-2233-711190-error" test="count(cda:entryRelationship[@typeCode='COMP'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.21'][@extension='2016-03-01']])=1])&gt;=1">SHALL contain at least one [1..*] entryRelationship (CONF:2233-711190) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:2233-18137). SHALL contain exactly one [1..1] Sex Supplemental Data Element (CMS EP) (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.21:2016-03-01) (CONF:2233-711181).</sch:assert>
+      <sch:assert id="a-2233-711191-error" test="count(cda:entryRelationship[@typeCode='COMP'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.22']])=1])&gt;=1">SHALL contain at least one [1..*] entryRelationship (CONF:2233-711191) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:2233-18144). SHALL contain exactly one [1..1] Ethnicity Supplemental Data Element (CMS EP) (identifier: urn:oid:2.16.840.1.113883.10.20.27.3.22) (CONF:2233-711182).</sch:assert>
+      <sch:assert id="a-2233-711192-error" test="count(cda:entryRelationship[@typeCode='COMP'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.19']])=1])&gt;=1">SHALL contain at least one [1..*] entryRelationship (CONF:2233-711192) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:2233-18145). SHALL contain exactly one [1..1] Race Supplemental Data Element (CMS EP) (identifier: urn:oid:2.16.840.1.113883.10.20.27.3.19) (CONF:2233-711183).</sch:assert>
+      <sch:assert id="a-2233-711193-error" test="count(cda:entryRelationship[@typeCode='COMP'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.18'][@extension='2016-03-01']])=1])&gt;=1">SHALL contain at least one [1..*] entryRelationship (CONF:2233-711193) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:2233-18146). SHALL contain exactly one [1..1] Payer Supplemental Data Element (CMS EP) (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.18:2016-03-01) (CONF:2233-711184).</sch:assert>
       <sch:assert id="a-2233-18239-error" test="count(cda:reference[count(cda:externalObservation[count(cda:id)=1])=1])=1">SHALL contain exactly one [1..1] reference (CONF:2233-18239) such that it SHALL contain exactly one [1..1] externalObservation (CONF:2233-18240). This externalObservation SHALL contain exactly one [1..1] id (CONF:2233-711233).</sch:assert>
     </sch:rule>
     <sch:rule id="Measure_data_CMS-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.16']]/cda:code">
@@ -908,7 +912,7 @@
       <sch:assert id="a-2233-4143-error" test="count(cda:text)=1">SHALL contain exactly one [1..1] text (CONF:2233-4143).</sch:assert>
       <sch:assert id="a-2233-711303-error" test="count(cda:entry[@typeCode='DRIV'][count(cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.23']])=1])=1">SHALL contain exactly one [1..1] entry (CONF:2233-711303) such that it SHALL contain exactly one [1..1] @typeCode="DRIV" Is derived from (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:2233-711304). SHALL contain exactly one [1..1] Reporting Parameters Act (CMS EP) (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.23:2016-03-01) (CONF:2233-711175).</sch:assert>
     </sch:rule>
-    <sch:rule id="QRDA_Category_III_Reporting_Parameters_CMS-code-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3']]/cda:code">
+    <sch:rule id="QRDA_Category_III_Reporting_Parameters_CMS-code-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.6']]/cda:code">
       <sch:assert id="a-2233-19229-error" test="@code='55187-9'">This code SHALL contain exactly one [1..1] @code="55187-9" Reporting Parameters (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:2233-19229).</sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -936,8 +940,12 @@
       <sch:assert id="a-2233-3270-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:2233-3270).</sch:assert>
       <sch:assert id="a-2233-711272-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.23'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-711272) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.23" (CONF:2233-711273).</sch:assert>
       <sch:assert id="a-2233-18098-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-18098) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.17.3.8" (CONF:2233-18099).</sch:assert>
-      <sch:assert id="a-2233-3272-error" test="@code='252116004'">SHALL contain exactly one [1..1] code="252116004" Observation Parameters (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96 STATIC) (CONF:2233-3272).</sch:assert>
+      <sch:assert id="a-2233-3272-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2233-3272).</sch:assert>
       <sch:assert id="a-2233-3273-error" test="count(cda:effectiveTime)=1">SHALL contain exactly one [1..1] effectiveTime (CONF:2233-3273).</sch:assert>
+    </sch:rule>
+    <sch:rule id="Reporting-Parameters-Act-CMS-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.23']]/cda:code">
+      <sch:assert id="a-2233-26550-error" test="@code='252116004'">This code SHALL contain exactly one [1..1] @code="252116004" Observation Parameters (CONF:2233-26550).</sch:assert>
+      <sch:assert id="a-2233-26551-error" test="@codeSystem='2.16.840.1.113883.6.96'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2233-26551).</sch:assert>
     </sch:rule>
     <sch:rule id="Reporting-Parameters-Act-CMS-effectiveTime-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.23']]/cda:effectiveTime">
       <sch:assert id="a-2233-3274-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:2233-3274).</sch:assert>
@@ -1004,27 +1012,27 @@
   </sch:pattern>
   <sch:pattern id="p-validate_PQ-errors">
     <sch:rule id="r-validate_PQ-errors" context="//cda:value[@xsi:type='PQ']|cda:quantity">
-      <sch:assert id="a-validate_PQ-c-error" test="((@value and @unit) or @nullFlavor) and not (@value and @nullFlavor) and not(@unit and @nullFlavor) and not(not(@value) and @unit)">Data types of PQ SHALL have either @value or @nullFlavor but SHALL NOT have both @value and @nullFlavor. If @value is present then @unit SHALL be present but @unit SHALL NOT be present if @value is not present. (Rule: validate_PQ)</sch:assert>
+      <sch:assert id="a-CMS_0110-error" test="((@value and @unit) or @nullFlavor) and not (@value and @nullFlavor) and not(@unit and @nullFlavor) and not(not(@value) and @unit)">Data types of PQ SHALL have either @value or @nullFlavor but SHALL NOT have both @value and @nullFlavor. If @value is present then @unit SHALL be present but @unit SHALL NOT be present if @value is not present. (CONF: CMS_0110)</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_REAL-errors">
     <sch:rule id="r-validate_REAL-errors" context="//cda:value[@xsi:type='REAL']">
-      <sch:assert id="a-validate_REAL-c-error" test="(@value or @nullFlavor) and not (@value and @nullFlavor)">Data types of REAL SHALL NOT have both @value and @nullFlavor. (Rule: validate_REAL)</sch:assert>
+      <sch:assert id="a-CMS_0111-error" test="(@value or @nullFlavor) and not (@value and @nullFlavor)">Data types of REAL SHALL NOT have both @value and @nullFlavor. (CONF: CMS_0111)</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_CS-errors">
     <sch:rule id="r-validate_CS-errors" context="//cda:value[@xsi:type='CS']|cda:regionOfInterest/cda:code|cda:languageCode|cda:realmCode">
-      <sch:assert id="a-validate_CS-c-error" test="(@code or @nullFlavor) and not (@code and @nullFlavor)">Data types of CS SHALL have either @code or @nullFlavor but SHALL NOT have both @code and @nullFlavor (Rule: validate_CS)</sch:assert>
+      <sch:assert id="a-CMS_0106-error" test="(@code or @nullFlavor) and not (@code and @nullFlavor)">Data types of CS SHALL have either @code or @nullFlavor but SHALL NOT have both @code and @nullFlavor (CONF: CMS_0106)</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_CD_CE-errors">
     <sch:rule id="r-validate_CD_CE-errors" context="//cda:code|cda:value[@xsi:type='CD']|cda:value[@xsi:type='CE']|cda:administrationUnitCode|cda:administrativeGenderCode|cda:awarenessCode|cda:confidentialityCode|cda:dischargeDispositionCode|cda:ethnicGroupCode|cda:functionCode|cda:interpretationCode|cda:maritalStatusCode|cda:methodCode|cda:modeCode|cda:priorityCode|cda:proficiencyLevelCode|cda:RaceCode|cda:religiousAffiliationCode|cda:routeCode|cda:standardIndustryClassCode">
-      <sch:assert id="a-validate_CD_CE-c-error" test="(parent::cda:regionOfInterest) or ((@code or @nullFlavor or (@codeSystem and @nullFlavor='OTH')) and not(@code and @nullFlavor) and not(@codeSystem and @nullFlavor!='OTH'))">Data types of CD or CE SHALL have either @code or @nullFlavor or both (@codeSystem and @nullFlavor="OTH") but SHALL NOT have both @code and @nullFlavor and SHALL NOT have @codeSystem and @nullFlavor not equal to "OTH" (Rule: validate_CD_CE)</sch:assert>
+      <sch:assert id="a-CMS_0107-error" test="(parent::cda:regionOfInterest) or ((@code or @nullFlavor or (@codeSystem and @nullFlavor='OTH')) and not(@code and @nullFlavor) and not(@codeSystem and @nullFlavor!='OTH'))">Data types of CD or CE SHALL have either @code or @nullFlavor or both (@codeSystem and @nullFlavor="OTH") but SHALL NOT have both @code and @nullFlavor and SHALL NOT have @codeSystem and @nullFlavor not equal to "OTH" (CONF: CMS_0107)</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_TS-errors">
     <sch:rule id="r-validate_TS-errors-abstract" context="//cda:birthTime | //cda:time | //cda:effectiveTime | //cda:time/cda:low | //cda:time/cda:high | //cda:effectiveTime/cda:low | //cda:effectiveTime/cda:high">
-      <sch:assert id="a-validate_TS-c-error" test="count(@value | @nullFlavor)&lt;2">Data types of TS SHALL have either @value or @nullFlavor but SHALL NOT have @value and @nullFlavor. (Rule: validate_TS)</sch:assert>
+      <sch:assert id="a-CMS_0113-error" test="count(@value | @nullFlavor)&lt;2">Data types of TS SHALL have either @value or @nullFlavor but SHALL NOT have @value and @nullFlavor. (CONF: CMS_0113)</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_NPI_format-errors">
@@ -1032,36 +1040,36 @@
       <sch:let name="s" value="normalize-space(@extension)" />
       <sch:let name="n" value="string-length($s)" />
       <sch:let name="sum" value="24 + (number(substring($s, $n - 1, 1))*2) mod 10 + floor(number(substring($s, $n - 1,1))*2 div 10) + number(substring($s, $n - 2, 1)) +(number(substring($s, $n - 3, 1))*2) mod 10 + floor(number(substring($s, $n - 3,1))*2 div 10) + number(substring($s, $n - 4, 1)) + (number(substring($s, $n - 5, 1))*2) mod 10 + floor(number(substring($s, $n - 5,1))*2 div 10) + number(substring($s, $n - 6, 1)) + (number(substring($s, $n - 7, 1))*2) mod 10 + floor(number(substring($s, $n - 7,1))*2 div 10) + number(substring($s, $n - 8, 1)) + (number(substring($s, $n - 9, 1))*2) mod 10 + floor(number(substring($s, $n - 9,1))*2 div 10)" />
-      <sch:assert id="r-validate_NPI_format-errors-1-c-error" test="not(@extension) or $n = 10">The NPI should have 10 digits. (Rule: p-validate_NPI_format)</sch:assert>
-      <sch:assert id="r-validate_NPI_format-errors-2-c-error" test="not(@extension) or number($s)=$s">The NPI should be composed of all digits. (Rule: p-validate_NPI_format)</sch:assert>
-      <sch:assert id="r-validate_NPI_format-errors-3-c-error" test="not(@extension) or number(substring($s, $n, 1)) = (10 - ($sum mod 10)) mod 10">The NPI should have a correct checksum, using the Luhn algorithm. (Rule: p-validate_NPI_format)</sch:assert>
-      <sch:assert id="r-validate_NPI_format-errors-4-c-error" test="count(@extension|@nullFlavor)=1">The NPI should have @extension or @nullFlavor, but not both. (Rule: p-validate_NPI_format)</sch:assert>
+      <sch:assert id="a-CMS_0115-error" test="not(@extension) or $n = 10">The NPI should have 10 digits. (CONF: CMS_0115)</sch:assert>
+      <sch:assert id="a-CMS_0116-error" test="not(@extension) or number($s)=$s">The NPI should be composed of all digits. (CONF: CMS_0116)</sch:assert>
+      <sch:assert id="a-CMS_0117-error" test="not(@extension) or number(substring($s, $n, 1)) = (10 - ($sum mod 10)) mod 10">The NPI should have a correct checksum, using the Luhn algorithm. (CONF: CMS_0117)</sch:assert>
+      <sch:assert id="a-CMS_0118-error" test="count(@extension|@nullFlavor)=1">The NPI should have @extension or @nullFlavor, but not both. (CONF: CMS_0118)</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_TIN_format-errors">
     <sch:rule id="r-validate_TIN_format-errors-abstract" context="//cda:id[@root='2.16.840.1.113883.4.2']">
-      <sch:assert id="a-validate_TIN_format-1-c-error" test="not(@extension) or ((number(@extension)=@extension) and string-length(@extension)=9)">When a Tax Identification Number is used, the provided TIN must be in valid format (9 decimal digits).  (Rule: validate_TIN_format)</sch:assert>
-      <sch:assert id="a-validate_TIN_format-2-c-error" test="count(@extension|@nullFlavor)=1">The TIN SHALL have either @extension or @nullFlavor, but not both. (Rule: p-validate_TIN_format)</sch:assert>
+      <sch:assert id="a-CMS_0119-error" test="not(@extension) or ((number(@extension)=@extension) and string-length(@extension)=9)">When a Tax Identification Number is used, the provided TIN must be in valid format (9 decimal digits).  (CONF: CMS_0119)</sch:assert>
+      <sch:assert id="a-CMS_0120-error" test="count(@extension|@nullFlavor)=1">The TIN SHALL have either @extension or @nullFlavor, but not both. (CONF: CMS_0120)</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_II-errors">
     <sch:rule id="r-validate_II-errors" context="//cda:value[@xsi:type='II']|cda:id|cda:setId|cda:templateId">
-      <sch:assert id="a-validate_II-c-error" test="(@root or @nullFlavor or (@root and @nullFlavor) or (@root and @extension)) and not (@root and @extension and @nullFlavor)">Data types of II SHALL have either @root or @nullFlavor or (@root and @nullFlavor) or (@root and @extension) but SHALL NOT have all three of (@root and @extension and @nullFlavor) (Rule: validate_II)</sch:assert>
+      <sch:assert id="a-CMS_0108-error" test="(@root or @nullFlavor or (@root and @nullFlavor) or (@root and @extension)) and not (@root and @extension and @nullFlavor)">Data types of II SHALL have either @root or @nullFlavor or (@root and @nullFlavor) or (@root and @extension) but SHALL NOT have all three of (@root and @extension and @nullFlavor) (CONF: CMS_0108)</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_ST-errors">
     <sch:rule id="r-validate_ST-errors" context="//cda:value[@xsi:type='ST']|cda:title|cda:lotNumberText|cda:derivationExpr">
-      <sch:assert id="a-validate_ST-c-error" test="string-length()&gt;=1 or @nullFlavor">Data types of ST SHALL either not be empty or have @nullFlavor. (Rule: validate_ST)</sch:assert>
+      <sch:assert id="a-CMS_0112-error" test="string-length()&gt;=1 or @nullFlavor">Data types of ST SHALL either not be empty or have @nullFlavor. (CONF: CMS_0112)</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_INT-errors">
     <sch:rule id="r-validate_INT-errors" context="//cda:value[@xsi:type='INT']|cda:sequenceNumber|cda:versionNumber">
-      <sch:assert id="a-validate_INT-c-error" test="(@value or @nullFlavor) and not (@value and @nullFlavor)">Data types of INT SHALL NOT have both @value and @nullFlavor. (Rule: validate_INT)</sch:assert>
+      <sch:assert id="a-CMS_0109-error" test="(@value or @nullFlavor) and not (@value and @nullFlavor)">Data types of INT SHALL NOT have both @value and @nullFlavor. (CONF: CMS_0109)</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_BL-errors">
     <sch:rule id="r-validate_BL-errors" context="//cda:value[@xsi:type='BL']|cda:contextConductionInd|inversionInd|negationInd|independentInd|seperatableInd|preferenceInd">
-      <sch:assert id="a-validate_BL-c-error" test="(@value or @nullFlavor) and not(@value and @nullFlavor)">Data types of BL SHALL have either @value or @nullFlavor but SHALL NOT have both @value and @nullFlavor (Rule: validate_BL)</sch:assert>
+      <sch:assert id="a-CMS_0105-error" test="(@value or @nullFlavor) and not(@value and @nullFlavor)">Data types of BL SHALL have either @value or @nullFlavor but SHALL NOT have both @value and @nullFlavor (CONF: CMS_0105)</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

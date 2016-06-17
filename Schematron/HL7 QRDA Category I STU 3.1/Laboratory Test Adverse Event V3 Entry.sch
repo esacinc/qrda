@@ -9,7 +9,7 @@
 		<sch:active pattern="Laboratory_Test_Adverse_Event_V3-pattern-errors"/>
 	</sch:phase>
 	<sch:pattern id="Laboratory_Test_Adverse_Event_V3-pattern-errors">
-		<sch:rule id="Laboratory_Test_Adverse_Event_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.35']]">
+		<sch:rule id="Laboratory_Test_Adverse_Event_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.35'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-14060-error" test="@classCode='OBS'">
 				SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-14060).
 			</sch:assert>
@@ -31,7 +31,7 @@
 					SHALL contain exactly one [1..1] Laboratory Test Performed (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.38:2016-02-01) (CONF:2228-27154).
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Laboratory_Test_Adverse_Event_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.35']]/cda:value">
+		<sch:rule id="Laboratory_Test_Adverse_Event_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.35'][@extension='2016-02-01']]/cda:value">
 			<sch:assert id="a-2228-16417-error" test="@code='281647001'">
 				This value SHALL contain exactly one [1..1] @code="281647001" Adverse reaction (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2228-16417)			
 			</sch:assert>

@@ -9,7 +9,7 @@
 		<sch:active pattern="Laboratory_Test_Recommended_V3-pattern-errors"/>
 	</sch:phase>
 	<sch:pattern id="Laboratory_Test_Recommended_V3-pattern-errors">
-		<sch:rule id="Laboratory_Test_Recommended_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.39']]">
+		<sch:rule id="Laboratory_Test_Recommended_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.39'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-27416-error" test="@classCode='OBS'">
 				SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27416).			
 			</sch:assert>
@@ -29,7 +29,7 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Laboratory_Test_Recommended_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.39']]/cda:code">
+		<sch:rule id="Laboratory_Test_Recommended_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.39'][@extension='2016-02-01']]/cda:code">
 			<sch:assert id="a-2228-27640-error" test="@sdtc:valueSet">
 				This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27640).			
 			</sch:assert>

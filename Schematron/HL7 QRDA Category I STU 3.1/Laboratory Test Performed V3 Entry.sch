@@ -9,7 +9,7 @@
 		<sch:active pattern="Laboratory_Test_Performed_V3-pattern-errors"/>
 	</sch:phase>
 	<sch:pattern id="Laboratory_Test_Performed_V3-pattern-errors">
-		<sch:rule id="Laboratory_Test_Performed_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.38']]">
+		<sch:rule id="Laboratory_Test_Performed_V3-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.38'][@extension='2016-02-01']]">
 			<sch:assert id="a-2228-11705-error" test="@classCode='OBS'">
 				SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-11705).
 			</sch:assert>
@@ -35,17 +35,17 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Laboratory_Test_Performed_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.38']]/cda:code">
+		<sch:rule id="Laboratory_Test_Performed_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.38'][@extension='2016-02-01']]/cda:code">
 			<sch:assert id="a-2228-27638-error" test="@sdtc:valueSet">
 				This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27638).			
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Laboratory_Test_Performed_V3-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.38']]/cda:statusCode">
+		<sch:rule id="Laboratory_Test_Performed_V3-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.38'][@extension='2016-02-01']]/cda:statusCode">
 			<sch:assert id="a-2228-11710-error" test="@code='completed'">
 				This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-11710).			
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Laboratory_Test_Performed_V3-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.38']]/cda:effectiveTime">
+		<sch:rule id="Laboratory_Test_Performed_V3-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.38'][@extension='2016-02-01']]/cda:effectiveTime">
 			<sch:assert id="a-2228-11712-error" test="count(cda:low)=1">
 				This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-11712).
 			</sch:assert>

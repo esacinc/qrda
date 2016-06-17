@@ -3,10 +3,12 @@
 <!-- 		
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
+
 <!-- 	 
-	Total Errors Expected: 0 
+	Total Errors Expected: 1
+		Description: This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27627).
 	
-	Total Warnings Expected: 0 
+	Total Warnings Expected: 0
 -->
 
 <!-- 	 
@@ -1756,13 +1758,12 @@
 							<!-- Functional Status Order (V3) -->
 							<templateId root="2.16.840.1.113883.10.20.24.3.25" extension="2016-02-01"/>
 							<id root="7eda6f24-4019-471f-9fe4-6d8c3489916c"/>
+							<code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Physical limitation score [KCCQ]" sdtc:valueSet-Err="2.16.840.1.113883.3.464.1003.118.12.1031"/>
 							<!-- Functional Status Assessment -->
-							<code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Physical limitation score [KCCQ]" sdtc:valueSet="2.16.840.1.113883.3.464.1003.118.12.1031"/>
-							<text>Functional Status, Order: Physical limitation score [KCCQ]</text>
+							<text> Functional Status, Order: Physical limitation score [KCCQ]</text>
 							<statusCode code="active"/>
 							<effectiveTime value="20150412"/>
 							<!-- QDM Attribute: Method -->
-							<methodCode code="72015-1" codeSystem="2.16.840.1.113883.6.1" displayName="VR-12 Role physical (RP) score - oblique method" codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.113883.3.464.1003.118.12.1029"/>
 							<author>
 								<!-- C-CDA R2 Author Participation -->
 								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>

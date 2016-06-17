@@ -3,6 +3,18 @@
 <!-- 		
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
+
+<!-- 	 
+	Total Errors Expected: 5
+		Description: SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27725).
+		Description: SHALL contain exactly one [1..1] @moodCode="RQO" Request (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12774).
+		Description: SHALL contain exactly one [1..1] templateId (CONF:2228-12775) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.25" (CONF:2228-12776). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27071).
+		Description: SHALL contain exactly one [1..1] code (CONF:2228-12778).
+		Description: SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27342).
+	
+	Total Warnings Expected: 0
+-->
+
 <!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
@@ -1752,11 +1764,10 @@
 							<templateId root="2.16.840.1.113883.10.20.24.3.25" extension="2016-02-01"/>
 							<id root="7eda6f24-4019-471f-9fe4-6d8c3489916c"/>
 							<!-- Functional Status Assessment -->
-							<text>Functional Status, Order: Physical limitation score [KCCQ]</text>
+							<text> Functional Status, Order: Physical limitation score [KCCQ]</text>
 							<statusCode code="active"/>
 							<effectiveTime value="20150412"/>
 							<!-- QDM Attribute: Method -->
-							<methodCode code="72015-1" codeSystem="2.16.840.1.113883.6.1" displayName="VR-12 Role physical (RP) score - oblique method" codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.113883.3.464.1003.118.12.1029"/>
 							<author>
 								<!-- C-CDA R2 Author Participation -->
 								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>

@@ -24,7 +24,7 @@
 			<sch:assert id="a-2228-28057-error" test="not(@negationInd)">
 				SHALL NOT contain [0..0] @negationInd (CONF:2228-28057).
 			</sch:assert>
-			<sch:assert id="a-2228-27675-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.112'][@extension='2016-02-01'][@extension='2016-02-01'])=1">
+			<sch:assert id="a-2228-27675-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.112'][@extension='2016-02-01'])=1">
 				SHALL contain exactly one [1..1] templateId (CONF:2228-27675) such that it 
 					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.112" (CONF:2228-27681). 
 					SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27682).

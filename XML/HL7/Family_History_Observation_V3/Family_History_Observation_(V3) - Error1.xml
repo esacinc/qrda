@@ -5,10 +5,15 @@
   -->
 
 <!-- 	 
-	Total Errors Expected: 0 
+	Total Errors Expected: 2
+		Description: This code SHALL contain at least one [1..*] translation, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2014-09-02 (CONF:1198-32847).
+		Description: This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:1198-19098).
 	
-	Total Warnings Expected: 0
+	Total Warnings Expected: 2	
+		Description: SHOULD contain zero or one [0..1] effectiveTime (CONF:1198-8593).
+		Description: SHALL contain exactly one [1..1] code, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2012-06-01 (CONF:1198-32427).
 -->
+
 <!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
@@ -683,10 +688,10 @@
 									<!-- Updated extension for new CDA rule changes -->
 									<templateId root="2.16.840.1.113883.10.20.24.3.112" extension="2016-02-01"/>
 									<id root="d42ebf70-5c89-11db-b0de-0800200c9a66"/>
-									<code code="75323-6" displayName="Condition" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1">
-										<translation code="854981" displayName="Condition family member HL7.CCDAR2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" sdtc:valueSet="2.16.840.1.113883.3.88.12.3221.7.2"/>
+									<code code="75323-6-Err" displayName="Condition" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1">
 									</code>
-									<statusCode code="completed"/>
+									<statusCode code="completed-Err"/>
+									<effectiveTime></effectiveTime>
 									<effectiveTime></effectiveTime>
 									<!-- Diagnosis/Condition/Problem -->
 									<value xsi:type="CD" code="22298006" codeSystem="2.16.840.1.113883.6.96" displayName="Myocardial infarction" sdtc:valueSet="2.16.840.1.113883.3.526.3.403"/>

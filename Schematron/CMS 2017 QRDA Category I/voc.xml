@@ -1168,7 +1168,7 @@
     <code value="HQR_EHR" displayName="Hospital Quality Reporting for the EHR Incentive Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
     <code value="HQR_IQR" displayName="Hospital Quality Reporting for the Inpatient Quality Reporting Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
     <code value="HQR_EHR_IQR" displayName="Hospital Quality Reporting for the EHR Incentive Program and the IQR Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
-    <code value="CDAC_EHR_IQR" displayName="CDAC_EHR_IQR" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
+    <code value="CDAC_HQR_EHR" displayName="CDAC_HQR_EHR" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
   </system>
   <system valueSetOid="2.16.840.1.113883.11.20.9.39" valueSetName="Result Status">
     <code value="aborted" displayName="aborted" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />

@@ -5,10 +5,10 @@
   -->
 
 <!-- 	 
-	Total number of errors expected: 1
+	Total Errors Expected: 1
 		Description: The reference, if present, SHALL contain exactly one [1..1] External Document Reference (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.115:2014-06-09) (CONF:1098-32756).
 	
-	Total number of warning expected: 0
+	Total Warnings Expected: 0
 	
 	CONF numbers tested: CONF:1098-32756
 -->

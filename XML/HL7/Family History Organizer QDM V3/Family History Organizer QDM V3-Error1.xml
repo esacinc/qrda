@@ -3,6 +3,15 @@
 <!-- 		
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
+
+<!-- 	 
+	Total Errors Expected: 2
+		Description: SHALL contain exactly one [1..1] templateId (CONF:2228-14175) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.12" (CONF:2228-14176). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-26553).
+		Description: SHALL contain at least one [1..*] component (CONF:2228-27715) such that it SHALL contain exactly one [1..1] Family History Observation QDM (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.112:2016-02-01) (CONF:2228-27716).
+	
+	Total Warnings Expected: 0 
+-->
+
 <!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
@@ -659,7 +668,8 @@
 							<!-- C-CDA R2.1 Family History Organizer (V3) -->
 							<templateId root="2.16.840.1.113883.10.20.22.4.45" extension="2015-08-01"/>
 							<!-- Family History Organizer QDM (V2) templateId -->
-							<templateId root="2.16.840.1.113883.10.20.24.3.121" extension="2016-02-01"/>
+							<templateId root="2.16.840.1.113883.10.20.24.3.12" extension="2016-02-01"/>
+							<templateId root="2.16.840.1.113883.10.20.24.3.12" extension="2016-02-01"/>
 							<id root="2cc2566e-4e7f-4820-817e-31912a61ea1a"/>
 							<statusCode code="completed"/>
 							<!-- Subject of the contained Diagnosis Family History template(s) -->

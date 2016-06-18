@@ -46,7 +46,7 @@
 	
 	<sch:pattern id="Medication_Active_V3-pattern-warnings">
 		<sch:rule id="Medication_Active_V3-routeCode-warnings" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.41'][@extension='2016-02-01']]/cda:routeCode">
-			<sch:assert id="a-2228-27644-error" test="@sdtc:valueSet">
+			<sch:assert id="a-2228-27644-warning" test="@sdtc:valueSet">
 				The routeCode, if present, SHOULD contain zero or one [0..1] @sdtc:valueSet (CONF:2228-27644).
 			</sch:assert>
 		</sch:rule>

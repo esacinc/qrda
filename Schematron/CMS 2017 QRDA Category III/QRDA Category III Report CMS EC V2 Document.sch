@@ -152,7 +152,7 @@
             <sch:assert id="a-2233-19673-warning" test="count(cda:name)=1">The representedOrganization, if present, SHOULD contain zero or one [0..1] name (CONF:2233-19673).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_III_CMS-documentationOf-serviceEvent-performer-assignedEntity-representedOrganization-warnings" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2']]/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity/cda:representedOrganization">
-            <sch:assert id="a-2233-19659-error" test="count(cda:name) &gt; 0">This representedOrganization SHOULD contain zero or more [0..*] name (CONF:2233-19659).</sch:assert>
+            <sch:assert id="a-2233-19659-warning" test="count(cda:name) &gt; 0">This representedOrganization SHOULD contain zero or more [0..*] name (CONF:2233-19659).</sch:assert>
         </sch:rule>
     </sch:pattern>
 </sch:schema>

@@ -57,7 +57,7 @@
 	
 	<sch:pattern id="Patient_Characteristic_Payer-pattern-warnings">
 		<sch:rule id="Patient_Characteristic_Payer-effectiveTime-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.55']]/cda:effectiveTime">
-			<sch:assert id="a-67-26935-error" test="count(cda:high)=1">
+			<sch:assert id="a-67-26935-warning" test="count(cda:high)=1">
 				This effectiveTime SHOULD contain zero or one [0..1] high (CONF:67-26935).
 			</sch:assert>
 		</sch:rule>

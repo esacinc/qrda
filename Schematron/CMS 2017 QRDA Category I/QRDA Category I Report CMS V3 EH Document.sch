@@ -100,10 +100,10 @@
             <sch:assert id="a-2239-28485-warning" test="count(cda:name)=1">The representedOrganization, if present, SHOULD contain zero or one [0..1] name (CONF:2239-28485).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-documentationOf-serviceEvent-performer-assignedEntity-warnings" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01']]/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity">
-            <sch:assert id="a-2228-16587-error" test="count(cda:id[@root='2.16.840.1.113883.4.6'])=1">This assignedEntity SHOULD contain zero or one [0..1] id (CONF:2228-16587) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:2228-16588).</sch:assert>
+            <sch:assert id="a-2228-16587-warning" test="count(cda:id[@root='2.16.840.1.113883.4.6'])=1">This assignedEntity SHOULD contain zero or one [0..1] id (CONF:2228-16587) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:2228-16588).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-documentationOf-serviceEvent-performer-assignedEntity-representedOrganization-warnings" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01']]/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity/cda:representedOrganization">
-            <sch:assert id="a-2228-16592-error" test="count(cda:id)=1">This representedOrganization SHOULD contain zero or one [0..1] id (CONF:2228-16592).</sch:assert>
+            <sch:assert id="a-2228-16592-warning" test="count(cda:id)=1">This representedOrganization SHOULD contain zero or one [0..1] id (CONF:2228-16592).</sch:assert>
         </sch:rule>
     </sch:pattern>
 </sch:schema>

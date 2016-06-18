@@ -48,7 +48,7 @@
 	</sch:pattern>
 	<sch:pattern id="Measure_Reference-pattern-warnings">
 		<sch:rule id="Measure_Reference-externalDocument-warnings" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.98']]/cda:reference/cda:externalDocument">
-			<sch:assert id="a-67-12997-error" test="count(cda:text) &gt; 0">
+			<sch:assert id="a-67-12997-warning" test="count(cda:text) &gt; 0">
 				This externalDocument SHOULD contain zero or one [0..1] text (CONF:67-12997).
 					This text is the title of the eMeasure (CONF:67-12998).
 			</sch:assert>

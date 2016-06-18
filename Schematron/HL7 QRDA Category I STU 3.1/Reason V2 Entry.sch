@@ -29,10 +29,10 @@
         <sch:rule id="Reason-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2014-12-01']]/cda:statusCode">
             <sch:assert id="a-1140-11365-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1140-11365). </sch:assert>
         </sch:rule>
-        <sch:rule id="Reason-effectiveTime-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2014-12-01']]/cda:effectiveTime">
+        <sch:rule id="Reason-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2014-12-01']]/cda:effectiveTime">
             <sch:assert id="a-1140-27551-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:1140-27551). </sch:assert>
          </sch:rule>
-        <sch:rule id="Reason-value-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2014-12-01']]/cda:value">
+        <sch:rule id="Reason-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2014-12-01']]/cda:value">
             <sch:assert id="a-1140-27657-error" test="@sdtc:valueSet">This value SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:1140-27657). </sch:assert>
         </sch:rule>       
     </sch:pattern>

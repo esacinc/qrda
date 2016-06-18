@@ -15,7 +15,7 @@
 					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.2.1.1" (CONF:CMS_0037).
 					SHALL contain exactly one [1..1] @extension="2016-03-01" (CONF:CMS_0038).
 			</sch:assert> 
-			<sch:assert id="a-CMS_0051-error" test="count(cda:entry[count(.//cda:templateId[@root!='2.16.840.1.113883.10.20.24.3.55']) = 1]) &gt; 0">
+			<sch:assert id="a-CMS_0051-error" test="count(cda:entry[count(child::node()[cda:templateId[@root!='2.16.840.1.113883.10.20.24.3.55']])=1]) &gt; 0">
 				SHALL contain at least one [1..*] entry (CONF:CMS_0051) such that it
 					SHALL contain exactly one [1..1] entry template that is other than the Patient Characteristic Payer (identifier: urn:oid:2.16.840.1.113883.10.20.24.3.55) (CONF:CMS_0039).
 			</sch:assert>

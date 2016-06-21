@@ -16,11 +16,11 @@
           Failure a-1098-7328-error Missing or multiple statusCode
           Failure a-1098-19114-error Missing or multiple statusCode code ="completed"
           Failure a-1098-7335-error Missing or multiple value with @xsi:type="CD"
-             
+            
     Total Warnings Expected: 3
           Failure a-1098-7332-warning Missing or multiple effectiveTime
           Failure a-1098-7333-warning Missing or multiple effectiveTime low
-          Failure a-1098-7334-warning Missing or multiple effectiveTime high
+          Failure a-1098-7334-warning Missing or multiple effectiveTime low
  
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 

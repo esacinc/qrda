@@ -8,7 +8,7 @@
     Total Errors Expected: 7
           Failure a-2228-27337-error Bad Class Code
           Failure a-2228-11103-error Bad Mood Code
-          Failure a-2228-11104-error Multiple extension with root on main template
+          Failure a-2228-11104-error Multiple pr bad extension with root on main template
           Failure a-2228-11107-error Missing or multiple code
           Failure a-2228-27654-error Missing or bad code @sdtc:valueSet 
           Failure a-2228-27729-error If targetSiteCode translation, missing or multiple @sdtc:valueSet 

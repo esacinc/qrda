@@ -30,7 +30,7 @@
         <sch:rule id="Provider-Care-Experience-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.67'][@extension='2016-02-01']]/cda:effectiveTime">
 		  <sch:assert id="a-2228-28435-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-28435).</sch:assert>
        </sch:rule>         
-        <sch:rule id="Provider-Care-Experience-value-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.67'][@extension='2016-02-01']]/cda:value[@xsi:type='CD']">
+        <sch:rule id="Provider-Care-Experience-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.67'][@extension='2016-02-01']]/cda:value[@xsi:type='CD']">
 		  <sch:assert id="a-2228-27655-error" test="@sdtc:valueSet">This value SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27655).</sch:assert>
         </sch:rule>       
       </sch:pattern>

@@ -34,17 +34,17 @@
         <sch:rule id="Provider-Characteristic-Observation-Assertion-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.114'][@extension='2016-02-01']]/cda:effectiveTime">
  		  <sch:assert id="a-2228-27777-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-27777).</sch:assert>
        </sch:rule>        
-        <sch:rule id="Provider-Characteristic-Observation-Assertion-value-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.114'][@extension='2016-02-01']]/cda:value[@xsi:type='CD']">
+        <sch:rule id="Provider-Characteristic-Observation-Assertion-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.114'][@extension='2016-02-01']]/cda:value[@xsi:type='CD']">
 		  <sch:assert id="a-2228-27779-error" test="@sdtc:valueSet">This value SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27779).</sch:assert>
         </sch:rule>
-        <sch:rule id="Provider-Characteristic-Observation-Assertion-participant-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.114'][@extension='2016-02-01']]/cda:participant">
+        <sch:rule id="Provider-Characteristic-Observation-Assertion-participant-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.114'][@extension='2016-02-01']]/cda:participant">
 		  <sch:assert id="a-2228-28219-error" test="@typeCode='IND'">The participant, if present, SHALL contain exactly one [1..1] @typeCode="IND" individual (CodeSystem: HL7ParticipationType urn:oid:2.16.840.1.113883.5.90) (CONF:2228-28219).</sch:assert>
  		  <sch:assert id="a-2228-28218-error" test="count(cda:participantRole)=1">The participant, if present, SHALL contain exactly one [1..1] participantRole (CONF:2228-28218).</sch:assert>
         </sch:rule>           
       </sch:pattern>
     
     <sch:pattern id="Provider-Characteristic-Observation-Assertion-pattern-warnings">
-        <sch:rule id="Provider-Characteristic-Observation-Assertion-participant-participantRole-warnings" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.114'][@extension='2016-02-01']]/cda:participant/cda:participantRole">
+        <sch:rule id="Provider-Characteristic-Observation-Assertion-participant-participantRole-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.114'][@extension='2016-02-01']]/cda:participant/cda:participantRole">
  		  <sch:assert id="a-2228-28221-warning" test="count(cda:id [@root='2.16.840.1.113883.4.6'][@extension])&gt;=1">This participantRole SHOULD contain zero or more [0..*] id (CONF:2228-28221) such that it  SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:2228-28222).  SHOULD contain zero or one [0..1] @extension (CONF:2228-28223). </sch:assert>
  		  <sch:assert id="a-2228-28218-warning" test="count(cda:code)=1">This participantRole SHOULD contain zero or one [0..1] code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy (HIPAA) urn:oid:2.16.840.1.114222.4.11.1066 (CONF:2228-28220). </sch:assert>
         </sch:rule>  

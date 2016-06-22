@@ -705,17 +705,7 @@
                     </observation>
                   </entryRelationship>
                   <!-- QDM Attribute: Severity -->
-                  Failure a-1098-7345-error Bad Class Code
-                  Failure a-1098-7346-error Bad Mood Code 
-                  Failure a-1098-7347-error Multiple  main templateId
-                  Failure a-1098-19168-error Missing or multiple code
-                  Failure a-1098-19169-error Missing or bad code  @code="SEV" Severity
-                  Failure a-1098-32170-error Missing or bad code  @codeSystem="2.16.840.1.113883.5.4"
-                  Failure a-1098-7352-error Missing or multiple statusCode
-                  Failure a-1098-19115-error Missing or bad statusCode @code
-                  Failure a-1098-7356-error Missing or multiple value with @xsi:type="CD"
-                  
-                  <entryRelationship typeCode="REFR">
+                   <entryRelationship typeCode="REFR">
                     <observation classCode="OBSErr" moodCode="EVNErr"> <!--a-1098-7345-error Bad Class Code, a-1098-7346-error Bad Mood Code -->
                       <templateId root="2.16.840.1.113883.10.20.22.4.8" extension="2014-06-09"/>
                       <!-- a-1098-7347-error Multiple  main templateId -->

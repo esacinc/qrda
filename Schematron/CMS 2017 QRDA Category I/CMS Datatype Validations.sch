@@ -6,8 +6,8 @@
     <sch:ns prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance" />
     <sch:ns prefix="sdtc" uri="urn:hl7-org:sdtc" />
     <sch:ns prefix="cda" uri="urn:hl7-org:v3" />
-    
-    <sch:phase id="errors">
+
+	<sch:phase id="errors">
         <sch:active pattern="p-validate_CD_CE-errors" />
         <sch:active pattern="p-validate_BL-errors" />
         <sch:active pattern="p-validate_CS-errors" />
@@ -19,7 +19,8 @@
         <sch:active pattern="p-validate_NPI_format-errors" />
         <sch:active pattern="p-validate_TIN_format-errors" />
         <sch:active pattern="p-validate_TS-errors" />
-    </sch:phase>
+    	<sch:active pattern="p-validate_TZ-errors" />
+	</sch:phase>
      
     <sch:pattern id="p-validate_CD_CE-errors" >
         <sch:rule id="r-validate_CD_CE-errors" context="//cda:code|cda:value[@xsi:type='CD']|cda:value[@xsi:type='CE']|cda:administrationUnitCode|cda:administrativeGenderCode|cda:awarenessCode|cda:confidentialityCode|cda:dischargeDispositionCode|cda:ethnicGroupCode|cda:functionCode|cda:interpretationCode|cda:maritalStatusCode|cda:methodCode|cda:modeCode|cda:priorityCode|cda:proficiencyLevelCode|cda:RaceCode|cda:religiousAffiliationCode|cda:routeCode|cda:standardIndustryClassCode">
@@ -95,4 +96,13 @@
                 Data types of TS SHALL have either @value or @nullFlavor but SHALL NOT have @value and @nullFlavor. (CONF: CMS_0113)</sch:assert>
         </sch:rule>
     </sch:pattern>
+	<sch:pattern id="p-validate_TZ-errors">
+		<sch:let name="timeZoneExists" value="(contains(normalize-space(//cda:birthTime/@value), '-') or contains(normalize-space(//cda:birthTime/@value), '+'))" />
+		
+		<sch:rule id="r-validate_TZ-errors" context="//cda:birthTime[@value] | //cda:time[@value] | //cda:effectiveTime[@value] | //cda:time/cda:low[@value] | //cda:time/cda:high[@value] | //cda:effectiveTime/cda:low[@value] | //cda:effectiveTime/cda:high[@value]">
+			<sch:assert test="$timeZoneExists=(contains(normalize-space(@value), '-') or contains(normalize-space(@value), '+'))">
+				A Coordinated Universal Time  (UTC time) offset should not be used anywhere in a QRDA Category I file or, if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF_CMS_0121). 
+			</sch:assert>
+		</sch:rule>
+	</sch:pattern>
 </sch:schema>

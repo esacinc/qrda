@@ -31,7 +31,7 @@
             <sch:assert id="a-1098-32171-error" test="@codeSystem='2.16.840.1.113883.5.4'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.5.4" (CodeSystem: ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:1098-32171).</sch:assert>
         </sch:rule>
         <sch:rule id="Substance-Device-Allergy-Intolerance-Observation-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.90'][@extension='2014-06-09']]/cda:statusCode">
-            <sch:assert id="a-1098-26354v-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-26354).</sch:assert>
+            <sch:assert id="a-1098-26354-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-26354).</sch:assert>
         </sch:rule>
         <sch:rule id="Substance-Device-Allergy-Intolerance-Observation-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.90'][@extension='2014-06-09']]/cda:effectiveTime">
             <sch:assert id="a-1098-31536-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:1098-31536).</sch:assert>

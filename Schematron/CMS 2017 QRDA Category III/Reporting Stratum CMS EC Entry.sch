@@ -35,10 +35,6 @@
         <sch:rule id="Reporting_Stratum_CMS-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.20']]/cda:statusCode">
             <sch:assert id="a-1109-18201-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:1109-18201).</sch:assert>
         </sch:rule>
- 
-        <sch:rule id="Reporting_Stratum_CMS-entryRelationship-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.20']]/cda:entryRelationship">
-            <sch:assert id="a-1109-711211-error" test="count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.26']])=1">SHALL contain exactly one [1..1] Continuous Variable Measure Value (CMS EP) (identifier: urn:oid:2.16.840.1.113883.10.20.27.3.26) (CONF:1109-711211). </sch:assert>
-        </sch:rule>
         
         <sch:rule id="Reporting_Stratum_CMS-reference-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.20']]/cda:reference">
             <sch:assert id="a-1109-18205-error" test="@typeCode='REFR'">This reference SHALL contain exactly one [1..1] @typeCode="REFR" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:1109-18205).</sch:assert>

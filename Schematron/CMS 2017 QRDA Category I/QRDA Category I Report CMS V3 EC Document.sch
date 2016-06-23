@@ -20,7 +20,7 @@
             <sch:assert id="a-CMS_0001-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:CMS_0001) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.1.3" (CONF:CMS_0002). SHALL contain exactly one [1..1] @extension="2016-03-01" (CONF:CMS_0003).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01']]">
-            <sch:assert id="a-2228-16703-error" test="count(cda:informationRecipient)=1">SHALL contain exactly one [1..1] informationRecipient (CONF:2228-16703).</sch:assert>
+            <sch:assert id="a-2228-16703_C01-error" test="count(cda:informationRecipient)=1">SHALL contain exactly one [1..1] informationRecipient (CONF:2228-16703_C01).</sch:assert>
             <sch:assert id="a-2228-16579_C01-error" test="count(cda:documentationOf[count(cda:serviceEvent)=1])=1">SHALL contain exactly one [1..1] documentationOf (CONF:2228-16579_C01) such that it SHALL contain exactly one [1..1] serviceEvent (CONF:2228-16580).</sch:assert>
             <sch:assert id="a-2239-28472-error" test="count(cda:component)=1">SHALL contain exactly one [1..1] component (CONF:2239-28472).</sch:assert>
         </sch:rule>
@@ -85,8 +85,8 @@
     
     <sch:pattern id="QRDA_Category_I_Report_CMS-pattern-warnings">
         <sch:rule id="QRDA_Category_I_Report_CMS-effectiveTime-warnings" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01']]/cda:effectiveTime">
-            <sch:assert id="a-81-10128-c-warning" test="string-length(@value)&gt;=12">*SHOULD* be precise to the minute (CONF:81-10128).</sch:assert>
-            <sch:assert id="a-81-10130-c-warning" test="string-length(@value)&lt;10 or ( string-length(@value)&gt;=10 and (contains(@value,'+') or contains(@value,'-')))">If more precise than day, *SHOULD* include time-zone offset (CONF:81-10130).</sch:assert>
+            <sch:assert id="a-81-10128-c-warning" test="string-length(@value)&gt;=12">SHOULD be precise to the minute (CONF:81-10128).</sch:assert>
+            <sch:assert id="a-81-10130-c-warning" test="string-length(@value)&lt;10 or ( string-length(@value)&gt;=10 and (contains(@value,'+') or contains(@value,'-')))">If more precise than day, SHOULD include time-zone offset (CONF:81-10130).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-legalAuthenticator-assignedEntity-representedOrganization-warnings" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01']]/cda:legalAuthenticator/cda:assignedEntity/cda:representedOrganization">
             <sch:assert id="a-2239-28485-warning" test="count(cda:name)=1">The representedOrganization, if present, SHOULD contain zero or one [0..1] name (CONF:2239-28485).</sch:assert>

@@ -16,7 +16,7 @@
     </sch:phase>
     
     <sch:pattern id="Target-Outcome-pattern-errors">
-        <sch:rule id="Target-Outcome-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.119']]">
+        <sch:rule id="Target-Outcome-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.119'][@extension='2014-12-01']]">
             <sch:assert id="a-1140-28033-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1140-28033). </sch:assert>
             <sch:assert id="a-1140-28034-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:1140-28034). </sch:assert>
             <sch:assert id="a-1140-28025-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.119'][@extension='2014-12-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:1140-28025) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.119" (CONF:1140-28028). SHALL contain exactly one [1..1] @extension="2014-12-01" (CONF:1140-28029). </sch:assert>
@@ -27,7 +27,7 @@
      </sch:pattern>
     
     <sch:pattern id="Target-Outcome-pattern-warnings">
-        <sch:rule id="Target-Outcome-code-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.119']]/cda:code">
+        <sch:rule id="Target-Outcome-code-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.119'][@extension='2014-12-01']]/cda:code">
             <sch:assert id="a-1140-28390-warning" test="@sdtc:valueSet">This code SHOULD contain zero or one [0..1] @sdtc:valueSet (CONF:1140-28390).  </sch:assert>
         </sch:rule>
     </sch:pattern>

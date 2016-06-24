@@ -4,6 +4,13 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 1
+		Description: SHALL contain exactly one [1..1] entryRelationship (CONF:2228-13973) such that it SHALL contain exactly one [1..1] @typeCode="CAUS" (CodeSystem: HL7ParticipationType urn:oid:2.16.840.1.113883.5.90) (CONF:2228-13974). SHALL contain exactly one [1..1] @inversionInd="true" (CONF:2228-13975). SHALL contain exactly one [1..1] Laboratory Test Performed (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.38:2016-02-01) (CONF:2228-27155).
+		Description: This value SHALL contain exactly one [1..1] @code="102460003" Decreased tolerance (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2228-16418).
+	
+	Total Warnings Expected: 0
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -2544,7 +2551,7 @@
 							<!-- Conforms to Act Intolerance or Adverse Event Observation (V3) -->
 							<templateId root="2.16.840.1.113883.10.20.24.3.104" extension="2016-02-01"/>
 							<!-- Laboratory Test Intolerance (V3) -->
-							<templateId root="2.16.840.1.113883.10.20.24.3.36"/>
+							<templateId root="2.16.840.1.113883.10.20.24.3.36" extension="2016-02-01"/>
 							<id root="1fad091f-7b4e-4661-b61c-53f9a82515b6"/>
 							<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
 							<statusCode code="completed"/>
@@ -2558,9 +2565,10 @@
 							<entryRelationship typeCode="CAUS" inversionInd="true">
 								<!-- Laboratory Test Performed -->
 								<observation classCode="OBS" moodCode="EVN">
-									<!-- Conforms to C-CDA R2 Result Observation (V3) -->
+									<!-- Conforms to C-CDA R2.1 Result Observation (V3) -->
 									<templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
-									<!-- Laboratory Test Performed (V2) -->
+									<!-- Laboratory Test Performed (V3) -->
+									<templateId root="2.16.840.1.113883.10.20.24.3.38" extension="2016-02-01"/>
 									<id root="1fad091f-7b4e-4661-b61c-53f9a82515b6"/>
 									<!-- Laboratory Test -->
 									<code code="4544-3" displayName="Hematocrit" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" sdtc:valueSet="1.2.9999"/>
@@ -2599,6 +2607,50 @@
 										</observation>
 									</entryRelationship>
 								</observation>
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- Conforms to C-CDA R2.1 Result Observation (V3) -->
+									<templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+									<!-- Laboratory Test Performed (V3) -->
+									<templateId root="2.16.840.1.113883.10.20.24.3.38" extension="2016-02-01"/>
+									<id root="1fad091f-7b4e-4661-b61c-53f9a82515b6"/>
+									<!-- Laboratory Test -->
+									<code code="4544-3" displayName="Hematocrit" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" sdtc:valueSet="1.2.9999"/>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<!-- QDM Attribute: Start Datetime -->
+										<low value="20150329090000+0500"/>
+										<!-- QDM Attribute: Stop Datetime -->
+										<high value="20150329103000+0500"/>
+									</effectiveTime>
+									<!-- QDM Attribute: Result -->
+									<value xsi:type="PQ" value="35.3" unit="%"/>
+									<!-- QDM Attribute: Method -->
+									<methodCode code="104091002" codeSystem="2.16.840.1.113883.6.96" displayName="Hemogram, automated, with RBC, WBC, Hgb, Hct, Indices, Platelet count, and manual WBC differential" codeSystemName="SNOMED CT" sdtc:valueSet="1.2.99999"/>
+									<!-- QDM Attribute: Status -->
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+											<!-- Status -->
+											<templateId root="2.16.840.1.113883.10.20.24.3.93"/>
+											<id root="29b776d3-089b-4a7f-b6e9-e45080091922"/>
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
+											<value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999"/>
+										</observation>
+									</entryRelationship>
+									<!-- QDM Attribute: Reason -->
+									<entryRelationship typeCode="RSON">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01"/>
+											<id root="5750a5bb-6a01-4b99-9b1c-cda56b1dce0c"/>
+											<code code="77301-0" codeSystem="2.16.840.1.113883.6.1" displayName="Reason care action performed or not" codeSystemName="LOINC"/>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low value="20150101"/>
+											</effectiveTime>
+											<value xsi:type="CD" code="254838004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Carcinoma of breast" sdtc:valueSet="2.16.840.1.113883.3.526.3.389"/>
+										</observation>
+									</entryRelationship>
+								</observation>
+								
 							</entryRelationship>
 							<!-- QDM Attribute: Reaction -->
 							<entryRelationship typeCode="MFST" inversionInd="true">

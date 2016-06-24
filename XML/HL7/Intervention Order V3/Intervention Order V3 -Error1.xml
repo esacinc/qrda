@@ -5,11 +5,7 @@
   -->
 <!-- 	 
 	Total Errors Expected: 0
-		Description: SHALL contain exactly one [1..1] @classCode="ACT" Act (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27353).
-		Description: SHALL contain exactly one [1..1] @moodCode="RQO" Request (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-13742).
-		Description: SHALL contain exactly one [1..1] templateId (CONF:2228-13743) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.31" (CONF:2228-13744). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-26556).
-		Description: SHALL contain exactly one [1..1] code (CONF:2228-13746).
-		Description: SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27343).
+		Description: This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27632).
 	
 	Total Warnings Expected: 0
 -->
@@ -2126,18 +2122,18 @@
 					</entry>
 					<!-- QDM Datatype: Intervention, Order -->
 					<entry>
-						<act classCode="ACT1" moodCode="RQO1">
+						<act classCode="ACT" moodCode="RQO">
 							<!-- Conforms to C-CDA R2 Planned Act (V2) template -->
 							<templateId root="2.16.840.1.113883.10.20.22.4.39" extension="2014-06-09"/>
 							<!-- Intervention Order (V2) template -->
 							<!-- Updated extension for new CDA rule changes -->
 							<templateId root="2.16.840.1.113883.10.20.24.3.31" extension="2016-02-01"/>
-							<templateId root="2.16.840.1.113883.10.20.24.3.31" extension="2016-02-01"/>
 							<id root="db734647-fc99-424c-a864-7e3cda82e703"/>
 							<!-- Intervention -->
+							<code code="419553002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CD" displayName="diet education" sdtc:valueSet-Err="2.16.840.1.113883.3.600.1515"/>
 							<statusCode code="active"/>
 							<effectiveTime value="20120412"/>
-							<author1>
+							<author>
 								<!-- C-CDA R2 Author Participation -->
 								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
 								<time xsi:type="IVL_TS">
@@ -2149,7 +2145,7 @@
 								<assignedAuthor>
 									<id root="2.16.840.1.113883.4.6" extension="111111111"/>
 								</assignedAuthor>
-							</author1>
+							</author>
 							<entryRelationship typeCode="RSON">
 								<!-- QDM Attribute: Patient Preference -->
 								<observation classCode="OBS" moodCode="EVN">

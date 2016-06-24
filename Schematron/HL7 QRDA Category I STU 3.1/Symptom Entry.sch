@@ -15,7 +15,7 @@
         <sch:rule id="Symptom-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.136']]">
             <sch:assert id="a-2228-28524-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28524). </sch:assert>
             <sch:assert id="a-2228-28525-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-28525). </sch:assert>
-            <sch:assert id="a-2228-28526-error" test="not(@negationId)">SHALL NOT contain [0..0] @negationInd (CONF:2228-28526).</sch:assert>
+            <sch:assert id="a-2228-28526-error" test="not(@negationInd)">SHALL NOT contain [0..0] @negationInd (CONF:2228-28526).</sch:assert>
             <sch:assert id="a-2228-28514-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.136'])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-28514) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.136" (CONF:2228-28518). </sch:assert>
             <sch:assert id="a-2228-28515-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2228-28515). </sch:assert>
             <sch:assert id="a-2228-28516-error" test="count(cda:value[@xsi:type='CD'])=1">SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2228-28516).  </sch:assert>

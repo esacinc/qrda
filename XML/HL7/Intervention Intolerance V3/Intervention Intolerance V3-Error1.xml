@@ -4,7 +4,7 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
-	Total Errors Expected: 0
+	Total Errors Expected: 6
 		Description: SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-13657).
 		Description: SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-13658).
 		Description: SHALL contain exactly one [1..1] templateId (CONF:2228-13659) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.30" (CONF:2228-13660). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27017).

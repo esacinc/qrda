@@ -4,7 +4,7 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
-	Total Errors Expected: 0
+	Total Errors Expected: 1
 		Description: This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27632).
 	
 	Total Warnings Expected: 0

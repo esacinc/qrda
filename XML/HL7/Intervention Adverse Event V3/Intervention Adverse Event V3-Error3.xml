@@ -5,7 +5,7 @@
   -->
 
 <!-- 	 
-	Total Errors Expected: 0
+	Total Errors Expected: 1
 		Description: SHALL contain exactly one [1..1] entryRelationship (CONF:2228-13549) such that it SHALL contain exactly one [1..1] @typeCode="CAUS" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:2228-13550). SHALL contain exactly one [1..1] @inversionInd="true" (CONF:2228-13551). SHALL contain exactly one [1..1] Intervention Performed (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.32:2016-02-01) (CONF:2228-27151).
 	
 	Total Warnings Expected: 0

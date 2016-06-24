@@ -34,7 +34,7 @@
 					SHALL contain exactly one [1..1] Intervention Performed (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.32:2016-02-01) (CONF:2228-13683).
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Intervention_Intolerance_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.30'][@extension='2016-02-01']]/value">
+		<sch:rule id="Intervention_Intolerance_V3-value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.30'][@extension='2016-02-01']]/cda:value">
 			<sch:assert id="a-2228-16415-error" test="@code='102460003'">
 				This value SHALL contain exactly one [1..1] @code="102460003" Decreased tolerance (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2228-16415).			
 			</sch:assert>

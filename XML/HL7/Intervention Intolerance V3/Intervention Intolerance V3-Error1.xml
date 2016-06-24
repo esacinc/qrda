@@ -4,6 +4,17 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 0
+		Description: SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-13657).
+		Description: SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-13658).
+		Description: SHALL contain exactly one [1..1] templateId (CONF:2228-13659) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.30" (CONF:2228-13660). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27017).
+		Description: SHALL contain exactly one [1..1] id (CONF:2228-13661).
+		Description: SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2228-16414).
+		Description: SHALL contain exactly one [1..1] entryRelationship (CONF:2228-13679) such that it SHALL contain exactly one [1..1] @typeCode="CAUS" (CodeSystem: HL7ParticipationType urn:oid:2.16.840.1.113883.5.90) (CONF:2228-13680). SHALL contain exactly one [1..1] @inversionInd="true" (CONF:2228-13681). SHALL contain exactly one [1..1] Intervention Performed (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.32:2016-02-01) (CONF:2228-13683).
+	
+	Total Warnings Expected: 0
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -2018,7 +2029,8 @@
 							<!-- Conforms to Act Intolerance or Adverse Event Observation (V3) -->
 							<templateId root="2.16.840.1.113883.10.20.24.3.104" extension="2016-02-01"/>
 							<!-- Intervention Intolerance (V3) -->
-							<templateId root="2.16.840.1.113883.10.20.24.3.30"/>
+							<templateId root="2.16.840.1.113883.10.20.24.3.30" extension="2016-02-01"/>
+							<templateId root="2.16.840.1.113883.10.20.24.3.30" extension="2016-02-01"/>
 							<id1 root="246cd69f-be23-4566-945a-5c65a13294de"/>
 							<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Assertion"/>
 							<statusCode code="completed"/>

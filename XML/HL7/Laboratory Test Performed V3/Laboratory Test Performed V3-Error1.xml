@@ -4,17 +4,11 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
-	Total Errors Expected: 9
-		Description: SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-11705).
-		Description: SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-11706).
-		Description: SHALL contain exactly one [1..1] templateId (CONF:2228-11721) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.38" (CONF:2228-11722). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27021).
-		Description: SHALL contain at least one [1..*] id (CONF:2228-11707).
-		Description: SHALL contain exactly one [1..1] code (CONF:2228-27637).
-		Description: SHALL contain exactly one [1..1] statusCode (CONF:2228-11709).
-		Description: SHALL contain exactly one [1..1] effectiveTime (CONF:2228-11711).
-		Description: This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-11710).
-		Description: This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-11710).
-	
+	Total Errors Expected: 3
+		Description: This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27638).
+		Description: This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-11712).
+		Description: This effectiveTime SHALL contain exactly one [1..1] high (CONF:2228-11713).
+
 	Total Warnings Expected: 0
 -->
 <!-- 	 
@@ -2505,23 +2499,18 @@
 					</entry>
 					<!-- QDM Datatype: Laboratory Test, Performed -->
 					<entry>
-						<observation classCode="OBS1" moodCode="EVN1">
+						<observation classCode="OBS" moodCode="EVN">
 							<!-- Conforms to C-CDA R2.1 Result Observation (V3) -->
 							<templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
 							<!-- Laboratory Test Performed (V3) -->
 							<templateId root="2.16.840.1.113883.10.20.24.3.38" extension="2016-02-01"/>
-							<templateId root="2.16.840.1.113883.10.20.24.3.38" extension="2016-02-01"/>
+							<id root="1fad091f-7b4e-4661-b61c-53f9a82515b6"/>
 							<!-- Laboratory Test -->
-							<code1 code="4544-3" displayName="Hematocrit" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" sdtc:valueSet="1.2.9999"/>
+							<code code="4544-3" displayName="Hematocrit" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" sdtc:valueSet-Err="1.2.9999"/>
 							<text>Lab Test, Hematocrit</text>
-							<statusCode code="completed1"/>
-							<statusCode code="completed1"/>
-							<effectiveTime1>
-								<!-- QDM Attribute: Start Datetime -->
-								<low value="20150329090000+0500"/>
-								<!-- QDM Attribute: Stop Datetime -->
-								<high value="20150329103000+0500"/>
-							</effectiveTime1>
+							<statusCode code="completed"/>
+							<effectiveTime>
+							</effectiveTime>
 							<!-- QDM Attribute: Result -->
 							<value xsi:type="PQ" value="35.3" unit="%"/>
 							<!-- QDM Attribute: Method -->

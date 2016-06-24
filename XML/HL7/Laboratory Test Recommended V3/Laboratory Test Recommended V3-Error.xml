@@ -3,6 +3,18 @@
 <!-- 		
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
+
+<!-- 	 
+	Total Errors Expected: 6
+		Description: SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27416).
+		Description: SHALL contain exactly one [1..1] @moodCode="INT" Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-11793).
+		Description: SHALL contain exactly one [1..1] templateId (CONF:2228-11794) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.39" (CONF:2228-11795). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27077).
+		Description: SHALL contain exactly one [1..1] code (CONF:2228-27639).
+		Description: SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27350).
+		Description: This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27640).
+	
+	Total Warnings Expected: 0
+-->
 <!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
@@ -2546,7 +2558,8 @@
 							<templateId root="2.16.840.1.113883.10.20.24.3.39" extension="2016-02-01"/>
 							<id root="1fad091f-7b4e-4661-b61c-53f9a82515b4"/>
 							<!-- Laboratory Test -->
-							<code1 code="4544-3" displayName="Hematocrit" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.113883.3.600.1482"/>
+							<code code="4544-3" displayName="Hematocrit" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" sdtc:valueSet-Err="2.16.840.1.113883.3.600.1482"/>
+							<code code="4544-3" displayName="Hematocrit" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.113883.3.600.1482"/>
 							<statusCode code="active"/>
 							<effectiveTime value="20150412"/>
 							<!-- QDM Attribute: Method -->

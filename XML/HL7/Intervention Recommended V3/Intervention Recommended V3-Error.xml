@@ -4,6 +4,17 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 6
+		Description: SHALL contain exactly one [1..1] @classCode="ACT" Act (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27355).
+		Description: SHALL contain exactly one [1..1] @moodCode="INT" Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-13763).
+		Description: SHALL contain exactly one [1..1] templateId (CONF:2228-13764) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.33" (CONF:2228-13765). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-26557).
+		Description: SHALL contain exactly one [1..1] code (CONF:2228-13767).
+		Description: SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27349).
+		Description: This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27635).
+	
+	Total Warnings Expected: 0
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -2185,6 +2196,9 @@
 							<templateId root="2.16.840.1.113883.10.20.24.3.33" extension="2016-02-01"/>
 							<id root="db734647-fc99-424c-a864-7e3cda82e703"/>
 							<!-- Intervention -->
+							<code code="419553002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CD" displayName="diet education" sdtc:valueSet-Err="2.16.840.1.113883.3.600.1515"/>
+							<code code="419553002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CD" displayName="diet education" sdtc:valueSet="2.16.840.1.113883.3.600.1515"/>
+							
 							<statusCode code="active"/>
 							<effectiveTime value="20150412"/>
 							<author1>

@@ -4,12 +4,8 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
-	Total Errors Expected: 5
-		Description: SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27417).
-		Description: SHALL contain exactly one [1..1] @moodCode="RQO" Request (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-11953).
-		Description: SHALL contain exactly one [1..1] templateId (CONF:2228-11954) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.37" (CONF:2228-11955). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27075).
-		Description: SHALL contain exactly one [1..1] code (CONF:2228-11957).
-		Description: SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27344).
+	Total Errors Expected: 1
+		Description: This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27636).
 	
 	Total Warnings Expected: 0
 -->
@@ -2632,26 +2628,26 @@
 					</entry>
 					<!-- QDM Datatype: Laboratory Test, Order -->
 					<entry>
-						<observation classCode="OBS1" moodCode="RQO1">
+						<observation classCode="OBS" moodCode="RQO">
 							<!-- Conforms to C-CDA R2.1 Planned Observation (V2) -->
 							<templateId root="2.16.840.1.113883.10.20.22.4.44" extension="2014-06-09"/>
 							<!-- Laboratory Test, Order (V3) template -->
 							<templateId root="2.16.840.1.113883.10.20.24.3.37" extension="2016-02-01"/>
-							<templateId root="2.16.840.1.113883.10.20.24.3.37" extension="2016-02-01"/>
 							<id root="1fad091f-7b4e-4661-b61c-53f9a82515b6"/>
 							<!-- Laboratory Test -->
+							<code code="4544-3" displayName="Hematocrit" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" sdtc:valueSet-Err="2.16.840.1.113883.3.600.1482"/>
 							<statusCode code="active"/>
 							<effectiveTime value="20150412"/>
 							<!-- QDM Attribute: Method -->
 							<methodCode code="58410-2" displayName="Complete blood count (hemogram) panel - Blood by Automated count" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.113883.3.600.1482"/>
-							<author1>
+							<author>
 								<!-- C-CDA R2 Author Participation -->
 								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
 								<time value="201204081130"/>
 								<assignedAuthor>
 									<id root="2.16.840.1.113883.4.6" extension="111111111"/>
 								</assignedAuthor>
-							</author1>
+							</author>
 							<!-- QDM Attribute: Reason -->
 							<entryRelationship typeCode="RSON">
 								<observation classCode="OBS" moodCode="EVN">

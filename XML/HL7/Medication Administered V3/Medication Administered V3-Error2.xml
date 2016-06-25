@@ -4,6 +4,14 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 3
+		Description: SHALL contain at least one [1..*] entryRelationship (CONF:2228-12454) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:2228-12455). SHALL contain exactly one [1..1] Medication Activity (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.16:2014-06-09) (CONF:2228-12456).
+		Description: This code SHALL contain exactly one [1..1] @code="416118004" administration (CONF:2228-12450).
+		Description: This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:2228-28129).
+	
+	Total Warnings Expected: 0
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 

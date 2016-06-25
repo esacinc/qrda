@@ -4,6 +4,21 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 9
+		Description: SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-12444).
+		Description: SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12445).
+		Description: SHALL contain exactly one [1..1] templateId (CONF:2228-12446) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.42" (CONF:2228-12447). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27023).
+		Description: SHALL contain at least one [1..*] id (CONF:2228-12448).
+		Description: SHALL contain exactly one [1..1] code (CONF:2228-12449).
+		Description: SHALL contain exactly one [1..1] statusCode (CONF:2228-12452).
+		Description: SHALL contain exactly one [1..1] effectiveTime (CONF:2228-26714).
+		Description: SHALL contain at least one [1..*] entryRelationship (CONF:2228-12454) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:2228-12455). SHALL contain exactly one [1..1] Medication Activity (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.16:2014-06-09) (CONF:2228-12456).
+		Description: This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-13241).
+		Description: This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-13241).
+
+	Total Warnings Expected: 0
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -2815,7 +2830,8 @@
 					<entry>
 						<act classCode="ACT1" moodCode="EVN1">
 							<!--Medication administered -->
-							<templateId root="2.16.840.1.113883.10.20.24.3.42" extension="2015-02-01"/>
+							<templateId root="2.16.840.1.113883.10.20.24.3.42" extension="2016-02-01"/>
+							<templateId root="2.16.840.1.113883.10.20.24.3.42" extension="2016-02-01"/>
 							<id1 root="60f33340-591f-4459-9fa2-1c93e014a6e2"/>
 							<code1 code="416118004" displayName="Administration" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/>
 							<statusCode code="completed1"/>

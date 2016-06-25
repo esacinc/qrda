@@ -4,6 +4,12 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 1
+		Description: SHALL contain at least one [1..*] entryRelationship (CONF:2228-12454) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:2228-12455). SHALL contain exactly one [1..1] Medication Activity (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.16:2014-06-09) (CONF:2228-12456).
+	
+	Total Warnings Expected: 0
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -2826,6 +2832,34 @@
 								<high value="20150301150000+0500"/>
 							</effectiveTime>
 							<entryRelationship typeCode="COMP">
+								<substanceAdministration classCode="SBADM" moodCode="EVN">
+									<!-- C-CDA R2.1 Medication Activity -->
+									<templateId root="2.16.840.1.113883.10.20.22.4.16" extension="2014-06-09"/>
+									<id root="9069c123-80ad-47c8-a633-9dc02018ae56"/>
+									<statusCode code="completed"/>
+									<effectiveTime xsi:type="IVL_TS">
+										<low value="20150301150000+0500"/>
+										<high value="20150301150000+0500"/>
+									</effectiveTime>
+									<!-- QDM Attribute: Frequency -->
+									<effectiveTime xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+										<period value="6" unit="h"/>
+									</effectiveTime>
+									<!-- QDM Attribute: Route -->
+									<routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" displayName="ORAL" sdtc:valueSet="1.2.9999"/>
+									<!-- QDM Attribute: Dose -->
+									<doseQuantity value="1"/>
+									<consumable>
+										<manufacturedProduct classCode="MANU">
+											<!-- Conforms to C-CDA R2 Medication Information (V2) -->
+											<templateId root="2.16.840.1.113883.10.20.22.4.23" extension="2014-06-09"/>
+											<id root="37bfe02a-3e97-4bd6-9197-bbd0ed0de79e"/>
+											<manufacturedMaterial>
+												<code code="105152" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" displayName="Amoxicillin 60 MG/ML Oral Suspension" sdtc:valueSet="2.16.840.1.113883.3.464.1003.196.12.1001"/>
+											</manufacturedMaterial>
+										</manufacturedProduct>
+									</consumable>
+								</substanceAdministration>
 								<substanceAdministration classCode="SBADM" moodCode="EVN">
 									<!-- C-CDA R2.1 Medication Activity -->
 									<templateId root="2.16.840.1.113883.10.20.22.4.16" extension="2014-06-09"/>

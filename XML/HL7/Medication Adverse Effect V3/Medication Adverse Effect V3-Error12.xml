@@ -4,6 +4,12 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 0
+	
+	Total Warnings Expected: 1
+		Description: SHOULD contain zero or one [0..1] entryRelationship (CONF:2228-14130) such that it SHALL contain exactly one [1..1] @typeCode="MFST" (CONF:2228-14131). SHALL contain exactly one [1..1] @inversionInd="true" (CONF:2228-14132). SHALL contain exactly one [1..1] Reaction (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.85:2014-12-01) (CONF:2228-27124).
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -2903,6 +2909,19 @@
 									<templateId root="2.16.840.1.113883.10.20.22.4.9" extension="2014-06-09"/>
 									<!-- Reaction (V2) -->
 									<templateId root="2.16.840.1.113883.10.20.24.3.85" extension="2014-12-01"/>
+									<id root="80aed311-8af7-401f-ab7f-727260d2b033"/>
+									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Assertion"/>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20150215"/>
+										<high value="20150415"/>
+									</effectiveTime>
+									<value xsi:type="CD" code="404684003" displayName="Nausea" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" sdtc:valueSet="1.2.99999"/>
+								</observation>
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- Conforms to C-CDA R2.1 Reaction Observation (V2) -->
+									<templateId root="2.16.840.1.113883.10.20.22.4.9" extension="2014-06-09"/>
+									<!-- Reaction (V2) -->
 									<templateId root="2.16.840.1.113883.10.20.24.3.85" extension="2014-12-01"/>
 									<id root="80aed311-8af7-401f-ab7f-727260d2b033"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Assertion"/>

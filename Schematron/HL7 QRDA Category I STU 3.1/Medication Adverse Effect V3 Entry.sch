@@ -48,7 +48,7 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Medication_Adverse_Effect_V3-participantRole-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.43'][@extension='2016-02-01']]/cda:participantRole">
+		<sch:rule id="Medication_Adverse_Effect_V3-participantRole-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.43'][@extension='2016-02-01']]/cda:participant/cda:participantRole">
 			<sch:assert id="a-2228-27969-error" test="@classCode='MANU'">
 				This participantRole SHALL contain exactly one [1..1] @classCode="MANU" Manufactured product (CodeSystem: RoleClass urn:oid:2.16.840.1.113883.5.110) (CONF:2228-27969).
 			</sch:assert>
@@ -57,16 +57,16 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Adverse_Effect_V3-playingEntity-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.43'][@extension='2016-02-01']]/cda:participantRole/cda:playingEntity">
+		<sch:rule id="Medication_Adverse_Effect_V3-playingEntity-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.43'][@extension='2016-02-01']]/cda:participant/cda:participantRole/cda:playingEntity">
 			<sch:assert id="a-2228-27970-error" test="@classCode='MMAT'">
 				This playingEntity SHALL contain exactly one [1..1] @classCode="MMAT" Manufactured material (CodeSystem: EntityClass urn:oid:2.16.840.1.113883.5.41) (CONF:2228-27970).
 			</sch:assert>
-			<sch:assert id="a-2228-27967-error" test="@classCode='count(cda:code)=1'">
+			<sch:assert id="a-2228-27967-error" test="count(cda:code)=1">
 				This playingEntity SHALL contain exactly one [1..1] code (CONF:2228-27967).
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Adverse_Effect_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.43'][@extension='2016-02-01']]/cda:participantRole/cda:playingEntity/cda:code">
+		<sch:rule id="Medication_Adverse_Effect_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.43'][@extension='2016-02-01']]/cda:participant/cda:participantRole/cda:playingEntity/cda:code">
 			<sch:assert id="a-2228-27971-error" test="@sdtc:valueSet">
 				This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27971).
 			</sch:assert>
@@ -75,7 +75,7 @@
 	
 	<sch:pattern id="Medication_Adverse_Effect_V3-pattern-warnings">
 		<sch:rule id="Medication_Adverse_Effect_V3-warning" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.43'][@extension='2016-02-01']]">
-			<sch:assert id="a-2228-14130-warning" test="count(cda:entryRelationship[@typeCode='MFST'][@inversionInd='true'][count(cda:observation[count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.85'])=1])=1]) = 1">
+			<sch:assert id="a-2228-14130-warning" test="count(cda:entryRelationship[@typeCode='MFST'][@inversionInd='true'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.85']])=1]) = 1">
 				SHOULD contain zero or one [0..1] entryRelationship (CONF:2228-14130) such that it
 					SHALL contain exactly one [1..1] @typeCode="MFST" (CONF:2228-14131).
 					SHALL contain exactly one [1..1] @inversionInd="true" (CONF:2228-14132).

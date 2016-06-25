@@ -68,6 +68,7 @@
             <sch:assert id="a-2239-28476-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.24.2.1.1'][@extension='2016-03-01']])=1]) &gt; 0">This structuredBody SHALL contain at least one [1..*] component (CONF:2239-28476) such that it SHALL contain exactly one [1..1] Patient Data Section QDM (V3) - CMS (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.2.1.1:2016-03-01) (CONF:2239-28477).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-documentationOf-serviceEvent-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01']]/cda:documentationOf/cda:serviceEvent">
+            <sch:assert id="a-2228-16581_C01-error" test="@classCode='PCPR'">This serviceEvent SHALL contain exactly one [1..1] @classCode="PCPR" Care Provision (CONF:2228-16581).</sch:assert>
             <sch:assert id="a-2228-16583_C01-error" test="count(cda:performer)=1">This serviceEvent SHALL contain exactly one [1..1] performer (CONF:2228-16583_C01).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-documentationOf-serviceEvent-performer-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01']]/cda:documentationOf/cda:serviceEvent/cda:performer">

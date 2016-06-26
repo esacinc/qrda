@@ -4,6 +4,18 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 7
+		Description: SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27550).
+		Description: SHALL contain exactly one [1..1] @moodCode="RQO" Request (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12685).
+		Description: SHALL contain exactly one [1..1] templateId (CONF:2228-12686) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.58" (CONF:2228-12687). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27078).
+		Description: SHALL contain exactly one [1..1] code (CONF:2228-12689).
+		Description: SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27345).
+		Description: This code SHALL contain exactly one [1..1] @code="29545-1" physical examination (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:2228-13242).
+		Description: This value SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27650).
+	
+	Total Warnings Expected: 0
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -3233,7 +3245,8 @@
 							<!-- Conforms to C-CDA R2.1 Planned Observation (V2) -->
 							<templateId root="2.16.840.1.113883.10.20.22.4.44" extension="2014-06-09"/>
 							<!-- Physical Exam Order (V3) -->
-							<templateId root="2.16.840.1.113883.10.20.24.3.58" extension="2012-02-01"/>
+							<templateId root="2.16.840.1.113883.10.20.24.3.58" extension="2016-02-01"/>
+							<templateId root="2.16.840.1.113883.10.20.24.3.58" extension="2016-02-01"/>
 							<id root="1fad091f-7b4e-4661-b61c-53f9a82515b6"/>
 							<code code="29545-1" codeSystem="2.16.840.1.113883.6.1" displayName="physical examination" codeSystemName="LOINC"/>
 							<code code="29545-11" codeSystem="2.16.840.1.113883.6.1" displayName="physical examination" codeSystemName="LOINC"/>

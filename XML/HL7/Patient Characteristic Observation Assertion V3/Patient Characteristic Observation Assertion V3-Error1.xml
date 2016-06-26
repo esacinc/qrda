@@ -4,6 +4,22 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 11
+		Description: SHALL contain exactly one [1..1] @classCode="OBS" Observation (CONF:2228-16536).
+		Description: SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-16537).
+		Description: SHALL NOT contain [0..0] @negationInd (CONF:2228-28623).
+		Description: SHALL contain exactly one [1..1] templateId (CONF:2228-26962) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.103" (CONF:2228-26963). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27781).
+		Description: SHALL contain at least one [1..*] id (CONF:2228-16538).
+		Description: SHALL contain exactly one [1..1] code (CONF:2228-16544).
+		Description: SHALL contain exactly one [1..1] statusCode (CONF:2228-16539).
+		Description: SHALL contain exactly one [1..1] effectiveTime (CONF:2228-16540).
+		Description: This code SHALL contain exactly one [1..1] @code="ASSERTION" (CONF:2228-16545).
+		Description: This statusCode SHALL contain exactly one [1..1] @code="completed" (CONF:2228-16539)
+		Description: This value SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27672).
+	
+	Total Warnings Expected: 0
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -1983,7 +1999,7 @@
 					</entry>
 					<!-- QDM Datatype: Patient Characteristic -->
 					<entry typeCode="DRIV">
-						<observation classCode="OBS1" moodCode="EVN1">
+						<observation classCode="OBS1" moodCode="EVN1" negationInd="true">
 							<!-- Patient Characteristic Observation Assertion (V2) -->
 							<templateId root="2.16.840.1.113883.10.20.24.3.103" extension="2016-02-01"/>
 							<templateId root="2.16.840.1.113883.10.20.24.3.103" extension="2016-02-01"/>

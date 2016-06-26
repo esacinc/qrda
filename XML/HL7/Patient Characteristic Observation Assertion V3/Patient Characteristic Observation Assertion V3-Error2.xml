@@ -4,6 +4,14 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 2
+		Description: SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2228-16541)
+		Description: This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.5.4" (CodeSystem: ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:2228-28135).
+		Description: This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-27670).
+
+	Total Warnings Expected: 0
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -1987,7 +1995,7 @@
 							<!-- Patient Characteristic Observation Assertion (V2) -->
 							<templateId root="2.16.840.1.113883.10.20.24.3.103" extension="2016-02-01"/>
 							<id root="94de1700-9629-40b4-b56d-a4eac5f48726"/>
-							<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+							<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4-Err"/>
 							<statusCode code="completed"/>
 							<effectiveTime>
 								<!-- QDM Attribute: Start Datetime -->

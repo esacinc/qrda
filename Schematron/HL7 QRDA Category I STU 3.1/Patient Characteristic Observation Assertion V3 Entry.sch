@@ -52,8 +52,8 @@
 		</sch:rule>
 
 		<sch:rule id="Patient_Characteristic_Observation_Assertion_V3-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.103'][@extension='2016-02-01']]/cda:statusCode">
-			<sch:assert id="a-2228-16545-c-error" test="@code='Completed'">
-				This statusCode SHALL contain exactly one [1..1] @code="Completed" (CONF:2228-16539)
+			<sch:assert id="a-2228-16545-c-error" test="@code='completed'">
+				This statusCode SHALL contain exactly one [1..1] @code="completed" (CONF:2228-16539)
 			</sch:assert>
 		</sch:rule>
 		

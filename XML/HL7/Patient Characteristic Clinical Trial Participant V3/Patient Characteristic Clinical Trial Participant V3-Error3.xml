@@ -4,6 +4,14 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 3
+		Description: SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2228-16712).
+		Description: This value SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27648).
+		Description: This value SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27648).
+	
+	Total Warnings Expected: 0
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -1911,6 +1919,7 @@
 								<!-- QDM Attribute: End Datetime -->
 								<high value="20150405"/>
 							</effectiveTime>
+							<value xsi:type="CD" code="428024001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="clinical trial participant" sdtc:valueSet1="2.16.840.1.113883.3.526.2.643"/>
 							<value xsi:type="CD" code="428024001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="clinical trial participant" sdtc:valueSet1="2.16.840.1.113883.3.526.2.643"/>
 							<!-- QDM Attribute: Reason -->
 							<entryRelationship typeCode="RSON">

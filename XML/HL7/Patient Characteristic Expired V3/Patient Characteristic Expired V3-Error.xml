@@ -4,6 +4,15 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 4
+		Description: SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28087).
+		Description: SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-28088).
+		Description: SHALL NOT contain [0..0] @negationInd (CONF:2228-28089).
+		Description: SHALL contain exactly one [1..1] templateId (CONF:2228-12540) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.54" (CONF:2228-12541). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27014).
+	
+	Total Warnings Expected: 0
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -1930,7 +1939,7 @@
 					<!-- QDM Datatype: Patient Characteristic, Expired -->
 					<entry>
 						<!-- Patient Characteristic Expired-->
-						<observation classCode="OBS1" moodCode="EVN1">
+						<observation classCode="OBS1" moodCode="EVN1" negationInd="true">
 							<!-- - this example shows the patient died in hospital and the cause was TB. If the patient was dead and the cause was not TB, the negation indicator on the entryRelationship type "caus" would be "true" -->
 							<!-- C-CDA R2.1 Deceased Observation (V3) templateId -->
 							<templateId root="2.16.840.1.113883.10.20.22.4.79" extension="2015-08-01"/>

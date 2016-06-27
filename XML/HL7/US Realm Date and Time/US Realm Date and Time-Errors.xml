@@ -11,7 +11,7 @@
                          
     Total Warnings Expected: 2
           Failure a-81-10128-warning Should be precise to the minute
-          Failure a-81-10130-warning Should include time-zone
+          Failure a-81-10130-warning If precise to hour, should include time-zone
           
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 

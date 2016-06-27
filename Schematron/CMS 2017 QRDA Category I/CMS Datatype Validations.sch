@@ -100,7 +100,7 @@
 		<sch:let name="timeZoneExists" value="(contains(normalize-space(//cda:birthTime/@value), '-') or contains(normalize-space(//cda:birthTime/@value), '+'))" />
 		
 		<sch:rule id="r-validate_TZ-errors" context="//cda:birthTime[@value] | //cda:time[@value] | //cda:effectiveTime[@value] | //cda:time/cda:low[@value] | //cda:time/cda:high[@value] | //cda:effectiveTime/cda:low[@value] | //cda:effectiveTime/cda:high[@value]">
-			<sch:assert test="$timeZoneExists=(contains(normalize-space(@value), '-') or contains(normalize-space(@value), '+'))">
+			<sch:assert id="CONF_CMS_0121-error" test="$timeZoneExists=(contains(normalize-space(@value), '-') or contains(normalize-space(@value), '+'))">
 				A Coordinated Universal Time  (UTC time) offset should not be used anywhere in a QRDA Category I file or, if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF_CMS_0121). 
 			</sch:assert>
 		</sch:rule>

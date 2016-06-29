@@ -4,6 +4,19 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 5
+		Description: SHALL contain exactly one [1..1] @classCode="ENC" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-8564).
+		Description: SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Act/Encounter/Procedure) urn:oid:2.16.840.1.113883.11.20.9.23 STATIC 2011-09-30 (CONF:1098-8565).
+		Description: SHALL contain exactly one [1..1] templateId (CONF:1098-30437) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.40" (CONF:1098-30438). SHALL contain exactly one [1..1] @extension="2014-06-09" (CONF:1098-32553).
+		Description: SHALL contain at least one [1..*] id (CONF:1098-8567).
+		Description: SHALL contain exactly one [1..1] statusCode (CONF:1098-30439).
+	
+	Total Warnings Expected: 3
+		Description: SHOULD contain zero or one [0..1] effectiveTime (CONF:1098-30440).
+		Description: SHOULD contain zero or more [0..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-32045).
+		Description: SHOULD contain zero or one [0..1] code, which SHOULD be selected from ValueSet Encounter Planned urn:oid:2.16.840.1.113883.11.20.9.52 DYNAMIC (CONF:1098-31032).
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -1566,7 +1579,9 @@
 							<entryRelationship typeCode="SUBJ">
 								<encounter classCode="ENC1" moodCode="RQO1">
 									<!-- Conforms to C-CDA R2.1 Planned Encounter (V2) template -->
-									<templateId root="2.16.840.1.113883.10.20.22.4.40" extension="2011-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.40" extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.40" extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.40" extension="2014-06-09"/>
 									<!-- Encounter Order (V3) template -->
 									<templateId root="2.16.840.1.113883.10.20.24.3.22" extension="2016-02-01"/>
 									<id1 root="2a620155-9d11-439e-92b3-5d9815ff4de8"/>

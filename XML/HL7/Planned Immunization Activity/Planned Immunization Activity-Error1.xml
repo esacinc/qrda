@@ -4,6 +4,18 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 7
+		Description: SHALL contain exactly one [1..1] @classCode="SBADM" (CONF:1098-32091).
+		Description: SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (SubstanceAdministration/Supply) urn:oid:2.16.840.1.113883.11.20.9.24 STATIC 2014-09-01 (CONF:1098-32097).
+		Description: SHALL contain exactly one [1..1] templateId (CONF:1098-32098) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.120" (CONF:1098-32099).
+		Description: SHALL contain at least one [1..*] id (CONF:1098-32100).
+		Description: SHALL contain exactly one [1..1] statusCode (CONF:1098-32101).
+		Description: SHALL contain exactly one [1..1] effectiveTime (CONF:1098-32103).
+		Description: SHALL contain exactly one [1..1] consumable (CONF:1098-32131).
+	
+	Total Warnings Expected: 0
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 

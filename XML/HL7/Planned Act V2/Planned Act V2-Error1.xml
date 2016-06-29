@@ -4,6 +4,17 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 6
+		Description: SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-8538).
+		Description: SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Act/Encounter/Procedure) urn:oid:2.16.840.1.113883.11.20.9.23 STATIC 2011-09-30 (CONF:1098-8539).
+		Description: SHALL contain exactly one [1..1] templateId (CONF:1098-30430) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.39" (CONF:1098-30431). SHALL contain exactly one [1..1] @extension="2014-06-09" (CONF:1098-32552).
+		Description: SHALL contain at least one [1..*] id (CONF:1098-8546).
+		Description: SHALL contain exactly one [1..1] code (CONF:1098-31687).
+		Description: SHALL contain exactly one [1..1] statusCode (CONF:1098-30432).
+	
+	Total Warnings Expected: 0
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -2254,7 +2265,8 @@
 					<entry>
 						<act classCode="ACT1" moodCode="RQO1">
 							<!-- Conforms to C-CDA R2 Planned Act (V2) template -->
-							<templateId root="2.16.840.1.113883.10.20.22.4.39" extension="2013-06-09"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.39" extension="2014-06-09"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.39" extension="2014-06-09"/>
 							<!-- Intervention Order (V2) template -->
 							<!-- Updated extension for new CDA rule changes -->
 							<templateId root="2.16.840.1.113883.10.20.24.3.31" extension="2013-02-01"/>

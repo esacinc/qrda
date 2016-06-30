@@ -4,6 +4,17 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 6
+		Description: SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27559).
+		Description: SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12643).
+		Description: SHALL contain exactly one [1..1] templateId (CONF:2228-12644) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.59" (CONF:2228-12645). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27135).
+		Description: SHALL contain exactly one [1..1] code (CONF:2228-27651).
+		Description: SHALL contain exactly one [1..1] statusCode (CONF:2228-12649).
+		Description: SHALL contain exactly one [1..1] effectiveTime (CONF:2228-12651).
+	
+	Total Warnings Expected: 0
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -3278,7 +3289,8 @@
 							<!-- Conforms to C-CDA R2 Procedure Activity Observation (V2) -->
 							<templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09"/>
 							<!-- Physical Exam Performed (V3) -->
-							<templateId root="2.16.840.1.113883.10.20.24.3.59" extension="2013-02-01"/>
+							<templateId root="2.16.840.1.113883.10.20.24.3.59" extension="2016-02-01"/>
+							<templateId root="2.16.840.1.113883.10.20.24.3.59" extension="2016-02-01"/>
 							<id extension="123456789" root="2.16.840.1.113883.19"/>
 							<!-- Physical Exam -->
 							<code1 xsi:type="CD" code="29463-7" codeSystem="2.16.840.1.113883.6.1" displayName="Body weight" codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.113883.3.464.1003.121.12.1015"/>

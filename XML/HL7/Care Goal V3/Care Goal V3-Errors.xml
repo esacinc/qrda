@@ -498,7 +498,7 @@
               <!-- Conforms to C-CDA R2.1 Goal Observation -->
               <templateId root="2.16.840.1.113883.10.20.22.4.121"/>
               <!-- Care Goal (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.1" extension="2015-02-01"/> <!-- a-2228-11247, wrong extension -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.1" extension="2017-02-01"/> <!-- a-2228-11247, wrong extension -->
               <id root="751aa255-0e10-4364-a56a-a4cf2aed0d01"/>
               <code code="44616-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
                 displayName="Pulse oximetry panel" /> <!-- a-2228-27577, missing sdtc:valueSet -->

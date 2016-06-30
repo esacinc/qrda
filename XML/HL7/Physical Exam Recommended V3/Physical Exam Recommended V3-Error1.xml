@@ -4,6 +4,17 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 6
+		Description: SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27556).
+		Description: SHALL contain exactly one [1..1] @moodCode="INT" Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-12665).
+		Description: SHALL contain exactly one [1..1] templateId (CONF:2228-12666) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.60" (CONF:2228-12667). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27082).
+		Description: SHALL contain exactly one [1..1] code (CONF:2228-12669).
+		Description: SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2228-13275).
+		Description: SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-27351).
+	
+	Total Warnings Expected: 0
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -3316,7 +3327,8 @@
 							<!-- Conforms to C-CDA R2.1 Planned Observation (V2) -->
 							<templateId root="2.16.840.1.113883.10.20.22.4.44" extension="2014-06-09"/>
 							<!-- Physical Exam Recommeded (V3) -->
-							<templateId root="2.16.840.1.113883.10.20.24.3.60" extension="2015-02-01"/>
+							<templateId root="2.16.840.1.113883.10.20.24.3.60" extension="2016-02-01"/>
+							<templateId root="2.16.840.1.113883.10.20.24.3.60" extension="2016-02-01"/>
 							<id root="1fad091f-7b4e-4661-b61c-53f9a82515b6"/>
 							<code1 code="29545-1" codeSystem="2.16.840.1.113883.6.1" displayName="physical examination" codeSystemName="LOINC"/>
 							<statusCode code="active"/>

@@ -4,6 +4,15 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
 <!-- 	 
+	Total Errors Expected: 4
+		Description: This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27652).
+		Description: This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-12650).
+		Description: This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-12652).
+		Description: This effectiveTime SHALL contain exactly one [1..1] high (CONF:2228-12653).
+	
+	Total Warnings Expected: 0
+-->
+<!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 

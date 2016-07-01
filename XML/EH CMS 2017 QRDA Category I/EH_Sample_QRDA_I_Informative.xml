@@ -38,8 +38,6 @@
   <!-- reported patient -->
   <recordTarget>
     <patientRole>
-      <!-- This is the patient's Medical HIC number -->
-      <id root="2.16.840.1.113883.4.572" extension="111223333A" />
       <!-- Patient Identifier Number (OID: 2.16.840.1.113883.3.249.15) -->
       <id root="2.16.840.1.113883.3.249.15" extension="111223333A" />
       <addr use="H">

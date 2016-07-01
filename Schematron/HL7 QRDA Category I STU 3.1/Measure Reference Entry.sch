@@ -26,7 +26,7 @@
 			<sch:assert id="a-67-26992-error" test="count(cda:id) &gt; 0">
 				SHALL contain at least one [1..*] id (CONF:67-26992).			
 			</sch:assert>
-			<sch:assert id="a-67-12981-error" test="cda:statusCode[@code='completed']">
+			<sch:assert id="a-67-12981-error" test="count(cda:statusCode[@code='completed'])=1">
 				SHALL contain exactly one [1..1] statusCode="completed" completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:67-12981).
 			</sch:assert>
 			<sch:assert id="a-67-12982-error" test="count(cda:reference[@typeCode='REFR'][count(cda:externalDocument)=1])=1">
@@ -50,7 +50,6 @@
 		<sch:rule id="Measure_Reference-externalDocument-warnings" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.98']]/cda:reference/cda:externalDocument">
 			<sch:assert id="a-67-12997-warning" test="count(cda:text) &gt; 0">
 				This externalDocument SHOULD contain zero or one [0..1] text (CONF:67-12997).
-					This text is the title of the eMeasure (CONF:67-12998).
 			</sch:assert>
 		</sch:rule>
 	</sch:pattern>

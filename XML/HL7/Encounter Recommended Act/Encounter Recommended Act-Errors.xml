@@ -5,10 +5,10 @@
   -->
   <!-- 	 
     Errors added to test Encounter Recommended Act template schematron error assertions - Dan Donahue
-    Total Errors Expected: 4
+    Total Errors Expected: 5
           Failure a-2228-28487-error Bad Class Code
           Failure a-2228-28488-error Bad Mood Code
-          Failure a-2228-28485-error Incorrect template with root id - NOT testable
+          Failure a-2228-28485-error Multiple main template ids
           Failure a-2228-28491-error Missing id
           Failure a-2228-28486-error Missing or multiple entryRelationship with @typeCode="SUBJ" and one encounter recommended
           
@@ -1885,6 +1885,8 @@
             
             <act classCode="ACTErr" moodCode="INTErr"> <!-- a-2228-28487-error Bad Class Code, a-2228-28488-error Bad Mood Code -->
               <!--Encounter Recommended Act -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.134"/>
+              <!-- Multiple main template ids -->
               <templateId root="2.16.840.1.113883.10.20.24.3.134"/>
               <!-- <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/> --> <!-- a-2228-28491-error Missing id -->
               <code code="ENC" codeSystem="2.16.840.1.113883.5.6" displayName="Encounter"

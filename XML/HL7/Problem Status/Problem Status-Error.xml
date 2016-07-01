@@ -5,10 +5,10 @@
   -->
   <!-- 	 
     Errors added to test Problem Status (Deprecated) template schematron error assertions - Dan Donahue
-    Total Errors Expected: 7
+    Total Errors Expected: 8
           Failure a-1098-7357-error Bad Class Code
           Failure a-1098-7358-error Bad Mood Code
-          Failure a-1098-7359-error Incorrect root on main template - NOT testable
+          Failure a-1098-7359-error Multiple main template ids
           Failure a-1098-19162-error Missing or multiple code
           Failure a-1098-19163-error Missing or bad code @code="33999-4"
           Failure a-1098-7364-error Missing or multiple statusCode

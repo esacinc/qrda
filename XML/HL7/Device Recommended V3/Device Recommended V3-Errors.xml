@@ -8,7 +8,7 @@
     Total Errors Expected: 5
           Failure a-2228-27722-error Bad Class Code
           Failure a-2228-12368-error Bad Mood Code
-          Failure a-2228-12369-error Incorrect extension on template with root id 
+          Failure a-2228-12369-error Multiple main template ids
           Failure a-2228-27719-error Missing or multiple Author Participations
           Failure a-2228-12374-error No participant with: typeCode DEV, one role of class MANU and playingDevice with a classCode = DEV and a code from sdtc:valueSet
 
@@ -1055,7 +1055,9 @@
                   <!-- C-CDA R2.1 : Planned Supply (V2)  -->
                   <templateId root="2.16.840.1.113883.10.20.22.4.43" extension="2014-06-09"/>
                   <!-- Device Recommended (V3) -->
-                  <templateId root="2.16.840.1.113883.10.20.24.3.10" extension="2017-02-01"/> <!-- a-2228-12369-error Incorrect extension on template with root id -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.10" extension="2016-02-01"/> 
+                  <!-- a-2228-12369-error Multiple main template ids -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.10" extension="2016-02-01"/>
                   <id root="6a8d037d-f144-4071-9d1f-8a92a11dedc6"/>
                   <statusCode code="active"/>
                   <effectiveTime xsi:type="IVL_TS">

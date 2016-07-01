@@ -8,7 +8,7 @@
     Total Errors Expected: 6
           Failure a-1098-8577-error Bad Class Code
           Failure a-1098-8578-error Bad Mood Code
-          Failure a-1098-30463-error Incorrect extension on root template
+          Failure a-1098-30463-error Multiple main template ids
           Failure a-1098-8580-error Missing id
           Failure a-1098-30458-error Missing or multiple statusCode
           Failure a-1098-32047-error Missing or or bad status code @code="active"
@@ -1000,7 +1000,9 @@
                 
                 <supply classCode="SPLYErr" moodCodeErr="RQO"> <!-- a-1098-8577-error Bad Class Code,  a-1098-8578-error Bad Mood Code -->
                   <!-- Conforms to C-CDA R2.1 Planned Supply (V2) -->
-                  <templateId root="2.16.840.1.113883.10.20.22.4.43" extension="2017-06-09"/> <!-- a-1098-30463-error Incorrect extension on root template -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.43" extension="2014-06-09"/> 
+                  <!-- a-1098-30463-error Multiple main template ids -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.43" extension="2014-06-09"/>
                   <!-- Device Order (V3) TemplateId -->
                   <templateId root="2.16.840.1.113883.10.20.24.3.9" extension="2016-02-01"/>
                   <!-- a-1098-8580-error Missing id -->

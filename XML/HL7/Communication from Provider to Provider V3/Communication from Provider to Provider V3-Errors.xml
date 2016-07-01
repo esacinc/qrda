@@ -8,7 +8,7 @@
     Total Errors Expected: 11
           Failure a-2228-11816-error Bad Class Code
           Failure a-2228-11817-error Missing Mood Code
-          Failure a-2228-11818-error Wrong extension or root
+          Failure a-2228-11818-error Multiple main templateIds
           Failure a-2228-11821-error Missing id
           Failure a-2228-26950-error More than one code
           Failure a-2228-27581-error Missing @sdtc:valueSet
@@ -615,8 +615,11 @@
             <!-- Communication from Provider to Provider -->
             <act classCode="ACTErr" > <!-- a-2228-11816-error Bad Class Code, a-2228-11817-error Missing Mood Code -->
               <!-- Communication from Provider to Provider -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.4" extension="2016-02-03"/> <!-- a-2228-11818-error Wrong extension or root -->
-              <!-- <id root="2d5075da-2ffc-47a9-a350-4a24e6b052d1"/> a-2228-11821-error Missing id -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.4" extension="2016-02-01"/>
+              <!-- a-2228-11818-error Multiple main templateIds -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.4" extension="2016-02-01"/>
+              <!-- a-2228-11821-error Missing id -->
+              <!-- <id root="2d5075da-2ffc-47a9-a350-4a24e6b052d1"/> -->
               <code code="371530004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
                 displayName="Clinical consultation report (record artifact)"
                 sdtc:valueSet="2.16.840.1.113883.3.464.1003.121.12.1006"/>

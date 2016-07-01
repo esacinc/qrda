@@ -8,7 +8,7 @@
     Total Errors Expected: 8
           Failure a-2228-16550-error Bad Class Code
           Failure a-2228-16551-error Bad Mood Code
-          Failure a-2228-26956-error Incorrect extension on template with root id 
+          Failure a-2228-26956-error Multiple main template ids 
           Failure a-2228-26955-error Missing id
           Failure a-2228-16552-error Missing or multiple code
           Failure a-2228-28140-error @code not ="75311-1" 
@@ -3448,7 +3448,9 @@ This sample file contains an example of each Patient Data Section QDM contained 
           <entry>
              <act classCode="ACTErr" moodCode="RQOErr"> <!-- a-2228-16550-error Bad Class Code, a-2228-16551-error Bad Mood Code   -->
               <!-- Discharge Medication -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.105" extension="2017-02-01"/> <!-- a-2228-26956-error Incorrect extension on template with root id  -->
+               <templateId root="2.16.840.1.113883.10.20.24.3.105" extension="2016-02-01"/> 
+               <!-- a-2228-26956-error Multiple main template ids -->
+               <templateId root="2.16.840.1.113883.10.20.24.3.105" extension="2016-02-01"/>
               <!--  <id root="60f33340-591f-4459-9fa2-1c93e014a6e2"/>--> <!-- a-2228-26955-error Missing id -->
               <code code="75311-1" displayName="Discharge medications"
                 codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>

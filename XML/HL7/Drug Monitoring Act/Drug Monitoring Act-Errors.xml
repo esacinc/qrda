@@ -4,32 +4,21 @@
     Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
   -->
   <!-- 	 
-    Errors added to test Procedure Activity Act template schematron error assertions - Dan Donahue
-    Total Errors Expected: 19
-          Failure a-1098-8289-error Bad Class Code
-          Failure a-1098-8290-error Bad Mood Code
-          Failure a-1098-8291-error Multiple main template ids
-          Failure a-1098-8292-error Missing id
-          Failure a-1098-8293-error Missing or multiple code
-          Failure a-1098-19189-error If present: code originalText reference @value, value not starting with # 
-          Failure a-1098-8298-error Missing or multiple statusCode
-          Failure a-1098-32364-error Missing or multiple statusCode @code
-          Failure a-1098-8299-error Missing or multiple effectiveTime
-          Failure a-1098-8302-error If performer, missing or multiple assignedEntity
-          Failure a-1098-8303-error If performer assignedEntity, missing id
-          Failure a-1098-8304-error If performer assignedEntity, missing addr: (This assert fires twice)
-          Failure a-1098-8305-error If performer assignedEntity, missing telecom: (This assert fires twice)
-          Failure a-1098-8310-error If performer assignedEntity representedOrganization, missing telecom: (This assert fires twice)
-          Failure a-1098-8309-error If performer assignedEntity representedOrganization, missing addr: (This assert fires twice)
-          
-    Total Warnings Expected: 4
-          Failure a-1098-19186-warning Code should contain one originalText
-          Failure a-1098-8301-warning Should contain one or more performer 
-          Failure a-1098-8306-warning Performer should contain one representedOrganization - not tested, below
-          Failure a-1098-8307-warning representedOrganization should contain or more id
-          Failure a-1098-32477-warning Should contain at least one Author Participation
-          
-    This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
+     Errors added to test Drug Monitoring Act template schematron error assertions - Dan Donahue
+    Total Errors Expected: 11
+          Failure a-1098-30823-error Bad Class Code
+          Failure a-1098-28656-error Bad Mood Code
+          Failure a-1098-28657-error Multiple main template id 
+          Failure a-1098-31920-error Missing id
+          Failure a-1098-28660-error Missing or multiple code
+          Failure a-1098-30818-error Missing or bad code  @code="395170001"
+          Failure a-1098-30819-error Missing or bad code  @codeSystem="2.16.840.1.113883.6.96" 
+          Failure a-1098-31921-error Missing or multiple statusCode
+          Failure a-1098-32358-error Missing statusCode @code
+          Failure a-1098-31922-error Missing or multiple effectiveTime
+          Failure a-1098-28661-error Missing or multiple participantRole with @typeCode="RESP"and one participantRole with @classCode="ASSIGNED" and one id, one playingEntity with @classCode="PSN" and one US Realm Patient Name
+
+This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
     This sample file is informative only. 	
@@ -2327,82 +2316,22 @@
                 codeSystemName="SNOMED CT" displayName="Adverse reaction"/>
               <!-- QDM Datatype: Intervention, Performed -->
               <entryRelationship typeCode="CAUS" inversionInd="true">
-                 
-                <act classCode="ACTErr" moodCode="EVNErr"> <!-- a-1098-8289-error Bad Class Code, a-1098-8290-error Bad Mood Code  -->
+                <act classCode="ACT" moodCode="EVN">
                   <!-- Conforms to C-CDA R2.1 Procedure Activity Act (V2) -->
-                  <templateId root="2.16.840.1.113883.10.20.22.4.12" extension="2014-06-09"/> 
-                  <!-- a-1098-8291-error Multiple main template ids -->
                   <templateId root="2.16.840.1.113883.10.20.22.4.12" extension="2014-06-09"/>
                   <!-- Intervention Performed (V3) -->
                   <templateId root="2.16.840.1.113883.10.20.24.3.32" extension="2016-02-01"/>
-                  <!-- a-1098-8292-error Missing id -->
-                  <!-- <id root="8481ff26-4af9-430f-aa17-43614daf521e"/> -->
-                  <!-- a-1098-19186-warning Code should contain one originalText -->
+                  <id root="8481ff26-4af9-430f-aa17-43614daf521e"/>
                   <code code="233591003" codeSystem="2.16.840.1.113883.6.96"
                     codeSystemName="SNOMED CD" displayName="Hemoperfusion (procedure)"
                     sdtc:valueSet="2.16.840.1.113883.3.464.1003.109.12.1015"/>
-                  <!-- a-1098-8293-error Missing or multiple code -->
-                   <code code="233591003" codeSystem="2.16.840.1.113883.6.96"
-                    codeSystemName="SNOMED CD" displayName="Hemoperfusion (procedure)"
-                    sdtc:valueSet="2.16.840.1.113883.3.464.1003.109.12.1015">
-                    <originalText> <!-- Test Value for forcing error asserts -->
-                      <reference value="ErrNotStartingWith#"/> <!-- a-1098-19189-error If present: code originalText reference @value, value not starting with #  -->
-                    </originalText>
-                   </code>
                   <statusCode code="completed"/>
-                  <!-- a-1098-8298-error Missing or multiple statusCode -->
-                  <statusCode /> <!-- a-1098-32364-error Missing or multiple statusCode @code -->
-                  <!-- a-1098-8299-error Missing or multiple effectiveTime -->
-                  <!-- 
                   <effectiveTime>
-                     <low value="201503011130"/>
-                     <high value="201503011330"/>
+                    <!-- QDM Attibute: Start Datetime -->
+                    <low value="201503011130"/>
+                    <!-- QDM Attibute: Stop Datetime -->
+                    <high value="201503011330"/>
                   </effectiveTime>
-                  -->
-                  <!-- a-1098-32477-warning Should contain at least one Author Participation -->
-                  <!-- Not asserted: a-1098-8301-warning Should contain one or more performer -->
-                  <!-- Added to test error asserts -->
-                  <performer typeCode="PRF">
-                    <time>
-                      <low value="20020716"/>
-                      <high value="20070915"/>
-                    </time>
-                    <assignedEntity>
-                      <!-- This is the provider NPI -->
-                      <!-- a-1098-8304-error If performer assignedEntity, missing addr -->
-                      <!-- a-1098-8305-error If performer assignedEntity, missing telecom -->
-                      <id root="2.16.840.1.113883.4.6" extension="111111111"/>
-                      <code code="207QA0505X" displayName="Adult Medicine" codeSystem="2.16.840.1.113883.6.101"
-                        codeSystemName="Healthcare Provider Taxonomy"/>
-                      <representedOrganization>
-                        <!-- This is the organization TIN -->
-                        <id root="2.16.840.1.113883.4.2" extension="1234567"/>
-                        <!-- This is the organization CCN -->
-                        <id root="2.16.840.1.113883.4.336" extension="54321"/>
-                        <!-- a-1098-8310-error If performer assignedEntity representedOrganization, missing telecom -->
-                        <!-- a-1098-8309-error If performer assignedEntity representedOrganization, missing addr -->
-                      </representedOrganization>
-                     </assignedEntity>
-                    <!-- a-1098-8302-error If performer, missing or multiple assignedEntity -->
-                    <assignedEntity>
-                      <!-- This is the provider NPI -->
-                      <!-- a-1098-8303-error If performer assignedEntity, missing id -->
-                      <!-- <id root="2.16.840.1.113883.4.6" extension="111111111"/> -->
-                      <!-- a-1098-8304-error If performer assignedEntity, missing addr -->
-                      <!-- a-1098-8305-error If performer assignedEntity, missing telecom -->
-                       <code code="207QA0505X" displayName="Adult Medicine" codeSystem="2.16.840.1.113883.6.101"
-                        codeSystemName="Healthcare Provider Taxonomy"/>
-                      <representedOrganization>
-                        <!-- a-1098-8307-warning representedOrganization should contain or more id -->
-                        <!-- 
-                            <id root="2.16.840.1.113883.4.2" extension="1234567"/>
-                            <id root="2.16.840.1.113883.4.336" extension="54321"/>
-                        -->
-                        <!-- a-1098-8310-error If performer assignedEntity representedOrganization, missing telecom -->
-                        <!-- a-1098-8309-error If performer assignedEntity representedOrganization, missing addr -->
-                      </representedOrganization>
-                    </assignedEntity>
-                  </performer>
                   <!-- QDM Attribute: Reason -->
                   <entryRelationship typeCode="RSON">
                     <observation classCode="OBS" moodCode="EVN">
@@ -2530,7 +2459,7 @@
               <value xsi:type="CD" code="102460003" codeSystem="2.16.840.1.113883.6.96"
                 codeSystemName="SNOMED CT" displayName="Decrease tolerance"/>
               <!-- QDM Datatype: Intervention, Performed -->
-               <entryRelationship typeCode="CAUS" inversionInd="true">
+              <entryRelationship typeCode="CAUS" inversionInd="true">
                 <act classCode="ACT" moodCode="EVN">
                   <!-- Conforms to C-CDA R2.1 Procedure Activity Act (V2) -->
                   <templateId root="2.16.840.1.113883.10.20.22.4.12" extension="2014-06-09"/>
@@ -2708,7 +2637,6 @@
               <templateId root="2.16.840.1.113883.10.20.22.4.12" extension="2014-06-09"/>
               <!-- Intervention Performed (V2) -->
               <!-- Updated extension for new CDA rule changes -->
-              
               <templateId root="2.16.840.1.113883.10.20.24.3.32" extension="2016-02-01"/>
               <id root="db734647-fc99-424c-a864-7e3cda82e703"/>
               <code code="419553002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CD"
@@ -2815,7 +2743,7 @@
               <templateId root="2.16.840.1.113883.10.20.22.4.12" extension="2014-06-09"/>
               <!-- Intervention Performed (V2) -->
               <!-- Updated extension for new CDA rule changes -->
-               <templateId root="2.16.840.1.113883.10.20.24.3.32" extension="2016-02-01"/>
+              <templateId root="2.16.840.1.113883.10.20.24.3.32" extension="2016-02-01"/>
               <id root="db734647-fc99-424c-a864-7e3cda82e703"/>
               <code code="419553002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CD"
                 displayName="diet education" sdtc:valueSet="2.16.840.1.113883.3.600.1515"/>

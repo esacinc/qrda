@@ -5,10 +5,10 @@
   -->
   <!-- 	 
    Errors added to test Diagnosis Concern Act template schematron error assertions - Dan Donahue
-   Total Errors Expected: 7
+   Total Errors Expected: 8
           Failure a-2228-28148-error Bad Class Code
           Failure a-2228-28149-error Bad Mood Code
-          Failure a-2228-28143-error Incorrect root on template - not testable since changing root id invalidates entire context
+          Failure a-2228-28143-error Multiple main template ids
           Failure a-2228-28144-error More than one statusCode
           Failure a-2228-28150-error @code not = active
           Failure a-2228-28210-error More than one effectiveTime
@@ -645,6 +645,8 @@ This sample file contains an example of each Patient Data Section QDM contained 
               <!-- Conforms to C-CDA 2.1 Problem Concern Act (V3) -->
               <templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2015-08-01"/>
               <!-- Diagnosis Concern Act -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.137"/>
+              <!-- a-2228-28143 Multiple main template ids -->
               <templateId root="2.16.840.1.113883.10.20.24.3.137"/>
               <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
               <code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern"/>

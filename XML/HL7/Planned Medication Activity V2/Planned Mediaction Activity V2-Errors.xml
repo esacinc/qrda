@@ -8,7 +8,7 @@
     Total Errors Expected: 11
           Failure a-1098-8572-error Bad Class Code
           Failure a-1098-8573-error Bad Mood Code or incorrect valueSet
-          Failure a-1098-30465-error Incorrect extension on root template
+          Failure a-1098-30465-error Multiple main template ids
           Failure a-1098-8575-error Missing id
           Failure a-1098-32087-error Missing or multiple statusCode
           Failure a-1098-32088-error Missing or bad statusCode @code="active"
@@ -3613,7 +3613,9 @@
           <entry>
              <substanceAdministration classCode="SBADMErr" moodCodeErr="RQO"> <!-- a-1098-8572-error Bad Class Code,  a-1098-8573-error Bad Mood Code-->
               <!-- Conforms to C-CDA R2.1 Planned Medication Activity (V2) -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.42" extension="2017-06-09"/> <!-- a-1098-30465-error Incorrect extension on root template -->
+               <templateId root="2.16.840.1.113883.10.20.22.4.42" extension="2014-06-09"/> 
+               <!-- a-1098-30465-error Multiple main template ids -->
+               <templateId root="2.16.840.1.113883.10.20.22.4.42" extension="2014-06-09"/>
               <!-- Medication Order (V3) Template -->
               <templateId root="2.16.840.1.113883.10.20.24.3.47" extension="2016-02-01"/>
               <!-- <id root="9a5f4d94-ccad-4d57-80ea-27737545c7bb"/> --> <!-- a-1098-8575-error Missing id -->

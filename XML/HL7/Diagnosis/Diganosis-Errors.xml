@@ -5,11 +5,11 @@
   -->
   <!-- 
     Errors added to test Diagnosis template schematron error assertions - Dan Donahue
-    Total Errors Expected: 8
+    Total Errors Expected: 9
           Failure a-2228-28510-error Bad Class Code
           Failure a-2228-28511-error Bad Mood Code
           Failure a-2228-28512-error NegationInd present
-          Failure a-2228-28498-error Incorrect root on template - not testable since changing root id invalidates entire context
+          Failure a-2228-28498-error Multiple main template ids
           Failure a-2228-28499-error More than one code
           Failure a-2228-28505-error Missing or incorrect @code value
           Failure a-2228-28506-error Missing or incorrect @codeSystem value
@@ -662,6 +662,8 @@
                   <!-- Conforms to C-CDA R2.1 Problem Observation (V3) -->
                   <templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2016-08-01"/>  
                   <!-- Diagnosis template -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.135"/>
+                  <!-- a-2228-28498-error Multiple main template ids -->
                   <templateId root="2.16.840.1.113883.10.20.24.3.135"/>
                   <id root="e5d9e01e-d778-40ba-9bd0-351d0222b26c"/>
                   <code code="29308-4" displayName="diagnosis" codeSystem="2.16.840.1.113883.6.1"

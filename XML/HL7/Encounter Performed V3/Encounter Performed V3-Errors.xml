@@ -8,7 +8,7 @@
     Total Errors Expected: 10
           Failure a-2228-27532-error Bad Class Code
           Failure a-2228-27533-error Bad Mood Code
-          Failure a-2228-11861-error Incorrect extension on template with root id
+          Failure a-2228-11861-error Multiple main template ids
           Failure a-2228-27624-error Missing or multiple code
           Failure a-2228-27625-error Missing or bad @sdtc:valueSet
           Failure a-2228-11874-error Missing or multiple statusCode
@@ -1820,7 +1820,9 @@
                   <!-- Conforms to C-CDA R2.1 Encounter Activity (V3) -->
                   <templateId root="2.16.840.1.113883.10.20.22.4.49" extension="2015-08-01"/>
                   <!-- Encounter Performed (V3) templateId-->
-                  <templateId root="2.16.840.1.113883.10.20.24.3.23" extension="2017-02-01"/> <!-- a-2228-11861-error Incorrect extension on template with root id -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.23" extension="2016-02-01"/> 
+                  <!-- a-2228-11861-error Multiple main template ids -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.23" extension="2016-02-01"/>
                   <id root="12345678-9d11-439e-92b3-5d9815ff4de1"/>
                   <code code="4525004" displayName="Emergency Department visit"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"

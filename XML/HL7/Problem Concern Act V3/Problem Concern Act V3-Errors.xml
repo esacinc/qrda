@@ -8,7 +8,7 @@
     Total Errors Expected: 12
           Failure a-1198-9024-error Bad Class Code
           Failure a-1198-9025-error Bad Mood Code
-          Failure a-1198-16772-error Incorrect extension on main template
+          Failure a-1198-16772-error Multiple main template ids
           Failure a-1198-9026-error Missing id
           Failure a-1198-9027-error Missing or multiple code
           Failure a-1198-19184-error Missing or or bad code @code="CONC"
@@ -651,7 +651,9 @@
           <entry>
               <act classCode="ACTErr" moodCode="EVNErr"> <!-- a-1198-9024-error Bad Class Code, a-1198-9025-error Bad Mood Code -->
               <!-- Conforms to C-CDA 2.1 Problem Concern Act (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2017-08-01"/> <!-- a-1198-16772-error Incorrect extension on main template -->
+                <templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2015-08-01"/> 
+                <!-- a-1198-16772-error Multiple main template ids -->
+                <templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2015-08-01"/> 
               <!-- Diagnosis Concern Act -->
               <templateId root="2.16.840.1.113883.10.20.24.3.137"/>
               <!-- a-1198-9026-error Missing id -->

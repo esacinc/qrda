@@ -9,7 +9,7 @@
           Failure a-2228-28053-error Bad Class Code
           Failure a-2228-28054-error Bad Mood Code
           Failure a-2228-28055-error negationInd present
-          Failure a-2228-12162-error Wrong extension or root
+          Failure a-2228-12162-error Multiple main template ids
           Failure a-2228-12342-error More than one value of type CD
           Failure a-2228-26936-error Missing or incorrect @code value
           Failure a-2228-26937-error Missing or incorrect @codeSystem value
@@ -941,7 +941,9 @@
               <!-- Conforms to C-CDA R2.1 Substance or Device Allergy - Intolerance Observation (V2) -->
               <templateId root="2.16.840.1.113883.10.20.24.3.90" extension="2014-06-09"/>
               <!-- Device Intolerance (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.8" extension="2017-02-01"/> <!-- a-2228-12162-error Wrong extension or root -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.8" extension="2016-02-01"/> 
+              <!-- a-2228-12162-error Multiple main template ids -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.8" extension="2016-02-01"/> 
               <id root="aab8571c-db69-4239-9d36-657c85daaeee"/>
               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
               <statusCode code="completed"/>

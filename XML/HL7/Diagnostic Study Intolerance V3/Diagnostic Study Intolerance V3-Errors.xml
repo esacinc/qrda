@@ -8,7 +8,7 @@
    Total Errors Expected: 8
           Failure a-2228-11733-error Bad Class Code
           Failure a-2228-11734-error Bad Mood Code
-          Failure a-2228-11735-error Incorrect extension on template with root id 
+          Failure a-2228-11735-error Multiple main template ids 
           Failure a-2228-11737-error Missing or multiple id
           Failure a-2228-14572-error Missing or multiple values with type=CD
           Failure a-2228-16411-error Bad or missing code value
@@ -1273,7 +1273,9 @@
               <!-- Conforms to Act Intolerance or Adverse Event Observation (V3) -->
               <templateId root="2.16.840.1.113883.10.20.24.3.104" extension="2016-02-01"/>
               <!-- Diagnostic Study Intolerance (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.16" extension="2017-02-01"/> <!-- a-2228-11735-error Incorrect extension on template with root id -->
+               <templateId root="2.16.840.1.113883.10.20.24.3.16" extension="2016-02-01"/> 
+               <!-- a-2228-11735-error Multiple main template ids -->
+               <templateId root="2.16.840.1.113883.10.20.24.3.16" extension="2016-02-01"/> 
               <!-- <id root="9e5cd480-ba4e-4562-9c6f-cfed0df5d6d4"/> --> <!-- a-2228-11737-error Missing or multiple id -->
               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"
                 displayName="Assertion"/>

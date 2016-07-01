@@ -5,10 +5,10 @@
   -->
   <!-- 	 
     Errors added to test Entry Reference template schematron error assertions - Dan Donahue
-    Total Errors Expected: 6
+    Total Errors Expected: 7
           Failure a-1098-31485-error Bad Class Code
           Failure a-1098-31486-error Bad Mood Code
-          Failure a-1098-31487-error Incorrect root on template - NOT testable
+          Failure a-1098-31487-error Multiple main template ids
           Failure a-1098-31489-error Missing id
           Failure a-1098-31490-error Missing or multiple code
           Failure a-1098-31491-error Missing or bad @nullflavor="NP"

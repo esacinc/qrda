@@ -8,7 +8,7 @@
     Total Errors Expected: 11
           Failure a-1198-9041-error Bad Class Code
           Failure a-1198-9042-error Bad Mood Code
-          Failure a-1198-14926-error Incorrect extension on main template
+          Failure a-1198-14926-error Multiple main template ids
           Failure a-1198-9043-error Missing id
           Failure a-1198-9045-error Missing or multiple code
           Failure a-1198-32848-error Missing translation
@@ -665,7 +665,9 @@
                 <!--Diagnosis -->
                 <observation classCode="OBSErr" moodCode="EVNErr"> <!-- a-1198-9041-error Bad Class Code,a-1198-9042-error Bad Mood Code  -->
                   <!-- Conforms to C-CDA R2.1 Problem Observation (V3) -->
-                  <templateId root="2.16.840.1.113883.10.20.22.4.4" extension="207-08-01"/> <!-- a-1198-14926-error Incorrect extension on main template -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01"/> 
+                  <!-- a-1198-14926-error Multiple main template ids -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01"/>
                   <!-- Diagnosis template -->
                   <templateId root="2.16.840.1.113883.10.20.24.3.135"/>
                   <!-- a-1198-9043-error Missing id -->

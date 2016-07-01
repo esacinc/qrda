@@ -8,7 +8,7 @@
     Total Errors Expected: 11
           Failure a-2228-11484-error Bad Class Code
           Failure a-2228-11485-error Missing Mood Code
-          Failure a-2228-11486-error Wrong extension or root
+          Failure a-2228-11486-error Multiple main templateIds
           Failure a-2228-11619-error Missing id
           Failure a-2228-26946-error More than one code
           Failure a-2228-27578-error missing @sdtc:valueSet
@@ -585,8 +585,11 @@
           <entry>
             <!-- Communication from Patient to Provider -->
             <act classCode="ACTErr" > <!-- a-2228-11484-error, a-2228-11485-error missing moodCode="EVN" -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.2" extension="2017-02-01"/> <!-- a-2228-11486-error Wrong extension or root -->
-              <!-- <id root="2d5075da-2ffc-47a9-a350-4a24e6b052d1"/> a-2228-11619-error Missing id -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.2" extension="2016-02-01"/> 
+              <!-- a-2228-11486-error Multiple main templateIds -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.2" extension="2016-02-01"/>
+              <!-- a-2228-11619-error Missing id -->
+              <!-- <id root="2d5075da-2ffc-47a9-a350-4a24e6b052d1"/> -->
               <code code="401270003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
                 displayName="E-mail received from patient (event)" sdtc:valueSet="1.2.9999"/>
               <!-- a-2228-26946-error More than one code -->

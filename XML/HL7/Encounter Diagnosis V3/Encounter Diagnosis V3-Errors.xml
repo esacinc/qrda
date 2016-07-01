@@ -8,7 +8,7 @@
     Total Errors Expected: 7
           Failure a-1198-14889-error Bad Class Code
           Failure a-1198-14890-error Bad Mood Code
-          Failure a-1198-14895-error Incorrect extension on template with root id 
+          Failure a-1198-14895-error Multiple main template ids 
           Failure a-1198-19182-error Missing or multiple code
           Failure a-1198-19183-error Missing or bad @code="29308-4"
           Failure a-1198-32160-error Missing or bad @codeSystem="2.16.840.1.113883.6.1"

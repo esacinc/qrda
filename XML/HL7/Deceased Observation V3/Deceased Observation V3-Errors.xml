@@ -8,7 +8,7 @@
     Total Errors Expected: 13
           Failure a-1198-14851-error Bad Class Code
           Failure a-1198-14852-error Bad Mood Code
-          Failure a-1198-14871-error Wrong extension or root
+          Failure a-1198-14871-error Multiple main template ids
           Failure a-1198-14873-error Missing id
           Failure a-1198-14853-error More than one code
           Failure a-1198-19135-error Missing incorrect @code value
@@ -2182,7 +2182,9 @@
             <observation classCode="OBSErr" moodCode="EVNErr"> <!-- a-1198-14851-error Bad Class Code, a-1198-14852-error Bad Mood Code -->
               <!-- - this example shows the patient died in hospital and the cause was TB. If the patient was dead and the cause was not TB, the negation indicator on the entryRelationship type "caus" would be "true" -->
               <!-- C-CDA R2.1 Deceased Observation (V3) templateId -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.79" extension="2015-08-03"/> <!-- a-1198-14871-error Wrong extension or root -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.79" extension="2015-08-01"/> 
+              <!-- a-1198-14871-error Multiple main template ids -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.79" extension="2015-08-01"/> 
               <!-- Patient Characteristic Expired (V3) -->
               <templateId root="2.16.840.1.113883.10.20.24.3.54" extension="2016-02-01"/>
               <!-- a-1198-14873-error Missing id <id root="f3d6fd73-b2c0-4274-bfd2-a485957734db"/> -->

@@ -8,7 +8,7 @@
     Total Errors Expected: 6
           Failure a-2228-27549-error Bad Class Code
           Failure a-2228-11911-error Bad Mood Code
-          Failure a-2228-11912-error Incorrect extension on template with root id
+          Failure a-2228-11912-error Multiple main template ids
           Failure a-2228-11915-error Missing or multiple code
           Failure a-2228-27626-error Missing or bad @sdtc:valueSet
           Failure a-2228-27347-error Missing or multiple Author Participation
@@ -1894,7 +1894,9 @@ This sample file contains an example of each Patient Data Section QDM contained 
                   <!-- Conforms to C-CDA R2.1 Planned Encounter (V2) template -->
                   <templateId root="2.16.840.1.113883.10.20.22.4.40" extension="2014-06-09"/>
                   <!-- Encounter Recommended (V3) template -->
-                  <templateId root="2.16.840.1.113883.10.20.24.3.24" extension="2017-02-01"/> <!-- a-2228-11912-error Incorrect extension on template with root id -->
+                   <templateId root="2.16.840.1.113883.10.20.24.3.24" extension="2016-02-01"/> 
+                   <!-- a-2228-11912-error Multiple main template ids -->
+                   <templateId root="2.16.840.1.113883.10.20.24.3.24" extension="2016-02-01"/>
                   <id root="2a620155-9d11-439e-92b3-5d9815ff4de8"/>
                   <code code="185349003" displayName="encounter for check-up (procedure)"
                     codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96"

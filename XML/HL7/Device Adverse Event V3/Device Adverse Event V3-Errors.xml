@@ -9,7 +9,7 @@
           Failure a-2228-28048-error Bad Class Code
           Failure a-2228-28047-error Bad Mood Code
           Failure a-2228-28049-error negationInd present
-          Failure a-2228-12106-error Wrong extension or root
+          Failure a-2228-12106-error Multiple main template ids
           Failure a-2228-12111-error More than one value of type CD
           Failure a-2228-12189-error Missing or incorrect @code value
           Failure a-2228-12112-error No participant with: typeCode PRD, one role of class MANU and playingDevice with a classCode and a code from sdtc:valueSet
@@ -778,7 +778,9 @@
               <!-- Conforms to C-CDA R2 Substance or Device Allergy - Intolerance Observation (V2) -->
               <templateId root="2.16.840.1.113883.10.20.24.3.90" extension="2014-06-09"/>
               <!-- Device Adverse Event (V3) templateId -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.5" extension="2014-02-01"/> <!-- a-2228-12106-error Wrong extension or root -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.5" extension="2016-02-01"/> 
+              <!-- a-2228-12106-error Multiple main template ids -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.5" extension="2016-02-01"/> 
               <id root="e5f26626-b63a-4b4a-9d5a-8a90215ddd5d"/>
               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
               <statusCode code="completed"/>

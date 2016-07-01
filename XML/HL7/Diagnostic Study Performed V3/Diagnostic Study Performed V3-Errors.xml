@@ -8,7 +8,7 @@
     Total Errors Expected: 10
           Failure a-2228-27639-error Bad Class Code
           Failure a-2228-12950-error Bad Mood Code
-          Failure a-2228-12951-error Incorrect extension on template with root id 
+          Failure a-2228-12951-error Multiple main template id          
           Failure a-2228-27617-error Missing or multiple code
           Failure a-2228-27618 Missing or multiple sdtc:valueSet
           Failure a-2228-12956 Missing or multiple statusCode
@@ -1136,7 +1136,9 @@
                   <!-- Conforms to C-CDA R2.1 Procedure Activity Observation (V2) -->
                   <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09"/>
                   <!-- Diagnostic Study Performed (V3) -->
-                  <templateId root="2.16.840.1.113883.10.20.24.3.18" extension="2017-02-01"/> <!-- a-2228-12951-error Incorrect extension on template with root id -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.18" extension="2016-02-01"/> 
+                  <!-- a-2228-12951-error Multiple main template id -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.18" extension="2016-02-01"/>
                   <id root="1fad091f-7b4e-4661-b61c-53f9a82515b6"/>
                   <code code="24605-8" codeSystem="2.16.840.1.113883.6.1"
                     displayName="Breast Mammogram diagnostic" codeSystemName="LOINC"

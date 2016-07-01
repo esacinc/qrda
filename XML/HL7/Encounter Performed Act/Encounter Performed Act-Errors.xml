@@ -5,10 +5,10 @@
   -->
   <!-- 	 
     Errors added to test Encounter Performed Act template schematron error assertions - Dan Donahue
-    Total Errors Expected: 4
+    Total Errors Expected: 5
           Failure a-2228-28477-error Bad Class Code
           Failure a-2228-28478-error Bad Mood Code
-          Failure a-2228-28475-error Incorrect template with root id - NOT testable
+          Failure a-2228-28475-error Multiple main template ids
           Failure a-2228-28480-error Missing id
           Failure a-2228-28476-error Missing or multiple entryRelationship with @typeCode="SUBJ" and one encounter performed
 
@@ -1806,6 +1806,8 @@ This sample file contains an example of each Patient Data Section QDM contained 
           <entry>
             <act classCode="ACTErr" moodCode="EVNErr"> <!--  a-2228-28477-error Bad Class Code, a-2228-28478-error Bad Mood Code-->
               <!--Encounter performed Act -->
+              <templateId root="2.16.840.1.113883.10.24.3.133"/>
+              <!-- Multiple main template ids -->
               <templateId root="2.16.840.1.113883.10.24.3.133"/>
               <!-- a-2228-28480-error Missing id -->
               <!-- <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/> -->

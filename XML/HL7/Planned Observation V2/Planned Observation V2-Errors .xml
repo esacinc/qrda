@@ -8,7 +8,7 @@
     Total Errors Expected: 7
           Failure a-1098-8581-error Bad Class Code
           Failure a-1098-8582-error Bad Mood Code
-          Failure a-1098-30451-error Incorrect extension on root template
+          Failure a-1098-30451-error Multiple main template ids
           Failure a-1098-8584-error Missing id
           Failure a-1098-31030-error Missing or multiple code
           Failure a-1098-30453-error Missing or multiple statusCode
@@ -1432,7 +1432,9 @@ This sample file contains an example of each Patient Data Section QDM contained 
           <entry>            
             <observation classCode="OBSErr" moodCodeErr="RQO"> <!--  a-1098-8581-error Bad Class Code, a-1098-8582-error Bad Mood Code -->
               <!-- Conforms to C-CDA R2.1 Planned Observation (V2) -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.44" extension="2017-06-09"/> <!-- a-1098-30451-error Incorrect extension on root template -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.44" extension="2014-06-09"/> 
+              <!-- a-1098-30451-error Multiple main template ids -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.44" extension="2014-06-09"/>
               <!-- Diagnostic Study Order (V3) -->
               <templateId root="2.16.840.1.113883.10.20.24.3.17" extension="2016-02-01"/>
               <!-- a-1098-8584-error Missing id -->

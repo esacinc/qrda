@@ -5,10 +5,10 @@
   -->
   <!-- 	 
     Errors added to test Device Recommended Act template schematron error assertions - Dan Donahue
-    Total Errors Expected: 4
+    Total Errors Expected: 5
           Failure a-2228-28454-error Bad Class Code
           Failure a-2228-28455-error Bad Mood Code
-          Failure a-2228-28452-error Incorrect root on template - not testable since changing root id invalidates entire context
+          Failure a-2228-28452-error Multiple main template ids
           Failure a-2228-28457-error Missing id
           Failure a-2228-28453-error Missing an entryRelationship with: typeCode=SUBJ and a single device recommended 
 
@@ -1046,6 +1046,8 @@
           <entry>
             <!-- Device Recommended Act -->          
             <act classCode="ACTErr" moodCode="INTErr"> <!-- a-2228-28454-error Bad Class Code, a-2228-28455-error Bad Mood Code -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.131"/>
+              <!--  a-2228-28452 Multiple main template ids -->
               <templateId root="2.16.840.1.113883.10.20.24.3.131"/>
               <!-- <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/> --> <!-- a-2228-28457-error Missing id -->
               <code code="SPLY" codeSystem="2.16.840.1.113883.5.6" displayName="Supply"

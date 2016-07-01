@@ -6,7 +6,7 @@
   <!-- 	 
     Errors added to test Precondition for Substance Administration V2 template schematron error assertions - Dan Donahue
     Total Errors Expected: 5
-          Failure a-1098-7372-error Incorrect extension on root template
+          Failure a-1098-7372-error Multiple main template ids
           Failure a-1098-32396-error Missing or multiple code with @xsi:type="CD"
           Failure a-1098-32397-error Missing or or bad code @code="ASSERTION"
           Failure a-1098-32398-error Missing or or bad code  @codeSystem="2.16.840.1.113883.5.4"

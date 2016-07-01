@@ -8,7 +8,7 @@
     Total Errors Expected: 11
           Failure a-2228-11840-error Bad Class Code
           Failure a-2228-11841-error Missing Mood Code
-          Failure a-2228-11842-error Wrong extension or root
+          Failure a-2228-11842-error Multiple main template id
           Failure a-2228-11845-error Missing id
           Failure a-2228-26947-error More than one code
           Failure a-2228-27579-error Missing @sdtc:valueSet
@@ -557,8 +557,11 @@
             <act classCode="OBS" > <!--  a-2228-11840-error Bad Class Code, a-2228-11841-error Missing Mood Code = EVN -->
               <!-- Communication from Provider to Patient -->
               <!-- Updated extension for new CDA rule changes -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.3" extension="2016-03-01"/> <!-- a-2228-11842-error Wrong extension or root-->
-              <!-- <id root="e4f3f0f7-cc24-4f2a-8c5f-097dde3d7afa"/> a-2228-11845-error Missing id -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.3" extension="2016-02-01"/> 
+              <!-- a-2228-11842-error Multiple main template id -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.3" extension="2016-02-01"/> 
+              <!-- a-2228-11845-error Missing id -->
+              <!-- <id root="e4f3f0f7-cc24-4f2a-8c5f-097dde3d7afa"/> -->
               <!-- a-2228-26947-error More than one code -->
               <code code="428521000124106" codeSystem="2.16.840.1.113883.6.96"
                 codeSystemName="SNOMED CT"

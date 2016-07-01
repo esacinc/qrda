@@ -5,10 +5,10 @@
   -->
   <!-- 	 
      Errors added to test Priority Preference template schematron error assertions - Dan Donahue
-    Total Errors Expected: 7
+    Total Errors Expected: 8
           Failure a-1098-30949-error Bad Class Code
           Failure a-1098-30950-error Bad Mood Code
-          Failure a-1098-30951-error Incorrect root on main template NOT Testable
+          Failure a-1098-30951-error Multiple main template ids
           Failure a-1098-30953-error Missing id
           Failure a-1098-30954-error Missing or multiple code
           Failure a-1098-30955-error Missing or or bad code @code="225773000"

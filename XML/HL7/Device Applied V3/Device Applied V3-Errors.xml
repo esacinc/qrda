@@ -8,7 +8,7 @@
     Total Errors Expected: 11
           Failure a-2228-28050-error Bad Class Code
           Failure a-2228-28051-error Bad Mood Code
-          Failure a-2228-12391-error Wrong extension or root
+          Failure a-2228-12391-error Multiplle main template ids
           Failure a-2228-12391-error More than one code
           Failure a-2228-12415-error Missing or incorrect @code value
           Failure a-2228-27536-error Missing or incorrect @codeSystem value
@@ -882,7 +882,9 @@
               <!-- Conforms to C-CDA R2.1 Procedure Activity Procedure (V2) -->
               <templateId root="2.16.840.1.113883.10.20.22.4.14" extension="2014-06-09"/>
               <!-- Device Applied (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.7" extension="2017-02-01"/> <!-- a-2228-12391-error Wrong extension or root -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.7" extension="2016-02-01"/> 
+              <!-- a-2228-12391-error Multiplle main template ids -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.7" extension="2016-02-01"/> 
               <id root="20ebe7a7-a493-447d-922b-5d98fa8b96da"/>
               <code code="360030002" displayName="application of device"
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/>

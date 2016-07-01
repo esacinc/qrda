@@ -8,7 +8,7 @@
     Total Errors Expected: 5
           Failure a-1098-31931-error Bad Class Code
           Failure a-1098-31932-error Bad Mood Code
-          Failure a-1098-32748-error Incorrect extension on root template
+          Failure a-1098-32748-error Multiple main template ids
           Failure a-1098-32751-error Missing id
           Failure a-1098-31933-error Missing or multiple code
 

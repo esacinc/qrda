@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+<!--
+Date: October 31, 2012
+Disclaimer: These QRDA sample files are designed to provide a file that is valid for errors against the CDA.sdtc schema and QRDA schematron using hypothetical patient data; however, the content of the QRDA sample 
+documents may not have "clinically" consistent data.  Additionally, the files are valid against the referenced eMeasure to provide a general idea about the content and structure of a QDM-based QRDA. When eMeasure data 
+criteria are “or”, the QRDA documents may not have all of the Quality Data Elements data criteria specified in the eMeasure. These expected errors are listed in the file where they occur. In the Patient Data Section, the 
+narrative block may not consistently agree with the entries.  The narrative block does not reflect the dates/times present in the clinical statements.
+Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014. This file for combined IPP & Denominator case.
+-->
+
+<!-- 	 
+	Total Errors Expected: 6
+		Description: A Coordinated Universal Time (UTC time) offset should not be used anywhere in a QRDA Category I file or, if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF_CMS_0121).
+		Description: A Coordinated Universal Time (UTC time) offset should not be used anywhere in a QRDA Category I file or, if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF_CMS_0121).
+		Description: A Coordinated Universal Time (UTC time) offset should not be used anywhere in a QRDA Category I file or, if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF_CMS_0121).
+		Description: A Coordinated Universal Time (UTC time) offset should not be used anywhere in a QRDA Category I file or, if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF_CMS_0121).
+		Description: A Coordinated Universal Time (UTC time) offset should not be used anywhere in a QRDA Category I file or, if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF_CMS_0121).
+		Description: A Coordinated Universal Time (UTC time) offset should not be used anywhere in a QRDA Category I file or, if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF_CMS_0121).
+	
+	Total Warnings Expected: 0
+-->
+
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc"
+	xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 CDA/infrastructure/cda/CDA_SDTC.xsd">
+	<!-- QRDA Header -->
+	<realmCode code="US"/>
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<!-- Note extension updates here for HQR 11.1  -->
+	<!-- US Realm Header Template Id -->
+	<!-- 	Estelle updated extension of US Realm Header (V3) to 2015-08-01 for HQR 11.1 -->
+	<templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2015-08-01"/>
+	<!-- QRDA templateId -->
+	<!-- 	Estelle updated extension of QRDA Category I Framework (V3) to 2016-02-01 for 11.1 -->
+	<templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2016-02-01"/>
+	<!-- 	Estelle updated extension of QDM-Based QRDA (V3) to 2016-02-01 for 11.1 -->
+	<templateId root="2.16.840.1.113883.10.20.24.1.2" extension="2016-02-01"/>
+	<!-- 	Estelle updated extension of QRDA Category I Report - CMS (V3) to 2016-03-01 for 11.1-->
+	<templateId root="2.16.840.1.113883.10.20.24.1.3" extension="2016-03-01"/>
+
+	<id root="f2d5f971-d67a-4456-8833-213f01331ca18"/>
+	<!-- QRDA document type code -->
+	<code code="55182-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+		displayName="Quality Measure Report"/>
+	<title>QRDA Incidence Report</title>
+	<effectiveTime value="201212310000-0500"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<languageCode code="en"/>
+	<setId extension="111199021" root="2.16.840.1.113883.19"/>
+	<!-- the original -->
+	<versionNumber value="4"/>
+	<recordTarget>
+		<patientRole>
+			<id extension="12345" root="2.16.840.1.113883.4.572"/>
+			<id extension="Mohammad01" root="2.16.840.1.113883.123.123.1"/>
+			<addr use="HP">
+				<!-- HP is "primary home" from codeSystem 2.16.840.1.113883.5.1119 -->
+				<streetAddressLine>17 Daws Rd.</streetAddressLine>
+				<city>Blue Bell</city>
+				<state>MA</state>
+				<postalCode>02368</postalCode>
+				<country>US</country>
+				<!-- US is "United States" from ISO 3166-1 Country Codes: 1.0.3166.1 -->
+			</addr>
+			<telecom use="HP" value="tel:(781)555-1212"/>
+			<!-- HP is "primary home" from AddressUse 2.16.840.1.113883.5.1119 -->
+			<patient>
+				<name use="L">
+					<!-- L is "Legal" from EntityNameUse 2.16.840.1.113883.5.45 -->
+					<prefix>Mrs.</prefix>
+					<given>Adam</given>
+					<given qualifier="CL">Adalyn</given>
+					<!-- CL is "Call me" from EntityNamePartQualifier
+               2.16.840.1.113883.5.43 -->
+					<family>Everyman</family>
+				</name>
+				<administrativeGenderCode code="F"
+					codeSystem="2.16.840.1.113883.5.1" displayName="Female"/>
+				<birthTime value="1985112512"/>
+				<!-- Eric:  age >= 18 -->
+				<maritalStatusCode code="M" codeSystem="2.16.840.1.113883.5.2"
+					codeSystemName="MaritalStatusCode" displayName="Married"/>
+				<religiousAffiliationCode code="1013"
+					codeSystem="2.16.840.1.113883.5.1076"
+					codeSystemName="Religious Affiliation "
+					displayName="Christian (non-Catholic, non-specific)"/>
+				<raceCode code="2106-3" codeSystem="2.16.840.1.113883.6.238"
+					codeSystemName="Race &amp; Ethnicity - CDC"
+					displayName="White"/>
+				<ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.113883.6.238"
+					codeSystemName="Race &amp; Ethnicity - CDC"
+					displayName="Not Hispanic or Latino"/>
+				<guardian>
+					<code code="GRFTH" codeSystem="2.16.840.1.113883.5.111"
+						codeSystemName="RoleCode" displayName="Grandfather"/>
+					<addr use="HP">
+						<streetAddressLine>17 Daws Rd.</streetAddressLine>
+						<city>Blue Bell</city>
+						<state>MA</state>
+						<postalCode>02368</postalCode>
+						<country>US</country>
+					</addr>
+					<telecom use="HP" value="tel:(781)555-1212"/>
+					<guardianPerson>
+						<name>
+						<given>Ralph</given>
+						<family>Relative</family>
+						</name>
+					</guardianPerson>
+				</guardian>
+				<birthplace>
+					<place>
+						<addr>
+						<state>MA</state>
+						<postalCode>02368</postalCode>
+						<country>US</country>
+						</addr>
+					</place>
+				</birthplace>
+				<languageCommunication>
+					<languageCode code="fr-CN"/>
+					<modeCode code="RWR" codeSystem="2.16.840.1.113883.5.60"
+						codeSystemName="LanguageAbilityMode"
+						displayName="Receive Written"/>
+					<preferenceInd value="true"/>
+				</languageCommunication>
+			</patient>
+			<providerOrganization>
+				<id root="2.16.840.1.113883.19"/>
+				<name>UMASS MEMORIAL MEDICAL CENTER INC</name>
+				<telecom use="WP" value="tel:(781)555-1212"/>
+				<addr>
+					<streetAddressLine>21 North Ave</streetAddressLine>
+					<city>Burlington</city>
+					<state>MA</state>
+					<postalCode>02368</postalCode>
+					<country>US</country>
+				</addr>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="20050329224411"/>
+		<assignedAuthor>
+			<id nullFlavor="UNK" root="2.16.840.1.113883.4.6"/>
+			<addr>
+				<streetAddressLine>21 North Ave.</streetAddressLine>
+				<city>Burlington</city>
+				<state>MA</state>
+				<postalCode>02368</postalCode>
+				<country>US</country>
+			</addr>
+			<telecom use="WP" value="tel:(555)555-1003"/>
+			<assignedAuthoringDevice>
+				<manufacturerModelName>Good Health Medical
+					Device</manufacturerModelName>
+				<softwareName>Good Health Report Generator</softwareName>
+			</assignedAuthoringDevice>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="2.16.840.1.113883.19.5"/>
+				<!-- Submitter's CCN -->
+				<id root="2.16.840.1.113883.4.336" extension="100128"/>
+				<name>UMASS MEMORIAL MEDICAL CENTER INC</name>
+				<telecom use="WP" value="tel:(555)555-1212"/>
+				<addr use="WP">
+					<streetAddressLine>17 Daws Rd.</streetAddressLine>
+					<city>Blue Bell</city>
+					<state>MA</state>
+					<postalCode>02368</postalCode>
+					<country>US</country>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!--Information Recipient-->
+	<informationRecipient>
+		<intendedRecipient>
+			<id root="2.16.840.1.113883.3.249.7" extension="HQR_IQR"/>
+		</intendedRecipient>
+	</informationRecipient>
+	<legalAuthenticator>
+		<time value="201212310000-0500"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id extension="KP00017" root="2.16.840.1.113883.19"/>
+			<addr>
+				<streetAddressLine>21 North Ave.</streetAddressLine>
+				<city>Burlington</city>
+				<state>MA</state>
+				<postalCode>02368</postalCode>
+				<country>US</country>
+			</addr>
+			<telecom use="WP" value="tel:(555)555-1003"/>
+			<assignedPerson>
+				<name>
+					<given>Henry</given>
+					<family>Seven</family>
+				</name>
+			</assignedPerson>
+		</assignedEntity>
+	</legalAuthenticator>
+	<participant typeCode="DEV">
+		<associatedEntity classCode="RGPR">
+			<!-- SHOULD have id, represents unique security Code for a CMS-qualified EHR vendor application. -->
+			<id root="2.16.840.1.113883.3.249.21" extension="98765"/>
+			<!-- SHOULD have id, ID represents the ONC-certified EHR identifier-->
+			<id root="2.16.840.1.113883.3.2074.1" extension=" A0H1301CFES9EAB"
+				assigningAuthorityName="ONC"/>
+			<code code="129465004" displayName="medical record, device"
+				codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/>
+			<!-- Nataly: Added for CONF:10006. -->
+			<associatedPerson/>
+		</associatedEntity>
+	</participant>
+	<documentationOf typeCode="DOC">
+		<serviceEvent classCode="PCPR">
+			<!-- care provision -->
+			<effectiveTime>
+				<low nullFlavor="NI"/> 
+				<high value="20100915"/>
+			</effectiveTime>
+			<!-- You can include multiple performers, each with an NPI, TIN, CCN. -->
+			<performer typeCode="PRF">
+				<time>
+					<low value="2002071615"/>
+					<high value="2007091522"/>
+				</time>
+				<assignedEntity>
+					<!-- This is the provider NPI. NATALY changed for HQR9.0 -->
+					<id root="2.16.840.1.113883.4.6" nullFlavor="NA"/>
+					<representedOrganization>
+						<!-- This is the organization TIN. NATALY changed for HQR9.0 -->
+						<id root="2.16.840.1.113883.4.2"
+						extension="123456789"/>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+	<componentOf>
+		<encompassingEncounter>
+			<!-- CCN -->
+			<id root="2.16.840.1.113883.4.336" extension="171325"/>
+			<effectiveTime>
+				<!-- Attribute: Start Datetime -->
+				<low value="20140128090000-0500"/>
+				<!-- Eric:  HITECH time period -->
+				<!-- Attribute: Stop Datetime -->
+				<high value="20140211123000"/>
+			</effectiveTime>
+		</encompassingEncounter>
+	</componentOf>
+	<!--  QRDA Body -->
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<!-- 
+    *****************************************************************
+    Measure Section
+    *****************************************************************
+  -->
+					<!-- This is the templateId for Measure Section -->
+					<templateId root="2.16.840.1.113883.10.20.24.2.2"/>
+					<!-- This is the templateId for Measure Section QDM -->
+					<templateId root="2.16.840.1.113883.10.20.24.2.3"/>
+					<!-- This is the LOINC code for "Measure document". This stays the same for 
+    all measure section required by QRDA standard -->
+					<code code="55186-1" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Measure Section</title>
+					<text>
+						<table border="1" width="100%">
+						<thead>
+						<tr>
+						<th>eMeasure Title</th>
+						<th>Version neutral identifier</th>
+						<th>eMeasure Version Number</th>
+						<th>NQF eMeasure Number</th>
+						<th>Version specific identifier</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+						<td>Venous Thromboembolism Prophylaxis</td>
+						<td>38b0b5ec-0f63-466f-8fe3-2cd20ddd1622</td>
+						<td>4</td>
+						<td>0371</td>
+						<td>40280381-4c18-79df-014c-2d6dc6ce0a53</td>
+						</tr>
+						</tbody>
+						</table>
+					</text>
+					<entry>
+						<organizer classCode="CLUSTER" moodCode="EVN">
+						<!-- This is the templateId for Measure Reference -->
+						<templateId root="2.16.840.1.113883.10.20.24.3.98"/>
+						<!-- This is the templateId for eMeasure Reference QDM -->
+						<templateId root="2.16.840.1.113883.10.20.24.3.97"/>
+						<!-- NATALY added for CONF:26992 -->
+						<id root="40280381-4c18-79df-014c-2d6dc6ce0a53"/>
+						<statusCode code="completed"/>
+						<reference typeCode="REFR">
+						<externalDocument classCode="DOC" moodCode="EVN">
+						<!-- SHALL: This is the version specific identifier for eMeasure:   QualityMeasureDocument/id  it is a GUID-->
+						<!-- NATALY: Change Version# and eMeasureID for HQR9.0-->
+						<id root="2.16.840.1.113883.4.738"
+						extension="40280381-4c18-79df-014c-2d6dc6ce0a53"/>
+						<!-- SHOULD: This is the NQF Number, root is an NQF OID and for    eMeasure Number and extension is the eMeasure's NQF number -->
+						<id extension="0371"
+						root="2.16.840.1.113883.3.560.1"/>
+						<!-- SHOULD This is the title of the eMeasure -->
+						<text>Venous Thromboembolism Prophylaxis</text>
+						<!-- SHOULD: setId is the eMeasure version neutral id  -->
+						<setId root="38b0b5ec-0f63-466f-8fe3-2cd20ddd1622"/>
+						<!-- This is the sequential eMeasure Version number -->
+						<versionNumber value="4"/>
+						</externalDocument>
+						</reference>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<!-- 	Reporting Parameters -->
+				<section>
+					<!-- Reporting Parameters Section - HL7 Estelle updated for HQR 11.1 -->
+					<templateId root="2.16.840.1.113883.10.20.17.2.1"
+						extension="2015-07-01"/>
+					<!-- Note: Both templateId and extension updated for Reporting Parameters Section - CMS for HQR 11.1 -->
+					<templateId root="2.16.840.1.113883.10.20.17.2.1.1"
+						extension="2016-03-01"/>
+					<code code="55187-9" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Reporting Parameters</title>
+					<text>
+						<list>
+						<item>Reporting period: 01 Jan 2016 - 31 March
+						2016</item>
+						</list>
+					</text>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+						<!-- No change to Reporting Parameters Act - HL7 for HQR 11.1 -->
+						<templateId root="2.16.840.1.113883.10.20.17.3.8"/>
+						<!-- Note: Both templateId and extension updated for Reporting Parameters Act - CMS for HQR 11.1 -->
+						<templateId
+						root="2.16.840.1.113883.10.20.17.3.8.1"
+						extension="2016-03-01"/>
+						<id root="40280381-446b-b8c2-0144-9edba9142cba"/>
+						<code code="252116004"
+						codeSystem="2.16.840.1.113883.6.96"
+						displayName="Observation Parameters"/>
+						<effectiveTime>
+						<!-- Keep times consistent in file  -->
+						<low value="20160101"/>
+						<high value="20160331"/>
+						</effectiveTime>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<!-- Patient Data Section -->
+					<templateId root="2.16.840.1.113883.10.20.17.2.4"/>
+					<!-- Extension updated to 2016-02-01 for Patient Data Section QDM (V3)-HL7 for HQR 11.1 -->
+					<templateId root="2.16.840.1.113883.10.20.24.2.1"
+						extension="2016-02-01"/>
+					<!-- Both templateId and extension updated for Patient Data Section QDM (V3)-CMS for HQR 11.1 -->
+					<templateId root="2.16.840.1.113883.10.20.24.2.1.1"
+						extension="2016-03-01"/>
+					<code code="55188-7" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Patient Data</title>
+					<text>
+						<table border="1" width="100%">
+						<thead>
+						<tr>
+						<th>Data Element - Value</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+						<td>Diagnosis, Active: Obstetrics - Unspecified
+						complication of labor and delivery, postpartum
+						condition or complication</td>
+						</tr>
+						<tr>
+						<td>Encounter, Performed: Inpatient Encounter -
+						hospital admission, under police custody
+						(procedure)</td>
+						</tr>
+						<tr>
+						<td>Patient Characteristic Payer: Payer - Children
+						of Women Vietnam Veterans (CWVV)</td>
+						</tr>
+						<tr>
+						<td>Procedure, Performed: Gynecological Surgery -
+						Incision of uterus (procedure)</td>
+						</tr>
+						<tr>
+						<td>Diagnosis, Active: Obstetrics VTE - pulmonary
+						embolism following molar AND/OR ectopic pregnancy
+						(disorder)</td>
+						</tr>
+						<tr>
+						<td>Diagnosis, Active: Venous Thromboembolism -
+						Acute venous embolism and thromobis of unspecified
+						deep vessels of proximal lower extremity</td>
+						</tr>
+						</tbody>
+						</table>
+					</text>
+
+					<!--  IPP-1 START      -->
+					<!-- Encounter, Performed: Encounter Inpatient" using "Encounter Inpatient SNOMEDCT Value Set (2.16.840.1.113883.3.666.5.307)" -->
+					<entry typeCode="DRIV">
+						<!-- For HQR 11.1: Encounter, Performed QDM data type must be contained in the Encounter Performed Act template  -->
+						<act classCode="ACT" moodCode="EVN">
+						<!--Encounter Performed Act -->
+						<templateId
+						root="2.16.840.1.113883.10.20.24.3.133"/>
+						<id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
+						<code code="ENC"
+						codeSystem="2.16.840.1.113883.5.6"
+						displayName="Encounter" codeSystemName="ActClass"/>
+						<entryRelationship typeCode="SUBJ">
+						<!-- For HQR 11.1: end new -->
+
+						<encounter classCode="ENC" moodCode="EVN">
+						<!--  For HQR 11.1: Conforms to C-CDA R2.1 Encounter Activity (V3)  Extension updated -->
+						<templateId root="2.16.840.1.113883.10.20.22.4.49"
+						extension="2015-08-01"/>
+						<!-- For HQR 11.1: Encounter Performed (V3) template  Extension updated -->
+						<templateId root="2.16.840.1.113883.10.20.24.3.23"
+						extension="2016-02-01"/>
+						<id root="2a620155-9d11-439e-92b3-5d9815ff4de8"/>
+						<code code="183452005"
+						codeSystem="2.16.840.1.113883.6.96"
+						codeSystemName="SNOMEDCT"
+						displayName="Emergency hospital admission (procedure)"
+						sdtc:valueSet="2.16.840.1.113883.3.666.5.307"/>
+						<text>Encounter, Performed: Inpatient</text>
+						<statusCode code="completed"/>
+						<!-- Length of Stay -->
+						<effectiveTime>
+						<!-- Attribute: admission datetime -->
+							<low value="20160102090000"/>
+						<!-- Attribute: discharge datetime -->
+							<high value="20160104103000-0500"/>
+						</effectiveTime>
+						</encounter>
+						</entryRelationship>
+						</act>
+					</entry>
+
+					<!-- Diagnosis, Active: Obstetrics  -->
+					<!--Diagnosis, Active: Obstetrics" using "Obstetrics Grouping Value Set (2.16.840.1.113883.3.117.1.7.1.263) -->
+					<!-- Nataly added for HQR9.0 -->
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+						<!-- For HQR 11.1: Conforms to C-CDA 2.1 Problem Concern Act (V3) -->
+						<templateId root="2.16.840.1.113883.10.20.22.4.3"
+						extension="2015-08-01"/>
+						<!-- For HQR 11.1: Diagnosis Concern Act (replacing Diagnosis Active Concern Act) -->
+						<templateId
+						root="2.16.840.1.113883.10.20.24.3.137"/>
+						<id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
+						<code code="CONC"
+						codeSystem="2.16.840.1.113883.5.6"
+						displayName="Concern"/>
+						<!-- The statusCode represents whether this is an active (active) or resolved (completed) diagnosis -->
+						<statusCode code="active"/>
+						<!-- This is the time that the diagnosis is authored in the patient's chart -->
+						<effectiveTime>
+						<!-- (equivalent to author/time in the contained observation) -->
+							<low value="20160102090000-0500"/>
+						</effectiveTime>
+
+						<entryRelationship typeCode="SUBJ">
+						<!--Diagnosis Obstetrics -->
+						<observation classCode="OBS" moodCode="EVN">
+						<!-- Problem Status (DEPRECATED) Conforms to C-CDA R2.1 Problem Observation (V3) -->
+						<templateId root="2.16.840.1.113883.10.20.22.4.4"
+						extension="2015-08-01"/>
+						<!-- For HQR 11.1: Diagnosis template -->
+						<templateId
+						root="2.16.840.1.113883.10.20.24.3.135"/>
+						<id root="2a620155-9d11-439e-92b3-5d9815ff4de8"/>
+						<code code="29308-4"
+						codeSystem="2.16.840.1.113883.6.1"
+						codeSystemName="LOINC" displayName="Diagnosis">
+						<translation/>
+						</code>
+						<statusCode code="completed"/>
+						<effectiveTime>
+						<!-- Attribute: Start Datetime -->
+							<low value="20160102080000-0500"/>
+						<!-- Attribute: Stop Datetime -->
+							<high value="20160102083000-0500"/>
+						</effectiveTime>
+						<!--<priorityCode code="63161005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Principal"/>-->
+						<value code="106007006"
+						codeSystem="2.16.840.1.113883.6.96"
+						codeSystemName="SNOMEDCT"
+						displayName="Maternal AND/OR fetal condition affecting labor AND/OR delivery (disorder)"
+						sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.263"
+						xsi:type="CD"/>
+						<!-- Status -->
+						<entryRelationship typeCode="REFR">
+						<observation classCode="OBS" moodCode="EVN">
+						<!-- Problem Status (consolidation) template - In HQR 11.1 Problem Status (DEPRECATED) -->
+						<templateId root="2.16.840.1.113883.10.20.22.4.6"
+						extension="2014-06-09"/>
+						<!-- Problem Status, Active template - in HQR 11.1 RETIRED -->
+						<!--  <templateId root="2.16.840.1.113883.10.20.24.3.94"/> -->
+						<id root="bb0df042-77ee-4ee2-bc85-24adffdef4cc"/>
+						<code code="33999-4"
+						codeSystem="2.16.840.1.113883.6.1"
+						codeSystemName="LOINC" displayName="status"/>
+						<statusCode code="completed"/>
+						<value code="55561003"
+						codeSystem="2.16.840.1.113883.6.96"
+						codeSystemName="SNOMED CT" displayName="active"
+						xsi:type="CD"/>
+						</observation>
+						</entryRelationship>
+						</observation>
+						</entryRelationship>
+						</act>
+					</entry>
+
+					<!-- Payment Section  -->
+					<entry typeCode="DRIV">
+						<observation classCode="OBS" moodCode="EVN">
+						<templateId root="2.16.840.1.113883.10.20.24.3.55"/>
+						<id root="4ddf1cc3-e325-472e-ad76-b2c66a5ee164"/>
+						<code code="48768-6"
+						codeSystem="2.16.840.1.113883.6.1"
+						codeSystemName="LOINC"
+						displayName="Payment source"/>
+						<statusCode code="completed"/>
+						<!--Nataly added for CONF:26933 -->
+						<effectiveTime>
+							<low value="20160102090000-0500"/>
+							<high value="20160102103000-0500"/>
+						</effectiveTime>
+						<value code="1"
+						codeSystem="2.16.840.1.113883.3.221.5"
+						codeSystemName="Source of Payment Typology"
+						displayName="Medicare"
+						sdtc:valueSet="2.16.840.1.114222.4.11.3591"
+						xsi:type="CD"/>
+						</observation>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

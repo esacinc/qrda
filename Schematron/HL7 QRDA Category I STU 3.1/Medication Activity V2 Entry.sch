@@ -12,7 +12,7 @@
 	
 	<sch:pattern id="Medication_Active_V2-pattern-errors">
 		<sch:rule id="Medication_Active_V2-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]">
-			<sch:assert id="a-1098-7496-error" test="@moodCode='SBADM'">
+			<sch:assert id="a-1098-7496-error" test="@classCode='SBADM'">
 				SHALL contain exactly one [1..1] @classCode="SBADM" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-7496).
 			</sch:assert>
 			<sch:assert id="a-1098-7497-v-error" test="@moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.18']/voc:code/@value">

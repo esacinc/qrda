@@ -16,10 +16,8 @@
     </sch:phase>
     
     <sch:pattern id="QRDA_Category_I_Report_CMS-pattern-errors">
-        <sch:rule id="QRDA_Category_I_Report_CMS-templateId-errors" context="cda:ClinicalDocument">
-            <sch:assert id="a-CMS_0001-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:CMS_0001) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.1.3" (CONF:CMS_0002). SHALL contain exactly one [1..1] @extension="2016-03-01" (CONF:CMS_0003).</sch:assert>
-        </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01']]">
+            <sch:assert id="a-CMS_0001-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:CMS_0001) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.1.3" (CONF:CMS_0002). SHALL contain exactly one [1..1] @extension="2016-03-01" (CONF:CMS_0003).</sch:assert>
             <sch:assert id="a-2228-16703_C01-error" test="count(cda:informationRecipient)=1">SHALL contain exactly one [1..1] informationRecipient (CONF:2228-16703_C01).</sch:assert>
             <sch:assert id="a-2228-16579_C01-error" test="count(cda:documentationOf[count(cda:serviceEvent)=1])=1">SHALL contain exactly one [1..1] documentationOf (CONF:2228-16579_C01) such that it SHALL contain exactly one [1..1] serviceEvent (CONF:2228-16580).</sch:assert>
             <sch:assert id="a-2239-28472-error" test="count(cda:component)=1">SHALL contain exactly one [1..1] component (CONF:2239-28472).</sch:assert>
@@ -32,7 +30,7 @@
             <sch:assert id="a-CMS_0010-error" test="@code='en'">This languageCode SHALL contain exactly one [1..1] @code="en" (CONF:CMS_0010).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-recordTarget-patientRole-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01']]/cda:recordTarget/cda:patientRole">
-            <sch:assert id="a-CMS_0009-error" test="count(cda:id[@root][@extension])=1">This patientRole SHALL contain exactly one [1..1] id (CONF:CMS_0009) such that it SHALL contain exactly one [1..1] @root (CONF:CMS_0053). SHALL contain exactly one [1..1] @extension (CONF:CMS_0103). SHALL contain exactly one Patient Identifier Number (CONF:CMS_0007).</sch:assert>
+            <sch:assert id="a-CMS_0009-error" test="count(cda:id[@root!='2.16.840.1.113883.4.572'][@extension])=1">This patientRole SHALL contain exactly one [1..1] id (CONF:CMS_0009) such that it SHALL contain exactly one [1..1] @root (CONF:CMS_0053). SHALL contain exactly one [1..1] @extension (CONF:CMS_0103). SHALL contain exactly one Patient Identifier Number (CONF:CMS_0007).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-recordTarget-patientRole-patient-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01']]/cda:recordTarget/cda:patientRole/cda:patient">
             <sch:assert id="a-1198-5284_C01-error" test="count(cda:name)=1">This patient SHALL contain exactly one [1..1] US Realm Person Name (PN.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5284_C01).</sch:assert>

@@ -65,7 +65,11 @@
             <sch:assert id="a-CMS_0004-error" test="count(cda:associatedEntity)=1">This participant SHALL contain exactly one [1..1] associatedEntity (CONF:CMS_0004).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-participant-associatedEntity-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01']]/cda:participant/cda:associatedEntity">
-            <sch:assert id="a-CMS_0005-error" test="count(cda:id[@root='2.16.840.1.113883.3.2074.1'][@extension])=1">This associatedEntity SHALL contain exactly one [1..1] id (CONF:CMS_0005) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" CMS EHR Certification Number (formerly known as Office of the National Coordinator Certification Number) (CONF:CMS_0006). SHALL contain exactly one [1..1] @extension (CONF:CMS_0008).</sch:assert>
+            <sch:assert id="a-CMS_0005-error" test="count(cda:id)=1">This associatedEntity SHALL contain exactly one [1..1] id (CONF:CMS_0005).</sch:assert>
+        </sch:rule>
+        <sch:rule id="QRDA_Category_I_Report_CMS-participant-associatedEntity-id-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01']]/cda:participant/cda:associatedEntity/cda:id">
+            <sch:assert id="a-CMS_0006-error" test="@root='2.16.840.1.113883.3.2074.1'">This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" CMS EHR Certification Identification Number (CONF:CMS_0006).</sch:assert>
+            <sch:assert id="a-CMS_0008-error" test="@extension">This id SHALL contain exactly one [1..1] @extension (CONF:CMS_0008).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-component-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01']]/cda:component">
             <sch:assert id="a-2239-28473-error" test="count(cda:structuredBody)=1">This component SHALL contain exactly one [1..1] structuredBody (CONF:2239-28473).</sch:assert>

@@ -71,7 +71,7 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 				</name>
 				<administrativeGenderCode code="F"
 					codeSystem="2.16.840.1.113883.5.1" displayName="Female"/>
-				<birthTime value="19851125"/>
+				<birthTime value="198511250000-0500"/>
 				<!-- Eric:  age >= 18 -->
 				<maritalStatusCode code="M" codeSystem="2.16.840.1.113883.5.2"
 					codeSystemName="MaritalStatusCode" displayName="Married"/>
@@ -216,13 +216,13 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 			<!-- care provision -->
 			<effectiveTime>
 				<low nullFlavor="NI"/> 
-				<high value="20100915"/>
+				<high value="201009150000-0500"/>
 			</effectiveTime>
 			<!-- You can include multiple performers, each with an NPI, TIN, CCN. -->
 			<performer typeCode="PRF">
 				<time>
-					<low value="20020716"/>
-					<high value="20070915"/>
+					<low value="200207160000-0500"/>
+					<high value="200709150000-0500"/>
 				</time>
 				<assignedEntity>
 					<!-- This is the provider NPI. NATALY changed for HQR9.0 -->

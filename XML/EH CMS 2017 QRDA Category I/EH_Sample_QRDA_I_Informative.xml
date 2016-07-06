@@ -3041,6 +3041,9 @@
                 <!-- QDM Attribute: Stop datetime -->
                 <high value="20120301" />
               </effectiveTime>
+              <effectiveTime xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                <period value="12" unit="h"/>
+              </effectiveTime>
               <!-- QDM Attribute: Route -->
               <routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus"
                 displayName="ORAL" sdtc:valueSet="1.2.9999" />

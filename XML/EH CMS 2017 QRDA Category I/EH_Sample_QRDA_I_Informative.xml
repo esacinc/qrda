@@ -5,7 +5,7 @@
   xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
   <!-- 		
     Title: EH Quality Reporting Document Architecture Category I Sample 
-    Date: June 28, 2016
+    Date: July 6, 2016
   -->
   <!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained 	 
@@ -62,13 +62,14 @@
         <religiousAffiliationCode code="1013" codeSystem="2.16.840.1.113883.1.11.19185"
           codeSystemName="HL7 Religious Affiliation " displayName="Christian (non-Catholic, non-specific)" />
         <!-- raceCode "2131-1 (Other Race)" shall not be used for either raceCode or sdtc:raceCode -->
-        <raceCode code="2106-3" codeSystem="2.16.840.1.114222.4.11.836" displayName="White" />
+        <raceCode code="2106-3" codeSystem="2.16.840.1.113883.6.238" displayName="White"/>
         <!-- if the patient declined to specify his/her race, use nullFlavor="ASKU" -->
         <!-- <raceCode nullFlavor="ASKU"/> -->
         <!-- if the patient's race is unknown, use nullFlavor="UNK" -->
         <!-- <raceCode nullFlavor="UNK"/> -->
         <!-- Use sdtc:raceCode only if the patient has more than one race category -->
-        <sdtc:raceCode code="2054-5" codeSystem="2.16.840.1.113883.6.238" displayName="Black or African American"/> 
+        <sdtc:raceCode code="2054-5" displayName="Black or African American" codeSystem="2.16.840.1.113883.6.238"
+          sdtc:valueSet="2.16.840.1.114222.4.11.836"/> 
         <sdtc:raceCode code="1006-6" codeSystem="2.16.840.1.113883.6.238" displayName="Abenaki"/>
         <ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.114222.4.11.837" displayName="Not Hispanic or Latino" />
         <!-- if the patient declined to specify his/her ethnicity, use nullFlavor="ASKU" -->
@@ -217,28 +218,11 @@
       </representedOrganization>
     </assignedEntity>
   </legalAuthenticator>
-  <participant typeCode="IND">
-    <!-- typeCode "IND" represents an individual -->
-    <associatedEntity classCode="NOK">
+  <participant typeCode="DEV">
+    <associatedEntity classCode="RGPR">
       <!-- CMS EHR Certification Number (formerly known as Office of the 
         National Coordinator Certification Number) -->
       <id root="2.16.840.1.113883.3.2074.1" extension="123456789"/>
-      <!-- classCode "NOK" represents the patient's next of kin-->
-      <addr use="HP">
-        <streetAddressLine>2222 Home Street</streetAddressLine>
-        <city>Beaverton</city>
-        <state>OR</state>
-        <postalCode>97867</postalCode>
-        <country>US</country>
-      </addr>
-      <telecom value="tel:+1(555)555-2008" use="MC" />
-      <associatedPerson>
-        <name>
-          <given>Boris</given>
-          <given qualifier="CL">Bo</given>
-          <family>Betterhalf</family>
-        </name>
-      </associatedPerson>
     </associatedEntity>
   </participant>
   
@@ -3040,9 +3024,6 @@
                 <low value="20110301" />
                 <!-- QDM Attribute: Stop datetime -->
                 <high value="20120301" />
-              </effectiveTime>
-              <effectiveTime xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
-                <period value="12" unit="h"/>
               </effectiveTime>
               <!-- QDM Attribute: Route -->
               <routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus"

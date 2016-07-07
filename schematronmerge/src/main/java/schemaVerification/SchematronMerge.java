@@ -40,7 +40,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Properties;
 
+import org.jdom2.Comment;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -54,92 +56,172 @@ public class SchematronMerge {
 
 	static protected SAXBuilder builder = new SAXBuilder();
 
-	public static void main(String[] args) {
+	public static void main(String[] namesOfPropertyFiles) {
 
-		SchematronMerge  merger = new SchematronMerge();
-		
-		MergeConfigure configTool;
-		
-		List<String> thePropertyFileNames = null;
-		
-		// The Merged file name and schematron files are taken from the properties file
-		// The property file name can either be taken from the first argument to SchematronMerge
-		// (if run on the command line or supplied as an Eclipse property)
-		
-		// DD: Not sure if this code is needed given that we process each file in the for-loop, below.
-		if (args.length == 0) {
-			configTool = new MergeConfigure();
-			
-		}
-		else {
-			configTool = new MergeConfigure(args);
-			
-		}
-		thePropertyFileNames = MergeConfigure.getPropertyFileNames ();
-		
-		 PrintStream console = System.out;
-		
-		// DD: Generate a separate schematron file from each properties filename stored in the MergeConfigure bean 
-		for (int i =0; i < thePropertyFileNames.size(); i++) {
-			 
-			configTool.setupSchematronMerge(i); // DD: Set the config tool's values to process the next properties file.
-			System.out.println("------- Processing properties file: " + configTool.getPropertiesFileName());
-			String[] files = configTool.getFilesToMerge();
-			String mergedFileName = configTool.getMergedFileName();
-			
-			Document mergedDoc = merger.merge(files);
+		MergeConfigure configTool = new MergeConfigure(namesOfPropertyFiles);
+		SchematronMerge mergerTool = new SchematronMerge();
+
+		Document mergedDocument =  null;
+
+		System.out.println("Start....");
+
+
+		// Print informatory message about number of files to process
+		String beginMsg = String.format("------- Begin Processing (%d) properties files " , configTool.getPropertyFileNames().size());	                         
+		System.out.println(beginMsg);
+
+
+
+		// Generate a separate merged schematron file from each of the properties filenames stored in the MergeConfigure "bean" 
+		for (String pFile : configTool.getPropertyFileNames() ){
 			
 			
+			// Retrieve the schematrons to merge from the config tool - and print info message
+			List<String> namesOfilesToMerge = configTool.getFilesToMerge(pFile);
+			String pFileMsg = String.format("---------- Processing properties file: \"%s\" - (merging %d files)" , pFile, namesOfilesToMerge.size());
+			System.out.println(pFileMsg);
+
+
+
+			// Get the parameters for the merge for the file PFile
+			// (i.e. name of the file and its associated properties
+			String mergedFileName  = configTool.getMergedFileName(pFile);
+			Properties properties = configTool.getProperties(pFile);
+
+			
+			String mergeMsg = String.format("---------- Merging files into file \"%s\"." , mergedFileName);
+			System.out.println(mergeMsg);
+			
+			
+			Comment comment = mergerTool.printHeader(properties,"schematron.date", "schematron.version");
+			
+			// Merge using the files given from the parameters (i.e. the names of the schemetrons to merge)
+			mergedDocument = mergerTool.merge(namesOfilesToMerge, comment);
+
+
+			
+			Element theTop = mergedDocument.getRootElement();
+			
+			
+			// Remember the console
+			PrintStream console = System.out;
+
+			// Set up file to write the merged file
+			// Redirect stdout to the File named by mergedFileName
 			OutputStream output = null;
 			try {
 				output = new FileOutputStream(mergedFileName);
 			} catch (FileNotFoundException e1) {
-				// TODO Auto-generated catch block
+				String fileNotFoundMsg = String.format("---------- Fatal Error: Merged File (i.e. \"%s\" can't be created." , mergedFileName);
+				System.err.println(fileNotFoundMsg);
 				e1.printStackTrace();
 			}
 			PrintStream printOut = new PrintStream(output);
-		
-			
+
+
+
+			// Now actually print out the merged file
+
+			//First stdout must be rerdirected since the underlying routines print to stdout
 			System.setOut(printOut);
+
+			//	Next Print out any Header information
+			//TODO The comments could be integrated with the merge
 			
+
+			// Nextrint out that merged document 
+			mergerTool.printMergedDocument(mergedDocument);
+
+
+			//  Redirect stdout back to the console
+			System.setOut(console);
+
+			mergeMsg = String.format("---------- Wrote merged Schematron file to \"%s\".\n" , mergedFileName);
+			System.out.println(mergeMsg);
 			
-			
-			
-			// Actually output the merged file by redirecting stdout
-			
-		    try {
-		
-		      new XMLOutputter(Format.getPrettyFormat()).output(mergedDoc, System.out);
-		    }
-		    catch (IOException e) {
-		      System.err.println(e);
-		    }
-		
-		   
-			// Redirect stdout back to the console
-		   System.setOut(console);
-		   System.out.println("        Wrote merged Schematron file to " + mergedFileName  ); // DD: Add spaces for pretty printing
 		}
+
+
+	}	
+
+
+
+	// Print out each variable as a XML comment
+	// Note - writes the method writes to stdout if you want to write somewhere else redirect stdout firs
+	
+	private Comment printHeader(Properties properties, String... commentVars ){
+
+		/*
+		System.err.println("Properties " + properties);
+		for (String c :  commentVars) {
+			System.err.println( "Var "+ c + " = " + properties.getProperty(c));
+		}
+		*/
+		
+		String commentFormat  = " <!-- %s  -->";
+		String commentBody    = "";
+		
+		boolean foundVals = false;	
+		for (String variable : commentVars){
+			String value = properties.getProperty(variable);
+			//System.out.println("**************" + variable  + " = " + value);
+			if (value != null) {
+				foundVals = true;
+				commentBody = commentBody + String.format("%s = %s\n", variable, value);
+				
+
+			}
+			
+		}
+
+		Comment toReturn = null;
+		
+		if (foundVals) {
+			//commentBody = String.format(commentFormat, commentBody );
+			//System.err.println(commentBody);
+			toReturn = new Comment(commentBody);
+			//System.err.println(commentBody);
+		}
+		
+		return(toReturn);
+		
 	}
 
-	
-	// Creates the files associated with the Schematrons to be merged
-	// exits if all files are not valid - otherwise returns array of references to files
+	// Prints out the body of the resultant merged Document
+	// note that the output goes to stdout so stdout must be redirected first (see above)  if you want to send to a file and not stdout
 
-	public File[]  createFiles(String[] files){
+	private void printMergedDocument(Document mergedDoc) {
+
+		// Actually output the merged file by redirecting stdout redirected from prinout
+		try {
+
+			new XMLOutputter(Format.getPrettyFormat()).output(mergedDoc, System.out);
+		}
+		catch (IOException e) {
+			System.err.println(e);
+		}
+
+	}
+
+
+
+	// Creates the files associated with the Schematrons to be merged
+	// The method exits if all files are not valid - otherwise returns its an array of references to files
+
+	private File[]  createFiles(String[] files){
 		File xmlFiles[] = new File[files.length];
 		for (int i = 0 ; i < files.length; i++) {
 			File xFile = new File(files[i]);
 			xmlFiles[i]  = xFile;
 			//Check that the  two schematron files are valid names
 			if(!xFile.exists() ) { 
-				System.err.println ("File " + files[i]+ " is invalid - schematron does not exist");
+				System.err.println ("\n---------- Fatal Eror: File " + files[i]+ " is invalid - schematron does not exist");
 				System.exit(1);
 
 			}
 
 			if(xFile.isDirectory() ) { 
-				System.err.println ("File " + files[i]+ " is invalid - names a directory not a file");
+				System.err.println ("\n---------- Fatal Eror: File " + files[i]+ " is invalid - names a directory not a file");
 				System.exit(1);
 
 			}
@@ -148,7 +230,10 @@ public class SchematronMerge {
 		return (xmlFiles);
 	}
 
-	public Document[]  createDocuments(File xmlFiles[] ){
+	// Transforms an array of File instance (for files that contained the XML code of the ".sch" file
+	// to an array of Document references
+	// If 
+	private Document[]  createDocuments(File xmlFiles[] ){
 		Document[]  docs = new Document[xmlFiles.length];
 
 		for (int i = 0 ; i < xmlFiles.length; i++) {
@@ -161,19 +246,20 @@ public class SchematronMerge {
 			} catch (IOException io) {
 				System.err.println ("Could not build file " + file );
 				System.err.println(io.getMessage());
+				io.printStackTrace();
 				System.exit(1);
 			} catch (JDOMException jdomex) {
+				jdomex.printStackTrace();
 				System.err.println ("Could not build file " + file );
 				System.err.println(jdomex.getMessage());			
 				System.exit(1);
 			}
 
-
 		}
 		return (docs);
 	}
 
-
+	// Transform an array of XML Document references to an array of Schmetron refereces
 	private Schematron[] createSchematronRep(Document[] documents){
 		Schematron[] sReps = new Schematron[documents.length];
 		for(int i = 0; i < documents.length; i++){
@@ -182,7 +268,6 @@ public class SchematronMerge {
 		}
 		return (sReps);
 	}
-
 
 	// Find the namespaces that are added to in the root of each schematron
 	private List<Namespace> findNamespacesInScope(Schematron[] sReps){
@@ -274,9 +359,14 @@ public class SchematronMerge {
 	}
 
 
-	
 
-	public Document merge(String[] files) {
+
+	public Document merge(List <String> listOfiles, Comment header){
+		String[] files = listOfiles.toArray(new String[0]);
+		return(merge(files, header));
+	}
+
+	public Document merge(String[] files, Comment header) {
 
 
 		File xmlFiles[] = createFiles(files);
@@ -298,7 +388,7 @@ public class SchematronMerge {
 
 
 
-		// Tool requires that every item added must have only one parent
+		// Underlying JDom Tool requires that every item added must have only one parent
 		// so you need to detach all the parents before completing
 		// the assembly into the merged representation
 
@@ -320,6 +410,8 @@ public class SchematronMerge {
 
 		// Construct the new document that will hold the merge
 		Document mergedDoc = new Document(top); 
+		
+		if (header!= null) mergedDoc.getContent().add(0,header);
 
 		// Add the merged content
 		mergedDoc.getRootElement().addContent(pe1);
@@ -338,3 +430,4 @@ public class SchematronMerge {
 
 
 }
+

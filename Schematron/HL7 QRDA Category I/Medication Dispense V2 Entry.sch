@@ -33,7 +33,7 @@
 			<sch:assert id="a-1098-7455-error" test="count(cda:statusCode) = 1">
 				SHALL contain exactly one [1..1] statusCode (CONF:1098-7455).
 			</sch:assert>
-			<sch:assert id="a-1098-9333-error" test="count(cda:product) = 1">
+			<sch:assert id="a-1098-9333-error" test="(cda:product[count(cda:manufacturedProduct)=1]) and (count(cda:product[cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.23'][@extension='2014-06-09']] or cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.54'][@extension='2014-06-09']]]) = 1)">
 				A supply act SHALL contain one product/Medication Information OR one product/Immunization Medication Information template (CONF:1098-9333).	
 			</sch:assert>
 		</sch:rule>
@@ -46,8 +46,7 @@
 		
 		<sch:rule id="Medication_Dispense_V2-may-performer-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.18'][@extension='2014-06-09']]/cda:performer">
 			<sch:assert id="a-1098-7461-error" test="count(cda:assignedEntity) = 1">
-				MAY contain zero or one [0..1] performer (CONF:1098-7461).
-					The performer, if present, SHALL contain exactly one [1..1] assignedEntity (CONF:1098-7467).
+				The performer, if present, SHALL contain exactly one [1..1] assignedEntity (CONF:1098-7467).
 			</sch:assert>
 		</sch:rule>
 		

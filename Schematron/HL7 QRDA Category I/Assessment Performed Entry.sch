@@ -29,5 +29,8 @@
         <sch:rule id="Assessment_performed-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.144']]/cda:effectiveTime">
             <sch:assert id="a-3265-28663-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:3265-28663).</sch:assert>
         </sch:rule>
+        <sch:rule id="Assessment_performed-methodCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.144']]/cda:methodCode">
+            <sch:assert id="a-3265-28698-error" test="@sdtc:valueSet">The methodCode, if present, SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:3265-28698).</sch:assert>
+        </sch:rule>
     </sch:pattern>
 </sch:schema>

@@ -21,8 +21,7 @@
             <sch:assert id="a-3265-28142-error" test="count(cda:entryRelationship[@typeCode='SUBJ'] [count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.135' ]])=1])=1">SHALL contain exactly one [1..1] entryRelationship (CONF:3265-28142) such that it  SHALL contain exactly one [1..1] @typeCode="SUBJ" Has subject (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3265-28151).  SHALL contain exactly one [1..1] Diagnosis (identifier: urn:oid:2.16.840.1.113883.10.20.24.3.135) (CONF:3265-28145).  </sch:assert>
         </sch:rule>
         <sch:rule id="Diagnosis_concern_act_V2-statusCode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.137'][@extension='2016-08-01']]/cda:statusCode">
-            <sch:assert id="a-3265-28150-error" test="@code">This statusCode SHALL contain exactly one [1..1] @code (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:3265-28150).</sch:assert>
-            <sch:assert id="a-3265-28693-error" test="@code='active' or @code='resolved'">The statusCode/@code SHALL be either "active" or "resolved" (CONF:3265-28693).</sch:assert>
+            <sch:assert id="a-3265-28150-error" test="@code">This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet QDM Diagnosis Status urn:oid:2.16.840.1.113762.1.4.1021.35 DYNAMIC (CONF:3265-28150).</sch:assert>
         </sch:rule>
         <sch:rule id="Diagnosis_concern_act_V2-effectiveTime-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.137'][@extension='2016-08-01']]/cda:effectiveTime">
             <sch:assert id="a-3265-28211-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:3265-28211). </sch:assert>

@@ -22,5 +22,8 @@
         <sch:rule id="Assessment_recommended-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.145']]/cda:code">
             <sch:assert id="a-3265-28679-error" test="@sdtc:valueSet">This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:3265-28679).</sch:assert>
         </sch:rule>
+        <sch:rule id="Assessment_recommended-methodCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.145']]/cda:methodCode">
+            <sch:assert id="a-3265-28700-error" test="@sdtc:valueSet">The methodCode, if present, SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:3265-28700).</sch:assert>
+        </sch:rule>
     </sch:pattern>
 </sch:schema>

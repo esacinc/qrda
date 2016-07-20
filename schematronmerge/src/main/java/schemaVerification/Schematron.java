@@ -34,10 +34,15 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import org.jdom2.*;
 
+// This calss is an encapsulation of a Schemetron file built atop the jdom2
+// representation of of XML documents (Document)
 
+// The representation  is a root hierarchy to  get the top call getRoot()
+//
 
 public class Schematron {
 
+	// Mark the Document associated with the Schematron reference
 	private Document document  = null;
 	private Element rootNode = null;
 
@@ -57,6 +62,8 @@ public class Schematron {
 		System.out.println();
 		 */
 	}
+	
+	// Return root of the tree of Eelements that is the internal representation of the Schmematron
 	public Element getRoot(){
 		return (rootNode) ;
 	}
@@ -79,6 +86,7 @@ public class Schematron {
 	// Construct representation for the merged file
 	public Hashtable<String,Element> makePatterns( ){
 
+		// Table used to record elements
 		Hashtable<String,Element> patternTable = new Hashtable<String,Element>();
 
 		List<Element> eList = rootNode.getChildren();
@@ -201,12 +209,13 @@ public class Schematron {
 				String phase = el.getAttribute("id").getValue();
 
 
+				// look at the errors declared in the schematron
 				if (phase.equals("errors")) {
 
 
 					List<Element> eListChildren = el.getChildren();
 
-
+					// loop over the children
 					for (int temp2 = 0; temp2 < eListChildren.size(); temp2++) { 
 						Element elP = eListChildren.get(temp2);
 

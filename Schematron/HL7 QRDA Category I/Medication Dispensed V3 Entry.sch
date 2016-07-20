@@ -26,7 +26,7 @@
 			<sch:assert id="a-2228-19440-error" test="count(cda:statusCode) = 1">
 				SHALL contain exactly one [1..1] statusCode (CONF:2228-19440).
 			</sch:assert>
-			<sch:assert id="a-2228-13856-error" test="count(cda:effectiveTime) = 1">
+			<sch:assert id="a-2228-13856-error" test="count(cda:effectiveTime[@xsi:type='IVL_TS']) = 1">
 				SHALL contain exactly one [1..1] effectiveTime (CONF:2228-13856).
 			</sch:assert>
 		</sch:rule>
@@ -36,7 +36,7 @@
 				This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-19441).
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Medication_Dispensed_V3-effectivetime-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2016-02-01']]/cda:effectiveTime">
+		<sch:rule id="Medication_Dispensed_V3-effectivetime-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2016-02-01']]/cda:effectiveTime[@xsi:type='IVL_TS']">
 			<sch:assert id="a-2228-28555-error" test="count(cda:low) = 1">
 				This effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-28555).
 			</sch:assert>

@@ -15,33 +15,16 @@ public class EProperties extends Properties{
 
 
 	
-	public static void main(String [] args) {
-		String fileName = "/Users/shonvick/Documents/projects/mavenizedSchematron/qrda/schematronmerge/src/main/java/schemaVerification/test.properties";
-
-		try {
-
-			File file = new File(fileName);
-			FileInputStream fileInput = new FileInputStream(file);
-
-			EProperties properties = new EProperties();
-			properties.load(fileInput);
-			properties.substituteVars();
-			System.out.println(properties);
-
-			fileInput.close();
-
-
-		} catch (Exception e) {
-			System.err.println("Could not load property file " + fileName);
-			e.printStackTrace();
-		} 	
-	
-	}
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	
 	public  EProperties () {
 
 	}
+	
 	public synchronized void load(InputStream inStream) throws IOException{
 		super.load( inStream);
 		getGlobalVars();

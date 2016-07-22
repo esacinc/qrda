@@ -67,7 +67,8 @@ public class MergeConfigure {
 			"HL7 QRDA Category III STU 1.1.properties",
 			"EP CMS 2017 QRDA Category I.properties",
 			"EP CMS 2017 QRDA Category III.properties",
-			"EH CMS 2017 QRDA Category I.properties"
+			"EH CMS 2017 QRDA Category I.properties",
+			"HL7 QRDA Category I STU 4.properties"
 			};
 
 	private static String MergedFileNameKeyword = "MergedFileName";

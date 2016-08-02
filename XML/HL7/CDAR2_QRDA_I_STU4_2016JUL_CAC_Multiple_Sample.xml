@@ -55,11 +55,11 @@
         <birthTime value="20020201" />
         <maritalStatusCode code="M" displayName="Married" codeSystem="2.16.840.1.113883.5.2"
           codeSystemName="MaritalStatusCode" />
-        <religiousAffiliationCode code="1013" codeSystem="2.16.840.1.113883.1.11.19185"
+        <religiousAffiliationCode code="1013" codeSystem="2.16.840.1.113883.5.1076"
           codeSystemName="HL7 Religious Affiliation "
           displayName="Christian (non-Catholic, non-specific)" />
-        <raceCode code="2106-3" codeSystem="2.16.840.1.114222.4.11.836" displayName="White" />
-        <ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.114222.4.11.837" displayName="Not Hispanic or Latino" />
+        <raceCode code="2106-3" codeSystem="2.16.840.1.113883.6.238" displayName="White" />
+        <ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.113883.6.238" displayName="Not Hispanic or Latino" />
         <languageCommunication>
           <languageCode code="eng" />
           <!-- "eng" is ISO 639-2 alpha-3 code for "English" -->

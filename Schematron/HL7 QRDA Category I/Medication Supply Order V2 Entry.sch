@@ -33,8 +33,8 @@
 				SHALL contain exactly one [1..1] statusCode (CONF:1098-7432).
 			</sch:assert>
 		</sch:rule>
-		<sch:rule id="Medication_Supply_Order_V2-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.17'][@extension='2014-06-09']]/cda:statusCode">
-			<sch:assert id="a-1098-32362-error" test="@code">
+		<sch:rule id="Medication_Supply_Order_V2-statusCode-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.17'][@extension='2014-06-09']]/cda:statusCode">
+			<sch:assert id="a-1098-32362-error" test="count(@code)=1">
 				This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet ActStatus urn:oid:2.16.840.1.113883.1.11.159331 DYNAMIC (CONF:1098-32362).			
 			</sch:assert>
 		</sch:rule>
@@ -53,7 +53,7 @@
 	</sch:pattern>
 
 	<sch:pattern id="Medication_Supply_Order_V2-pattern-warnings">
-		<sch:rule id="Medication_Supply_Order_V2-effectiveTime-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.17'][@extension='2014-06-09']]">
+		<sch:rule id="Medication_Supply_Order_V2-effectiveTime-warnings" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.17'][@extension='2014-06-09']]">
 			<sch:assert id="a-1098-15143-warning" test="count(cda:effectiveTime[count(cda:high)=1]) = 1">
 				SHOULD contain zero or one [0..1] effectiveTime (CONF:1098-15143) such that it
 					SHALL contain exactly one [1..1] high (CONF:1098-15144).

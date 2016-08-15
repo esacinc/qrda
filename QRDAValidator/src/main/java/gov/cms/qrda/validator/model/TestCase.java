@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 */
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -45,8 +46,12 @@ import java.util.ArrayList;
  * @author dandonahue
  *
  */
-public class TestCase extends FileSpec {
+public class TestCase extends FileSpec implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5617969005045363136L;
 	private String schematronFilename = null;           // The filename of the schematron to use to validate this test file.
 	private String validationReportFilename = null;     // The filename of the validation report generated during the validation process
 	private String validationReportPath = null;         // The full canonical path to the report file on the server's filespace.

@@ -36,6 +36,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -53,6 +55,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import gov.cms.qrda.validator.model.FileSpec;
 import gov.cms.qrda.validator.model.TestCase;
+import gov.cms.qrda.validator.model.ValidationSuite;
 import gov.cms.qrda.validator.xml.QRDA_URIResolver;
 
 /**
@@ -68,8 +71,6 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
 public class FileServiceImpl implements FileService {
 	private static final Logger logger = LoggerFactory.getLogger(FileServiceImpl.class);
 	
-	private static QRDA_URIResolver uriResolver = new QRDA_URIResolver();
-
 	//////////  METHODS FOR RETRIEVING PROPERTIES FROM SYSTEM PROPERTIES FILES ////////////////////////////
     //
     //   Contains methods for reading files from a directory on the classpath (internal to the .war file)
@@ -80,6 +81,7 @@ public class FileServiceImpl implements FileService {
 	/**
 	 * @see gov.cms.qrda.validator.web.service.FileService.loadProperties
 	 */
+	@Override
 	public Properties loadProperties(String propertiesFilename) {
 		Properties props = new Properties();
 		InputStream propsIn = this.getClass().getClassLoader().getResourceAsStream(propertiesFilename);
@@ -101,6 +103,7 @@ public class FileServiceImpl implements FileService {
 	/**
 	 * @see gov.cms.qrda.validator.web.service.FileService.getProperty
 	 */
+	@Override
 	public String getProperty(String propertiesFilename, String key, String defaultVal) {
 	        try {
 	            Properties props = loadProperties(propertiesFilename);
@@ -126,6 +129,7 @@ public class FileServiceImpl implements FileService {
 	/**
 	 * @see gov.cms.qrda.validator.web.service.FileService.getProperty
 	 */
+	@Override
 	public Integer getProperty(String propertiesFilename, String key, Integer defaultVal) {
         try {
             Properties props = loadProperties(propertiesFilename);
@@ -151,19 +155,10 @@ public class FileServiceImpl implements FileService {
     ////////////////////////////// EXTERNAL FILES - LOCATED OUTSIDE THE SERVER CONTEXT //////////////////////////////////////////////////
 
 	/**
-	 *  @see gov.cms.qrda.validator.web.service.FileService.getURIResolver
-	 *  @return QRDA_URIResolver object. 
-	 */
-	public QRDA_URIResolver getURIResolver() {
-		if (uriResolver == null) {
-			uriResolver = new QRDA_URIResolver();
-		}
-		return uriResolver;
-	}
-	/**
 	 * @see gov.cms.qrda.validator.web.service.FileService.loadPropertiesExt
 	 * @return The properties file
 	 */
+	@Override
 	public Properties loadPropertiesExt(String filename) {
 		Properties props = null;
 		try {
@@ -191,6 +186,7 @@ public class FileServiceImpl implements FileService {
 	/**
 	 * @see gov.cms.qrda.validator.web.service.FileService.openExtFileForReading
 	 */
+	@Override
 	public FileInputStream openExtFileForReading(String baseDir, String subDir, String filename) {
 		try {  
 		    File fileDirectory = fileRepository(baseDir,subDir); // Returns the directory where the file should be found
@@ -208,6 +204,7 @@ public class FileServiceImpl implements FileService {
 	/**
 	 * @see gov.cms.qrda.validator.web.service.FileService.openExtFileForWriting
 	 */
+	@Override
 	public FileOutputStream openExtFileForWriting(String baseDir, String subDir, String filename) {
 		try {  
 		    File fileDirectory = fileRepository(baseDir, subDir); // Returns the directory where the file should be written
@@ -228,13 +225,14 @@ public class FileServiceImpl implements FileService {
 	 * 
 	 */
 
+	@Override
 	public String readExtFileUnparsed (String baseDir, String subDir, String filename) {
 		try {  
 		    File fileDirectory = fileRepository(baseDir,subDir); // Returns the directory where the file should be found
 		    File file = new File(fileDirectory, filename);
 		    String str = null;
 		    if(!file.exists()) {
-		    	str =  "Cannont find File " + file.getAbsolutePath();
+		    	str =  "237: Cannont find File " + file.getAbsolutePath();
 		    	logger.error(str);
 		    }
 		    else {
@@ -251,12 +249,13 @@ public class FileServiceImpl implements FileService {
 	/**
 	 * @see gov.cms.qrda.validator.web.service.FileService.readExtFileUnparsed
 	 */
+	@Override
 	public String readExtFileUnparsed (String absolutePath) {
 		try {  
 		    File file = new File(absolutePath);
 		    String str = null;
 		    if(!file.exists()) {
-		    	str =  "Cannont find File " + file.getAbsolutePath();
+		    	str =  "259: Cannont find File " + file.getAbsolutePath();
 		    	logger.error(str);
 		    }
 		    else {
@@ -273,17 +272,18 @@ public class FileServiceImpl implements FileService {
 	/**
 	 * @see gov.cms.qrda.validator.web.service.FileService.getExtRepositoryFiles
 	 */
-	public ArrayList<FileSpec> getExtRepositoryFiles(String baseDir, String subDir) {
-		logger.debug("Get repository files: " + baseDir + ", " + subDir) ;
+	@Override
+	public ArrayList<FileSpec> getExtRepositoryFiles(String baseDir, String subDir, String contains) {
+		logger.info(String.format("Get repository files in: %s, subdir: %s %s",baseDir ,subDir,((contains == null)?"":" with name containing: " + contains))) ;
 	    File fileDirectory = fileRepository(baseDir,subDir); // Returns the directory to search
 	    File[] listOfFiles = fileDirectory.listFiles();      // Returns the array of file objects found in the directory
-	    logger.debug("    " + ((listOfFiles == null)?"No":listOfFiles.length) + " files found");
+	    logger.info("    " + ((listOfFiles == null)?"No":listOfFiles.length) + " total files found");
 	    ArrayList<String> filenames = new ArrayList<String>();
 	    ArrayList<FileSpec> fileSpecs = new ArrayList<FileSpec>();
 	    // For each file, create a FileSpec object...
 	    if (listOfFiles != null) {
 	        for (int i = 0; i < listOfFiles.length; i++) {
-	          if (listOfFiles[i].isFile()) {
+	          if (listOfFiles[i].isFile() && (contains == null || listOfFiles[i].getName().toLowerCase().contains(contains.toLowerCase()))) {
 	        	  File thisFile = listOfFiles[i];
 	           	  filenames.add(thisFile.getName());
 	           	  FileSpec fs = new FileSpec();
@@ -294,12 +294,14 @@ public class FileServiceImpl implements FileService {
 	          }
 	        }
 	    }
+	    logger.info("    " + fileSpecs.size() + " collected");
         return fileSpecs;
 	}
 
 	/**
 	 * @see gov.cms.qrda.validator.web.service.FileService.createTestCases
 	 */
+	@Override
 	public List<TestCase> createTestCases(String schematronFilename, String schematronType, List<String>testFilenames, String filenamePostFix) {
 		ArrayList<TestCase> cases = new ArrayList<TestCase>();
 		for (String name : testFilenames) {
@@ -313,6 +315,7 @@ public class FileServiceImpl implements FileService {
 	/**
 	 * @see gov.cms.qrda.validator.web.service.FileService.createResultsDir
 	 */
+	@Override
 	public boolean createResultsDir(String dirname) {
 		File results = fileRepository(QRDA_URIResolver.REPOSITORY_RESULTS, dirname);
 		if (!results.exists()) {
@@ -337,7 +340,7 @@ public class FileServiceImpl implements FileService {
 		
         if (file != null && !file.isEmpty()) {
             try {
-        		logger.info(String.format("Original name: %s, My name: %s, base: %s, subdir: %s", file.getOriginalFilename(), name, base, subdir));
+        		logger.info(String.format("UPLOAD FILE: Original name: %s, My name: %s, base: %s, subdir: %s", file.getOriginalFilename(), name, base, subdir));
         		if (name == null || name.isEmpty()) {
         			name = file.getOriginalFilename();
         		}
@@ -352,11 +355,11 @@ public class FileServiceImpl implements FileService {
                 stream.write(bytes);
                 stream.close();
  
-                logger.info("Server File Location=" + serverFile.getAbsolutePath());
+                logger.info("   Server File Location=" + serverFile.getAbsolutePath());
                 result = true;
-                logger.info("File successfully uploaded file:" + name);
+                logger.info("   File successfully uploaded file:" + name);
             } catch (Exception e) {
-                logger.error("Failed to upload " + name,e);
+                logger.error("   Failed to upload " + name,e);
             }
         } else {
            logger.error("Failed to upload empty or null file: " + file);
@@ -367,6 +370,7 @@ public class FileServiceImpl implements FileService {
 	/**
 	 * @see gov.cms.qrda.validator.web.service.FileService.deleteFile
 	 */
+	@Override
 	public boolean deleteFile(String filename, String base, String subdir) {
 		boolean result = false;
 		File fileDirectory = fileRepository(base, subdir);
@@ -383,6 +387,7 @@ public class FileServiceImpl implements FileService {
 	/**
 	 * @see gov.cms.qrda.validator.web.service.FileService.getAbsolutePath
 	 */
+	@Override
 	public String getAbsolutePath(String filename, String base, String subdir) {
 		File fileDir = fileRepository(base,subdir);
 		File file = new File(fileDir,filename);
@@ -397,6 +402,7 @@ public class FileServiceImpl implements FileService {
 	 * @see gov.cms.qrda.validator.web.service.FileService.findExpectedErrorText
 	 * 
 	 */
+	@Override
 	public void findExpectedErrorText(File file, FileSpec spec) {
 		final Integer MAXLINE = 100; // Search only the first 100 lines.
 		try {
@@ -434,12 +440,64 @@ public class FileServiceImpl implements FileService {
 		}
 	}
 
+	/**
+	 * @see gov.cms.qrda.validator.web.service.FileService.renameCategoryDirectories
+	 */
+	@Override
+	public void renameCategoryDirectories(String currName, String newName) {
+		renameDirectory(QRDA_URIResolver.REPOSITORY_ISO,currName,newName);
+		renameDirectory(QRDA_URIResolver.REPOSITORY_SCHEMATRONS,currName,newName);
+		renameDirectory(QRDA_URIResolver.REPOSITORY_TESTFILES,currName,newName);
+		renameDirectory(QRDA_URIResolver.REPOSITORY_RESULTS,currName,newName);
+	}
+
+	/**
+	 * @see gov.cms.qrda.validator.web.service.FileService.createCategoryDirectories
+	 */
+	@Override
+	public void createCategoryDirectories(String newName) {
+		createDirectory(QRDA_URIResolver.REPOSITORY_ISO,newName);
+		createDirectory(QRDA_URIResolver.REPOSITORY_SCHEMATRONS,newName);
+		createDirectory(QRDA_URIResolver.REPOSITORY_TESTFILES,newName);
+		createDirectory(QRDA_URIResolver.REPOSITORY_RESULTS,newName);
+	}
+
+	/**
+	 * @see gov.cms.qrda.validator.web.service.FileService.deleteCategoryDirectories
+	 */
+	@Override
+	public boolean deleteCategoryDirectories(String catName) {
+		boolean ok = true;
+		ok = deleteDirectory(QRDA_URIResolver.REPOSITORY_ISO,catName)
+		     & deleteDirectory(QRDA_URIResolver.REPOSITORY_SCHEMATRONS,catName)
+		     & deleteDirectory(QRDA_URIResolver.REPOSITORY_TESTFILES,catName)
+		     & deleteDirectory(QRDA_URIResolver.REPOSITORY_RESULTS,catName);
+		return ok;
+	}
+	
+	/**
+	 * @see gov.cms.qrda.validator.web.service.FileService.copyIsoFiles
+	 */
+	@Override
+	public boolean copyIsoFiles(String newName) {
+		boolean ok = true;
+		File source = fileRepository(QRDA_URIResolver.REPOSITORY_ISO,"originalDONOTDELETE");
+		File dest = fileRepository(QRDA_URIResolver.REPOSITORY_ISO,newName);
+		try {
+		    FileUtils.copyDirectory(source, dest);
+		} catch (IOException e) {
+		    logger.error("Error copying original ISO files from " + source.getAbsolutePath() + " to " + dest.getAbsolutePath());
+		    ok = false;
+		}
+		return ok;
+	}
+	
 ////////////////////////////// PRIVATE/PROTECTED METHODS //////////////////////////////////////////////////
 	
 	// Returns the file object (directory) for QRDA_HOME/qrda/<baseDir>/<subDir> where QRDA_HOME is defined by 
 	// the QRDAURIResolver class.
 	protected File fileRepository(String baseDir, String subDir) {
-		String propertyHome = uriResolver.getQrdaHome(); 
+		String propertyHome = QRDA_URIResolver.QRDA_HOME;
 		if (subDir != null && !subDir.isEmpty()) {
 			baseDir = baseDir + File.separator + subDir;
 		}
@@ -448,6 +506,42 @@ public class FileServiceImpl implements FileService {
 	    
 	    return fileDirectory;
 	}
+
+	// Renames a directory under the subDir category folder in the baseDir directory.
+	private File renameDirectory(String baseDir, String subDir, String newSubDir) {
+		File dir = fileRepository(baseDir,subDir);
+		if (dir != null && dir.isDirectory()) {
+			File newDir = fileRepository(baseDir,newSubDir);
+			logger.info("Renaming " + dir.getAbsolutePath() + " to " + newDir.getAbsolutePath());
+			dir.renameTo(newDir);
+		}
+		return dir;
+	}
+
+	// Creates a directory under the subDir category folder in the baseDir directory.
+	private File createDirectory(String baseDir, String newSubDir) {
+		File newDir = fileRepository(baseDir,newSubDir);
+		logger.info("Creating " + newDir.getAbsolutePath());
+		newDir.mkdir();
+		return newDir;
+	}
+
+	// Removes a category directory and its contents under the basedir folder.
+	private boolean deleteDirectory(String baseDir, String dirName) {
+		boolean ok = true;
+		File dir = fileRepository(baseDir,dirName);
+		if (dir.isDirectory()) {
+			try {
+				FileUtils.deleteDirectory(dir);
+			}
+			catch (Exception e) {
+				logger.error("Error removing directory " + dir.getAbsolutePath(), e);
+				ok = false;
+			}
+		}
+		return ok;
+	}
+
 
 	// Initializes a FileSpec object using information from the given file and dir values.
 	// baseDir is the immediate child directory under the QRDA_HOME directory where the file is located. One of "schematrons", "testFiles", "result", "isofiles" or "properties".
@@ -495,5 +589,70 @@ public class FileServiceImpl implements FileService {
 		this.initFileSpec(tc, file, QRDA_URIResolver.REPOSITORY_TESTFILES,schematronType); // Initializes the FileSpec part of the TestCase object (TestCase derives from Filespec)
 		return tc;
 	}
+	
+	// Seriallizes a validation suite object to a file indicated by the object's "mySavedFilename" value, if present.
+	@Override
+	public void writeTestSuite(ValidationSuite vs) {
+	    try {
+		    if (vs == null || vs.getMySavedFilename().trim().isEmpty()) {
+		    	logger.error("Error writing validation suite. Provided suite is null, or suite's saved filename is empty");
+		    }
+		    else {
+				FileOutputStream str = openExtFileForWriting(QRDA_URIResolver.REPOSITORY_RESULTS, vs.getSchematronType(), vs.getMySavedFilename());
+				ObjectOutputStream oout = new ObjectOutputStream(str);
+				oout.writeObject(vs);
+				oout.close();
+		    }
+		}
+		catch (Exception e) {
+			logger.error("Error writing validation suite object to file: " + vs.getMySavedFilename(),e);
+		}
+	}
+	
+	// Reads in a validation suite object that has been output to a file.
+    @Override
+	public ValidationSuite readTestSuite(String subDir, String filename) {
+    	ValidationSuite newVs = null;
+    	try {
+			FileInputStream str = openExtFileForReading(QRDA_URIResolver.REPOSITORY_RESULTS, subDir, filename);
+			ObjectInputStream oin = new ObjectInputStream(str);
+			newVs = (ValidationSuite)oin.readObject();
+			oin.close();
+    	}
+	    catch (Exception e) {
+			logger.error("Error reading validation suite from file: " + filename,e);
+			return null;
+		}
+    	return newVs;
+    }
 
+    // Returns true if any validation suite (aka history file) has been written.
+    @Override
+	public boolean existHistoryFiles() {
+    	return existHistoryFiles(this.fileRepository(QRDA_URIResolver.REPOSITORY_RESULTS,null));
+    }
+    
+    // Look in the results repository for the existence of any history file (validation suite file). Return true as 
+    // soon as one is encountered.
+    private boolean existHistoryFiles(File directory) {
+	    File[] listOfFiles = directory.listFiles();      // Returns the array of file objects found in the directory
+	    boolean res = false;
+	    for (File file : directory.listFiles()) {
+	          if (file.isFile() && file.getName().endsWith(".vs")) {
+	              res = true;
+	              break;
+	          }
+	          // Only look in the subdirectories where validation suite files (history files) are written...
+	          if (file.isDirectory() && (file.getName().equalsIgnoreCase("HL7") 
+	        		                     || file.getName().equalsIgnoreCase("HQR") 
+	        		                     || file.getName().equalsIgnoreCase("CEC")
+	        		                     || file.getName().equalsIgnoreCase("PQRS"))) {
+	              res=  existHistoryFiles(file);
+	              if (res) { 
+	            	  break;
+	              }
+	          }
+	      }
+	      return res;
+    }
 }

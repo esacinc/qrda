@@ -27,7 +27,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
  --%>
  
- 	<%-- Styles and Script to be included in the TestFile Inventory page --%>   
+ 	<%-- Styles and Script to be included in the Vocabulary Files page --%>   
  
  	<style> 
 		 #xmlDisplayDiv { color: #000000; background-color: #dddddd;overflow-y:scroll;overflow-x:scroll; width:100%;
@@ -35,14 +35,20 @@ POSSIBILITY OF SUCH DAMAGE.
 		.searchtext {    background-color:#FF9;    color:#555;	}
 	</style>
    
-   <c:set var="getXMLFilePath"><c:url value='/testFiles/getXML'/></c:set>
-    <c:set var="uploadFileURL"><c:url value='/testFiles/upload/'/></c:set>
-    <c:set var="removeFileURL"><c:url value='/testFiles/remove/'/></c:set>
+   <c:set var="getXMLFilePath"><c:url value='/vocabularyFiles/getXML'/></c:set>
+    <c:set var="uploadFileURL"><c:url value='/vocabularyFiles/upload/'/></c:set>
+    <c:set var="removeFileURL"><c:url value='/vocabularyFiles/remove/'/></c:set>
    <c:set var="saveAsPlaceholder"><fmt:message key="global.placeholder.saveAs"/></c:set>
-   <c:set var="downloadIcon">onClick='javascript:return false;' data-toggle='popover' title='<fmt:message key="inventory.testFile.button.downloadTitle"/>' data-content='<fmt:message key="inventory.testFile.button.downloadInstr"/>' ><span class='glyphicon glyphicon-download'></span></a></c:set>
+   
+   <c:set var="HL7Name"><fmt:message key="global.nav.hl7"/></c:set>
+   <c:set var="CECName"><fmt:message key="global.nav.cec"/></c:set>
+   <c:set var="HQRName"><fmt:message key="global.nav.hqr"/></c:set>
+   <c:set var="PQRSName"><fmt:message key="global.nav.pqrs"/></c:set>
+   
+   <c:set var="downloadIcon">onClick='javascript:return false;' data-toggle='popover' title='<fmt:message key="inventory.vocFile.button.downloadTitle"/>' data-content='<fmt:message key="inventory.vocFile.button.downloadInstr"/>' ><span class='glyphicon glyphicon-download'></span></a></c:set>
    <script>
    
-   	   var HL7Base = "HL7"; 
+	   var HL7Base = "HL7"; 
    	   var CECBase = "CEC"; 
    	   var HQRBase = "HQR"; 
    	   var PQRSBase = "PQRS"; 
@@ -50,7 +56,7 @@ POSSIBILITY OF SUCH DAMAGE.
    	   var shownFileDir = "";
    	   
 	   $(document).ready(function(){
-	    	 $("#navTests").addClass("active"); 
+	    	 $("#navVoc").addClass("active"); 
 	    	 $("#xmlControlBar").hide();
 	    	 $("#btnDelete").click( function () {
 	    		 if (confirm("Are you sure you want to remove " + shownFile + " from the system?")) {
@@ -69,6 +75,7 @@ POSSIBILITY OF SUCH DAMAGE.
 	   // Called when user clicks on a test file filename - displays the xml contents of the selected file in the xmlDisplayDiv
 	   function ajaxShowXMLFile(type, typeTitle, filename, fullPath) {
 		   waitOn();
+		   //alert(type + ", " + filename + ", " + fullPath);
 	 	    $.ajax({  
     	     type : "Get", 
     	     dataType: "text",
@@ -77,8 +84,7 @@ POSSIBILITY OF SUCH DAMAGE.
     	    	displayXMLString(response,'xmlDisplayDiv');
     	    	$("#xmlControlBar").show();
     	    	// Download icon must be enabled as a popover in order to override the left click properly
-     			$('#xmlTitle span').html("<span class='text-primary'>" + typeTitle + ":</span> " + filename + " <a href='" + fullPath +"' ${downloadIcon}");
-
+    			$('#xmlTitle span').html("<span class='text-primary'>"+ typeTitle + ":</span> " + filename + "</span> <a href='" + fullPath +"' ${downloadIcon}");
      			$('[data-toggle="popover"]').popover();
    				shownFile = filename;
     			shownFileDir = type;

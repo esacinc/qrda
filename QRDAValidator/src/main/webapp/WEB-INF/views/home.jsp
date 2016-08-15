@@ -49,10 +49,13 @@ POSSIBILITY OF SUCH DAMAGE.
 		    		<li><a href="javascript:handleIntroClick('introIntro')"><h4><fmt:message key="introMenuIntro"/><small><span class="glyphicon glyphicon-triangle-right"></span></small></h4></a></li>
 		    		<li><a href="javascript:handleIntroClick('introSchematrons')"><h4><fmt:message key="introMenuSchematrons"/><small><span class="glyphicon glyphicon-triangle-right"></span></small></h4></a></li>
 		    		<li><a href="javascript:handleIntroClick('introTestFiles')" ><h4><fmt:message key="introMenuTestFiles"/><small><span class="glyphicon glyphicon-triangle-right"></span></small></h4></a></li>
+		    		<li><a href="javascript:handleIntroClick('introVocFiles')" ><h4><fmt:message key="introMenuVocFiles"/><small><span class="glyphicon glyphicon-triangle-right"></span></small></h4></a></li>
 		    		<li><a href="javascript:handleIntroClick('introWorkbench')" ><h4><fmt:message key="introMenuWorkbench"/><small><span class="glyphicon glyphicon-triangle-right"></span></small></h4></a></li>
+		    		<li><a href="javascript:handleIntroClick('introHistoryFiles')" ><h4><fmt:message key="introMenuHistoryFiles"/><small><span class="glyphicon glyphicon-triangle-right"></span></small></h4></a></li>
 		    		<li><a href="javascript:handleIntroClick('introTechNotes')" ><h4><fmt:message key="introMenuTechNotes"/><small><span class="glyphicon glyphicon-triangle-right"></span></small></h4></a></li>
 		    		
 		    	</ul>
+		    	<br/>
 		    </div>
 		    <div class="col-sm-9" style="height:100%;;overflow-vertical:auto;">
 		         <div id="displayDiv" class="container-fluid" >
@@ -60,12 +63,15 @@ POSSIBILITY OF SUCH DAMAGE.
 		         <div id="introIntro" ><h4><fmt:message key="intro.title.intro"/></h4><fmt:message key="intro.text" /><p><fmt:message key="intro.descriptions.intro"/></p></div>
 		         <div id="introSchematrons"><h4><fmt:message key="intro.title.schematrons"/></h4><fmt:message key="intro.descriptions.schematrons"/></div>
 		         <div id="introTestFiles" ><h4><fmt:message key="intro.title.testfiles"/></h4><fmt:message key="intro.descriptions.testfiles"/></div>
+		         <div id="introVocFiles" ><h4><fmt:message key="intro.title.vocfiles"/></h4><fmt:message key="intro.descriptions.vocfiles"/></div>
 		         <div id="introWorkbench"><h4><fmt:message key="intro.title.workbench"/></h4><fmt:message key="intro.descriptions.workbench"/></div>
+		         <div id="introHistoryFiles" ><h4><fmt:message key="intro.title.historyfiles"/></h4><fmt:message key="intro.descriptions.historyfiles"/></div>
 		         <div id="introTechNotes" ><h4><fmt:message key="intro.title.technotes"/></h4><fmt:message key="intro.descriptions.technotes"/></div>
 		         </div>
 		    </div>
 		</div>
-	</div>
-	<%@ include file="includes/footer.jsp" %>    
+	<%@ include file="includes/footer.jsp" %>  
+</div>
+	  
 </body>
 </html>

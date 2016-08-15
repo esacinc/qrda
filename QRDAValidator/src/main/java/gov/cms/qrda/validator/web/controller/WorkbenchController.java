@@ -31,6 +31,8 @@ POSSIBILITY OF SUCH DAMAGE.
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
@@ -46,11 +48,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import gov.cms.qrda.validator.model.SchematronCategory;
 import gov.cms.qrda.validator.model.FileSpec;
 import gov.cms.qrda.validator.model.TestCase;
 import gov.cms.qrda.validator.model.ValidationSuite;
+import gov.cms.qrda.validator.web.form.UploadFileForm;
 import gov.cms.qrda.validator.web.form.ValidationSubmissionForm;
 import gov.cms.qrda.validator.web.service.CommonUtilsImpl;
+import gov.cms.qrda.validator.web.service.SchematronCategoryService;
 import gov.cms.qrda.validator.web.service.FileService;
 import gov.cms.qrda.validator.web.service.ValidationService;
 import gov.cms.qrda.validator.xml.QRDA_URIResolver;
@@ -70,7 +75,10 @@ public class WorkbenchController extends CommonUtilsImpl {
 	
 	@Autowired
 	ValidationService validator;
-	
+
+	@Autowired
+	public SchematronCategoryService categoryService;
+
 	/**
 	 * Default mapping for the workbench UI. Collects all the file specifications for both the schematron and
 	 * the test files stored in the QRDA file repository residing in QRDA_HOME/qrda file space.
@@ -79,62 +87,44 @@ public class WorkbenchController extends CommonUtilsImpl {
 	@RequestMapping(method = RequestMethod.GET)
 	public String workbench(Locale locale, Model model, HttpSession session) {
 		logger.info("VALIDATION WORKBENCH");
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
+
 		ArrayList<String> res = new ArrayList<String>();
 		res.add("report.svrlt");
 		res.add("reports.svrlt");
 		model.addAttribute("resultFiles",res);
 
-		model.addAttribute("serverTime", formattedDate );
-		ArrayList<FileSpec> cecs = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_SCHEMATRONS,QRDA_URIResolver.REPOSITORY_TYPE_CEC);
-		model.addAttribute("cecList",cecs);
-		
-		ArrayList<FileSpec> hl7s = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_SCHEMATRONS,QRDA_URIResolver.REPOSITORY_TYPE_HL7);
-		model.addAttribute("hl7List",hl7s);
+		// Load the directory specs from disc to be sure we are up to date on categories.
+		List<SchematronCategory> dirSpecs =  categoryService.loadOrBuild();
+		model.addAttribute(SchematronCategoryService.SCHEMATRON_CATEGORY, dirSpecs);
 
-		ArrayList<FileSpec> hqrs = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_SCHEMATRONS,QRDA_URIResolver.REPOSITORY_TYPE_HQR);
-		model.addAttribute("hqrList",hqrs);
+		// For each type of schematron we support (mapping one-to-one to the list of directory specs), gather the 
+		// proper schematron files from each subdirectory and set the directory spec's file list to that list. Also get
+		// the corresponding test files for the test file subdirectory for each type.
+		for (SchematronCategory dir : dirSpecs) {
+			if (dir.isActive()) {
+				String subDir = dir.getName();
+				logger.info("Getting files for subdir " + subDir);
 
-		
-		ArrayList<FileSpec> pqrs = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_SCHEMATRONS,QRDA_URIResolver.REPOSITORY_TYPE_PQRS);
-		model.addAttribute("pqrsList",pqrs);
+				ArrayList<FileSpec> schFiles = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_SCHEMATRONS,subDir, null);
+				dir.setFiles(schFiles);
+				model.addAttribute(subDir+"List",schFiles);
 
-		ArrayList<FileSpec> hl7ts = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_TESTFILES,QRDA_URIResolver.REPOSITORY_TYPE_HL7);
-		ArrayList<String> hl7tests = new ArrayList<String>();
-		for (FileSpec fs : hl7ts) {
-			hl7tests.add(fs.getFilename());
+				ArrayList<FileSpec> testFiles = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_TESTFILES,subDir, null);
+				dir.setFilesSec(testFiles);
+				model.addAttribute(subDir+"Tests",testFiles);
+
+			}
 		}
-		model.addAttribute("hl7Tests",hl7tests);
 		
-		ArrayList<FileSpec> cects = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_TESTFILES,QRDA_URIResolver.REPOSITORY_TYPE_CEC);
-		ArrayList<String> cectests = new ArrayList<String>();
-		for (FileSpec fs : cects) {
-			cectests.add(fs.getFilename());
-		}
-		model.addAttribute("cecTests",cectests);
-
-		ArrayList<FileSpec> hqrts = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_TESTFILES,QRDA_URIResolver.REPOSITORY_TYPE_HQR);
-		ArrayList<String> hqrtests = new ArrayList<String>();
-		for (FileSpec fs : hqrts) {
-			hqrtests.add(fs.getFilename());
-		}
-		model.addAttribute("hqrTests",hqrtests);
+		ValidationSubmissionForm form = new ValidationSubmissionForm();
+		// Grab the test name from the session, if there is one.
+		form.setName((session.getAttribute("testName") == null)? ValidationSubmissionForm.DEFAULT_NAME:(String)session.getAttribute("testName"));
+		model.addAttribute("validationSubmissionForm", form);
 		
-		ArrayList<FileSpec> pqrts = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_TESTFILES,QRDA_URIResolver.REPOSITORY_TYPE_PQRS);
-		ArrayList<String> pqrtests = new ArrayList<String>();
-		for (FileSpec fs : pqrts) {
-			pqrtests.add(fs.getFilename());
+		// Older versions of app can't handle history files, so determine if we should show the history tab or not.
+		if (fileService.existHistoryFiles()) {
+			model.addAttribute("showHistory",true);
 		}
-		model.addAttribute("pqrsTests",pqrtests);
-
-		model.addAttribute("validationSubmissionForm", new ValidationSubmissionForm());
-		
 		return "validationWorkbench";
 	}
 	
@@ -163,6 +153,8 @@ public class WorkbenchController extends CommonUtilsImpl {
 		if (theForm.getName().isEmpty()) {
 			theForm.setName(ValidationSubmissionForm.DEFAULT_NAME);
 		}
+		session.setAttribute("testName", theForm.getName()); // Preserve the test name from run to run.
+		session.setAttribute("filter", theForm.getName()); // By default, filter history by this test name
 		for (int i=0 ; i<theForm.getTestFilenames().length; i++) {
 			tests.add(theForm.getTestFilenames()[i]);
 		}
@@ -175,6 +167,28 @@ public class WorkbenchController extends CommonUtilsImpl {
 		return changeTestCase(-1, locale,model, session);
 	}
 
+	/**
+	 * Re-runs the validation tests contained in the Validation Suite object currently stored in the session.
+	 * Does nothing if no such object exists.
+	 * 
+	 * @param locale
+	 * @param model
+	 * @param session
+	 * @return workbench jsp page
+	 */
+	@RequestMapping(value = "rerun", method = RequestMethod.GET)
+	public String rerunTest (Locale locale, Model model, HttpSession session ) {
+		ValidationSuite vs = (ValidationSuite)session.getAttribute("validationResults");
+		if (vs != null) {
+			validator.resetValidationSuite(vs);
+			validator.runValidation(vs);
+			session.setAttribute("validationResults", vs);
+		}
+		else {
+			//response = "File " + filename + " not found in " + type + " history.";
+		}
+		return changeTestCase(-1, locale,model, session);
+	}
 	/**
 	 * This is called by AJAX from the workbench UI. It retrieves the contents of the given file (as specified by the
 	 * source - main directory, folder - subdirectory, and filename in the QRDA_HOME/qrda filespace) for display in a 

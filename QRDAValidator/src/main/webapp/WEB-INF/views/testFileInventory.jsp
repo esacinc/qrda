@@ -53,144 +53,46 @@ POSSIBILITY OF SUCH DAMAGE.
     <div class="col-sm-4 sidenav"  style="height:100%;overflow-y:auto;">
       <h4><fmt:message key="global.title.inventory.test"/></h4>
      <ul class="nav nav-pills nav-stacked">
-      <li class="nav nav-pills ">
-           <a data-toggle="collapse" href="#collapse1"><b><fmt:message key="global.nav.hl7"/></b> <span class="caret"></span></a>
-	       <div id="collapse1" class="panel-collapse collapse">
-	        <div class="panel-body bg-info">
-	        <div class="list-group">
-		        <c:forEach items="${hl7List}" var="item">
-		        	  <div style="text-align:right;padding-bottom:5px;" ><a  href="${removeFileURL }${item.filename}&HL7" onClick="return confirm('<fmt:message key="global.filedelete.confirm"/>');" ><span class="glyphicon glyphicon-remove text-danger" ></span></a></div>
-				      <div style="overflow-x:auto">
-					      <a href="javascript:void(0)" class="list-group-item" onclick="ajaxShowXMLFile(HL7Base,'${item.filename}','<c:url value="/${item.fileURL }"/>')">
-						      <span class="list-group-item-heading">${item.filename}</span>
-						      <p class="list-group-item-text"><fmt:message key="inventory.uploaded"/> ${item.uploadDate} 
-						      	<c:if test="${item.expectedErrors >=0 }"><br/><fmt:message key="inventory.expectedErrors"/> ${item.expectedErrors } </c:if>
-						      	<c:if test="${item.expectedWarnings >=0 }"><br/><fmt:message key="inventory.expectedWarnings"/> ${item.expectedWarnings } </c:if>
-						      </p>
-					    </a>
-				    </div>
-		        </c:forEach>
-			  </div>
-	        </div>
-	        <div class="panel-footer">
-	        	<h5><fmt:message key="global.placeholder.upload"/></h5>
-			    <div class="input-group">
-				      <form:form commandName="uploadHL7" method="POST" action="${uploadFileURL }" enctype="multipart/form-data">
+     	<c:forEach items="${schematronCategories}" var="cat">
+     	  <c:if test="${cat.active}" >
+	        <li class="nav nav-pills ">
+	           <a data-toggle="collapse" href="#collapse${cat.name}"><b>${cat.displayName}</b> <span class="caret"></span></a>
+		       <div id="collapse${cat.name}" class="panel-collapse collapse">
+		        <div class="panel-body bg-info">
+		        <div class="list-group">
+			        <c:forEach items="${cat.files}" var="item">
+					      <div style="text-align:right;padding-bottom:5px;" ><a  href="${removeFileURL }${item.filename}&${cat.name}" onClick="return confirm('<fmt:message key="global.filedelete.confirm"/>');" ><span class="glyphicon glyphicon-remove text-danger" ></span></a></div>
+					      <div style="overflow-x:auto">
+						      <a href="javascript:void(0)" class="list-group-item" onclick="ajaxShowXMLFile('${cat.name}','${cat.displayName}','${item.filename}','<c:url value="/${item.fileURL }"/>')">
+							      <span class="list-group-item-heading">${item.filename}</span>
+							      <p class="list-group-item-text"><fmt:message key="inventory.uploaded"/> ${item.uploadDate}
+							      	<c:if test="${item.expectedErrors >=0 }"><br/><fmt:message key="inventory.expectedErrors"/> ${item.expectedErrors } </c:if>
+							      	<c:if test="${item.expectedWarnings >=0 }"><br/><fmt:message key="inventory.expectedWarnings"/> ${item.expectedWarnings } </c:if>
+							      </p>
+						    </a>
+						  </div>
+			        </c:forEach>
+				  </div>
+		        </div>
+		        <div class="panel-footer">
+		        	<h5><fmt:message key="global.placeholder.upload"/></h5>
+				    <div class="input-group">
+				      <form:form commandName="upload${cat.name}" method="POST" action="${uploadFileURL }" enctype="multipart/form-data">
 				        <form:hidden path="subDir"/>
 	        			<form:input type="file" path="path" class="form-control"  /><br /> 
-	        			<fmt:message key="global.saveAs"/><form:input size='40' type="text" path="name" class="form-control" placeholder="${saveAsPlaceholder }" /> 
+	        			<form:input type="text" path="name" class="form-control" placeholder="${saveAsPlaceholder }" /> 
 	        		    <span class="input-group-btn">
 				          <button class="btn btn-primary" type="submit">
 				            <fmt:message key="global.button.upload"/><span class="glyphicon glyphicon-upload"></span>
 				          </button>
 				        </span>
 	   				 </form:form>
-			    </div>
-	        </div>
-	      </div>
-   	 </li>
-   	 <li class="nav nav-pills ">
-           <a data-toggle="collapse" href="#collapse2"><b><fmt:message key="global.nav.cec"/></b> <span class="caret"></span></a>
-	       <div id="collapse2" class="panel-collapse collapse">
-	        <div class="panel-body bg-info">
-	        <div class="list-group">
-		        <c:forEach items="${cecList}" var="item">
-				      <div style="text-align:right;padding-bottom:5px;" ><a  href="${removeFileURL }${item.filename}&CEC" onClick="return confirm('<fmt:message key="global.filedelete.confirm"/>');" ><span class="glyphicon glyphicon-remove text-danger" ></span></a></div>
-				      <div style="overflow-x:auto">
-					      <a href="javascript:void(0)" class="list-group-item" onclick="ajaxShowXMLFile(CECBase,'${item.filename}','<c:url value="/${item.fileURL }"/>')">
-						      <span class="list-group-item-heading">${item.filename}</span>
-						      <p class="list-group-item-text"><fmt:message key="inventory.uploaded"/> ${item.uploadDate}</p>
-					    </a>
-					  </div>
-		        </c:forEach>
-			  </div>
-	        </div>
-	        <div class="panel-footer">
-	        	<h5><fmt:message key="global.placeholder.upload"/></h5>
-			    <div class="input-group">
-			      <form:form commandName="uploadCEC" method="POST" action="${uploadFileURL }" enctype="multipart/form-data">
-			        <form:hidden path="subDir"/>
-        			<form:input type="file" path="path" class="form-control"  /><br /> 
-        			<form:input type="text" path="name" class="form-control" placeholder="${saveAsPlaceholder }" /> 
-        		    <span class="input-group-btn">
-			          <button class="btn btn-primary" type="submit">
-			            <fmt:message key="global.button.upload"/><span class="glyphicon glyphicon-upload"></span>
-			          </button>
-			        </span>
-   				 </form:form>
-		      </div>
-	        </div>
-	      </div>
-   	 </li>
-   	 
-   	 <li class="nav nav-pills ">
-           <a data-toggle="collapse" href="#collapse3"><b><fmt:message key="global.nav.hqr"/></b> <span class="caret"></span></a>
-	       <div id="collapse3" class="panel-collapse collapse">
-	        <div class="panel-body bg-info">
-	        <div class="list-group">
-		        <c:forEach items="${hqrList}" var="item">
-				      <div style="text-align:right;padding-bottom:5px;" ><a  href="${removeFileURL }${item.filename}&HQR" onClick="return confirm('<fmt:message key="global.filedelete.confirm"/>');" ><span class="glyphicon glyphicon-remove text-danger" ></span></a></div>
-				      <div style="overflow-x:auto">
-				      	<a href="javascript:void(0)" class="list-group-item" onclick="ajaxShowXMLFile(HQRBase,'${item.filename}','<c:url value="/${item.fileURL }"/>')">
-					      <span class="list-group-item-heading">${item.filename}</span>
-					      <p class="list-group-item-text"><fmt:message key="inventory.uploaded"/> ${item.uploadDate}</p>
-				    	</a>
-				    </div>
-		        </c:forEach>
-			  </div>
-	        </div>
-	        <div class="panel-footer">
-	        	<h5><fmt:message key="global.placeholder.upload"/></h5>
-			    <div class="input-group">
-			      <form:form commandName="uploadHQR" method="POST" action="${uploadFileURL }" enctype="multipart/form-data">
-			        <form:hidden path="subDir"/>
-        			<form:input type="file" path="path" class="form-control"  /><br /> 
-        			<form:input type="text" path="name" class="form-control" placeholder="${saveAsPlaceholder }" /> 
-        		    <span class="input-group-btn">
-			          <button class="btn btn-primary" type="submit">
-			            <fmt:message key="global.button.upload"/><span class="glyphicon glyphicon-upload"></span>
-			          </button>
-			        </span>
-   				 </form:form>
- 		      </div>
-	        </div>
-	      </div>
-   	 </li>
-   	 
-   	 <li class="nav nav-pills ">
-           <a data-toggle="collapse" href="#collapse4"><b><fmt:message key="global.nav.pqrs"/></b> <span class="caret"></span></a>
-	       <div id="collapse4" class="panel-collapse collapse">
-	        <div class="panel-body bg-info">
-	        <div class="list-group">
-	        	<c:forEach items="${pqrsList}" var="item">
-				      <div style="text-align:right;padding-bottom:5px;" ><a  href="${removeFileURL }${item.filename}&PQRS" onClick="return confirm('<fmt:message key="global.filedelete.confirm"/>');" ><span class="glyphicon glyphicon-remove text-danger" ></span></a></div>
-				      <div style="overflow-x:auto">
-					      <a href="javascript:void(0)" class="list-group-item" onclick="ajaxShowXMLFile(PQRSBase,'${item.filename}','<c:url value="/${item.fileURL }"/>')">
-						      <span class="list-group-item-heading">${item.filename}</span>
-						      <p class="list-group-item-text"><fmt:message key="inventory.uploaded"/> ${item.uploadDate}</p>
-					    </a>
-					  </div>
-		        </c:forEach>
-	        
-			  </div>
-	        </div>
-	        <div class="panel-footer">
-	        <h5><fmt:message key="global.placeholder.upload"/></h5>
-			      <div class="input-group">
-			      <form:form commandName="uploadPQRS" method="POST" action="${uploadFileURL }" enctype="multipart/form-data">
-			        <form:hidden path="subDir"/>
-        			<form:input type="file" path="path" class="form-control"  /><br /> 
-        			<form:input type="text" path="name" class="form-control" placeholder="${saveAsPlaceholder }" /> 
-        		    <span class="input-group-btn">
-			          <button class="btn btn-primary" type="submit">
-			            <fmt:message key="global.button.upload"/><span class="glyphicon glyphicon-upload"></span>
-			          </button>
-			        </span>
-   				 </form:form>
 			      </div>
-	        </div>
-	      </div>
-   	 </li>
+		        </div>
+		      </div>
+	   	    </li>
+	   	 </c:if>
+     </c:forEach>
    	 
   </ul>
  </div>     

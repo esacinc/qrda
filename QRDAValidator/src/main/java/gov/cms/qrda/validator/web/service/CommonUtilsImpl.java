@@ -52,6 +52,7 @@ public class CommonUtilsImpl  {
 	@Autowired
 	public FileService fileService;   // Used by derived controller and service classes
 
+	
 	//////////  METHODS FOR RETRIEVING TEXT FROM MESSAGE PROPERTIES FILES ////////////////////////////
 	
 	// Used by unit tests to set the msg source bundle 

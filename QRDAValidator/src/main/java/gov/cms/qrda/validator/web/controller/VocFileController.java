@@ -30,7 +30,6 @@ POSSIBILITY OF SUCH DAMAGE.
 
 import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -65,16 +64,16 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
  *
  */
 @Controller
-@RequestMapping(value = "/testFiles")
-public class TestFileController extends CommonUtilsImpl{
+@RequestMapping(value = "/vocabularyFiles")
+public class VocFileController extends CommonUtilsImpl{
 	
-	private static final Logger logger = LoggerFactory.getLogger(TestFileController.class);
+	private static final Logger logger = LoggerFactory.getLogger(VocFileController.class);
 
 	@Autowired
 	public SchematronCategoryService categoryService;
 
 	/**
-	 * Default mapping.  Gathers the file specs from each sub folder in the Test Files folder of the QRDA_HOME/qrda file space on the server.
+	 * Default mapping.  Gathers the file specs from each sub folder in the Vocabulary Files folder of the QRDA_HOME/qrda file space on the server.
 	 * Also creates a form enabling users to upload files to those same folders.
 	 * 
 	 * @param locale
@@ -83,8 +82,8 @@ public class TestFileController extends CommonUtilsImpl{
 	 * 
 	 */
 	@RequestMapping(method = RequestMethod.GET)
-	public String manageTestFiles(Locale locale, Model model, HttpSession session) {
-		logger.info("TEST FILE INVENTORY");
+	public String manageVocFiles(Locale locale, Model model, HttpSession session) {
+		logger.info("VOCABULARY FILES");
 
 		// Load the directory specs from disc to be sure we are up to date on categories.
 		List<SchematronCategory> dirSpecs =  categoryService.loadOrBuild();
@@ -97,25 +96,52 @@ public class TestFileController extends CommonUtilsImpl{
 				String subDir = dir.getName();
 				logger.info("Getting files for subdir " + subDir);
 
-				ArrayList<FileSpec> files = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_TESTFILES,subDir, null);
+				ArrayList<FileSpec> files = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_ISO,subDir, ".xml");
 				dir.setFiles(files);
+				model.addAttribute(subDir+"List",files);
 				UploadFileForm uff = new UploadFileForm();
 				uff.setSubDir(subDir);
 				model.addAttribute("upload"+subDir, uff);
 			}
 		}
+        /*
+		ArrayList<FileSpec> cecs = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_ISO,QRDA_URIResolver.REPOSITORY_TYPE_CEC, ".xml");
+		model.addAttribute("cecList",cecs);
+		UploadFileForm uffCEC = new UploadFileForm();
+		uffCEC.setSubDir(QRDA_URIResolver.REPOSITORY_TYPE_CEC);
+		model.addAttribute("uploadCEC", uffCEC);
+
+		ArrayList<FileSpec> hl7s = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_ISO,QRDA_URIResolver.REPOSITORY_TYPE_HL7, ".xml");
+		model.addAttribute("hl7List",hl7s);
+		UploadFileForm uffHL7 = new UploadFileForm();
+		uffHL7.setSubDir(QRDA_URIResolver.REPOSITORY_TYPE_HL7);
+		model.addAttribute("uploadHL7", uffHL7);
+
+		ArrayList<FileSpec> hqrs = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_ISO,QRDA_URIResolver.REPOSITORY_TYPE_HQR, ".xml");
+		model.addAttribute("hqrList",hqrs);
+		UploadFileForm uffHQR = new UploadFileForm();
+		uffHQR.setSubDir(QRDA_URIResolver.REPOSITORY_TYPE_HQR);
+		model.addAttribute("uploadHQR", uffHQR);
+
+		
+		ArrayList<FileSpec> pqrs = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_ISO,QRDA_URIResolver.REPOSITORY_TYPE_PQRS, ".xml");
+		model.addAttribute("pqrsList",pqrs);
+		UploadFileForm uffPQRS = new UploadFileForm();
+		uffPQRS.setSubDir(QRDA_URIResolver.REPOSITORY_TYPE_PQRS);
+		model.addAttribute("uploadPQRS", uffPQRS);
+
+        */
 		
 		// Older versions of app can't handle history files, so determine if we should show the history tab or not.
 		if (fileService.existHistoryFiles()) {
 			model.addAttribute("showHistory",true);
 		}
 
-		
-		return "testFileInventory";
+		return "vocabularyInventory";
 	}
 
 	/**
-	 * This method is called by AJAX from the test files inventory page. It reads the contents of the given file
+	 * This method is called by AJAX from the vocabulary files inventory page. It reads the contents of the given file
 	 * (as specified by the filename and the folder name - type - of the folder where the particular test file file resides)
 	 * into a string and puts that string into the response of this call.
 	 * 
@@ -129,14 +155,14 @@ public class TestFileController extends CommonUtilsImpl{
 
 	@RequestMapping(value = "getXML", method = RequestMethod.GET)
 	public @ResponseBody String gettext (Locale locale, Model model,  @RequestParam("type") String type, @RequestParam("file") String filename) {
-		logger.info("Testfile Inventory: Called via ajax getXML");
-		String response = fileService.readExtFileUnparsed(QRDA_URIResolver.REPOSITORY_TESTFILES, type, filename);
-		logger.debug(response);
+		logger.info("Called via ajax getXML: type:" + type + ", file:" + filename);
+		String response = fileService.readExtFileUnparsed(QRDA_URIResolver.REPOSITORY_ISO, type, filename);
+		logger.info(response);
 		return response;
 	}
 
 	/**
-	 * Removes the given file (as specified by the filename and the folder name - type - of the folder where the particular test file file resides)
+	 * Removes the given file (as specified by the filename and the folder name - type - of the folder where the particular vocabulary file resides)
 	 * from the system.
 	 * 
 	 * @param filename
@@ -150,13 +176,13 @@ public class TestFileController extends CommonUtilsImpl{
 	@RequestMapping(value="/remove/{filename}&{subdir}", method = RequestMethod.GET)
     public String processRemoveFile(@PathVariable String filename,  @PathVariable String subdir, Locale locale, Model model, HttpServletRequest request) {
 		
-		logger.info("Delete file: " + filename + " in " + QRDA_URIResolver.REPOSITORY_TESTFILES + "/" + subdir);
-		fileService.deleteFile(filename,  QRDA_URIResolver.REPOSITORY_TESTFILES, subdir);
-		return "redirect:/testFiles";
+		logger.info("Delete file: " + filename + " in " + QRDA_URIResolver.REPOSITORY_ISO + "/" + subdir);
+		fileService.deleteFile(filename,  QRDA_URIResolver.REPOSITORY_ISO, subdir);
+		return "redirect:/vocabularyFiles";
 	}
 
 	/**
-	 * Uploads a file into the sub directory under the test file file repository.
+	 * Uploads a file into the sub directory under the vocabulary file repository.
 	 * 
 	 * @param uploadFileForm
 	 * @param result
@@ -171,10 +197,10 @@ public class TestFileController extends CommonUtilsImpl{
 		
         // Redirect to the page with any errors
         if (result.hasErrors()) {
-        	return manageTestFiles(locale, model, request.getSession());
+        	return manageVocFiles(locale, model, request.getSession());
         }
- 		fileService.uploadFile(uploadFileForm.getPath(), QRDA_URIResolver.REPOSITORY_TESTFILES, uploadFileForm.getSubDir(), uploadFileForm.getName());
-		return "redirect:/testFiles";
+ 		fileService.uploadFile(uploadFileForm.getPath(), QRDA_URIResolver.REPOSITORY_ISO, uploadFileForm.getSubDir(), uploadFileForm.getName());
+		return "redirect:/vocabularyFiles";
 	}
 
 }

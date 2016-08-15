@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 */
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -46,7 +47,11 @@ import java.util.Date;
  * @author dandonahue
  *
  */
-public class FileSpec {
+public class FileSpec implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4013857936438104637L;
 	private String filename;                  // The base filename of a file located in the QRDA file repository
 	private String uploadDate;                // The date/time to show as the date when the file was uploaded into the repository
 	private String subDir;                    // The name of the subfolder where the file is located in the repository

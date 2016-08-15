@@ -31,6 +31,8 @@ POSSIBILITY OF SUCH DAMAGE.
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -38,6 +40,7 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -47,9 +50,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import gov.cms.qrda.validator.model.SchematronCategory;
 import gov.cms.qrda.validator.model.FileSpec;
 import gov.cms.qrda.validator.web.form.UploadFileForm;
 import gov.cms.qrda.validator.web.service.CommonUtilsImpl;
+import gov.cms.qrda.validator.web.service.SchematronCategoryService;
 import gov.cms.qrda.validator.web.service.FileService;
 import gov.cms.qrda.validator.xml.QRDA_URIResolver;
 
@@ -63,7 +68,11 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
 public class SchematronController extends CommonUtilsImpl {
 	
 	private static final Logger logger = LoggerFactory.getLogger(SchematronController.class);
-	
+
+	@Autowired
+	public SchematronCategoryService categoryService;
+
+
 	/**
 	 * Default mapping.  Gathers the file specs from each sub folder in the Schematrons folder of the QRDA_HOME/qrda file space on the server.
 	 * Also creates a form enabling users to upload files to those same folders.
@@ -74,40 +83,33 @@ public class SchematronController extends CommonUtilsImpl {
 	 * 
 	 */
 	@RequestMapping(method = RequestMethod.GET)
-	public String manageSchematrons(Locale locale, Model model) {
+	public String manageSchematrons(Locale locale, Model model, HttpSession session) {
 		logger.info("SCHEMATRON INVENTORY");
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		ArrayList<FileSpec> cecs = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_SCHEMATRONS,QRDA_URIResolver.REPOSITORY_TYPE_CEC);
-		model.addAttribute("cecList",cecs);
-		UploadFileForm uffCEC = new UploadFileForm();
-		uffCEC.setSubDir(QRDA_URIResolver.REPOSITORY_TYPE_CEC);
-		model.addAttribute("uploadCEC", uffCEC);
-		
-		ArrayList<FileSpec> hl7s = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_SCHEMATRONS,QRDA_URIResolver.REPOSITORY_TYPE_HL7);
-		model.addAttribute("hl7List",hl7s);
-		UploadFileForm uffHL7 = new UploadFileForm();
-		uffHL7.setSubDir(QRDA_URIResolver.REPOSITORY_TYPE_HL7);
-		model.addAttribute("uploadHL7", uffHL7);
+		// Load the directory specs from disc to be sure we are up to date on categories.
+		List<SchematronCategory> dirSpecs =  categoryService.loadOrBuild();
+		model.addAttribute(SchematronCategoryService.SCHEMATRON_CATEGORY, dirSpecs);
 
-		ArrayList<FileSpec> hqrs = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_SCHEMATRONS,QRDA_URIResolver.REPOSITORY_TYPE_HQR);
-		model.addAttribute("hqrList",hqrs);
-		UploadFileForm uffHQR = new UploadFileForm();
-		uffHQR.setSubDir(QRDA_URIResolver.REPOSITORY_TYPE_HQR);
-		model.addAttribute("uploadHQR", uffHQR);
+		// For each type of schematron we support (mapping one-to-one to the list of directory specs), gather the 
+		// proper files from each subdirectory and set the directory spec's file list to that list.
+		for (SchematronCategory dir : dirSpecs) {
+			if (dir.isActive()) {
+				String subDir = dir.getName();
+				logger.info("Getting files for subdir " + subDir);
+
+				ArrayList<FileSpec> files = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_SCHEMATRONS,subDir, null);
+				dir.setFiles(files);
+				UploadFileForm uff = new UploadFileForm();
+				uff.setSubDir(subDir);
+				model.addAttribute("upload"+subDir, uff);
+			}
+		}
 
 		
-		ArrayList<FileSpec> pqrs = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_SCHEMATRONS,QRDA_URIResolver.REPOSITORY_TYPE_PQRS);
-		model.addAttribute("pqrsList",pqrs);
-		UploadFileForm uffPQRS = new UploadFileForm();
-		uffPQRS.setSubDir(QRDA_URIResolver.REPOSITORY_TYPE_PQRS);
-		model.addAttribute("uploadPQRS", uffPQRS);
-		 
+		// Older versions of app can't handle history files, so determine if we should show the history tab or not.
+		if (fileService.existHistoryFiles()) {
+			model.addAttribute("showHistory",true);
+		}
 		
 		return "schematronInventory";
 	}
@@ -167,7 +169,7 @@ public class SchematronController extends CommonUtilsImpl {
 		
         // Redirect to the page with any errors
         if (result.hasErrors()) {
-        	return manageSchematrons(locale, model);
+        	return manageSchematrons(locale, model, request.getSession());
         }
  		fileService.uploadFile(uploadFileForm.getPath(), QRDA_URIResolver.REPOSITORY_SCHEMATRONS, uploadFileForm.getSubDir(), uploadFileForm.getName());
 		return "redirect:/schematrons";

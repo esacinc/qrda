@@ -36,81 +36,61 @@ POSSIBILITY OF SUCH DAMAGE.
 <head>
   
     <%@ include file="includes/frameworks.jsp" %>
-    
-    <script type="text/javascript" src="<c:url value='/resources/scripts/displayXML.js'/>" ></script> 
+
+   	<script type="text/javascript" src="<c:url value='/resources/scripts/displayXML.js'/>" ></script>
 	<script type="text/javascript" src="<c:url value='/resources/scripts/highlightSearchText.js'/>" ></script>
 	<script type="text/javascript" src="<c:url value='/resources/scripts/printDiv.js'/>" ></script>
 	<script type="text/javascript" src="<c:url value='/resources/scripts/cursors.js'/>" ></script>
 	
-	<%@ include file="includes/workbenchScripts.jsp" %>
-    
-    
+	<%@ include file="includes/historyScripts.jsp" %>
+	
 </head>
 
 <body style="height:100%">
 <div class="container-fluid" style="height:95%">
   <%@ include file="includes/topNavBar.jsp" %>
   <div class="row content"  style="height:90%;overflow-y:scroll;">
-    <div class="col-sm-4 sidenav"  style="height:100%;overflow-y:auto; ">
-    
-    <%-- LEFT side of display:  Controls allowing user to create and run a validation suite --%>
-    
-	    <form:form name="validationForm" action="${runValidationURL }" commandName="validationSubmissionForm" method="POST">
-	    	<form:hidden path="schematronType"/> 
-		     <h3><fmt:message key="global.title.inventory.workbench"/></h3>
-		     <h4 class="bg-primary"><fmt:message key="workbench.step0"/> </h4>
-		     	<form:input path="name" size="30"  /> </h4>
-		     <h4 class="bg-primary"><fmt:message key="workbench.step1"/></h4>
-		     <ul class="nav nav-pills nav-stacked">
-		        <c:forEach items="${schematronCategories}" var="cat">
-		        <c:if test="${cat.active}" >
-				     <li class="nav nav-pills ">
-				           <a data-toggle="collapse" href="#collapse${cat.name}"><b>${cat.displayName}</b> <span class="caret"></span></a>
-					       <div id="collapse${cat.name}" class="panel-collapse collapse">
-					        <div class="panel-body">
-					        <div style="overflow-x:auto;white-space:nowrap;" class="list-group">
-						        <c:forEach items="${cat.files}" var="item">
-								      <span class="list-group-item-text" name="${cat.name}"><form:radiobutton path="schematronFilename" value="${item.filename}"/> ${item.filename} </span><br/>
-						        </c:forEach>
+    <div class="col-sm-4 sidenav"  style="height:100%;overflow-y:auto;">
+      <h4><fmt:message key="global.title.inventory.history"/></h4>
+      <fmt:message key="inventory.history.explanation"/><br/>
+      <form:form commandName="filterForm" name="filterForm" method="POST" action="${filterURL}">
+      	<form:input  path="filter" size="20"/> <button id="btnFilter" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+      </form:form>
+      <hr/>
+     <ul class="nav nav-pills nav-stacked">
+         	<c:forEach items="${schematronCategories}" var="cat">
+         	<c:if test="${cat.active }" >
+		        <li class="nav nav-pills ">
+		           <a data-toggle="collapse" href="#collapse${cat.name}"><b>${cat.displayName}</b> <span class="caret"></span></a>
+			       <div id="collapse${cat.name}" class="panel-collapse collapse">
+			        <div class="panel-body bg-info">
+			        <div class="list-group">
+				        <c:forEach items="${cat.files}" var="item">
+						      <div style="text-align:right;padding-bottom:5px;" ><a  href="${removeFileURL}${item.filename}&${cat.name}" onClick="return confirm('<fmt:message key="global.filedelete.confirm"/>');" ><span class="glyphicon glyphicon-remove text-danger" ></span></a></div>
+						      <div style="overflow-x:auto">
+							      <a href="${getTestResultsPath}?type=${cat.name}&file=${item.filename}&filter="+$('historyFilter').val() class="list-group-item" >
+								      <span class="list-group-item-heading">${item.filename}</span>
+								      <p class="list-group-item-text"><fmt:message key="inventory.history.performed"/> ${item.uploadDate}  </p>
+							      </a>
 							  </div>
-					        </div>
-					      </div>
-				   	 </li>
-				 </c:if>
-			   	 </c:forEach>
-	  		</ul>
-	  		<h4 class="bg-primary"><fmt:message key="workbench.step2"/></h4>
-			   <ul class="nav nav-pills nav-stacked">
-			   	 <li class="nav nav-pills ">
-			           <a data-toggle="collapse" href="#collapse10"><b><fmt:message key="workbench.button.selectTest"/></b> <span class="caret"></span></a>
-				       <div id="collapse10" class="panel-collapse collapse">
-				        <div class="panel-body">
-				        <c:forEach items="${schematronCategories}" var="cat">
-					        <c:if test="${cat.active}" >
-					        	<div style="overflow-x:auto;white-space:nowrap;" class="list-group" id="testFileList" name='checkboxes${cat.name}'>
-					 				<c:forEach items="${cat.filesSec}" var="item">
-									     <span class="list-group-item-heading"  ><form:checkbox  path="testFilenames" value="${item.filename}"/>&nbsp;${item.filename}</span><br/>
-							        </c:forEach>
-							    </div>
-							</c:if>
-						</c:forEach>
-						</div>
+				        </c:forEach>
 					  </div>
-				  </li>
-			  </ul>
-	  	
-	  		<h4 class="bg-primary"><fmt:message key="workbench.step3"/></h4>
-	  			<div style="text-align:center;"> <button type="submit" class="btn btn-primary" onclick="waitOn();return true;" ><fmt:message key="global.button.validate"/> <span class="glyphicon glyphicon-check"></span></button></div>
-		</form:form>
-	</div>     
-	
+			        </div>
+			        <div class="panel-footer">
+			        </div>
+			      </div>
+		   	    </li>
+		   </c:if>
+     </c:forEach>
+  </ul>
+ </div>     
+
 	<div class="col-sm-8" style="height:100%">
 	
 		<%-- Right side of display; Shows results of a validation suite test run, with tabs that are present/hidden depending on whenter
 		     the user has selected an individual test result item in the summary tab display --%>
 		        
 			 <ul class="nav nav-tabs">
-			  <li id="initTabLi"   class="bg-info"><a id="initTaba" data-toggle="tab" href="#initTab" ><fmt:message key="global.nav.workbench.tab.info"/></a></li>
 			  <li id="tabSummary" class="bg-info"><a id="summaryTabIa" data-toggle="tab" href="#tabSummaryDiv" ><fmt:message key="global.nav.workbench.tab.summary"/></a></li>
 			  <li id="tabLiErrors"        class="bg-danger"><a  id="errorsTaba" data-toggle="tab" href="#tabDivErrors"><fmt:message key="global.nav.workbench.tab.errors"/> (${testCase.errorCount })</a></li>
 			  <li id="tabLiWarnings"      class="bg-warning"><a id="warningsTaba" data-toggle="tab" href="#tabDivWarnings"><fmt:message key="global.nav.workbench.tab.warnings"/> (${testCase.warningCount })</a></li>
@@ -121,35 +101,17 @@ POSSIBILITY OF SUCH DAMAGE.
 					
 			<div class="tab-content" style="height:100%">
 			
-			  <%-- Init tab simply displays instructions on how to create and run a validation suite --%>
-			  
-			  <div id="initTab" class="tab-pane fade in active">
-				  	<h4 id="xmlTitleInfo"><span><fmt:message key="workbench.title.info"/></span> </h4>
-				  	<h3 id="subtitleSummary"><span></span></h3>
-				  	<p><fmt:message key="workbench.text.howTo"/></p>
-			  </div>
-			
 			  <%-- Summary tab shows the summary results after running a validation suite.  Presents a list of each test run. Click on a test name to see detailed results --%>
 			  
 			  <div id="tabSummaryDiv" class="tab-pane fade in active ">
-				  	<h4 id="xmlTitleSummary"><span><fmt:message key="workbench.title.summary"/></span> <span class='text-primary'>${validationResults.name }</span> 
+				  	<h4 id="xmlTitleSummary"><span><fmt:message key="workbench.title.summary"/></span> <span class="text-primary">${validationResults.name }</span> <fmt:message key="workbench.title.lastrun"/> ${validationResults.nameTimestamp }</span> 
 					  	<%-- If validationResults has a null value for testFilename, then we know it is an older result prior to the implementation of the re-run capability... --%>
 					  	<c:if test="${validationResults.testFilenames != null}"><button id="btnRerun" type="button" class="btn btn-primary"><fmt:message key="workbench.button.rerun"/> <span class="glyphicon glyphicon-refresh"></span></button></c:if>
-				  	</h4>
+					</h4>
 				  	<h5 id="subtitleSummary"><span><fmt:message key="workbench.title.schematron"/></span> <span><b>${validationResults.schematronFilename }</b></span></h5>
 				  	<div class="bg-info"><ul>
 					  	<c:forEach items="${validationResults.statusText}" var="txt">
 					  		<li>${txt }</li>
-					  		<%-- Remove until we figure out why indexOf not working in Tomcat7 on linux
-					  		<c:choose>
-						  			<c:when test='${txt.indexOf("${ERROR_PREFIX}")==0 }'>
-					  				<li class="bg-danger">${txt }</li>
-					  			</c:when>
-					  			<c:otherwise>
-					  				<li>${txt }</li>
-					  			</c:otherwise>
-					  		</c:choose>
-					  		--%>
 					  	</c:forEach>
 				  	</ul>
 				  	</div>
@@ -275,7 +237,8 @@ POSSIBILITY OF SUCH DAMAGE.
 			 	
 		 </div>
 	</div>
-  </div>
+
+</div>
 
 <%@ include file="includes/footer.jsp" %>    
 </body>

@@ -33,6 +33,9 @@ POSSIBILITY OF SUCH DAMAGE.
 <c:set var="schematronsURL"><c:url value='/schematrons'/></c:set>
 <c:set var="workbenchURL"><c:url value='/workbench'/></c:set>
 <c:set var="testFilesURL"><c:url value='/testFiles'/></c:set>
+<c:set var="vocFilesURL"><c:url value='/vocabularyFiles'/></c:set>
+<c:set var="historyURL"><c:url value='/history'/></c:set>
+<c:set var="adminURL"><c:url value='/admin'/></c:set>
 
 <nav class="navbar navbar-inverse">
 	<div class="container-fluid">
@@ -43,7 +46,9 @@ POSSIBILITY OF SUCH DAMAGE.
 	     <li id="navInfo"><a href="${homeURL }"><fmt:message key="global.nav.info"/></a></li>
 	     <li id="navSchematrons"><a href="${schematronsURL }"><fmt:message key="global.nav.schematrons"/></a></li>
 	     <li id="navTests"><a href="${testFilesURL }"><fmt:message key="global.nav.tests"/></a></li>
+	     <li id="navVoc"><a href="${vocFilesURL }"><fmt:message key="global.nav.voc"/></a></li>
 	     <li id="navWorkbench"><a href="${workbenchURL }"><fmt:message key="global.nav.workbench"/></a></li> 
+	     <c:if test="${showHistory == true }"><li id="navHistory"><a href="${historyURL }"><fmt:message key="global.nav.history"/></a></li></c:if>
 	   </ul>
 	  </div>
 </nav>

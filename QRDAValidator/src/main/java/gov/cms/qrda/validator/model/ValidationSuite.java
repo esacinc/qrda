@@ -28,6 +28,11 @@ POSSIBILITY OF SUCH DAMAGE.
 
 */
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -36,6 +41,9 @@ import java.util.Properties;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import gov.cms.qrda.validator.xml.QRDA_URIResolver;
+import gov.cms.qrda.validator.web.service.CommonUtilsImpl;
 
 /**
  * The ValidationSuite class contains all of the information required to perform validation on a list
@@ -51,9 +59,15 @@ import org.slf4j.LoggerFactory;
  * @author dandonahue
  *
  */
-public class ValidationSuite {
+public class ValidationSuite implements Serializable {
 	
-    private static Logger logger = LoggerFactory.getLogger(ValidationSuite.class);
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8482863478279873637L;
+
+	private static Logger logger = LoggerFactory.getLogger(ValidationSuite.class);
 
     private String name;
 	private String schematronType;           // Corresponds to folder structure in our qrda schematron file repository.
@@ -69,13 +83,19 @@ public class ValidationSuite {
 	private String nameTimestamp = "";             // The date/time string to add to filenames (and results folder) to make them unique
 	private String resultsFolderBase = "";         // The name of the folder in the qrda results file repository where all result files are written
 	
+	private QRDA_URIResolver fileResolver = null;  // A class that resolves relative URIs in schematron files to local pathnames.
+	
 	private boolean isTransformed = false;   // Set to true if the given schematron file makes in through the 3 ISO transforms successfully.
 	
 	private ArrayList<String> statusText = new ArrayList<String>();  // We build up informational text as we go for display on the UI
-	
+	private ArrayList<String> testFilenames = new ArrayList<String>();
 	private List<TestCase> testCases;  // The list of test case objects representing the test files we are to validate in this suite.
 
+	private String mySavedFilename; // The filename of this validation suite as saved on disk
 	
+	public ValidationSuite() {
+		// for serialization
+	}
 	
 	public ValidationSuite(String name, String schematronType, String schematron) {
 		this.name = name;
@@ -87,8 +107,9 @@ public class ValidationSuite {
 		this.name = name;
 		this.resultsFolderBase = name.replaceAll("[^A-Za-z0-9]", ""); // Prevent generated folder name from having characters other than alphanumeric
 		// Validation. Suite expects a list of filenames, so make a list of length 1...
-		List<String> testFilenames = new ArrayList<String>();
+		ArrayList<String> testFilenames = new ArrayList<String>();
 		testFilenames.add(testCaseFilename);  
+		this.testFilenames = testFilenames;
 		init(schematronType,schematron);
 	}
 	
@@ -103,6 +124,9 @@ public class ValidationSuite {
 		includeTransformFilename = "includeTransform_" + nameTimestamp + ".sch";
 		abstractTransformFilename = "abstractTransform_" + nameTimestamp + ".sch";
 		transformedSchematronFilename = "xsltTransform_" + nameTimestamp + ".xsl";
+		
+		fileResolver = new QRDA_URIResolver(schematronType); 
+		mySavedFilename = String.format("%s_%s.vs", name, nameTimestamp);
 	}
 
 	public String getName() {
@@ -153,8 +177,19 @@ public class ValidationSuite {
 	public void addTestCase(TestCase tcase) {
 		testCases.add(tcase);
 	}
-	
 
+	public List<String> getTestFilenames() {
+		return testFilenames;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public void setTestFilenames(List<String> names) {
+		testFilenames = (ArrayList)names;
+	}
+
+	public QRDA_URIResolver getFileResolver() {
+		return fileResolver;
+	}
 	public void initIsoFilenames(Properties props) {
 		// Get the names of the ISO transform files to use from the validator.properties file.
 		this.isoIncludeFilename = props.getProperty("iso.include");
@@ -165,6 +200,11 @@ public class ValidationSuite {
 		logger.info("Iso xslt file: " + xsltFilename);
 	}
 	
+	public void reset() {
+		init(this.schematronType,schematronFilename);
+		this.isTransformed = false;
+		this.statusText = new ArrayList<String>();
+	}
 	
 	public TestCase getNth(Integer n) {
 		if (n == null || n < 0 || n >= testCases.size()) {
@@ -196,7 +236,8 @@ public class ValidationSuite {
 	public String getAbstractTransformFilename() {
 		return abstractTransformFilename;
 	}
-	
+
+
 	public String getResultsFolder() {
 		return this.resultsFolderBase+"_"+this.nameTimestamp;
 	}
@@ -209,4 +250,25 @@ public class ValidationSuite {
 		statusText.add(txt);
 	}
 	
+	 public void readObject(
+		     ObjectInputStream aInputStream
+		   ) throws ClassNotFoundException, IOException {
+		     //always perform the default de-serialization first
+		     aInputStream.defaultReadObject();
+
+		     //make defensive copy of the mutable Date field
+		     //fDateOpened = new Date(fDateOpened.getTime());
+
+		     //ensure that object state has not been corrupted or tampered with maliciously
+		     //validateState();
+		  }
+
+	 public String getMySavedFilename() {
+			return mySavedFilename;
+	 }
+	 
+	 public void setMySavedFilename(String val) {
+			mySavedFilename = val;
+	 }
+
 }

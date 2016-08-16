@@ -1,5 +1,4 @@
-package gov.cms.qrda.validator.web.service;
-/*
+<%--
 Copyright (c) 2016+, ESAC, Inc.
 All rights reserved.
 
@@ -26,35 +25,42 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 
-*/
+ --%>
 
-import java.util.ArrayList;
+<%@page contentType="text/html;charset=UTF-8"%>
+<%@page pageEncoding="UTF-8"%>
+<%@ include file="includes/taglib.jsp" %>
 
-import gov.cms.qrda.validator.model.ValidationSuite;
+<html style="height:100%">
 
-/**
- * The ValidationService creates and run validation suites. A validation suite consists of a schematron file, and a list
- * of test case files to validate against the schematron. All results are stored in the validation suite object.
- * 
- * @author dandonahue
- *
- */
-public interface ValidationService {
-	
-    /**
-    * Creates a ValidationSuite from the arguments provided. The schematronType argument is one of "HL7", "CEC", "HQR" or "PQRS" and
-    * represents a subdirectory under the QRDA_HOME/qrda/schematrons folder on the server.
-    *
-    **/
-	public ValidationSuite setupValidationSuite(String name, String schematronType, String schematronFile, ArrayList<String> testCases);
-	public ValidationSuite resetValidationSuite(ValidationSuite vs)	;
-	
-	/**
-     * Applies the schematron of the validation suite to each of the test cases in the suite.
-     * The schematron is first transformed into an .xsl file prior to applying it to the test cases.
-     * Interim result status text is added to the validation suite and each test case as the validation process proceeds.
-     * 
-     */
-	public void runValidation(ValidationSuite vs);
-	public ValidationSuite getValidationFromHistory(String type, String filename);
-}
+<head>
+  
+    <%@ include file="includes/frameworks.jsp" %>
+    <c:set var="loginURL"><c:url value='/authenticate/authenticate/'/></c:set>
+</head>
+
+<body  style="height:100%">
+	<div class="container-fluid" style="height:85%" >
+		<%@ include file="includes/topNavBar.jsp" %>
+		<div class="row content" style="height:100%">
+		    <div class="col-sm-12" style="height:100%;;overflow-vertical:auto;">
+		         <div id="displayDiv" class="container-fluid" >
+		         
+		         <div id="introIntro" ><h4><fmt:message key="login.title"/></h4>
+			         <p class="bg-info">
+			             <form:form method="post"  action="${loginURL }" modelAttribute="loginForm">
+			             <table border="0">
+			             <tr><td><fmt:message key="login.username"/> </td><td><form:input path="username"/></td></tr>
+			             <tr><td><fmt:message key="login.password"/> </td><td><form:password path="password"/></td></tr>
+			             <tr><td colspan='2'><input type="submit" class="btn btn-primary" value="<fmt:message key="global.button.login"/>" /></td></tr>
+			             </table>
+			         	</form:form>
+			         </p>
+			     </div>
+		         </div>
+		    </div>
+		</div>
+	<%@ include file="includes/footer.jsp" %>   
+    </div> 
+</body>
+</html>

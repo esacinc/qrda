@@ -28,8 +28,13 @@ POSSIBILITY OF SUCH DAMAGE.
 
 */
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -88,10 +93,12 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
     * @see gov.cms.qrda.validator.web.service.ValidationService.setupValidationSuite
     *
     **/
-    public ValidationSuite setupValidationSuite(String name, String schematronType, String schematronFile, ArrayList<String> testCaseNames) {
+    @Override
+	public ValidationSuite setupValidationSuite(String name, String schematronType, String schematronFile, ArrayList<String> testCaseNames) {
     	Properties props = fileService.loadPropertiesExt(propertiesFile);
     	ValidationSuite vs = new ValidationSuite(name, schematronType, schematronFile);
     	vs.initIsoFilenames(props);
+    	vs.setTestFilenames(testCaseNames);
     	vs.setTestCases(fileService.createTestCases(vs.getSchematronFilename(), vs.getSchematronType(), testCaseNames, vs.getNameTimestamp()));
     	if (!fileService.createResultsDir(vs.getResultsFolder())) {
     		vs.addStatusText(wrapErrorSpan("ERROR: Failed to create results folder: " + vs.getResultsFolder()));
@@ -99,9 +106,21 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
     	return vs;
     }
 
+    @Override
+	public ValidationSuite resetValidationSuite(ValidationSuite vs) {
+    	Properties props = fileService.loadPropertiesExt(propertiesFile);
+    	vs.initIsoFilenames(props);
+     	vs.reset();
+    	vs.setTestCases(fileService.createTestCases(vs.getSchematronFilename(), vs.getSchematronType(), vs.getTestFilenames(), vs.getNameTimestamp()));
+    	if (!fileService.createResultsDir(vs.getResultsFolder())) {
+    		vs.addStatusText(wrapErrorSpan("ERROR: Failed to create results folder: " + vs.getResultsFolder()));
+    	};
+    	return vs;
+    }
     /**
     *  @see gov.cms.qrda.validator.web.service.ValidationService.runValidation 
     */
+	@Override
 	public void runValidation(ValidationSuite vs) {
 		// If we haven't done so, apply the appropriate transforms to the schematron to get an .xsl file we can use on the tests...
 		if (!vs.isSchematronTransformed()) {
@@ -210,8 +229,25 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 				}
 			}
 		}
+		fileService.writeTestSuite(vs);
 	}
 
+	@Override
+	public ValidationSuite getValidationFromHistory(String type, String filename) {
+		try {
+			ValidationSuite newvs = fileService.readTestSuite( type, filename);
+			if (newvs != null) {
+				return newvs;
+			}
+			else {
+				return null;
+			}
+		}
+		catch (Exception e) {
+			logger.error("Error retrieving validation suite from history at: " + type + ", " + filename + ": ",e);
+			return null;
+		}
+	}
     //////////////////////////////PRIVATE/PROTECTED METHODS //////////////////////////////////////////////////
 
 	
@@ -225,6 +261,9 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
     //
     // This method performs the three transformations, in order. If any one fails, the process stops.
     // If successful, the validation suite's isTransformed value is set to true.
+	//
+	// Also note that the vocabulary file referenced by the schematron (typically called voc.xml) must 
+	// be co-located int he same folder as the transmformation files described here.
 	//
 	protected boolean transformSchematron(ValidationSuite vs) {
 		boolean isTransformed = false;
@@ -253,7 +292,7 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 		boolean result = true;
 		// Now read the first set of input files and open a file for writing the resulting transform results
 		InputStream qrdaSchematron = fileService.openExtFileForReading(QRDA_URIResolver.REPOSITORY_SCHEMATRONS, vs.getSchematronType(), vs.getSchematronFilename());
-		InputStream includeXsl = fileService.openExtFileForReading(QRDA_URIResolver.REPOSITORY_ISO,null, isoIncludeFilename);
+		InputStream includeXsl = fileService.openExtFileForReading(QRDA_URIResolver.REPOSITORY_ISO,vs.getSchematronType(), isoIncludeFilename);
 		OutputStream qrdaFirstTransform = fileService.openExtFileForWriting(QRDA_URIResolver.REPOSITORY_RESULTS, vs.getResultsFolder(),vs.getIncludeTransformFilename());
 		// If there were problems opening any of the files (for reading or writing), proceed no further.
 		if (qrdaSchematron == null) {
@@ -295,7 +334,7 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 		boolean result = true;
 		
 		// Open the ISO abstract file for input. If we fail, proceed no further
-		InputStream abstractXsl = fileService.openExtFileForReading(QRDA_URIResolver.REPOSITORY_ISO, null, isoAbstractFilename);
+		InputStream abstractXsl = fileService.openExtFileForReading(QRDA_URIResolver.REPOSITORY_ISO, vs.getSchematronType(), isoAbstractFilename);
 		if (abstractXsl == null) {
 			vs.addStatusText(wrapErrorSpan("ERROR: Unable to open ISO Abstract transform file: " + isoAbstractFilename));
 			result = false;
@@ -345,7 +384,7 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 		boolean result = true;
 		
 		// Open the XSL transform file. If we fail, proceed no further.
-		InputStream abstractXsl = fileService.openExtFileForReading(QRDA_URIResolver.REPOSITORY_ISO,null,xsltFilename);
+		InputStream abstractXsl = fileService.openExtFileForReading(QRDA_URIResolver.REPOSITORY_ISO,vs.getSchematronType(),xsltFilename);
 		if (abstractXsl == null) {
 			vs.addStatusText(wrapErrorSpan("ERROR:  Unable to open ISO abstract-transformed schematron file: " + xsltFilename));
 			result = false;
@@ -427,16 +466,17 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 	protected OutputStream performTransform(InputStream source, InputStream transform, OutputStream outputFile, ValidationSuite vs, TestCase ts) {
 		logger.info("Perform Transform: " + source + " using " + transform + " to " + outputFile);
 		String err = "";
-		try {		
+		try {	
+			// Set up a URI resolver that the transformer will use to resolve relative URIs encountered in the data file
 			// Force the use of Saxon for the transformer
 			TransformerFactory factory = new net.sf.saxon.TransformerFactoryImpl();
 			logger.debug("Set factory uri resolver...");
-			factory.setURIResolver(fileService.getURIResolver());  // Factory needs to be able to resolve relative hrefs in the source transform file when creating a transformer, below.
+			factory.setURIResolver(vs.getFileResolver());  // Factory needs to be able to resolve relative hrefs in the source transform file when creating a transformer, below.
 			Transformer transformer;
 				try {
 					StreamSource sSource = new StreamSource(transform);
 					transformer = factory.newTransformer(sSource);
-					transformer.setURIResolver(fileService.getURIResolver());  // Set the transformer instance's URI resolver as well so it can resolve relative hrefs in the input file.
+					transformer.setURIResolver(vs.getFileResolver());  // Set the transformer instance's URI resolver as well so it can resolve relative hrefs in the input file.
 					transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
 					transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 					try {
@@ -479,6 +519,8 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 	// Opens the report file generated by the transform process, and collects the failures to be returned.
 	// The folder argument is the name of the results folder  from the validation suite that ran the transformation tests.
 	//
+	
+	
 	protected ArrayList<Failure> processReport(String filename, String folder, TestCase tc) throws ParserConfigurationException, SAXException, IOException {
 		logger.info("Process validation report: " + filename);
 		
@@ -503,6 +545,20 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 			while (!rule.getNodeName().equals("svrl:fired-rule")) {
 				rule = getPreviousSibling(rule, tc);
 			}
+			
+			// Include info about the fired assert's rule & context
+			Node parent = rule.getParentNode();
+			NamedNodeMap parentAttrs = rule.getAttributes();
+			for (int j = 0; j<parentAttrs.getLength(); j++) {
+				Node attr = parentAttrs.item(j);
+				String attrText = getNodeText(attr);
+				if (attr.getNodeName().equals("id")) {
+					fail.setRule(attrText);
+				}
+				if (attr.getNodeName().equals("context")) {
+						fail.setContext(attrText);
+				}
+			}
 			NamedNodeMap ruleAttrs = rule.getAttributes();
 						
 			// Populate the failure attributes
@@ -510,10 +566,10 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 				Node attr = attrs.item(j);
 				
 				String attrText = getNodeText(attr);
-				
 				if (attr.getNodeName().equals("id")) {
 					fail.setId(attrText);
 				}
+				
 				if (attr.getNodeName().equals("location")) {
 					fail.setLocation(attrText);
 				}

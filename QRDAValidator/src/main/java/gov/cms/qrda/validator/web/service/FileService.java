@@ -39,7 +39,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import gov.cms.qrda.validator.model.FileSpec;
 import gov.cms.qrda.validator.model.TestCase;
-import gov.cms.qrda.validator.xml.QRDA_URIResolver;
+import gov.cms.qrda.validator.model.ValidationSuite;
 
 public interface FileService {
 	
@@ -111,13 +111,40 @@ public interface FileService {
 	 * QRDA_HOME/qrda/<baseDir>/subDir folder on the server. The list returned contains FileSpec objects
 	 * for files only. Directories are not included.
 	 */
-	public ArrayList<FileSpec> getExtRepositoryFiles(String baseDir, String subDir);
+	public ArrayList<FileSpec> getExtRepositoryFiles(String baseDir, String subDir, String contains);
 	
 	/**
 	 * Creates a directory under the QRDA_HOME/qrda/result/ folder on the server. The dirname is the
 	 * name of the folder to create. The name should not contain characters that are disallowed in folder names.
 	 */
 	public boolean createResultsDir(String dirname);
+	
+	/**
+	 * Renames a category folder under each of the main folders in the QRDA filespace.
+	 * @param currName
+	 * @param newName
+	 */
+	public void renameCategoryDirectories(String currName, String newName);
+	
+	/**
+	 * Creates a new category folder under each of the main folders in the QRDA filespace
+	 * @param newName
+	 */
+	public void createCategoryDirectories(String newName);
+	
+	/**
+	 * Removes a category folder (and all of its contents) under each of the main folders in the QRDA filespace
+	 * @param catName
+	 * @return
+	 */
+	public boolean deleteCategoryDirectories(String catName);
+	
+	/**
+	 * Copies the contents of the original iso file subfolder to a folder under the isofiles directory in the QRDA filespace
+	 * @param newName
+	 * @return
+	 */
+	public boolean copyIsoFiles(String newName); 
 	
 	/**
 	 * Returns a list of validation TestCases from a list of filenames of files located in the 
@@ -158,8 +185,27 @@ public interface FileService {
 	 */
 	public void findExpectedErrorText(File file, FileSpec spec);
 	
+    /**
+     * Serializes the ValidationSuite object to the proper subfolder under the result folder in the QRDA filespace.
+     * @param vs
+     */
+	public void writeTestSuite(ValidationSuite vs);
+	
 	/**
-	 * 	 Returns the QRDA_URIResolver class instance maintained by the file service class
+	 * Reads (unserializes) a ValidationSuite object from the contents of the filename stored in the subDir category folder 
+	 * in the result folder of the QRDA filespace.
+	 * 
+	 * @param subDir
+	 * @param filename
+	 * @return
 	 */
-	public QRDA_URIResolver getURIResolver();
+	public ValidationSuite readTestSuite(String subDir, String filename);
+	
+	/**
+	 * Returns true if history files exist in the system.
+	 * 
+	 * @return
+	 */
+	public boolean existHistoryFiles(); // Older versions of app can't handle history files. Return true if history files are present
+
 }

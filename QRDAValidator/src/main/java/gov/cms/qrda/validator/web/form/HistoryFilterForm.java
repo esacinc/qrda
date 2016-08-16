@@ -1,4 +1,4 @@
-package gov.cms.qrda.validator.web.service;
+package gov.cms.qrda.validator.web.form;
 /*
 Copyright (c) 2016+, ESAC, Inc.
 All rights reserved.
@@ -28,33 +28,24 @@ POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-import java.util.ArrayList;
-
-import gov.cms.qrda.validator.model.ValidationSuite;
-
 /**
- * The ValidationService creates and run validation suites. A validation suite consists of a schematron file, and a list
- * of test case files to validate against the schematron. All results are stored in the validation suite object.
+ * Spring MVC form containing user input required for filtering history (validation suite files) by name.
+ * The ValidationService will run the validation tests on the ValidationSuite created from data in this form.
+ * 
  * 
  * @author dandonahue
  *
  */
-public interface ValidationService {
-	
-    /**
-    * Creates a ValidationSuite from the arguments provided. The schematronType argument is one of "HL7", "CEC", "HQR" or "PQRS" and
-    * represents a subdirectory under the QRDA_HOME/qrda/schematrons folder on the server.
-    *
-    **/
-	public ValidationSuite setupValidationSuite(String name, String schematronType, String schematronFile, ArrayList<String> testCases);
-	public ValidationSuite resetValidationSuite(ValidationSuite vs)	;
-	
-	/**
-     * Applies the schematron of the validation suite to each of the test cases in the suite.
-     * The schematron is first transformed into an .xsl file prior to applying it to the test cases.
-     * Interim result status text is added to the validation suite and each test case as the validation process proceeds.
-     * 
-     */
-	public void runValidation(ValidationSuite vs);
-	public ValidationSuite getValidationFromHistory(String type, String filename);
+public class HistoryFilterForm {
+
+	public final static String DEFAULT_NAME ="TestRun";
+	private String filter = "";
+	public String getFilter() {
+		return filter;
+	}
+	public void setFilter(String val) {
+		filter = val;
+	}
+
+
 }

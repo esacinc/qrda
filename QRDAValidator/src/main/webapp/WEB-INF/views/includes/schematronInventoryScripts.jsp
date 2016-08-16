@@ -67,7 +67,7 @@ POSSIBILITY OF SUCH DAMAGE.
 	   
    
 	   // Called when user clicks on a schematron filename - displays the xml contents of the selected file in the xmlDisplayDiv
-	   function ajaxShowXMLFile(type, filename, fullPath) {
+	   function ajaxShowXMLFile(type, typeTitle,filename, fullPath) {
 		   		waitOn();
 	     	    $.ajax({  
 	     	     type : "Get", 
@@ -77,7 +77,7 @@ POSSIBILITY OF SUCH DAMAGE.
 	     	    	displayXMLString(response,'xmlDisplayDiv');
 	     	    	$("#xmlControlBar").show();
 	     	    	// Download icon must be enabled as a bootstrap popover in order to override the left click properly
-	    			$('#xmlTitle span').html(filename + " <a href='" + fullPath +"' ${downloadIcon}");
+	    			$('#xmlTitle span').html("<span class='text-primary'>" + typeTitle + ":</span> " + filename + " <a href='" + fullPath +"' ${downloadIcon}");
 	     			$('[data-toggle="popover"]').popover();
 	   				shownFile = filename;
 	    			shownFileDir = type;

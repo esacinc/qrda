@@ -1,4 +1,7 @@
 package gov.cms.qrda.validator.model;
+
+import java.io.Serializable;
+
 /*
 Copyright (c) 2016+, ESAC, Inc.
 All rights reserved.
@@ -40,11 +43,17 @@ POSSIBILITY OF SUCH DAMAGE.
  * @author dandonahue
  *
  */
-public class Failure {
+public class Failure implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6698610177198725317L;
 	private String id;
+	private String rule;
 	private String location;
 	private String test;
 	private String statement;
+	private String context;
 	private boolean critical;
 	
 	public Failure() {
@@ -57,6 +66,13 @@ public class Failure {
 	public void setId(String id) {
 		this.id = id;
 	}
+	public String getRule() {
+		return rule;
+	}
+	public void setRule(String rule) {
+		this.rule = rule;
+	}
+
 	public String getLocation() {
 		return location;
 	}
@@ -74,6 +90,12 @@ public class Failure {
 	}
 	public void setStatement(String statement) {
 		this.statement = statement;
+	}
+	public void setContext(String context) {
+		this.context = context;
+	}
+	public String getContext() {
+		return context;
 	}
 	public boolean isCritical() {
 		return critical;

@@ -36,25 +36,27 @@ POSSIBILITY OF SUCH DAMAGE.
 <head>
   
     <%@ include file="includes/frameworks.jsp" %>
-     
+
    	<script type="text/javascript" src="<c:url value='/resources/scripts/displayXML.js'/>" ></script>
 	<script type="text/javascript" src="<c:url value='/resources/scripts/highlightSearchText.js'/>" ></script>
 	<script type="text/javascript" src="<c:url value='/resources/scripts/printDiv.js'/>" ></script>
 	<script type="text/javascript" src="<c:url value='/resources/scripts/cursors.js'/>" ></script>
 	
-   <%@ include file="includes/schematronInventoryScripts.jsp" %>
-   
+	<%@ include file="includes/vocFileInventoryScripts.jsp" %>
+	
 </head>
-  
+
 <body style="height:100%">
 <div class="container-fluid" style="height:95%">
   <%@ include file="includes/topNavBar.jsp" %>
-  <div class="row content" style="height:90%;overflow-y:scroll;">
+  <div class="row content"  style="height:90%;overflow-y:scroll;">
     <div class="col-sm-4 sidenav"  style="height:100%;overflow-y:auto;">
-      <h4><fmt:message key="global.title.inventory.schematron"/></h4>
+      <h4><fmt:message key="global.title.inventory.voc"/></h4>
+      <fmt:message key="inventory.voc.explanation"/>
+      <hr/>
      <ul class="nav nav-pills nav-stacked">
          	<c:forEach items="${schematronCategories}" var="cat">
-	         <c:if test="${cat.active}" >
+         	<c:if test="${cat.active}" >
 		        <li class="nav nav-pills ">
 		           <a data-toggle="collapse" href="#collapse${cat.name}"><b>${cat.displayName}</b> <span class="caret"></span></a>
 			       <div id="collapse${cat.name}" class="panel-collapse collapse">
@@ -65,11 +67,8 @@ POSSIBILITY OF SUCH DAMAGE.
 						      <div style="overflow-x:auto">
 							      <a href="javascript:void(0)" class="list-group-item" onclick="ajaxShowXMLFile('${cat.name}','${cat.displayName}','${item.filename}','<c:url value="/${item.fileURL }"/>')">
 								      <span class="list-group-item-heading">${item.filename}</span>
-								      <p class="list-group-item-text"><fmt:message key="inventory.uploaded"/> ${item.uploadDate}
-								      	<c:if test="${item.expectedErrors >=0 }"><br/><fmt:message key="inventory.expectedErrors"/> ${item.expectedErrors } </c:if>
-								      	<c:if test="${item.expectedWarnings >=0 }"><br/><fmt:message key="inventory.expectedWarnings"/> ${item.expectedWarnings } </c:if>
-								      </p>
-							    </a>
+								      <p class="list-group-item-text"><fmt:message key="inventory.uploaded"/> ${item.uploadDate}  </p>
+							      </a>
 							  </div>
 				        </c:forEach>
 					  </div>
@@ -91,15 +90,16 @@ POSSIBILITY OF SUCH DAMAGE.
 			        </div>
 			      </div>
 		   	    </li>
-		   	 </c:if>
+		  </c:if>
      </c:forEach>
-   	 
-  </ul>
+   </ul>
  </div>     
 
     <div class="col-sm-8" style="height:90%">
         <h4 id="xmlTitle"><span>&nbsp;</span></h4>
-    	<div id="xmlDisplayDiv" class="container-fluid"></div>
+    	<div id="xmlDisplayDiv" class="container-fluid">
+
+    	</div>
 		<div id="xmlControlBar">
 			<input type="text" id="txtID"  placeholder="<fmt:message key="global.placeholder.search"/>"/> <a href="javascript:void(0)" onclick='searchDiv("xmlDisplayDiv",$("#txtID").val(),"srchCnt")'><span class="glyphicon glyphicon-search"></span></a>
 			<span width='10'>&nbsp;</span> 

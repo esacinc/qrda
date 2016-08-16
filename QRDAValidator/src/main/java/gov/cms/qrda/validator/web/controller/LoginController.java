@@ -41,10 +41,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import gov.cms.qrda.validator.model.SchematronCategory;
+import gov.cms.qrda.validator.web.form.CategoryListForm;
+import gov.cms.qrda.validator.web.form.LoginForm;
 import gov.cms.qrda.validator.web.service.CommonUtilsImpl;
 import gov.cms.qrda.validator.web.service.SchematronCategoryService;
 
@@ -56,28 +59,69 @@ import gov.cms.qrda.validator.web.service.SchematronCategoryService;
  *
  */
 @Controller
-@RequestMapping(value = { "/", "/info" })
-public class HomeController extends CommonUtilsImpl {
+@RequestMapping(value = { "/authenticate" })
+public class LoginController extends CommonUtilsImpl {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
 	@Autowired
 	public SchematronCategoryService categoryService;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String home(Locale locale, Model model, HttpSession session) {
-		logger.info("HOME PAGE");
+	public String showLogin(Locale locale, Model model, HttpSession session) {
+		logger.info("LOGIN PAGE");
 		
-		// Load the directory specs from disc to be sure we are up to date on categories.
-		List<SchematronCategory> dirSpecs =  categoryService.loadOrBuild();
-		model.addAttribute(SchematronCategoryService.SCHEMATRON_CATEGORY, dirSpecs);
+		LoginForm loginForm = new LoginForm();
+		model.addAttribute("loginForm", loginForm);
 		
 		// Older versions of app can't handle history files, so determine if we should show the history tab or not.
 		if (fileService.existHistoryFiles()) {
 			model.addAttribute("showHistory",true);
 		}
 		
-		return "home";
+		return "login";
+	}
+
+	@RequestMapping(value="/authenticate", method = RequestMethod.POST)
+	public String authenticate(@ModelAttribute("loginForm") LoginForm loginForm, Locale locale, Model model, HttpSession session) {
+		logger.info("AUTHENTICATE");
+	
+		Integer attempts = (Integer)session.getAttribute("loginAttempts");
+		if  (attempts == null) {
+			attempts = 0;
+		}
+		if (attempts >= 3){
+			double delay = 2;
+			delay = Math.pow(delay, attempts-2) * 1000;
+			try {
+				Thread.sleep((long)delay);
+			}
+			catch (Exception e) {
+				logger.error("Login Exception: " + e.getMessage());
+			}
+		}
+		session.setAttribute("loginAttempts", ++attempts);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		if (loginForm.getUsername().equalsIgnoreCase(LoginForm.ADMIN) &&
+		    loginForm.getPassword().equals(LoginForm.ADMINP + "!")) {
+			logger.info("Successful admin login");
+			session.setAttribute("isAuthenticated", "true");
+			logger.info("Session setting: " + session.getAttribute("isAuthenticated"));
+			return "redirect:/admin";
+		}
+		else {
+			logger.error("Unsuccessful admin login");
+			session.removeAttribute("isAuthenticated");
+			return showLogin(locale,  model,  session) ;
+		}
+
 	}
 	
 

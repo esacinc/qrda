@@ -30,7 +30,6 @@ POSSIBILITY OF SUCH DAMAGE.
 
 import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -49,14 +48,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import gov.cms.qrda.validator.model.SchematronCategory;
 import gov.cms.qrda.validator.model.FileSpec;
+import gov.cms.qrda.validator.model.TestCase;
+import gov.cms.qrda.validator.model.ValidationSuite;
+import gov.cms.qrda.validator.web.form.HistoryFilterForm;
 import gov.cms.qrda.validator.web.form.UploadFileForm;
 import gov.cms.qrda.validator.web.service.CommonUtilsImpl;
 import gov.cms.qrda.validator.web.service.SchematronCategoryService;
 import gov.cms.qrda.validator.web.service.FileService;
+import gov.cms.qrda.validator.web.service.ValidationService;
 import gov.cms.qrda.validator.xml.QRDA_URIResolver;
 
 /**
@@ -65,10 +67,13 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
  *
  */
 @Controller
-@RequestMapping(value = "/testFiles")
-public class TestFileController extends CommonUtilsImpl{
+@RequestMapping(value = "/history")
+public class HistoryController extends CommonUtilsImpl{
 	
-	private static final Logger logger = LoggerFactory.getLogger(TestFileController.class);
+	private static final Logger logger = LoggerFactory.getLogger(HistoryController.class);
+
+	@Autowired
+	ValidationService validator;
 
 	@Autowired
 	public SchematronCategoryService categoryService;
@@ -83,9 +88,18 @@ public class TestFileController extends CommonUtilsImpl{
 	 * 
 	 */
 	@RequestMapping(method = RequestMethod.GET)
-	public String manageTestFiles(Locale locale, Model model, HttpSession session) {
-		logger.info("TEST FILE INVENTORY");
-
+	public String manageHistory(Locale locale, Model model, HttpSession session) {
+		logger.info("HISTORY FILES");
+		
+		String filter = (String)session.getAttribute("filter");
+		if (filter == null || filter.isEmpty()) {
+			filter = ".vs";
+		}
+		session.setAttribute("filter",filter);
+		HistoryFilterForm form = new HistoryFilterForm();
+		form.setFilter(filter);
+		model.addAttribute("filterForm", form);
+	
 		// Load the directory specs from disc to be sure we are up to date on categories.
 		List<SchematronCategory> dirSpecs =  categoryService.loadOrBuild();
 		model.addAttribute(SchematronCategoryService.SCHEMATRON_CATEGORY, dirSpecs);
@@ -97,23 +111,30 @@ public class TestFileController extends CommonUtilsImpl{
 				String subDir = dir.getName();
 				logger.info("Getting files for subdir " + subDir);
 
-				ArrayList<FileSpec> files = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_TESTFILES,subDir, null);
+				ArrayList<FileSpec> files = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_RESULTS,subDir, filter);
 				dir.setFiles(files);
+				model.addAttribute(subDir+"List",files);
 				UploadFileForm uff = new UploadFileForm();
 				uff.setSubDir(subDir);
 				model.addAttribute("upload"+subDir, uff);
 			}
 		}
-		
+
 		// Older versions of app can't handle history files, so determine if we should show the history tab or not.
 		if (fileService.existHistoryFiles()) {
 			model.addAttribute("showHistory",true);
 		}
 
-		
-		return "testFileInventory";
+		model.addAttribute((session.getAttribute("testName") == null)? "":(String)session.getAttribute("testName"));
+
+		return "historyInventory";
 	}
 
+	@RequestMapping(value="filter", method = RequestMethod.POST)
+	public String filterFiles (HistoryFilterForm theForm, BindingResult result, Locale locale, Model model, HttpSession session) {
+		session.setAttribute("filter", theForm.getFilter()); 
+		return manageHistory(locale, model, session);
+	}
 	/**
 	 * This method is called by AJAX from the test files inventory page. It reads the contents of the given file
 	 * (as specified by the filename and the folder name - type - of the folder where the particular test file file resides)
@@ -127,12 +148,21 @@ public class TestFileController extends CommonUtilsImpl{
 	 * @return
 	 */
 
-	@RequestMapping(value = "getXML", method = RequestMethod.GET)
-	public @ResponseBody String gettext (Locale locale, Model model,  @RequestParam("type") String type, @RequestParam("file") String filename) {
-		logger.info("Testfile Inventory: Called via ajax getXML");
-		String response = fileService.readExtFileUnparsed(QRDA_URIResolver.REPOSITORY_TESTFILES, type, filename);
-		logger.debug(response);
-		return response;
+	@RequestMapping(value = "getTestResults", method = RequestMethod.GET)
+	public String getTest (Locale locale, Model model, HttpSession session, @RequestParam("type") String type, @RequestParam("file") String filename) {
+		logger.info("Called via ajax getTestResults, type:" + type + ", file:" + filename );
+		String response = "";
+		ValidationSuite vs = validator.getValidationFromHistory(type,filename);
+		if (vs != null) {
+			session.setAttribute("validationResults", vs);
+			response = filename + " has name: " + vs.getName();//fileService.readExtFileUnparsed(QRDA_URIResolver.REPOSITORY_RESULTS, type, filename);
+			logger.info(response);
+			
+		}
+		else {
+			response = "File " + filename + " not found in " + type + " history.";
+		}
+		return changeTestCase(-1, locale,model, session);
 	}
 
 	/**
@@ -150,31 +180,49 @@ public class TestFileController extends CommonUtilsImpl{
 	@RequestMapping(value="/remove/{filename}&{subdir}", method = RequestMethod.GET)
     public String processRemoveFile(@PathVariable String filename,  @PathVariable String subdir, Locale locale, Model model, HttpServletRequest request) {
 		
-		logger.info("Delete file: " + filename + " in " + QRDA_URIResolver.REPOSITORY_TESTFILES + "/" + subdir);
-		fileService.deleteFile(filename,  QRDA_URIResolver.REPOSITORY_TESTFILES, subdir);
-		return "redirect:/testFiles";
+		logger.info("Delete file: " + filename + " in " + QRDA_URIResolver.REPOSITORY_RESULTS + "/" + subdir);
+		fileService.deleteFile(filename,  QRDA_URIResolver.REPOSITORY_RESULTS, subdir);
+		return "redirect:/historyFiles";
 	}
 
-	/**
-	 * Uploads a file into the sub directory under the test file file repository.
-	 * 
-	 * @param uploadFileForm
-	 * @param result
-	 * @param locale
-	 * @param model
-	 * @param request
-	 * @return
-	 */
+	@RequestMapping(value="change/{index}", method = RequestMethod.GET)
+	public String changeTestCase (@PathVariable Integer index,Locale locale, Model model, HttpSession session) {
+		logger.debug(String.format("Change current test case, index: %d", index)); 
+		ValidationSuite vs = (ValidationSuite)session.getAttribute("validationResults");
+		TestCase tc = null;
+		model.addAttribute("testPresent", true); 
+		model.addAttribute("caseSelected", false); // Assume we won't want to show the test case details tabs
+		if (vs != null && index != null && index >= 0 ) {
+			// An index of -1 implies don't retrieve any test case. (Used on initial page display)
+			try {
+				tc = vs.getNth(index);
+				model.addAttribute("caseSelected", true); // We retrieved an actual test case, so we'll show the tabs
+			}
+			catch (Exception e) {
+				tc = null;
+				logger.error("Error getting nth testcase from validation suite. Index: " + index, e);
+			}
+		}
+		model.addAttribute("validationResults",vs);
+		model.addAttribute("testCase",tc); 
+		session.setAttribute("testCase", tc);
+		String filter = (String)session.getAttribute("filter");
+		return manageHistory(locale,model,session);
+	}
 
-	@RequestMapping(value="/upload", method = RequestMethod.POST)
-    public String processUploadFileForm(UploadFileForm uploadFileForm, BindingResult result, Locale locale, Model model, HttpServletRequest request) {
-		
-        // Redirect to the page with any errors
-        if (result.hasErrors()) {
-        	return manageTestFiles(locale, model, request.getSession());
-        }
- 		fileService.uploadFile(uploadFileForm.getPath(), QRDA_URIResolver.REPOSITORY_TESTFILES, uploadFileForm.getSubDir(), uploadFileForm.getName());
-		return "redirect:/testFiles";
+	@RequestMapping(value = "rerun", method = RequestMethod.GET)
+	public String rerunTest (Locale locale, Model model, HttpSession session ) {
+		//logger.info("Called via ajax getTestResults, type:" + type + ", file:" + filename);
+		ValidationSuite vs = (ValidationSuite)session.getAttribute("validationResults");
+		if (vs != null) {
+			validator.resetValidationSuite(vs);
+			validator.runValidation(vs);
+			session.setAttribute("validationResults", vs);
+		}
+		else {
+			
+		}
+		return changeTestCase(-1, locale,model, session);
 	}
 
 }

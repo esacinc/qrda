@@ -37,6 +37,7 @@ POSSIBILITY OF SUCH DAMAGE.
    <c:set var="getXMLStringURL"><c:url value='/workbench/getXML/'/></c:set>
    <c:set var="runValidationURL"><c:url value='/workbench/'/></c:set>
    <c:set var="changeTestCaseURL"><c:url value='/workbench/change/'/></c:set>
+   <c:set var="rerunURL"><c:url value='/workbench/rerun/'/></c:set>
    <c:set var="downloadIcon"><a href='${testCase.validationReportPath }' onClick='javascript:return false;' data-toggle='popover' title='<fmt:message key="workbench.button.downloadTitle"/>' data-content='<fmt:message key="workbench.button.downloadInstr"/>' ><span class='glyphicon glyphicon-download'></span></a></c:set>
   
    <c:set var="ERROR_PREFIX">ERROR:</c:set> 
@@ -113,7 +114,10 @@ POSSIBILITY OF SUCH DAMAGE.
 	    	 $("#btnPrintWarnings").click( function () {
 		 		    printDiv('warningsDisplayDiv');
 		    		 });
-    	 
+	    	 $("#btnRerun").click( function () {
+    			 href="${rerunURL }";
+	    		 window.location = href; 
+    		 });
 	    	 // Hide all of the test file items (Their ui element names all contain the 'checkboxes' string.)
 	    	 $("[name^='checkboxes']").hide();
 	    	 // Then set a click event on all of the schematron names that will show the appropriate test files based on the schematron type

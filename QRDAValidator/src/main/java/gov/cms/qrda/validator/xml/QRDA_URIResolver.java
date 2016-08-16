@@ -29,6 +29,7 @@ POSSIBILITY OF SUCH DAMAGE.
 */
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.Map;
 import java.util.Set;
 import java.util.SortedMap;
@@ -51,8 +52,13 @@ import gov.cms.qrda.validator.web.service.FileServiceImpl;
  * @author dandonahue
  *
  */
-public class QRDA_URIResolver implements URIResolver {
-	private static final Logger logger = LoggerFactory.getLogger(FileServiceImpl.class);
+public class QRDA_URIResolver implements URIResolver, Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6823571272835035039L;
+
+	private static final Logger logger = LoggerFactory.getLogger(QRDA_URIResolver.class);
 
 	// The following string values are one-to-one mappings to directory names in the QRDA_HOME filespace on the server.
 
@@ -66,6 +72,9 @@ public class QRDA_URIResolver implements URIResolver {
 	public static final String REPOSITORY_TYPE_HQR = "HQR";
 	public static final String REPOSITORY_TYPE_PQRS = "PQRS";
 	
+	public static final String VOCABULARY_TYPE_QRDA_I = "QRDA1";
+	public static final String VOCABULARY_TYPE_QRDA_III = "QRDA3";
+	
 	public static final String REPOSITORY_PROPERTIES = "properties";
 
 	public    static String QRDA_HOME = System.getenv("QRDA_HOME"); 
@@ -78,16 +87,18 @@ public class QRDA_URIResolver implements URIResolver {
 	private   String RESULT_HOME = QRDA_HOME + File.separator + REPOSITORY_RESULTS + File.separator;
 	private   String PROPERTIES_HOME = QRDA_HOME + File.separator + REPOSITORY_PROPERTIES + File.separator;
 	
+	private   String isoSubfolder = REPOSITORY_TYPE_HL7;
 
-	public QRDA_URIResolver() {
-	    logger.info("QRDA Resolver created, resolving QRDA HOME to: " + QRDA_HOME + ", ISO files in: " + ISO_HOME);
+	public QRDA_URIResolver(String isoSubFolder) {
+		isoSubfolder = isoSubFolder;
+	    logger.info("QRDA Resolver created, resolving QRDA HOME to: " + QRDA_HOME + ", ISO files in: " + ISO_HOME + isoSubFolder);
 	      // For debugging...
 	    Map<String, String> envMap = System.getenv();
 		SortedMap<String, String> sortedEnvMap = new TreeMap<String, String>(envMap);
 		Set<String> keySet = sortedEnvMap.keySet();
 		for (String key : keySet) {
 			String value = envMap.get(key);
-			logger.info("[" + key + "] " + value);
+			logger.debug("[" + key + "] " + value);
 		}
 	  }
 
@@ -98,7 +109,7 @@ public class QRDA_URIResolver implements URIResolver {
 	 */
 	@Override
 	public Source resolve(String href, String base) throws TransformerException {
-		StringBuffer path = new StringBuffer(ISO_HOME);
+		StringBuffer path = new StringBuffer(ISO_HOME + isoSubfolder + File.separator);
 	    path.append(href);
 	    File file = new File(path.toString());
 	    if(file.exists()) {
@@ -162,7 +173,7 @@ public class QRDA_URIResolver implements URIResolver {
 	 * Note: not used by transformers.
 	 * @return
 	 */
-	public  String getPropertiestHome() {
+	public  String getPropertiesHome() {
 		return PROPERTIES_HOME;
 	}
 }

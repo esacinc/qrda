@@ -28,5 +28,5 @@ POSSIBILITY OF SUCH DAMAGE.
  --%>
  
 <footer class="container-fluid bg-info">
-  <p class="bg-info" style="float:left;"><fmt:message key="footer.title"/> | <fmt:message key="footer.version"/> | <fmt:message key="footer.company"/></p><p class="bg-info" style="float:right;"><a href="${adminURL }">Admin</a></p>
+  <p class="bg-info" style="float:left;"><fmt:message key="footer.title"/> | <fmt:message key="footer.version"/> | <fmt:message key="footer.build"/> | <fmt:message key="footer.company"/></p><p class="bg-info" style="float:right;"><a href="${adminURL }">Admin</a></p>
 </footer>

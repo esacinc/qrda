@@ -66,7 +66,7 @@ public class SchematronCategoryController extends CommonUtilsImpl{
 	public SchematronCategoryService categoryService;
 
 	/**
-	 * Default mapping.  Gathers the categories from disc and displayes them on the UI
+	 * Default mapping.  Gathers the categories from disc and displays them on the UI
 	 * 
 	 * @param locale
 	 * @param model

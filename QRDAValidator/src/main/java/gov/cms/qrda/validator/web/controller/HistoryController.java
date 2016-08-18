@@ -48,6 +48,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import gov.cms.qrda.validator.model.SchematronCategory;
 import gov.cms.qrda.validator.model.FileSpec;
@@ -111,7 +112,7 @@ public class HistoryController extends CommonUtilsImpl{
 				String subDir = dir.getName();
 				logger.info("Getting files for subdir " + subDir);
 
-				ArrayList<FileSpec> files = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_RESULTS,subDir, filter);
+				ArrayList<FileSpec> files = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_RESULTS,subDir, filter,true); // true = sort by last modified date
 				dir.setFiles(files);
 				model.addAttribute(subDir+"List",files);
 				UploadFileForm uff = new UploadFileForm();
@@ -206,7 +207,6 @@ public class HistoryController extends CommonUtilsImpl{
 		model.addAttribute("validationResults",vs);
 		model.addAttribute("testCase",tc); 
 		session.setAttribute("testCase", tc);
-		String filter = (String)session.getAttribute("filter");
 		return manageHistory(locale,model,session);
 	}
 
@@ -224,5 +224,7 @@ public class HistoryController extends CommonUtilsImpl{
 		}
 		return changeTestCase(-1, locale,model, session);
 	}
+
+
 
 }

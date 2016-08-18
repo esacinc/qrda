@@ -36,18 +36,20 @@ POSSIBILITY OF SUCH DAMAGE.
 		.fileDisplayDiv { color: #000000; background-color: #dddddd;overflow-y:scroll;overflow-x:scroll; width:100%; height:100%; }
 	</style>
    
+   <c:set var="getXMLStringURL"><c:url value='/workbench/getXML/'/></c:set>
    <c:set var="getTestResultsPath"><c:url value='/history/getTestResults'/></c:set>
    <c:set var="removeFileURL"><c:url value='/history/remove/'/></c:set>
    <c:set var="changeTestCaseURL"><c:url value='/history/change/'/></c:set>
    <c:set var="rerunURL"><c:url value='/history/rerun/'/></c:set>
    <c:set var="filterURL"><c:url value='/history/filter/'/></c:set>
+   <c:set var="reportURL"><c:url value='${testCase.validationReportURL }'/></c:set>
+   <c:set var="downloadIcon"><a href='${reportURL}' onClick='javascript:return false;' data-toggle='popover' title='<fmt:message key="workbench.button.downloadTitle"/>' data-content='<fmt:message key="workbench.button.downloadInstr"/>' ><span class='glyphicon glyphicon-download'></span></a></c:set>
    
    <c:set var="HL7Name"><fmt:message key="global.nav.hl7"/></c:set>
    <c:set var="CECName"><fmt:message key="global.nav.cec"/></c:set>
    <c:set var="HQRName"><fmt:message key="global.nav.hqr"/></c:set>
    <c:set var="PQRSName"><fmt:message key="global.nav.pqrs"/></c:set>
    
-   <c:set var="downloadIcon">onClick='javascript:return false;' data-toggle='popover' title='<fmt:message key="inventory.vocFile.button.downloadTitle"/>' data-content='<fmt:message key="inventory.vocFile.button.downloadInstr"/>' ><span class='glyphicon glyphicon-download'></span></a></c:set>
    <script>
    
 	   var HL7Base = "HL7"; 
@@ -140,6 +142,9 @@ POSSIBILITY OF SUCH DAMAGE.
 	 		    printDiv('xmlDisplayDiv');
 	    		 });
 
+	    	 // If any elements have bootstrap popovers, enable them as such.
+	    	 $('[data-toggle="popover"]').popover(); 
+
 	    	 // Hide/show elements depending on whether a validation test has been run, and whether the user has selected one of the test results.
 	    	 if (testPresent == "true") {
 	    		showHowTo(false);
@@ -190,5 +195,99 @@ POSSIBILITY OF SUCH DAMAGE.
 	  	   }
 
 	    });
+  
+   	   // Called when user selects a test case result. Populates the xml display div under result report tab with the contents of the test report. 
+	   function doAjaxGetReportXMLString() {
+		   waitOn();
+     	    $.ajax({  
+     	     type : "Get", 
+     	     dataType: "text",
+      	     url : '${getXMLStringURL}RESULT&${testCase.validationReportFilename}&${validationResults.resultsFolder}',   
+     	     success : function(response) { 
+     			   displayXMLString(response,'xmlReportDisplayDiv');
+     			   $("#xmlReportControlBar").show();
+     			   // The download icon has a bootstrap popover, and must be enabled as such...
+     			   $('#xmlTitleReport span').html("${testCase.validationReportFilename} ${downloadIcon}");
+     			   $('[data-toggle="popover"]').popover();
+     			   $("#txtID2").val("");
+     			   reportFileShown = 1;
+      			   waitOff();
+       	     },  
+     	     error : function(err) {  
+     	    	$("#subtitleReport span").text("Error: " + err.message);
+     	    	waitOff();
+     	     }  
+     	    }); 
+   		}
+
+   	   // Called when user selects a test case result. Populates the xml display div under result report tab with the contents of the test report. 
+	   function doAjaxGetSchematronXMLString() {
+		   waitOn();
+    	    $.ajax({  
+    	     type : "Get", 
+    	     dataType: "text",
+     	     url : '${getXMLStringURL}SCHEMATRON&${validationResults.schematronFilename}&${validationResults.schematronType}',   
+    	     success : function(response) { 
+    			   displayXMLString(response,'xmlSchematronDisplayDiv');
+    			   $("#xmlSschematronControlBar").show();
+    			   $('#xmlTitleSchematron span').text("${validationResults.schematronFilename}");
+    			   schematronFileShown = 1;
+    			   waitOff();
+      	     },  
+    	     error : function(err) {  
+    	    	$("#subtitleReport span").text("Error: " + err.message);
+    	    	waitOff();
+    	     }  
+    	    }); 
+  		}
+
+   	   // Called when user selects a test case result. Populates the xml display div under the Schematron tab with the contents of the original schematron file used in the test. 
+	   function doAjaxGetTestXMLString() {
+		   waitOn();
+	   	    $.ajax({  
+	   	     type : "Get", 
+	   	     dataType: "text",
+	    	     url : '${getXMLStringURL}TEST&${testCase.filename}&${validationResults.schematronType}',   
+	   	     success : function(response) { 
+			  		   displayXMLString(response,'xmlTestFileDisplayDiv');
+					   $("#xmlTestFileControlBar").show();
+					   $('#xmlTitleTestFile span').text("${testCase.filename}");
+					   testFileShown = 1;
+					   waitOff();
+	     	     },  
+	   	     error : function(err) {  
+	   	    	$("#subtitleReport span").text("Error: " + err.message);
+	   	    	waitOff();
+	   	     }  
+   	    }); 
+ 		}
+
+
+	   function maybeShowReportFile() {
+		   if (reportFileShown == 0) {
+			   $('#xmlDisplayDiv').text("Please Wait...loading report file...");
+			   doAjaxGetReportXMLString()
+			   reportFileShown = 1;
+		   }
+	   }
+	   
+	   function maybeShowSchematronFile() {
+		   if (schematronFileShown == 0) {
+			   $('#xmlSchematronDisplayDiv').text("Please Wait...loading  schematron file...");
+			   doAjaxGetSchematronXMLString()
+			   schematronFileShown = 1;
+		   }
+		   
+	   }
+	   
+	   function maybeShowTestFile() {
+		   if (testFileShown == 0) {
+			   $('#xmlTestFileDisplayDiv').text("Please Wait...loading test file...");
+			   doAjaxGetTestXMLString()
+			   testFileShown = 1;
+		   }
+		   
+	   }
+
    </script>
     

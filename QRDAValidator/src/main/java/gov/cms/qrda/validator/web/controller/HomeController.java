@@ -67,7 +67,7 @@ public class HomeController extends CommonUtilsImpl {
 	@RequestMapping(method = RequestMethod.GET)
 	public String home(Locale locale, Model model, HttpSession session) {
 		logger.info("HOME PAGE");
-		
+
 		// Load the directory specs from disc to be sure we are up to date on categories.
 		List<SchematronCategory> dirSpecs =  categoryService.loadOrBuild();
 		model.addAttribute(SchematronCategoryService.SCHEMATRON_CATEGORY, dirSpecs);

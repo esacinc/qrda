@@ -68,6 +68,9 @@
 			<sch:assert id="a-1098-31974-error" test="count(cda:statusCode) = 1">
 				This act SHALL contain exactly one [1..1] statusCode (CONF:1098-31974).
 			</sch:assert>
+		</sch:rule>
+
+		<sch:rule id="Planned_Coverage-act-statusCode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.129']]/cda:entryRelationship/cda:act/cda:statusCode">
 			<sch:assert id="a-1098-31975-error" test="@code='active'">
 				This statusCode SHALL contain exactly one [1..1] @code="active" Active (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-31975).
 			</sch:assert>

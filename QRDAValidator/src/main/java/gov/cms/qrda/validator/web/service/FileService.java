@@ -109,9 +109,18 @@ public interface FileService {
 	/**
 	 * Returns a list of FileSpec objects representing the files present in the 
 	 * QRDA_HOME/qrda/<baseDir>/subDir folder on the server. The list returned contains FileSpec objects
+	 * for files only. Directories are not included. Files may be sorted in reverse chronological order by supplying
+	 * a true value for the sortByDate parameter.
+	 */
+	public ArrayList<FileSpec> getExtRepositoryFiles(String baseDir, String subDir, String contains, boolean sortByDate);
+
+	/**
+	 * Returns a list of FileSpec objects representing the files present in the 
+	 * QRDA_HOME/qrda/<baseDir>/subDir folder on the server. The list returned contains FileSpec objects
 	 * for files only. Directories are not included.
 	 */
 	public ArrayList<FileSpec> getExtRepositoryFiles(String baseDir, String subDir, String contains);
+
 	
 	/**
 	 * Creates a directory under the QRDA_HOME/qrda/result/ folder on the server. The dirname is the
@@ -152,7 +161,7 @@ public interface FileService {
 	 * The filenamePostfix value is appended to results file names that are created as part of each test case.
 	 * The filenamePostfic values in normally a string representing a data-time value.
 	 */
-	public List<TestCase> createTestCases(String schematronFilename, String schematronType, List<String>testFilenames, String filenamePostFix);
+	public List<TestCase> createTestCases(String schematronFilename, String schematronType, List<String>testFilenames, String filenamePostFix, String resultsFolder);
 	
 	/**
 	 * Uploads a file from the user's machine into a directory on the validator server. The file is 
@@ -207,5 +216,13 @@ public interface FileService {
 	 * @return
 	 */
 	public boolean existHistoryFiles(); // Older versions of app can't handle history files. Return true if history files are present
-
+	
+	/**
+	 * Takes a full pathname to a file on the server filespace and creates a URL that points to the same file.
+	 * 
+	 * @param pathname - the full path to the file
+	 * @param topDir - the top-most directory in the QRDA filespace (e.g. "results" or "testfiles", etc.)
+	 * @return a URL that references the same file
+	 */
+	public String convertToURL(String pathname, String topDir);
 }

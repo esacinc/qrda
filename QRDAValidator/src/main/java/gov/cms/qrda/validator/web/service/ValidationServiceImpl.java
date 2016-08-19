@@ -99,7 +99,7 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
     	ValidationSuite vs = new ValidationSuite(name, schematronType, schematronFile);
     	vs.initIsoFilenames(props);
     	vs.setTestFilenames(testCaseNames);
-    	vs.setTestCases(fileService.createTestCases(vs.getSchematronFilename(), vs.getSchematronType(), testCaseNames, vs.getNameTimestamp()));
+    	vs.setTestCases(fileService.createTestCases(vs.getSchematronFilename(), vs.getSchematronType(), testCaseNames, vs.getNameTimestamp(), vs.getResultsFolder()));
     	if (!fileService.createResultsDir(vs.getResultsFolder())) {
     		vs.addStatusText(wrapErrorSpan("ERROR: Failed to create results folder: " + vs.getResultsFolder()));
     	};
@@ -111,7 +111,7 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
     	Properties props = fileService.loadPropertiesExt(propertiesFile);
     	vs.initIsoFilenames(props);
      	vs.reset();
-    	vs.setTestCases(fileService.createTestCases(vs.getSchematronFilename(), vs.getSchematronType(), vs.getTestFilenames(), vs.getNameTimestamp()));
+    	vs.setTestCases(fileService.createTestCases(vs.getSchematronFilename(), vs.getSchematronType(), vs.getTestFilenames(), vs.getNameTimestamp(), vs.getResultsFolder()));
     	if (!fileService.createResultsDir(vs.getResultsFolder())) {
     		vs.addStatusText(wrapErrorSpan("ERROR: Failed to create results folder: " + vs.getResultsFolder()));
     	};
@@ -237,6 +237,13 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 		try {
 			ValidationSuite newvs = fileService.readTestSuite( type, filename);
 			if (newvs != null) {
+				for (TestCase tc : newvs.getTestCases()) {
+					// Older histories do not have validation report UL set, so we need to insure it is set properly
+					String oldURL = tc.getValidationReportURL();
+					if (oldURL == null || oldURL.isEmpty()) {
+						tc.setValidationReportURL(fileService.convertToURL(tc.getValidationReportPath(), QRDA_URIResolver.REPOSITORY_RESULTS));
+					}
+				}
 				return newvs;
 			}
 			else {
@@ -450,6 +457,7 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 		// Remember the canonical (absolute) path for the results file. (We use this to enable file downloading on the UI)
 		testCase.setValidationReportPath(fileService.getAbsolutePath(testCase.getValidationReportFilename(),QRDA_URIResolver.REPOSITORY_RESULTS,testSuite.getResultsFolder()));
 		logger.debug("Report path: " + testCase.getValidationReportPath());
+		testCase.setValidationReportURL(fileService.convertToURL(testCase.getValidationReportPath(), QRDA_URIResolver.REPOSITORY_RESULTS));
 		// If all of the files were opened okay, then proceed with the transform.
 		if (result) {
 			validationReport = performTransform(sampleXml, schematron, validationReport, testSuite, testCase);

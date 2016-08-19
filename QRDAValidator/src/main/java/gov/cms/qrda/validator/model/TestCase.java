@@ -31,6 +31,8 @@ POSSIBILITY OF SUCH DAMAGE.
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import gov.cms.qrda.validator.xml.QRDA_URIResolver;
+
 /**
  * The TestCase class represents a QRDA test file resident on the QRDA file repository defined in the 
  * QRDA_HOME/qrda file space.
@@ -55,6 +57,7 @@ public class TestCase extends FileSpec implements Serializable {
 	private String schematronFilename = null;           // The filename of the schematron to use to validate this test file.
 	private String validationReportFilename = null;     // The filename of the validation report generated during the validation process
 	private String validationReportPath = null;         // The full canonical path to the report file on the server's filespace.
+	private String validationReportURL = null;          // The URL to the report file on the server's filespace.
 	private ArrayList<Failure> errors = null;           // The list of failure objects generated during validation
 	private ArrayList<String> statusText = new ArrayList<String>();  // A list of informational text populated as the validation processs progresses.
 	
@@ -67,7 +70,7 @@ public class TestCase extends FileSpec implements Serializable {
 		schematronFilename = schematron;
 		// Generate a unique name for the validation report. (The filenamePostfix is expected to be a formatted timestamp to insure uniqueness.)
 		validationReportFilename = getFilename().substring(0,getFilename().lastIndexOf(".")) + "_" + filenamePostfix + ".svrlt";
-	}
+ 	}
 	
 	public String getSchematronFilename() {
 		return schematronFilename;
@@ -85,7 +88,15 @@ public class TestCase extends FileSpec implements Serializable {
 	public void setValidationReportFilename(String val) {
 		validationReportFilename = val;
 	}
+
+	public String getValidationReportURL() {
+		return validationReportURL;
+	}
 	
+	public void setValidationReportURL(String val) {
+		validationReportURL = val;
+	}
+
 	public ArrayList<Failure> getErrors() {
 		return errors;
 	}

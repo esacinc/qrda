@@ -38,7 +38,8 @@ POSSIBILITY OF SUCH DAMAGE.
    <c:set var="runValidationURL"><c:url value='/workbench/'/></c:set>
    <c:set var="changeTestCaseURL"><c:url value='/workbench/change/'/></c:set>
    <c:set var="rerunURL"><c:url value='/workbench/rerun/'/></c:set>
-   <c:set var="downloadIcon"><a href='${testCase.validationReportPath }' onClick='javascript:return false;' data-toggle='popover' title='<fmt:message key="workbench.button.downloadTitle"/>' data-content='<fmt:message key="workbench.button.downloadInstr"/>' ><span class='glyphicon glyphicon-download'></span></a></c:set>
+   <c:set var="reportURL"><c:url value='${testCase.validationReportURL }'/></c:set>
+   <c:set var="downloadIcon"><a href='${reportURL}' onClick='javascript:return false;' data-toggle='popover' title='<fmt:message key="workbench.button.downloadTitle"/>' data-content='<fmt:message key="workbench.button.downloadInstr"/>' ><span class='glyphicon glyphicon-download'></span></a></c:set>
   
    <c:set var="ERROR_PREFIX">ERROR:</c:set> 
    <c:set var="EXPECTED_ERROR_EQ_PREFIX">EXPECTED ERRORS =</c:set>

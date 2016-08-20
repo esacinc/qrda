@@ -14,7 +14,7 @@
 	</sch:phase>
 	
 	<sch:pattern id="Medication_Free_Text_Sig-pattern-errors">
-		<sch:rule id="Medication_Free_Text_Sig-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]">
+		<sch:rule id="Medication_Free_Text_Sig-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]">
 			<sch:assert id="a-1198-32770-error" test="@classCode='SBADM'">
 				SHALL contain exactly one [1..1] @classCode="SBADM" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1198-32770).
 			</sch:assert>
@@ -36,7 +36,7 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Free_Text_Sig-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:code">
+		<sch:rule id="Medication_Free_Text_Sig-code-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:code">
 			<sch:assert id="a-1198-32780-error" test="@code='76662-6'">
 				This code SHALL contain exactly one [1..1] @code="76662-6" Instructions Medication (CONF:1198-32780).
 			</sch:assert>
@@ -45,31 +45,31 @@
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Free_Text_Sig-text-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:text">
+		<sch:rule id="Medication_Free_Text_Sig-text-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:text">
 			<sch:assert id="a-1198-32755-error" test="count(cda:reference) = 1">
 				This text SHALL contain exactly one [1..1] reference (CONF:1198-32755).
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Free_Text_Sig-reference-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:text/cda:reference">
+		<sch:rule id="Medication_Free_Text_Sig-reference-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:text/cda:reference">
 			<sch:assert id="a-1198-32774-error" test="starts-with(@value, '#')">
 				This reference/@value SHALL begin with a '#' and SHALL point to its corresponding narrative (using the approach defined in CDA Release 2, section 4.3.5.1) (CONF:1198-32774).
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Medication_Free_Text_Sig-consumable-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:consumable">
+		<sch:rule id="Medication_Free_Text_Sig-consumable-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:consumable">
 			<sch:assert id="a-1198-32777-error" test="count(cda:manufacturedProduct) = 1">
 				This consumable SHALL contain exactly one [1..1] manufacturedProduct (CONF:1198-32777).
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Free_Text_Sig-manufacturedProduct-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:consumable/cda:manufacturedProduct">
+		<sch:rule id="Medication_Free_Text_Sig-manufacturedProduct-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:consumable/cda:manufacturedProduct">
 			<sch:assert id="a-1198-32778-error" test="count(cda:manufacturedLabeledDrug) = 1">
 				This manufacturedProduct SHALL contain exactly one [1..1]  (CONF:1198-32778).
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Free_Text_Sig-manufacturedLabeledDrug-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:consumable/cda:manufacturedProduct/cda:manufacturedLabeledDrug">
+		<sch:rule id="Medication_Free_Text_Sig-manufacturedLabeledDrug-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:consumable/cda:manufacturedProduct/cda:manufacturedLabeledDrug">
 			<sch:assert id="a-1198-32779-error" test="@nullFlavor='NA'">
 				This manufacturedLabeledDrug SHALL contain exactly one [1..1] @nullFlavor="NA" Not Applicable (CONF:1198-32779).
 			</sch:assert>
@@ -77,7 +77,7 @@
 	</sch:pattern>
 	
 	<sch:pattern id="Medication_Free_Text_Sig-pattern-warnings">
-		<sch:rule id="Medication_Free_Text_Sig-reference-warnings" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:text/cda:reference">
+		<sch:rule id="Medication_Free_Text_Sig-reference-warnings" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.147']]/cda:text/cda:reference">
 			<sch:assert id="a-1198-32756-warning" test="count(@value) = 1">
 				This reference SHOULD contain zero or one [0..1] @value (CONF:1198-32756).
 			</sch:assert>

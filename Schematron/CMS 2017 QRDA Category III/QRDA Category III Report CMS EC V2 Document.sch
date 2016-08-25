@@ -53,7 +53,7 @@
             <sch:assert id="a-2233-711247-error" test="@code='en'">This languageCode SHALL contain exactly one [1..1] @code="en" English (CodeSystem: Language urn:oid:2.16.840.1.113883.6.121) (CONF:2233-711247).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_III_CMS-recordTarget-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2']]/cda:recordTarget">
-            <sch:assert id="a-2233-17232-error" test="count(cda:patientRole[count(cda:id[@nullFlavor='NA'])=1])=1"></sch:assert>
+            <sch:assert id="a-2233-17232-error" test="count(cda:patientRole[count(cda:id[@nullFlavor='NA'])=1])=1">This recordTarget SHALL contain exactly one [1..1] patientRole (CONF:2233-17232) such that it SHALL contain exactly one [1..1] id (CONF:2233-17233). This id SHALL contain exactly one [1..1] @nullFlavor="NA" (CONF:2233-17234).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_III_CMS-author-assignedAuthor-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2']]/cda:author/cda:assignedAuthor">
             <sch:assert id="a-2233-711240-error" test="count(cda:id)=1">This assignedAuthor SHALL contain exactly one [1..1] id (CONF:2233-711240).</sch:assert>

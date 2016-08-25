@@ -47,7 +47,7 @@
             <sch:assert id="a-3259-19669-error" test="@code">This languageCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet Language urn:oid:2.16.840.1.113883.1.11.11526 DYNAMIC (CONF:3259-19669).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_III_V3-recordTarget-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1']]/cda:recordTarget">
-            <sch:assert id="a-3259-17232-error" test="count(cda:patientRole[count(cda:id[@nullFlavor='NA'])=1])=1"></sch:assert>
+            <sch:assert id="a-3259-17232-error" test="count(cda:patientRole[count(cda:id[@nullFlavor='NA'])=1])=1">This recordTarget SHALL contain exactly one [1..1] patientRole (CONF:3259-17232) such that it SHALL contain exactly one [1..1] id (CONF:3259-17233). This id SHALL contain exactly one [1..1] @nullFlavor="NA" (CONF:3259-17234).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_III_V3-author-assignedAuthor-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1']]/cda:author/cda:assignedAuthor">
             <sch:assert id="a-3259-18163-error" test="count(cda:representedOrganization)=1">This assignedAuthor SHALL contain exactly one [1..1] representedOrganization (CONF:3259-18163).</sch:assert>

@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!--  
+  THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+  IN NO EVENT SHALL ESAC INC., OR ANY OF THEIR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  
+  Schematron file generated August 26, 2016
+  CMS 2017 QRDA Category III for Eligible Clinicians
+-->
+
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="svs" uri="urn:ihe:iti:svs:2008" />
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
@@ -422,7 +436,7 @@
       <sch:assert id="a-2226-19669-error" test="@code">This languageCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet Language urn:oid:2.16.840.1.113883.1.11.11526 DYNAMIC (CONF:2226-19669).</sch:assert>
     </sch:rule>
     <sch:rule id="QRDA_Category_III-recordTarget-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1']]/cda:recordTarget">
-      <sch:assert id="a-2226-17232-error" test="count(cda:patientRole[count(cda:id[@nullFlavor='NA'])=1])=1" />
+      <sch:assert id="a-2226-17232-error" test="count(cda:patientRole[count(cda:id[@nullFlavor='NA'])=1])=1">This recordTarget SHALL contain exactly one [1..1] patientRole (CONF:2226-17232) such that it SHALL contain exactly one [1..1] id (CONF:2226-17233). This id SHALL contain exactly one [1..1] @nullFlavor="NA" (CONF:2226-17234).</sch:assert>
     </sch:rule>
     <sch:rule id="QRDA_Category_III-author-assignedAuthor-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1']]/cda:author/cda:assignedAuthor">
       <sch:assert id="a-2226-18163-error" test="count(cda:representedOrganization)=1">This assignedAuthor SHALL contain exactly one [1..1] representedOrganization (CONF:2226-18163).</sch:assert>
@@ -751,7 +765,7 @@
       <sch:assert id="a-2233-711247-error" test="@code='en'">This languageCode SHALL contain exactly one [1..1] @code="en" English (CodeSystem: Language urn:oid:2.16.840.1.113883.6.121) (CONF:2233-711247).</sch:assert>
     </sch:rule>
     <sch:rule id="QRDA_Category_III_CMS-recordTarget-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2']]/cda:recordTarget">
-      <sch:assert id="a-2233-17232-error" test="count(cda:patientRole[count(cda:id[@nullFlavor='NA'])=1])=1" />
+      <sch:assert id="a-2233-17232-error" test="count(cda:patientRole[count(cda:id[@nullFlavor='NA'])=1])=1">This recordTarget SHALL contain exactly one [1..1] patientRole (CONF:2233-17232) such that it SHALL contain exactly one [1..1] id (CONF:2233-17233). This id SHALL contain exactly one [1..1] @nullFlavor="NA" (CONF:2233-17234).</sch:assert>
     </sch:rule>
     <sch:rule id="QRDA_Category_III_CMS-author-assignedAuthor-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2']]/cda:author/cda:assignedAuthor">
       <sch:assert id="a-2233-711240-error" test="count(cda:id)=1">This assignedAuthor SHALL contain exactly one [1..1] id (CONF:2233-711240).</sch:assert>

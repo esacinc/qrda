@@ -36,7 +36,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * jar files managed by maven dependencies, specifically
  * jquery.
  * 
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 public class WebJarController extends WebMvcConfigurerAdapter {

@@ -41,7 +41,7 @@ import java.util.List;
  * A lsit of the directory specs is serialized to disc and loaded into memory as needed.
  * 
   *  
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 public class SchematronCategory implements Serializable{

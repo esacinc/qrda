@@ -30,8 +30,6 @@ POSSIBILITY OF SUCH DAMAGE.
 
 import java.text.DateFormat;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
@@ -45,8 +43,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import gov.cms.qrda.validator.model.SchematronCategory;
-import gov.cms.qrda.validator.web.form.CategoryListForm;
 import gov.cms.qrda.validator.web.form.LoginForm;
 import gov.cms.qrda.validator.web.service.CommonUtilsImpl;
 import gov.cms.qrda.validator.web.service.SchematronCategoryService;
@@ -55,7 +51,7 @@ import gov.cms.qrda.validator.web.service.SchematronCategoryService;
  * Handles requests for the application home page.
  * Also maps the url /info to this page.
  * 
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 @Controller
@@ -73,12 +69,6 @@ public class LoginController extends CommonUtilsImpl {
 		
 		LoginForm loginForm = new LoginForm();
 		model.addAttribute("loginForm", loginForm);
-		
-		// Older versions of app can't handle history files, so determine if we should show the history tab or not.
-		if (fileService.existHistoryFiles()) {
-			model.addAttribute("showHistory",true);
-		}
-		
 		return "login";
 	}
 

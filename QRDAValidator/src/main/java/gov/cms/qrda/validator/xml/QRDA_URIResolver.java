@@ -43,13 +43,11 @@ import javax.xml.transform.stream.StreamSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import gov.cms.qrda.validator.web.service.FileServiceImpl;
-
 /**
  * This class is used by the validation transformers so that relative href references in import and include
  * statements in the source files are resolved (mapped) to specific locations on the server filespace.
  * 
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 public class QRDA_URIResolver implements URIResolver, Serializable {
@@ -67,14 +65,6 @@ public class QRDA_URIResolver implements URIResolver, Serializable {
 	public static final String REPOSITORY_ISO = "isofiles";
 	public static final String REPOSITORY_RESULTS = "result";
 	
-	public static final String REPOSITORY_TYPE_CEC = "CEC";
-	public static final String REPOSITORY_TYPE_HL7 = "HL7";
-	public static final String REPOSITORY_TYPE_HQR = "HQR";
-	public static final String REPOSITORY_TYPE_PQRS = "PQRS";
-	
-	public static final String VOCABULARY_TYPE_QRDA_I = "QRDA1";
-	public static final String VOCABULARY_TYPE_QRDA_III = "QRDA3";
-	
 	public static final String REPOSITORY_PROPERTIES = "properties";
 
 	public    static String QRDA_HOME = System.getenv("QRDA_HOME"); 
@@ -87,11 +77,11 @@ public class QRDA_URIResolver implements URIResolver, Serializable {
 	private   String RESULT_HOME = QRDA_HOME + File.separator + REPOSITORY_RESULTS + File.separator;
 	private   String PROPERTIES_HOME = QRDA_HOME + File.separator + REPOSITORY_PROPERTIES + File.separator;
 	
-	private   String isoSubfolder = REPOSITORY_TYPE_HL7;
+	private   String isoSubfolder = "";
 
 	public QRDA_URIResolver(String isoSubFolder) {
 		isoSubfolder = isoSubFolder;
-	    logger.info("QRDA Resolver created, resolving QRDA HOME to: " + QRDA_HOME + ", ISO files in: " + ISO_HOME + isoSubFolder);
+	   // logger.info("QRDA Resolver created, resolving QRDA HOME to: " + QRDA_HOME + ", ISO files in: " + ISO_HOME + isoSubFolder);
 	      // For debugging...
 	    Map<String, String> envMap = System.getenv();
 		SortedMap<String, String> sortedEnvMap = new TreeMap<String, String>(envMap);

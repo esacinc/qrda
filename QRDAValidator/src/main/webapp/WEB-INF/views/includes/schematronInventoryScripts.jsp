@@ -41,13 +41,6 @@ POSSIBILITY OF SUCH DAMAGE.
    <c:set var="saveAsPlaceholder"><fmt:message key="global.placeholder.saveAs"/></c:set>
    <c:set var="downloadIcon">onClick='javascript:return false;' data-toggle='popover' title='<fmt:message key="inventory.testFile.button.downloadTitle"/>' data-content='<fmt:message key="inventory.testFile.button.downloadInstr"/>' ><span class='glyphicon glyphicon-download'></span></a></c:set>
    <script>
-   
-   	   var HL7Base = "HL7"; 
-   	   var CECBase = "CEC"; 
-   	   var HQRBase = "HQR"; 
-   	   var PQRSBase = "PQRS"; 
-   	   var shownFile = "";
-   	   var shownFileDir = "";
    	   
 	   $(document).ready(function(){
 	    	 $("#navSchematrons").addClass("active"); 

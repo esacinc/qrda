@@ -28,9 +28,6 @@ POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -52,7 +49,7 @@ import gov.cms.qrda.validator.web.service.SchematronCategoryService;
  * Handles requests for the application home page.
  * Also maps the url /info to this page.
  * 
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 @Controller
@@ -71,11 +68,6 @@ public class HomeController extends CommonUtilsImpl {
 		// Load the directory specs from disc to be sure we are up to date on categories.
 		List<SchematronCategory> dirSpecs =  categoryService.loadOrBuild();
 		model.addAttribute(SchematronCategoryService.SCHEMATRON_CATEGORY, dirSpecs);
-		
-		// Older versions of app can't handle history files, so determine if we should show the history tab or not.
-		if (fileService.existHistoryFiles()) {
-			model.addAttribute("showHistory",true);
-		}
 		
 		return "home";
 	}

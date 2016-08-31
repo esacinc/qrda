@@ -28,8 +28,6 @@ POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -53,7 +51,7 @@ import gov.cms.qrda.validator.web.service.SchematronCategoryService;
 
 /**
  * Handles requests to/from the Categories management page
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 @Controller
@@ -98,11 +96,6 @@ public class SchematronCategoryController extends CommonUtilsImpl{
 		// Add the form we'll use to add a new category
 		AddCategoryForm addCategoryForm = new AddCategoryForm();
 		model.addAttribute("addCategoryForm", addCategoryForm);
-
-		// Older versions of app can't handle history files, so determine if we should show the history tab or not.
-		if (fileService.existHistoryFiles()) {
-			model.addAttribute("showHistory",true);
-		}
 
 		return "schematronCategories";
 	}

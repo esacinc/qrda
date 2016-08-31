@@ -28,10 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -50,17 +47,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import gov.cms.qrda.validator.model.SchematronCategory;
 import gov.cms.qrda.validator.model.FileSpec;
+import gov.cms.qrda.validator.model.SchematronCategory;
 import gov.cms.qrda.validator.web.form.UploadFileForm;
 import gov.cms.qrda.validator.web.service.CommonUtilsImpl;
 import gov.cms.qrda.validator.web.service.SchematronCategoryService;
-import gov.cms.qrda.validator.web.service.FileService;
 import gov.cms.qrda.validator.xml.QRDA_URIResolver;
 
 /**
  * Handles requests to/from the Schematron Inventory page
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 @Controller
@@ -103,12 +99,6 @@ public class SchematronController extends CommonUtilsImpl {
 				uff.setSubDir(subDir);
 				model.addAttribute("upload"+subDir, uff);
 			}
-		}
-
-		
-		// Older versions of app can't handle history files, so determine if we should show the history tab or not.
-		if (fileService.existHistoryFiles()) {
-			model.addAttribute("showHistory",true);
 		}
 		
 		return "schematronInventory";

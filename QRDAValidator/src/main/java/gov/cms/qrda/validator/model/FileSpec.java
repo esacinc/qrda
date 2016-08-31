@@ -44,7 +44,7 @@ import java.util.Date;
  *  @see gov.cms.qrda.validator.model.ValidationSuite
  *  @see gov.cms.qrda.validator.model.TestCase
  *  
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 public class FileSpec implements Serializable{

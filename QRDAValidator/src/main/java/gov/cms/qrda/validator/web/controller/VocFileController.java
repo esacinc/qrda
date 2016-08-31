@@ -28,10 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -50,17 +47,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import gov.cms.qrda.validator.model.SchematronCategory;
 import gov.cms.qrda.validator.model.FileSpec;
+import gov.cms.qrda.validator.model.SchematronCategory;
 import gov.cms.qrda.validator.web.form.UploadFileForm;
 import gov.cms.qrda.validator.web.service.CommonUtilsImpl;
 import gov.cms.qrda.validator.web.service.SchematronCategoryService;
-import gov.cms.qrda.validator.web.service.FileService;
 import gov.cms.qrda.validator.xml.QRDA_URIResolver;
 
 /**
  * Handles requests to/from the Test Files Inventory page
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 @Controller
@@ -103,38 +99,6 @@ public class VocFileController extends CommonUtilsImpl{
 				uff.setSubDir(subDir);
 				model.addAttribute("upload"+subDir, uff);
 			}
-		}
-        /*
-		ArrayList<FileSpec> cecs = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_ISO,QRDA_URIResolver.REPOSITORY_TYPE_CEC, ".xml");
-		model.addAttribute("cecList",cecs);
-		UploadFileForm uffCEC = new UploadFileForm();
-		uffCEC.setSubDir(QRDA_URIResolver.REPOSITORY_TYPE_CEC);
-		model.addAttribute("uploadCEC", uffCEC);
-
-		ArrayList<FileSpec> hl7s = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_ISO,QRDA_URIResolver.REPOSITORY_TYPE_HL7, ".xml");
-		model.addAttribute("hl7List",hl7s);
-		UploadFileForm uffHL7 = new UploadFileForm();
-		uffHL7.setSubDir(QRDA_URIResolver.REPOSITORY_TYPE_HL7);
-		model.addAttribute("uploadHL7", uffHL7);
-
-		ArrayList<FileSpec> hqrs = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_ISO,QRDA_URIResolver.REPOSITORY_TYPE_HQR, ".xml");
-		model.addAttribute("hqrList",hqrs);
-		UploadFileForm uffHQR = new UploadFileForm();
-		uffHQR.setSubDir(QRDA_URIResolver.REPOSITORY_TYPE_HQR);
-		model.addAttribute("uploadHQR", uffHQR);
-
-		
-		ArrayList<FileSpec> pqrs = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_ISO,QRDA_URIResolver.REPOSITORY_TYPE_PQRS, ".xml");
-		model.addAttribute("pqrsList",pqrs);
-		UploadFileForm uffPQRS = new UploadFileForm();
-		uffPQRS.setSubDir(QRDA_URIResolver.REPOSITORY_TYPE_PQRS);
-		model.addAttribute("uploadPQRS", uffPQRS);
-
-        */
-		
-		// Older versions of app can't handle history files, so determine if we should show the history tab or not.
-		if (fileService.existHistoryFiles()) {
-			model.addAttribute("showHistory",true);
 		}
 
 		return "vocabularyInventory";

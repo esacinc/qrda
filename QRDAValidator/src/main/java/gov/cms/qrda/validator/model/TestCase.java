@@ -45,7 +45,7 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
  * A ValidationSuite contains a list of TestCase objects. When the ValidationService runs the validation on a 
  * validation suite object, it applies the schematron specified in the suite to each of the TestCase files in that list.
  * 
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 public class TestCase extends FileSpec implements Serializable {

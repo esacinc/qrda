@@ -33,7 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
  * Spring MVC form containing user input required for adding a category to the system.
  *  
  * 
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 public class AddCategoryForm {

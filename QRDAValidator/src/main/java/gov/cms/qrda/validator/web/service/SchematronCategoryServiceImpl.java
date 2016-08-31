@@ -50,7 +50,7 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
  * 
  * @see gov.cms.qrda.validator.web.service.SchematronCategoryService
  * 
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 @Service

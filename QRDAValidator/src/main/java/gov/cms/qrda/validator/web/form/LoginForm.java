@@ -1,9 +1,5 @@
 package gov.cms.qrda.validator.web.form;
 
-import java.util.List;
-
-import gov.cms.qrda.validator.model.SchematronCategory;
-
 /*
 Copyright (c) 2016+, ESAC, Inc.
 All rights reserved.
@@ -37,7 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
  * Spring MVC form containing user input required for logging in as administrator
  *  
  * 
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 public class LoginForm {

@@ -36,13 +36,13 @@ import gov.cms.qrda.validator.model.ValidationSuite;
  * The ValidationService creates and run validation suites. A validation suite consists of a schematron file, and a list
  * of test case files to validate against the schematron. All results are stored in the validation suite object.
  * 
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 public interface ValidationService {
 	
     /**
-    * Creates a ValidationSuite from the arguments provided. The schematronType argument is one of "HL7", "CEC", "HQR" or "PQRS" and
+    * Creates a ValidationSuite from the arguments provided. The schematronType argument, for example "HL7", "CEC", "HQR" or "PQRS",
     * represents a subdirectory under the QRDA_HOME/qrda/schematrons folder on the server.
     *
     **/

@@ -33,7 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
  * The ValidationService will run the validation tests on the ValidationSuite created from data in this form.
  * 
  * 
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 public class HistoryFilterForm {

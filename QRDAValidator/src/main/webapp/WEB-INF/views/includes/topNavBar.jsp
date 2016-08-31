@@ -48,7 +48,7 @@ POSSIBILITY OF SUCH DAMAGE.
 	     <li id="navTests"><a href="${testFilesURL }"><fmt:message key="global.nav.tests"/></a></li>
 	     <li id="navVoc"><a href="${vocFilesURL }"><fmt:message key="global.nav.voc"/></a></li>
 	     <li id="navWorkbench"><a href="${workbenchURL }"><fmt:message key="global.nav.workbench"/></a></li> 
-	     <c:if test="${showHistory == true }"><li id="navHistory"><a href="${historyURL }"><fmt:message key="global.nav.history"/></a></li></c:if>
+	     <li id="navHistory"><a href="${historyURL }"><fmt:message key="global.nav.history"/></a></li>
 	   </ul>
 	  </div>
 </nav>

@@ -34,14 +34,14 @@ import org.springframework.web.multipart.MultipartFile;
  * Spring MVC Form containing data enabling the uploading of a file to a subDirectory 
  * under the QRDA_HOME/qrda file space.
  * 
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 public class UploadFileForm {
 	
     private MultipartFile path;  // The file to upload
     private String name;         // New name for the file, if present
-    private String subDir;       // The subDirectory to place the file. (One of "HL7", "HQR", "CEC", or "PQRS")
+    private String subDir;       // The subDirectory to place the file. (For example "HL7", "HQR", "CEC", or "PQRS")
     
 
 	public void setPath(MultipartFile path) {

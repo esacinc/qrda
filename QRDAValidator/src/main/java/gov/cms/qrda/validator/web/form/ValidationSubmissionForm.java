@@ -35,7 +35,7 @@ POSSIBILITY OF SUCH DAMAGE.
  * @see gov.cms.qrda.validator.model.ValidationSuite
  * @see gov.cms.qrda.validator.web.service.ValidationService
  * 
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 public class ValidationSubmissionForm {

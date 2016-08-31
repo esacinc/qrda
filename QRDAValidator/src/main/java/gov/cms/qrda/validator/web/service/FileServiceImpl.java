@@ -65,7 +65,7 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
  * 
  * @see gov.cms.qrda.validator.web.service.FileService
  * 
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 @Service
@@ -553,15 +553,6 @@ public class FileServiceImpl implements FileService {
     	return newVs;
     }
 
-	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.existHistoryFiles
-	 */
-     @Override
-	public boolean existHistoryFiles() {
-    	// Returns true if any validation suite (aka history file) has been written.
-    	return existHistoryFiles(this.fileRepository(QRDA_URIResolver.REPOSITORY_RESULTS,null));
-    }
-
  	/**
  	 * @see gov.cms.qrda.validator.web.service.FileService.convertToURL
  	 */
@@ -636,7 +627,7 @@ public class FileServiceImpl implements FileService {
 
 	// Initializes a FileSpec object using information from the given file and dir values.
 	// baseDir is the immediate child directory under the QRDA_HOME directory where the file is located. One of "schematrons", "testFiles", "result", "isofiles" or "properties".
-	// subDir is expected to be one of "HL7", "CEC", "HQR", or "PQRS" for schematron or test files, and represents
+	// subDir is expected to be the name of a directory under the baseDir , and represents
 	// the name of a sub-directory under QRDA_HOME/schematrons or QRDA_HOME/testfiles.  subDir may be null or "", indicating the file is in the baseDir directory.
 	protected  FileSpec initFileSpec(FileSpec fs, File file, String baseDir, String subDir) {
 		String name = file.getName();
@@ -684,30 +675,7 @@ public class FileServiceImpl implements FileService {
 	}
 	
     
-    // Look in the results repository for the existence of any history file (validation suite file). Return true as 
-    // soon as one is encountered.
-    private boolean existHistoryFiles(File directory) {
-	    boolean res = false;
-	    for (File file : directory.listFiles()) {
-	          if (file.isFile() && file.getName().endsWith(".vs")) {
-	              res = true;
-	              break;
-	          }
-	          // Only look in the subdirectories where validation suite files (history files) are written...
-	          if (file.isDirectory() && (file.getName().equalsIgnoreCase("HL7") 
-	        		                     || file.getName().equalsIgnoreCase("HQR") 
-	        		                     || file.getName().equalsIgnoreCase("CEC")
-	        		                     || file.getName().equalsIgnoreCase("PQRS"))) {
-	              res=  existHistoryFiles(file);
-	              if (res) { 
-	            	  break;
-	              }
-	          }
-	      }
-	      return res;
-    }
-    
-    
+     
     // Internal class for sorting file lists by last modified date
     @SuppressWarnings("rawtypes")
 	class LastModifiedComparator implements Comparable {

@@ -39,7 +39,7 @@ import org.springframework.stereotype.Service;
 /**
  * Common utilities shared by all controllers and services in the QRDAValidator project.
  * 
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 @Service

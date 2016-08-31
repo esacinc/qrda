@@ -28,13 +28,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -72,7 +67,7 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
  * 
  * @see gov.cms.qrda.validator.web.service.ValidationService
  * 
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 @Service
@@ -555,7 +550,7 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 			}
 			
 			// Include info about the fired assert's rule & context
-			Node parent = rule.getParentNode();
+			//Node parent = rule.getParentNode();
 			NamedNodeMap parentAttrs = rule.getAttributes();
 			for (int j = 0; j<parentAttrs.getLength(); j++) {
 				Node attr = parentAttrs.item(j);

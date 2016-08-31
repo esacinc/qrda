@@ -28,10 +28,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -43,7 +41,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import gov.cms.qrda.validator.xml.QRDA_URIResolver;
-import gov.cms.qrda.validator.web.service.CommonUtilsImpl;
 
 /**
  * The ValidationSuite class contains all of the information required to perform validation on a list
@@ -56,7 +53,7 @@ import gov.cms.qrda.validator.web.service.CommonUtilsImpl;
  * 
  * @see gov.cms.qrda.validator.web.service.ValidationService
  * 
- * @author dandonahue
+ * @author Dan Donahue
  *
  */
 public class ValidationSuite implements Serializable {
@@ -182,9 +179,8 @@ public class ValidationSuite implements Serializable {
 		return testFilenames;
 	}
 	
-	@SuppressWarnings("unchecked")
 	public void setTestFilenames(List<String> names) {
-		testFilenames = (ArrayList)names;
+		testFilenames = (ArrayList<String>)names;
 	}
 
 	public QRDA_URIResolver getFileResolver() {

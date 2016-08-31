@@ -75,7 +75,7 @@ public interface FileService {
 	 * Opens a file for reading. The file is expected to be in the QRDA filespace located in
 	 * QRDA_HOME/qrda on the server.  BaseDir represents the immediate subfolder under the qrda
 	 * folder (One of "isofiles", "schematrons", "testfiles" or "result").  The subDir argument is a subfolder under
-	 * the baseDir folder (One of "HL7", "HQR", "CEC", or "PQRS").  The filename is the name of the file
+	 * the baseDir folder (For example "HL7", "HQR", "CEC", or "PQRS").  The filename is the name of the file
 	 * in the qrda/baseDir/subDir directory.
 	 */
 	public FileInputStream openExtFileForReading(String baseDir, String subDir, String filename);
@@ -84,7 +84,7 @@ public interface FileService {
 	 * Opens a file for writing. The file is expected to be created in the QRDA filespace located in
 	 * QRDA_HOME/qrda on the server.  BaseDir represents the immediate subfolder under the qrda
 	 * folder (One of "schematrons", "testfiles" or "result").  The subDir argument is a subfolder under
-	 * the baseDir folder (One of "HL7", "HQR", "CEC", or "PQRS").  The filename is the name of the file
+	 * the baseDir folder (For example "HL7", "HQR", "CEC", or "PQRS").  The filename is the name of the file
 	 * in the qrda/baseDir/subDir directory.
 	 */
 	public FileOutputStream openExtFileForWriting(String baseDir, String subDir, String filename);
@@ -94,7 +94,7 @@ public interface FileService {
 	 * The file is expected to be in the QRDA filespace located in
 	 * QRDA_HOME/qrda on the server.  BaseDir represents the immediate subfolder under the qrda
 	 * folder (One of "isofiles", "schematrons", "testfiles" or "result").  The subDir argument is a subfolder under
-	 * the baseDir folder (One of "HL7", "HQR", "CEC", or "PQRS").  The filename is the name of the file
+	 * the baseDir folder (For example "HL7", "HQR", "CEC", or "PQRS").  The filename is the name of the file
 	 * in the qrda/baseDir/subDir directory.
 	 * 
 	 */
@@ -209,13 +209,6 @@ public interface FileService {
 	 * @return
 	 */
 	public ValidationSuite readTestSuite(String subDir, String filename);
-	
-	/**
-	 * Returns true if history files exist in the system.
-	 * 
-	 * @return
-	 */
-	public boolean existHistoryFiles(); // Older versions of app can't handle history files. Return true if history files are present
 	
 	/**
 	 * Takes a full pathname to a file on the server filespace and creates a URL that points to the same file.

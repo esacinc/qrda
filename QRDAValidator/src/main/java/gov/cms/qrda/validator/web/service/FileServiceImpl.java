@@ -86,7 +86,7 @@ public class FileServiceImpl implements FileService {
 	public Properties loadProperties(String propertiesFilename) {
 		Properties props = new Properties();
 		InputStream propsIn = this.getClass().getClassLoader().getResourceAsStream(propertiesFilename);
-		logger.info("Load properties file: " + propertiesFilename + ", input stream: " + propsIn);
+		logger.debug("Load properties file: " + propertiesFilename + ", input stream: " + propsIn);
 		// If file found, load it in as a Properties map
 		if (propsIn != null) {
 			try {
@@ -237,7 +237,7 @@ public class FileServiceImpl implements FileService {
 		    	logger.error(str);
 		    }
 		    else {
-		    	logger.info("Accessing " + file.getAbsolutePath());
+		    	logger.debug("Accessing " + file.getAbsolutePath());
 		    	str = FileUtils.readFileToString(file);    
 		    } 
 		    return str;
@@ -260,7 +260,7 @@ public class FileServiceImpl implements FileService {
 		    	logger.error(str);
 		    }
 		    else {
-		    	logger.info("Accessing " + file.getAbsolutePath());
+		    	logger.debug("Accessing " + file.getAbsolutePath());
 		    	str = FileUtils.readFileToString(file);    
 		    } 
 		    return str;
@@ -275,7 +275,7 @@ public class FileServiceImpl implements FileService {
 	 */
 	@Override
 	public ArrayList<FileSpec> getExtRepositoryFiles(String baseDir, String subDir, String contains, boolean sortByDate) {
-		logger.info(String.format("Get repository files in: %s, subdir: %s %s",baseDir ,subDir,((contains == null)?"":" with name containing: " + contains))) ;
+		logger.debug(String.format("Get repository files in: %s, subdir: %s %s",baseDir ,subDir,((contains == null)?"":" with name containing: " + contains))) ;
 	    File fileDirectory = fileRepository(baseDir,subDir); // Returns the directory to search
 	    File[] listOfFiles = fileDirectory.listFiles();      // Returns the array of file objects found in the directory
 	    
@@ -291,7 +291,7 @@ public class FileServiceImpl implements FileService {
 		    	listOfFiles[i] = pairs[i].f;
 	    }
 	    
-	    logger.info("    " + ((listOfFiles == null)?"No":listOfFiles.length) + " total files found");
+	    logger.debug("    " + ((listOfFiles == null)?"No":listOfFiles.length) + " total files found");
 	    ArrayList<String> filenames = new ArrayList<String>();
 	    ArrayList<FileSpec> fileSpecs = new ArrayList<FileSpec>();
 	    // For each file, create a FileSpec object...
@@ -308,7 +308,7 @@ public class FileServiceImpl implements FileService {
 	          }
 	        }
 	    }
-	    logger.info("    " + fileSpecs.size() + " collected");
+	    logger.debug("    " + fileSpecs.size() + " collected");
         return fileSpecs;
 	}
 
@@ -374,9 +374,9 @@ public class FileServiceImpl implements FileService {
                 stream.write(bytes);
                 stream.close();
  
-                logger.info("   Server File Location=" + serverFile.getAbsolutePath());
+                logger.debug("   Server File Location=" + serverFile.getAbsolutePath());
                 result = true;
-                logger.info("   File successfully uploaded file:" + name);
+                logger.debug("   File successfully uploaded file:" + name);
             } catch (Exception e) {
                 logger.error("   Failed to upload " + name,e);
             }
@@ -579,7 +579,7 @@ public class FileServiceImpl implements FileService {
 	// the QRDAURIResolver class.
 	protected File fileRepository(String baseDir, String subDir) {
 		String propertyHome = QRDA_URIResolver.QRDA_HOME;
-		logger.info("QRDA Home: " + propertyHome + ", baseDir: " + baseDir + ", subDir: " + subDir );
+		logger.debug("QRDA Home: " + propertyHome + ", baseDir: " + baseDir + ", subDir: " + subDir );
 		if (subDir != null && !subDir.isEmpty()) {
 			baseDir = baseDir + File.separator + subDir;
 		}

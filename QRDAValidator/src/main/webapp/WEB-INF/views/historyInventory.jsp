@@ -44,6 +44,11 @@ POSSIBILITY OF SUCH DAMAGE.
 	
 	<%@ include file="includes/historyScripts.jsp" %>
 	
+	<style>
+		table, td { border: none; vertical-align:top; padding-left:5px;} 
+	</style>
+	
+	
 </head>
 
 <body style="height:100%">
@@ -136,19 +141,15 @@ POSSIBILITY OF SUCH DAMAGE.
 				    	<ul style="list-style-type:none;">
 					    	<c:forEach items="${testCase.errors }" var="failure" varStatus="loop">
 					    	    <c:if test="${failure.critical}">
-					    		<li><div class="bg-danger">${loop.index }: <span class="btn-danger"><fmt:message key="workbench.failure.critical"/></span> <a data-toggle="collapse" href="#errorIndex${loop.index}"><fmt:message key="workbench.failure"/> ${failure.id } <span class="caret"></span></a></div>
+		    		                <li><div class="bg-danger"><fmt:message key="global.line"/> ${failure.lineNumber }: <a data-toggle="collapse" href="#errorIndex${loop.index}">  <span class="btn-danger">${failure.id }</span> <fmt:message key="global.in"/>  ${failure.rule } <span class="caret"></span></a></div>
 					    			<div id="errorIndex${loop.index}" class="panel-collapse collapse">
 					    			   <div class="panel-body">
-					    			     <span class='btn-info'><fmt:message key="workbench.failure.rule"/> </span> ${failure.rule }<br/>
-					    			     <span class='btn-info'><fmt:message key="workbench.failure.context"/> </span> ${failure.context }<br/>
-					    			     <span class='btn-info'><fmt:message key="workbench.failure.location"/> </span> ${failure.location }<br/>
-										 <span class='btn-danger'><fmt:message key="workbench.failure.test"/> ${failure.test }</span><br/>
-						                 <span class='btn-info'><fmt:message key="workbench.failure.statement"/> ${failure.statement }</span><br/>
-						    			 <fmt:message key="workbench.failure.isCritical"/> ${failure.critical }
-						    			</div>		   		    			
+					    			   		<%-- Display the data for this failure --%>
+											<%@ include file="includes/assertErrorDisplay.jsp" %>
+										</div>		   		    			
 					    			</div>
 					    		</li>
-					    		</c:if>
+								    		</c:if>
 					    	</c:forEach>
 				    	</ul>
 			    	</div>
@@ -167,15 +168,11 @@ POSSIBILITY OF SUCH DAMAGE.
 			    		<ul style="list-style-type:none;">
 					    	<c:forEach items="${testCase.errors }" var="failure" varStatus="loop">
 					    	    <c:if test="${failure.critical == false}">
-					    		<li><div class="bg-warning">${loop.index }: <span class="btn-warning"><fmt:message key="workbench.failure.warning"/></span> <a data-toggle="collapse" href="#warningIndex${loop.index}"><fmt:message key="workbench.failure"/> ${failure.id } <span class="caret"></span></a></div>
+					    		<li><div class="bg-warning"><fmt:message key="global.line"/> ${failure.lineNumber }: <a data-toggle="collapse" href="#warningIndex${loop.index}">  <span class="btn-warning">${failure.id }</span> <fmt:message key="global.in"/>  ${failure.rule } <span class="caret"></span></a></div>
 					    			<div id="warningIndex${loop.index}" class="panel-collapse collapse">
 					    			   <div class="panel-body">
-					    			     <span class='btn-info'><fmt:message key="workbench.failure.rule"/> </span> ${failure.rule }<br/>
-					    			     <span class='btn-info'><fmt:message key="workbench.failure.context"/> </span> ${failure.context }<br/>
-					    			     <span class='btn-info'><fmt:message key="workbench.failure.location"/></span>  ${failure.location }<br/>
-										 <span class='btn-warning'><fmt:message key="workbench.failure.test"/> ${failure.test }</span><br/>
-						                 <span class='btn-info'><fmt:message key="workbench.failure.statement"/> ${failure.statement }</span><br/>
-						    			 <fmt:message key="workbench.failure.isCritical"/> ${failure.critical }
+					    			   		<%-- Display the data for this failure --%>
+											<%@ include file="includes/assertWarningDisplay.jsp" %>
 						    			</div>		   		    			
 					    			</div>
 					    		</li>

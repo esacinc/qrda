@@ -55,6 +55,9 @@ public class Failure implements Serializable{
 	private String statement;
 	private String context;
 	private boolean critical;
+	private Integer lineNumber = -1;          // The line number in the test file where the failure begins.
+	private Integer endLineNumber = -1;       // The line number in the test file marking the end of the problem
+	private String sourceNode="unavailable";  // The text from the test file manifesting the source of the failure
 	
 	public Failure() {
 		critical = false;
@@ -97,6 +100,26 @@ public class Failure implements Serializable{
 	public String getContext() {
 		return context;
 	}
+	public String getSourceNode() {
+		return sourceNode;
+	}
+	public void setSourceNode(String val) {
+		this.sourceNode = val;
+	}
+	public Integer getLineNumber() {
+		return lineNumber;
+	}
+	public void setLineNumber(Integer val) {
+		this.lineNumber = val;
+	}
+	public Integer getEndLineNumber() {
+		return endLineNumber;
+	}
+	public void setEndLineNumber(Integer val) {
+		this.endLineNumber = val;
+	}
+
+
 	public boolean isCritical() {
 		return critical;
 	}

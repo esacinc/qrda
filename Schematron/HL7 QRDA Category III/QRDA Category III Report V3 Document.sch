@@ -19,7 +19,7 @@
         <sch:rule id="QRDA_Category_III_V3-errors" context="cda:ClinicalDocument">
             <sch:assert id="a-3259-17226-error" test="count(cda:realmCode)=1">SHALL contain exactly one [1..1] realmCode (CONF:3259-17226).</sch:assert>
             <sch:assert id="a-3259-18186-error" test="count(cda:typeId)=1">SHALL contain exactly one [1..1] typeId (CONF:3259-18186).</sch:assert>
-            <sch:assert id="a-3259-17208-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1'][@extension='2016-08-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3259-17208) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.1" (CONF:3259-17209). SHALL contain exactly one [1..1] @extension="2016-08-01" (CONF:3259-21319).</sch:assert>
+            <sch:assert id="a-3259-17208-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1'][@extension='2016-09-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3259-17208) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.1" (CONF:3259-17209). SHALL contain exactly one [1..1] @extension="2016-09-01" (CONF:3259-21319).</sch:assert>
             <sch:assert id="a-3259-17236-error" test="count(cda:id)=1">SHALL contain exactly one [1..1] id (CONF:3259-17236).</sch:assert>
             <sch:assert id="a-3259-17210-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:3259-17210).</sch:assert>
             <sch:assert id="a-3259-17211-error" test="count(cda:title)=1">SHALL contain exactly one [1..1] title (CONF:3259-17211).</sch:assert>
@@ -30,7 +30,6 @@
             <sch:assert id="a-3259-18156-error" test="count(cda:author[count(cda:time)=1][count(cda:assignedAuthor)=1]) &gt; 0">SHALL contain at least one [1..*] author (CONF:3259-18156) such that it SHALL contain exactly one [1..1] time (CONF:3259-18158). SHALL contain exactly one [1..1] assignedAuthor (CONF:3259-18157).</sch:assert>
             <sch:assert id="a-3259-17213-error" test="count(cda:custodian)=1">SHALL contain exactly one [1..1] custodian (CONF:3259-17213).</sch:assert>
             <sch:assert id="a-3259-17225-error" test="count(cda:legalAuthenticator)=1">SHALL contain exactly one [1..1] legalAuthenticator (CONF:3259-17225).</sch:assert>
-            <sch:assert id="a-3259-17217-error" test="count(cda:component)=1">SHALL contain exactly one [1..1] component (CONF:3259-17217).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_III_V3-typeId-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1']]/cda:typeId">
             <sch:assert id="a-3259-18187-error" test="@root='2.16.840.1.113883.1.3'">This typeId SHALL contain exactly one [1..1] @root="2.16.840.1.113883.1.3" (CONF:3259-18187).</sch:assert>

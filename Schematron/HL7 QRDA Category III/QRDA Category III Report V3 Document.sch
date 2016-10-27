@@ -30,6 +30,7 @@
             <sch:assert id="a-3259-18156-error" test="count(cda:author[count(cda:time)=1][count(cda:assignedAuthor)=1]) &gt; 0">SHALL contain at least one [1..*] author (CONF:3259-18156) such that it SHALL contain exactly one [1..1] time (CONF:3259-18158). SHALL contain exactly one [1..1] assignedAuthor (CONF:3259-18157).</sch:assert>
             <sch:assert id="a-3259-17213-error" test="count(cda:custodian)=1">SHALL contain exactly one [1..1] custodian (CONF:3259-17213).</sch:assert>
             <sch:assert id="a-3259-17225-error" test="count(cda:legalAuthenticator)=1">SHALL contain exactly one [1..1] legalAuthenticator (CONF:3259-17225).</sch:assert>
+            <sch:assert id="a-3259-17217-error" test="count(cda:component)=1">SHALL contain exactly one [1..1] component (CONF:3259-17217).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_III_V3-typeId-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1']]/cda:typeId">
             <sch:assert id="a-3259-18187-error" test="@root='2.16.840.1.113883.1.3'">This typeId SHALL contain exactly one [1..1] @root="2.16.840.1.113883.1.3" (CONF:3259-18187).</sch:assert>
@@ -122,7 +123,7 @@
         </sch:rule>
         <sch:rule id="QRDA_Category_III_V3-component-structuredBody-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1']]/cda:component/cda:structuredBody">
             <sch:assert id="a-3259-17281-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.2']])=1])=1">This structuredBody SHALL contain exactly one [1..1] component (CONF:3259-17281) such that it SHALL contain exactly one [1..1] QRDA Category III Reporting Parameters Section (identifier: urn:oid:2.16.840.1.113883.10.20.27.2.2) (CONF:3259-17282).</sch:assert>
-            <sch:assert id="a-3259-21394-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.1'][@extension='2016-09-01']])=1])=1 or count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.4'][@extension='2016-09-01']])=1])=1 or count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.5'][@extension='2016-09-01']])=1])=1">This structuredBody SHALL contain at least a QRDA Category III Measure Section, or a Clinical Practice Improvement Activity Section, or an Advancing Care Information Section (CONF:3259-21394).</sch:assert>
+            <sch:assert id="a-3259-21394-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.1'][@extension='2016-09-01']])=1])=1 or count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.4'][@extension='2016-09-01']])=1])=1 or count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.5'][@extension='2016-09-01']])=1])=1">This structuredBody SHALL contain at least a QRDA Category III Measure Section, or an Improvement Activity Section, or an Advancing Care Information Section (CONF:3259-21394).</sch:assert>
         </sch:rule>
     </sch:pattern>
     

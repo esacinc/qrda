@@ -13,7 +13,8 @@
 
 	<observation classCode="OBS" moodCode="EVN">
 		<!-- Performance Rate templateId -->
-		<templateId root="2.16.840.1.113883.10.20.27.3.30"/>
+		<templateId root="2.16.840.1.113883.10.20.27.3.30"
+			    extension="2016-09-01"/>
 		<code code="72510-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
 			displayName="Performance Rate"/>
 		<statusCode code="completed"/>

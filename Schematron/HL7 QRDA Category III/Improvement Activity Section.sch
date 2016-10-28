@@ -14,7 +14,7 @@
     <sch:pattern id="Improvement_Activity-pattern-errors">
         <sch:rule id="Improvement_Activity-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.4'][@extension='2016-09-01']]">
             <sch:assert id="a-3259-21175-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.2.4'][@extension='2016-09-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3259-21175) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.2.4" (CONF:3259-21177). SHALL contain exactly one [1..1] @extension="2016-09-01" (CONF:3259-21398).</sch:assert>
-            <sch:assert id="a-3259-21181-error" test="count(cda:entry[count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.33'][@extension='2016-09-01']])=1]) &gt; 0">SHALL contain at least one [1..*] entry (CONF:3259-21181) such that it SHALL contain exactly one [1..1] Improvement Activity Performed Measure Reference and Results (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.33:2016-09-01) (CONF:3259-21436).</sch:assert>
+            <sch:assert id="a-3259-21181-error" test="count(cda:entry[count(cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.33'][@extension='2016-09-01']])=1]) &gt; 0">SHALL contain at least one [1..*] entry (CONF:3259-21181) such that it SHALL contain exactly one [1..1] Improvement Activity Performed Measure Reference and Results (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.33:2016-09-01) (CONF:3259-21436).</sch:assert>
         </sch:rule>
     </sch:pattern>
 </sch:schema>

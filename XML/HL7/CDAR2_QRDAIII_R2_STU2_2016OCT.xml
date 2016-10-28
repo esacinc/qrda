@@ -5,7 +5,7 @@
 	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
 	<!-- 
 		Title: Example Category III Sample File
-		Original Filename: CDAR2_QRDAIII_STU2_2016OCT.xml
+		Original Filename: CDAR2_QRDAIII_R1_STU2_2016OCT.xml
 		Version: 1.0
 		Revision History: 10/07/2016 Release date
 		Standard complied with: HL7 QRDA Category III STU 2
@@ -495,8 +495,12 @@ Measure Section
 							<!-- Optional performance rate template -->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
-									<!-- MAY 0..1 Performance Rate for Proportion Measure template -->
-									<templateId root="2.16.840.1.113883.10.20.27.3.14"/>
+									<!-- Implied template Performance Rate templateId -->
+									<templateId root="2.16.840.1.113883.10.20.27.3.30"
+										extension="2016-09-01"/>
+									<!-- MAY 0..1 Performance Rate for Proportion Measure (V2)template -->
+									<templateId root="2.16.840.1.113883.10.20.27.3.14"
+										extension="2016-09-01"/>
 									<code code="72510-1" codeSystem="2.16.840.1.113883.6.1"
 										displayName="Performance Rate"
 										codeSystemName="2.16.840.1.113883.6.1"/>
@@ -580,7 +584,8 @@ Measure Section
 										<!-- Repeat for each postal code that has any data -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Postal Code Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.10" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.10"
+												extension="2016-09-01"/>
 											<!-- SHALL single value binding -->
 											<code code="45401-7" displayName="Zip Code"
 												codeSystem="2.16.840.1.113883.6.1"
@@ -609,7 +614,8 @@ Measure Section
 										<!-- Ethnicity Supplemental Data Element (2.16.840.1.113883.10.20.27.3.7) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Ethnicity Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.7" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.7"
+												extension="2016-09-01"/>
 											<!-- SHALL single value binding -->
 											<code code="69490-1" displayName="Ethnic Group"
 												codeSystem="2.16.840.1.113883.6.1"
@@ -642,7 +648,8 @@ Measure Section
 										<!-- Ethnicity Supplemental Data Element (2.16.840.1.113883.10.20.27.3.7) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Ethnicity Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.7" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.7"
+												extension="2016-09-01"/>
 											<code code="69490-1" displayName="Ethnic Group"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -674,7 +681,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -704,7 +712,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -733,7 +742,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -949,7 +959,8 @@ Measure Section
 										<!-- Postal Code Supplemental Data Element (2.16.840.1.113883.10.20.27.3.10)-->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Postal Code Supplemental Data V2 Element template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.10" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.10"
+												extension="2016-09-01"/>
 											<!-- SHALL single value binding -->
 											<code code="45401-7" displayName="Zip Code"
 												codeSystem="2.16.840.1.113883.6.1"
@@ -978,7 +989,8 @@ Measure Section
 										<!-- Ethnicity Supplemental Data Element (2.16.840.1.113883.10.20.27.3.7) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Ethnicity Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.7" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.7"
+												extension="2016-09-01"/>
 											<!-- SHALL single value binding -->
 											<code code="69490-1" displayName="Ethnic Group"
 												codeSystem="2.16.840.1.113883.6.1"
@@ -1012,7 +1024,8 @@ Measure Section
 										<!-- Ethnicity Supplemental Data Element (2.16.840.1.113883.10.20.27.3.7) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Ethnicity Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.7" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.7"
+												extension="2016-09-01"/>
 											<code code="69490-1" displayName="Ethnic Group"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -1044,7 +1057,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -1074,7 +1088,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -1103,7 +1118,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -1322,7 +1338,8 @@ Measure Section
 										<!-- Postal Code Supplemental Data Element (2.16.840.1.113883.10.20.27.3.10)-->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Postal Code Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.10" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.10"
+												extension="2016-09-01"/>
 											<!-- SHALL single value binding -->
 											<code code="45401-7" displayName="Zip Code"
 												codeSystem="2.16.840.1.113883.6.1"
@@ -1351,7 +1368,8 @@ Measure Section
 										<!-- Ethnicity Supplemental Data Element (2.16.840.1.113883.10.20.27.3.7) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Ethnicity Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.7" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.7"
+												extension="2016-09-01"/>
 											<!-- SHALL single value binding -->
 											<code code="69490-1" displayName="Ethnic Group"
 												codeSystem="2.16.840.1.113883.6.1"
@@ -1384,7 +1402,8 @@ Measure Section
 										<!-- Ethnicity Supplemental Data Element (2.16.840.1.113883.10.20.27.3.7) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Ethnicity Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.7" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.7"
+												extension="2016-09-01"/>
 											<code code="69490-1" displayName="Ethnic Group"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -1416,7 +1435,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -1446,7 +1466,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -1475,7 +1496,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -1690,7 +1712,8 @@ Measure Section
 										<!-- Postal Code Supplemental Data Element (2.16.840.1.113883.10.20.27.3.10)-->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Postal Code Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.10" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.10"
+												extension="2016-09-01"/>
 											<!-- SHALL single value binding -->
 											<code code="45401-7" displayName="Zip Code"
 												codeSystem="2.16.840.1.113883.6.1"
@@ -1719,7 +1742,8 @@ Measure Section
 										<!-- Ethnicity Supplemental Data Element (2.16.840.1.113883.10.20.27.3.7) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Ethnicity Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.7" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.7"
+												extension="2016-09-01"/>
 											<!-- SHALL single value binding -->
 											<code code="69490-1" displayName="Ethnic Group"
 												codeSystem="2.16.840.1.113883.6.1"
@@ -1752,7 +1776,8 @@ Measure Section
 										<!-- Ethnicity Supplemental Data Element (2.16.840.1.113883.10.20.27.3.7) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Ethnicity Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.7" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.7"
+												extension="2016-09-01"/>
 											<code code="69490-1" displayName="Ethnic Group"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -1784,7 +1809,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -1814,7 +1840,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -1843,7 +1870,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -2240,7 +2268,8 @@ Measure Section
 										<!-- Postal Code Supplemental Data Element (2.16.840.1.113883.10.20.27.3.10)-->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Postal Code Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.10" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.10"
+												extension="2016-09-01"/>
 											<!-- SHALL single value binding -->
 											<code code="45401-7" displayName="Zip Code"
 												codeSystem="2.16.840.1.113883.6.1"
@@ -2268,7 +2297,8 @@ Measure Section
 										<!-- Ethnicity Supplemental Data Element (2.16.840.1.113883.10.20.27.3.7) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Ethnicity Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.7" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.7"
+												extension="2016-09-01"/>
 											<!-- SHALL single value binding -->
 											<code code="69490-1" displayName="Ethnic Group"
 												codeSystem="2.16.840.1.113883.6.1"
@@ -2299,7 +2329,8 @@ Measure Section
 										<!-- Ethnicity Supplemental Data Element (2.16.840.1.113883.10.20.27.3.7) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Ethnicity Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.7" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.7"
+												extension="2016-09-01"/>
 											<code code="69490-1" displayName="Ethnic Group"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -2331,7 +2362,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -2362,7 +2394,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -2392,7 +2425,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -2738,7 +2772,8 @@ Measure Section
 										<!-- Postal Code Supplemental Data Element (2.16.840.1.113883.10.20.27.3.10)-->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Postal Code Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.10" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.10"
+												extension="2016-09-01"/>
 											<!-- SHALL single value binding -->
 											<code code="45401-7" displayName="Zip Code"
 												codeSystem="2.16.840.1.113883.6.1"
@@ -2767,7 +2802,8 @@ Measure Section
 										<!-- Ethnicity Supplemental Data Element (2.16.840.1.113883.10.20.27.3.7) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Ethnicity Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.7" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.7"
+												extension="2016-09-01"/>
 											<!-- SHALL single value binding -->
 											<code code="69490-1" displayName="Ethnic Group"
 												codeSystem="2.16.840.1.113883.6.1"
@@ -2799,7 +2835,8 @@ Measure Section
 										<!-- Ethnicity Supplemental Data Element (2.16.840.1.113883.10.20.27.3.7) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Ethnicity Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.7" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.7"
+												extension="2016-09-01"/>
 											<code code="69490-1" displayName="Ethnic Group"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -2831,7 +2868,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -2861,7 +2899,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -2890,7 +2929,8 @@ Measure Section
 										<!-- Race Supplemental Data Element (2.16.840.1.113883.10.20.27.3.8) -->
 										<observation classCode="OBS" moodCode="EVN">
 											<!-- Race Supplemental Data Element V2 template ID -->
-											<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
 											<code code="72826-1" displayName="Race"
 												codeSystem="2.16.840.1.113883.6.1"
 												codeSystemName="LOINC"/>
@@ -3070,18 +3110,19 @@ Measure Section
 					</entry>
 				</section>
 			</component>
-<!-- 
+			<!-- 
 ********************************************************
 Advancing Care Information Section
 ********************************************************
 -->
 			<component>
 				<section>
-					<!-- Measure Section --> 					
+					<!-- Measure Section -->
 					<templateId root="2.16.840.1.113883.10.20.24.2.2"/>
 					<!-- Advancing Care Information Section templateId -->
 					<templateId root="2.16.840.1.113883.10.20.27.2.5" extension="2016-09-01"/>
-					<code code="55186-1" codeSystem="2.16.840.1.113883.6.1" displayName="Measure Section"/>
+					<code code="55186-1" codeSystem="2.16.840.1.113883.6.1"
+						displayName="Measure Section"/>
 					<title>Measure Section</title>
 					<text>
 						<table border="1" width="100%">
@@ -3126,11 +3167,14 @@ Advancing Care Information Section
 								<content styleCode="Bold">Performance Rate:
 								</content>0.750000</item>
 						</list>
-					</text>					
+					</text>
 					<entry>
 						<organizer classCode="CLUSTER" moodCode="EVN">
+							<!-- Implied template Measure Reference templateId -->
+							<templateId root="2.16.840.1.113883.10.20.24.3.98"/>
 							<!-- ACI Numerator Denominator Type Measure Reference and Results templateId -->
-							<templateId root="2.16.840.1.113883.10.20.27.3.28" extension="2016-09-01"/>
+							<templateId root="2.16.840.1.113883.10.20.27.3.28"
+								extension="2016-09-01"/>
 							<id root="ac575aef-7062-4ea2-b723-df517cfa470a"/>
 							<statusCode code="completed"/>
 							<reference typeCode="REFR">
@@ -3138,7 +3182,7 @@ Advancing Care Information Section
 								<externalDocument classCode="DOC" moodCode="EVN">
 									<!-- This is a temporary root OID that indicates this is an ACI measure identifier -->
 									<!-- extension is the unique identifier for an ACI measure. "ACI-PEA-1" is for illustration only. -->
-									<id root="2.16.840.1.113883.4.1001" extension="ACI-PEA-1"/>
+									<id root="TEMP-ACI-OID" extension="ACI-PEA-1"/>
 									<!-- ACI measure title -->
 									<text>Patient Access</text>
 								</externalDocument>
@@ -3146,7 +3190,8 @@ Advancing Care Information Section
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
 									<!-- Performance Rate templateId -->
-									<templateId root="2.16.840.1.113883.10.20.27.3.30"/>
+									<templateId root="2.16.840.1.113883.10.20.27.3.30"
+										extension="2016-09-01"/>
 									<code code="72510-1" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC" displayName="Performance Rate"/>
 									<statusCode code="completed"/>
@@ -3156,22 +3201,26 @@ Advancing Care Information Section
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
 									<!-- ACI Numerator Denominator Type Measure Numerator Data templateId -->
-									<templateId root="2.16.840.1.113883.10.20.27.3.31" extension="2016-09-01"/>
+									<templateId root="2.16.840.1.113883.10.20.27.3.31"
+										extension="2016-09-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
-									<value xsi:type="CD" code="NUMER" codeSystem="2.16.840.1.113883.5.4"
-										codeSystemName="ActCode"/>
+									<value xsi:type="CD" code="NUMER"
+										codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
 									<!-- Numerator Count-->
 									<entryRelationship typeCode="SUBJ" inversionInd="true">
 										<observation classCode="OBS" moodCode="EVN">
 											<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
 											<code code="MSRAGG" codeSystem="2.16.840.1.113883.5.4"
-												codeSystemName="ActCode" displayName="rate aggregation"/>
+												codeSystemName="ActCode"
+												displayName="rate aggregation"/>
 											<statusCode code="completed"/>
 											<value xsi:type="INT" value="600"/>
-											<methodCode code="COUNT" codeSystem="2.16.840.1.113883.5.84"
-												codeSystemName="ObservationMethod" displayName="Count"/>
+											<methodCode code="COUNT"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"
+												displayName="Count"/>
 										</observation>
 									</entryRelationship>
 								</observation>
@@ -3179,21 +3228,26 @@ Advancing Care Information Section
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
 									<!-- ACI Numerator Denominator Type Measure Denominator Data templateId -->
-									<templateId root="2.16.840.1.113883.10.20.27.3.32" extension="2016-09-01"/>
+									<templateId root="2.16.840.1.113883.10.20.27.3.32"
+										extension="2016-09-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
-									<value xsi:type="CD" code="DENOM" codeSystem="2.16.840.1.113883.5.4"
-										codeSystemName="ActCode"/>
+									<value xsi:type="CD" code="DENOM"
+										codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
 									<!-- Denominator Count-->
 									<entryRelationship typeCode="SUBJ" inversionInd="true">
 										<observation classCode="OBS" moodCode="EVN">
 											<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
-											<code code="MSRAGG" codeSystem="2.16.840.1.113883.5.4"										codeSystemName="ActCode" displayName="rate aggregation"/>
+											<code code="MSRAGG" codeSystem="2.16.840.1.113883.5.4"
+												codeSystemName="ActCode"
+												displayName="rate aggregation"/>
 											<statusCode code="completed"/>
 											<value xsi:type="INT" value="800"/>
-											<methodCode code="COUNT" codeSystem="2.16.840.1.113883.5.84"
-												codeSystemName="ObservationMethod" displayName="Count"/>
+											<methodCode code="COUNT"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"
+												displayName="Count"/>
 										</observation>
 									</entryRelationship>
 								</observation>
@@ -3202,18 +3256,19 @@ Advancing Care Information Section
 					</entry>
 				</section>
 			</component>
-<!-- 
+			<!-- 
 ********************************************************
-Clinical Practice Improvement Activity Section
+Improvement Activity Section
 ********************************************************
 -->
 			<component>
 				<section>
-					<!-- Measure Section --> 					
+					<!-- Measure Section -->
 					<templateId root="2.16.840.1.113883.10.20.24.2.2"/>
-					<!-- Clinical Practice Improvement Activity Section templateId -->
+					<!-- Improvement Activity Section templateId -->
 					<templateId root="2.16.840.1.113883.10.20.27.2.4" extension="2016-09-01"/>
-					<code code="55186-1" codeSystem="2.16.840.1.113883.6.1" displayName="Measure Section"/>
+					<code code="55186-1" codeSystem="2.16.840.1.113883.6.1"
+						displayName="Measure Section"/>
 					<title>Measure Section</title>
 					<text>
 						<table border="1" width="100%">
@@ -3234,33 +3289,46 @@ Clinical Practice Improvement Activity Section
 									<td>Y</td>
 								</tr>
 							</tbody>
-						</table>						 						
+						</table>
 					</text>
 					<!-- Must have at least one entry with a Measure Performed Reference and Result -->
 					<entry>
-						<observation classCode="OBS" moodCode="EVN">
-							<!-- Measure Performed Reference and Result templateId -->
-							<templateId root="2.16.840.1.113883.10.20.27.3.27" extension="2016-09-01"/>
-							<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Assertion"/>
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<!-- Implied template Measure Reference templateId -->
+							<templateId root="2.16.840.1.113883.10.20.24.3.98"/>
+							<!-- Improvement Activity Performed Reference and Results templateId -->
+							<templateId root="2.16.840.1.113883.10.20.27.3.33"
+								extension="2016-09-01"/>
+							<id root="ac575aef-7062-4ea2-b723-df517cfa470a"/>
 							<statusCode code="completed"/>
-							<!-- Include in the report the CPIA activities that have YES as answer -->
-							<value xsi:type="CD" code="Y" displayName="Yes"
-								codeSystemName="Yes/no indicator (HL7 Table 0136)" codeSystem="2.16.840.1.113883.12.136"/>
 							<reference typeCode="REFR">
-								<!-- Reference to a CPIA activity's unique identifier. -->
+								<!-- Reference to a particular ACI measure's unique identifier. -->
 								<externalDocument classCode="DOC" moodCode="EVN">
-									<!-- This is a temporary root OID that indicates this is a CPIA activity identifier -->
-									<!-- extension is the unique identifier for a CPIA activity. "CPIA-1" is for illustration only. -->
-									<id root="2.16.840.1.113883.4.1000" extension="CPIA-1"/>
-									<!-- CPIA activity narrative text (for reference) -->
-									<text>
-										Collection of patient experience and satisfaction data on access to care and development of an
-										improvement plan, such as outlining steps for improving communications with patients to help
-										understanding of urgent access needs.
+									<!-- This is a temporary root OID that indicates this is an improvement activity identifier -->
+									<!-- extension is the unique identifier for an improvement activity. "IA_EPA_1" is for illustration only. -->
+									<id root="TEMP-IA-OID" extension="IA_EPA_1"/>
+									<!-- Improvement activity narrative text (for reference) -->
+									<text> Collection of patient experience and satisfaction data on
+										access to care and development of an improvement plan, such
+										as outlining steps for improving communications with
+										patients to help understanding of urgent access needs.
 									</text>
 								</externalDocument>
 							</reference>
-						</observation>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- Measure Performed templateId -->
+									<templateId root="2.16.840.1.113883.10.20.27.3.27"
+										extension="2016-09-01"/>
+									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
+										codeSystemName="ActCode" displayName="Assertion"/>
+									<statusCode code="completed"/>
+									<value xsi:type="CD" code="Y" displayName="Yes"
+										codeSystemName="Yes/no indicator (HL7 Table 0136)"
+										codeSystem="2.16.840.1.113883.12.136"/>
+								</observation>
+							</component>
+						</organizer>
 					</entry>
 				</section>
 			</component>

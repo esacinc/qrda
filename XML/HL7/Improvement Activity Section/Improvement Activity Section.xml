@@ -3,9 +3,8 @@
 <!--
 		Clinical Practice Improvement Activity sample file with no intentional errors
 		
-		Total Errors Expected: 2
-          Failure a-3259-21177-error Multiple root templateIds
-          Failure a-3259-21239-error Missing entry
+		Total Errors Expected: 0
+          
     	Total Warnings Expected: 0
 	-->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -19,16 +18,17 @@
 	<section>
 		<!-- Clinical Practice Improvement Activity Section templateId -->
 		<templateId root="2.16.840.1.113883.10.20.27.2.4" extension="2016-09-01"/>
-		<!-- Clinical Practice Improvement Activity Section templateId duplicate-->
-		<templateId root="2.16.840.1.113883.10.20.27.2.4" extension="2016-09-01"/>
 
 		<!-- Must have at least one entry with a Measure Performed Reference and Result -->
 		<entry>
+			<organizer classCode="CLUSTER" moodCode="EVN">
+				<!-- Improvement Activity Performed Measure Reference and Results -->
+				<templateId root="2.16.840.1.113883.10.20.27.3.33" extension="2016-09-01"/>
+				<id root="ac575aef-7062-4ea2-b723-df517cfa470a"/>
+				<statusCode code="completed"/>
 			<observation classCode="OBS" moodCode="EVN">
 				<!-- Measure Performed Reference and Result templateId -->
-		<!-- missing entry with templateId with valid root -->
-				<!--templateId root="2.16.840.1.113883.10.20.27.3.27" extension="2016-09-01"/-->
-				<templateId root="2.16.840.1.113883.10.20.27.3.28" extension="2016-09-01"/>
+				<templateId root="2.16.840.1.113883.10.20.27.3.27" extension="2016-09-01"/>
 				<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"
 					displayName="Assertion"/>
 				<statusCode code="completed"/>
@@ -50,6 +50,7 @@
 					</externalDocument>
 				</reference>
 			</observation>
+			</organizer>
 		</entry>
 	</section>
 </ClinicalDocument>

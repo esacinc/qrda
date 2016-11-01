@@ -19,8 +19,8 @@
         <sch:rule id="QRDA_Category_III_CMS-errors" context="cda:ClinicalDocument">
             <sch:assert id="a-2233-17226-error" test="count(cda:realmCode)=1">SHALL contain exactly one [1..1] realmCode (CONF:2233-17226).</sch:assert>
             <sch:assert id="a-2233-18186-error" test="count(cda:typeId)=1">SHALL contain exactly one [1..1] typeId (CONF:2233-18186).</sch:assert>
-            <sch:assert id="a-2233-17208-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1'][@extension='2016-02-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-17208) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.1" (CONF:2233-17209). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2233-21168).</sch:assert>
-            <sch:assert id="a-2233-711280-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2016-03-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-711280) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.2" (CONF:2233-711281). SHALL contain exactly one [1..1] @extension="2016-03-01" (CONF:2233-711305).</sch:assert>
+            <sch:assert id="a-2233-17208-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1'][@extension='2016-09-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-17208) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.1" (CONF:2233-17209). SHALL contain exactly one [1..1] @extension="2016-09-01" (CONF:2226-21168).</sch:assert>
+            <sch:assert id="a-2233-711280-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2016-11-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-711280) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.2" (CONF:2233-711281). SHALL contain exactly one [1..1] @extension="2016-11-01" (CONF:2233-711305).</sch:assert>
             <sch:assert id="a-2233-17236-error" test="count(cda:id)=1">SHALL contain exactly one [1..1] id (CONF:2233-17236).</sch:assert>
             <sch:assert id="a-2233-17210-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2233-17210).</sch:assert>
             <sch:assert id="a-2233-17211-error" test="count(cda:title)=1">SHALL contain exactly one [1..1] title (CONF:2233-17211).</sch:assert>
@@ -85,7 +85,7 @@
             <sch:assert id="a-2233-711161-error" test="@root='2.16.840.1.113883.3.249.7'">This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.7" CMS Program (CONF:2233-711161).</sch:assert>
             <sch:assert id="a-2233-711162-error" test="@extension=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.249.14.101']/voc:code/@value">This id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet CMS Program Name urn:oid:2.16.840.1.113883.3.249.14.101 STATIC (CONF:2233-711162).</sch:assert>
         </sch:rule>
-        <sch:rule id="QRDA_Category_III_CMS-informationRecipient-intendedRecipient-id-extension-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2']]/cda:informationRecipient/cda:intendedRecipient/cda:id[@extension='CPC']">
+        <sch:rule id="QRDA_Category_III_CMS-informationRecipient-intendedRecipient-id-extension-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2']]/cda:informationRecipient/cda:intendedRecipient/cda:id[@extension='CPCPLUS']">
             <sch:assert id="a-2233-711248-error" test="../../../cda:participant[@typeCode='LOC']">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPC", then ClinicalDocument/participant/@typeCode="LOC" SHALL be present (CONF:2233-711248).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_III_CMS-legalAuthenticator-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2']]/cda:legalAuthenticator">
@@ -104,7 +104,7 @@
         </sch:rule>
         <sch:rule id="QRDA_Category_III_CMS-documentationOf-serviceEvent-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2']]/cda:documentationOf/cda:serviceEvent">
             <sch:assert id="a-2233-18172-error" test="@classCode='PCPR'">This serviceEvent SHALL contain exactly one [1..1] @classCode="PCPR" Care Provision (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:2233-18172).</sch:assert>
-            <sch:assert id="a-2233-711220-error" test="count(cda:performer) &gt; 0">This serviceEvent SHALL contain at least one [1..*] performer (CONF:2233-711220).</sch:assert>
+            <sch:assert id="a-2233-18173-error" test="count(cda:performer) &gt; 0">This serviceEvent SHALL contain at least one [1..*] performer (CONF:2233-18173).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_III_CMS-documentationOf-serviceEvent-performer-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2']]/cda:documentationOf/cda:serviceEvent/cda:performer">
             <sch:assert id="a-2233-18174-error" test="@typeCode='PRF'">Such performers SHALL contain exactly one [1..1] @typeCode="PRF" Performer (CodeSystem: HL7ParticipationType urn:oid:2.16.840.1.113883.5.90 STATIC) (CONF:2233-18174).</sch:assert>
@@ -136,8 +136,8 @@
             <sch:assert id="a-2233-17235-error" test="count(cda:structuredBody)=1">This component SHALL contain exactly one [1..1] structuredBody (CONF:2233-17235).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_III_CMS-component-structuredBody-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2']]/cda:component/cda:structuredBody">
-            <sch:assert id="a-2233-711141-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.6'][@extension='2016-03-01']])=1])=1">This structuredBody SHALL contain exactly one [1..1] component (CONF:2233-17281) such that it SHALL contain exactly one [1..1] QRDA Category III Reporting Parameters Section (CMS EP) (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.2.6:2016-03-01) (CONF:2233-711141).</sch:assert>
-            <sch:assert id="a-2233-711142-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3'][@extension='2016-03-01']])=1])=1">This structuredBody SHALL contain exactly one [1..1] component (CONF:2233-17283) such that it SHALL contain exactly one [1..1] QRDA Category III Measure Section (CMS EP) (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.2.3:2016-03-01) (CONF:2233-711142).</sch:assert>
+            <sch:assert id="a-2233-17281-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.6'][@extension='2016-11-01']])=1])=1">This structuredBody SHALL contain exactly one [1..1] component (CONF:2233-17281) such that it SHALL contain exactly one [1..1] QRDA Category III Reporting Parameters Section - CMS (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.2.6:2016-11-01) (CONF:2233-711141).</sch:assert>
+            <sch:assert id="a-3259-711311-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3'][@extension='2016-11-01']])=1])=1 or count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.4'][@extension='2016-09-01']])=1])=1 or count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.5'][@extension='2016-09-01']])=1])=1">This structuredBody SHALL contain at least a QRDA Category III Measure Section - CMS (V2), or an Improvement Activity Section, or an Advancing Care Information Section (CONF:2233-711311).</sch:assert>
         </sch:rule>
     </sch:pattern>
     

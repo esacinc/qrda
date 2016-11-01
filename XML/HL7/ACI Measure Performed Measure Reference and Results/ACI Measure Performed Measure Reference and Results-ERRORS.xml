@@ -34,7 +34,7 @@
 				<reference typeCode="REFR">
 					<!-- Reference to a particular ACI measure's unique identifier. -->
 					<externalDocument classCode="DOCErr" moodCode="EVN"> <!-- classCode != DOC -->
-						<id root="TEMP_ACI_OID" extension="ACI-PEA-1"/>
+						<id root="2.16.840.1.113883.3.7031" extension="ACI-PEA-1"/>
 						<!-- Failure a-3259-21414-warning Missing or Multiple text in externalDocument -->
 						<!-- <text>Patient Access</text> -->
 					</externalDocument>

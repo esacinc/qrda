@@ -27,7 +27,7 @@
 					<externalDocument classCode="DOC" moodCode="EVN">
 						<!-- This is a temporary root OID that indicates this is an ACI measure identifier -->
 						<!-- extension is the unique identifier for an ACI measure. "ACI-PEA-1" is for illustration only. -->
-						<id root="TEMP_ACI_OID" extension="ACI-PEA-1"/>
+						<id root="2.16.840.1.113883.3.7031" extension="ACI-PEA-1"/>
 						<!-- ACI measure title -->
 						<text>Patient Access</text>
 					</externalDocument>

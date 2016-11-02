@@ -19,11 +19,11 @@
         <sch:rule id="Reporting_Stratum_CMS-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.20']]">
             <sch:assert id="a-1109-17575-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1109-17575).</sch:assert>
             <sch:assert id="a-1109-17576-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:1109-17576).</sch:assert>
-            <sch:assert id="a-1109-711274-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.20'])=1">SHALL contain exactly one [1..1] templateId (CONF:1109-711274) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.20" (CONF:1109-711275). </sch:assert>
-            <sch:assert id="a-1109-18093-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.4'])=1">SHALL contain exactly one [1..1] templateId (CONF:1109-18093) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.4" (CONF:1109-18094).  </sch:assert>
+            <sch:assert id="a-1109-711274-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.20'])=1">SHALL contain exactly one [1..1] templateId (CONF:1109-711274) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.20" (CONF:1109-711275).</sch:assert>
+            <sch:assert id="a-1109-18093-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.4'])=1">SHALL contain exactly one [1..1] templateId (CONF:1109-18093) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.4" (CONF:1109-18094).</sch:assert>
             <sch:assert id="a-1109-17577-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:1109-17577).</sch:assert>
             <sch:assert id="a-1109-17579-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:1109-17579).</sch:assert>
-            <sch:assert id="a-1109-17581-error" test="count(cda:entryRelationship[@typeCode='SUBJ'][@inversionInd='true'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.24']])=1])=1">SHALL contain exactly one [1..1] entryRelationship (CONF:1109-17581) such that it SHALL contain exactly one [1..1] @typeCode="SUBJ" (CONF:1109-17582). SHALL contain exactly one [1..1] @inversionInd="true" (CONF:1109-17583). SHALL contain exactly one [1..1] Aggregate Count (CMS EP) (identifier: urn:oid:2.16.840.1.113883.10.20.27.3.24) (CONF:1109-711197). </sch:assert>
+            <sch:assert id="a-1109-17581-error" test="count(cda:entryRelationship[@typeCode='SUBJ'][@inversionInd='true'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.24']])=1])=1">SHALL contain exactly one [1..1] entryRelationship (CONF:1109-17581) such that it SHALL contain exactly one [1..1] @typeCode="SUBJ" (CONF:1109-17582). SHALL contain exactly one [1..1] @inversionInd="true" (CONF:1109-17583). SHALL contain exactly one [1..1] Aggregate Count - CMS (identifier: urn:oid:2.16.840.1.113883.10.20.27.3.24) (CONF:1109-711197).</sch:assert>
             <sch:assert id="a-1109-18204-error" test="count(cda:reference)=1">SHALL contain exactly one [1..1] reference (CONF:1109-18204).</sch:assert>
          </sch:rule>
         
@@ -42,15 +42,13 @@
         </sch:rule>
  
         <sch:rule id="Reporting_Stratum_CMS-reference-externalObservation-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.20']]/cda:reference/cda:externalObservation">
-            <sch:assert id="a-1109-711210-error" test="count(cda:id)=1">This externalObservation SHALL contain exactly one [1..1] id (CONF:1109-711210). </sch:assert>
+            <sch:assert id="a-1109-18207-error" test="count(cda:id)=1">This externalObservation SHALL contain exactly one [1..1] id (CONF:1109-18207).</sch:assert>
         </sch:rule>
-        
     </sch:pattern>
     
     <sch:pattern id="Reporting_Stratum_CMS-pattern-warnings">
         <sch:rule id="Reporting_Stratum_CMS-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.20']]">
-            <sch:assert id="a-1109-17580-warning" test="count(cda:value)=1">SHOULD contain zero or one [0..1] value (CONF:1109-17580).  </sch:assert>
+            <sch:assert id="a-1109-17580-warning" test="count(cda:value)=1">SHOULD contain zero or one [0..1] value (CONF:1109-17580).</sch:assert>
         </sch:rule>
-    </sch:pattern>
-            
+    </sch:pattern> 
 </sch:schema>

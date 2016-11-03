@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!--
+		Performance Rate for Proportion Measure (V2) sample file
+		
+		Total Errors Expected: 0
+          
+    	Total Warnings Expected: 0
+	-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
+
+	<observation classCode="OBS" moodCode="EVN">
+		<!-- Implied template Performance Rate templateId -->
+		<templateId root="2.16.840.1.113883.10.20.27.3.30"
+					extension="2016-09-01"/>
+		<!-- MAY 0..1 Performance Rate for Proportion Measure (V2)template -->
+		<templateId root="2.16.840.1.113883.10.20.27.3.14"
+					extension="2016-09-01"/>
+		<!-- MAY 0..1  (Note: this is the reference to the specific Numerator included in the calculation) -->
+		<reference typeCode="REFR">
+			<externalObservation classCode="OBS" moodCode="EVN">
+				<!-- 
+				The externalObservationID contains the ID of the numerator in the referenced eMeasure.
+				-->
+				<id root="63DD3232-4F74-4FA2-B5CF-A7B7DC8BC5B9"/>
+				<code code="NUMER" displayName="Numerator" codeSystem="2.16.840.1.113883.5.4"
+					codeSystemName="ActCode"/>
+			</externalObservation>
+		</reference>
+		<!-- MAY 0..1 Used to represent the predicted rate based on the measure’s risk-adjustment model. -->
+		<referenceRange>
+			<observationRange>
+				<value xsi:type="REAL" value="0.625"/>
+			</observationRange>
+		</referenceRange>
+	</observation>
+
+</ClinicalDocument>

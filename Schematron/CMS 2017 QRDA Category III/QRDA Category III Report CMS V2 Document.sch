@@ -9,11 +9,18 @@
     
     <sch:phase id="errors">
         <sch:active pattern="QRDA_Category_III_CMS-pattern-errors" />
+        <sch:active pattern="QRDA_Category_III_CMS-pattern-errors-1" />
     </sch:phase>
     
     <sch:phase id="warnings">
         <sch:active pattern="QRDA_Category_III_CMS-pattern-warnings" />
     </sch:phase>
+	
+    <sch:pattern id="QRDA_Category_III_CMS-pattern-errors-1">
+        <sch:rule id="QRDA_Category_III_CMS-informationRecipient-intendedRecipient-id-extension-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2']]/cda:informationRecipient/cda:intendedRecipient/cda:id[@extension='CPCPLUS']">
+            <sch:assert id="a-2233-711248-error" test="../../../cda:participant[@typeCode='LOC']">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then ClinicalDocument/participant/@typeCode="LOC" SHALL be present (CONF:2233-711248).</sch:assert>
+        </sch:rule>
+    </sch:pattern>
     
     <sch:pattern id="QRDA_Category_III_CMS-pattern-errors">
         <sch:rule id="QRDA_Category_III_CMS-errors" context="cda:ClinicalDocument">
@@ -84,9 +91,6 @@
         <sch:rule id="QRDA_Category_III_CMS-informationRecipient-intendedRecipient-id-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2']]/cda:informationRecipient/cda:intendedRecipient/cda:id">
             <sch:assert id="a-2233-711161-error" test="@root='2.16.840.1.113883.3.249.7'">This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.7" CMS Program (CONF:2233-711161).</sch:assert>
             <sch:assert id="a-2233-711162-error" test="@extension=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.249.14.101']/voc:code/@value">This id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet CMS Program Name urn:oid:2.16.840.1.113883.3.249.14.101 STATIC (CONF:2233-711162).</sch:assert>
-        </sch:rule>
-        <sch:rule id="QRDA_Category_III_CMS-informationRecipient-intendedRecipient-id-extension-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2']]/cda:informationRecipient/cda:intendedRecipient/cda:id[@extension='CPCPLUS']">
-            <sch:assert id="a-2233-711248-error" test="../../../cda:participant[@typeCode='LOC']">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPC", then ClinicalDocument/participant/@typeCode="LOC" SHALL be present (CONF:2233-711248).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_III_CMS-legalAuthenticator-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2']]/cda:legalAuthenticator">
             <sch:assert id="a-2233-18167-error" test="count(cda:time)=1">This legalAuthenticator SHALL contain exactly one [1..1] time (CONF:2233-18167).</sch:assert>

@@ -6,8 +6,9 @@
 	<!-- 
 		Title: Example Category III Sample File
 		Original Filename: CDAR2_QRDAIII_R1_STU2_2016OCT.xml
-		Version: 1.0
+		Version: 1.1
 		Revision History: 10/07/2016 Release date
+						  11/03/2016 Updated with changes to the IG based on ballot comments
 		Standard complied with: HL7 QRDA Category III STU 2
 		
 		Description: This sample file was developed to show the various types of measure scoring as currently used in HQMF eMeasures,  
@@ -15,7 +16,7 @@
 		NQF0436 (CMS71v5): Anticoagulation Therapy for Atrial Fibrillation/Flutter, a proportion eMeasure
 		NQF0496 (CMS32v5): Median Time from ED Arrival to ED Departure for Discharged ED Patients, a continuous variable eMeasure
 		
-		It also includes the new ACI and CPIA sections with sample data
+		It also includes the new ACI and IA sections with sample data
 		
 		This sample file is informative only.
 	-->
@@ -3274,7 +3275,7 @@ Improvement Activity Section
 						<table border="1" width="100%">
 							<thead>
 								<tr>
-									<th>CPIA Activity</th>
+									<th>Improvement Activity</th>
 									<th>Activity Identifier</th>
 									<th>Question Answer Code</th>
 								</tr>
@@ -3285,7 +3286,7 @@ Improvement Activity Section
 										access to care and development of an improvement plan, such
 										as outlining steps for improving communications with
 										patients to help understanding of urgent access needs.</td>
-									<td>CPIA-1</td>
+									<td>IA_EPA_1</td>
 									<td>Y</td>
 								</tr>
 							</tbody>
@@ -3302,7 +3303,7 @@ Improvement Activity Section
 							<id root="ac575aef-7062-4ea2-b723-df517cfa470a"/>
 							<statusCode code="completed"/>
 							<reference typeCode="REFR">
-								<!-- Reference to a particular ACI measure's unique identifier. -->
+								<!-- Reference to a particular IA measure's unique identifier. -->
 								<externalDocument classCode="DOC" moodCode="EVN">
 									<!-- This is a temporary root OID that indicates this is an improvement activity identifier -->
 									<!-- extension is the unique identifier for an improvement activity. "IA_EPA_1" is for illustration only. -->

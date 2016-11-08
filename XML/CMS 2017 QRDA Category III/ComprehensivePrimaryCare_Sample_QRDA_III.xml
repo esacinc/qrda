@@ -278,7 +278,7 @@ CDA Header
                         <tr>
                            <td>Controlling High Blood Pressure</td>
                            <td>abdc37cc-bac6-4156-9b91-d1be2c8b7268</td>
-                           <td>40280381-4b9a-3825-014b-c290abf408ca</td>
+                           <td>40280381-51f0-825b-0152-22b98cff181a</td>
                         </tr>
                      </tbody>
                   </table>
@@ -411,7 +411,7 @@ CDA Header
                         <tr>
                            <td>Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention</td>
                            <td>e35791df-5b25-41bb-b260-673337bc44a8</td>
-                           <td>40280381-4c18-79df-014c-2dfa25f60c0e</td>
+                           <td>40280381-503f-a1fc-0150-d33f5b0a1b8c</td>
                         </tr>
                      </tbody>
                   </table>
@@ -544,7 +544,7 @@ CDA Header
                         <tr>
                            <td>Breast Cancer Screening</td>
                            <td>19783c1b-4fd1-46c1-8a96-a2f192b97ee0</td>
-                           <td>40280381-4b9a-3825-014b-e10b1e0a13db</td>
+                           <td>40280381-51f0-825b-0152-229c4ea3170c</td>
                         </tr>
                      </tbody>
                   </table>
@@ -677,7 +677,7 @@ CDA Header
                         <tr>
                            <td>Colorectal Cancer Screening</td>
                            <td>aa2a4bbc-864f-45ee-b17a-7ebcc62e6aac</td>
-                           <td>40280381-4b9a-3825-014b-e0bc5efd12f0</td>
+                           <td>40280381-51f0-825b-0152-22a1e7e81737</td>
                         </tr>
                      </tbody>
                   </table>
@@ -810,7 +810,7 @@ CDA Header
                         <tr>
                            <td>Preventive Care and Screening: Influenza Immunization</td>
                            <td>a244aa29-7d11-4616-888a-86e376bfcc6f</td>
-                           <td>40280381-4be2-53b3-014c-13f567921f71</td>
+                           <td>40280381-52fc-3a32-0153-395ce63513af</td>
                         </tr>
                      </tbody>
                   </table>
@@ -941,9 +941,9 @@ CDA Header
                      </thead>
                      <tbody>
                         <tr>
-                           <td>Pneumonia Vaccination Status for Older Adults</td>
+                           <td>Pneumococcal Vaccination Status for Older Adults</td>
                            <td>59657b9b-01bf-4979-a090-8534da1d0516</td>
-                           <td>40280381-4be2-53b3-014c-0f589c1a1c39</td>
+                           <td>40280381-52fc-3a32-0153-1a646a2a0bfa</td>
                         </tr>
                      </tbody>
                   </table>
@@ -1048,7 +1048,7 @@ CDA Header
                         <tr>
                            <td>Diabetes: Hemoglobin A1c Poor Control</td>
                            <td>f2986519-5a4e-4149-a8f2-af0a1dc7f6bc</td>
-                           <td>40280381-4b9a-3825-014b-e0a9409212a3</td>
+                           <td>40280381-51f0-825b-0152-229afff616ee</td>
                         </tr>
                      </tbody>
                   </table>
@@ -1151,9 +1151,9 @@ CDA Header
                      </thead>
                      <tbody>
                         <tr>
-                           <td>Diabetes: Low Density Lipoprotein (LDL) Management</td>
+                           <td>Diabetes: Low Density Lipoprotein (LDL-C) Control</td>
                            <td>0dac1dec-e011-493b-a281-7c28964872dd</td>
-                           <td>40280381-4cc2-8ffd-014c-d8450c9a0848</td>
+                           <td>40280381-52fc-3a32-0153-1dfb2f2c0c48</td>
                         </tr>
                      </tbody>
                   </table>
@@ -1256,9 +1256,9 @@ CDA Header
                      </thead>
                      <tbody>
                         <tr>
-                           <td>Ischemic Vascular Disease (IVD): Complete Lipid Panel and LDL Control</td>
+                           <td>Ischemic Vascular Disease (IVD): Complete Lipid Profile and LDL-C Control</td>
                            <td>500e4792-7f94-4e34-8546-ee71c56fe463</td>
-                           <td>40280381-4de7-db4d-014d-e861ea2d01a1</td>
+                           <td>40280381-51f0-825b-0152-22bd8ee41875</td>
                         </tr>
                      </tbody>
                   </table>
@@ -1447,7 +1447,7 @@ CDA Header
                         <tr>
                            <td>Heart Failure (HF): Beta-Blocker Therapy for Left Ventricular Systolic Dysfunction (LVSD)</td>
                            <td>8439f671-2932-4d4c-88ca-ea5faeacc89a</td>
-                           <td>40280381-4b9a-3825-014b-e0c7ac461325</td>
+                           <td>40280381-52fc-3a32-0153-1a3981870b45</td>
                         </tr>
                      </tbody>
                   </table>
@@ -1580,7 +1580,7 @@ CDA Header
                         <tr>
                            <td>Falls: Screening for Future Fall Risk</td>
                            <td>bc5b4a57-b964-4399-9d40-667c896f31ea</td>
-                           <td>40280381-4be2-53b3-014b-ebaf72d707c4</td>
+                           <td>40280381-51f0-825b-0152-22aae8a21778</td>
                         </tr>
                      </tbody>
                   </table>
@@ -1711,9 +1711,9 @@ CDA Header
                      </thead>
                      <tbody>
                         <tr>
-                           <td>Preventive Care and Screening: Screening for Clinical Depression and Follow-Up Plan</td>
+                           <td>Preventive Care and Screening: Screening for Depression and Follow-Up Plan</td>
                            <td>9a031e24-3d9b-11e1-8634-00237d5bf174</td>
-                           <td>40280381-4b9a-3825-014b-c11ae59d069b</td>
+                           <td>40280381-537c-f767-0153-c378bd7207a5</td>
                         </tr>
                      </tbody>
                   </table>
@@ -1874,7 +1874,7 @@ CDA Header
                         <tr>
                            <td>Documentation of Current Medications in the Medical Record</td>
                            <td>9a032d9c-3d9b-11e1-8634-00237d5bf174</td>
-                           <td>40280381-4be2-53b3-014c-040de60d10e1</td>
+                           <td>40280381-52fc-3a32-0153-3d64af97147b</td>
                         </tr>
                      </tbody>
                   </table>
@@ -2007,7 +2007,7 @@ CDA Header
 							<reference typeCode="REFR">
                         <externalDocument classCode="DOC" moodCode="EVN">
                            <id root="2.16.840.1.113883.4.738"
-                               extension="40280381-4b9a-3825-014b-c290abf408ca"/>
+                              extension="40280381-51f0-825b-0152-22b98cff181a"/>
                            <code code="57024-2"
                                  codeSystem="2.16.840.1.113883.6.1"
                                  codeSystemName="LOINC"
@@ -4048,7 +4048,7 @@ CDA Header
 							<reference typeCode="REFR">
                         <externalDocument classCode="DOC" moodCode="EVN">
                            <id root="2.16.840.1.113883.4.738"
-                               extension="40280381-4c18-79df-014c-2dfa25f60c0e"/>
+                              extension="40280381-503f-a1fc-0150-d33f5b0a1b8c"/>
                            <code code="57024-2"
                                  codeSystem="2.16.840.1.113883.6.1"
                                  codeSystemName="LOINC"
@@ -6089,7 +6089,7 @@ CDA Header
 							<reference typeCode="REFR">
                         <externalDocument classCode="DOC" moodCode="EVN">
                            <id root="2.16.840.1.113883.4.738"
-                               extension="40280381-4b9a-3825-014b-e10b1e0a13db"/>
+                              extension="40280381-51f0-825b-0152-229c4ea3170c"/>
                            <code code="57024-2"
                                  codeSystem="2.16.840.1.113883.6.1"
                                  codeSystemName="LOINC"
@@ -8130,7 +8130,7 @@ CDA Header
 							<reference typeCode="REFR">
                         <externalDocument classCode="DOC" moodCode="EVN">
                            <id root="2.16.840.1.113883.4.738"
-                               extension="40280381-4b9a-3825-014b-e0bc5efd12f0"/>
+                              extension="40280381-51f0-825b-0152-22a1e7e81737"/>
                            <code code="57024-2"
                                  codeSystem="2.16.840.1.113883.6.1"
                                  codeSystemName="LOINC"
@@ -10171,7 +10171,7 @@ CDA Header
 							<reference typeCode="REFR">
                         <externalDocument classCode="DOC" moodCode="EVN">
                            <id root="2.16.840.1.113883.4.738"
-                               extension="40280381-4be2-53b3-014c-13f567921f71"/>
+                              extension="40280381-52fc-3a32-0153-395ce63513af"/>
                            <code code="57024-2"
                                  codeSystem="2.16.840.1.113883.6.1"
                                  codeSystemName="LOINC"
@@ -12212,7 +12212,7 @@ CDA Header
 							<reference typeCode="REFR">
                         <externalDocument classCode="DOC" moodCode="EVN">
                            <id root="2.16.840.1.113883.4.738"
-                               extension="40280381-4be2-53b3-014c-0f589c1a1c39"/>
+                              extension="40280381-52fc-3a32-0153-1a646a2a0bfa"/>
                            <code code="57024-2"
                                  codeSystem="2.16.840.1.113883.6.1"
                                  codeSystemName="LOINC"
@@ -13754,7 +13754,7 @@ CDA Header
 							<reference typeCode="REFR">
                         <externalDocument classCode="DOC" moodCode="EVN">
                            <id root="2.16.840.1.113883.4.738"
-                               extension="40280381-4b9a-3825-014b-e0a9409212a3"/>
+                              extension="40280381-51f0-825b-0152-229afff616ee"/>
                            <code code="57024-2"
                                  codeSystem="2.16.840.1.113883.6.1"
                                  codeSystemName="LOINC"
@@ -15296,7 +15296,7 @@ CDA Header
 							<reference typeCode="REFR">
                         <externalDocument classCode="DOC" moodCode="EVN">
                            <id root="2.16.840.1.113883.4.738"
-                               extension="40280381-4cc2-8ffd-014c-d8450c9a0848"/>
+                              extension="40280381-52fc-3a32-0153-1dfb2f2c0c48"/>
                            <code code="57024-2"
                                  codeSystem="2.16.840.1.113883.6.1"
                                  codeSystemName="LOINC"
@@ -16838,7 +16838,7 @@ CDA Header
 							<reference typeCode="REFR">
                         <externalDocument classCode="DOC" moodCode="EVN">
                            <id root="2.16.840.1.113883.4.738"
-                               extension="40280381-4de7-db4d-014d-e861ea2d01a1"/>
+                              extension="40280381-51f0-825b-0152-22bd8ee41875"/>
                            <code code="57024-2"
                                  codeSystem="2.16.840.1.113883.6.1"
                                  codeSystemName="LOINC"
@@ -19900,7 +19900,7 @@ CDA Header
 							<reference typeCode="REFR">
                         <externalDocument classCode="DOC" moodCode="EVN">
                            <id root="2.16.840.1.113883.4.738"
-                               extension="40280381-4b9a-3825-014b-e0c7ac461325"/>
+                              extension="40280381-52fc-3a32-0153-1a3981870b45"/>
                            <code code="57024-2"
                                  codeSystem="2.16.840.1.113883.6.1"
                                  codeSystemName="LOINC"
@@ -21941,7 +21941,7 @@ CDA Header
 							<reference typeCode="REFR">
                         <externalDocument classCode="DOC" moodCode="EVN">
                            <id root="2.16.840.1.113883.4.738"
-                               extension="40280381-4be2-53b3-014b-ebaf72d707c4"/>
+                              extension="40280381-51f0-825b-0152-22aae8a21778"/>
                            <code code="57024-2"
                                  codeSystem="2.16.840.1.113883.6.1"
                                  codeSystemName="LOINC"
@@ -23982,7 +23982,7 @@ CDA Header
 							<reference typeCode="REFR">
                         <externalDocument classCode="DOC" moodCode="EVN">
                            <id root="2.16.840.1.113883.4.738"
-                               extension="40280381-4b9a-3825-014b-c11ae59d069b"/>
+                              extension="40280381-537c-f767-0153-c378bd7207a5"/>
                            <code code="57024-2"
                                  codeSystem="2.16.840.1.113883.6.1"
                                  codeSystemName="LOINC"
@@ -26522,7 +26522,7 @@ CDA Header
 							<reference typeCode="REFR">
                         <externalDocument classCode="DOC" moodCode="EVN">
                            <id root="2.16.840.1.113883.4.738"
-                               extension="40280381-4be2-53b3-014c-040de60d10e1"/>
+                              extension="40280381-52fc-3a32-0153-3d64af97147b"/>
                            <code code="57024-2"
                                  codeSystem="2.16.840.1.113883.6.1"
                                  codeSystemName="LOINC"

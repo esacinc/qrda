@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!--
+		Performance Rate sample file
+		
+		Total Errors Expected: 9
+			Failure a-3259-21303-error Wrong classCode
+			Failure a-3259-21304-error Wrong moodCode
+			Failure a-3259-21298-error Multiple templateId
+			Failure a-3259-21294-error Multiple code
+			Failure a-3259-21305-error Wrong code
+			Failure a-3259-21306-error Wrong codeSystem
+			Failure a-3259-21297-error Multiple statusCode
+			Failure a-3259-21309-error No code
+			Failure a-3259-21307-error Multiple value
+          
+    	Total Warnings Expected: 0
+	-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
+
+	<observation classCode="ERR" moodCode="ERR"> <!-- Failure a-3259-21303-error Wrong classCode, Failure a-3259-21304-error Wrong moodCode -->
+		<!-- Performance Rate templateId -->
+		<templateId root="2.16.840.1.113883.10.20.27.3.30"
+			    extension="2016-09-01"/> 
+		<templateId root="2.16.840.1.113883.10.20.27.3.30"
+			    extension="2016-09-01"/> <!-- Failure a-3259-21298-error Multiple templateId -->
+		<code code="72510-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+			displayName="Performance Rate"/>
+		<code code="72510-0" codeSystem="2.16.840.1.113883.0.0.0.0" codeSystemName="LOINC"
+			displayName="Performance Rate"/> <!-- Failure a-3259-21298-error Multiple code, Failure a-3259-21305-error Wrong code, Failure a-3259-21306-error Wrong codeSystem -->
+		<statusCode code="completed"/>
+		<statusCode /> <!-- Failure a-3259-21297-error Multiple statusCode, Failure a-3259-21309-error No code -->
+		<value xsi:type="REAL" value="0.750000"/>
+		<value xsi:type="REAL" value="0.750000"/> <!-- Failure a-3259-21307-error Multiple value -->
+	</observation>
+
+</ClinicalDocument>

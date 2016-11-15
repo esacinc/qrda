@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title:  Reporting Rate for Proportion Measure
+    Author: Maya Zuhl
+    Date:   10-18-2016
+    
+    Total Errors Expected: 11
+		Failure a-77-18411 Wrong classCode
+		Failure a-77-18412 Wrong moodCode
+		Failure a-77-21157 Multiple templateId
+		Failure a-77-18413 Multiple code
+		Failure a-77-18414 Wrong code
+		Failure a-77-21168 Wrong codeSystem
+		Failure a-77-18419 Multiple statusCode
+		Failure a-77-18420 Wrong code
+		Failure a-77-18415 Multiple value
+		Failure a-77-18417 Multiple observationRange
+		Failure a-77-18418 Multiple value
+    Total Warnings Expected: 0
+-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<entry>
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<!-- Optional reporting rate template -->
+							<component>
+								<observation classCode="ERR" moodCode="ERR"> <!-- Failure a-77-18411 Wrong classCode, Failure a-77-18412 Wrong moodCode -->
+									<!-- MAY 0..1 Reporting Rate for Proportion Measure template -->
+									<templateId root="2.16.840.1.113883.10.20.27.3.15"/>
+									<templateId root="2.16.840.1.113883.10.20.27.3.15"/> <!--Failure a-77-21157 Multiple templateId -->
+									<code code="72509-3" codeSystem="2.16.840.1.113883.6.1"
+										displayName="Reporting Rate"
+										codeSystemName="2.16.840.1.113883.6.1"/>
+									<code code="72509-0" codeSystem="2.16.840.1.113883.0.0.0.0"
+										displayName="Reporting Rate"
+										codeSystemName="2.16.840.1.113883.6.1"/> <!-- Failure a-77-18413 Multiple code, Failure a-77-18414 Wrong code, Failure a-77-21168 Wrong codeSystem -->
+									<statusCode code="completed"/>
+									<statusCode code="completedError"/> <!-- Failure a-77-18419 Multiple statusCode, Failure a-77-18420 Wrong code -->
+									<value xsi:type="REAL" value="0.84"/>
+									<value xsi:type="REAL" value="0.84"/><!-- Failure a-77-18415 Multiple value -->
+									<referenceRange>
+										<observationRange>
+											<value xsi:type="REAL" value="0.625"/>
+										</observationRange>
+										<observationRange> <!-- Failure a-77-18417 Multiple observationRange -->
+											<value xsi:type="REAL" value="0.625"/>
+											<value xsi:type="REAL" value="0.625"/> <!-- Failure a-77-18418 Multiple value -->
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component> 
+		</structuredBody>
+	</component>
+</ClinicalDocument>

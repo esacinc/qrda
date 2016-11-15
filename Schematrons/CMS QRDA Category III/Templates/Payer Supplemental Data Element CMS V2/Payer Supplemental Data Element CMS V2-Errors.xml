@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!--
+		Payer Supplemental Data Element CMS (V2) test file - errors introduced by Maya Zuhl
+		
+		Total Errors Expected: 15
+			Failure a-2233-21155-error Wrong classCode
+			Failure a-2233-21156-error Wrong moodCode
+			Failure a-2233-711270-error Multiple templateId
+			Failure a-2233-18237-error Multiple templateId
+			Failure a-2233-12564-error No id
+			Failure a-2233-21158-error Multiple code
+			Failure a-2233-21159-error Wrong code
+			Failure a-2233-21165-error Wrong codeSystem
+			Failure a-2233-18106-error Multiple statusCode
+			Failure a-2233-18107-error Wrong code
+			Failure a-2233-711196-error Multiple value
+			Failure a-2233-711230-error Multiple translation
+			Failure a-2233-711231-error No code
+			Failure a-2233-711229-error Wrong nullFlavor
+			Failure a-2233-18108-error Multiple entryRelationship
+    	Total Warnings Expected: 0
+	-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
+
+	<!-- Payer Supplemental Data Element -->
+	<observation classCode="OBSERR" moodCode="EVNERR"> <!-- Failure a-2233-21155-error Wrong classCode, Failure a-2233-21156-error Wrong moodCode -->
+		<!-- Payer Supplemental Data Element - CMS (V2) template ID -->
+		<templateId root="2.16.840.1.113883.10.20.27.3.18" extension="2016-11-01"/>
+		<templateId root="2.16.840.1.113883.10.20.27.3.18" extension="2016-11-01"/> <!-- Failure a-2233-711270-error Multiple templateId -->
+		<!-- Payer Supplemental Data Element V2 template ID -->
+		<templateId root="2.16.840.1.113883.10.20.27.3.9" extension="2016-02-01"/>
+		<templateId root="2.16.840.1.113883.10.20.27.3.9" extension="2016-02-01"/> <!-- Failure a-2233-18237-error Multiple templateId --> 
+		<!-- implied template requires ID -->
+		<!-- <id nullFlavor="NA"/> --> <!-- Failure a-2233-12564-error No id -->
+		<!-- SHALL be single value binding to: -->
+		<code code="48768-6" displayName="Payment source" 
+			codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+		<code code="48760-0" displayName="Payment source" 
+			codeSystem="2.16.840.1.113883.0.0.0.0" codeSystemName="LOINC"/> <!-- Failure a-2233-21158-error Multiple code, Failure a-2233-21159-error Wrong code, Failure a-2233-21165-error Wrong codeSystem -->
+		<statusCode code="completed"/>
+		<statusCode code="completedError"/> <!-- Failure a-2233-18106-error Multiple statusCode, Failure a-2233-18107-error Wrong code -->
+		<!-- SHALL be drawn from  Value Set: PHDSC Source of Payment Typology 2.16.840.1.114222.4.11.3591 DYNAMIC-->
+		<value xsi:type="CD" nullFlavor="OTH">
+			<translation code="A"
+						codeSystem="2.16.840.1.113883.3.249.12"
+						codeSystemName="CMS Clinical Codes"
+						displayName="Medicare"/>
+		</value>
+		<value xsi:type="CD" nullFlavor="OTHError"> <!-- Failure a-2233-711196-error Multiple value, Failure a-2233-711229-error Wrong nullFlavor -->
+			<translation code="A"
+						codeSystem="2.16.840.1.113883.3.249.12"
+						codeSystemName="CMS Clinical Codes"
+						displayName="Medicare"/>
+			<translation 
+						codeSystem="2.16.840.1.113883.3.249.12"
+						codeSystemName="CMS Clinical Codes"
+						displayName="Medicare"/> <!-- Failure a-2233-711230-error Multiple translation, Failure a-2233-711231-error No code -->
+		</value>
+		<entryRelationship typeCode="SUBJ" inversionInd="true">
+			<observation classCode="OBS" moodCode="EVN">
+				<!-- SHALL 1..1 Aggregate Count CMS template -->
+				<templateId root="2.16.840.1.113883.10.20.27.3.24"/>
+				<code code="MSRAGG"
+					codeSystem="2.16.840.1.113883.5.4"
+					codeSystemName="ActCode"
+					displayName="rate aggregation"/>
+				<!--  SHALL value xsi:type="INT"-->
+				<value xsi:type="INT" value="250"/>
+				<methodCode code="COUNT" displayName="Count" codeSystem="2.16.840.1.113883.5.84"
+					codeSystemName="ObservationMethod"/>
+			</observation>
+		</entryRelationship>
+		<entryRelationship typeCode="SUBJ" inversionInd="true"> <!-- Failure a-2233-18108-error Multiple entryRelationship -->
+			<observation classCode="OBS" moodCode="EVN">
+				<!-- SHALL 1..1 Aggregate Count CMS template -->
+				<templateId root="2.16.840.1.113883.10.20.27.3.24"/>
+				<code code="MSRAGG"
+					codeSystem="2.16.840.1.113883.5.4"
+					codeSystemName="ActCode"
+					displayName="rate aggregation"/>
+				<!--  SHALL value xsi:type="INT"-->
+				<value xsi:type="INT" value="250"/>
+				<methodCode code="COUNT" displayName="Count" codeSystem="2.16.840.1.113883.5.84"
+					codeSystemName="ObservationMethod"/>
+			</observation>
+		</entryRelationship>
+	</observation>
+</ClinicalDocument>

@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns="urn:hl7-org:v3"
+ xmlns:voc="urn:hl7-org:v3/voc"
+ xmlns:sdtc="urn:hl7-org:sdtc">
+  <!-- QRDA Header -->
+  <realmCode code="US"/>
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+  <!-- US Realm Header Template Id -->
+  <templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2014-06-09" />
+  <!-- QRDA templateId -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2014-12-01" />
+  <!-- QDM-based QRDA templateId -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.2" extension="2014-12-01" />
+  <!-- This is the globally unique identifier for this QRDA document -->
+  <id root="f73e0bd0-d36a-0133-35ca-005056010493"/>
+  <!-- QRDA document type code -->
+  <code code="55182-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Quality Measure Report"/>
+  <title>QRDA Incidence Report</title>
+  <!-- This is the document creation time -->
+  <effectiveTime value="20160323212018"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+  <languageCode code="en"/>
+  <!-- reported patient -->
+    <recordTarget>
+    <patientRole>
+        <id extension="25901b764c4e371fd166da912ac31291" root="Bonnie"/>
+      <addr use="HP">
+          <streetAddressLine>202 Burlington Rd.</streetAddressLine>
+          <city>Bedford</city>
+          <state>MA</state>
+          <postalCode>01730</postalCode>
+          <country>US</country>
+      </addr>
+      <telecom use="WP" value="tel:+1-781-271-3000"/>
+      <patient>
+        <name>
+          <given>1</given>
+          <family>N GP Adult</family>
+        </name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7 AdministrativeGender"/>
+        <birthTime value="19710225171500"/>
+          <raceCode code="2106-3" displayName="White" codeSystemName="CDC Race and Ethnicity" codeSystem="2.16.840.1.113883.6.238"/>
+          <ethnicGroupCode code="2135-2" displayName="Hispanic Or Latino" codeSystemName="CDC Race and Ethnicity" codeSystem="2.16.840.1.113883.6.238"/>
+          <languageCommunication>
+            <templateId root="2.16.840.1.113883.3.88.11.83.2" assigningAuthorityName="HITSP/C83"/>
+            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.1" assigningAuthorityName="IHE/PCC"/>
+            <languageCode code="eng"/>
+          </languageCommunication>
+      </patient>
+    </patientRole>
+  </recordTarget>
+
+  <!-- Example of an author who is a device -->
+    <author>
+      <time value="20160323212018"/>
+      <assignedAuthor>
+        <!-- id extension="Cypress" root="2.16.840.1.113883.19.5"/ -->
+        <!-- NPI -->
+        <id extension="FakeNPI" root="2.16.840.1.113883.4.6"/>
+        <addr>
+          <streetAddressLine>202 Burlington Rd.</streetAddressLine>
+          <city>Bedford</city>
+          <state>MA</state>
+          <postalCode>01730</postalCode>
+          <country>US</country>
+        </addr>
+        <telecom use="WP" value="tel:(781)271-3000"/>
+        <assignedAuthoringDevice>
+          <manufacturerModelName>Cypress</manufacturerModelName >
+          <softwareName>Cypress</softwareName >
+        </assignedAuthoringDevice >
+      </assignedAuthor>
+    </author>
+    <custodian>
+      <assignedCustodian>
+        <representedCustodianOrganization>
+          <!-- HQR Only -->
+            <id root="2.16.840.1.113883.19.5"/>
+          <name>Cypress Test Deck</name>
+          <telecom use="WP" value="tel:(781)271-3000"/>
+          <addr>
+            <streetAddressLine>202 Burlington Rd.</streetAddressLine>
+            <city>Bedford</city>
+            <state>MA</state>
+            <postalCode>01730</postalCode>
+            <country>US</country>
+          </addr>
+        </representedCustodianOrganization>
+      </assignedCustodian>
+    </custodian>
+    <!-- This needs to take reporting program into account EH/EP-->
+    <legalAuthenticator>
+      <time value="20160323212018"/>
+      <signatureCode code="S"/>
+      <assignedEntity>
+        <id root="bc01a5d1-3a34-4286-82cc-43eb04c972a7"/>
+        <addr>
+          <streetAddressLine>202 Burlington Rd.</streetAddressLine>
+          <city>Bedford</city>
+          <state>MA</state>
+          <postalCode>01730</postalCode>
+          <country>US</country>
+        </addr>
+        <telecom use="WP" value="tel:(781)271-3000"/>
+        <assignedPerson>
+          <name>
+             <given>Henry</given>
+             <family>Seven</family>
+          </name>
+       </assignedPerson>
+        <representedOrganization>
+          <id root="2.16.840.1.113883.19.5"/>
+          <name>Cypress</name>
+        </representedOrganization>
+      </assignedEntity>
+    </legalAuthenticator>
+
+  <documentationOf typeCode="DOC">
+  <serviceEvent classCode="PCPR"> <!-- care provision -->
+    <!-- No provider data found in the patient record
+         putting in a fake provider -->
+    <effectiveTime>
+      <low value="20020716"/>
+      <high value="20160323212018"/>
+    </effectiveTime>
+    <!-- You can include multiple performers, each with an NPI, TIN, CCN. -->
+    <performer typeCode="PRF"> 
+      <time>
+        <low value="20020716"/>
+        <high value="20160323212018"/>
+      </time>
+      <assignedEntity>
+        <!-- This is the provider NPI -->
+        <id root="2.16.840.1.113883.4.6" extension="111111111" /> 
+        <representedOrganization>
+          <!-- This is the organization TIN -->
+          <id root="2.16.840.1.113883.4.2" extension="1234567" /> 
+          <!-- This is the organization CCN -->
+          <id root="2.16.840.1.113883.4.336" extension="54321" /> 
+        </representedOrganization>
+      </assignedEntity>
+    </performer>
+  </serviceEvent>
+</documentationOf>
+
+
+  <component>
+    <structuredBody>
+            <component>
+        <section>
+          <!-- 
+            *****************************************************************
+            Measure Section
+            *****************************************************************
+          -->
+          <!-- This is the templateId for Measure Section -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.2"/>
+          <!-- This is the templateId for Measure Section QDM -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.3"/>
+          <!-- This is the LOINC code for "Measure document". This stays the same for all measure section required by QRDA standard -->
+          <code code="55186-1" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Measure Section</title>
+          <text>
+            <table border="1" width="100%">
+              <thead>
+                <tr>
+                  <th>eMeasure Title</th>
+                  <th>Version neutral identifier</th>
+                  <th>eMeasure Version Number</th>
+                  <th>Version specific identifier</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Preventive Care and Screening: Screening for High Blood Pressure and Follow-Up Documented</td>
+                  <td>9A033A94-3D9B-11E1-8634-00237D5BF174</td>
+                  <td>5</td>
+                  <td>40280381-528A-60FF-0152-94967C8A0860</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- 1..* Organizers, each containing a reference to an eMeasure -->
+          <entry>
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <!-- This is the templateId for Measure Reference -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.98"/>
+              <!-- This is the templateId for eMeasure Reference QDM -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.97"/>
+              <id root="1.3.6.1.4.1.115" extension="56df21e202d40551ff0014fb"/>
+              <statusCode code="completed"/>
+              <!-- Containing isBranch external references -->
+              <reference typeCode="REFR">
+                <externalDocument classCode="DOC" moodCode="EVN">
+                  <!-- SHALL: This is the version specific identifier for eMeasure: QualityMeasureDocument/id it is a GUID-->
+                  <id root="2.16.840.1.113883.4.738" extension="40280381-528A-60FF-0152-94967C8A0860"/>
+                  <!-- SHOULD This is the title of the eMeasure -->
+                  <text>Preventive Care and Screening: Screening for High Blood Pressure and Follow-Up Documented</text>
+                  <!-- SHOULD: setId is the eMeasure version neutral id  -->
+                  <setId root="9A033A94-3D9B-11E1-8634-00237D5BF174"/>
+                  <!-- This is the sequential eMeasure Version number -->
+                  <versionNumber value="5"/>                  
+                </externalDocument>
+              </reference>
+            </organizer>
+          </entry>
+        </section>
+      </component>
+
+            <component>
+        <section>
+          <!-- This is the templateId for Reporting Parameters section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.1" />
+          <code code="55187-9" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Reporting Parameters</title>
+          <text>
+            <list>
+              <item>Reporting period: January 1st, 2014 00:00 - December 31st, 2014 00:00</item>
+            </list>
+          </text>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <!-- This is the templateId for Reporting Parameteres Act -->
+              <templateId root="2.16.840.1.113883.10.20.17.3.8" />
+              <id root="1.3.6.1.4.1.115" extension="18621F6FFA28DB9636BF2D29D153E01D" />
+              <code code="252116004" codeSystem="2.16.840.1.113883.6.96" displayName="Observation Parameters"/>
+              <effectiveTime>
+                <low value="20140101000000"/>
+                <high value="20141231000000"/>
+              </effectiveTime>
+            </act>
+          </entry>
+        </section>
+      </component>
+            <component>
+        <section>
+          <!-- This is the templateId for Patient Data section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.4"/>
+          <!-- This is the templateId for Patient Data QDM section -->
+	  <templateId root="2.16.840.1.113883.10.20.24.2.1" extension="2014-12-01" />
+          <code code="55188-7" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Patient Data</title>
+          <text>
+
+          </text>
+          
+<entry>
+  <encounter classCode="ENC" moodCode="EVN">
+    <!--  Encounter activities template -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.49" extension="2014-06-09"/> 
+    <!-- Encounter performed template -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.23" extension="2014-12-01"/>
+    <id root="1.3.6.1.4.1.115" extension="56e82f1e02d4054243000416"/>
+    <code code="108224003" codeSystem="2.16.840.1.113883.6.96" sdtc:valueSet="2.16.840.1.113883.3.600.1920"><originalText>Encounter, Performed: BMI Encounter Code Set</originalText><translation code="99203" codeSystem="2.16.840.1.113883.6.12"/>
+<translation code="G0438" codeSystem="2.16.840.1.113883.6.285"/>
+<translation code="D7140" codeSystem="2.16.840.1.113883.6.13"/>
+</code>
+    <text>Encounter, Performed: BMI Encounter Code Set</text>
+    <statusCode code="completed"/>
+    <effectiveTime>
+      <!-- We try to look for the admit/discharge times on the encounter if they are
+           there. If not, we fall back to the typical start/end date. -->
+      <low value='20140911080000'/>
+      <high value='20140911081500'/>
+    </effectiveTime>
+
+
+  </encounter>
+</entry>
+
+<entry>
+  <act classCode="ACT" moodCode="RQO" >
+    <!-- Plan of Care Activity Act template -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.39" extension="2014-06-09"/>
+    <!-- Intervention Order template -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.31" extension="2014-12-01"/>
+    <id root="1.3.6.1.4.1.115" extension="56e82f1e02d4054243000425"/>
+    <code code="386464006" codeSystem="2.16.840.1.113883.6.96" sdtc:valueSet="2.16.840.1.113883.3.600.1515"><originalText>Intervention, Order: Above Normal Follow-up</originalText><translation code="V65.3" codeSystem="2.16.840.1.113883.6.103"/>
+<translation code="Z71.3" codeSystem="2.16.840.1.113883.6.90"/>
+</code>
+    <text>Intervention, Order: Above Normal Follow-up</text>
+    <statusCode code="active"/>
+     <effectiveTime>
+      <low value='20140911081000'/>
+    </effectiveTime>
+    <author>
+      <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+      <time value='20140911081000'/>
+      <assignedAuthor>
+        <id root="f7440880-d36a-0133-35ca-005056010493"/>
+      </assignedAuthor>
+    </author>
+    
+  </act>
+</entry>
+
+<entry>
+  <act classCode="ACT" moodCode="RQO" >
+    <!-- Plan of Care Activity Act template -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.39" extension="2014-06-09"/>
+    <!-- Intervention Order template -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.31" extension="2014-12-01"/>
+    <id root="1.3.6.1.4.1.115" extension="56e82f1e02d4054243000426"/>
+    <code code="103699006" codeSystem="2.16.840.1.113883.6.96" sdtc:valueSet="2.16.840.1.113883.3.600.1515"><originalText>Intervention, Order: Referrals where weight assessment may occur</originalText></code>
+    <text>Intervention, Order: Referrals where weight assessment may occur</text>
+    <statusCode code="active"/>
+     <effectiveTime>
+      <low value='20140911081000'/>
+    </effectiveTime>
+    <author>
+      <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+      <time value='20140911081000'/>
+      <assignedAuthor>
+        <id root="f7447170-d36a-0133-35ca-005056010493"/>
+      </assignedAuthor>
+    </author>
+    
+  </act>
+</entry>
+
+
+
+<entry>
+  <act classCode="ACT" moodCode="RQO" >
+    <!-- Plan of Care Activity Act template -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.39" extension="2014-06-09"/>
+    <!-- Intervention Order template -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.31" extension="2014-12-01"/>
+    <id root="1.3.6.1.4.1.115" extension="56e82f1e02d4054243000422"/>
+    <code code="39155009" codeSystem="2.16.840.1.113883.6.96" sdtc:valueSet="2.16.840.1.113883.3.600.1508"><originalText>Intervention, Order: Lifestyle Recommendation</originalText></code>
+    <text>Intervention, Order: Lifestyle Recommendation</text>
+    <statusCode code="active"/>
+     <effectiveTime>
+      <low value='20140911080000'/>
+    </effectiveTime>
+    <author>
+      <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+      <time value='20140911080000'/>
+      <assignedAuthor>
+        <id root="f7453b70-d36a-0133-35ca-005056010493"/>
+      </assignedAuthor>
+    </author>
+    
+  </act>
+</entry>
+
+<entry>
+  <act classCode="ACT" moodCode="RQO" >
+    <!-- Plan of Care Activity Act template -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.39" extension="2014-06-09"/>
+    <!-- Intervention Order template -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.31" extension="2014-12-01"/>
+    <id root="1.3.6.1.4.1.115" extension="56e82f1e02d4054243000424"/>
+    <code code="413473000" codeSystem="2.16.840.1.113883.6.96" sdtc:valueSet="2.16.840.1.113883.3.600.823"><originalText>Intervention, Order: Moderation of ETOH Consumption Recommendation</originalText></code>
+    <text>Intervention, Order: Moderation of ETOH Consumption Recommendation</text>
+    <statusCode code="active"/>
+     <effectiveTime>
+      <low value='20140911080000'/>
+    </effectiveTime>
+    <author>
+      <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+      <time value='20140911080000'/>
+      <assignedAuthor>
+        <id root="f745bef0-d36a-0133-35ca-005056010493"/>
+      </assignedAuthor>
+    </author>
+    
+  </act>
+</entry>
+
+<entry>
+  <act classCode="ACT" moodCode="RQO" >
+    <!-- Plan of Care Activity Act template -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.39" extension="2014-06-09"/>
+    <!-- Intervention Order template -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.31" extension="2014-12-01"/>
+    <id root="1.3.6.1.4.1.115" extension="56e82f1e02d4054243000423"/>
+    <code code="304549008" codeSystem="2.16.840.1.113883.6.96" sdtc:valueSet="2.16.840.1.113883.3.600.1518"><originalText>Intervention, Order: Physical Activity Recommendation</originalText><translation code="S9451" codeSystem="2.16.840.1.113883.6.285"/>
+<translation code="V65.41" codeSystem="2.16.840.1.113883.6.103"/>
+</code>
+    <text>Intervention, Order: Physical Activity Recommendation</text>
+    <statusCode code="active"/>
+     <effectiveTime>
+      <low value='20140911080000'/>
+    </effectiveTime>
+    <author>
+      <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+      <time value='20140911080000'/>
+      <assignedAuthor>
+        <id root="f7464fa0-d36a-0133-35ca-005056010493"/>
+      </assignedAuthor>
+    </author>
+    
+  </act>
+</entry>
+
+<entry>
+  <act classCode="ACT" moodCode="RQO" >
+    <!-- Plan of Care Activity Act template -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.39" extension="2014-06-09"/>
+    <!-- Intervention Order template -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.31" extension="2014-12-01"/>
+    <id root="1.3.6.1.4.1.115" extension="56e82f1e02d4054243000425"/>
+    <code nullFlavor="UNK" sdtc:valueSet="2.16.840.1.113883.3.600.1510"><originalText>Intervention, Order: Above Normal Follow-up</originalText><translation code="S9449" codeSystem="2.16.840.1.113883.6.285"/>
+</code>
+    <text>Intervention, Order: Above Normal Follow-up</text>
+    <statusCode code="active"/>
+     <effectiveTime>
+      <low value='20140911081000'/>
+    </effectiveTime>
+    <author>
+      <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+      <time value='20140911081000'/>
+      <assignedAuthor>
+        <id root="f746d2e0-d36a-0133-35ca-005056010493"/>
+      </assignedAuthor>
+    </author>
+    
+  </act>
+</entry>
+
+
+
+
+
+
+
+
+
+
+
+
+<entry>
+  <observation classCode="OBS" moodCode="EVN" >
+    <!-- Procedure Activity Procedure (Consolidation) template -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09"/>
+    <!-- Physical Exam, Performed template -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.59" extension="2014-12-01"/>
+    <id root="1.3.6.1.4.1.115" extension="56e82f1e02d405424300041a"/>
+    <code nullFlavor="UNK" sdtc:valueSet="2.16.840.1.113883.3.526.3.1033"><originalText>Physical Exam, Performed: Diastolic Blood Pressure</originalText><translation code="8462-4" codeSystem="2.16.840.1.113883.6.1"/>
+</code>
+    <text>Physical Exam, Performed: Diastolic Blood Pressure</text>
+    <statusCode code="completed"/>
+    <effectiveTime>
+      <low value='20140709080000'/>
+      <high value='20140709080000'/>
+    </effectiveTime>
+    	<value xsi:type="PQ" value="100" unit="mm[Hg]"/>
+
+    
+  </observation>
+</entry>
+
+<entry>
+  <observation classCode="OBS" moodCode="EVN" >
+    <!-- Procedure Activity Procedure (Consolidation) template -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09"/>
+    <!-- Physical Exam, Performed template -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.59" extension="2014-12-01"/>
+    <id root="1.3.6.1.4.1.115" extension="56e82f1e02d4054243000420"/>
+    <code nullFlavor="UNK" sdtc:valueSet="2.16.840.1.113883.3.526.3.1033"><originalText>Physical Exam, Performed: Diastolic Blood Pressure</originalText><translation code="8462-4" codeSystem="2.16.840.1.113883.6.1"/>
+</code>
+    <text>Physical Exam, Performed: Diastolic Blood Pressure</text>
+    <statusCode code="completed"/>
+    <effectiveTime>
+      <low value='20140911080000'/>
+      <high value='20140911080000'/>
+    </effectiveTime>
+    	<value xsi:type="PQ" value="95" unit="mm[Hg]"/>
+
+    
+  </observation>
+</entry>
+
+<entry>
+  <observation classCode="OBS" moodCode="EVN" >
+    <!-- Procedure Activity Procedure (Consolidation) template -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09"/>
+    <!-- Physical Exam, Performed template -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.59" extension="2014-12-01"/>
+    <id root="1.3.6.1.4.1.115" extension="56e82f1e02d4054243000418"/>
+    <code nullFlavor="UNK" sdtc:valueSet="2.16.840.1.113883.3.526.3.1032"><originalText>Physical Exam, Performed: Systolic Blood Pressure</originalText><translation code="8480-6" codeSystem="2.16.840.1.113883.6.1"/>
+</code>
+    <text>Physical Exam, Performed: Systolic Blood Pressure</text>
+    <statusCode code="completed"/>
+    <effectiveTime>
+      <low value='20140709080000'/>
+      <high value='20140709080000'/>
+    </effectiveTime>
+    	<value xsi:type="PQ" value="160" unit="mm[Hg]"/>
+
+    
+  </observation>
+</entry>
+
+<entry>
+  <observation classCode="OBS" moodCode="EVN" >
+    <!-- Procedure Activity Procedure (Consolidation) template -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09"/>
+    <!-- Physical Exam, Performed template -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.59" extension="2014-12-01"/>
+    <id root="1.3.6.1.4.1.115" extension="56e82f1e02d405424300041e"/>
+    <code nullFlavor="UNK" sdtc:valueSet="2.16.840.1.113883.3.526.3.1032"><originalText>Physical Exam, Performed: Systolic Blood Pressure</originalText><translation code="8480-6" codeSystem="2.16.840.1.113883.6.1"/>
+</code>
+    <text>Physical Exam, Performed: Systolic Blood Pressure</text>
+    <statusCode code="completed"/>
+    <effectiveTime>
+      <low value='20140911080000'/>
+      <high value='20140911080000'/>
+    </effectiveTime>
+    	<value xsi:type="PQ" value="155" unit="mm[Hg]"/>
+
+    
+  </observation>
+</entry>
+
+
+
+
+
+
+
+
+<entry>
+  <act classCode="ACT" moodCode="RQO" >
+    <!-- Plan of Care Activity Act template -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.39" extension="2014-06-09"/>
+    <!-- Intervention Order template -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.31" extension="2014-12-01"/>
+    <id root="1.3.6.1.4.1.115" extension="56e82f1e02d4054243000427"/>
+    <code code="308470006" codeSystem="2.16.840.1.113883.6.96" sdtc:valueSet="2.16.840.1.113883.3.600.1475"><originalText>Intervention, Order: Referral to Alternative Provider / Primary Care Provider</originalText></code>
+    <text>Intervention, Order: Referral to Alternative Provider / Primary Care Provider</text>
+    <statusCode code="active"/>
+     <effectiveTime>
+      <low value='20140911081500'/>
+    </effectiveTime>
+    <author>
+      <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+      <time value='20140911081500'/>
+      <assignedAuthor>
+        <id root="f74b5dd0-d36a-0133-35ca-005056010493"/>
+      </assignedAuthor>
+    </author>
+    <entryRelationship typeCode="RSON">
+  <observation classCode="OBS" moodCode="EVN">
+    <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01"/>
+    <id root="1.3.6.1.4.1.115" extension="C9735549C2F250CC8E74AF260A23D3BA" />
+    <code code="77301-0"
+          codeSystem="2.16.840.1.113883.6.1"
+          displayName="reason"
+          codeSystemName="LOINC"/>
+    <statusCode code="completed"/>
+      <effectiveTime>
+        <low value='20140911081500'/>
+      </effectiveTime>
+    <value xsi:type="CD"
+         code="31992008"
+         codeSystem="2.16.840.1.113883.6.96"
+         displayName="Finding Of Hypertension"
+         sdtc:valueSet="2.16.840.1.113883.3.600.2395"
+         />
+  </observation>
+</entryRelationship>
+
+  </act>
+</entry>
+
+
+
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

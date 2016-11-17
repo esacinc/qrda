@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    
+<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="false">
+ 
+    <title>EH CMS 2017 QRDA Category I generated schematron</title>
+   
+    <generatedFilename>
+        c:/Development/qrdaGit/qrda/Schematrons/CMS QRDA Category I/EH CMS 2017/Published/EH CMS 2017 QRDA Category I.sch
+    </generatedFilename>
+    <finalTestFilename>
+        c:/Development/qrdaGit/qrda/Schematrons/CMS QRDA Category I/EH CMS 2017/TestFiles/EH_Sample_QRDA_I_Informative.xml 
+    </finalTestFilename>
+    <fileHeader>HL7 QRDA I STU 3.1 generated schematron.</fileHeader>
+    <mergeReportFilename> c:/Development/qrdaGit/qrda/Schematrons/CMS QRDA Category I/EH CMS 2017/mergeReport.txt</mergeReportFilename>
+    
+    <!-- All schematrons expected to be under a single main directory -->
+    <sourceMainDirectory>
+        c:/Development/qrdaGit/qrda/Schematrons/
+    </sourceMainDirectory>
+    
+    <!-- Specify the schematrons to use in the merge below, separated by the templates found in each fo the source directories listed. -->
+    <!--    Note that the directoryName tags refer to directories relative to the sourceMainDirectory tag, above. -->
+    <!--    selector='all' means use all the schematron subdirectories found under directoryName, except for those listed in the 'exclude' tags. -->
+    <!--    selector='some' means only use the directoryName subdirectories listed in the 'include' tags --> 
+
+    <sourceDirectory selector='all'>  
+        <directoryName>HL7 QRDA Category I/Templates/</directoryName>
+        <exclude>Assessment Performed</exclude> 
+		<exclude>Assessment Recommended</exclude>
+        <exclude>Diagnosis Concern Act V2</exclude>
+        <exclude>Fulfills V2</exclude>
+        <exclude>Order V3</exclude>
+        <exclude>Patient Data Section QDM V4</exclude>
+        <exclude>QDM Based QRDA V4</exclude>
+        <exclude>Symptom Concern Act V2</exclude>
+        <exclude></exclude>
+    </sourceDirectory>
+
+    <sourceDirectory selector='all'>  
+        <directoryName>CMS QRDA Category I/Templates/</directoryName>
+        <exclude>QRDA Category I Report CMS V3 EC</exclude>
+    </sourceDirectory>
+    
+    
+</mergeProfile>

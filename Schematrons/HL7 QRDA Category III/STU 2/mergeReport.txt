@@ -1,0 +1,233 @@
+ 
+************************************************************************************************************
+ MERGE REPORT: C:\\Development\\qrdaGit\\qrda\\Schematrons\\HL7 QRDA Category III\\STU 2\\HL7 QRDA Category III STU 2 Merge Directions.xml
+************************************************************************************************************
+    Instructions file: C:\\Development\\qrdaGit\\qrda\\Schematrons\\HL7 QRDA Category III\\STU 2\\HL7 QRDA Category III STU 2 Merge Directions.xml
+    Title: HL7 QRDA III STU 1.1 generated schematron
+    Generated on Tue Nov 15 10:45:19 MST 2016
+    Verbose Reporting is turned on
+    Merged file: c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category III/STU 2/Published/HL7 QRDA Category III STU 2.sch
+    Merge report file located at: c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category III/STU 2/mergeReport.txt
+    Validation is turned on
+        Validate final merged file using: c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category III/STU 1.1/TestFiles/CDAR2_QRDAIII_R1_STU1.1_2016FEB.xml
+        Merge Process will stop when validation inconsistencies are encountered in the template schematrons
+        Copied vocabulary file: c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category III/Vocabulary/voc.xml into project space as 'voc.xml'
+    Collect schematron template information from source directories...
+        Processing template directory: c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category III/Templates, selector: some
+            Located schematron file: ACI Measure Performed Measure Reference and Results Entry.sch
+            Located schematron file: ACI Numerator Denominator Type Measure Denominator Data Entry.sch
+            Located schematron file: ACI Numerator Denominator Type Measure Numerator Data Entry.sch
+            Located schematron file: ACI Numerator Denominator Type Measure Reference and Results Entry.sch
+            Located schematron file: Advancing Care Information Section.sch
+            Located schematron file: Aggregate Count Entry.sch
+            Located schematron file: Continuous Variable Measure Value Entry.sch
+            Located schematron file: Ethnicity Supplemental Data Element V2 Entry.sch
+            Located schematron file: Improvement Activity Performed Measure Reference and Results Entry.sch
+            Located schematron file: Improvement Activity Section.sch
+            Located schematron file: Measure Data V3 Entry.sch
+            Located schematron file: Measure Performed Entry.sch
+            Located schematron file: Measure Reference Entry.sch
+            Located schematron file: Measure Reference and Results V3 Entry.sch
+            Located schematron file: Payer Supplemental Data Element V2 Entry.sch
+            Located schematron file: Performance Rate Entry.sch
+            Located schematron file: Performance Rate for Proportion Measure V2 Entry.sch
+            Located schematron file: Postal Code Supplemental Data Element V2 Entry.sch
+            Located schematron file: QRDA Category III Measure Section V3.sch
+            Located schematron file: QRDA Category III Report V3 Document.sch
+            Located schematron file: QRDA Category III Reporting Parameters Section.sch
+            Located schematron file: Race Supplemental Data Element V2 Entry.sch
+            Located schematron file: Reporting Rate for Proportion Measure Entry.sch
+            Located schematron file: Reporting Stratum Entry.sch
+            Located schematron file: Service Encounter Entry.sch
+            Located schematron file: Sex Supplemental Data Element V3 Entry.sch
+        Processing template directory: c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category I/Templates, selector: some
+            Located schematron file: Measure Section.sch
+            Located schematron file: Reporting Parameters Act Entry.sch
+            Located schematron file: Reporting Parameters Section.sch
+        29 schematron templates identified for merging
+    Schematron files gleaned from merge instructions: 
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\ACI Measure Performed Measure Reference and Results
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\ACI Measure Performed Measure Reference and Results\ACI Measure Performed Measure Reference and Results Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\ACI Measure Performed Measure Reference and Results\ACI Measure Performed Measure Reference and Results-ERRORS.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\ACI Measure Performed Measure Reference and Results\ACI Measure Performed Measure Reference and Results-GOOD.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\ACI Numerator Denominator Type Measure Denominator Data
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\ACI Numerator Denominator Type Measure Denominator Data\ACI Numerator Denominator Type Measure Denominator Data Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\ACI Numerator Denominator Type Measure Denominator Data\ACI Numerator Denominator Type Measure Denominator Data-ERRORS.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\ACI Numerator Denominator Type Measure Denominator Data\ACI Numerator Denominator Type Measure Denominator Data-GOOD.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\ACI Numerator Denominator Type Measure Numerator Data
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\ACI Numerator Denominator Type Measure Numerator Data\ACI Numerator Denominator Type Measure Numerator Data Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\ACI Numerator Denominator Type Measure Numerator Data\ACI Numerator Denominator Type Measure Numerator Data-ERRORS.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\ACI Numerator Denominator Type Measure Numerator Data\ACI Numerator Denominator Type Measure Numerator Data-GOOD.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\ACI Numerator Denominator Type Measure Reference and Results
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\ACI Numerator Denominator Type Measure Reference and Results\ACI Numerator Denominator Type Measure Reference and Results Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\ACI Numerator Denominator Type Measure Reference and Results\ACI Numerator Denominator Type Measure Reference and Results-ERRORS.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\ACI Numerator Denominator Type Measure Reference and Results\ACI Numerator Denominator Type Measure Reference and Results-GOOD.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Advancing Care Information Section
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Advancing Care Information Section\Advancing Care Information Section.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Advancing Care Information Section\Advancing Care Information-Bad.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Advancing Care Information Section\Advancing Care Information-Good.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Aggregate Count
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Aggregate Count\Aggregate Count Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Aggregate Count\Aggregate Count-ERRORS.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Aggregate Count\Aggregate Count-GOOD.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Continuous Variable Measure Value
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Continuous Variable Measure Value\Continuous Variable Measure Value Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Continuous Variable Measure Value\Continuous Variable Measure Value-ERRORS.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Continuous Variable Measure Value\Continuous Variable Measure Value-GOOD.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Ethnicity Supplemental Data Element V2
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Ethnicity Supplemental Data Element V2\Ethnicity Supplemental Data Element V2 Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Ethnicity Supplemental Data Element V2\Ethnicity Supplemental Data Element V2-ERRORS.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Ethnicity Supplemental Data Element V2\Ethnicity Supplemental Data Element V2-GOOD.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Improvement Activity Performed Measure Reference and Results
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Improvement Activity Performed Measure Reference and Results\Improvement Activity Performed Measure Reference and Results Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Improvement Activity Performed Measure Reference and Results\Improvement Activity Performed Measure Reference and Results-ERRORS.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Improvement Activity Performed Measure Reference and Results\Improvement Activity Performed Measure Reference and Results-GOOD.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Improvement Activity Section
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Improvement Activity Section\Improvement Activity Section.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Improvement Activity Section\Improvement Activity Section Errors.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Improvement Activity Section\Improvement Activity Section.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Measure Data V3
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Measure Data V3\Measure Data V3 Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Measure Data V3\Measure Data V3-ERRORS.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Measure Data V3\Measure Data V3-GOOD.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Measure Performed
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Measure Performed\Measure Performed Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Measure Performed\Measure Performed-ERRORS.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Measure Performed\Measure Performed-GOOD.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Measure Reference
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Measure Reference\Measure Reference Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Measure Reference\Measure Reference-ERRORS.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Measure Reference\Measure Reference-GOOD.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Measure Reference and Results V3
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Measure Reference and Results V3\Measure Reference and Results V3 Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Measure Reference and Results V3\Measure Reference and Results V3-Errors.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Measure Reference and Results V3\Measure Reference and Results-Good.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Payer Supplemental Data Element V2
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Payer Supplemental Data Element V2\Payer Supplemental Data Element V2 Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Payer Supplemental Data Element V2\Payer Supplemental Data Element V2-Errors.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Payer Supplemental Data Element V2\Payer Supplemental Data Element-Good.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Performance Rate
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Performance Rate\Performance Rate Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Performance Rate\Performance Rate-Errors.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Performance Rate\Performance Rate-Good.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Performance Rate for Proportion Measure V2
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Performance Rate for Proportion Measure V2\Performance Rate for Proportion Measure V2 Entry.sch
+        Test File(s): 
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Postal Code Supplemental Data Element V2
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Postal Code Supplemental Data Element V2\Postal Code Supplemental Data Element V2 Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Postal Code Supplemental Data Element V2\Postal Code Supplemental Data Element V2-Errors.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Postal Code Supplemental Data Element V2\Postal Code Supplemental Data Element V2-Good.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\QRDA Category III Measure Section V3
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\QRDA Category III Measure Section V3\QRDA Category III Measure Section V3.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\QRDA Category III Measure Section V3\QRDA Category III Measure Section-Bad.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\QRDA Category III Measure Section V3\QRDA Category III Measure Section-Good.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\QRDA Category III Report V3
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\QRDA Category III Report V3\QRDA Category III Report V3 Document.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\QRDA Category III Report V3\QRDA Category III Report V3-Bad.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\QRDA Category III Report V3\QRDA Category III Report V3-Good.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\QRDA Category III Reporting Parameters Section
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\QRDA Category III Reporting Parameters Section\QRDA Category III Reporting Parameters Section.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\QRDA Category III Reporting Parameters Section\QRDA Category III Reporting Parameters-Bad.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\QRDA Category III Reporting Parameters Section\QRDA Category III Reporting Parameters-Good.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Race Supplemental Data Element V2
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Race Supplemental Data Element V2\Race Supplemental Data Element V2 Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Race Supplemental Data Element V2\Race Supplemental Data Element V2-Errors.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Race Supplemental Data Element V2\Race Supplemental Data Element V2-Good.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Reporting Rate for Proportion Measure
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Reporting Rate for Proportion Measure\Reporting Rate for Proportion Measure Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Reporting Rate for Proportion Measure\Reporting Rate for Proportion Measure-Errors.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Reporting Rate for Proportion Measure\Reporting Rate for Proportion Measure-Good.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Reporting Stratum
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Reporting Stratum\Reporting Stratum Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Reporting Stratum\Reporting Stratum-Errors.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Reporting Stratum\Reporting Stratum-Good.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Service Encounter
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Service Encounter\Service Encounter Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Service Encounter\Service Encounter Errors.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Service Encounter\Service Encounter-Good.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Sex Supplemental Data Element V3
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Sex Supplemental Data Element V3\Sex Supplemental Data Element V3 Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Sex Supplemental Data Element V3\Sex Supplemental Data Element V3-Errors.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category III\Templates\Sex Supplemental Data Element V3\Sex Supplemental Data Element-Good.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category I\Templates\Measure Section
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category I\Templates\Measure Section\Measure Section.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category I\Templates\Measure Section\Measure Section-Bad Code Entry.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category I\Templates\Measure Section\Measure Section-Bad Section.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category I\Templates\Measure Section\Measure Section-Good.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category I\Templates\Reporting Parameters Act
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category I\Templates\Reporting Parameters Act\Reporting Parameters Act Entry.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category I\Templates\Reporting Parameters Act\Reporting Parameters Act-Errors.xml
+        ------------------------------------
+        Template Directory: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category I\Templates\Reporting Parameters Section
+        Schematron: c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category I\Templates\Reporting Parameters Section\Reporting Parameters Section.sch
+        Test File(s): 
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category I\Templates\Reporting Parameters Section\Reporting Parameters Section-Bad.xml
+            c:\Development\qrdaGit\qrda\Schematrons\HL7 QRDA Category I\Templates\Reporting Parameters Section\Reporting Parameters Section-Good.xml
+        -------------- end schematron file list-------------------
+    Merge Setup Complete
+    Begin Template validations....
+        Found 0 schematron template(s) that did not process test files as expected
+        1 schematron template(s) had no associated test files.
+    Begin Merge Process....
+        Merging files into file "c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category III/STU 2/Published/HL7 QRDA Category III STU 2.sch".
+        Wrote merged Schematron file to "c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category III/STU 2/Published/HL7 QRDA Category III STU 2.sch".
+
+    Testing merged file c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category III/STU 2/Published/HL7 QRDA Category III STU 2.sch using: c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category III/STU 1.1/TestFiles/CDAR2_QRDAIII_R1_STU1.1_2016FEB.xml
+            c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category III/STU 1.1/TestFiles/CDAR2_QRDAIII_R1_STU1.1_2016FEB.xml: Expected Errors value not specified.  (2 critical error(s) and 1 warning(s))
+**************************************** end merge report ************************************************************************
+ 

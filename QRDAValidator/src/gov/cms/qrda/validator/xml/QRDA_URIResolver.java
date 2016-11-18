@@ -99,9 +99,11 @@ public class QRDA_URIResolver implements URIResolver, Serializable {
 	 * This method will map the filename provided in the href to a pathname on the server in the directory pointed
 	 * to by the class' private static string ISO_HOME
 	 */
+	
 	@Override
 	public Source resolve(String href, String base) throws TransformerException {
-		StringBuffer path = new StringBuffer(ISO_HOME + isoSubfolder + File.separator);
+		//StringBuffer path = new StringBuffer(ISO_HOME + isoSubfolder + File.separator);
+		StringBuffer path = new StringBuffer(isoSubfolder + File.separator);
 	    path.append(href);
 	    File file = new File(path.toString());
 	    if(file.exists()) {
@@ -114,7 +116,7 @@ public class QRDA_URIResolver implements URIResolver, Serializable {
 	    }
 
 	}
-
+    
 	/**
 	 * Returns the absolute pathname to the directory containing qrda files and directories. 
 	 * Note: not used by transformers.
@@ -133,9 +135,6 @@ public class QRDA_URIResolver implements URIResolver, Serializable {
 		return ISO_HOME;
 	}
 
-	public String getXsdHome() {
-		return XSD_HOME;
-	}
 	/**
 	 * Returns the absolute pathname to the directory containing qrda schematron directories. 
 	 * Note: not used by transformers.

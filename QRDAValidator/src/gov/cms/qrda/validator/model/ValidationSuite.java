@@ -194,7 +194,6 @@ public class ValidationSuite implements Serializable {
 		this.isoIncludeFilename = props.getProperty("iso.include");
 		this.isoAbstractFilename = props.getProperty("iso.abstract");
 		this.xsltFilename = props.getProperty("iso.svrl");
-		logger.info("xsd file: " + CDAXsdFilename);
 		logger.info("Iso include file: " + isoIncludeFilename);
 		logger.info("Iso abstract file: " + isoAbstractFilename);
 		logger.info("Iso xslt file: " + xsltFilename);

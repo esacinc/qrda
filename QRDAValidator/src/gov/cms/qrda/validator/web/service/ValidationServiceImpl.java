@@ -55,9 +55,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
 
 import javax.xml.XMLConstants;
 import javax.xml.transform.Source;
@@ -664,46 +662,30 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 	// This validates an xml file against a CDA xsd schema file. Returns true if valid xml, false otherwise.
 	private boolean validateXML(ValidationSuite vs, TestCase testFile) {
 		boolean result = false;
-		String xsdFilename = QRDA_URIResolver.XSD_HOME + vs.getCDAXsdFilename();
-		//fileService.getAbsolutePath(vs.getCDAXsdFilename(),QRDA_URIResolver.REPOSITORY_ISO,"xsd");
+		String xsdFilename = fileService.getAbsolutePath(vs.getCDAXsdFilename(),QRDA_URIResolver.REPOSITORY_ISO,null);
 		String xmlFilename = fileService.getAbsolutePath(testFile.getFilename(),QRDA_URIResolver.REPOSITORY_TESTFILES,vs.getSchematronType());
+		System.out.println("validateXML: " + xmlFilename + " using " + xsdFilename);
 		logger.info("validateXML: " + xmlFilename + " using " + xsdFilename);
-		logger.info("validateXML: " + xmlFilename + " using " + xsdFilename);
-		final ArrayList<String>  exceptions = new ArrayList<String>();
 		try {
-			//URL schemaFile = new URL(xsdFilename);
-			File schemaFile = new File(xsdFilename);
-			File xmlFile = new File(xmlFilename);
-			Source xmlSource = new StreamSource(new File(xmlFilename));
+			URL schemaFile = new URL(xsdFilename);
+			Source xmlFile = new StreamSource(new File(xmlFilename));
 			SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-			Schema schema = schemaFactory.newSchema(schemaFile); 
+			Schema schema = schemaFactory.newSchema(schemaFile);
 			Validator validator = schema.newValidator();
-			
-			validator.setErrorHandler(new ErrorHandler() {
-						@Override
-						public void warning(SAXParseException e) throws SAXException { exceptions.add(e.getLocalizedMessage()); }
-						@Override
-						public void fatalError(SAXParseException e) throws SAXException { exceptions.add(e.getLocalizedMessage()); }
-						@Override
-						public void error(SAXParseException e) throws SAXException { exceptions.add(e.getLocalizedMessage()); }
-			});
-			validator.validate(xmlSource);
-			testFile.addStatusText(wrapSuccessSpan("Successful XML validation against " + vs.getCDAXsdFilename()));
-			//testFile.addStatusText("Encountered " + exceptions.size() + " xml validation errors");
+			validator.validate(xmlFile);
+			testFile.addStatusText("Successful validation against " + xsdFilename);
 			result = true;
 		} 
 		catch (SAXException e) {
-			testFile.addStatusText(wrapErrorSpan(xmlFilename + " failed XML validation against " + vs.getCDAXsdFilename()));
-			testFile.addStatusText(wrapErrorSpan("Reason: " + e.getLocalizedMessage()));
+			testFile.addStatusText(xmlFilename + " failed validation against " + xsdFilename);
+			testFile.addStatusText("Reason: " + e.getLocalizedMessage());
 		} catch (MalformedURLException e) {
-			testFile.addStatusText(wrapErrorSpan("MalformedURLException during XML validation: " + e.getLocalizedMessage()));
+			testFile.addStatusText("MalformedURLException during XML validation: " + e.getLocalizedMessage());
 			e.printStackTrace();
 		} catch (IOException e) {
-			testFile.addStatusText(wrapErrorSpan("IOException during XML validation: " + e.getLocalizedMessage()));
+			testFile.addStatusText("IOException during XML validation: " + e.getLocalizedMessage());
 			e.printStackTrace();
 		}
-		//testFile.addStatusText("Encountered " + exceptions.size() + " xml validation errors");
-
 		return result;
 	}
 	

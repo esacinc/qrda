@@ -158,7 +158,7 @@ public class XPathUtility {
                 if (elementStack.isEmpty()) { // Is this the root element?
                     doc.appendChild(closedEl);
                 } else {
-                    final Element parentEl =  elementStack.peek();
+                    final Element parentEl = elementStack.peek();
                     parentEl.appendChild(closedEl);
                 }
                 closedEl.setUserData(END_LINE_NUMBER_KEY_NAME, String.valueOf(this.locator.getLineNumber()), null);
@@ -172,7 +172,7 @@ public class XPathUtility {
             // Outputs text accumulated under the current node
             private void addTextIfNeeded() {
                 if (textBuffer.length() > 0) {
-                    final Element el =  elementStack.peek();
+                    final Element el = elementStack.peek();
                     final Node textNode = doc.createTextNode(textBuffer.toString());
                     el.appendChild(textNode);
                     textBuffer.delete(0, textBuffer.length());

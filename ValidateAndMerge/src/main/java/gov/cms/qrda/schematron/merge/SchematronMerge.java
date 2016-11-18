@@ -132,11 +132,14 @@ public class SchematronMerge {
 						mergeInstructions.addResult(MergeInstructions.INDENT2 + "Test Filename not specified.");
 					}
 					else {
+						mergeInstructions.addResult(MergeInstructions.INDENT2 +"XML Validation:");
+						mergeInstructions.getValidator().validateXML(mergeInstructions);
+						mergeInstructions.addResult(MergeInstructions.INDENT2 +"Schematron Validation:");
 						ArrayList<String> testFiles = new ArrayList<String>();
-					testFiles.add(testFilename);		
-					if (mergeInstructions.getValidator().validate(mergedFileName, testFiles, mergeInstructions) == 0) {
-						mergeInstructions.addResult(MergeInstructions.INDENT2 + "Schematron validation of test file results as expected.");
-					};
+						testFiles.add(testFilename);		
+						if (mergeInstructions.getValidator().validate(mergedFileName, testFiles, mergeInstructions) == 0) {
+							mergeInstructions.addResult(MergeInstructions.INDENT3 + "Schematron validation of test file results as expected.");
+						};
 					}
 				}
 			}

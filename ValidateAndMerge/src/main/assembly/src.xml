@@ -8,6 +8,12 @@
         <format>zip</format>
     </formats>
     <baseDirectory>schematron-merge</baseDirectory>
+    <fileSets>
+    	<fileSet>
+    		<directory>src/main/resources/Schema</directory>
+    		<outputDirectory>Schema</outputDirectory>
+    	</fileSet>
+    </fileSets>
     <files>
         <file>
             <source>${project.build.directory}/${project.build.finalName}.${project.packaging}</source>
@@ -34,6 +40,11 @@
         	<source>Sample Merge Directions.xml</source>
         	<outputDirectory>/</outputDirectory>
         </file>
+       <file>
+        	<source>Sample Merge Directions.xml</source>
+        	<outputDirectory>/</outputDirectory>
+        </file>
+        
     </files>
     <dependencySets>
         <dependencySet>

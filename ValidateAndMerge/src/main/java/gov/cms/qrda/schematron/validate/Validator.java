@@ -35,26 +35,33 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 import gov.cms.qrda.schematron.merge.MergeInstructions;
 import net.sf.saxon.TransformerFactoryImpl;
@@ -554,6 +561,51 @@ public class Validator {
 	    }
 
 	    return result.toString();
+	}
+	
+	// This validates an xml file against a CDA xsd schema file. Returns true if valid xml, false otherwise.
+	public boolean validateXML(MergeInstructions mergeInstructions) {
+		boolean result = false;
+		String xmlFilename = mergeInstructions.getFinalTestFilename();
+		String xsdFilename = MergeInstructions.XSD_FILENAME;
+		final ArrayList<String>  exceptions = new ArrayList<String>();
+		try {
+			//URL schemaFile = new URL(xsdFilename);
+			File schemaFile = new File(xsdFilename);
+			Source xmlSource = new StreamSource(new File(xmlFilename));
+			SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+			Schema schema = schemaFactory.newSchema(schemaFile); 
+			javax.xml.validation.Validator validator = schema.newValidator();
+			
+			validator.setErrorHandler(new ErrorHandler() {
+						@Override
+						public void warning(SAXParseException e) throws SAXException { exceptions.add(e.getLocalizedMessage()); }
+						@Override
+						public void fatalError(SAXParseException e) throws SAXException { exceptions.add(e.getLocalizedMessage()); }
+						@Override
+						public void error(SAXParseException e) throws SAXException { exceptions.add(e.getLocalizedMessage()); }
+			});
+			validator.validate(xmlSource);
+			mergeInstructions.addResult(MergeInstructions.INDENT3 + "Successful XML validation against " + xsdFilename);
+			result = true;
+		} 
+		catch (SAXException e) {
+			mergeInstructions.addResult(MergeInstructions.INDENT3 + "Failed XML validation against " +xsdFilename);
+			mergeInstructions.addResult(MergeInstructions.INDENT3 + "Reason: " + e.getMessage()); 
+		} catch (MalformedURLException e) {
+			mergeInstructions.addResult(MergeInstructions.INDENT3 + "MalformedURLException during XML validation: " + e.getLocalizedMessage());
+			mergeInstructions.addResult(MergeInstructions.INDENT3 + "Reason: " + e.getLocalizedMessage());
+			if (mergeInstructions.getVerbose()){
+				e.printStackTrace();
+			}
+		} catch (IOException e) {
+			mergeInstructions.addResult(MergeInstructions.INDENT3 + "IOException during XML validation: " + e.getLocalizedMessage());
+			mergeInstructions.addResult(MergeInstructions.INDENT3 + "Reason: " + e.getLocalizedMessage());
+			if (mergeInstructions.getVerbose()){
+				e.printStackTrace();
+			}
+		}
+		return result;
 	}
 	
 

@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 */
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,6 +55,8 @@ public class MergeProperties {
 	protected String vocabFilename = "";
 
 	protected boolean useSystemOut = false;
+	
+	public final static String XSD_FILENAME = "Schema" + File.separator + "CDA" + File.separator + "infrastructure" + File.separator + "cda" + File.separator + "CDA_SDTC.xsd";
 	
 	public MergeProperties() {
 		results = new ArrayList<String>();

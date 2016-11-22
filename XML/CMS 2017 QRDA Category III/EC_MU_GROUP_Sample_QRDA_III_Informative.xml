@@ -153,7 +153,7 @@ CDA Header
 			<!-- i.	Such intendedRecipients SHALL contain exactly one [1..1] id (CONF:711160).
 					1.	This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.7" CMS Program (CONF:711161). 
 					2.	idsThis id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet CMS Program Name 2.16.840.1.113883.3.249.14.101 (CONF:711162). -->
-			<id root="2.16.840.1.113883.3.249.7" extension="MIPS_GROUP"/>
+			<id root="2.16.840.1.113883.3.249.7" extension="MIPS"/>
 		</intendedRecipient>
 	</informationRecipient>
 	<!-- ** 1.1.5	legalAuthenticator ** -->

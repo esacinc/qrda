@@ -21,7 +21,7 @@
 
           Failure a-2233-18239-error Missing or multiple reference with one externalObservation containing one id
           Failure a-2233-18198-error Missing @code='ASSERTION' in code
-          Failure a-2233-21164-error Missing @codeSystem='2.16.840.1.113883.5.4' in code
+          Failure a-2233-711318-error Missing @codeSystem='2.16.840.1.113883.5.4' in code
           Failure a-2233-19555-error Missing @code='completed' in statusCode
      
    Total Warnings Expected: 0
@@ -48,7 +48,7 @@
 										displayName="Assertion" codeSystemName="ActCode"/>
 									<!-- Failure a-2233-17617-error Missing or multiple code -->
 									<!-- Failure a-2233-18198-error Missing @code='ASSERTION' in code -->
-									<!-- Failure a-2233-21164-error Missing @codeSystem='2.16.840.1.113883.5.4' in code -->
+									<!-- Failure a-2233-711318-error Missing @codeSystem='2.16.840.1.113883.5.4' in code -->
 									<code></code>
 									<statusCode code="completed"/>
 									<!-- Failure a-2233-18199-error Missing or multiple statusCode -->

@@ -6,7 +6,7 @@
 	<!--
 		QRDA Category III Report V3 sample file with intentional errors
 		
-		Total Errors Expected: 68
+		Total Errors Expected: 71
           Failure a-2233-17226-error Multiple realmCode Y
           Failure a-2233-17208-error Bad templateId  Y
           Failure a-2233-711280-error Missing templateId
@@ -68,6 +68,7 @@
           Failure a-2233-17235-error component structuredBody duplicate Y
           Failure a-2233-711311-error component structuredBody component missing section (2)
 		  Failure a-2233-17217-error component duplicate Y 
+		  Failure a-2233-711340-error component structuredBody component missing measure section （3）
           
     	Total Warnings Expected: 4
 		  Failure a-2233-18260-warning Multiple versionNumber Y

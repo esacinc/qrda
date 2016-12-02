@@ -69,82 +69,85 @@ public class SchematronMerge {
 			boolean continueOk = true;
 			MergeInstructions mergeInstructions = new MergeInstructions();
 			mergeInstructions.open(file);  // Opens the instructions and processes them in preparation for the merge.
-			List<String> namesOfFilesToMerge = mergeInstructions.getSchematronsOnly();
-			if (namesOfFilesToMerge == null || namesOfFilesToMerge.isEmpty()) {
-				mergeInstructions.addResult(MergeInstructions.INDENT1 +"ERROR:" + " NO files were identified for merging");
-				continueOk = false;
-			}
-			else {
-				// If we are to validate each template, do that now for all of the templates. Take note of whether there were any validation discrepancies in any of the templates.
-				continueOk = mergerTool.validateTemplates(mergeInstructions);
-			}
-
-				// If it is ok to continue, then do the merge
-			if (continueOk) {
-				mergeInstructions.addResult(MergeInstructions.INDENT1 +"Begin Merge Process....");
-
-				// Retrieve the list of schematron template files we are to merge. (The mergeInstructions gathered this list during the "open" process)
-				namesOfFilesToMerge = mergeInstructions.getSchematronsOnly();
-				String mergedFileName  = mergeInstructions.getMergeFilename();
-				mergeInstructions.addResult(String.format(MergeInstructions.INDENT2 +"Merging files into file \"%s\"." , mergedFileName));
-				Comment comment = new Comment(mergeInstructions.getHeaderText());  // Create an xml comment for the merged file.
-				Document mergedDocument = mergerTool.merge(namesOfFilesToMerge, comment); // Do the big merge
-				Element theTop = mergedDocument.getRootElement();
-				
-				// Write the mergedDocument to the merged file specified in the instructions
-				// Remember the console
-				// Not sure why the write was done in this convoluted manner, but won't change it now as it seems to work.
-				PrintStream console = System.out;
-				// Redirect stdout to the File named by mergedFileName
-				OutputStream output = null;
-				try {
-					output = new FileOutputStream(mergedFileName);
-				} catch (FileNotFoundException e1) {
-					String fileNotFoundMsg = String.format(MergeInstructions.INDENT2 +"Fatal Error: Merged File (i.e. \"%s\" can't be created. Exception message: %s" , mergedFileName, e1.getMessage());
-					mergeInstructions.addResult(fileNotFoundMsg);
-					if (mergeInstructions.getVerbose()) {
-						System.err.println(fileNotFoundMsg);
-						e1.printStackTrace();
-					}
+			if (!mergeInstructions.getGlobalStop()) {  // Continue as long as there was no error during .open() that dictates a stoppage in processing.
+				List<String> namesOfFilesToMerge = mergeInstructions.getSchematronsOnly();
+				if (namesOfFilesToMerge == null || namesOfFilesToMerge.isEmpty()) {
+					mergeInstructions.addResult(MergeInstructions.INDENT1 +"ERROR:" + " NO files were identified for merging");
+					continueOk = false;
 				}
-				PrintStream printOut = new PrintStream(output);
-				// Now actually print out the merged file
-				//First stdout must be rerdirected since the underlying routines print to stdout
-				System.setOut(printOut);
-				//	Next Print out any Header information
-				// Nextrint out that merged document 
-				mergerTool.printMergedDocument(mergedDocument);
-				try {
-					output.close();
+				else {
+					// If we are to validate each template, do that now for all of the templates. Take note of whether there were any validation discrepancies in any of the templates.
+					continueOk = mergerTool.validateTemplates(mergeInstructions);
 				}
-				catch (Exception e) {}
-				//  Redirect stdout back to the console
-				System.setOut(console);
 	
-				//System.out.println(mergeMsg);
-				mergeInstructions.addResult(String.format(MergeInstructions.INDENT2 +"Wrote merged Schematron file to \"%s\".\n" , mergedFileName));
-				
-				// Now validate the merged file using the test file specified in the instructions.
-				if (mergeInstructions.getDoValidation()) {
-					String testFilename = mergeInstructions.getFinalTestFilename();
-					mergeInstructions.addResult(MergeInstructions.INDENT1 +"Testing merged file " + mergedFileName + " using: " + testFilename);
-					if (testFilename == null || testFilename.isEmpty()) {
-						mergeInstructions.addResult(MergeInstructions.INDENT2 + "Test Filename not specified.");
+					// If it is ok to continue, then do the merge
+				if (continueOk) {
+					mergeInstructions.addResult(MergeInstructions.INDENT1 +"Begin Merge Process....");
+	
+					// Retrieve the list of schematron template files we are to merge. (The mergeInstructions gathered this list during the "open" process)
+					namesOfFilesToMerge = mergeInstructions.getSchematronsOnly();
+					String mergedFileName  = mergeInstructions.getMergeFilename();
+					mergeInstructions.addResult(String.format(MergeInstructions.INDENT2 +"Merging files into file \"%s\"." , mergedFileName));
+					Comment comment = new Comment(mergeInstructions.getHeaderText());  // Create an xml comment for the merged file.
+					Document mergedDocument = mergerTool.merge(namesOfFilesToMerge, comment); // Do the big merge
+					Element theTop = mergedDocument.getRootElement();
+					
+					// Write the mergedDocument to the merged file specified in the instructions
+					// Remember the console
+					// Not sure why the write was done in this convoluted manner, but won't change it now as it seems to work.
+					PrintStream console = System.out;
+					// Redirect stdout to the File named by mergedFileName
+					OutputStream output = null;
+					try {
+						output = new FileOutputStream(mergedFileName);
+					} catch (FileNotFoundException e1) {
+						String fileNotFoundMsg = String.format(MergeInstructions.INDENT2 +"Fatal Error: Merged File (i.e. \"%s\" can't be created. Exception message: %s" , mergedFileName, e1.getMessage());
+						mergeInstructions.addResult(fileNotFoundMsg);
+						if (mergeInstructions.getVerbose()) {
+							System.err.println(fileNotFoundMsg);
+							e1.printStackTrace();
+						}
 					}
-					else {
-						mergeInstructions.addResult(MergeInstructions.INDENT2 +"XML Validation:");
-						mergeInstructions.getValidator().validateXML(mergeInstructions);
-						mergeInstructions.addResult(MergeInstructions.INDENT2 +"Schematron Validation:");
-						ArrayList<String> testFiles = new ArrayList<String>();
-						testFiles.add(testFilename);		
-						if (mergeInstructions.getValidator().validate(mergedFileName, testFiles, mergeInstructions) == 0) {
-							mergeInstructions.addResult(MergeInstructions.INDENT3 + "Schematron validation of test file results as expected.");
-						};
+					PrintStream printOut = new PrintStream(output);
+					// Now actually print out the merged file
+					//First stdout must be rerdirected since the underlying routines print to stdout
+					System.setOut(printOut);
+					//	Next Print out any Header information
+					// Nextrint out that merged document 
+					mergerTool.printMergedDocument(mergedDocument);
+					try {
+						output.close();
+					}
+					catch (Exception e) {}
+					//  Redirect stdout back to the console
+					System.setOut(console);
+		
+					//System.out.println(mergeMsg);
+					mergeInstructions.addResult(String.format(MergeInstructions.INDENT2 +"Wrote merged Schematron file to \"%s\".\n" , mergedFileName));
+					
+					// Now validate the merged file using the test file specified in the instructions.
+					if (!mergeInstructions.getGlobalStop() && mergeInstructions.getDoValidation()) {
+						String testFilename = mergeInstructions.getFinalTestFilename();
+						mergeInstructions.addResult(MergeInstructions.INDENT1 +"Testing merged file " + mergedFileName + " using: " + testFilename);
+						if (testFilename == null || testFilename.isEmpty()) {
+							mergeInstructions.addResult(MergeInstructions.INDENT2 + "Test Filename not specified.");
+						}
+						else {
+							mergeInstructions.addResult(MergeInstructions.INDENT2 +"XML Validation:");
+							mergeInstructions.getValidator().validateXML(mergeInstructions);
+							mergeInstructions.addResult(MergeInstructions.INDENT2 +"Schematron Validation:");
+							ArrayList<String> testFiles = new ArrayList<String>();
+							testFiles.add(testFilename);		
+							if (mergeInstructions.getValidator().validate(mergedFileName, testFiles, mergeInstructions) == 0) {
+								mergeInstructions.addResult(MergeInstructions.INDENT3 + "Schematron validation of test file results as expected.");
+							};
+						}
 					}
 				}
+				mergeInstructions.addResult("**************************************** end merge report ************************************************************************");
+				mergeInstructions.addResult(" ");
+				
 			}
-			mergeInstructions.addResult("**************************************** end merge report ************************************************************************");
-			mergeInstructions.addResult(" ");
 			mergeInstructions.writeResults();
 			System.out.println("Merge Processing Complete");
 

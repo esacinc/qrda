@@ -32,6 +32,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -62,6 +63,8 @@ public class MergeInstructions extends MergeProperties{
 	private String sourceFile;
 	private ArrayList<SchematronTemplate> schematrons = new ArrayList<SchematronTemplate>();
 	
+	private boolean globalStop = false;  // This may get set to true if processing needs to stop due to a detected error somewhere.
+	
 	public final static String INDENT1 = "    ";
 	public final static String INDENT2 = "        ";
 	public final static String INDENT3 = "            ";
@@ -91,8 +94,17 @@ public class MergeInstructions extends MergeProperties{
 		return sourceFile;
 	}
 
+	public boolean getGlobalStop() {
+		return globalStop;
+	}
+	
+	public void setGlobalStop(boolean val) {
+		globalStop = val;
+	}
+	
 	// Reads a mergeInstructions xml file, populates the data, begins collecting status result strings.
 	public Document open(String filename) {
+		globalStop = false;
 		sourceFile = filename;
 		addResult(" ");
 		addResult("************************************************************************************************************");
@@ -131,7 +143,7 @@ public class MergeInstructions extends MergeProperties{
 			//addResult(INDENT1 + "File header: " + getFileHeader());
 			
 			addResult(INDENT1 + "Validation is turned " + ((getDoValidation())?"on":"off"));
-			if (getDoValidation()) {
+			if (!globalStop && getDoValidation()) {
 				addResult(INDENT2 + "Validate final merged file using: " + getFinalTestFilename());
 				addResult(String.format(INDENT2 + "Merge Process will %sstop when validation inconsistencies are encountered in the template schematrons", (getStopOnError() ?"":"not ")));
 				maybeCopyVocabFile(getNodeValue(mergeProfile,"vocabFilename"));
@@ -141,22 +153,44 @@ public class MergeInstructions extends MergeProperties{
 			addResult(INDENT1 + "Collect schematron template information from source directories...");
 			NodeList nodes = mergeProfile.getElementsByTagName("sourceDirectory");
 			for (int i = 0; i < nodes.getLength(); i++) {
+				if (getGlobalStop()) {
+					break;
+				}
 				Element node = (Element)nodes.item(i);
 				String selector = node.getAttribute("selector");
 				schematrons = this.appendLists(schematrons, this.getSourceDirectoryFiles(node, selector));
 			}
-			addSchematronListToResults();
+			if (!globalStop) {
+				addSchematronListToResults();
+			}
 		}
 		catch (ParserConfigurationException e) {
+				globalStop = true;
 				addResult("Parser Configuration Exception: " + e.getLocalizedMessage());
+				addResult(INDENT1 + "Process HALTED");
 				if (getVerbose()) e.printStackTrace();
 		} catch (SAXException e) {
+			globalStop = true;
 			addResult("SAXException: " + e.getLocalizedMessage());
+			addResult(INDENT1 + "Process HALTED");
+			if (getVerbose()) e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			globalStop = true;
+			addResult("FileNotFoundException: " + e.getLocalizedMessage());
+			addResult(INDENT1 + "Process HALTED");
 			if (getVerbose()) e.printStackTrace();
 		} catch (IOException e) {
+			globalStop = true;
 			addResult("IOException: " + e.getLocalizedMessage());
+			addResult(INDENT1 + "Process HALTED");
 			if (getVerbose()) e.printStackTrace();
+		} 
+		if (globalStop) {
+			String msg = INDENT1 + "An error was encountered during setup causing processing to stop";
+			System.err.println(msg);
+			addResult(msg);
 		}
+
 		addResult(INDENT1+"Merge Setup Complete");
 		return xmlDoc;
 	}
@@ -192,7 +226,7 @@ public class MergeInstructions extends MergeProperties{
 	
 	// Give a sourceDirectory element from the directions file, return a list where
 	// each element of the list item corresponding to each subdirectory of the source directory. 
-	// Each list item is an list of file names, the first of which is the schematron (.sch) located in the subdirectory,
+	// Each list item is a list of file names, the first of which is the schematron (.sch) located in the subdirectory,
 	// and the remaining file names are the .xml test files also in the subdirectory.
 	private ArrayList<SchematronTemplate> getSourceDirectoryFiles(Element parentNode, String selector) {
 		ArrayList<SchematronTemplate> fileList = new ArrayList<SchematronTemplate>();
@@ -260,13 +294,20 @@ public class MergeInstructions extends MergeProperties{
 		ArrayList<SchematronTemplate> fileList = new ArrayList<SchematronTemplate>();
 		File dir = new File(parentDirPath);
 		if (dir== null || !dir.exists()) {
-			this.addResult(INDENT2 + "Unable to locate schematron directory: " + parentDirPath);
+			this.addResult(INDENT3 + "Unable to locate schematron directory: " + parentDirPath);
+			this.addResult(INDENT3 + "   Process HALTED");
+			globalStop = true;
 		}
 		else {
-			for (File subdir : dir.listFiles()) {
+			int totalDirCount = 0;
+			int foundCount = 0;
+			File[] dirFiles = dir.listFiles();
+			for (File subdir : dirFiles) {
 				if (subdir.isDirectory()) {
+					totalDirCount++;  // Track total number of directories
 					if (doAll) {
 						if (!exceptions.contains(subdir.getName())) {
+							foundCount++;
 							SchematronTemplate files = getFilesFromDirectory(subdir.getAbsolutePath());
 							if (files != null) {
 								fileList.add(files);
@@ -274,11 +315,25 @@ public class MergeInstructions extends MergeProperties{
 						}
 					}
 					else if (exceptions.contains(subdir.getName())) {
+						foundCount++;
 						SchematronTemplate files = getFilesFromDirectory(subdir.getAbsolutePath());
 						if (files != null) {
 							fileList.add(files);
 						}
 					}
+				}
+			}
+			this.addResult(INDENT3 + "Processed " + foundCount + " schematron folders in sourcedirectory " + parentDirPath);
+			if (doAll) {
+				if (foundCount != totalDirCount - exceptions.size()) {
+					globalStop = true;
+					this.addResult(INDENT3 + "   Process HALTED: Folders processed does not match the excpeted number of folders (" + (totalDirCount - exceptions.size()) + ")");
+				}
+			}
+			else {
+				if (foundCount != exceptions.size()) {
+					globalStop = true;
+					this.addResult(INDENT3 + "   Process HALTED: Folders processed does not match the excpeted number of folders (" + exceptions.size() + ")");
 				}
 			}
 		}
@@ -342,7 +397,7 @@ public class MergeInstructions extends MergeProperties{
 				    	addResult(INDENT2+"Copied vocabulary file: " + filename + " into project space as 'voc.xml'");
 				    }
 				} catch (IOException e) {
-				    if (getVerbose()) System.err.println("Error copying original ISO files from " + source.getAbsolutePath() + " to " + dest.getAbsolutePath());
+				    if (getVerbose()) System.err.println(INDENT1 + "Error copying original ISO files from " + source.getAbsolutePath() + " to " + dest.getAbsolutePath());
 				    addResult(INDENT2+"Error copying vocabulary file from " + filename + ": " + e.getMessage());
 				}
 			}

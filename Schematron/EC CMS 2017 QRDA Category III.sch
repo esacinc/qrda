@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--  
-  THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
-  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-  IN NO EVENT SHALL ESAC INC., OR ANY OF THEIR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
-  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  
-  Schematron file generated November 30, 2016
-  CMS 2017 QRDA Category III for Eligible Clinicians
-  
-  Changes:
-  Spelled out Advancing Care Information in the assert text messages to match the updated IG
-  Added assert 2233-711340 to require the presence of the QRDA Category III Measure Section - CMS V2 when
-    program name is set to CPCPLUS (QRDA-98)
-  Changed the conformance number for the codeSystem check in the Measure Data CMS V2 template to be unique
-    and match the updated IG (QRDA-93)
+<!--
+   CMS 2017 QRDA Category III for Eligible Clinicians 
+   
+   THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+    THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+    IN NO EVENT SHALL ESAC INC., OR ANY OF THEIR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+    GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+    THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+            
+    Changes:
+    Spelled out Advancing Care Information in the assert text messages to match the updated IG
+    Added assert 2233-711340 to require the presence of the QRDA Category III Measure Section - CMS V2 when
+      program name is set to CPCPLUS (QRDA-98)
+    Changed the conformance number for the codeSystem check in the Measure Data CMS V2 template to be unique
+      and match the updated IG (QRDA-93)
+    Removed the assert a-2233-12564 from the Payer Supplemental Data Element CMS V2 template (QRDA-100)
+    Updated the timezone assert to CMS_0122 and the text to match the IG (QRDA-99)
+    
+   Fri Dec 02 10:42:49 MST 2016 
 -->
 
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -373,7 +376,7 @@
   <sch:pattern id="p-validate_TZ-errors">
     <sch:let name="timeZoneExists" value="(contains(normalize-space(/cda:ClinicalDocument/cda:effectiveTime/@value), '-') or contains(normalize-space(/cda:ClinicalDocument/cda:effectiveTime/@value), '+'))" />
     <sch:rule id="r-validate_TZ-errors" context="//cda:birthTime[@value] | //cda:time[@value] | //cda:effectiveTime[@value] | //cda:time/cda:low[@value] | //cda:time/cda:high[@value] | //cda:effectiveTime/cda:low[@value] | //cda:effectiveTime/cda:high[@value]">
-      <sch:assert id="a-CMS_0121-error" test="(parent::node()[parent::node()[parent::node()[cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1'][@extension='2016-03-01']]]]]) or ($timeZoneExists=(contains(normalize-space(@value), '-') or contains(normalize-space(@value), '+'))) or @nullFlavor">A Coordinated Universal Time  (UTC time) offset should not be used anywhere in a QRDA Category I file or, if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF: CMS_0121).</sch:assert>
+      <sch:assert id="a-CMS_0122-error" test="(parent::node()[parent::node()[parent::node()[cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1'][@extension='2016-03-01']]]]]) or ($timeZoneExists=(contains(normalize-space(@value), '-') or contains(normalize-space(@value), '+'))) or @nullFlavor">A Coordinated Universal Time (UTC time) offset should not be used anywhere in a QRDA Category III file or, if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF: CMS_0122).</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_REAL-errors">
@@ -1060,7 +1063,6 @@
       <sch:assert id="a-2233-21156-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:2233-21156).</sch:assert>
       <sch:assert id="a-2233-711270-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.18'][@extension='2016-11-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-711270) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.18" (CONF:2233-711271). SHALL contain exactly one [1..1] @extension="2016-11-01" (CONF:2233-711299).</sch:assert>
       <sch:assert id="a-2233-18237-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.9'][@extension='2016-02-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-18237) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.9" (CONF:2233-18238). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2233-21157).</sch:assert>
-      <sch:assert id="a-2233-12564-error" test="count(cda:id) &gt; 0">SHALL contain at least one [1..*] id (CONF:2233-12564).</sch:assert>
       <sch:assert id="a-2233-21158-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2233-21158).</sch:assert>
       <sch:assert id="a-2233-18106-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:2233-18106).</sch:assert>
       <sch:assert id="a-2233-711196-error" test="count(cda:value[@xsi:type='CD'])=1">SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2233-711196).</sch:assert>

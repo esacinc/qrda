@@ -68,6 +68,7 @@ public class MergeInstructions extends MergeProperties{
 	public final static String INDENT1 = "    ";
 	public final static String INDENT2 = "        ";
 	public final static String INDENT3 = "            ";
+	public final static String INDENT4 = "                ";
 	
 	public MergeInstructions() {
 		super();
@@ -287,9 +288,7 @@ public class MergeInstructions extends MergeProperties{
 	// Each item is iteself a list of filenames found under the subdirectory. The first filename is a schematron file, the remaining
 	// are xml files.
 	private ArrayList<SchematronTemplate> getSchematrons(String parentDirPath, List<String> exceptions, String selector) {
-		if (verbose) {
-			results.add(INDENT2 + "Processing template directory: " + parentDirPath + ", selector: " + selector);
-		}
+		results.add(INDENT2 + "Processing template directory: " + parentDirPath + ", selector: " + selector);
 		boolean doAll= ("all".equalsIgnoreCase(selector));
 		ArrayList<SchematronTemplate> fileList = new ArrayList<SchematronTemplate>();
 		File dir = new File(parentDirPath);
@@ -299,13 +298,15 @@ public class MergeInstructions extends MergeProperties{
 			globalStop = true;
 		}
 		else {
-			int totalDirCount = 0;
 			int foundCount = 0;
+			int exceptionsSize=exceptions.size(); // Remember original size, since the list will shrink during processing.
+			int expectedSize = 0;
 			File[] dirFiles = dir.listFiles();
 			for (File subdir : dirFiles) {
+				// Only look at subDirectories...
 				if (subdir.isDirectory()) {
-					totalDirCount++;  // Track total number of directories
 					if (doAll) {
+						// We are processing all the subDirs in the source folder, with the exception of those listed in the exceptions list...
 						if (!exceptions.contains(subdir.getName())) {
 							foundCount++;
 							SchematronTemplate files = getFilesFromDirectory(subdir.getAbsolutePath());
@@ -313,8 +314,13 @@ public class MergeInstructions extends MergeProperties{
 								fileList.add(files);
 							}
 						}
+						else {
+							exceptions.remove(subdir.getName()); // This subdir was, indeed, found in the exceptions list, so remove it.
+						}
 					}
 					else if (exceptions.contains(subdir.getName())) {
+						// We are only processing some subDirs in the source folder, so see if this one is in the include (aka exceptions) list...
+						exceptions.remove(subdir.getName()); // It is in the list, so remove it.
 						foundCount++;
 						SchematronTemplate files = getFilesFromDirectory(subdir.getAbsolutePath());
 						if (files != null) {
@@ -323,17 +329,38 @@ public class MergeInstructions extends MergeProperties{
 					}
 				}
 			}
-			this.addResult(INDENT3 + "Processed " + foundCount + " schematron folders in sourcedirectory " + parentDirPath);
+			// Now we need to see if the exceptions list is empty (it should be, because we've been removing found subdirs from the list.)
 			if (doAll) {
-				if (foundCount != totalDirCount - exceptions.size()) {
-					globalStop = true;
-					this.addResult(INDENT3 + "   Process HALTED: Folders processed does not match the excpeted number of folders (" + (totalDirCount - exceptions.size()) + ")");
+				expectedSize = foundCount = exceptionsSize; // Note what were expecting in the case where we process all subdirs.
+				if (verbose) {
+					this.addResult(INDENT3 + "Processed " + foundCount + " (" + expectedSize + " expected) schematron folders.");
+				}
+				if (exceptions.size() > 0) {
+					globalStop = stopOnError; // Only halt processing when an excluded subdir is missing if stopOnError is true;
+					this.addResult(INDENT3 + "The following schematron folders to be excluded were not found in " + parentDirPath);
+					for (String subdir : exceptions) {
+						this.addResult(INDENT4 + "'"+subdir+"'");
+					}
+					if (globalStop) {
+						this.addResult(INDENT3 + "PROCESS HALTED");
+					}
+					else {
+						this.addResult(INDENT3 + "(Set stopOnError=true to halt processing when folders in the exclude lists are not found.)");
+					}
 				}
 			}
 			else {
-				if (foundCount != exceptions.size()) {
-					globalStop = true;
-					this.addResult(INDENT3 + "   Process HALTED: Folders processed does not match the excpeted number of folders (" + exceptions.size() + ")");
+				expectedSize = exceptionsSize; // Note what were expecting in the case where we process only some subdirs
+				if (verbose){
+					this.addResult(INDENT3 + "Processed " + foundCount + " (" + expectedSize + " expected) schematron folders.");
+				}
+				if (exceptions.size() > 0) {
+					globalStop = true; // Always halt processing if an included subdir is missing
+					this.addResult(INDENT3 + "The following schematron folders were expected but not found in " + parentDirPath);
+					for (String subdir : exceptions) {
+						this.addResult(INDENT4 + "'"+subdir+"'");
+					}
+					this.addResult(INDENT3 + "PROCESS HALTED");
 				}
 			}
 		}
@@ -397,8 +424,11 @@ public class MergeInstructions extends MergeProperties{
 				    	addResult(INDENT2+"Copied vocabulary file: " + filename + " into project space as 'voc.xml'");
 				    }
 				} catch (IOException e) {
-				    if (getVerbose()) System.err.println(INDENT1 + "Error copying original ISO files from " + source.getAbsolutePath() + " to " + dest.getAbsolutePath());
-				    addResult(INDENT2+"Error copying vocabulary file from " + filename + ": " + e.getMessage());
+				    if (getVerbose()) {
+				    	System.err.println(INDENT1 + "IOException Error copying vocabulary from " + source.getAbsolutePath() + " to " + dest.getAbsolutePath());
+				    	e.printStackTrace();
+				    }
+				    addResult(INDENT2+"IOException Error copying vocabulary file from " + filename + ": " + e.getMessage());
 				}
 			}
 		}

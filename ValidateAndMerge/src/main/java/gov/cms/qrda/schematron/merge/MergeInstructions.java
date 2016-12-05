@@ -336,7 +336,8 @@ public class MergeInstructions extends MergeProperties{
 					this.addResult(INDENT3 + "Processed " + foundCount + " (" + expectedSize + " expected) schematron folders.");
 				}
 				if (exceptions.size() > 0) {
-					globalStop = stopOnError; // Only halt processing when an excluded subdir is missing if stopOnError is true;
+					//globalStop = stopOnError; // Only halt processing when an excluded subdir is missing if stopOnError is true;
+					globalStop = true;  // 
 					this.addResult(INDENT3 + "The following schematron folders to be excluded were not found in " + parentDirPath);
 					for (String subdir : exceptions) {
 						this.addResult(INDENT4 + "'"+subdir+"'");
@@ -345,6 +346,7 @@ public class MergeInstructions extends MergeProperties{
 						this.addResult(INDENT3 + "PROCESS HALTED");
 					}
 					else {
+						// This will never get printed as long as we set globalStop=true above.
 						this.addResult(INDENT3 + "(Set stopOnError=true to halt processing when folders in the exclude lists are not found.)");
 					}
 				}

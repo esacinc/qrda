@@ -5,13 +5,14 @@
   -->
 
 <!-- 	 
-	Total Errors Expected: 5 
+	Total Errors Expected: 7
 	Description: SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-27685).
 	Description: SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-27686).
 	Description: SHALL NOT contain [0..0] @negationInd (CONF:2228-28057).
 	Description: SHALL contain exactly one [1..1] templateId (CONF:2228-27675) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.112" (CONF:2228-27681). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-27682).
 	Description: SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2228-27688).
 	Description: The translation, if present, SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-27695).
+	Description: This template SHALL be contained by a Family History Organizer QDM (V3) (CONF:2228-28661).
 	
 	Total Warnings Expected: 1 
 	Description: This value SHOULD contain zero or one [0..1] @sdtc:valueSet (CONF:2228-27694).
@@ -673,7 +674,7 @@
 							<!-- C-CDA R2.1 Family History Organizer (V3) -->
 							<templateId root="2.16.840.1.113883.10.20.22.4.45" extension="2015-08-01"/>
 							<!-- Family History Organizer QDM (V2) templateId -->
-							<templateId root="2.16.840.1.113883.10.20.24.3.12" extension="2016-02-01"/>
+							<!--<templateId root="2.16.840.1.113883.10.20.24.3.12" extension="2016-02-01"/>-->
 							<id root="2cc2566e-4e7f-4820-817e-31912a61ea1a"/>
 							<statusCode code="completed"/>
 							<!-- Subject of the contained Diagnosis Family History template(s) -->

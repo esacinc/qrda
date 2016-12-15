@@ -280,6 +280,7 @@ public class FileServiceImpl implements FileService {
 	    File[] listOfFiles = fileDirectory.listFiles();      // Returns the array of file objects found in the directory
 	    
 	    if (sortByDate) {
+	    	logger.info("Sorting by date modified.");
 	    	LastModifiedComparator[] pairs = new LastModifiedComparator[listOfFiles.length];
 		    for (int i = 0; i < listOfFiles.length; i++)
 		        pairs[i] = new LastModifiedComparator(listOfFiles[i]);
@@ -289,6 +290,10 @@ public class FileServiceImpl implements FileService {
 		    // Take the sorted pairs and extract only the file part, discarding the timestamp.
 		    for (int i = 0; i < listOfFiles.length; i++)
 		    	listOfFiles[i] = pairs[i].f;
+	    }
+	    else {
+	    	logger.info("Sorting by name.");
+	    	Arrays.sort(listOfFiles);
 	    }
 	    
 	    logger.debug("    " + ((listOfFiles == null)?"No":listOfFiles.length) + " total files found");

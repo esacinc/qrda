@@ -5,7 +5,7 @@
   -->
   <!-- 
     Errors added to test Diagnosis template schematron error assertions - Dan Donahue
-    Total Errors Expected: 9
+    Total Errors Expected: 10
           Failure a-2228-28510-error Bad Class Code
           Failure a-2228-28511-error Bad Mood Code
           Failure a-2228-28512-error NegationInd present
@@ -15,6 +15,7 @@
           Failure a-2228-28506-error Missing or incorrect @codeSystem value
           Failure a-2228-28500-error More than one value of type CD
           Failure a-2228-28508-error Missing or multiple valueSet attributes
+		  Failure a-2228-28658-error Not contained by a Diagnosis Concern Act
  
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
@@ -645,8 +646,9 @@
             <act classCode="ACT" moodCode="EVN">
               <!-- Conforms to C-CDA 2.1 Problem Concern Act (V3) -->
               <templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2015-08-01"/>
-              <!-- Diagnosis Concern Act -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.137"/>
+              <!-- a-2228-28658-error Not contained by a Diagnosis Concern Act -->
+              <!--templateId root="2.16.840.1.113883.10.20.24.3.137"/-->
+              <templateId root="2.16.840.1.113883.10.20.24.3.138"/>
               <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
               <code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern"/>
               <!-- The statusCode represents whether this is an active (active) or resolved (completed) diagnosis -->

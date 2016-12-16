@@ -5,13 +5,14 @@
   -->
   <!-- 	 
     Errors added to test Encounter Recommended V3 template schematron error assertions - Dan Donahue
-    Total Errors Expected: 6
+    Total Errors Expected: 7
           Failure a-2228-27549-error Bad Class Code
           Failure a-2228-11911-error Bad Mood Code
           Failure a-2228-11912-error Multiple main template ids
           Failure a-2228-11915-error Missing or multiple code
           Failure a-2228-27626-error Missing or bad @sdtc:valueSet
           Failure a-2228-27347-error Missing or multiple Author Participation
+		  Failure a-2228-28660-error Not contained by an Encounter Recommended Act 
  
 This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
@@ -1885,7 +1886,9 @@ This sample file contains an example of each Patient Data Section QDM contained 
           <entry>
             <act classCode="ACT" moodCode="INT">
               <!--Encounter Recommended Act -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.134"/>
+              <!-- a-2228-28660-error Not contained by an Encounter Recommended Act -->
+              <!--templateId root="2.16.840.1.113883.10.20.24.3.134"/-->
+              <templateId root="2.16.840.1.113883.10.20.24.3.1340"/>
               <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
               <code code="ENC" codeSystem="2.16.840.1.113883.5.6" displayName="Encounter"
                 codeSystemName="ActClass"/>

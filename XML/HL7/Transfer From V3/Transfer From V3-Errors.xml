@@ -6,7 +6,7 @@
   <!-- 	 
      Errors added to test Transfer From V3 template schematron error assertions - Dan Donahue
  
-     Total Errors Expected: 14
+     Total Errors Expected: 15
           Failure a-2228-28306-error Bad Class Code
           Failure a-2228-28307-error Bad Mood Code 
           Failure a-2228-13189-error Multiple  main templateId
@@ -21,6 +21,7 @@
           Failure a-2228-28320-error Missing or bad participant participantRole @classCode="LOCE" 
           Failure a-2228-28317-error Missing or multiple participant participantRole code 
           Failure a-2228-28321-error Missing or bad participant participantRole code @sdtc:valueSet 
+          Failure a-2228-28663-Not contained by a Transfer From Act
                       
     Total Warnings Expected: 0
     
@@ -4842,7 +4843,8 @@
           <entry typeCode="DRIV">
             <!-- Transfer From Act -->
             <act classCode="ACT" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.24.3.141"/>
+            <!-- a-2228-28663-Not contained by a Transfer From Act -->
+              <!--<templateId root="2.16.840.1.113883.10.20.24.3.141"/>-->
               <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
               <code code="ENC" codeSystem="2.16.840.1.113883.5.6" displayName="Encounter"
                 codeSystemName="ActClass"/>

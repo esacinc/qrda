@@ -6,7 +6,7 @@
   <!-- 	 
      Errors added to test Transfer To V3 template schematron error assertions - Dan Donahue
  
-     Total Errors Expected: 8
+     Total Errors Expected: 9
           Failure a-2228-28358-error Bad Class Code
           Failure a-2228-13182-error Multiple  main templateId
           Failure a-2228-28360-error Missing id
@@ -15,6 +15,7 @@
           Failure a-2228-28353-error Missing or multiple statusCode
           Failure a-2228-28354-error Missing or multiple participant with @typeCode='DST' and one time 
           Failure a-2228-28365-error Missing or multiple participant time low
+          Failure a-2228-28664-Not contained by a Transfer To Act
                        
     Total Warnings Expected: 0
     
@@ -4870,9 +4871,9 @@
 
           <!-- QDM Datatype: Transfer To -->
           <entry typeCode="DRIV">
-            <!-- Transfer To Act -->
             <act classCode="ACT" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.24.3.142"/>
+            <!-- a-2228-28664-Not contained by a Transfer To Act -->
+              <!--<templateId root="2.16.840.1.113883.10.20.24.3.142"/>-->
               <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
               <code code="ENC" codeSystem="2.16.840.1.113883.5.6" displayName="Encounter"
                 codeSystemName="ActClass"/>

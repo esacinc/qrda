@@ -5,7 +5,7 @@
   -->
   <!-- 	 
    Errors added to test Encounter Performed V3 template schematron error assertions - Dan Donahue
-    Total Errors Expected: 10
+    Total Errors Expected: 11
           Failure a-2228-27532-error Bad Class Code
           Failure a-2228-27533-error Bad Mood Code
           Failure a-2228-11861-error Multiple main template ids
@@ -16,6 +16,7 @@
           Failure a-2228-11876-error Missing or multiple effectiveTime
           Failure a-2228-11877-error Missing or multiple low
           Failure a-2228-11878-error Missing or multiple high
+          Failure a-2228-28670-error Missing id[@root]
 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
@@ -1880,7 +1881,8 @@
                   <templateId root="2.16.840.1.113883.10.20.22.4.49" extension="2015-08-01"/>
                   <!-- Encounter Performed (V3) templateId-->
                   <templateId root="2.16.840.1.113883.10.20.24.3.23" extension="2016-02-01"/>
-                  <id root="dccf424e-18dd-4058-887f-a81514eaaa55"/>
+                    <!-- a-2228-28670-error Missing id[@root] -->
+					<!--id root="dccf424e-18dd-4058-887f-a81514eaaa55"/-->
                   <code code="32485007" displayName="hospital admission"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
                     sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.23"/>

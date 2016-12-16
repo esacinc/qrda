@@ -1733,7 +1733,7 @@
              <act classCode="ACTErr" moodCode="RQOrr"> <!-- a-2228-28469-error Bad Class Code, a-2228-28470-error Bad Mood Code -->
               <!-- Encounter Order Act -->
               <templateId root="2.16.840.1.113883.10.20.24.3.132"/>
-               <!-- Multiple main template ids -->
+               <!-- a-2228-28467-error Multiple main template ids -->
                <templateId root="2.16.840.1.113883.10.20.24.3.132"/>
               <!-- a-2228-28472-error Missing id -->
               <!-- <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/> -->

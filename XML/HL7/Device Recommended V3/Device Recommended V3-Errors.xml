@@ -5,12 +5,13 @@
   -->
   <!-- 	 
     Errors added to test Device Recommended V3 template schematron error assertions - Dan Donahue
-    Total Errors Expected: 5
+    Total Errors Expected: 6
           Failure a-2228-27722-error Bad Class Code
           Failure a-2228-12368-error Bad Mood Code
           Failure a-2228-12369-error Multiple main template ids
           Failure a-2228-27719-error Missing or multiple Author Participations
           Failure a-2228-12374-error No participant with: typeCode DEV, one role of class MANU and playingDevice with a classCode = DEV and a code from sdtc:valueSet
+          Failure a-2228-28666-error Not contained by a Device Recommended Act
 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
@@ -1046,7 +1047,9 @@
           <entry>
             <!-- Device Recommended Act -->
             <act classCode="ACT" moodCode="INT">
-              <templateId root="2.16.840.1.113883.10.20.24.3.131"/>
+            <!-- a-2228-28666-error Not contained by a Device Recommended Act-->
+              <!--templateId root="2.16.840.1.113883.10.20.24.3.131"/-->
+              <templateId root="2.16.840.1.113883.10.20.24.3.1310"/>
               <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
               <code code="SPLY" codeSystem="2.16.840.1.113883.5.6" displayName="Supply"
                 codeSystemName="ActClass"/>

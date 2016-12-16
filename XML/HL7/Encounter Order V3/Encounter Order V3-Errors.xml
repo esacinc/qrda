@@ -5,13 +5,14 @@
   -->
   <!-- 	 
     Errors added to test Encounter Order V3 template schematron error assertions - Dan Donahue
-    Total Errors Expected: 6
+    Total Errors Expected: 7
           Failure a-2228-27534-error Bad Class Code
           Failure a-2228-11932-error Bad Mood Code
           Failure a-2228-11933-error Multiple template ids
           Failure a-2228-11936-error Missing or multiple code
           Failure a-2228-27623-error Missing or bad @sdtc:valueSet 
           Failure a-2228-27341-error Missing or multiple author participation
+		  Failure a-2228-28668-error Not contained by a Encounter Order Act
           
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
@@ -1732,8 +1733,9 @@
           <!-- QDM Datatype: Encounter, Order -->
           <entry>
             <act classCode="ACT" moodCode="RQO">
-              <!-- Encounter Order Act -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.132"/>
+              <!-- a-2228-28668-error Not contained by a Encounter Order Act-->
+              <!--templateId root="2.16.840.1.113883.10.20.24.3.132"/-->
+              <templateId root="2.16.840.1.113883.10.20.24.3.139"/>
               <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
               <code code="ENC" codeSystem="2.16.840.1.113883.5.6" displayName="Encounter"
                 codeSystemName="ActClass"/>

@@ -11,18 +11,10 @@
     THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
     ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             
-    Changes:
-    Spelled out Advancing Care Information in the assert text messages to match the updated IG
-    Added assert 2233-711340 to require the presence of the QRDA Category III Measure Section - CMS V2 when
-      program name is set to CPCPLUS (QRDA-98)
-    Changed the conformance number for the codeSystem check in the Measure Data CMS V2 template to be unique
-      and match the updated IG (QRDA-93)
-    Removed the assert a-2233-12564 from the Payer Supplemental Data Element CMS V2 template (QRDA-100)
-    Updated the timezone assert to CMS_0122 and the text to match the IG (QRDA-99)
-    
-   Fri Dec 02 10:42:49 MST 2016 
--->
+    Schematron file generated December 16, 2016
 
+    Version 1.0
+-->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="svs" uri="urn:ihe:iti:svs:2008" />
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />

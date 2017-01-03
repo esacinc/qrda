@@ -75,7 +75,7 @@ import gov.cms.qrda.validator.xml.XPathUtility;
  * 
  * @see gov.cms.qrda.validator.web.service.ValidationService
  * 
- * @author Dan Donahue
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 @Service
@@ -93,7 +93,7 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
     // Note: the fileService object used throughout this file is autowired in the CommonUtilsImpl from which this class is derived.
 
     /**
-    * @see gov.cms.qrda.validator.web.service.ValidationService.setupValidationSuite
+    * @see gov.cms.qrda.validator.web.service.ValidationService#setupValidationSuite
     *
     **/
     @Override
@@ -121,7 +121,7 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
     	return vs;
     }
     /**
-    *  @see gov.cms.qrda.validator.web.service.ValidationService.runValidation 
+    *  @see gov.cms.qrda.validator.web.service.ValidationService#runValidation 
     */
 	@Override
 	public void runValidation(ValidationSuite vs) {

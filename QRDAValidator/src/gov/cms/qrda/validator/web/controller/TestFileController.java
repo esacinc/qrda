@@ -56,7 +56,7 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
 
 /**
  * Handles requests to/from the Test Files Inventory page
- * @author Dan Donahue
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 @Controller
@@ -72,8 +72,9 @@ public class TestFileController extends CommonUtilsImpl{
 	 * Default mapping.  Gathers the file specs from each sub folder in the Test Files folder of the QRDA_HOME/qrda file space on the server.
 	 * Also creates a form enabling users to upload files to those same folders.
 	 * 
-	 * @param locale
-	 * @param model
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param session, the current HttpSession
 	 * @return  test files inventory jsp page
 	 * 
 	 */
@@ -108,12 +109,11 @@ public class TestFileController extends CommonUtilsImpl{
 	 * (as specified by the filename and the folder name - type - of the folder where the particular test file file resides)
 	 * into a string and puts that string into the response of this call.
 	 * 
-	 * @param locale
-	 * @param model
-	 * @param type
-	 * @param filename
-	 * @param session
-	 * @return
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param type, the subidrectory under the test files directory to look in for the file
+	 * @param filename, the name of the file to search
+	 * @return return the response string
 	 */
 
 	@RequestMapping(value = "getXML", method = RequestMethod.GET)
@@ -128,12 +128,12 @@ public class TestFileController extends CommonUtilsImpl{
 	 * Removes the given file (as specified by the filename and the folder name - type - of the folder where the particular test file file resides)
 	 * from the system.
 	 * 
-	 * @param filename
-	 * @param subdir
-	 * @param locale
-	 * @param model
-	 * @param request
-	 * @return
+	 * @param filename the name of the file to remove
+	 * @param subdir the subdirectory under the repository files directory where the file is located
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param request, the current HttpRequest object
+	 * @return return to the testFiles page in the UI
 	 */
 
 	@RequestMapping(value="/remove/{filename}&{subdir}", method = RequestMethod.GET)
@@ -147,12 +147,12 @@ public class TestFileController extends CommonUtilsImpl{
 	/**
 	 * Uploads a file into the sub directory under the test file file repository.
 	 * 
-	 * @param uploadFileForm
-	 * @param result
-	 * @param locale
-	 * @param model
-	 * @param request
-	 * @return
+	 * @param uploadFileForm, the UploadFileForm populated in the UI
+	 * @param result, the binding result populated when user submits the form
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param request, the current HttpRequest object
+	 * @return return to the testFiles page in the UI
 	 */
 
 	@RequestMapping(value="/upload", method = RequestMethod.POST)

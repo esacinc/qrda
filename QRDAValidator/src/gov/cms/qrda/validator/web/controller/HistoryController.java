@@ -59,7 +59,7 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
 
 /**
  * Handles requests to/from the Test Files Inventory page
- * @author Dan Donahue
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 @Controller
@@ -78,8 +78,9 @@ public class HistoryController extends CommonUtilsImpl{
 	 * Default mapping.  Gathers the file specs from each sub folder in the Test Files folder of the QRDA_HOME/qrda file space on the server.
 	 * Also creates a form enabling users to upload files to those same folders.
 	 * 
-	 * @param locale
-	 * @param model
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param session, the current HttpSession object
 	 * @return  test files inventory jsp page
 	 * 
 	 */
@@ -131,12 +132,12 @@ public class HistoryController extends CommonUtilsImpl{
 	 * (as specified by the filename and the folder name - type - of the folder where the particular test file file resides)
 	 * into a string and puts that string into the response of this call.
 	 * 
-	 * @param locale
-	 * @param model
-	 * @param type
-	 * @param filename
-	 * @param session
-	 * @return
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param type, the type (subdirectory under the Testfiles results directory) of the test file
+	 * @param filename, the name of the test file results to open
+	 * @param session, the current HttpSession
+	 * @return to the test results history page.
 	 */
 
 	@RequestMapping(value = "getTestResults", method = RequestMethod.GET)
@@ -160,12 +161,12 @@ public class HistoryController extends CommonUtilsImpl{
 	 * Removes the given file (as specified by the filename and the folder name - type - of the folder where the particular test file file resides)
 	 * from the system.
 	 * 
-	 * @param filename
-	 * @param subdir
-	 * @param locale
-	 * @param model
-	 * @param request
-	 * @return
+	 * @param filename, the history file to remove
+	 * @param subdir, the subdir under the repository results directory where the history file resides
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param request, the current HttpServletRequest object
+	 * @return to the test results history page.
 	 */
 
 	@RequestMapping(value="/remove/{filename}&{subdir}", method = RequestMethod.GET)
@@ -176,6 +177,15 @@ public class HistoryController extends CommonUtilsImpl{
 		return "redirect:/historyFiles";
 	}
 
+	/**
+	 * Makes a new test case the current case stored in the session.
+	 * 
+	 * @param index, the index of the test case in the history list to use
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param session, the current HttpSession object
+	 * @return return to the manage history page
+	 */
 	@RequestMapping(value="change/{index}", method = RequestMethod.GET)
 	public String changeTestCase (@PathVariable Integer index,Locale locale, Model model, HttpSession session) {
 		logger.debug(String.format("Change current test case, index: %d", index)); 
@@ -200,6 +210,13 @@ public class HistoryController extends CommonUtilsImpl{
 		return manageHistory(locale,model,session);
 	}
 
+	/**
+	 * Re-runs the current test case stored in the session.
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param session, the current HttpSession object
+	 * @return to the manage history page
+	 */
 	@RequestMapping(value = "rerun", method = RequestMethod.GET)
 	public String rerunTest (Locale locale, Model model, HttpSession session ) {
 		//logger.info("Called via ajax getTestResults, type:" + type + ", file:" + filename);

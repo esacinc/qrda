@@ -47,7 +47,7 @@ import org.slf4j.LoggerFactory;
  * This class is used by the validation transformers so that relative href references in import and include
  * statements in the source files are resolved (mapped) to specific locations on the server filespace.
  * 
- * @author Dan Donahue
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 public class QRDA_URIResolver implements URIResolver, Serializable {
@@ -98,8 +98,10 @@ public class QRDA_URIResolver implements URIResolver, Serializable {
 	/** The resolve method is called by transformers (and the transform factory) when an href is encountered. 
 	 * This method will map the filename provided in the href to a pathname on the server in the directory pointed
 	 * to by the class' private static string ISO_HOME
-	 */
-	
+	 * @param href, the url to resolve
+	 * @param base, the base directory under the ISO_HOME directory to look in
+	 * @return a javax.xml.transform.Source object
+    */
 	@Override
 	public Source resolve(String href, String base) throws TransformerException {
 		//StringBuffer path = new StringBuffer(ISO_HOME + isoSubfolder + File.separator);
@@ -120,7 +122,7 @@ public class QRDA_URIResolver implements URIResolver, Serializable {
 	/**
 	 * Returns the absolute pathname to the directory containing qrda files and directories. 
 	 * Note: not used by transformers.
-	 * @return
+	 * @return the topmost directory where all files used in the validation application are stored
 	 */
 	public  String getQrdaHome() {
 		return QRDA_HOME;
@@ -129,7 +131,7 @@ public class QRDA_URIResolver implements URIResolver, Serializable {
 	/**
 	 * Returns the absolute pathname to the directory containing the iso files. 
 	 * Note: not used by transformers.
-	 * @return
+	 * @return the directory where the ISO files and other utility files are stored
 	 */
 	public  String getISOHome() {
 		return ISO_HOME;
@@ -138,7 +140,7 @@ public class QRDA_URIResolver implements URIResolver, Serializable {
 	/**
 	 * Returns the absolute pathname to the directory containing qrda schematron directories. 
 	 * Note: not used by transformers.
-	 * @return
+	 * @return the directory where schematrons are store
 	 */
 	public  String getSchematronHome() {
 		return SCHEMATRON_HOME;
@@ -147,7 +149,7 @@ public class QRDA_URIResolver implements URIResolver, Serializable {
 	/**
 	 * Returns the absolute pathname to the directory containing qrda test file directories. 
 	 * Note: not used by transformers.
-	 * @return
+	 * @return the directory where test files are stored
 	 */
 	public  String getTestFileHome() {
 		return TESTFILE_HOME;
@@ -156,7 +158,7 @@ public class QRDA_URIResolver implements URIResolver, Serializable {
 	/**
 	 * Returns the absolute pathname to the directory containing qrda validation results directories. 
 	 * Note: not used by transformers.
-	 * @return
+	 * @return the directory where results are stored
 	 */
 	public  String getResultHome() {
 		return RESULT_HOME;
@@ -165,7 +167,7 @@ public class QRDA_URIResolver implements URIResolver, Serializable {
 	/**
 	 * Returns the absolute pathname to the directory containing qrda properties files. 
 	 * Note: not used by transformers.
-	 * @return
+	 * @return the directory where properties files are located
 	 */
 	public  String getPropertiesHome() {
 		return PROPERTIES_HOME;

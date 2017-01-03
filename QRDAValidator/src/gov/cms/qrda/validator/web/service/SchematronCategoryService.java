@@ -32,6 +32,12 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 import gov.cms.qrda.validator.model.SchematronCategory;
 
+/**
+ * An interface describing how schematron categories are to be managed in the QRDA Validator application.
+ * 
+ * @author Dan Donahue, ESAC Inc.
+ *
+ */
 public interface SchematronCategoryService {
 
 	/**
@@ -52,14 +58,16 @@ public interface SchematronCategoryService {
 	
 	/**
 	 * Creates and saves a new schematron category with the given name and dislayName.  The new schematron is marked 'active'.
+	 * @param name, the internal name for the category
+	 * @param displayName, the name of the new category as displayed in the UI
 	 * @return A newly created schematron category object
 	 */
 	public SchematronCategory create(String name, String displayName);
 	
 	/**
 	 * Activates or Deactivates a schematron category
-	 * @param dir
-	 * @param val
+	 * @param cat the category to activate 
+	 * @param val the value to use:  true = activate, false = deactivate
 	 * @return active status
 	 */
 	public boolean activate(SchematronCategory cat, boolean val);
@@ -72,7 +80,7 @@ public interface SchematronCategoryService {
 	
 	/**
 	 * Returns the list of schematron category objects as stored in the given session object.
-	 * @param session
+	 * @param session the current HttpSession
 	 * @return List of schematron categories
 	 */
 	public List<SchematronCategory> loadLocal(HttpSession session);
@@ -85,7 +93,7 @@ public interface SchematronCategoryService {
 	
 	/**
 	 * Serializes the current list of schematron category objects to a file.
-	 * @param specs
+	 * @param specs, a list of SchematronCategory objects
 	 * @return true if serialization was successful
 	 */
 	public boolean save(List<SchematronCategory> specs);

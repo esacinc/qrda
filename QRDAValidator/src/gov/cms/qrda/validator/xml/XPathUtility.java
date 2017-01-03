@@ -67,10 +67,10 @@ import org.xml.sax.helpers.DefaultHandler;
 import gov.cms.qrda.validator.model.TestCase;
 
 /**
- * A utility file that opens an XML file (either with or without line numbers noted), and provides methods for parsing that file
+ * A utility class that opens an XML file (either with or without line numbers noted), and provides methods for parsing that file
  * via xpath expressions.
  * 
- * @author Dan Donahue
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 public class XPathUtility {
@@ -82,8 +82,11 @@ public class XPathUtility {
 	private static DocumentBuilderFactory docBuilderFactory = null;
 	private static DocumentBuilder docBuilder = null;
 	
+	/**
+	 * The init() method will create a singleton docBuilderFactory and docBuilder instance if they do not yet exist.
+	 */
 	private static void init() {
-		// Create a singleton docBuilderFactory and docBuilder instance if they do not yet exist.
+		
 	    if (docBuilderFactory == null) {
 	    	docBuilderFactory = DocumentBuilderFactory.newInstance();
 	    	docBuilderFactory.setNamespaceAware(true);
@@ -96,6 +99,12 @@ public class XPathUtility {
 	    }
 	}
 	
+	/**
+	 * Returns an xml Document from the contents of the given InputStream.
+	 * 
+	 * @param file A java.io.InputStream object 
+	 * @return org.w3c.dom.Document object from the input stream.
+	 */
 	static public  Document openXMLFile(InputStream file) {
 		Document doc = null;
 		try {
@@ -115,6 +124,13 @@ public class XPathUtility {
 		return doc;
 	}
 
+	/**
+	 * Returns an xml Document, with line numbers, from the contents of the given InputStream.
+	 * @param is A java.io.InputStream object
+	 * @return org.w3c.dom.Document object from the input stream.
+	 * @throws IOException if error reading the input stream
+	 * @throws SAXException if error parsing the XML from the input stream
+	 */
 	public static Document openXMLFileWithLineNumbers(final InputStream is) throws IOException, SAXException {
         final Document doc;
         SAXParser parser;
@@ -184,7 +200,12 @@ public class XPathUtility {
         return doc;
     }
 	
-	// Returns the actual xml text of the node that the given expression evaluates to
+	/**
+	 * Returns the actual xml text of the node that the given expression evaluates to
+	 * @param doc an rg.w3c.dom.Document object
+	 * @param xpathExpression a string denoting an xPath expression to a location in the document
+	 * @return String representation of the inner text of the node corresponding to the xPath location
+	 */
 	static public  String getNodeText(Document doc, String xpathExpression) {
 	    String res = null;
 	    try {
@@ -199,6 +220,13 @@ public class XPathUtility {
 	    return res;
 	}  
 
+	/**
+	 * Returns the line number in the given XML Document where the given xPathExpression begins.
+	 * 
+	 * @param doc an org.w3c.dom.Document object
+	 * @param xpathExpression a string denoting an xPath expression to a location in the document
+	 * @return Integer, the line number in the document where the node of the xPathExpression begins.
+	 */
 	static public  Integer getNodeLineNumber(Document doc, String xpathExpression) {
 	    Integer res = null;
 	    try {
@@ -214,6 +242,14 @@ public class XPathUtility {
 	    return (res == null)? -1 : res;
 	}  
 
+	/**
+	 * Returns the node of the given xPathExpression in the given XML document
+	 * 
+	 * @param doc an org.w3c.dom.Document object
+	 * @param xpathExpression a string denoting an xPath expression to a location in the document
+	 * @return Node, org.w3c.dom.Node object, or null if error.
+	 */
+
 	static public Node getNode(Document doc, String xpathExpression) {
 	    Node res = null;
 	    try {
@@ -228,6 +264,14 @@ public class XPathUtility {
 	    return res;
 	} 
 	
+	/**
+	 * Returns a list of String elements where each element is the nodeValue text of each node in the node set
+	 * (XPathConstants.NODESET) of the given xPathExpression in the given XML document.
+	 * 
+	 * @param doc an org.w3c.dom.Document object
+	 * @param xpathExpression a string denoting an xPath expression to a location in the document
+	 * @return A list of string elements
+	 */
 	static public List<String> getElements(Document doc, String xpathExpression) {
         List<String> list = new ArrayList<String>();
         try {
@@ -244,7 +288,12 @@ public class XPathUtility {
 	}  
 	
 
-	// Returns the xml of the given node in a String
+	/**
+	 * Returns the string text content of the given node object.
+	 * 
+	 * @param node org.w3c.dom.Node object
+	 * @return the xml of the given node in a String
+	 */
 	static public String nodeToString(Node node) {
         StringWriter sw = new StringWriter();
         try {
@@ -259,15 +308,21 @@ public class XPathUtility {
       }
 
 	
-	 // Find the named subnode in a node's sublist.
-	 // 
-	 // Ignores comments and processing instructions.
-	 // Ignores TEXT nodes (likely to exist and contain
-	 //         ignorable whitespace, if not validating.
-	 // Ignores CDATA nodes and EntityRef nodes.
-	 // Examines element nodes to find one with
-	 //        the specified name.
-	 // 
+	/**
+	 * Finds the named subnode in a node's sublist.
+	 * This method: <ul>
+	 * <li>Ignores comments and processing instructions.</li>
+	 * <li>Ignores TEXT nodes (likely to exist and contains ignorable whitespace, if not validating. </li>
+	 * <li>Ignores CDATA nodes and EntityRef nodes. </li>
+	 * <li>Examines element nodes to find one with the specified name./<li>
+	 * </ul>
+	 * @param name the name of child nodes to include
+	 * @param node the node to start with
+	 * @param tc A gov.cms.qrda.validator.model.TestCase object to carry the results
+	 * 
+	 * @return the found Node object, or null if error.
+	 * 
+	 */
 	static public Node findSubNode(String name, Node node, TestCase tc) {
 	    if (node.getNodeType() != Node.ELEMENT_NODE) {
 	        logger.error("ERROR: Search node not of element type");
@@ -287,9 +342,13 @@ public class XPathUtility {
 	    return null;
 	}
 	
-	 // Returns the previous sibling but only if it is an element. This handles the text
-	 // nodes that may be in between them.
-	 // 
+	/**
+	 * Returns the previous sibling of the given node, but only if it is an element. This handles the text nodes that may be in between them.
+	 * @param node the node to start the search with
+	 * @param tc A gov.cms.qrda.validator.model.TestCase object to carry the results
+	 * 
+	 * @return the found Node object, or null if error
+	 */
 	static public Node getPreviousSibling(Node node, TestCase tc) {
 		if (node.getNodeType() != Node.ELEMENT_NODE) {
 	        logger.error("ERROR: Search node not of element type");
@@ -309,15 +368,20 @@ public class XPathUtility {
 	    return previous;
 	}
 	
-	  // Return the text that a node contains. This routine:
-	  // 
-	  // Ignores comments and processing instructions.
-	  // Concatenates TEXT nodes, CDATA nodes, and the results of
-	  //     recursively processing EntityRef nodes.
-	  // Ignores any element nodes in the sublist.
-	  //     (Other possible options are to recurse into element 
-	  //      sublists or throw an exception.)
-	  // 
+	/**
+	 * Return the text that a node contains. This routine:
+	 * <ul> 
+	  * <li>Ignores comments and processing instructions.</li>
+	  * <li>Concatenates TEXT nodes, CDATA nodes, and the results of
+	  *     recursively processing EntityRef nodes.</li>
+	  * <li>Ignores any element nodes in the sublist.
+	  *     (Other possible options are to recurse into element 
+	  *      sublists or throw an exception.)
+	  * </li>
+	  * </ul>
+	 * @param node the Node to get the text from
+	 * @return String representing the inner text of the node.
+	 */
 	static public String getNodeText(Node node) {
 	    StringBuffer result = new StringBuffer();
 	    if (! node.hasChildNodes()) return "";

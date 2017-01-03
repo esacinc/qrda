@@ -40,7 +40,7 @@ POSSIBILITY OF SUCH DAMAGE.
  * The id, location, test and statement instance variables in a Failure object are copies of data elements in the test XML file that
  * was validated.
  * 
- * @author Dan Donahue
+ * @author Dan Donahue, Michael Holck   ESAC Inc.
  *
  */
 public class Failure implements Serializable{

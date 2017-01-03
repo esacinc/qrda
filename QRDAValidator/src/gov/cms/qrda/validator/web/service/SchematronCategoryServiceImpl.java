@@ -50,7 +50,7 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
  * 
  * @see gov.cms.qrda.validator.web.service.SchematronCategoryService
  * 
- * @author Dan Donahue
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 @Service
@@ -59,7 +59,7 @@ public class SchematronCategoryServiceImpl extends CommonUtilsImpl implements Sc
 
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.SchematronCategoryService.create
+	 * @see gov.cms.qrda.validator.web.service.SchematronCategoryService#create
 	 */
 	@Override
 	public SchematronCategory create(String name, String displayName) {
@@ -68,7 +68,7 @@ public class SchematronCategoryServiceImpl extends CommonUtilsImpl implements Sc
 	}
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.SchematronCategoryService.loadOrBuild
+	 * @see gov.cms.qrda.validator.web.service.SchematronCategoryService#loadOrBuild
 	 */
 
 	@Override
@@ -89,7 +89,7 @@ public class SchematronCategoryServiceImpl extends CommonUtilsImpl implements Sc
 	}
 	
 	/**
-	 * @see gov.cms.qrda.validator.web.service.SchematronCategoryService.initialBuild
+	 * @see gov.cms.qrda.validator.web.service.SchematronCategoryService#initialBuild
 	 */
 	@Override
 	public List<SchematronCategory> initialBuild() {
@@ -109,7 +109,7 @@ public class SchematronCategoryServiceImpl extends CommonUtilsImpl implements Sc
 	}
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.SchematronCategoryService.activate
+	 * @see gov.cms.qrda.validator.web.service.SchematronCategoryService#activate
 	 */
 	@Override
 	public boolean activate(SchematronCategory cat, boolean val) {
@@ -119,7 +119,7 @@ public class SchematronCategoryServiceImpl extends CommonUtilsImpl implements Sc
 
 	
 	/**
-	 * @see gov.cms.qrda.validator.web.service.SchematronCategoryService.load
+	 * @see gov.cms.qrda.validator.web.service.SchematronCategoryService#load
 	 */
     @SuppressWarnings("unchecked")
 	@Override
@@ -140,7 +140,7 @@ public class SchematronCategoryServiceImpl extends CommonUtilsImpl implements Sc
 	}
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.SchematronCategoryService.loadLocal
+	 * @see gov.cms.qrda.validator.web.service.SchematronCategoryService#loadLocal
 	 */
     @SuppressWarnings("unchecked")
 	@Override
@@ -150,7 +150,7 @@ public class SchematronCategoryServiceImpl extends CommonUtilsImpl implements Sc
 	
 	
 	/**
-	 * @see gov.cms.qrda.validator.web.service.SchematronCategoryService.save
+	 * @see gov.cms.qrda.validator.web.service.SchematronCategoryService#save
 	 */
     @Override
 	public boolean save(List<SchematronCategory> cats) {

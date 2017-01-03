@@ -41,26 +41,42 @@ import java.util.List;
  * A lsit of the directory specs is serialized to disc and loaded into memory as needed.
  * 
   *  
- * @author Dan Donahue
+ * @author Dan Donahue ESAC Inc.
  *
  */
 public class SchematronCategory implements Serializable{
 	/**
-	 * 
+	 * Needed for serialization
 	 */
 	private static final long serialVersionUID = 2983856471501981661L;
 	
 	/**
-	 * 
+	 * The name of the directory on disc
 	 */
-	private String name;                      // The name of the directory on disc
-	private String origName;				  // Temp aid for determining name changes
-	private String displayName;               // The name of the directory as displayed in the UI
-	private boolean active = true;			  // Whether or not we are using this directory
-	private List<FileSpec> files = null;      // List of files in the directory. (Dynamically generated depending on situation)
-	private List<FileSpec> filesSec = null;   // List of secondary files in the directory. (Dynamically generated depending on situation)
+	private String name;                      
+	/**
+	 * Temp aid for determining name changes
+	 */
+	private String origName;				  
+	/**
+	 * The name of the directory as displayed in the UI
+	 */
+	private String displayName;               
+	/**
+	 * Whether or not we are using this directory
+	 */
+	private boolean active = true;			  
+	/**
+	 * List of files in the directory. (Dynamically generated depending on situation)
+	 */
+	private List<FileSpec> files = null;       
+	/**
+	 * List of secondary files in the directory. (Dynamically generated depending on situation)
+	 */
+	private List<FileSpec> filesSec = null;    
 	
 	public SchematronCategory() {}
+	
 	
 	public SchematronCategory(String name, String displayName) {
 		this.name = name;
@@ -71,8 +87,13 @@ public class SchematronCategory implements Serializable{
 		return name;
 	}
 	
+	/**
+	 * This method replaces all non-alphanumeric characters with an underscore ("_") character to insure a properly formed directory name
+	 * created from this name.
+	 * @param val
+	 */
 	public void setName(String val) {
-		name = val.trim().replaceAll("[^a-zA-Z0-9]", "_"); // Insure only alphanumeric characters in name. Replace others with "_"
+		name = val.trim().replaceAll("[^a-zA-Z0-9]", "_"); 
 		
 	}
 	
@@ -80,6 +101,11 @@ public class SchematronCategory implements Serializable{
 		return origName;
 	}
 	
+	/**
+	 * This method replaces all non-alphanumeric characters with an underscore ("_") character to insure a proper
+	 * comparison to the Name field.
+	 * @param val
+	 */
 	public void setOrigName(String val) {
 		origName = val.trim().replaceAll("[^a-zA-Z0-9]", "_"); // Insure only alphanumeric characters in name. Replace others with "_"
 		

@@ -56,7 +56,7 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
 
 /**
  * Handles requests to/from the Test Files Inventory page
- * @author Dan Donahue
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 @Controller
@@ -72,8 +72,9 @@ public class VocFileController extends CommonUtilsImpl{
 	 * Default mapping.  Gathers the file specs from each sub folder in the Vocabulary Files folder of the QRDA_HOME/qrda file space on the server.
 	 * Also creates a form enabling users to upload files to those same folders.
 	 * 
-	 * @param locale
-	 * @param model
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param session, the current HttpSession object
 	 * @return  test files inventory jsp page
 	 * 
 	 */
@@ -109,12 +110,11 @@ public class VocFileController extends CommonUtilsImpl{
 	 * (as specified by the filename and the folder name - type - of the folder where the particular test file file resides)
 	 * into a string and puts that string into the response of this call.
 	 * 
-	 * @param locale
-	 * @param model
-	 * @param type
-	 * @param filename
-	 * @param session
-	 * @return
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param type the category (subdir name)  type
+	 * @param filename, the file to search
+	 * @return the Http response
 	 */
 
 	@RequestMapping(value = "getXML", method = RequestMethod.GET)
@@ -129,12 +129,12 @@ public class VocFileController extends CommonUtilsImpl{
 	 * Removes the given file (as specified by the filename and the folder name - type - of the folder where the particular vocabulary file resides)
 	 * from the system.
 	 * 
-	 * @param filename
-	 * @param subdir
-	 * @param locale
-	 * @param model
-	 * @param request
-	 * @return
+	 * @param filename, the filename of the file to remove
+	 * @param subdir the subdirectory where the file is located
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param request, the HttpRequest object
+	 * @return a string indicating a return to the vocabulary files page in the UI
 	 */
 
 	@RequestMapping(value="/remove/{filename}&{subdir}", method = RequestMethod.GET)
@@ -148,12 +148,12 @@ public class VocFileController extends CommonUtilsImpl{
 	/**
 	 * Uploads a file into the sub directory under the vocabulary file repository.
 	 * 
-	 * @param uploadFileForm
-	 * @param result
-	 * @param locale
-	 * @param model
-	 * @param request
-	 * @return
+	 * @param uploadFileForm the filled-in form from the UI
+	 * @param result the binding result populated when user submits the form
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param request, the HttpRequest object
+	 * @return a string indicating a return to the vocabulary files page in the UI
 	 */
 
 	@RequestMapping(value="/upload", method = RequestMethod.POST)

@@ -60,42 +60,99 @@ public class ValidationSuite implements Serializable {
 	
 
     /**
-	 * 
+	 * Required for serialization
 	 */
 	private static final long serialVersionUID = 8482863478279873637L;
 
 	private static Logger logger = LoggerFactory.getLogger(ValidationSuite.class);
 
     private String name;
-	private String schematronType;           // Corresponds to folder structure in our qrda schematron file repository.
-	private String schematronFilename;       // The name of the schematron file, as found in the qrda schematron file repository
+    /**
+     * Corresponds to folder structure in our qrda schematron file repository.
+     */
+	private String schematronType;           
+	/**
+	 * The name of the schematron file, as found in the qrda schematron file repository
+	 */
+	private String schematronFilename;       
+	/**
+	 * The XSD file to validate the schematron xml with
+	 */
+	private String CDAXsdFilename;           
+	/**
+	 * The name of the ISO Include transform file located in the qrda isoFiles folder
+	 */
+	private String isoIncludeFilename;       
+	/**
+	 * The name of the ISO Abstract transform file located in the qrda isoFiles folder
+	 */
+	private String isoAbstractFilename;      
+	/**
+	 * The name of the ISO XSLT transform file located in the qrda isoFiles folder
+	 */
+	private String xsltFilename;             
 	
-	private String CDAXsdFilename;           // The XSD file to validate the schematron xml with
-	private String isoIncludeFilename;       // The name of the ISO Include transform file located in the qrda isoFiles folder
-	private String isoAbstractFilename;      // The name of the ISO Abstract transform file located in the qrda isoFiles folder
-	private String xsltFilename;             // The name of the ISO XSLT transform file located in the qrda isoFiles folder
+	/**
+	 * The name of the transformed schematron file after applying the isoInclude xform.
+	 */
+	private String includeTransformFilename;       
+	/**
+	 * The name of the transformed schematron file after applying the isoAbstract xform.
+	 */
+	private String abstractTransformFilename;      
+	/**
+	 * The name of the transformed schematron file after applying the isoXSLT xform.
+	 */
+	private String transformedSchematronFilename;  
 	
-	private String includeTransformFilename;       // The name of the transformed schematron file after applying the isoInclude xform.
-	private String abstractTransformFilename;      // The name of the transformed schematron file after applying the isoAbstract xform.
-	private String transformedSchematronFilename;  // The name of the transformed schematron file after applying the isoXSLT xform.
+	/**
+	 * The date/time string to add to filenames (and results folder) to make them unique
+	 */
+	private String nameTimestamp = "";             
+	/**
+	 * The name of the folder in the qrda results file repository where all result files are written
+	 */
+	private String resultsFolderBase = "";         
 	
-	private String nameTimestamp = "";             // The date/time string to add to filenames (and results folder) to make them unique
-	private String resultsFolderBase = "";         // The name of the folder in the qrda results file repository where all result files are written
+	/**
+	 * A class that resolves relative URIs in schematron files to local pathnames.
+	 */
+	private QRDA_URIResolver fileResolver = null;  
 	
-	private QRDA_URIResolver fileResolver = null;  // A class that resolves relative URIs in schematron files to local pathnames.
+	/**
+	 * Set to true if the given schematron file makes in through the 3 ISO transforms successfully.
+	 */
+	private boolean isTransformed = false;   
 	
-	private boolean isTransformed = false;   // Set to true if the given schematron file makes in through the 3 ISO transforms successfully.
-	
-	private ArrayList<String> statusText = new ArrayList<String>();  // We build up informational text as we go for display on the UI
+	/**
+	 * We build up informational text as we go for display on the UI
+	 */
+	private ArrayList<String> statusText = new ArrayList<String>();  
+	/**
+	 * The list of test filenames used in this suite
+	 */
 	private ArrayList<String> testFilenames = new ArrayList<String>();
-	private List<TestCase> testCases;  // The list of test case objects representing the test files we are to validate in this suite.
+	/**
+	 * The list of test case objects representing the test files we are to validate in this suite.
+	 */
+	private List<TestCase> testCases;  
 
-	private String mySavedFilename; // The filename of this validation suite as saved on disk
+	/**
+	 * // The filename of this validation suite as saved on disk
+	 */
+	private String mySavedFilename; 
 	
 	public ValidationSuite() {
 		// for serialization
 	}
 	
+	/**
+	 * This constructor removes all non-alphanumeric characters in the resultsFolderBase name, and then calls the class's init() method.
+	 * @see #init(String, String)
+	 * @param name
+	 * @param schematronType
+	 * @param schematron
+	 */
 	public ValidationSuite(String name, String schematronType, String schematron) {
 		this.name = name;
 		this.resultsFolderBase = name.replaceAll("[^A-Za-z0-9]", ""); // Prevent generated folder name from having characters other than alphanumeric
@@ -112,6 +169,14 @@ public class ValidationSuite implements Serializable {
 		init(schematronType,schematron);
 	}
 	
+	/**
+	 * Initializes the class instance. Create interim filenames for files that are generated during the validation process.
+	 * Also creates the filename used for saving/serializing this instance to disc. The saved filename is of the form:
+	 * <p align='center'>name_timestamp.vs</p>
+	 * 
+	 * @param schematronType
+	 * @param schematron
+	 */
 	protected void init(String schematronType, String schematron) {
 		this.schematronType = schematronType; 
 		this.schematronFilename = schematron;
@@ -188,15 +253,21 @@ public class ValidationSuite implements Serializable {
 	public QRDA_URIResolver getFileResolver() {
 		return fileResolver;
 	}
+	
+	/**
+	 * Reads the names of the files needed to transform a schematron into a useable .xsd file for validation.
+	 * The filenames are stored in the validator.properties file found on the resource classpath.
+	 * @param props
+	 */
 	public void initIsoFilenames(Properties props) {
 		// Get the names of the ISO transform files to use from the validator.properties file.
 		this.CDAXsdFilename = props.getProperty("iso.xsd");
 		this.isoIncludeFilename = props.getProperty("iso.include");
 		this.isoAbstractFilename = props.getProperty("iso.abstract");
 		this.xsltFilename = props.getProperty("iso.svrl");
-		logger.info("Iso include file: " + isoIncludeFilename);
-		logger.info("Iso abstract file: " + isoAbstractFilename);
-		logger.info("Iso xslt file: " + xsltFilename);
+		logger.debug("Iso include file: " + isoIncludeFilename);
+		logger.debug("Iso abstract file: " + isoAbstractFilename);
+		logger.debug("Iso xslt file: " + xsltFilename);
 	}
 	
 	public void reset() {
@@ -205,6 +276,11 @@ public class ValidationSuite implements Serializable {
 		this.statusText = new ArrayList<String>();
 	}
 	
+	/** 
+	 * Returns the nth test case (0-based), or null if not found.
+	 * @param n
+	 * @return A TestCase object, or null.
+	 */
 	public TestCase getNth(Integer n) {
 		if (n == null || n < 0 || n >= testCases.size()) {
 			return null;
@@ -253,7 +329,7 @@ public class ValidationSuite implements Serializable {
 		statusText.add(txt);
 	}
 	
-	 public void readObject(
+	public void readObject(
 		     ObjectInputStream aInputStream
 		   ) throws ClassNotFoundException, IOException {
 		     //always perform the default de-serialization first

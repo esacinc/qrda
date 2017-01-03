@@ -45,26 +45,57 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
  * A ValidationSuite contains a list of TestCase objects. When the ValidationService runs the validation on a 
  * validation suite object, it applies the schematron specified in the suite to each of the TestCase files in that list.
  * 
- * @author Dan Donahue
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 public class TestCase extends FileSpec implements Serializable {
 
 	/**
-	 * 
+	 * Required for serialization
 	 */
 	private static final long serialVersionUID = 5617969005045363136L;
-	private String schematronFilename = null;           // The filename of the schematron to use to validate this test file.
-	private String validationReportFilename = null;     // The filename of the validation report generated during the validation process
-	private String validationReportPath = null;         // The full canonical path to the report file on the server's filespace.
-	private String validationReportURL = null;          // The URL to the report file on the server's filespace.
-	private ArrayList<Failure> errors = null;           // The list of failure objects generated during validation
-	private ArrayList<String> statusText = new ArrayList<String>();  // A list of informational text populated as the validation processs progresses.
-	
-	private Integer errorCount = 0;      // The number of crtical errors found in the errors list, above.
-	private Integer warningCount = 0;    // The number of non-critical warnings in the errors list, above.
+	/**
+	 * The filename of the schematron to use to validate this test file.
+	 */
+	private String schematronFilename = null;           
+	/**
+	 * The filename of the validation report generated during the validation process
+	 */
+	private String validationReportFilename = null;     
+	/**
+	 * The full canonical path to the report file on the server's filespace.
+	 */
+	private String validationReportPath = null;         
+	/**
+	 * The URL to the report file on the server's filespace.
+	 */
+	private String validationReportURL = null;          
+	/**
+	 * The list of failure objects generated during validation
+	 */
+	private ArrayList<Failure> errors = null;           
+	/**
+	 * A list of informational text populated as the validation processs progresses.
+	 */
+	private ArrayList<String> statusText = new ArrayList<String>();  
+	/**
+	 * The number of crtical errors found in the errors list, above.
+	 */
+	private Integer errorCount = 0;      
+	/**
+	 * The number of non-critical warnings in the errors list, above.
+	 */
+	private Integer warningCount = 0;    
 
-	
+	/**
+	 * This constructor creates a validationReportFilename from the given schematron filename by appending an underscore
+	 * "_" followed by the given filenamePostfix and an extension of ".svrlt"
+	 * .
+	 * @param schematron
+	 * @param schematronType
+	 * @param testFile
+	 * @param filenamePostfix
+	 */
 	public TestCase(String schematron, String schematronType, String testFile, String filenamePostfix) {
 		super(testFile, "", schematronType);   // Set up the test file information
 		schematronFilename = schematron;

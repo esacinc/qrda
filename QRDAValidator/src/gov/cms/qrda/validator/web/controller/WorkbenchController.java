@@ -59,7 +59,7 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
 /**
  * Handles requests validation workbench page.
  * 
- * @author Dan Donahue
+ * @author Dan Donahue, ESAC Inc.
  * 
  */
 @Controller
@@ -78,6 +78,10 @@ public class WorkbenchController extends CommonUtilsImpl {
 	 * Default mapping for the workbench UI. Collects all the file specifications for both the schematron and
 	 * the test files stored in the QRDA file repository residing in QRDA_HOME/qrda file space.
 	 * 
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param session, the current HttpSession
+	 * @return the ValidationWorkbench page in the UI
 	 */
 	@RequestMapping(method = RequestMethod.GET)
 	public String workbench(Locale locale, Model model, HttpSession session) {
@@ -125,15 +129,15 @@ public class WorkbenchController extends CommonUtilsImpl {
 	 * to invoke the validation process on the validationSuite object. Once completed, it returns to the workbench UI which then displays
 	 * the results of the validation.
 	 * 
-	 * @param theForm
-	 * @param result
-	 * @param locale
-	 * @param model
-	 * @param session
+	 * @param theForm, the ValidationSubmissionForm from the UI
+	 * @param result, the binding result populated when user submits the form
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param session, the current HttpSession
 	 * @return workbench jsp page
 	 * 
 	 * @see gov.cms.qrda.validator.model.ValidationSuite
-	 * @see gove.cms.qrda.validator.web.serviceValidationService
+	 * @see gov.cms.qrda.validator.web.service.ValidationService
 	 * 
 	 */
 	@RequestMapping(method = RequestMethod.POST)
@@ -162,9 +166,9 @@ public class WorkbenchController extends CommonUtilsImpl {
 	 * Re-runs the validation tests contained in the Validation Suite object currently stored in the session.
 	 * Does nothing if no such object exists.
 	 * 
-	 * @param locale
-	 * @param model
-	 * @param session
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param session, the current HttpSession
 	 * @return workbench jsp page
 	 */
 	@RequestMapping(value = "rerun", method = RequestMethod.GET)
@@ -185,11 +189,11 @@ public class WorkbenchController extends CommonUtilsImpl {
 	 * source - main directory, folder - subdirectory, and filename in the QRDA_HOME/qrda filespace) for display in a 
 	 * div element on the UI.
 	 * 
-	 * @param source
-	 * @param filename
-	 * @param folder
-	 * @param locale
-	 * @param model
+	 * @param source, the main directory to look in
+	 * @param filename, the name of the file to get
+	 * @param folder, the subdirectory under the main directory to look in
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
 	 * @return  String: contents of the given file, presumably as an XML string.
 	 */
 	@RequestMapping(value = "getXML/{source}&{filename}&{folder}", method = RequestMethod.GET)
@@ -214,10 +218,10 @@ public class WorkbenchController extends CommonUtilsImpl {
 	 * validation workbench page.  It pre- populates the current test case (testCase) model element with the selected
 	 * test case. This element is then used to populate the details tabs on the validation results UI.
 	 * 
-	 * @param index
-	 * @param locale
-	 * @param model
-	 * @param session
+	 * @param index, the nth test case to change
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param session, the current HttpSession
 	 * @return worbench jsp
 	 */
 	@RequestMapping(value="change/{index}", method = RequestMethod.GET)

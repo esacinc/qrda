@@ -192,7 +192,7 @@ public class FileServiceImpl implements FileService {
 		try {  
 		    File fileDirectory = fileRepository(baseDir,subDir); // Returns the directory where the file should be found
 		    File file = new File(fileDirectory, filename);
-		    logger.info("Accessing external for reading " + file.getAbsolutePath());
+		    logger.debug("Accessing external for reading " + file.getAbsolutePath());
 		    FileInputStream fileStream = new FileInputStream(file);
 		    return fileStream;
 		} catch (IOException e) {     
@@ -210,7 +210,7 @@ public class FileServiceImpl implements FileService {
 		try {  
 		    File fileDirectory = fileRepository(baseDir, subDir); // Returns the directory where the file should be written
 		    File file = new File(fileDirectory, filename);
-		    logger.info("Opening external for writing " + file.getAbsolutePath());
+		    logger.debug("Opening external for writing " + file.getAbsolutePath());
 		    FileOutputStream fileStream = new FileOutputStream(file);
 		    return fileStream;
 		} catch (IOException e) {     
@@ -280,7 +280,7 @@ public class FileServiceImpl implements FileService {
 	    File[] listOfFiles = fileDirectory.listFiles();      // Returns the array of file objects found in the directory
 	    
 	    if (sortByDate) {
-	    	logger.info("Sorting by date modified.");
+	    	logger.debug("Sorting by date modified.");
 	    	LastModifiedComparator[] pairs = new LastModifiedComparator[listOfFiles.length];
 		    for (int i = 0; i < listOfFiles.length; i++)
 		        pairs[i] = new LastModifiedComparator(listOfFiles[i]);
@@ -292,7 +292,7 @@ public class FileServiceImpl implements FileService {
 		    	listOfFiles[i] = pairs[i].f;
 	    }
 	    else {
-	    	logger.info("Sorting by name.");
+	    	logger.debug("Sorting by name.");
 	    	Arrays.sort(listOfFiles);
 	    }
 	    

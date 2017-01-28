@@ -98,7 +98,7 @@ public class WorkbenchController extends CommonUtilsImpl {
 		for (SchematronCategory dir : dirSpecs) {
 			if (dir.isActive()) {
 				String subDir = dir.getName();
-				logger.info("Getting files for subdir " + subDir);
+				logger.debug("Getting files for subdir " + subDir);
 
 				ArrayList<FileSpec> schFiles = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_SCHEMATRONS,subDir, null);
 				dir.setFiles(schFiles);

@@ -668,7 +668,6 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 		//fileService.getAbsolutePath(vs.getCDAXsdFilename(),QRDA_URIResolver.REPOSITORY_ISO,"xsd");
 		String xmlFilename = fileService.getAbsolutePath(testFile.getFilename(),QRDA_URIResolver.REPOSITORY_TESTFILES,vs.getSchematronType());
 		logger.info("validateXML: " + xmlFilename + " using " + xsdFilename);
-		logger.info("validateXML: " + xmlFilename + " using " + xsdFilename);
 		final ArrayList<String>  exceptions = new ArrayList<String>();
 		try {
 			//URL schemaFile = new URL(xsdFilename);
@@ -681,16 +680,27 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 			
 			validator.setErrorHandler(new ErrorHandler() {
 						@Override
-						public void warning(SAXParseException e) throws SAXException { exceptions.add(e.getLocalizedMessage()); }
+						public void warning(SAXParseException e) throws SAXException { exceptions.add(String.format("<p>- Line: %d Column: %d Warning: %s</p>", e.getLineNumber(),e.getColumnNumber(),e.getLocalizedMessage())); }
 						@Override
-						public void fatalError(SAXParseException e) throws SAXException { exceptions.add(e.getLocalizedMessage()); }
+						public void fatalError(SAXParseException e) throws SAXException { exceptions.add(String.format("<p>- Line: %d Column: %d Fatal: %s</p>", e.getLineNumber(),e.getColumnNumber(),e.getLocalizedMessage())); }
 						@Override
-						public void error(SAXParseException e) throws SAXException { exceptions.add(e.getLocalizedMessage()); }
+						public void error(SAXParseException e) throws SAXException { exceptions.add(String.format("<p>- Line: %d Column: %d Error: %s</p>", e.getLineNumber(),e.getColumnNumber(),e.getLocalizedMessage())); }
 			});
 			validator.validate(xmlSource);
-			testFile.addStatusText(wrapSuccessSpan("Successful XML validation against " + vs.getCDAXsdFilename()));
-			//testFile.addStatusText("Encountered " + exceptions.size() + " xml validation errors");
-			result = true;
+			testFile.setXmlErrorCount(exceptions.size());
+			// Save the xml validation errors in the test file object for display in the UI
+			if (exceptions.size() > 0) {
+				testFile.addStatusText(wrapErrorSpan("Encountered <span class='btn-danger'>&nbsp;" + exceptions.size() + "&nbsp;</span> xml validation errors"));
+				for (String err : exceptions) {
+					testFile.addXmlError(err);
+				}
+				result = false;
+			}
+			else {
+				testFile.addStatusText(wrapSuccessSpan("Successful XML validation against " + vs.getCDAXsdFilename()));
+				result = true;
+			}
+			
 		} 
 		catch (SAXException e) {
 			testFile.addStatusText(wrapErrorSpan(xmlFilename + " failed XML validation against " + vs.getCDAXsdFilename()));

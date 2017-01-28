@@ -106,7 +106,7 @@ public class HistoryController extends CommonUtilsImpl{
 		for (SchematronCategory dir : dirSpecs) {
 			if (dir.isActive()) {
 				String subDir = dir.getName();
-				logger.info("Getting files for subdir " + subDir);
+				logger.debug("Getting files for subdir " + subDir);
 
 				ArrayList<FileSpec> files = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_RESULTS,subDir, filter,true); // true = sort by last modified date
 				dir.setFiles(files);

@@ -99,6 +99,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			  <li id="tabSummary" class="bg-info"><a id="summaryTabIa" data-toggle="tab" href="#tabSummaryDiv" ><fmt:message key="global.nav.workbench.tab.summary"/></a></li>
 			  <li id="tabLiErrors"        class="bg-danger"><a  id="errorsTaba" data-toggle="tab" href="#tabDivErrors"><fmt:message key="global.nav.workbench.tab.errors"/> (${testCase.errorCount })</a></li>
 			  <li id="tabLiWarnings"      class="bg-warning"><a id="warningsTaba" data-toggle="tab" href="#tabDivWarnings"><fmt:message key="global.nav.workbench.tab.warnings"/> (${testCase.warningCount })</a></li>
+			  <li id="tabLiXmlErrors"     class="bg-danger"><a  id="xmlErrorsTaba" data-toggle="tab" href="#tabDivXmlErrors"><fmt:message key="global.nav.workbench.tab.xmlErrors"/> (${testCase.xmlErrorCount })</a></li>
 			  <li id="tabLiTest"          class="bg-info"><a id="testTaba" data-toggle="tab" href="#tabDivTest"><fmt:message key="global.nav.workbench.tab.testFile"/></a></li>
 			  <li id="tabLiSchematron"    class="bg-success"><a id="schematronTaba" data-toggle="tab" href="#tabDivSchematron"><fmt:message key="global.nav.workbench.tab.schematron"/></a></li>
 			  <li id="tabLiReport"        class="bg-info"><a id="reportTaba" data-toggle="tab" href="#tabDivReport" ><fmt:message key="global.nav.workbench.tab.raw"/></a></li>
@@ -131,6 +132,20 @@ POSSIBILITY OF SUCH DAMAGE.
 					 </c:forEach>
 					 <div class="inline"><button id="btnPrintSummary" type="button" class="btn btn-primary"><fmt:message key="global.button.print"/> <span class="glyphicon glyphicon-print"></span></button></div>
 					 
+			  </div>
+			  
+			  <%-- Test Case XML Errors tab shown only when user clicks on a test case in the summary tab.  Displays the xml syntax validation errors from the test case results object stored in the model --%>
+			  
+			  <div id="tabDivXmlErrors" class="tab-pane fade" style="height:100%">
+			    	<h4 id="xmlTitleXmlErrors"><span><fmt:message key="workbench.title.xmlErrors"/> - ${testCase.filename }</span> </h4>
+			    	<fmt:message key="workbench.title.validatedUsing"/><b>${validationResults.CDAXsdFilename }</b>
+			    	<div id="xmlErrorsDisplayDiv" class="fileDisplayDiv" style="height:85%">
+				    	<ul style="list-style-type:none;">
+					    	<c:forEach items="${testCase.xmlErrors }" var="failure" varStatus="loop">
+					    		<li><div class="bg-danger">${failure}</span></div></li>
+					    	</c:forEach>
+				    	</ul>
+			    	</div>
 			  </div>
 			  
 			  <%-- Test Case Errors tab shown only when user clicks on a test case in the summary tab.  Displays the critical (error) failures from the test case results object stored in the model --%>

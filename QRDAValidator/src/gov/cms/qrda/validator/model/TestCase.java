@@ -77,7 +77,15 @@ public class TestCase extends FileSpec implements Serializable {
 	/**
 	 * A list of informational text populated as the validation processs progresses.
 	 */
-	private ArrayList<String> statusText = new ArrayList<String>();  
+	private ArrayList<String> statusText = new ArrayList<String>(); 
+	/**
+	 * A list of xml validation errors encountered during validation of the file against CDC_XSD
+	 */
+	private ArrayList<String> xmlErrors = new ArrayList<String>();  
+	/**
+	 * The number of xml syntax errors found in the errors list, above.
+	 */
+	private Integer xmlErrorCount = 0;      
 	/**
 	 * The number of crtical errors found in the errors list, above.
 	 */
@@ -144,6 +152,13 @@ public class TestCase extends FileSpec implements Serializable {
 		statusText.add(txt);
 	}
 
+	public ArrayList<String> getXmlErrors() {
+		return xmlErrors;
+	}
+	
+	public void addXmlError(String txt) {
+		xmlErrors.add(txt);
+	}
 	
 	public Integer getErrorCount() {
 		return errorCount;
@@ -152,7 +167,15 @@ public class TestCase extends FileSpec implements Serializable {
 	public void setErrorCount(Integer val) {
 		errorCount = val;
 	}
+
+	public Integer getXmlErrorCount() {
+		return xmlErrorCount;
+	}
 	
+	public void setXmlErrorCount(Integer val) {
+		xmlErrorCount = val;
+	}
+
 	public Integer getWarningCount() {
 		return warningCount;
 	}

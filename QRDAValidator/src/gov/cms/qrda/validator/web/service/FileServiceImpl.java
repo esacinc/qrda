@@ -193,7 +193,7 @@ public class FileServiceImpl implements FileService {
 		try {  
 		    File fileDirectory = fileRepository(baseDir,subDir); // Returns the directory where the file should be found
 		    File file = new File(fileDirectory, filename);
-		    logger.info("Accessing external for reading " + file.getAbsolutePath());
+		    logger.debug("Accessing external for reading " + file.getAbsolutePath());
 		    FileInputStream fileStream = new FileInputStream(file);
 		    return fileStream;
 		} catch (IOException e) {     
@@ -211,7 +211,7 @@ public class FileServiceImpl implements FileService {
 		try {  
 		    File fileDirectory = fileRepository(baseDir, subDir); // Returns the directory where the file should be written
 		    File file = new File(fileDirectory, filename);
-		    logger.info("Opening external for writing " + file.getAbsolutePath());
+		    logger.debug("Opening external for writing " + file.getAbsolutePath());
 		    FileOutputStream fileStream = new FileOutputStream(file);
 		    return fileStream;
 		} catch (IOException e) {     
@@ -276,7 +276,7 @@ public class FileServiceImpl implements FileService {
 	 */
 	@Override
 	public ArrayList<FileSpec> getExtRepositoryFiles(String baseDir, String subDir, String contains, boolean sortByDate) {
-		logger.info(String.format("Get repository files in: %s, subdir: %s %s",baseDir ,subDir,((contains == null)?"":" with name containing: " + contains))) ;
+		logger.debug(String.format("Get repository files in: %s, subdir: %s %s",baseDir ,subDir,((contains == null)?"":" with name containing: " + contains))) ;
 	    File fileDirectory = fileRepository(baseDir,subDir); // Returns the directory to search
 	    File[] listOfFiles = fileDirectory.listFiles();      // Returns the array of file objects found in the directory
 	    
@@ -292,7 +292,7 @@ public class FileServiceImpl implements FileService {
 		    	listOfFiles[i] = pairs[i].f;
 	    }
 	    else {
-	    	logger.info("Sorting by name?");
+	    	logger.debug("Sorting by name?");
 	    	Arrays.sort(listOfFiles);
 	    }
 	    

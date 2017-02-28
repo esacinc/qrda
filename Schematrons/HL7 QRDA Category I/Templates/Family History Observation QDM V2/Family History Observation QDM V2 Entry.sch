@@ -32,6 +32,7 @@
 			<sch:assert id="a-2228-27688-error" test="count(cda:value[@xsi:type='CD'])=1">
 				SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2228-27688).
 			</sch:assert>
+			<sch:assert id="a-2228-28661-error" test="count(../../cda:templateId[@root='2.16.840.1.113883.10.20.24.3.12'][@extension='2016-02-01'])=1">This template SHALL be contained by a Family History Organizer QDM (V3) (CONF:2228-28661).</sch:assert>
 		</sch:rule>
 	
 		<sch:rule id="Family_History_Observation_QDM_V2-may-code-translation-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.112'][@extension='2016-02-01']]/cda:code/cda:translation">

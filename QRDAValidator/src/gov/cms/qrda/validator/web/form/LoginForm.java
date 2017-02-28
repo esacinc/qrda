@@ -33,7 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
  * Spring MVC form containing user input required for logging in as administrator
  *  
  * 
- * @author Dan Donahue
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 public class LoginForm {

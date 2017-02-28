@@ -65,7 +65,7 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
  * 
  * @see gov.cms.qrda.validator.web.service.FileService
  * 
- * @author Dan Donahue
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 @Service
@@ -80,7 +80,7 @@ public class FileServiceImpl implements FileService {
     
     ////////////////////////////// CLASSPATH FILES ////////////////////////////////////////////////////////
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.loadProperties
+	 * @see gov.cms.qrda.validator.web.service.FileService#loadProperties
 	 */
 	@Override
 	public Properties loadProperties(String propertiesFilename) {
@@ -102,7 +102,7 @@ public class FileServiceImpl implements FileService {
 	}
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.getProperty
+	 * @see gov.cms.qrda.validator.web.service.FileService#getProperty
 	 */
 	@Override
 	public String getProperty(String propertiesFilename, String key, String defaultVal) {
@@ -128,7 +128,8 @@ public class FileServiceImpl implements FileService {
 
 	
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.getProperty
+	 *
+	 * @see gov.cms.qrda.validator.web.service.FileService#getProperty
 	 */
 	@Override
 	public Integer getProperty(String propertiesFilename, String key, Integer defaultVal) {
@@ -156,7 +157,7 @@ public class FileServiceImpl implements FileService {
     ////////////////////////////// EXTERNAL FILES - LOCATED OUTSIDE THE SERVER CONTEXT //////////////////////////////////////////////////
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.loadPropertiesExt
+	 * @see gov.cms.qrda.validator.web.service.FileService#loadPropertiesExt
 	 * @return The properties file
 	 */
 	@Override
@@ -185,14 +186,14 @@ public class FileServiceImpl implements FileService {
 
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.openExtFileForReading
+	 * @see gov.cms.qrda.validator.web.service.FileService#openExtFileForReading
 	 */
 	@Override
 	public FileInputStream openExtFileForReading(String baseDir, String subDir, String filename) {
 		try {  
 		    File fileDirectory = fileRepository(baseDir,subDir); // Returns the directory where the file should be found
 		    File file = new File(fileDirectory, filename);
-		    logger.info("Accessing external for reading " + file.getAbsolutePath());
+		    logger.debug("Accessing external for reading " + file.getAbsolutePath());
 		    FileInputStream fileStream = new FileInputStream(file);
 		    return fileStream;
 		} catch (IOException e) {     
@@ -203,14 +204,14 @@ public class FileServiceImpl implements FileService {
 	}
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.openExtFileForWriting
+	 * @see gov.cms.qrda.validator.web.service.FileService#openExtFileForWriting
 	 */
 	@Override
 	public FileOutputStream openExtFileForWriting(String baseDir, String subDir, String filename) {
 		try {  
 		    File fileDirectory = fileRepository(baseDir, subDir); // Returns the directory where the file should be written
 		    File file = new File(fileDirectory, filename);
-		    logger.info("Opening external for writing " + file.getAbsolutePath());
+		    logger.debug("Opening external for writing " + file.getAbsolutePath());
 		    FileOutputStream fileStream = new FileOutputStream(file);
 		    return fileStream;
 		} catch (IOException e) {     
@@ -222,7 +223,7 @@ public class FileServiceImpl implements FileService {
 
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.readExtFileUnparsed
+	 * @see gov.cms.qrda.validator.web.service.FileService#readExtFileUnparsed
 	 * 
 	 */
 
@@ -248,7 +249,7 @@ public class FileServiceImpl implements FileService {
 	}
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.readExtFileUnparsed
+	 * @see gov.cms.qrda.validator.web.service.FileService#readExtFileUnparsed
 	 */
 	@Override
 	public String readExtFileUnparsed (String absolutePath) {
@@ -271,11 +272,11 @@ public class FileServiceImpl implements FileService {
 	}
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.getExtRepositoryFiles
+	 * @see gov.cms.qrda.validator.web.service.FileService#getExtRepositoryFiles
 	 */
 	@Override
 	public ArrayList<FileSpec> getExtRepositoryFiles(String baseDir, String subDir, String contains, boolean sortByDate) {
-		logger.info(String.format("Get repository files in: %s, subdir: %s %s",baseDir ,subDir,((contains == null)?"":" with name containing: " + contains))) ;
+		logger.debug(String.format("Get repository files in: %s, subdir: %s %s",baseDir ,subDir,((contains == null)?"":" with name containing: " + contains))) ;
 	    File fileDirectory = fileRepository(baseDir,subDir); // Returns the directory to search
 	    File[] listOfFiles = fileDirectory.listFiles();      // Returns the array of file objects found in the directory
 	    
@@ -291,7 +292,7 @@ public class FileServiceImpl implements FileService {
 		    	listOfFiles[i] = pairs[i].f;
 	    }
 	    else {
-	    	logger.info("Sorting by name?");
+	    	logger.debug("Sorting by name?");
 	    	Arrays.sort(listOfFiles);
 	    }
 	    
@@ -322,7 +323,7 @@ public class FileServiceImpl implements FileService {
 	}
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.createTestCases
+	 * @see gov.cms.qrda.validator.web.service.FileService#createTestCases
 	 */
 	@Override
 	public List<TestCase> createTestCases(String schematronFilename, String schematronType, List<String>testFilenames, String filenamePostFix, String resultsFolder) {
@@ -336,7 +337,7 @@ public class FileServiceImpl implements FileService {
 
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.createResultsDir
+	 * @see gov.cms.qrda.validator.web.service.FileService#createResultsDir
 	 */
 	@Override
 	public boolean createResultsDir(String dirname) {
@@ -356,7 +357,7 @@ public class FileServiceImpl implements FileService {
 
 	
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.uploadFile
+	 * @see gov.cms.qrda.validator.web.service.FileService#uploadFile
 	 */
 	public boolean uploadFile(MultipartFile file, String base, String subdir, String name) {
 		boolean result = false;
@@ -391,7 +392,7 @@ public class FileServiceImpl implements FileService {
     }
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.deleteFile
+	 * @see gov.cms.qrda.validator.web.service.FileService#deleteFile
 	 */
 	@Override
 	public boolean deleteFile(String filename, String base, String subdir) {
@@ -408,7 +409,7 @@ public class FileServiceImpl implements FileService {
     }
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.getAbsolutePath
+	 * @see gov.cms.qrda.validator.web.service.FileService#getAbsolutePath
 	 */
 	@Override
 	public String getAbsolutePath(String filename, String base, String subdir) {
@@ -422,7 +423,7 @@ public class FileServiceImpl implements FileService {
 	}
 	
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.findExpectedErrorText
+	 * @see gov.cms.qrda.validator.web.service.FileService#findExpectedErrorText
 	 * 
 	 */
 	@Override
@@ -464,7 +465,7 @@ public class FileServiceImpl implements FileService {
 	}
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.renameCategoryDirectories
+	 * @see gov.cms.qrda.validator.web.service.FileService#renameCategoryDirectories
 	 */
 	@Override
 	public void renameCategoryDirectories(String currName, String newName) {
@@ -475,7 +476,7 @@ public class FileServiceImpl implements FileService {
 	}
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.createCategoryDirectories
+	 * @see gov.cms.qrda.validator.web.service.FileService#createCategoryDirectories
 	 */
 	@Override
 	public void createCategoryDirectories(String newName) {
@@ -486,7 +487,7 @@ public class FileServiceImpl implements FileService {
 	}
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.deleteCategoryDirectories
+	 * @see gov.cms.qrda.validator.web.service.FileService#deleteCategoryDirectories
 	 */
 	@Override
 	public boolean deleteCategoryDirectories(String catName) {
@@ -499,7 +500,7 @@ public class FileServiceImpl implements FileService {
 	}
 	
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.copyIsoFiles
+	 * @see gov.cms.qrda.validator.web.service.FileService#copyIsoFiles
 	 */
 	@Override
 	public boolean copyIsoFiles(String newName) {
@@ -516,7 +517,7 @@ public class FileServiceImpl implements FileService {
 	}
 
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.writeTestSuite
+	 * @see gov.cms.qrda.validator.web.service.FileService#writeTestSuite
 	 */
 	@Override
 	public void writeTestSuite(ValidationSuite vs) {
@@ -538,7 +539,7 @@ public class FileServiceImpl implements FileService {
 	}
 	
 	/**
-	 * @see gov.cms.qrda.validator.web.service.FileService.readTestSuite
+	 * @see gov.cms.qrda.validator.web.service.FileService#readTestSuite
 	 */
     @Override
 	public ValidationSuite readTestSuite(String subDir, String filename) {
@@ -558,7 +559,7 @@ public class FileServiceImpl implements FileService {
     }
 
  	/**
- 	 * @see gov.cms.qrda.validator.web.service.FileService.convertToURL
+ 	 * @see gov.cms.qrda.validator.web.service.FileService#convertToURL
  	 */
      @Override
      public String convertToURL(String pathname, String topDir){

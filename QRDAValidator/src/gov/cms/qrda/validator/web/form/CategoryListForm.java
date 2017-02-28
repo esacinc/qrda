@@ -37,7 +37,7 @@ POSSIBILITY OF SUCH DAMAGE.
  * Spring MVC form containing user input required for manageing the schematron category list.
  *  
  * 
- * @author Dan Donahue
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 public class CategoryListForm {

@@ -51,7 +51,7 @@ import gov.cms.qrda.validator.web.service.SchematronCategoryService;
 
 /**
  * Handles requests to/from the Categories management page
- * @author Dan Donahue
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 @Controller
@@ -66,9 +66,9 @@ public class SchematronCategoryController extends CommonUtilsImpl{
 	/**
 	 * Default mapping.  Gathers the categories from disc and displays them on the UI
 	 * 
-	 * @param locale
-	 * @param model
-	 * @param session
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param session, the current HttpSession
 	 * @return  categories management jsp page
 	 * 
 	 */
@@ -103,10 +103,10 @@ public class SchematronCategoryController extends CommonUtilsImpl{
 	/**
 	 * Called when user clicks on save button on category management page.
 	 * 
-	 * @param categoryForm
-	 * @param locale
-	 * @param model
-	 * @param session
+	 * @param categoryForm, the CategoryListForm filled in by user in the UI
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param session, the current HttpSession
 	 * @return category management jsp page
 	 */
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
@@ -133,11 +133,11 @@ public class SchematronCategoryController extends CommonUtilsImpl{
 	/**
 	 * Called when user clicks on add button on category management page.
 	 * 
-	 * @param categoryForm
-	 * @param locale
-	 * @param model
-	 * @param session
-	 * @return
+	 * @param categoryForm, the AddCategoryForm filled in by the user on the UI
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param session, the current HttpSession
+	 * @return return to the ShowCategories page of the UI
 	 */
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String add(@ModelAttribute("addCategoryForm") AddCategoryForm categoryForm, Locale locale, Model model, HttpSession session) {
@@ -165,11 +165,11 @@ public class SchematronCategoryController extends CommonUtilsImpl{
 	/**
 	 * Called when user clicks on an "x" to remove a category from the system.
 	 * 
-	 * @param catName
-	 * @param locale
-	 * @param model
-	 * @param session
-	 * @return
+	 * @param catName, the name of the category to remove
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param session, the current HttpSession
+	 * @return return to the ShowCategories page of the UI
 	 */
 	@RequestMapping(value = "/remove/{catName}", method = RequestMethod.GET)
 	public String remove(@PathVariable String catName,  Locale locale, Model model, HttpSession session) {

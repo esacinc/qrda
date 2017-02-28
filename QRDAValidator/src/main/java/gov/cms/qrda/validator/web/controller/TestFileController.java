@@ -90,7 +90,7 @@ public class TestFileController extends CommonUtilsImpl{
 		for (SchematronCategory dir : dirSpecs) {
 			if (dir.isActive()) {
 				String subDir = dir.getName();
-				logger.info("Getting files for subdir " + subDir);
+				logger.debug("Getting files for subdir " + subDir);
 
 				ArrayList<FileSpec> files = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_TESTFILES,subDir, null);
 				dir.setFiles(files);

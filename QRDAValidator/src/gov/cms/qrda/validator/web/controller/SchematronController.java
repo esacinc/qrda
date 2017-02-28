@@ -56,7 +56,7 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
 
 /**
  * Handles requests to/from the Schematron Inventory page
- * @author Dan Donahue
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 @Controller
@@ -73,8 +73,9 @@ public class SchematronController extends CommonUtilsImpl {
 	 * Default mapping.  Gathers the file specs from each sub folder in the Schematrons folder of the QRDA_HOME/qrda file space on the server.
 	 * Also creates a form enabling users to upload files to those same folders.
 	 * 
-	 * @param locale
-	 * @param model
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param session, the current HttpSession
 	 * @return  schematrons jsp page
 	 * 
 	 */
@@ -91,7 +92,7 @@ public class SchematronController extends CommonUtilsImpl {
 		for (SchematronCategory dir : dirSpecs) {
 			if (dir.isActive()) {
 				String subDir = dir.getName();
-				logger.info("Getting files for subdir " + subDir);
+				logger.debug("Getting files for subdir " + subDir);
 
 				ArrayList<FileSpec> files = fileService.getExtRepositoryFiles(QRDA_URIResolver.REPOSITORY_SCHEMATRONS,subDir, null);
 				dir.setFiles(files);
@@ -109,12 +110,12 @@ public class SchematronController extends CommonUtilsImpl {
 	 * (as specified by the filename and the folder name - type - of the folder where the particular schematron file resides)
 	 * into a string and puts that string into the response of this call.
 	 * 
-	 * @param locale
-	 * @param model
-	 * @param type
-	 * @param filename
-	 * @param session
-	 * @return
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param type, the schematron type (subdirectory under the schematrons directory)
+	 * @param filename, the schematron file to open
+	 * @param session, the current HttpSession object
+	 * @return the HttpResponse body
 	 */
 	@RequestMapping(value = "getXML", method = RequestMethod.GET)
 	public @ResponseBody String gettext (Locale locale, Model model,  @RequestParam("type") String type, @RequestParam("file") String filename, HttpSession session) {
@@ -129,12 +130,12 @@ public class SchematronController extends CommonUtilsImpl {
 	 * Removes the given file (as specified by the filename and the folder name - type - of the folder where the particular schematron file resides)
 	 * from the system.
 	 * 
-	 * @param filename
-	 * @param subdir
-	 * @param locale
-	 * @param model
-	 * @param request
-	 * @return
+	 * @param filename, the filename of the file to remove
+	 * @param subdir, the subdirectory under the schematrons directory where file is located
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param request, the current HttpServletRequest
+	 * @return to the scheamtrons page
 	 */
 	@RequestMapping(value="/remove/{filename}&{subdir}", method = RequestMethod.GET)
     public String processRemoveFile(@PathVariable String filename,  @PathVariable String subdir, Locale locale, Model model, HttpServletRequest request) {
@@ -147,12 +148,12 @@ public class SchematronController extends CommonUtilsImpl {
 	/**
 	 * Uploads a file into the sub directory under the schematron file repository.
 	 * 
-	 * @param uploadFileForm
-	 * @param result
-	 * @param locale
-	 * @param model
-	 * @param request
-	 * @return
+	 * @param uploadFileForm, the UploadFileForm filled out by user in the UI
+	 * @param result, the binding result populated when user submits the form
+	 * @param locale, the current Locale
+	 * @param model, a org.springframework.ui.Model object
+	 * @param request, the current HttpServletRequest
+	 * @return returns to the scheamtrons page
 	 */
 	@RequestMapping(value="/upload", method = RequestMethod.POST)
     public String processUploadFileForm(UploadFileForm uploadFileForm, BindingResult result, Locale locale, Model model, HttpServletRequest request) {

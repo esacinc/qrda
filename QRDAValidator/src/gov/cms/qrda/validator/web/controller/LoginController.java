@@ -51,7 +51,7 @@ import gov.cms.qrda.validator.web.service.SchematronCategoryService;
  * Handles requests for the application home page.
  * Also maps the url /info to this page.
  * 
- * @author Dan Donahue
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 @Controller

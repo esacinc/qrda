@@ -36,7 +36,7 @@ import gov.cms.qrda.validator.model.ValidationSuite;
  * The ValidationService creates and run validation suites. A validation suite consists of a schematron file, and a list
  * of test case files to validate against the schematron. All results are stored in the validation suite object.
  * 
- * @author Dan Donahue
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 public interface ValidationService {
@@ -45,8 +45,19 @@ public interface ValidationService {
     * Creates a ValidationSuite from the arguments provided. The schematronType argument, for example "HL7", "CEC", "HQR" or "PQRS",
     * represents a subdirectory under the QRDA_HOME/qrda/schematrons folder on the server.
     *
-    **/
+ 	 * @param name, the name of the suite to use
+	 * @param schematronType, the type (category) of scheamtron
+	 * @param schematronFile, the name of the schematron file to use
+	 * @param testCases, the list of test filenames to use
+	 * @return a ValidationSuite object.
+	 */
 	public ValidationSuite setupValidationSuite(String name, String schematronType, String schematronFile, ArrayList<String> testCases);
+	
+	/**
+	 * Resets the given ValidationSuite object to a "tests not run" state.
+	 * @param vs, the Validation suite to reset
+	 * @return the ValidationSuite object
+	 */
 	public ValidationSuite resetValidationSuite(ValidationSuite vs)	;
 	
 	/**
@@ -54,7 +65,15 @@ public interface ValidationService {
      * The schematron is first transformed into an .xsl file prior to applying it to the test cases.
      * Interim result status text is added to the validation suite and each test case as the validation process proceeds.
      * 
+     * @param vs, the ValidationSuite object to run.
      */
 	public void runValidation(ValidationSuite vs);
+	
+	/**
+	 * Retrieves a validation suite from the application history.
+	 * @param type, the type (category) of the schematron used in the ValidationSuite object.
+	 * @param filename, the name of the ValidationSuite to retrieve
+	 * @return a ValidationSuite object
+	 */
 	public ValidationSuite getValidationFromHistory(String type, String filename);
 }

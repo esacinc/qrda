@@ -19,7 +19,8 @@
             <sch:assert id="a-2228-28352-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2228-28352).  </sch:assert>
             <sch:assert id="a-2228-28353-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:2228-28353). </sch:assert>
             <sch:assert id="a-2228-28354-error" test="count(cda:participant[@typeCode='DST'][count(cda:time)=1])=1">SHALL contain exactly one [1..1] participant (CONF:2228-28354) such that it SHALL contain exactly one [1..1] @typeCode="DST" Destination (CONF:2228-28364). SHALL contain exactly one [1..1] time (CONF:2228-28355). </sch:assert>
-         </sch:rule>
+            <sch:assert id="a-2228-28664-error" test="count(../../cda:templateId[@root='2.16.840.1.113883.10.20.24.3.142'])=1">This template SHALL be contained by a Transfer To Act (CONF:2228-28664).</sch:assert> 
+        </sch:rule>
          <sch:rule id="Transfer-To-code-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.82']]/cda:code">
             <sch:assert id="a-2228-28361-error" test="@code='77306-9'">This code SHALL contain exactly one [1..1] @code="77306-9" Discharge disposition (CONF:2228-28361). </sch:assert>
          </sch:rule>

@@ -19,6 +19,7 @@
             <sch:assert id="a-2228-28514-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.136'])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-28514) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.136" (CONF:2228-28518). </sch:assert>
             <sch:assert id="a-2228-28515-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2228-28515). </sch:assert>
             <sch:assert id="a-2228-28516-error" test="count(cda:value[@xsi:type='CD'])=1">SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2228-28516).  </sch:assert>
+            <sch:assert id="a-2228-28667-error" test="count(../../cda:templateId[@root='2.16.840.1.113883.10.20.24.3.138'][@extension='2016-08-01'])=1">This template SHALL be contained by a Symptom Concern Act (V2) (CONF:2228-28667).</sch:assert>
         </sch:rule>
         <sch:rule id="Symptom-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.136']]/cda:code">
             <sch:assert id="a-2228-28520-error" test="@code='75325-1'">This code SHALL contain exactly one [1..1] @code="75325-1" Symptom (CONF:2228-28520). </sch:assert>

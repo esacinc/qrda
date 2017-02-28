@@ -7,11 +7,11 @@
 	<sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
 	
 	<sch:phase id="errors">
-		<sch:active pattern="Medication_Active_V2-pattern-errors" />
+		<sch:active pattern="Medication_Activity_V2-pattern-errors" />
 	</sch:phase>
 	
-	<sch:pattern id="Medication_Active_V2-pattern-errors">
-		<sch:rule id="Medication_Active_V2-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]">
+	<sch:pattern id="Medication_Activity_V2-pattern-errors">
+		<sch:rule id="Medication_Activity_V2-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]">
 			<sch:assert id="a-1098-7496-error" test="@classCode='SBADM'">
 				SHALL contain exactly one [1..1] @classCode="SBADM" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-7496).
 			</sch:assert>
@@ -29,9 +29,9 @@
 			<sch:assert id="a-1098-7507-error" test="count(cda:statusCode) = 1">
 				SHALL contain exactly one [1..1] statusCode (CONF:1098-7507).			
 			</sch:assert>
-			<sch:assert id="a-1098-7508-error" test="count(cda:effectiveTime[@xsi:type='IVL_TS']) = 1 and (cda:effectiveTime[@xsi:type='IVL_TS'][@value] or count(cda:effectiveTime[@xsi:type='IVL_TS'][cda:low])=1) and not(cda:effectiveTime[@xsi:type='IVL_TS'][@value] and cda:effectiveTime[@xsi:type='IVL_TS'][cda:low])">
+			<sch:assert id="a-1098-7508-error" test="count(cda:effectiveTime) = 1 and (cda:effectiveTime[@value] or count(cda:effectiveTime[cda:low])=1) and not(cda:effectiveTime[@value] and cda:effectiveTime[cda:low])">
 				SHALL contain exactly one [1..1] effectiveTime (CONF:1098-7508) such that it
-					This effectiveTime SHALL contain either a low or a @value but not both (CONF:1098-32890).
+					SHALL contain either a low or a @value but not both (CONF:1098-32890).
 			</sch:assert>
 			<sch:assert id="a-1098-7516-error" test="count(cda:doseQuantity) = 1">
 				SHALL contain exactly one [1..1] doseQuantity (CONF:1098-7516).
@@ -41,25 +41,25 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Medication_Active_V2-code-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]/cda:statusCode">
+		<sch:rule id="Medication_Activity_V2-code-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]/cda:statusCode">
 			<sch:assert id="a-1098-32360-error" test="@code">
 				This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet ActStatus urn:oid:2.16.840.1.113883.1.11.159331 DYNAMIC (CONF:1098-32360).			
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Active_V2-may-rateQuantity-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]/cda:rateQuantity">
+		<sch:rule id="Medication_Activity_V2-may-rateQuantity-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]/cda:rateQuantity">
 			<sch:assert id="a-1098-7525-error" test="@unit">
 				The rateQuantity, if present, SHALL contain exactly one [1..1] @unit, which SHALL be selected from ValueSet UnitsOfMeasureCaseSensitive urn:oid:2.16.840.1.113883.1.11.12839 DYNAMIC (CONF:1098-7525).
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Active_V2-consumable-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]/cda:consumable">
+		<sch:rule id="Medication_Activity_V2-consumable-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]/cda:consumable">
 			<sch:assert id="a-1098-16085-error" test="count(cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.23'][@extension='2014-06-09']])=1">
 				This consumable SHALL contain exactly one [1..1] Medication Information (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.23:2014-06-09) (CONF:1098-16085).
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Active_V2-may-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]/cda:precondition">
+		<sch:rule id="Medication_Activity_V2-may-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]/cda:precondition">
 			<sch:assert id="a-1098-31882-error" test="@typeCode='PRCN'">
 				The precondition, if present, SHALL contain exactly one [1..1] @typeCode="PRCN" (CONF:1098-31882).
 			</sch:assert>
@@ -69,8 +69,8 @@
 		</sch:rule>
 	</sch:pattern>
 	
-	<sch:pattern id="Medication_Active_V2-pattern-warnings">
-		<sch:rule id="Medication_Active_V2-effectiveTime-warnings" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]/cda:effectiveTime">
+	<sch:pattern id="Medication_Activity_V2-pattern-warnings">
+		<sch:rule id="Medication_Activity_V2-effectiveTime-warnings" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]/cda:effectiveTime">
 			<sch:assert id="a-1098-7513-warning" test="parent::node()[count(cda:effectiveTime[@operator='A'][@xsi:type='PIVL_TS' or 'EIVL_TS'])=1]">
 				SHOULD contain zero or one [0..1] effectiveTime (CONF:1098-7513) such that it
 					SHALL contain exactly one [1..1] @operator="A" (CONF:1098-9106).
@@ -78,13 +78,13 @@
 			</sch:assert>
 		</sch:rule>
 		
-		<sch:rule id="Medication_Active_V2-doseQuantity-warnings" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]/cda:doseQuantity">
+		<sch:rule id="Medication_Activity_V2-doseQuantity-warnings" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]/cda:doseQuantity">
 			<sch:assert id="a-1098-7526-warning" test="@unit">
 				This doseQuantity SHOULD contain zero or one [0..1] @unit, which SHALL be selected from ValueSet UnitsOfMeasureCaseSensitive urn:oid:2.16.840.1.113883.1.11.12839 DYNAMIC (CONF:1098-7526).
 			</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Medication_Active_V2-warnings" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]">
+		<sch:rule id="Medication_Activity_V2-warnings" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]">
 			<sch:assert id="a-1098-7514-warning" test="count(cda:routeCode) = 1">
 				SHOULD contain zero or one [0..1] routeCode, which SHALL be selected from ValueSet Medication Route FDA urn:oid:2.16.840.1.113883.3.88.12.3221.8.7 DYNAMIC (CONF:1098-7514).
 			</sch:assert>

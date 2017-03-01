@@ -48,7 +48,7 @@
     
     <sch:pattern id="Reporting_Stratum-pattern-warnings">
         <sch:rule id="Reporting_Stratum-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.4']]">
-            <sch:assert id="a-77-17580-warning" test="count(cda:value)=1">SHOULD contain zero or one [0..1] value (CONF:17580). </sch:assert>
+            <sch:assert id="a-77-17580-warning" test="count(cda:value)=1">SHOULD contain zero or one [0..1] value (CONF:77-17580). </sch:assert>
         </sch:rule>
     </sch:pattern>
             

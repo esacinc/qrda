@@ -21,7 +21,7 @@
             <sch:assert id="a-1198-32928-error" test="count(cda:value[@xsi:type='CD' and @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.1.11.20549']/voc:code/@value or @nullFlavor])=1">SHALL contain exactly one [1..1] value with @xsi:type="CD", where the code SHALL be selected from ValueSet Criticality Observation urn:oid:2.16.840.1.113883.1.11.20549 STATIC 2015-08-01 (CONF:1198-32928).</sch:assert>
         </sch:rule>
         <sch:rule id="Criticality-Observation-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.145']]/cda:code">
-            <sch:assert id="a-1198-32925-error" test="@code='NEW-LOINC-CRITICALITY'"> This code SHALL contain exactly one [1..1] @code="NEW-LOINC-CRITICALITY" Criticality (CONF:1198-32925). </sch:assert>
+            <sch:assert id="a-1198-32925-error" test="@code='82606-5'"> This code SHALL contain exactly one [1..1] @code="82606-5" Criticality (CONF:1198-32925). </sch:assert>
             <sch:assert id="a-1198-32926-error" test="@codeSystem='2.16.840.1.113883.6.1'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:1198-32926). </sch:assert>
         </sch:rule>
         <sch:rule id="Criticality-Observation-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.145']]/cda:statusCode">

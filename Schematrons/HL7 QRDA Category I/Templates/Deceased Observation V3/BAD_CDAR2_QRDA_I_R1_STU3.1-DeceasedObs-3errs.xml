@@ -5,7 +5,7 @@
   -->
   <!-- 
     Test failures added - Dan Donahue
-    Total Errors Expected: 2
+    Total Errors Expected: 3
     QDM Datatype: Patient Characteristic, Expired
       Failure a-1198-14873 - Missing ID
       Failure a-1198-19095 - Status Code = completed misspelled

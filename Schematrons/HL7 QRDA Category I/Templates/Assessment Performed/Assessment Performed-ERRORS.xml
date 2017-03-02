@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title:  Assessment Performed, Minimal sample, with Errors
+    Author: Dan Donahue
+    Date:   03-02-2016
+    
+    Total Errors Expected: 10
+       Failure a-3265-28670-error SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3265-28670)
+       Failure a-3265-28669-error SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3265-28669)
+       Failure a-3265-28652-error SHALL contain exactly one [1..1] templateId (CONF:3265-28652) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.144" (CONF:3265-28660)
+       Failure a-3265-28656-error SHALL contain exactly one [1..1] code (CONF:3265-28656)
+       Failure a-3265-28653-error SHALL contain exactly one [1..1] statusCode (CONF:3265-28653)
+       Failure a-3265-28654-error SHALL contain exactly one [1..1] effectiveTime (CONF:3265-28654)
+       Failure a-3265-28667-error code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:3265-28667)
+       Failure a-3265-28662-error statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3265-28662)
+       Failure a-3265-28663-error effectiveTime SHALL contain exactly one [1..1] low (CONF:3265-28663)
+       Failure a-3265-28698-error methodCode, if present, SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:3265-28698)
+ 
+    Total Warnings Expected: 0
+-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+	xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+	<!--  Failure a-3265-28670-error Bad class Code. Failure a-3265-28669-error Bad mood code -->
+	<observation classCode="OBSerr" moodCode="EVNerr">
+		<!-- Assessment Performed -->
+		<templateId root="2.16.840.1.113883.10.20.24.3.144" />
+		<!-- Failure a-3265-28652-error Zero or multiple template ids -->
+		<templateId root="2.16.840.1.113883.10.20.24.3.144" />
+		<id root="d55c711a-f958-4807-bdb6-45fe5b6195c0" />
+		<code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+			displayName="Physical limitation score [KCCQ]"
+			sdtc:valueSet="2.16.840.1.113883.3.464.1003.113.12.1036" />
+		<!-- Failure a-3265-28656-error Zero or multile codes -->
+		<!-- Failure a-3265-28667-error code missing @sdtc:valueSet in code -->
+		<code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Physical limitation score [KCCQ]" />
+		<statusCode code="completed" />
+		<!-- Failure a-3265-28653-error Zero or multiple statusCode -->
+		<!-- Failure a-3265-28662-error missing or bad @code="completed" -->
+		<statusCode code="completedErr" />
+		<effectiveTime>
+			<low value="201505061000" />
+		</effectiveTime>
+		<!-- Failure a-3265-28654-error Zero or multiple effectiveTimes -->
+		<!-- Failure a-3265-28663-error missing or multiple lows in effectiveTime -->
+		<effectiveTime>
+			<high value="201505061015" />
+		</effectiveTime>
+		<!--  Failure a-3265-28698-error if methodCode, missing or bad  @sdtc:valueSet -->
+		<methodCode>
+		</methodCode>
+	</observation>
+</ClinicalDocument>

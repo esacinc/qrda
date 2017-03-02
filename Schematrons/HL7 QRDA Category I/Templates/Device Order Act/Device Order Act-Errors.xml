@@ -5,10 +5,9 @@
   -->
   <!-- 	 
     Errors added to test Device Order Act template schematron error assertions - Dan Donahue
-    Total Errors Expected: 7
+    Total Errors Expected: 6
           Failure a-2228-28444-error Bad Class Code
           Failure a-2228-28445-error Bad Mood Code
-          Failure a-2228-28441-error Duplicate template with root id
           Failure a-2228-28442-error More than one code
           Failure a-2228-28448-error Missing or incorrect @code value
           Failure a-2228-28449-error Missing or incorrect @codeSystem value
@@ -988,8 +987,6 @@
           <entry>
             <!-- Device Order Act -->
             <act classCode="ACTErr" moodCode="RQOErr"> <!-- a-2228-28444-error Bad Class Code, a-2228-28445-error Bad Mood Code -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.130"/>
-              <!-- a-2228-28441-error Duplicate template with root id -->
               <templateId root="2.16.840.1.113883.10.20.24.3.130"/>
               <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
               <code code="SPLY" codeSystem="2.16.840.1.113883.5.6" displayName="Supply"

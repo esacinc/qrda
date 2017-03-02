@@ -1857,6 +1857,8 @@ This sample file contains an example of each Patient Data Section QDM contained 
             <act classCode="ACTErr" moodCode="EVNErr"> <!-- a-2228-28477-error Bad Class Code, a-2228-28478-error Bad Mood Code -->
               <!--Encounter performed Act -->
               <templateId root="2.16.840.1.113883.10.20.24.3.133"/>
+              <!-- a-2228-28475-error more than one template ID -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.133"/>
               <!-- a-2228-28480-error Missing id -->
               <!-- <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/> -->
               <code code="ENC" codeSystem="2.16.840.1.113883.5.6" displayName="Encounter"

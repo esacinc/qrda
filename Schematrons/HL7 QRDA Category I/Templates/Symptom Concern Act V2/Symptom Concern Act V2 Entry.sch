@@ -22,8 +22,7 @@
         </sch:rule>
         <sch:rule id="Symptom-Concern-Act-statusCode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.138'][@extension='2016-08-01']]/cda:statusCode">
             <sch:assert id="a-3265-28545-error" test="@code">This statusCode SHALL contain exactly one [1..1] @code (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3265-28545).</sch:assert>
-            <sch:assert id="a-3265-28695-error" test="@code='active' or @code='resolved'">The statusCode/@code SHALL be either "active" or "resolved" (CONF:3265-28695).</sch:assert>
-        </sch:rule>
+         </sch:rule>
         <sch:rule id="Symptom-Concern-Act-effectiveTime-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.138'][@extension='2016-08-01']]/cda:effectiveTime">
             <sch:assert id="a-3265-28546-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:3265-28546).  </sch:assert>
         </sch:rule>

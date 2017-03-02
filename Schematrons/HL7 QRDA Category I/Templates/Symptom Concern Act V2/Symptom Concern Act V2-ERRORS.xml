@@ -5,7 +5,7 @@
     Author: Dan Donahue
     Date:   03-02-2016
     
-    Total Errors Expected: 9
+    Total Errors Expected: 8
             Failure a-3265-28547-error SHALL contain exactly one [1..1] @classCode="ACT" Act (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3265-28547). 
             Failure a-3265-28548-error SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3265-28548).  
             Failure a-3265-28539-error SHALL contain exactly one [1..1] templateId (CONF:3265-28539) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.138" (CONF:3265-28544). SHALL contain exactly one [1..1] @extension="2016-08-01" (CONF:3265-28694).
@@ -13,7 +13,6 @@
             Failure a-3265-28541-error SHALL contain exactly one [1..1] effectiveTime (CONF:3265-28541).   
             Failure a-3265-28538-error SHALL contain exactly one [1..1] entryRelationship (CONF:3265-28538) such that it SHALL contain exactly one [1..1] @typeCode="SUBJ" Has subject (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3265-28543). SHALL contain exactly one [1..1] Symptom (identifier: urn:oid:2.16.840.1.113883.10.20.24.3.136) (CONF:3265-28542). 
             Failure a-3265-28545-error statusCode SHALL contain exactly one [1..1] @code (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3265-28545).
-            Failure a-3265-28695-error statusCode @code SHALL be either "active" or "resolved" (CONF:3265-28695).
             Failure a-3265-28546-error effectiveTime SHALL contain exactly one [1..1] low (CONF:3265-28546).  
  
     Total Warnings Expected: 0
@@ -30,7 +29,6 @@
 			<statusCode code="active"/>
 			<!-- Failure a-3265-28540-error  zero or multiple statusCode-->
 			<!-- Failure a-3265-28545-error Bad or missing @code -->
-			<!-- Failure a-3265-28695-error statusCode @code not = "active" or "resolved"-->
 			<statusCode></statusCode>
 			<effectiveTime>
 				<low value="201504081130"/>

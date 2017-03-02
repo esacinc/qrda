@@ -1183,4 +1183,9 @@
     <code value="SPRF" displayName="secondary performer" codeSystemName="HL7ParticipationType" codeSystem="2.16.840.1.113883.5.90" />
     <code value="PPRF" displayName="primary performer" codeSystemName="HL7ParticipationType" codeSystem="2.16.840.1.113883.5.90" />
   </system>
+  <system valueSetOid="2.16.840.1.113883.1.11.20549" valueSetName="Criticality Observation">
+    <code value="CRITL" displayName="Low Criticality" codeSystemName="Observation Value" codeSystem="2.16.840.1.113883.5.1063" />
+    <code value="CRITH" displayName="High Criticality" codeSystemName="Observation Value" codeSystem="2.16.840.1.113883.5.1063" />
+    <code value="CRITU" displayName="Unable to assess criticality" codeSystemName="Observation Value" codeSystem="2.16.840.1.113883.5.1063" />
+  </system>
 </systems>

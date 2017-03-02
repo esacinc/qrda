@@ -15,7 +15,7 @@
         <sch:rule id="Assessment_performed-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.144']]">
             <sch:assert id="a-3265-28670-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3265-28670).</sch:assert>
             <sch:assert id="a-3265-28669-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3265-28669).</sch:assert>
-            <sch:assert id="a-3265-28652-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.144'])=1">SHALL contain exactly one [1..1] templateId (CONF:3265-28652) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.144" (CONF:3265-28660).</sch:assert>
+            <sch:assert id="a-3265-28652-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.144'][@extension='2016-08-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3265-28652) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.144" (CONF:3265-28660) SHALL contain exactly one [1..1] @extension="2016-08-01" (CONF:3265-28701).</sch:assert>
             <sch:assert id="a-3265-28656-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:3265-28656).</sch:assert>
             <sch:assert id="a-3265-28653-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:3265-28653).</sch:assert>
             <sch:assert id="a-3265-28654-error" test="count(cda:effectiveTime)=1">SHALL contain exactly one [1..1] effectiveTime (CONF:3265-28654).</sch:assert>

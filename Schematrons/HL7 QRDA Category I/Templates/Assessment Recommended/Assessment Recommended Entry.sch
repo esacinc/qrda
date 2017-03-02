@@ -15,9 +15,9 @@
         <sch:rule id="Assessment_recommended-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.145']]">
             <sch:assert id="a-3265-28682-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3265-28682).</sch:assert>
             <sch:assert id="a-3265-28681-error" test="@moodCode='INT'">SHALL contain exactly one [1..1] @moodCode="INT" Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3265-28681).</sch:assert>
-            <sch:assert id="a-3265-28673-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.145'])=1">SHALL contain exactly one [1..1] templateId (CONF:3265-28673) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.145" (CONF:3265-28676).</sch:assert>
+            <sch:assert id="a-3265-28673-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.145'][@extension='2016-08-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3265-28673) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.145" (CONF:3265-28676).</sch:assert>
             <sch:assert id="a-3265-28674-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:3265-28674).</sch:assert>
-            <sch:assert id="a-3265-28680-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']])=1">SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:3265-28680).</sch:assert>
+            <sch:assert id="a-3265-28680-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']])=1">SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:3265-28680) SHALL contain exactly one [1..1] @extension="2016-08-01" (CONF:3265-28702).</sch:assert>
         </sch:rule>
         <sch:rule id="Assessment_recommended-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.145']]/cda:code">
             <sch:assert id="a-3265-28679-error" test="@sdtc:valueSet">This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:3265-28679).</sch:assert>

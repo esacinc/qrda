@@ -8,7 +8,7 @@
     Total Errors Expected: 7
            Failure a-3265-28682-error SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3265-28682)
            Failure a-3265-28681-error SHALL contain exactly one [1..1] @moodCode="INT" Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3265-28681)
-           Failure a-3265-28673-error SHALL contain exactly one [1..1] templateId (CONF:3265-28673) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.145" (CONF:3265-28676)
+           Failure a-3265-28673-error SHALL contain exactly one [1..1] templateId (CONF:3265-28673) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.145" (CONF:3265-28676) SHALL contain exactly one [1..1] @extension="2016-08-01" (CONF:3265-28702)
            Failure a-3265-28674-error SHALL contain exactly one [1..1] code (CONF:3265-28674)
            Failure a-3265-28680-error SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:3265-28680)
            Failure a-3265-28679-error code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:3265-28679)
@@ -22,9 +22,9 @@
 	<!-- Failure a-3265-28682-error  Bad or missing classCode. Failure a-3265-28681-error Bad or missing moodCode -->
 	<observation classCode="OBSerr" >
 		<!-- Assessment Recommended -->
-		<templateId root="2.16.840.1.113883.10.20.24.3.145" />
+		<templateId root="2.16.840.1.113883.10.20.24.3.145" extension="2016-08-01"/>
 		<!--  Failure a-3265-28673-error Zero or multiple template ids -->
-		<templateId root="2.16.840.1.113883.10.20.24.3.145" />
+		<templateId root="2.16.840.1.113883.10.20.24.3.145" extension="2016-08-01" />
 		<id root="41c3513a-a3eb-468d-b537-9b9bebe11807" />
 		<code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
 			displayName="Physical limitation score [KCCQ]"

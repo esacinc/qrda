@@ -8,7 +8,7 @@
     Total Errors Expected: 10
        Failure a-3265-28670-error SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3265-28670)
        Failure a-3265-28669-error SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3265-28669)
-       Failure a-3265-28652-error SHALL contain exactly one [1..1] templateId (CONF:3265-28652) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.144" (CONF:3265-28660)
+       Failure a-3265-28652-error SHALL contain exactly one [1..1] templateId (CONF:3265-28652) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.144" (CONF:3265-28660) SHALL contain exactly one [1..1] @extension="2016-08-01" (CONF:3265-28701)
        Failure a-3265-28656-error SHALL contain exactly one [1..1] code (CONF:3265-28656)
        Failure a-3265-28653-error SHALL contain exactly one [1..1] statusCode (CONF:3265-28653)
        Failure a-3265-28654-error SHALL contain exactly one [1..1] effectiveTime (CONF:3265-28654)
@@ -25,9 +25,9 @@
 	<!--  Failure a-3265-28670-error Bad class Code. Failure a-3265-28669-error Bad mood code -->
 	<observation classCode="OBSerr" moodCode="EVNerr">
 		<!-- Assessment Performed -->
-		<templateId root="2.16.840.1.113883.10.20.24.3.144" />
+		<templateId root="2.16.840.1.113883.10.20.24.3.144" extension="2016-08-01" />
 		<!-- Failure a-3265-28652-error Zero or multiple template ids -->
-		<templateId root="2.16.840.1.113883.10.20.24.3.144" />
+		<templateId root="2.16.840.1.113883.10.20.24.3.144" extension="2016-08-01"/>
 		<id root="d55c711a-f958-4807-bdb6-45fe5b6195c0" />
 		<code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
 			displayName="Physical limitation score [KCCQ]"

@@ -17,7 +17,7 @@
     
     <sch:pattern id="QDM_based_QRDA_V4-pattern-errors">
         <sch:rule id="QDM_based_QRDA_V4-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2016-08-01']]">
-            <sch:assert id="a-3265-12972-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2016-08-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3265-12972) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.1.2" (CONF:3265-26943). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:3265-26944).</sch:assert>
+            <sch:assert id="a-3265-12972-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2016-08-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3265-12972) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.1.2" (CONF:3265-26943). SHALL contain exactly one [1..1] @extension="2016-08-01" (CONF:3265-28696).</sch:assert>
             <sch:assert id="a-3265-16598-error" test="count(cda:recordTarget)=1">SHALL contain exactly one [1..1] recordTarget (CONF:3265-16598).</sch:assert>
             <sch:assert id="a-3265-16600-error" test="count(cda:custodian)=1">SHALL contain exactly one [1..1] custodian (CONF:3265-16600).</sch:assert>
             <sch:assert id="a-3265-12973-error" test="count(cda:component[count(cda:structuredBody)=1])=1">SHALL contain exactly one [1..1] component (CONF:3265-12973) such that it SHALL contain exactly one [1..1] structuredBody (CONF:3265-17081).</sch:assert>

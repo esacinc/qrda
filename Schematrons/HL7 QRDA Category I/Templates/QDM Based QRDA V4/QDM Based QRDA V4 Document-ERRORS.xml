@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+  <!-- 		
+     Title: QDM Based QRDA V4 Dpci,emt, Minimal sample
+    Author: Dan Donahue
+    Date:   03-01-2017 		
+    
+    Total Errors Expected: 17
+        Failure a-3265-12972-error SHALL contain exactly one [1..1] templateId (CONF:3265-12972) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.1.2" (CONF:3265-26943). SHALL contain exactly one [1..1] @extension="2016-08-01" (CONF:3265-28696)
+        Failure a-3265-16598-error SHALL contain exactly one [1..1] recordTarget (CONF:3265-16598)
+        Failure a-3265-16600-error SHALL contain exactly one [1..1] custodian
+        Failure a-3265-12973-error SHALL contain exactly one [1..1] component (CONF:3265-12973) such that it SHALL contain exactly one [1..1] structuredBody (CONF:3265-17081)
+        Failure a-3265-16856-error recordTarget SHALL contain exactly one [1..1] patientRole (CONF:3265-16856)
+        Failure a-3265-27570-error patientRole SHALL contain exactly one [1..1] patient (CONF:3265-27570)
+        Failure a-3265-27571-error patient SHALL contain exactly one [1..1] birthTime (CONF:3265-27571)
+        Failure a-3265-27572-error patient SHALL contain exactly one [1..1] administrativeGenderCode (CONF:3265-27572)
+        Failure a-3265-27573-error patient SHALL contain exactly one [1..1] raceCode (CONF:3265-27573
+        Failure a-3265-27574-error patient SHALL contain exactly one [1..1] ethnicGroupCode (CONF:3265-27574)
+        Failure a-3265-28239-error custodian SHALL contain exactly one [1..1] assignedCustodian (CONF:3265-28239)
+        Failure a-3265-28240-error assignedCustodian SHALL contain exactly one [1..1] representedCustodianOrganization (CONF:3265-28240)
+    	  Failure a-3265-16704-error The informationRecipient, if present, SHALL contain exactly one [1..1] intendedRecipient (CONF:3265-16704)
+        Failure a-3265-16705-error intendedRecipient SHALL contain at least one [1..*] id (CONF:3265-16705)
+    	  Failure a-3265-17082-error structuredBody SHALL contain exactly one [1..1] component (CONF:3265-17082). This component SHALL contain exactly one [1..1] Measure Section QDM (identifier: urn:oid:2.16.840.1.113883.10.20.24.2.3) (CONF:3265-17083)
+    	  Failure a-3265-17090-error structuredBody SHALL contain exactly one [1..1] component (CONF:3265-17090). This component SHALL contain exactly one [1..1] Reporting Parameters Section (identifier: urn:oid:2.16.840.1.113883.10.20.17.2.1) (CONF:3265-17092)
+    	  Failure a-3265-17091-error structuredBody SHALL contain exactly one [1..1] component (CONF:3265-17091). This component SHALL contain exactly one [1..1] Patient Data Section QDM (V4) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.2.1:2016-08-01) (CONF:3265-17093)
+   
+    Total Warnings Expected: 7
+        Warning a-3265-16857-warning patientRole SHOULD contain zero or one [0..1] id (CONF:3265-16857) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.572" Medicare HIC number (CONF:3265-16858)
+        Warning a-3265-28241-warning representedCustodianOrganization SHOULD contain zero or one [0..1] id (CONF:3265-28241) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.336" CMS Certification Number (CONF:3265-28244). SHALL contain exactly one [1..1] @extension (CONF:3265-28245)
+        Warning a-3265-28242-warning representedCustodianOrganization SHOULD contain zero or one [0..1] id (CONF:3265-28242) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:3265-28246). SHALL contain exactly one [1..1] @extension (CONF:3265-28247)
+        Warning a-3265-28243-warning representedCustodianOrganization SHOULD contain zero or one [0..1] id (CONF:3265-28243) such that it SHALL contain exactly one [1..1] @root="1.3.6.1.4.1.33895" The Joint Commission’s Health Care Organization (HCO) Identification Number (CONF:3265-28248). SHALL contain exactly one [1..1] @extension (CONF:3265-28249).
+        Warning a-3265-16587-warning assignedEntity SHOULD contain zero or one [0..1] id (CONF:3265-16587) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:3265-16588).
+        Warning a-3265-16592-warning representedOrganization SHOULD contain zero or one [0..1] id (CONF:3265-16592) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:3265-16593)
+        Warning a-3265-16595-warning representedOrganization SHOULD contain zero or one [0..1] id (CONF:3265-16595) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.336" Facility CMS Certification Number (CONF:3265-16596). SHALL contain exactly one [1..1] @extension (CONF:3265-16597)
+ 
+  -->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <realmCode code="US"/>
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+  <!-- US Realm Header (V3) -->
+  <templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2015-08-01"/>
+  <!-- QRDA Category I Framework (V3) -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2016-02-01"/>
+  <!-- QDM-Based QRDA (V4) -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.2" extension="2016-08-01"/>
+  <!-- Failure a-3265-12972-error Multiple root templateIds -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.2" extension="2016-08-01"/>
+  <!-- This is the globally unique identifier for this QRDA document -->
+  <id root="5b010313-eff2-432c-9909-6193d8416fac"/>
+  <recordTarget>
+    <patientRole>
+      <!-- This is the patient's Medical HIC number -->
+      <id extension="111223333A" root="2.16.840.1.113883.4.572"/>
+      <!-- Warning a-3265-16857-warning Missing or multiple Medical HIC Number in patientRole -->
+      <id extension="111223333A" root="2.16.840.1.113883.4.572"/>
+       <patient>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+        <birthTime value="20020201"/>
+         <raceCode code="2106-3" codeSystem="2.16.840.1.114222.4.11.836" displayName="White"/>
+        <ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.114222.4.11.837"
+          displayName="Not Hispanic or Latino"/>
+       </patient>
+    </patientRole>
+  </recordTarget>
+  <!-- Failure a-3265-16598-error Zero or Multiple record targets -->
+  <recordTarget>
+    <patientRole>
+       <id extension="111223333A" root="2.16.840.1.113883.4.572"/>
+       <!-- Failure a-3265-27570-error Missing or multiple patients in patientRole -->
+    </patientRole>
+    <!-- Failure a-3265-16856-error Zero or Multiple patient roles in recordTarget-->
+    <patientRole>
+       <id extension="111223333A" root="2.16.840.1.113883.4.572"/>
+      <patient>
+        <!-- Failure a-3265-27571-error Missing or multiple birthTime in patient -->
+        <!-- Failure a-3265-27572-error Missing or multiple administrativeGenderCode in patient-->
+        <!-- Failure a-3265-27573-error Missing or multiple raceCode in patient -->
+        <raceCode code="2106-3" codeSystem="2.16.840.1.114222.4.11.836" displayName="White"/>
+        <raceCode code="2106-3" codeSystem="2.16.840.1.114222.4.11.836" displayName="White"/>
+        <!-- Failure a-3265-27574-error Missing or multiple ethnicGroupcode in patient -->
+      </patient>
+    </patientRole>
+    
+  </recordTarget>
+  <!-- Example of an author who is a person -->
+  <author>
+    <time value="20111231124411+0500"/>
+    <assignedAuthor>
+      <id root="2.16.840.1.113883.4.6" extension="123456789"/>
+      <code code="200000000X" codeSystem="2.16.840.1.113883.6.101"
+        displayName="Allopathic &amp; Osteopathic Physicians"/>
+      <addr use="WP">
+        <streetAddressLine>1020 Healthcare Drive</streetAddressLine>
+        <streetAddressLine>Suite 500</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="WP" value="tel:(555)555-1003"/>
+      <!-- Quality Manager -->
+      <assignedPerson>
+        <name>
+          <given>Ann</given>
+          <family>Quality</family>
+          <suffix>RN</suffix>
+        </name>
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+  <!-- Example of an author who is a device -->
+  <author>
+    <time value="20050329224411+0500"/>
+    <assignedAuthor>
+      <id extension="KP00017dev" root="2.16.840.1.113883.19.5"/>
+      <addr use="WP">
+        <streetAddressLine>21 North Ave.</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="WP" value="tel:(555)555-1003"/>
+      <assignedAuthoringDevice>
+        <manufacturerModelName>Good Health Medical Device</manufacturerModelName>
+        <softwareName>Good Health Report Generator</softwareName>
+      </assignedAuthoringDevice>
+    </assignedAuthor>
+  </author>
+  <dataEnterer>
+    <assignedEntity>
+      <id extension="333777777" root="2.16.840.1.113883.4.6"/>
+      <addr>
+        <streetAddressLine>1007 Healthcare Drive</streetAddressLine>
+        <city>Portland</city>
+        <state>OR</state>
+        <postalCode>99123</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="WP" value="tel:+1(555)555-1050"/>
+      <assignedPerson>
+        <name>
+          <given>Ellen</given>
+          <family>Enter</family>
+        </name>
+      </assignedPerson>
+    </assignedEntity>
+  </dataEnterer>
+  <custodian>
+    <assignedCustodian>
+      
+      <representedCustodianOrganization>
+        <!-- National Provider Identifier -->
+        <id root="2.16.840.1.113883.4.6" extension="123456"/>
+        <!-- CMS Certification Number -->
+        <id root="2.16.840.1.113883.4.336" extension="1111111"/>
+        <!-- Tax ID Number -->
+        <id root="2.16.840.1.113883.4.2" extension="2222222"/>
+        <!-- Joint Commission's Health Care Organization (HCO) -->
+        <!-- Warning a-3265-28243-warning Missing HCO id -->
+        <!-- <id root="1.3.6.1.4.1.33895" extension="3333333"/> -->
+        <name>Good Health Hospital</name>
+        <telecom use="WP" value="tel:(555)555-1003"/>
+        <addr use="WP">
+          <streetAddressLine>21 North Ave.</streetAddressLine>
+          <city>Burlington</city>
+          <state>MA</state>
+          <postalCode>02368</postalCode>
+          <country>US</country>
+        </addr>
+      </representedCustodianOrganization>
+      <!-- Failure a-3265-28240-error Missing or multiple representedCustodianOrganization in assignedCustodian -->
+      <representedCustodianOrganization>
+        <!-- National Provider Identifier -->
+        <id root="2.16.840.1.113883.4.6" extension="123456"/>
+        <!-- CMS Certification Number -->
+        <!-- Warning a-3265-28241-warning CMS certification number with no extension -->
+        <id root="2.16.840.1.113883.4.336" />
+        <!-- Tax ID Number -->
+        <!-- Warning a-3265-28242-warning Tax ID number with no extension -->
+        <id root="2.16.840.1.113883.4.2"/>
+        <!-- Joint Commission's Health Care Organization (HCO) -->
+        <id root="1.3.6.1.4.1.33895" extension="3333333"/>
+        <name>Good Health Hospital</name>
+        <telecom use="WP" value="tel:(555)555-1003"/>
+        <addr use="WP">
+          <streetAddressLine>21 North Ave.</streetAddressLine>
+          <city>Burlington</city>
+          <state>MA</state>
+          <postalCode>02368</postalCode>
+          <country>US</country>
+        </addr>
+      </representedCustodianOrganization>
+      
+    </assignedCustodian>
+  </custodian>
+  <!-- Failure a-3265-16600-error Zeror or Multiple custodians -->
+  <custodian>
+    <!-- Failure a-3265-28239-error Missing or Multiple assignedCustodian in custodian -->
+  </custodian>
+  <informationRecipient>
+    <intendedRecipient>
+      <id root="2.16.840.1.113883.4.6" extension="111111111"/>
+      <receivedOrganization>
+        <name>The DoctorsApart Physician Group</name>
+      </receivedOrganization>
+    </intendedRecipient>
+   <!-- Failure a-3265-16704-error Missing or Multiple intendedRecipient in informationRecipient -->
+    <intendedRecipient>
+      <!-- a-3265-16705-error Missing id in intendedRecipient -->
+      <receivedOrganization>
+        <name>The DoctorsApart Physician Group</name>
+      </receivedOrganization>
+    </intendedRecipient>
+  </informationRecipient>
+   <documentationOf typeCode="DOC">
+    <serviceEvent classCode="PCPR">
+       <!-- You can include multiple performers, each with an NPI, TIN, CCN. -->
+      <performer typeCode="PRF">
+        <assignedEntity>
+          <!-- This is the provider NPI -->
+          <id root="2.16.840.1.113883.4.6" extension="111111111"/>
+          <!-- Warning a-3265-16587-warning assigned entity zero or multiple NPI provider IDs -->
+          <id root="2.16.840.1.113883.4.6" extension="111111111"/>
+          <representedOrganization>
+            <!-- This is the organization TIN -->
+            <id root="2.16.840.1.113883.4.2" extension="1234567"/>
+            <!-- Warning a-3265-16592-warning Missing or multiple tax id numbers-->
+            <id root="2.16.840.1.113883.4.2" extension="1234567"/>
+            <!-- This is the organization CCN -->
+            <!-- Warning a-3265-16595-warning  Missing or multiple CCN -->
+            <!-- <id root="2.16.840.1.113883.4.336" extension="54321"/> -->
+          </representedOrganization>
+        </assignedEntity>
+      </performer>
+    </serviceEvent>
+  </documentationOf>
+  <!-- QRDA Body -->
+  <component>
+    <structuredBody>
+      <!-- Failure a-3265-17082-error missing or multiple Measure Section component in structuredBody -->
+      <!-- Failure a-3265-17090-error missing or multiple Reporting Parameters component in structuredBody -->
+      <!-- 				 
+        ***************************************************************** 				 
+        Reporting Parameters Section 				 
+        ***************************************************************** 			 
+      -->
+      <component>
+        <section>
+          <!-- This is the templateId for Reporting Parameters section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.1"/>
+         </section>
+      </component>
+      <!-- 				 
+        ***************************************************************** 				 
+        Reporting Parameters Section 				 
+        ***************************************************************** 			 
+      -->
+      <component>
+        <section>
+          <!-- This is the templateId for Reporting Parameters section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.1"/>
+        </section>
+      </component>
+      <!-- Failure a-3265-17091-error missing or multiple Patient Data Section component in structuredBody -->
+    </structuredBody>
+  </component>
+  <!-- Failure a-3265-12973-error  Zero or Multiple components with one structured body -->
+  <!-- QRDA Body -->
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <!-- 						 
+            ***************************************************************** 						 
+            Measure Section 						
+            ***************************************************************** 					 
+          -->
+          <!-- This is the templateId for Measure Section -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.2"/>
+          <!-- This is the templateId for Measure Section QDM -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.3"/>
+        </section>
+      </component>
+      <!-- 				 
+        ***************************************************************** 				 
+        Reporting Parameters Section 				 
+        ***************************************************************** 			 
+      -->
+      <component>
+        <section>
+          <!-- This is the templateId for Reporting Parameters section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.1"/>
+        </section>
+      </component>
+      <!-- 				 
+        ***************************************************************** 				 
+        Patient Data Section QDM (V3) 				 
+        ***************************************************************** 			 
+      -->
+      <component>
+        <section>
+          <!-- Patient Data Section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.4"/>
+          <!-- Patient Data Section QDM (V4) -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.1" extension="2016-08-01"/>
+          
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+  
+</ClinicalDocument>

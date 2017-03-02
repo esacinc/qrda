@@ -4380,7 +4380,7 @@
           <entry typeCode="DRIV">
             <observation classCode="OBS" moodCode="EVN">
               <!-- Assessment Performed -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.144" />
+              <templateId root="2.16.840.1.113883.10.20.24.3.144" extension="2016-08-01"/>
               <id root="d55c711a-f958-4807-bdb6-45fe5b6195c0" />
               <code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
                 displayName="Physical limitation score [KCCQ]"
@@ -4420,7 +4420,7 @@
               <!-- Conforms to C-CDA R2.1 Planned Observation (V2) -->
               <templateId root="2.16.840.1.113883.10.20.22.4.44" extension="2014-06-09" />
               <!-- Assessment Recommended -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.145" />
+              <templateId root="2.16.840.1.113883.10.20.24.3.145" extension="2016-08-01" />
               <id root="41c3513a-a3eb-468d-b537-9b9bebe11807" />
               <code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
                 displayName="Physical limitation score [KCCQ]"

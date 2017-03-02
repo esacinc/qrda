@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title:  Fulfills V2 Subentry, Minimal sample
+    Author: Dan Donahue
+    Date:   03-02-2017
+    
+    Total Errors Expected: 0
+    Total Warnings Expected: 0
+-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+	xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+	<entry>
+		<sdtc:inFulfillmentOf1 typeCode="FLFS">
+			<sdtc:templateId root="2.16.840.1.113883.10.20.24.3.126" extension="2016-08-01" />
+			<!-- The classCode and moodCode are the same as the classCode and moodCode of the Device, Order we are referencing -->
+			<sdtc:actReference classCode="SPLY" moodCode="RQO">
+				<!-- The id is the same as the id of the Device, Order we are referencing -->
+				<sdtc:id root="6a8d037d-f144-4071-9d1f-8a92a11dedc6" />
+			</sdtc:actReference>
+		</sdtc:inFulfillmentOf1>
+	</entry>
+</ClinicalDocument>

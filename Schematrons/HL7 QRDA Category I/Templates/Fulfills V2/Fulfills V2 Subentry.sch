@@ -18,13 +18,13 @@
             <sch:assert id="a-3265-28380-error" test="count(sdtc:actReference)=1">SHALL contain exactly one [1..1] sdtc:actReference (CONF:3265-28380).</sch:assert>
         </sch:rule>
         
-        <sch:rule id="Fulfills_V2-actReference-errors" context="sdtc:inFulfillmentOf1[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.126'][@extension='2016-08-01']]/sdtc:actReference">
+        <sch:rule id="Fulfills_V2-actReference-errors" context="sdtc:inFulfillmentOf1[sdtc:templateId[@root='2.16.840.1.113883.10.20.24.3.126'][@extension='2016-08-01']]/sdtc:actReference">
             <sch:assert id="a-3265-28384-error" test="@classCode">This sdtc:actReference SHALL contain exactly one [1..1] @classCode (CONF:3265-28384).</sch:assert>
             <sch:assert id="a-3265-28385-error" test="@moodCode">This sdtc:actReference SHALL contain exactly one [1..1] @moodCode (CONF:3265-28385).</sch:assert>
             <sch:assert id="a-3265-28386-error" test="count(sdtc:id)&gt;=1">This sdtc:actReference SHALL contain at least one [1..*] sdtc:id (CONF:3265-28386).</sch:assert>
         </sch:rule>
         
-        <sch:rule id="Fulfills_V2-actReference-id-errors" context="sdtc:inFulfillmentOf1[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.126'][@extension='2016-08-01']]/sdtc:actReference/sdtc:id">
+        <sch:rule id="Fulfills_V2-actReference-id-errors" context="sdtc:inFulfillmentOf1[sdtc:templateId[@root='2.16.840.1.113883.10.20.24.3.126'][@extension='2016-08-01']]/sdtc:actReference/sdtc:id">
             <sch:assert id="a-3265-28690-error" test="@root">Such sdtc:ids SHALL contain exactly one [1..1] @root (CONF:3265-28690).</sch:assert>
             <sch:assert id="a-3265-28691-error" test="@extension">Such sdtc:ids SHALL contain exactly one [1..1] @extension (CONF:3265-28691).</sch:assert>
         </sch:rule>

@@ -11,7 +11,7 @@
             
     Changes:
     Added the 77- prefix to the text of the assert for 77-17580 (QRDA-104)
-   Wed Mar 01 14:11:08 MST 2017 
+   Thu Mar 02 08:40:46 MST 2017 
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="svs" uri="urn:ihe:iti:svs:2008" />

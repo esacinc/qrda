@@ -165,9 +165,10 @@ public class Validator {
 						}
 					}
 					else { // Expected error value present in file header...
+						int warningExp = errorReport.getExpectedWarnings();
 						if (!errorReport.asExpected()) { // If expected doesn't match actual, then output a message.
 							res = 98;
-							mergeInstructions.addResult(MergeInstructions.INDENT3+testFile+": Failure count inconsistent with expectations for this file. (Errors: expected " + errorReport.getExpectedErrors() + ", actual " + errs + ") (Warnings: expected " + errorReport.getExpectedWarnings() + ", actual " + warns +")");
+							mergeInstructions.addResult(MergeInstructions.INDENT3+testFile+": Failure count inconsistent with expectations for this file. (Errors: expected " + errorReport.getExpectedErrors() + ", actual " + errs + ") (Warnings: expected " + ((warningExp < 0)?"N/A":warningExp) + ", actual " + warns +")");
 						}
 						else { // Otherwise, results as expected. No message needed.
 							res = 0;

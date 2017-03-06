@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+  <!-- 	 
+    Sample good file for template Entry Reference - Michael Holck
+    Total Errors Expected: 0
+    
+    Total Warnings Expected: 0
+  -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  
+  <entryRelationship typeCode="REFR">
+    <act classCode="ACT" moodCode="EVN">
+      <templateId root="2.16.840.1.113883.10.20.22.4.122" />
+      <!-- This ID equals the ID of the goal of a pulse 
+                        ox greater than 92% -->
+      <id root="3700b3b0-fbed-11e2-b778-0800200c9a66" />
+      <!-- The code is nulled to "NP" Not Present" -->
+      <code nullFlavor="NP" />
+      <statusCode code="completed" />
+    </act>
+  </entryRelationship>
+
+</ClinicalDocument>

@@ -8,16 +8,8 @@
     Author: Dan Donahue
     Date: 03-03-2017
  
-     Total Errors Expected: 8
-          Failure a-1098-31500-error Bad Class Code
-          Failure a-1098-31501-error Bad Mood Code 
-          Failure a-1098-31502-error Multiple  main templateId
-          Failure a-1098-31504-error Missing id
-          Failure a-1098-31506-error Missing or multiple code
-          Failure a-1098-31507-error Missing or bad code  @code="416118004"
-          Failure a-1098-31508-error Missing or bad code  @codeSystem="2.16.840.1.113883.6.96"
-          Failure a-1098-31505-error Missing or multiple statusCode="completed"
-              
+     Total Errors Expected: 0
+             
     Total Warnings Expected: 0
    -->
 

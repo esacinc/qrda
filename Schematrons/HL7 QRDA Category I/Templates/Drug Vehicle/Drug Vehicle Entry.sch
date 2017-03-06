@@ -23,7 +23,7 @@
             <sch:assert id="a-81-26502-error" test="@codeSystem='2.16.840.1.113883.6.96'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:81-26502).  </sch:assert>
         </sch:rule>
         <sch:rule id="Drug-Vehicle-playingEntity-errors" context="cda:participantRole[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.24']]/cda:playingEntity">
-            <sch:assert id="a-81-7493-error" test="@code">This playingEntity SHALL contain exactly one [1..1] code (CONF:81-7493). </sch:assert>
+            <sch:assert id="a-81-7493-error" test="count(cda:code)=1">This playingEntity SHALL contain exactly one [1..1] code (CONF:81-7493). </sch:assert>
         </sch:rule>       
     </sch:pattern>
     

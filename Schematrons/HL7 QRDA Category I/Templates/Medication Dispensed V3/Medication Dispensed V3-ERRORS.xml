@@ -10,7 +10,7 @@
 		Failure a-2228-27529 SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-27529).
 		Failure a-2228-26555 SHALL contain exactly one [1..1] templateId (CONF:2228-13851) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.45" (CONF:2228-13852). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-26555).
 		Failure a-2228-19440 SHALL contain exactly one [1..1] statusCode (CONF:2228-19440).
-		Failure a-2228-13856 SHALL contain exactly one [1..1] effectiveTime (CONF:2228-13856).
+		Failure a-2228-13856 SHALL contain exactly one [1..1] effectiveTime with xsi:type="IVL_TS" (CONF:2228-13856).
 		Failure a-2228-19441 statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-19441).
 		Failure a-2228-28555 effectiveTime SHALL contain exactly one [1..1] low (CONF:2228-28555).
 
@@ -34,9 +34,9 @@
 				<effectiveTime xsi:type="IVL_TS">
 					<low value="20150301"/>
 				</effectiveTime>
-				<!-- Failure a-2228-13856 missing or multiple effectiveTime -->
+				<!-- Failure a-2228-13856 missing or multiple effectiveTime with xsi:type="IVL_TS" -->
 				<!-- Failure a-2228-28555 missing or multiple low in effectiveTime -->
-				<effectiveTime/>
+				<effectiveTime xsi:type="IVL_TS"/>
 				
 			</supply>
 		</entryRelationship>

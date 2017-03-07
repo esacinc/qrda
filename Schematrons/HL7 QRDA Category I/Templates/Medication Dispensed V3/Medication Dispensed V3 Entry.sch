@@ -27,7 +27,7 @@
 				SHALL contain exactly one [1..1] statusCode (CONF:2228-19440).
 			</sch:assert>
 			<sch:assert id="a-2228-13856-error" test="count(cda:effectiveTime[@xsi:type='IVL_TS']) = 1">
-				SHALL contain exactly one [1..1] effectiveTime (CONF:2228-13856).
+				SHALL contain exactly one [1..1] effectiveTime with xsi:type="IVL_TS" (CONF:2228-13856).
 			</sch:assert>
 			<sch:assert id="a-2228-28669-error" test="count(../../cda:templateId[@root='2.16.840.1.113883.10.20.24.3.139']) = 1">This template SHALL be contained by a Medication Dispensed Act (CONF:2228-28669).</sch:assert>
 		</sch:rule>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+<!-- 		
+    Title: Medication Free Text Sig minimal file, with errors
+    Date: 03-07-2017
+  -->
+<!-- 	 
+	Total Errors Expected: 14
+		Failure a-1198-32770-error SHALL contain exactly one [1..1] @classCode="SBADM" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1198-32770).
+		Failure a-1198-32771-error SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet MoodCodeEvnInt urn:oid:2.16.840.1.113883.11.20.9.18 STATIC 2011-04-03 (CONF:1198-32771).
+		Failure a-1198-32753-error SHALL contain exactly one [1..1] templateId (CONF:1198-32753) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.147" (CONF:1198-32772).
+		Failure a-1198-32775-error SHALL contain exactly one [1..1] code (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:1198-32775).
+		Failure a-1198-32754-error SHALL contain exactly one [1..1] text (CONF:1198-32754).
+		Failure a-1198-32776-error SHALL contain exactly one [1..1] consumable (CONF:1198-32776).
+		Failure a-1198-32780-error code SHALL contain exactly one [1..1] @code="76662-6" Instructions Medication (CONF:1198-32780).
+		Failure a-1198-32781-error code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1 STATIC) (CONF:1198-32781).
+		Failure a-1198-32755-error text SHALL contain exactly one [1..1] reference (CONF:1198-32755).
+		Failure a-1198-32774-error reference/@value SHALL begin with a '#' and SHALL point to its corresponding narrative (using the approach defined in CDA Release 2, section 4.3.5.1) (CONF:1198-32774).  FIRES TWICE
+		Failure a-1198-32777-error consumable SHALL contain exactly one [1..1] manufacturedProduct (CONF:1198-32777).
+		Failure a-1198-32778-error manufacturedProduct SHALL contain exactly one manufacturedLabledDrug[1..1] (CONF:1198-32778).
+		Failure a-1198-32779-error manufacturedLabeledDrug SHALL contain exactly one [1..1] @nullFlavor="NA" Not Applicable (CONF:1198-32779).
+	
+	Total Warnings Expected: 1
+		Failure a-1198-32756-warning reference SHOULD contain zero or one [0..1] @value (CONF:1198-32756).
+ -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+	
+	<!-- Failure a-1198-32770-error bad or missing classCode, Failure a-1198-32771-error bad or missing moodCode --> 
+	<substanceAdministration classCode="SBADMErr" moodCodeErr="EVN">
+		<templateId root="2.16.840.1.113883.10.20.22.4.147"/>
+		<!-- Failure a-1198-32753-error multiple main templateId -->
+		<templateId root="2.16.840.1.113883.10.20.22.4.147"/>
+		<!-- Failure a-1198-32780-error missing or bad code="7666-2" -->
+		<!-- Failure a-1198-32781-error missing or bad codeSystem="2.16.840.1.113883.6.1"  -->
+		<code code="76662-6Err" codeSystem="2.16.840.1.113883.6.1Err" codeSystemName="LOINC" displayName="Medication Instructions"/>
+		<!-- Failure a-1198-32775-error missing or multiple code -->
+		<code code="76662-6" codeSystem="2.16.840.1.113883.6.1" />
+		<text>
+			<!-- Failure a-1198-32774-error value not starting with # -->
+			<reference value="AD1"/>
+		</text>
+		<!-- Failure a-1198-32754-error missing or multiple text -->
+		<text>
+			<reference value="#AD1"/>
+			<!-- Failure a-1198-32755-error missing or multiple reference in text -->
+			<!-- Failure a-1198-32756-warning reference should contain a value -->
+			<!-- Failure a-1198-32774-error value not starting with # -->
+			<reference />
+		</text>
+		<consumable>
+			<!-- Failure a-1198-32777-error missing or multiple manufacturedProduct in consumable -->
+		</consumable>
+		<!-- Failure a-1198-32776-error missing or multiple consumable -->
+		<consumable>
+			<manufacturedProduct>
+				<manufacturedLabeledDrug nullFlavor="NA"/>
+				<!-- Failure a-1198-32778-error missing or multiple manufacturedLabeledDrug in  manufacturedProduct -->
+				<!-- Failure a-1198-32779-error missing or bad nullFlavor="NA" -->
+				<manufacturedLabeledDrug nullFlavor="NAErr"/>
+			</manufacturedProduct>
+		</consumable>
+	</substanceAdministration>
+							
+</ClinicalDocument>

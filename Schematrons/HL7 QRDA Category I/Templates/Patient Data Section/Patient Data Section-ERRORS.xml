@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+
+<!-- ************************************************  
+  
+	Filename: Patient Data Section-GOOD.xml
+	Revision History:  Created 5/4/2016
+	                   Modified 6/1/2016 - Minimum required elements
+	                   Re-wrote 06-07-2017 - Dan Donahue
+	Description:       Patient Data Section minimal file with errors
+ 	 
+	 Total Errors expected: 7
+	 
+	          Failure a-67-12794-error SHALL contain exactly one [1..1] templateId (CONF:67-12794) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.17.2.4" (CONF:67-12795)
+            Failure a-67-3865-error SHALL contain exactly one [1..1] code (CONF:67-3865)
+            Failure a-67-3866-error SHALL contain exactly one [1..1] title="Patient Data" (CONF:67-3866)
+            Failure a-67-3867-error SHALL contain exactly one [1..1] text (CONF:67-3867)
+            Failure a-67-14567-error SHALL contain at least one [1..*] entry (CONF:67-14567)
+            Failure a-67-26548-error code SHALL contain exactly one [1..1] @code="55188-7" (CONF:67-26548)
+            Failure a-67-27013-error code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:67-27013)
+
+	 Total Warnings expected: 0
+
+**************************************************************** -->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:hl7-org:v3 schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+ xmlns="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:voc="urn:hl7-org:v3/voc">
+  
+     <component>
+        <!-- ***** Patient Data Section ***** -->
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.17.2.4"/>
+          <!-- Failure a-67-12794-error  Multiple main templates-->
+          <templateId root="2.16.840.1.113883.10.20.17.2.4"/>
+          <code code="55188-7" codeSystem="2.16.840.1.113883.6.1"/>
+          <!--  Failure a-67-3865-error Missing or multiple codes-->
+          <!--  Failure a-67-26548-error bad or missing code="55188-7" -->
+          <!--  Failure a-67-27013-error bad or missing codeSystem="2.16.840.1.113883.6.1" -->
+          <code codeSystem="2.16.840.1.113883.6.1Err"/>
+          <!-- Failure a-67-3866-error Missing title="Patient Data" -->
+          <!-- <title>Patient Data</title> -->
+          <!-- Failure a-67-3867-error Missing text -->
+          <!-- <text>...</text> -->
+          <!--  Failure a-67-14567-error Missing entry -->
+          <!--
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+               <templateId root="2.16.840.1.113883.10.20.24.3.48" extension="2016-02-01"/>
+              <id root="ee6d068d-f209-4913-b999-9efa74358914"/>
+              <code code="77218-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                displayName="Patient satisfaction with healthcare delivery"/>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <low value="20160101"/>
+                <high value="20161231"/>
+              </effectiveTime>
+              <value xsi:type="CD" code="185481008" displayName="Dissatisfied with doctor (finding)"
+                codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+                sdtc:valueSet="2.16.840.1.113883.3.526.3.1008"/>
+            </observation>
+          </entry>
+          -->
+        </section>
+      </component>
+  
+ </ClinicalDocument>

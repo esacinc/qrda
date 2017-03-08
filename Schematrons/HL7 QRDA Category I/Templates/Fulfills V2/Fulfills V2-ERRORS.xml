@@ -3,7 +3,7 @@
 <!-- 		
     Title:  Fulfills V2 Subentry, Minimal sample, with Errors
     Author: Dan Donahue
-    Date:   03-02-2016
+    Date:   03-08-2016
     
     Total Errors Expected: 8
             Failure a-3265-28381-error SHALL contain exactly one [1..1] @typeCode="FLFS" Fulfills (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3265-28381). </sch:assert>
@@ -29,13 +29,12 @@
 			<sdtc:actReference classCode="SPLY" moodCode="RQO">
 				<!-- Failure a-3265-28690-error Missing root attribute on id-->
 				<!-- Failure a-3265-28691-error Missing extension on id -->
-				<sdtc:id />
+				<sdtc:id rootErr="6a8d037d-f144-4071-9d1f-8a92a11dedc6" />
 			</sdtc:actReference>
 			<!-- Failure a-3265-28380-error Zero or multiple sdtc:actReference -->
 			<!-- Failure a-3265-28384-error Missing classCode. Failure a-3265-28385-error Missing moodCode-->
 			<sdtc:actReference moodCodeErr="RQO">
 				<!-- Failure a-3265-28386-error Missing sdtc:id -->
-				<!-- <sdtc:id root="6a8d037d-f144-4071-9d1f-8a92a11dedc6" /> -->
 			</sdtc:actReference>
 		</sdtc:inFulfillmentOf1>
 	</entry>

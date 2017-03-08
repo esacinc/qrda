@@ -3,7 +3,7 @@
 <!-- 		
     Title:  Fulfills V2 Subentry, Minimal sample
     Author: Dan Donahue
-    Date:   03-02-2017
+    Date:   03-08-2017
     
     Total Errors Expected: 0
     Total Warnings Expected: 0
@@ -18,7 +18,7 @@
 			<!-- The classCode and moodCode are the same as the classCode and moodCode of the Device, Order we are referencing -->
 			<sdtc:actReference classCode="SPLY" moodCode="RQO">
 				<!-- The id is the same as the id of the Device, Order we are referencing -->
-				<sdtc:id root="6a8d037d-f144-4071-9d1f-8a92a11dedc6" />
+				<sdtc:id root="6a8d037d-f144-4071-9d1f-8a92a11dedc6" extension="2016-08-01"/>
 			</sdtc:actReference>
 		</sdtc:inFulfillmentOf1>
 	</entry>

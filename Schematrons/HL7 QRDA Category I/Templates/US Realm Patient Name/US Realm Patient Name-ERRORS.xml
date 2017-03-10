@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+  <!-- 		
+    Title: US Realm Patient Name, minimal file with errors		 	 		 	
+    Author: Dan Donahue
+    Date: 03-09-2017
+
+    Total Errors Expected: 2
+          Failure a-81-7159-error SHALL contain exactly one [1..1] family (CONF:81-7159)
+          Failure a-81-7157-error SHALL contain at least one [1..*] given (CONF:81-7157)
+                         
+    Total Warnings Expected: 0
+  -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  
+  <realmCode code="US"/>
+  <act>
+    <templateId root='2.16.840.1.113883.10.20.22.4.123' />
+    <participant >
+        <participantRole >
+           <playingEntity >
+            <name>
+              Robinson Caruso
+              <!-- Failure a-81-7159-error Missing or multiple family with xsi:type='ST' -->
+              <!-- Failure a-81-7157-error Missing given with xsi:type='ST' -->
+             </name>
+          </playingEntity>
+        </participantRole>
+      </participant>
+  </act>
+
+</ClinicalDocument>

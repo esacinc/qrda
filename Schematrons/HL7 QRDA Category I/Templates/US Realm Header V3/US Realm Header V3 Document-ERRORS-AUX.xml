@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+
+<!-- ************************************************  
+  
+	Filename: US Realm Header V3 Document-ERRORS-AUX.xml
+	Revision History:  Created 5/4/2016
+	                   Modified 6/1/2016 - Minimum required elements
+	                   Modified 03-09-2017 Minimal file, coverage of 3 errors not tested in ERRORS file
+	                   
+	Description: This test file contains data conformant to the QRDA Category I R1, STU 3.1 IG
+	              for the purposes of testing US Realm Header V3 Document.sch.  
+	              
+ 	       
+	 Total Errors Expected: 3 
+   The following assertions are not tested/fired in this the ERRORS file, so are tested here      
+           Failure a-1198-5266-error SHALL contain at least one [1..*] recordTarget (CONF:1198-5266).</sch:assert> NOT TESTED
+           Failure a-1198-5444-error SHALL contain at least one [1..*] author (CONF:1198-5444).</sch:assert> NOT TESTED
+           Failure a-1198-6387-error If versionNumber is present setId SHALL be present (CONF:1198-6387).</sch:assert> NOT TESTED
+
+	 Total Warnings Expected: 0
+	
+**************************************************************** -->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+  xmlns="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:voc="urn:hl7-org:v3/voc">
+  <!-- 
+    SHALL contain exactly one [1..1] realmCode="US" (CONF:1198-16791) 
+  -->
+  <realmCode code="US"/>
+  <!-- 
+    SHALL contain exactly one [1..1] typeId (CONF:1198-5361)
+    This typeId SHALL contain exactly one [1..1] @root="2.16.840.1.113883.1.3" (CONF:1198-5250)
+    This typeId SHALL contain exactly one [1..1] @extension="POCD_HD000040" (CONF:1198-5251)
+  -->
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+  <!-- US Realm Header (V3) -->
+  <!-- 
+    SHALL contain exactly one [1..1] templateId (CONF:1198-5252)
+    SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.1.1" (CONF:1198-10036)
+    SHALL contain exactly one [1..1] @extension="2015-08-01" (CONF:1198-32503) 
+  -->
+  <templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2015-08-01"/>
+  <!-- 
+    SHALL contain exactly one [1..1] id (CONF:1198-5363)
+    This id SHALL be a globally unique identifier for the document (CONF:1198-9991) 
+  -->
+  <id root="aedd9c6d-as16-48a8-a1bb-10f5968ce672"/>
+  <!-- 
+    SHALL contain exactly one [1..1] code (CONF:1198-5253)
+    This code SHALL specify the particular kind of document (CONF:1198-9992)
+  -->
+  <code code="55182-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+    displayName="Quality Measure Report"/>
+  <!-- 
+    SHALL contain exactly one [1..1] title (CONF:1198-5254) 
+  -->
+  <title>QRDA Sample Report</title>
+  <!-- 
+    SHALL contain exactly one [1..1] US Realm Date and Time (DTM.US.FIELDED) 
+    (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.4) (CONF:1198-5256)
+  -->
+  <effectiveTime value="201712311230-0800"/>
+  <!-- 
+    SHALL contain exactly one [1..1] confidentialityCode, which SHOULD be selected from 
+    ValueSet HL7 BasicConfidentialityKind urn:oid:2.16.840.1.113883.1.11.16926 STATIC (CONF:1198-5259)
+  -->
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+  <!-- 
+    SHALL contain exactly one [1..1] languageCode, which SHALL be selected from ValueSet Language 
+    urn:oid:2.16.840.1.113883.1.11.11526 DYNAMIC (CONF:1198-5372)
+  -->
+  <languageCode code="en"/>
+ 
+  <versionNumber value="2"/>
+  <!-- Failure a-1198-6387-error If versionNumber, then setId SHALL be present -->
+  <!-- <setId root="1"/> -->
+  
+  <!-- Failure a-1198-5266-error Missing Record Target -->
+
+  <!-- Failure a-1198-5444-error Missing Author-->
+ 
+  <!-- 
+    MAY contain zero or one [0..1] dataEnterer (CONF:1198-5441)
+  -->
+  <dataEnterer>
+    <!-- 
+      The dataEnterer, if present, SHALL contain exactly one [1..1] assignedEntity (CONF:1198-5442)
+    -->
+    <assignedEntity>
+      <!-- 
+        This assignedEntity SHALL contain at least one [1..*] id (CONF:1198-5443)
+        Such ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" 
+        National Provider Identifier (CONF:1198-16821)
+      -->
+      <id extension="333777777" root="2.16.840.1.113883.4.6"/>
+      <!-- 
+        This assignedEntity SHALL contain at least one [1..*] US Realm Address (AD.US.FIELDED) 
+        (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5460)
+      -->
+      <addr>
+        <streetAddressLine>1007 Healthcare Drive</streetAddressLine>
+        <city>Portland</city>
+        <state>OR</state>
+        <postalCode>99123</postalCode>
+        <country>US</country>
+      </addr>
+      <!-- 
+        This assignedEntity SHALL contain at least one [1..*] telecom (CONF:1198-5466)
+        Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from 
+        ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7996)
+      -->
+      <telecom use="WP" value="tel:+1(555)555-1050"/>
+      <!-- 
+        This assignedEntity SHALL contain exactly one [1..1] assignedPerson (CONF:1198-5469)
+      -->
+      <assignedPerson>
+        <!-- 
+          This assignedPerson SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) 
+          (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5470)
+        -->
+        <name>
+          <given>Ellen</given>
+          <family>Enter</family>
+        </name>
+      </assignedPerson>
+    </assignedEntity>
+  </dataEnterer>
+
+ 
+  <!-- 
+    SHALL contain exactly one [1..1] custodian (CONF:1198-5519)
+  -->
+  <custodian>
+    <!-- 
+      This custodian SHALL contain exactly one [1..1] assignedCustodian (CONF:1198-5520)
+    -->
+    <assignedCustodian>
+      <!-- 
+        This assignedCustodian SHALL contain exactly one [1..1] representedCustodianOrganization (CONF:1198-5521)
+      -->
+      <representedCustodianOrganization>
+        <!-- 
+          This representedCustodianOrganization SHALL contain at least one [1..*] id (CONF:1198-5522)
+          Such ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" 
+          National Provider Identifier (CONF:1198-16822)
+        -->
+        <id root="2.16.840.1.113883.4.6" extension="123456"/>
+        <!-- CMS Certification Number -->
+        <id root="2.16.840.1.113883.4.336" extension="1111111"/>
+        <!-- Tax ID Number -->
+        <id root="2.16.840.1.113883.4.2" extension="2222222"/>
+        <!-- Joint Commission's Health Care Organization (HCO) -->
+        <id root="1.3.6.1.4.1.33895" extension="3333333"/>
+        <!-- 
+          This representedCustodianOrganization SHALL contain exactly one [1..1] name (CONF:1198-5524)
+        -->
+        <name>Good Health Hospital</name>
+        <!-- 
+          This representedCustodianOrganization SHALL contain exactly one [1..1] telecom (CONF:1198-5525)
+          This telecom SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet 
+          Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7998)
+        -->
+        <telecom use="WP" value="tel:(555)555-1003"/>
+        <!-- 
+          This representedCustodianOrganization SHALL contain exactly one [1..1] US Realm Address (AD.US.FIELDED) 
+          (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5559)
+        -->
+        <addr use="WP">
+          <streetAddressLine>21 North Ave.</streetAddressLine>
+          <city>Burlington</city>
+          <state>MA</state>
+          <postalCode>02368</postalCode>
+          <country>US</country>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+
+  <!-- 
+    SHOULD contain zero or one [0..1] legalAuthenticator (CONF:1198-5579)
+  -->
+  <legalAuthenticator>
+    <!-- 
+      The legalAuthenticator, if present, SHALL contain exactly one [1..1] US Realm Date and Time 
+      (DTM.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.4) (CONF:1198-5580)
+    -->
+    <time value="201712311230-0800"/>
+    <!-- 
+      The legalAuthenticator, if present, SHALL contain exactly one [1..1] signatureCode (CONF:1198-5583)
+      This signatureCode SHALL contain exactly one [1..1] @code="S" 
+      (CodeSystem: Participationsignature urn:oid:2.16.840.1.113883.5.89 STATIC) (CONF:1198-5584)
+    -->
+    <signatureCode code="S"/>
+    <!-- 
+      The legalAuthenticator, if present, SHALL contain exactly one [1..1] assignedEntity (CONF:1198-5585)
+    -->
+    <assignedEntity>
+      <!-- 
+        This assignedEntity SHALL contain at least one [1..*] id (CONF:1198-5586)
+      -->
+      <id root="bc01a5d1-3a34-4286-82cc-43eb04c972a7"/>
+      <!-- 
+        This assignedEntity SHALL contain at least one [1..*] US Realm Address (AD.US.FIELDED) 
+        (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5589)
+      -->
+      <addr use="WP">
+        <streetAddressLine>21 North Ave.</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <!-- 
+        This assignedEntity SHALL contain at least one [1..*] telecom (CONF:1198-5595)
+        Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet 
+        Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7999)
+      -->
+      <telecom use="WP" value="tel:(555)555-1003"/>
+      <!-- 
+        This assignedEntity SHALL contain exactly one [1..1] assignedPerson (CONF:1198-5597)
+      -->
+      <assignedPerson>
+        <!-- 
+          This assignedPerson SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) 
+          (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5598)
+        -->
+        <name>
+          <given>Virgil</given>
+          <family>Verify</family>
+          <suffix>MD</suffix>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root="2.16.840.1.113883.19.5"/>
+        <name>Good Health Hospital</name>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+
+
+</ClinicalDocument>

@@ -1,0 +1,1389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+
+<!-- ************************************************  
+  
+	Filename: US Realm Header V3 Document-ERRORS.xml
+	Revision History:  Created 5/4/2016
+	                   Modified 6/1/2016 - Minimum required elements
+	                   Modified 03-09-2017 Minimal file, full coverage
+	                   
+	Description: This test file contains data conformant to the QRDA Category I R1, STU 3.1 IG
+	              for the purposes of testing US Realm Header V3 Document.sch.  
+	              
+ 	 Total Warnings Expected: 28  
+ 	       (see below)
+ 	       
+	 Total Errors Expected: 79
+	        (82 assertions, 3 not tested)
+       Failure a-1198-5252-error SHALL contain exactly one [1..1] templateId (CONF:1198-5252) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.1.1" (CONF:1198-10036). SHALL contain exactly one [1..1] @extension="2015-08-01" (CONF:1198-32503)
+       Failure a-1198-16791-error SHALL contain exactly one [1..1] realmCode="US" (CONF:1198-16791)</sch:assert>
+       Failure a-1198-5361-error SHALL contain exactly one [1..1] typeId (CONF:1198-5361).</sch:assert>
+       Failure a-1198-5363-error SHALL contain exactly one [1..1] id (CONF:1198-5363).</sch:assert>
+       Failure a-1198-5253-error SHALL contain exactly one [1..1] code (CONF:1198-5253).</sch:assert>
+       Failure a-1198-5254-error SHALL contain exactly one [1..1] title (CONF:1198-5254).</sch:assert>
+       Failure a-1198-5256-error SHALL contain exactly one [1..1] US Realm Date and Time (DTM.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.4) (CONF:1198-5256).</sch:assert>
+       Failure a-1198-5259-error SHALL contain exactly one [1..1] confidentialityCode (CONF:1198-5259).</sch:assert>
+       Failure a-1198-5372-error SHALL contain exactly one [1..1] languageCode, which SHALL be selected from ValueSet Language urn:oid:2.16.840.1.113883.1.11.11526 DYNAMIC (CONF:1198-5372).</sch:assert>
+       Failure a-1198-5519-error SHALL contain exactly one [1..1] custodian (CONF:1198-5519).</sch:assert>
+       Failure a-1198-5250-error typeId SHALL contain exactly one [1..1] @root="2.16.840.1.113883.1.3" (CONF:1198-5250).</sch:assert>
+       Failure a-1198-5251-error typeId SHALL contain exactly one [1..1] @extension="POCD_HD000040" (CONF:1198-5251).</sch:assert>
+       Failure a-1198-6380-error setId is present versionNumber SHALL be present (CONF:1198-6380).</sch:assert>
+       Failure a-1198-5267-error recordTargets SHALL contain exactly one [1..1] patientRole (CONF:1198-5267).</sch:assert>
+       Failure a-1198-5268-error patientRole SHALL contain at least one [1..*] id (CONF:1198-5268).</sch:assert>
+       Failure a-1198-5271-error patientRole SHALL contain at least one [1..*] US Realm Address (AD.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5271).</sch:assert>
+       Failure a-1198-5280-error patientRole SHALL contain at least one [1..*] telecom (CONF:1198-5280).</sch:assert>
+       Failure a-1198-5283-error patientRole SHALL contain exactly one [1..1] patient (CONF:1198-5283).</sch:assert>
+       Failure a-1198-5284-error patient SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5284).</sch:assert>
+       Failure a-1198-6394-error patient SHALL contain exactly one [1..1] administrativeGenderCode, which SHALL be selected from ValueSet Administrative Gender (HL7 V3) urn:oid:2.16.840.1.113883.1.11.1 DYNAMIC (CONF:1198-6394).</sch:assert>
+       Failure a-1198-5298-error patient SHALL contain exactly one [1..1] birthTime (CONF:1198-5298).</sch:assert>
+       Failure a-1198-5322-error patient SHALL contain exactly one [1..1] raceCode, which SHALL be selected from ValueSet Race Category Excluding Nulls urn:oid:2.16.840.1.113883.3.2074.1.1.3 DYNAMIC (CONF:1198-5322).</sch:assert>
+       Failure a-1198-31347-error If sdtc:raceCode is present, then the patient SHALL contain [1..1] raceCode (CONF:1198-31347).</sch:assert> 
+       Failure a-1198-5323-error patient SHALL contain exactly one [1..1] ethnicGroupCode, which SHALL be selected from ValueSet Ethnicity urn:oid:2.16.840.1.114222.4.11.837 DYNAMIC (CONF:1198-5323).</sch:assert> 
+       Failure a-1198-5299-error SHALL be precise to year (CONF:1198-5299).</sch:assert>
+       Failure a-1198-5385-error The guardian, if present, SHALL contain exactly one [1..1] guardianPerson (CONF:1198-5385).</sch:assert>
+       Failure a-1198-5386-error guardianPerson SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5386).</sch:assert>
+       Failure a-1198-5396-error birthplace, if present, SHALL contain exactly one [1..1] place (CONF:1198-5396).</sch:assert>
+       Failure a-1198-5397-error place SHALL contain exactly one [1..1] addr (CONF:1198-5397).</sch:assert>
+       Failure a-1198-5407-error languageCommunication, if present, SHALL contain exactly one [1..1] languageCode, which SHALL be selected from ValueSet Language urn:oid:2.16.840.1.113883.1.11.11526 DYNAMIC (CONF:1198-5407).</sch:assert>
+       Failure a-1198-5417-error The providerOrganization, if present, SHALL contain at least one [1..*] id (CONF:1198-5417).</sch:assert>
+       Failure a-1198-5419-error The providerOrganization, if present, SHALL contain at least one [1..*] name (CONF:1198-5419).</sch:assert>
+       Failure a-1198-5420-error The providerOrganization, if present, SHALL contain at least one [1..*] telecom (CONF:1198-5420).</sch:assert>
+       Failure a-1198-5422-error The providerOrganization, if present, SHALL contain at least one [1..*] US Realm Address (AD.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5422).</sch:assert>
+       Failure a-1198-5445-error authors SHALL contain exactly one [1..1] US Realm Date and Time (DTM.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.4) (CONF:1198-5445).</sch:assert>
+       Failure a-1198-5448-error authors SHALL contain exactly one [1..1] assignedAuthor (CONF:1198-5448).</sch:assert>    
+       Failure a-1198-5449-error assignedAuthor SHALL contain at least one [1..*] id (CONF:1198-5449).</sch:assert>
+       Failure a-1198-5452-error assignedAuthor SHALL contain at least one [1..*] US Realm Address (AD.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5452).</sch:assert>
+       Failure a-1198-5428-error assignedAuthor SHALL contain at least one [1..*] telecom (CONF:1198-5428).</sch:assert>
+       Failure a-1198-16790-error There SHALL be exactly one assignedAuthor/assignedPerson or exactly one assignedAuthor/assignedAuthoringDevice (CONF:1198-16790).</sch:assert>  
+       Failure a-1198-16788-error code, if present, SHALL contain exactly one [1..1] @code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy (HIPAA) urn:oid:2.16.840.1.114222.4.11.1066 DYNAMIC (CONF:1198-16788).</sch:assert>   
+       Failure a-1198-16789-error assignedPerson, if present, SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-16789).</sch:assert>   
+       Failure a-1198-16784-error assignedAuthoringDevice, if present, SHALL contain exactly one [1..1] manufacturerModelName (CONF:1198-16784).</sch:assert>
+       Failure a-1198-16785-error assignedAuthoringDevice, if present, SHALL contain exactly one [1..1] softwareName (CONF:1198-16785).</sch:assert>   
+       Failure a-1198-5442-error dataEnterer, if present, SHALL contain exactly one [1..1] assignedEntity (CONF:1198-5442).</sch:assert>   
+       Failure a-1198-5443-error assignedEntity SHALL contain at least one [1..*] id (CONF:1198-5443).</sch:assert>
+       Failure a-1198-5460-error assignedEntity SHALL contain at least one [1..*] US Realm Address (AD.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5460).</sch:assert>
+       Failure a-1198-5466-error assignedEntity SHALL contain at least one [1..*] telecom (CONF:1198-5466).</sch:assert>
+       Failure a-1198-5469-error assignedEntity SHALL contain exactly one [1..1] assignedPerson (CONF:1198-5469).</sch:assert>   
+       Failure a-1198-5470-error SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5470).</sch:assert>    
+       Failure a-1198-5520-error custodian SHALL contain exactly one [1..1] assignedCustodian (CONF:1198-5520).</sch:assert>   
+       Failure a-1198-5521-error assignedCustodian SHALL contain exactly one [1..1] representedCustodianOrganization (CONF:1198-5521).</sch:assert>  
+       Failure a-1198-5522-error representedCustodianOrganization SHALL contain at least one [1..*] id (CONF:1198-5522).</sch:assert>
+       Failure a-1198-5524-error representedCustodianOrganization SHALL contain exactly one [1..1] name (CONF:1198-5524).</sch:assert>
+       Failure a-1198-5525-error representedCustodianOrganization SHALL contain exactly one [1..1] telecom (CONF:1198-5525).</sch:assert>
+       Failure a-1198-5559-error representedCustodianOrganization SHALL contain exactly one [1..1] US Realm Address (AD.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5559).</sch:assert>  
+       Failure a-1198-5566-error The informationRecipient, if present, SHALL contain exactly one [1..1] intendedRecipient (CONF:1198-5566).</sch:assert>
+       Failure a-1198-5568-error The informationRecipient, if present, SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5568).</sch:assert>    
+       Failure a-1198-5578-error The receivedOrganization, if present, SHALL contain exactly one [1..1] name (CONF:1198-5578).</sch:assert>  
+       Failure a-1198-5580-error The legalAuthenticator, if present, SHALL contain exactly one [1..1] US Realm Date and Time (DTM.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.4) (CONF:1198-5580).</sch:assert>
+       Failure a-1198-5583-error The legalAuthenticator, if present, SHALL contain exactly one [1..1] signatureCode (CONF:1198-5583).</sch:assert>
+       Failure a-1198-5585-error The legalAuthenticator, if present, SHALL contain exactly one [1..1] assignedEntity (CONF:1198-5585).</sch:assert>  
+       Failure a-1198-5584-error signatureCode SHALL contain exactly one [1..1] @code="S" (CodeSystem: Participationsignature urn:oid:2.16.840.1.113883.5.89 STATIC) (CONF:1198-5584).</sch:assert>  
+       Failure a-1198-5586-error assignedEntity SHALL contain at least one [1..*] id (CONF:1198-5586).</sch:assert>
+       Failure a-1198-5589-error assignedEntity SHALL contain at least one [1..*] US Realm Address (AD.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5589).</sch:assert>
+       Failure a-1198-5595-error assignedEntity SHALL contain at least one [1..*] telecom (CONF:1198-5595).</sch:assert>
+       Failure a-1198-5597-error assignedEntity SHALL contain exactly one [1..1] assignedPerson (CONF:1198-5597).</sch:assert>  
+       Failure a-1198-5598-error assignedPerson SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5598).</sch:assert>  
+       Failure a-1198-9953-error The inFulfillmentOf, if present, SHALL contain exactly one [1..1] order (CONF:1198-9953).</sch:assert>    
+       Failure a-1198-9954-error order SHALL contain at least one [1..*] id (CONF:1198-9954).</sch:assert>    
+       Failure a-1198-14836-error The documentationOf, if present, SHALL contain exactly one [1..1] serviceEvent (CONF:1198-14836).</sch:assert>   
+       Failure a-1198-14837-error serviceEvent SHALL contain exactly one [1..1] effectiveTime (CONF:1198-14837).</sch:assert>    
+       Failure a-1198-14838-error effectiveTime SHALL contain exactly one [1..1] low (CONF:1198-14838).</sch:assert>    
+       Failure a-1198-14840-error The performer, if present, SHALL contain exactly one [1..1] @typeCode, which SHALL be selected from ValueSet x_ServiceEventPerformer urn:oid:2.16.840.1.113883.1.11.19601 STATIC (CONF:1198-14840).</sch:assert>
+       Failure a-1198-14841-error The performer, if present, SHALL contain exactly one [1..1] assignedEntity (CONF:1198-14841).</sch:assert>  
+       Failure a-1198-14846-error assignedEntity SHALL contain at least one [1..*] id (CONF:1198-14846).</sch:assert>    
+       Failure a-1198-9956-error The componentOf, if present, SHALL contain exactly one [1..1] encompassingEncounter (CONF:1198-9956).</sch:assert>   
+       Failure a-1198-9959-error encompassingEncounter SHALL contain at least one [1..*] id (CONF:1198-9959).</sch:assert>
+       Failure a-1198-9958-error encompassingEncounter SHALL contain exactly one [1..1] effectiveTime (CONF:1198-9958).</sch:assert>
+ 
+       The following assertions are not tested/fired in this error file:      
+           Failure a-1198-5266-error SHALL contain at least one [1..*] recordTarget (CONF:1198-5266).</sch:assert> NOT TESTED
+           Failure a-1198-5444-error SHALL contain at least one [1..*] author (CONF:1198-5444).</sch:assert> NOT TESTED
+           Failure a-1198-6387-error If versionNumber is present setId SHALL be present (CONF:1198-6387).</sch:assert> NOT TESTED
+           
+
+
+    Total Warnings Expected: 28
+       Failure a-1198-5579-warning SHOULD contain zero or one [0..1] legalAuthenticator (CONF:1198-5579).</sch:assert>    
+       Failure a-1198-5259-v-warning SHALL contain exactly one [1..1] confidentialityCode, which SHOULD be selected from ValueSet HL7 BasicConfidentialityKind urn:oid:2.16.840.1.113883.1.11.16926 STATIC (CONF:1198-5259).</sch:assert>  
+       Failure a-1198-5375-warning telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-5375).</sch:assert>    
+       Failure a-1198-5303-warning patient SHOULD contain zero or one [0..1] maritalStatusCode, which SHALL be selected from ValueSet Marital Status urn:oid:2.16.840.1.113883.1.11.12212 DYNAMIC (CONF:1198-5303).</sch:assert>
+       Failure a-1198-5406-warning patient SHOULD contain zero or more [0..*] languageCommunication (CONF:1198-5406).</sch:assert>   
+       Failure a-1198-5300-warning SHOULD be precise to day (CONF:1198-5300).</sch:assert>  
+       Failure a-1198-5326-warning The guardian, if present, SHOULD contain zero or one [0..1] code, which SHALL be selected from ValueSet Personal And Legal Relationship Role Type urn:oid:2.16.840.1.113883.11.20.12.1 DYNAMIC (CONF:1198-5326).</sch:assert>
+       Failure a-1198-5359-warning The guardian, if present, SHOULD contain zero or more [0..*] US Realm Address (AD.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5359).</sch:assert>
+       Failure a-1198-5382-warning The guardian, if present, SHOULD contain zero or more [0..*] telecom (CONF:1198-5382).</sch:assert>    
+       Failure a-1198-7993-warning The telecom, if present, SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7993).</sch:assert>    
+       Failure a-1198-5404-warning addr SHOULD contain zero or one [0..1] country, which SHALL be selected from ValueSet Country urn:oid:2.16.840.1.113883.3.88.12.80.63 DYNAMIC (CONF:1198-5404).</sch:assert>
+       Failure a-1198-5402-warning If country is US, this addr SHALL contain exactly one [1..1] state, which SHALL be selected from ValueSet StateValueSet 2.16.840.1.113883.3.88.12.80.1 DYNAMIC (CONF:1198-5402).</sch:assert>    
+       Failure a-1198-9965-warning The languageCommunication, if present, SHOULD contain zero or one [0..1] proficiencyLevelCode, which SHALL be selected from ValueSet LanguageAbilityProficiency urn:oid:2.16.840.1.113883.1.11.12199 DYNAMIC (CONF:1198-9965).</sch:assert>
+       Failure a-1198-5414-warning The languageCommunication, if present, SHOULD contain zero or one [0..1] preferenceInd (CONF:1198-5414).</sch:assert>  
+       Failure a-1198-16820-warning ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-16820).</sch:assert>   
+       Failure a-1198-7994-warning telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7994).</sch:assert>   
+       Failure a-1198-32882-warning assignedAuthor SHOULD contain zero or one [0..1] id (CONF:1198-32882) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-32884). SHOULD contain zero or one [0..1] @extension (CONF:1198-32885).</sch:assert>
+       Failure a-1198-16787-warning assignedAuthor SHOULD contain zero or one [0..1] code (CONF:1198-16787).</sch:assert>    
+       Failure a-1198-7995-warning telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7995).</sch:assert>   
+       Failure a-1198-16821-warning ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-16821).</sch:assert>   
+       Failure a-1198-7996-warning telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7996).</sch:assert>   
+       Failure a-1198-16822-warning ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-16822).</sch:assert>  
+       Failure a-1198-7998-warning telecom SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7998).</sch:assert>   
+       Failure a-1198-7999-warning telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7999).</sch:assert>   
+       Failure a-1198-14839-warning serviceEvent SHOULD contain zero or more [0..*] performer (CONF:1198-14839).</sch:assert>    
+       Failure a-1198-32889-warning The functionCode, if present, SHOULD contain zero or one [0..1] @code, which SHOULD be selected from ValueSet ParticipationFunction urn:oid:2.16.840.1.113883.1.11.10267 STATIC (CONF:1198-32889).</sch:assert>   
+       Failure a-1198-14842-warning assignedEntity SHOULD contain zero or one [0..1] code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy (HIPAA) urn:oid:2.16.840.1.114222.4.11.1066 DYNAMIC (CONF:1198-14842).</sch:assert>    
+       Failure a-1198-14847-warning ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-14847).</sch:assert>
+       Failure a-1198-7994-warning providerOrganization telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7994)
+
+-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+  xmlns="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:voc="urn:hl7-org:v3/voc">
+  
+  <!--  Failure a-1198-16791-error missing or multiple realmCode="US"  -->
+  <realmCodeErr code="US"/>
+  
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+  <!-- Failure a-1198-5361-error multiple typeId -->
+  <!-- Failure a-1198-5250-error missing or bad root=2.16.840.1.113883.1.3 -->
+  <!-- Failure a-1198-5251-error missing or bad extension="POCD_HD000040" -->
+   <typeId root="2.16.840.1.113883.1.3Err" extension="POCD_HD000040Err"/>
+  
+  <!-- 
+    Failure a-1198-6380-error If setId is present versionNumber SHALL be present -->  
+   <setId />
+   <!-- <versionNumber/> -->
+  
+  <!-- US Realm Header (V3) -->
+  <templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2015-08-01" />
+  <!-- Failure a-1198-5252-error missing or multiple main templateIds -->
+  <templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2015-08-01" />
+  
+  <!-- Failure a-1198-5363-error multiple or missing ids -->
+  <id root="aedd9c6d-as16-48a8-a1bb-10f5968ce672"/>
+  <!-- Failure a-1198-5363-error multiple or missing ids -->
+  <id root="aedd9c6d-as16-48a8-a1bb-10f5968ce672"/>
+  
+  <!-- Failure a-1198-5253-error Missing or multiple code -->
+  <!-- <code code="55182-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Quality Measure Report"/> -->
+  
+  <title>QRDA Sample Report</title>
+  <!-- Failure a-1198-5254-error missing or multiple title -->
+  <title>Extra title disallowed</title>
+  
+  <!-- Failure a-1198-5256-error missing or multiple top-level effectiveTime -->
+  <!-- <effectiveTime value="201712311230-0800"/> -->
+  
+  <!-- Failure a-1198-5259-error missing or multiple confidentialityCode -->
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.1.11.16926"/> 
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+  
+  <!-- Failure a-1198-5372-error Missing or multiple languageCode -->
+  <!-- <languageCode code="en"/> -->
+  
+  <!-- Failure-1198-5266 missing recordTarget NOT TESTED -->
+  <recordTarget>
+    <patientRole>
+      <id extension="111223333A" root="2.16.840.1.113883.4.572"/>
+       <addr use="H">
+        <streetAddressLine>2222 Home Street</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <!-- 
+        This patientRole SHALL contain at least one [1..*] telecom (CONF:1198-5280)
+        Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet 
+        Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-5375)
+      -->
+      <telecom useErr="HP" value="tel:(781)555-1212" />
+      <!-- 
+        This patientRole SHALL contain exactly one [1..1] patient (CONF:1198-5283)
+      -->
+      <patient>
+        <!-- 
+          This patient SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) 
+          (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5284)
+        -->
+        <name>
+          <given>Eve</given>
+          <family>Everygirl</family>
+        </name>
+        <!-- 
+          This patient SHALL contain exactly one [1..1] administrativeGenderCode, which 
+          SHALL be selected from ValueSet Administrative Gender (HL7 V3) 
+          urn:oid:2.16.840.1.113883.1.11.1 DYNAMIC (CONF:1198-6394)
+        -->
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+        <!-- 
+          This patient SHALL contain exactly one [1..1] birthTime (CONF:1198-5298)
+          SHALL be precise to year (CONF:1198-5299)
+          SHOULD be precise to day (CONF:1198-5300)
+        -->
+        <birthTime value="20020201"/>
+        <!--  
+          birthplace, if present, SHALL contain exactly one [1..1] place (CONF:1198-5396)
+          place SHALL contain exactly one [1..1] addr (CONF:1198-5397)
+        -->
+        <birthplace>
+          <place>
+            <addr></addr>
+          </place>
+          <place></place>
+        </birthplace>
+ 
+        <languageCommunication>
+          <!-- Failure a-1198-5407-error IF languageCommunication present, missing or multiple languageCode -->
+        </languageCommunication>
+        
+        <!-- 
+          This patient SHALL contain exactly one [1..1] raceCode, which SHALL be selected from 
+          ValueSet Race Category Excluding Nulls urn:oid:2.16.840.1.113883.3.2074.1.1.3 DYNAMIC (CONF:1198-5322)
+        -->
+        <raceCode code="2106-3" codeSystem="2.16.840.1.114222.4.11.836" displayName="White"/>
+        
+        <!-- Failure a-1198-5323-error missing or multiple ethnicGroupCode -->
+        <!-- <ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.114222.4.11.837" displayName="Not Hispanic or Latino"/> -->
+        
+        <!--
+          The guardian, if present, SHOULD contain zero or one [0..1] code, which SHALL be selected from ValueSet Personal And Legal Relationship Role Type urn:oid:2.16.840.1.113883.11.20.12.1 DYNAMIC (CONF:1198-5326)
+          The guardian, if present, SHOULD contain zero or more [0..*] US Realm Address (AD.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5359) 
+          The guardian, if present, SHOULD contain zero or more [0..*] telecom (CONF:1198-5382)
+         -->
+        <guardian>
+          <!-- Failure a-1198-7993-error missing or bad @use attribute in telecom -->
+          <telecom useErr=""></telecom>
+          <addr>
+            <country value="US"/>
+            <!-- Failure a-1198-5402-error If country = "US", missing or multiple state in addr -->  
+            <!-- Failure a-1198-5404-warning multiple country in addr -->
+            <country/>
+          </addr>
+          <code></code>
+          <guardianPerson>
+            <name></name>
+          </guardianPerson>
+         </guardian>
+
+        <!-- Multiple guardians allowed -->
+        <!-- The guardian, if present, SHALL contain exactly one [1..1] guardianPerson (CONF:1198-5385). -->
+        <guardian>
+          <!-- Failure a-1198-5326-warning missing or multiple code in guardian -->
+          <!-- Failure a-1198-5359-warning missing addr in guardian -->
+          <!-- Failure a-1198-5382-warning missing telecom in guardian -->
+          <guardianPerson>
+            <!-- Failure a-1198-5386-error missing name in guardianPerson -->
+           </guardianPerson>
+          <!-- Failure a-1998-5385-error multiple guardianPerson -->
+          <guardianPerson>
+            <name/>
+          </guardianPerson>
+         </guardian>
+        
+        <maritalStatusCode/>
+        
+      </patient>
+      <!--  
+        If providerOrganization present, ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-16820).
+        If providerOrganization present, telecom SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7994)
+      -->
+      <providerOrganization>
+        <id root="2.16.840.1.113883.4.6Err"></id>
+        <name></name>
+        <telecom userErr=""></telecom>
+        <addr></addr>
+      </providerOrganization>
+ 
+      <providerOrganization>
+        <!-- Failure a-1198-5417-error missing id -->
+        <!-- Failure a-1198-5419-error missing name -->
+        <!-- Failure a-1198-5420-error missing telecom -->
+        <!-- Failure a-1198-5422-error missing addr -->
+      </providerOrganization>
+      
+    </patientRole>
+    
+    <!-- Failure a-1198-5267-error Multiple patientRoles -->
+    <patientRole>
+      <!-- Failure a-1198-5268-error missing id -->
+      <!-- <id extension="111223333A" root="2.16.840.1.113883.4.572"/> -->
+ 
+      <!-- Failure a-1198-5271-error missing addr -->
+      <!-- 
+         <addr use="H">
+           <streetAddressLine>2222 Home Street</streetAddressLine>
+           <city>Burlington</city>
+           <state>MA</state>
+           <postalCode>02368</postalCode>
+           <country>US</country>
+         </addr>
+      -->
+      
+      <!-- Failure a-1198-5280-error missing telecom -->
+      <!--   Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet 
+        Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-5375)
+      -->
+      <!-- <telecom use="HP" value="tel:(781)555-1212"/> -->
+      
+      <patient>
+        <name>
+          <given>Eve</given>
+          <family>Everygirl</family>
+        </name>
+        <!-- 
+          This patient SHALL contain exactly one [1..1] administrativeGenderCode, which 
+          SHALL be selected from ValueSet Administrative Gender (HL7 V3) 
+          urn:oid:2.16.840.1.113883.1.11.1 DYNAMIC (CONF:1198-6394)
+        -->
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+        
+        <birthTime value="20020201"/>
+        <!-- Failure a-1198-5298-error missing or multiple birthTime -->
+        <!-- Failure a-1198-5299-error birthTime not precise to year -->
+        <!-- Failure a-1198-5300-warning birthTime not precise to dat -->
+        <birthTime value=""/>
+        
+        <raceCode code="2106-3" codeSystem="2.16.840.1.114222.4.11.836" displayName="White"/>
+        
+        <ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.114222.4.11.837"
+          displayName="Not Hispanic or Latino"/>
+         <maritalStatusCode/>
+        
+      </patient>
+      
+      <!-- Failure a-1198-5284-error multiple patients -->
+      <patient>
+        <!-- Failure a-1198-5284-error missing name -->
+        <!--
+            <name>
+            <given>Eve</given>
+            <family>Everygirl</family>
+          </name>
+          -->
+        
+        <!-- Failure a-1198-6394-error missing or multiple administrativeGenderCode -->
+        <!-- <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/> -->
+       
+        <birthTime value="20020201"/>
+        <ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.114222.4.11.837" displayName="Not Hispanic or Latino"/>
+      
+        <sdtc:raceCode code="2076-8" displayName="Hawaiian or Other Pacific Islander" codeSystem="2.16.840.1.113883.6.238" codeSystemName="Race &amp; Ethnicity - CDC"/>
+        
+        <!-- Failure a-1198-5322-error missing or multiple raceCode -->
+        <!-- Failure a-1198-31347-error If sdtc:raceCode is present, then the patient SHALL contain [1..1] raceCode -->
+        <!-- <raceCode code="2106-3" codeSystem="2.16.840.1.114222.4.11.836" displayName="White"/> -->
+       
+        
+        <!-- Failure a-1198-5303-warning missing or multiple maritalStatusCode -->
+        <!-- <maritalStatusCode/> -->
+        
+      </patient>
+    </patientRole>
+    
+  </recordTarget>
+
+  <!-- ***** Device Author ***** -->
+  <!-- Failure a-1198-5444-error Missing author not tested -->
+  <author>
+    <!-- 
+      Such authors SHALL contain exactly one [1..1] US Realm Date and Time (DTM.US.FIELDED) 
+      (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.4) (CONF:1198-5445)
+    -->
+    <time value="201712311230-0800"/>
+    <!-- 
+      Such authors SHALL contain exactly one [1..1] assignedAuthor (CONF:1198-5448)
+    -->
+    <assignedAuthor>
+      <!-- 
+        This assignedAuthor SHALL contain at least one [1..*] id (CONF:1198-5449)
+      -->
+      <id extension="AS00016dev" root="2.16.840.1.113883.19.5"/>
+      <!-- 
+        This assignedAuthor SHALL contain at least one [1..*] US Realm Address (AD.US.FIELDED) 
+        (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5452)
+      -->
+      <addr use="WP">
+        <streetAddressLine>21 North Ave.</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <!-- 
+        This assignedAuthor SHALL contain at least one [1..*] telecom (CONF:1198-5428)
+        Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet 
+        Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7995)
+      -->
+      <telecom useErr="WP" value="tel:(555)555-1003"/>
+      <!-- 
+        This assignedAuthor SHOULD contain zero or one [0..1] assignedAuthoringDevice (CONF:1198-16783)
+      -->
+      <!-- 
+        There SHALL be exactly one assignedAuthor/assignedPerson or exactly one 
+        assignedAuthor/assignedAuthoringDevice (CONF:1198-16790)
+      -->
+      <assignedAuthoringDevice>
+        <!-- Failure a-1198-16784-error missing or multiple manufacturerModelName -->
+        <!-- Failure a-1198-16785-error missing or multiple softwareName -->
+        <!-- <manufacturerModelName>Good Health Medical Device</manufacturerModelName> -->
+        <!-- <softwareName>Good Health Report Generator</softwareName> -->
+      </assignedAuthoringDevice>
+      
+    </assignedAuthor>
+    
+    <!-- Failure a-1198-5448-error Multiple assignedAuthor -->
+    <assignedAuthor>
+      <!-- Failure a-1198-5449-error missing id -->
+      <!-- <id extension="AS00016dev" root="2.16.840.1.113883.19.5"/> -->
+
+      <!-- Failure a-1198-5452-error missing addr -->
+      <!--
+         <addr use="WP">
+           <streetAddressLine>21 North Ave.</streetAddressLine>
+           <city>Burlington</city>
+           <state>MA</state>
+           <postalCode>02368</postalCode>
+           <country>US</country>
+         </addr>
+      -->
+      
+      <!-- Failure a-1198-5428-error missing telecom -->
+      <!-- <telecom use="WP" value="tel:(555)555-1003"/> -->
+      <!--  
+        This assignedAuthor SHALL contain at least one [1..*] telecom (CONF:1198-5428)
+        Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet 
+        Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7995)
+      -->
+      
+      <!-- Failure a-1198-16783-warning missing assignedAuthoringDevice -->
+   
+      <!-- There SHALL be exactly one assignedAuthor/assignedPerson or exactly one  assignedAuthor/assignedAuthoringDevice (CONF:1198-16790) -->
+     </assignedAuthor>
+  </author>
+
+  <!-- Failure a-1198-5445-error Multiple authors -->
+  <author>
+    <!-- Failure a-11988-5445-error missing or multiple time -->
+    <!-- <time value="201712311230-0800"/> -->
+
+    <assignedAuthor>
+       <id extension="AS00016dev" root="2.16.840.1.113883.19.5"/>
+       <addr use="WP">
+        <streetAddressLine>21 North Ave.</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+       <telecom use="WP" value="tel:(555)555-1003"/>
+      <assignedAuthoringDevice>
+        <manufacturerModelName>Good Health Medical Device</manufacturerModelName>
+        <softwareName>Good Health Report Generator</softwareName>
+      </assignedAuthoringDevice>
+    </assignedAuthor>
+  </author>
+  
+  <!-- ***** Person Author ***** -->
+  <!-- 
+    SHALL contain at least one [1..*] author (CONF:1198-5444) 
+  -->
+  <author>
+    <!-- 
+      Such authors SHALL contain exactly one [1..1] US Realm Date and Time (DTM.US.FIELDED) 
+      (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.4) (CONF:1198-5445)
+    -->
+    <time value="201712311230-0800"/>
+    <!-- 
+      Such authors SHALL contain exactly one [1..1] assignedAuthor (CONF:1198-5448)
+    -->
+    <assignedAuthor>
+      <!-- 
+        This assignedAuthor SHALL contain at least one [1..*] id (CONF:1198-5449)
+        This assignedAuthor SHOULD contain zero or one [0..1] id (CONF:1198-32882) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-32884). SHOULD contain zero or one [0..1] @extension (CONF:1198-32885)
+      -->
+      <id root="2.16.840.1.113883.4.6" extensionErr="123456789"/>
+      <!-- 
+        This assignedAuthor SHOULD contain zero or one [0..1] code (CONF:1198-16787)
+        The code, if present, SHALL contain exactly one [1..1] @code, which SHOULD be selected from 
+        ValueSet Healthcare Provider Taxonomy (HIPAA) urn:oid:2.16.840.1.114222.4.11.1066 
+        DYNAMIC (CONF:1198-16788)
+      -->
+      <code code="200000000X" codeSystem="2.16.840.1.113883.6.101"
+        displayName="Allopathic &amp; Osteopathic Physicians"/>
+      <code codeErr="200000000X"></code>
+      <!-- 
+        This assignedAuthor SHALL contain at least one [1..*] US Realm Address (AD.US.FIELDED) 
+        (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5452)
+      -->
+      <addr use="WP">
+        <streetAddressLine>1020 Healthcare Drive</streetAddressLine>
+        <streetAddressLine>Suite 500</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <!-- 
+        This assignedAuthor SHALL contain at least one [1..*] telecom (CONF:1198-5428)
+        Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet 
+        Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7995)
+      -->
+      <telecom use="WP" value="tel:(555)555-1003"/>
+      <!-- 
+        There SHALL be exactly one assignedAuthor/assignedPerson or exactly one 
+        assignedAuthor/assignedAuthoringDevice (CONF:1198-16790)
+      -->
+      <!-- 
+        This assignedAuthor SHOULD contain zero or one [0..1] assignedPerson (CONF:1198-5430) 
+      -->
+      <assignedPerson>
+        <!-- Failure a-1198-16789-error missing name -->
+        <!-- 
+          <name>
+          <given>Ann</given>
+          <family>Quality</family>
+          <suffix>RN</suffix>
+        </name>
+        -->
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+
+  <!-- 
+    MAY contain zero or one [0..1] dataEnterer (CONF:1198-5441)
+  -->
+  <dataEnterer>
+    <!-- 
+      The dataEnterer, if present, SHALL contain exactly one [1..1] assignedEntity (CONF:1198-5442)
+    -->
+    <assignedEntity>
+      <!-- Failure a-1198-16821-warning bad or missing root="2.16.840.1.113883.4.6" -->
+      <id extension="333777777" root="2.16.840.1.113883.4.6Err"/>
+      
+      <!-- 
+        This assignedEntity SHALL contain at least one [1..*] US Realm Address (AD.US.FIELDED) 
+        (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5460)
+      -->
+      <addr>
+        <streetAddressLine>1007 Healthcare Drive</streetAddressLine>
+        <city>Portland</city>
+        <state>OR</state>
+        <postalCode>99123</postalCode>
+        <country>US</country>
+      </addr>
+      <!-- Failure a-1198-7996-warning bad or missing use attribute on telecom -->
+      <telecom useErr="WP" value="tel:+1(555)555-1050"/>
+      <!-- 
+        This assignedEntity SHALL contain exactly one [1..1] assignedPerson (CONF:1198-5469)
+      -->
+      <assignedPerson>
+        <!-- 
+          This assignedPerson SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) 
+          (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5470)
+        -->
+        <name>
+          <given>Ellen</given>
+          <family>Enter</family>
+        </name>
+      </assignedPerson>
+    </assignedEntity>
+    
+    <!-- Failure a-1198-5442-error Multiple assignedEntity -->
+    <assignedEntity>
+      <!-- Failure a-1198-5443-error missing id -->
+      <!-- <id extension="333777777" root="2.16.840.1.113883.4.6"/> -->
+      
+      <!-- Failure a-1198-5460-error missing addr -->
+      <!--
+        <addr>
+          <streetAddressLine>1007 Healthcare Drive</streetAddressLine>
+          <city>Portland</city>
+          <state>OR</state>
+          <postalCode>99123</postalCode>
+          <country>US</country>
+        </addr>
+      -->
+      
+      <!-- Failure a-1198-5446-error missing telecom -->
+      <!-- <telecom use="WP" value="tel:+1(555)555-1050"/> -->
+      
+      <!-- 
+        This assignedEntity SHALL contain exactly one [1..1] assignedPerson (CONF:1198-5469)
+      -->
+      <assignedPerson>
+         <name>
+          <given>Ellen</given>
+          <family>Enter</family>
+        </name>
+      </assignedPerson>
+      <!-- Failure a-1198-5470-error Multiple assignedPerson -->
+      <assignedPerson>
+        <!-- Failure a-1198-5470-error missing name -->
+        <!--
+        <name>
+          <given>Ellen</given>
+          <family>Enter</family>
+        </name>
+        -->
+      </assignedPerson>
+      
+    </assignedEntity>
+    
+  </dataEnterer>
+
+  <!-- ***** Assigned Information Source ***** -->
+  <!-- 
+    MAY contain zero or more [0..*] informant (CONF:1198-8001) such that it
+    SHALL contain exactly one [1..1] assignedEntity (CONF:1198-8002)
+  -->
+  <informant>
+    <assignedEntity>
+      <!-- 
+        This assignedEntity SHALL contain at least one [1..*] id (CONF:1198-9945)
+        If assignedEntity/id is a provider then this id, SHOULD include zero or one [0..1] 
+        id where id/@root ="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-9946)
+      -->
+      <id extension="888888888" root="2.16.840.1.113883.4.6"/>
+      <!-- 
+        This assignedEntity SHALL contain at least one [1..*] US Realm Address (AD.US.FIELDED) 
+        (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-8220)
+      -->
+      <addr>
+        <streetAddressLine>1007 Healthcare Drive</streetAddressLine>
+        <city>Portland</city>
+        <state>OR</state>
+        <postalCode>99123</postalCode>
+        <country>US</country>
+      </addr>
+      <!-- 
+        This assignedEntity SHALL contain exactly one [1..1] assignedPerson (CONF:1198-8221)
+      -->
+      <assignedPerson>
+        <!-- 
+          This assignedPerson SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) 
+          (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-8222)
+        -->
+        <name>
+          <given>Harold</given>
+          <family>Hippocrates</family>
+          <suffix qualifier="AC">M.D.</suffix>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <name>The DoctorsApart Physician Group</name>
+      </representedOrganization>
+    </assignedEntity>
+  </informant>
+
+  <!-- ***** Related Information Source ***** -->
+  <!-- 
+    MAY contain zero or more [0..*] informant (CONF:1198-31355) such that it
+    SHALL contain exactly one [1..1] relatedEntity (CONF:1198-31356)
+  -->
+  <informant>
+    <relatedEntity classCode="PRS">
+      <code code="SPS" displayName="SPOUSE" codeSystem="2.16.840.1.113883.1.11.19563"
+        codeSystemName="Personal Relationship Role Type Value Set"/>
+      <relatedPerson>
+        <name>
+          <given>Boris</given>
+          <given qualifier="CL">Bo</given>
+          <family>Betterhalf</family>
+        </name>
+      </relatedPerson>
+    </relatedEntity>
+  </informant>
+
+  <!-- 
+    SHALL contain exactly one [1..1] custodian (CONF:1198-5519)
+  -->
+  <custodian>
+    <!-- 
+      This custodian SHALL contain exactly one [1..1] assignedCustodian (CONF:1198-5520)
+    -->
+    <assignedCustodian>
+      <!-- 
+        This assignedCustodian SHALL contain exactly one [1..1] representedCustodianOrganization (CONF:1198-5521)
+      -->
+      <representedCustodianOrganization>
+        <!-- 
+          This representedCustodianOrganization SHALL contain at least one [1..*] id (CONF:1198-5522)
+          Such ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" 
+          National Provider Identifier (CONF:1198-16822)
+        -->
+        <id root="2.16.840.1.113883.4.6" extension="123456"/>
+        <!-- CMS Certification Number -->
+        <id root="2.16.840.1.113883.4.336" extension="1111111"/>
+        <!-- Tax ID Number -->
+        <id root="2.16.840.1.113883.4.2" extension="2222222"/>
+        <!-- Joint Commission's Health Care Organization (HCO) -->
+        <id root="1.3.6.1.4.1.33895" extension="3333333"/>
+        <!-- 
+          This representedCustodianOrganization SHALL contain exactly one [1..1] name (CONF:1198-5524)
+        -->
+        <name>Good Health Hospital</name>
+        <!-- 
+          This representedCustodianOrganization SHALL contain exactly one [1..1] telecom (CONF:1198-5525)
+          This telecom SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet 
+          Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7998)
+        -->
+        <telecom use="WP" value="tel:(555)555-1003"/>
+        <!-- 
+          This representedCustodianOrganization SHALL contain exactly one [1..1] US Realm Address (AD.US.FIELDED) 
+          (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5559)
+        -->
+        <addr use="WP">
+          <streetAddressLine>21 North Ave.</streetAddressLine>
+          <city>Burlington</city>
+          <state>MA</state>
+          <postalCode>02368</postalCode>
+          <country>US</country>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <!-- Failure a-1198-5519-error multiple custodian -->
+  <custodian>
+    <!-- 
+      This custodian SHALL contain exactly one [1..1] assignedCustodian (CONF:1198-5520)
+    -->
+    <assignedCustodian>
+      <!-- 
+        This assignedCustodian SHALL contain exactly one [1..1] representedCustodianOrganization (CONF:1198-5521)
+      -->
+      <representedCustodianOrganization>
+        <!-- 
+          This representedCustodianOrganization SHALL contain at least one [1..*] id (CONF:1198-5522)
+          Such ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" 
+          National Provider Identifier (CONF:1198-16822)
+        -->
+        <id root="2.16.840.1.113883.4.6" extension="123456"/>
+        <!-- CMS Certification Number -->
+        <id root="2.16.840.1.113883.4.336" extension="1111111"/>
+        <!-- Tax ID Number -->
+        <id root="2.16.840.1.113883.4.2" extension="2222222"/>
+        <!-- Joint Commission's Health Care Organization (HCO) -->
+        <id root="1.3.6.1.4.1.33895" extension="3333333"/>
+        <!-- 
+          This representedCustodianOrganization SHALL contain exactly one [1..1] name (CONF:1198-5524)
+        -->
+        <name>Good Health Hospital</name>
+        <!-- 
+          This representedCustodianOrganization SHALL contain exactly one [1..1] telecom (CONF:1198-5525)
+          This telecom SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet 
+          Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7998)
+        -->
+        <telecom use="WP" value="tel:(555)555-1003"/>
+        <!-- 
+          This representedCustodianOrganization SHALL contain exactly one [1..1] US Realm Address (AD.US.FIELDED) 
+          (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5559)
+        -->
+        <addr use="WP">
+          <streetAddressLine>21 North Ave.</streetAddressLine>
+          <city>Burlington</city>
+          <state>MA</state>
+          <postalCode>02368</postalCode>
+          <country>US</country>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+    <!-- Failure a-1198-5520-error multiple assignedCustodian -->
+    <assignedCustodian>
+      <!-- 
+        This assignedCustodian SHALL contain exactly one [1..1] representedCustodianOrganization (CONF:1198-5521)
+      -->
+      <representedCustodianOrganization>
+        <!-- 
+          This representedCustodianOrganization SHALL contain at least one [1..*] id (CONF:1198-5522)
+          Such ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" 
+          National Provider Identifier (CONF:1198-16822)
+        -->
+        <id root="2.16.840.1.113883.4.6" extension="123456"/>
+        <!-- CMS Certification Number -->
+        <id root="2.16.840.1.113883.4.336" extension="1111111"/>
+        <!-- Tax ID Number -->
+        <id root="2.16.840.1.113883.4.2" extension="2222222"/>
+        <!-- Joint Commission's Health Care Organization (HCO) -->
+        <id root="1.3.6.1.4.1.33895" extension="3333333"/>
+        <!-- 
+          This representedCustodianOrganization SHALL contain exactly one [1..1] name (CONF:1198-5524)
+        -->
+        <name>Good Health Hospital</name>
+        <!-- 
+          This representedCustodianOrganization SHALL contain exactly one [1..1] telecom (CONF:1198-5525)
+          This telecom SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet 
+          Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7998)
+        -->
+        <telecom use="WP" value="tel:(555)555-1003"/>
+        <!-- 
+          This representedCustodianOrganization SHALL contain exactly one [1..1] US Realm Address (AD.US.FIELDED) 
+          (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5559)
+        -->
+        <addr use="WP">
+          <streetAddressLine>21 North Ave.</streetAddressLine>
+          <city>Burlington</city>
+          <state>MA</state>
+          <postalCode>02368</postalCode>
+          <country>US</country>
+        </addr>
+      </representedCustodianOrganization>
+      <!-- Failure a-1198-5521-error multiple representedCustodianOrganization -->
+      <representedCustodianOrganization>
+        <!-- Failure a-1198-16822-error missing id -->
+        <!-- <id root="2.16.840.1.113883.4.6" extension="123456"/> -->
+        
+        <!-- Failure a-1198-5524-error missing or multiple name -->
+        <name>Good Health Hospital</name>
+        <name>Extra name disallowed</name>
+       
+        <!-- Failure a-1198-5525-error missing or multiple telecom -->
+        <!-- Failure a-1198-7998-warning missing @use attribute -->
+        <telecom use="WP" value="tel:(555)555-1003"/>
+        <telecom useErr="WP" value="tel:(555)555-1003"/>
+        
+        <!-- Failure a-1198-5559-error missing or multiple addr -->
+        <!--
+          <addr use="WP">
+            <streetAddressLine>21 North Ave.</streetAddressLine>
+            <city>Burlington</city>
+            <state>MA</state>
+            <postalCode>02368</postalCode>
+            <country>US</country>
+          </addr>
+        -->
+        
+      </representedCustodianOrganization>
+    </assignedCustodian>
+    
+  </custodian>
+  <!-- 
+  MAY contain zero or more [0..*] informationRecipient (CONF:1198-5565)
+  -->
+  <informationRecipient>
+    <!-- 
+      The informationRecipient, if present, SHALL contain exactly one [1..1] intendedRecipient (CONF:1198-5566)
+    -->
+    <intendedRecipient>
+      <id root="2.16.840.1.113883.4.6" extension="111111111"/>
+      <!-- 
+        This intendedRecipient MAY contain zero or one [0..1] informationRecipient (CONF:1198-5567)
+      -->
+      <informationRecipient>
+        <!-- 
+          The informationRecipient, if present, SHALL contain at least one [1..*] US Realm Person Name 
+          (PN.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5568)
+        -->
+        <name>
+          <given>Sara</given>
+          <family>Specialize</family>
+          <suffix qualifier="AC">M.D.</suffix>
+        </name>
+      </informationRecipient>
+      <!-- 
+        This intendedRecipient MAY contain zero or one [0..1] receivedOrganization (CONF:1198-5577)
+      -->
+      <receivedOrganization>
+        <!-- 
+          The receivedOrganization, if present, SHALL contain exactly one [1..1] name (CONF:1198-5578)
+        -->
+        <name>The DoctorsApart Physician Group</name>
+      </receivedOrganization>
+    </intendedRecipient>
+    
+    <!-- Failure a-1198-5566-error multiple indendedRecipient -->
+    <intendedRecipient>
+      <id root="2.16.840.1.113883.4.6" extension="111111111"/>
+      <!-- 
+        This intendedRecipient MAY contain zero or one [0..1] informationRecipient (CONF:1198-5567)
+      -->
+      <informationRecipient>
+        <!-- Failure a-1198-5568-error missing name -->
+        <!--
+         <name>
+           <given>Sara</given>
+           <family>Specialize</family>
+           <suffix qualifier="AC">M.D.</suffix>
+         </name>
+        -->
+      </informationRecipient>
+      
+      <!-- 
+        This intendedRecipient MAY contain zero or one [0..1] receivedOrganization (CONF:1198-5577)
+      -->
+      <receivedOrganization>
+         <!-- Failure a-1198-5578-error missing or multiple name -->
+         <name>The DoctorsApart Physician Group</name>
+         <name>Extra name not allowed</name>
+      </receivedOrganization>
+      
+    </intendedRecipient>
+  </informationRecipient>
+
+  <!-- 
+    SHOULD contain zero or one [0..1] legalAuthenticator (CONF:1198-5579)
+  -->
+  <legalAuthenticator>
+    <!-- 
+      The legalAuthenticator, if present, SHALL contain exactly one [1..1] US Realm Date and Time 
+      (DTM.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.4) (CONF:1198-5580)
+    -->
+    <time value="201712311230-0800"/>
+    <!-- 
+      The legalAuthenticator, if present, SHALL contain exactly one [1..1] signatureCode (CONF:1198-5583)
+      This signatureCode SHALL contain exactly one [1..1] @code="S" 
+      (CodeSystem: Participationsignature urn:oid:2.16.840.1.113883.5.89 STATIC) (CONF:1198-5584)
+    -->
+    <signatureCode code="S"/>
+    <!-- 
+      The legalAuthenticator, if present, SHALL contain exactly one [1..1] assignedEntity (CONF:1198-5585)
+    -->
+    <assignedEntity>
+      <!-- 
+        This assignedEntity SHALL contain at least one [1..*] id (CONF:1198-5586)
+      -->
+      <id root="bc01a5d1-3a34-4286-82cc-43eb04c972a7"/>
+      <!-- 
+        This assignedEntity SHALL contain at least one [1..*] US Realm Address (AD.US.FIELDED) 
+        (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5589)
+      -->
+      <addr use="WP">
+        <streetAddressLine>21 North Ave.</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <!-- 
+        This assignedEntity SHALL contain at least one [1..*] telecom (CONF:1198-5595)
+        Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet 
+        Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-7999)
+      -->
+      <telecom use="WP" value="tel:(555)555-1003"/>
+      <!-- 
+        This assignedEntity SHALL contain exactly one [1..1] assignedPerson (CONF:1198-5597)
+      -->
+      <assignedPerson>
+        <!-- 
+          This assignedPerson SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) 
+          (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5598)
+        -->
+        <name>
+          <given>Virgil</given>
+          <family>Verify</family>
+          <suffix>MD</suffix>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root="2.16.840.1.113883.19.5"/>
+        <name>Good Health Hospital</name>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+
+  <!-- Failure a-1198-5579-error multiple  legalAuthenticator  -->
+  <legalAuthenticator>
+    <!-- Failure a-1198-5580-error missing or multiple time -->
+    <!-- <time value="201712311230-0800"/> -->
+    
+    <signatureCode code="S"/>
+    <!-- Failure a-1198-5583-error missing or multiple signatureCode -->
+    <!-- Failure a-1198-5884-error bad or missing code="S" -->
+    <signatureCode codeErr="S"/>
+ 
+    <!-- 
+      The legalAuthenticator, if present, SHALL contain exactly one [1..1] assignedEntity (CONF:1198-5585)
+    -->
+    <assignedEntity>
+      <!-- 
+        This assignedEntity SHALL contain at least one [1..*] id (CONF:1198-5586)
+      -->
+      <id root="bc01a5d1-3a34-4286-82cc-43eb04c972a7"/>
+      <!-- 
+        This assignedEntity SHALL contain at least one [1..*] US Realm Address (AD.US.FIELDED) 
+        (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5589)
+      -->
+      <addr use="WP">
+        <streetAddressLine>21 North Ave.</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      
+      <!-- Failure a-1198-7999-warning missing or bad @use attribute -->
+     <telecom useErr="WP" value="tel:(555)555-1003"/>
+      
+      <!-- 
+        This assignedEntity SHALL contain exactly one [1..1] assignedPerson (CONF:1198-5597)
+      -->
+      <assignedPerson>
+        <!-- 
+          This assignedPerson SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) 
+          (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5598)
+        -->
+        <name>
+          <given>Virgil</given>
+          <family>Verify</family>
+          <suffix>MD</suffix>
+        </name>
+      </assignedPerson>
+      
+      <representedOrganization>
+        <id root="2.16.840.1.113883.19.5"/>
+        <name>Good Health Hospital</name>
+      </representedOrganization>
+      
+    </assignedEntity>
+    
+    <!-- Failure a-1198-5586-error multiple assignedEntity  -->
+    <assignedEntity>
+      <!-- Failure a-1198-5586-error missing id -->
+      <!-- <id root="bc01a5d1-3a34-4286-82cc-43eb04c972a7"/> -->
+      
+      <!-- Failure a-1198-5589-error missing addr -->
+       <!--
+          <addr use="WP">
+            <streetAddressLine>21 North Ave.</streetAddressLine>
+            <city>Burlington</city>
+            <state>MA</state>
+            <postalCode>02368</postalCode>
+            <country>US</country>
+          </addr>
+      -->
+      
+      <!-- Failure a-1198-5595-error missing telecom -->
+      <!-- <telecom use="WP" value="tel:(555)555-1003"/> -->
+      
+      <!-- 
+        This assignedEntity SHALL contain exactly one [1..1] assignedPerson (CONF:1198-5597)
+      -->
+      <assignedPerson>
+        <!-- 
+          This assignedPerson SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) 
+          (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5598)
+        -->
+        <name>
+          <given>Virgil</given>
+          <family>Verify</family>
+          <suffix>MD</suffix>
+        </name>
+      </assignedPerson>
+      
+      <!-- Failure a-1198-5597-error multiple assignedPerson  -->
+      <assignedPerson>
+        <!-- Failure a-1198-5598-error missing name -->
+        <!--
+          <name>
+            <given>Virgil</given>
+            <family>Verify</family>
+            <suffix>MD</suffix>
+          </name>
+        -->
+      </assignedPerson>
+      
+      <representedOrganization>
+        <id root="2.16.840.1.113883.19.5"/>
+        <name>Good Health Hospital</name>
+      </representedOrganization>
+      
+    </assignedEntity>
+    
+  </legalAuthenticator>
+  
+  <!-- 
+    MAY contain zero or more [0..*] authenticator (CONF:1198-5607) such that it
+    SHALL contain exactly one [1..1] US Realm Date and Time (DTM.US.FIELDED) 
+    (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.4) (CONF:1198-5608)
+  -->
+  <authenticator>
+    <time value="201712311230-0800"/>
+    
+    <!-- Failure a-1198-5611-error missing signatureCode -->
+    <!-- <signatureCode code="S"/> -->
+    
+    <!-- 
+      SHALL contain exactly one [1..1] assignedEntity (CONF:1198-5612)
+    -->
+    <assignedEntity>
+      <!-- 
+        This assignedEntity SHALL contain at least one [1..*] id (CONF:1198-5613)
+        Such ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" 
+        National Provider Identifier  (CONF:1198-16824)
+      -->
+      <id extension="5555555555" root="2.16.840.1.113883.4.6"/>
+      <!-- 
+        This assignedEntity SHALL contain at least one [1..*] US Realm Address (AD.US.FIELDED) 
+        (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1198-5616)
+      -->
+      <addr>
+        <streetAddressLine>1004 Healthcare Drive </streetAddressLine>
+        <city>Portland</city>
+        <state>OR</state>
+        <postalCode>99123</postalCode>
+        <country>US</country>
+      </addr>
+      
+      <!-- Failure a-1198-8000-warning missing @use attribute on telecom -->
+      <telecom useErr="WP" value="tel:+1(555)555-1004"/>
+      
+      <!-- 
+        This assignedEntity SHALL contain exactly one [1..1] assignedPerson (CONF:1198-5624)
+      -->
+      <assignedPerson>
+        <!-- 
+          This assignedPerson SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) 
+          (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5625)
+        -->
+        <name>
+          <given>Patricia</given>
+          <given qualifier="CL">Patty</given>
+          <family>Primary</family>
+          <suffix qualifier="AC">M.D.</suffix>
+        </name>
+      </assignedPerson>
+      
+    </assignedEntity>
+    
+    <!-- Failure a-1198-5612-error multiple assignedEntity  -->
+    <assignedEntity>
+      <!-- Failure a-1198-16824-error missing id -->
+      <!-- <id extension="5555555555" root="2.16.840.1.113883.4.6"/> -->
+      
+      <!-- Failure a-1198-5616-error missing addr -->
+      <!--
+        <addr>
+          <streetAddressLine>1004 Healthcare Drive </streetAddressLine>
+          <city>Portland</city>
+          <state>OR</state>
+          <postalCode>99123</postalCode>
+          <country>US</country>
+        </addr>
+      -->
+      
+      <!-- Failure a-1198-5622-error missing telecom -->
+      <!-- <telecom useErr="WP" value="tel:+1(555)555-1004"/> -->
+      
+      <!-- 
+        This assignedEntity SHALL contain exactly one [1..1] assignedPerson (CONF:1198-5624)
+      -->
+      <assignedPerson>
+        <!-- 
+          This assignedPerson SHALL contain at least one [1..*] US Realm Person Name (PN.US.FIELDED) 
+          (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5625)
+        -->
+        <name>
+          <given>Patricia</given>
+          <given qualifier="CL">Patty</given>
+          <family>Primary</family>
+          <suffix qualifier="AC">M.D.</suffix>
+        </name>
+      </assignedPerson>
+      
+      <!-- Failure a-1198-5624-error multiple assignedPerson  -->
+      <assignedPerson>
+        <!-- Failure a-1198-5625-error missing name -->
+        <!--
+          <name>
+            <given>Patricia</given>
+            <given qualifier="CL">Patty</given>
+            <family>Primary</family>
+            <suffix qualifier="AC">M.D.</suffix>
+          </name>
+        -->
+      </assignedPerson>
+      
+    </assignedEntity>
+  </authenticator>
+
+  <!-- 
+    MAY contain zero or more [0..*] participant (CONF:1198-10003) such that it
+  -->
+  <participant typeCode="IND">
+    <!-- 
+      SHALL contain associatedEntity/associatedPerson AND/OR associatedEntity/scopingOrganization (CONF:1198-10006)
+      When participant/@typeCode is IND, associatedEntity/@classCode SHOULD be selected from ValueSet 
+      2.16.840.1.113883.11.20.9.33 INDRoleclassCodes STATIC 2011-09-30 (CONF:1198-10007)
+    -->
+    <associatedEntity classCode="ECON">
+      <addr use="HP">
+        <streetAddressLine>2222 Home Street</streetAddressLine>
+        <city>Beaverton</city>
+        <state>OR</state>
+        <postalCode>97867</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom value="tel:+1(555)555-2008" use="MC"/>
+      <associatedPerson>
+        <name>
+          <given>Boris</given>
+          <given qualifier="CL">Bo</given>
+          <family>Betterhalf</family>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+
+  <!-- 
+    MAY contain zero or more [0..*] inFulfillmentOf (CONF:1198-9952)
+  -->
+  <inFulfillmentOf typeCode="FLFS">
+    <!-- 
+      The inFulfillmentOf, if present, SHALL contain exactly one [1..1] order (CONF:1198-9953)
+    -->
+    <order classCode="ACT" moodCode="RQO">
+      <!-- 
+      This order SHALL contain at least one [1..*] id (CONF:1198-9954)
+      -->
+      <id root="2.16.840.1.113883.6.96" extension="1cde86d84f14"/>
+    </order>
+    
+    <!-- Failure a-1198-9953-error multiple order  -->
+    <order classCode="ACT" moodCode="RQO">
+       <!-- Failure a-1198-9954-error missing id -->
+      <!-- <id root="2.16.840.1.113883.6.96" extension="1cde86d84f14"/> -->
+    </order>
+    
+  </inFulfillmentOf>
+
+  <!-- 
+    MAY contain zero or more [0..*] documentationOf (CONF:1198-14835)
+  -->
+  <documentationOf typeCode="DOC">
+    <!-- 
+      The documentationOf, if present, SHALL contain exactly one [1..1] serviceEvent (CONF:1198-14836)
+    -->
+    <serviceEvent classCode="PCPR">
+      <!-- 
+        This serviceEvent SHALL contain exactly one [1..1] effectiveTime (CONF:1198-14837)
+        This effectiveTime SHALL contain exactly one [1..1] low (CONF:1198-14838)
+      -->
+      <effectiveTime>
+        <low value="20170101000000-0500"/>
+        <high value="20171231112959-0500"/>
+      </effectiveTime>
+      <!-- 
+        This serviceEvent SHOULD contain zero or more [0..*] performer (CONF:1198-14839)
+        The performer, if present, SHALL contain exactly one [1..1] @typeCode, which SHALL be 
+        selected from ValueSet x_ServiceEventPerformer urn:oid:2.16.840.1.113883.1.11.19601 STATIC 
+        (CONF:1198-14840)
+      -->
+      <performer typeCodeErr="PRF">
+        <!-- 
+          The performer, if present, SHALL contain exactly one [1..1] assignedEntity (CONF:1198-14841)
+        -->
+        <assignedEntity>
+          <!-- Failure a-1198-14847-warning missing root="2.16.840.1.113883.4.6"  on id -->
+          <id rootErr="2.16.840.1.113883.4.6" extension="111111111"/>
+          
+          <!-- 
+            This assignedEntity SHOULD contain zero or one [0..1] code, which SHOULD be selected from ValueSet 
+            Healthcare Provider Taxonomy (HIPAA) urn:oid:2.16.840.1.114222.4.11.1066 DYNAMIC (CONF:1198-14842)
+          -->
+          <code code="207QA0505X" displayName="Adult Medicine" codeSystem="2.16.840.1.113883.6.101"
+            codeSystemName="Healthcare Provider Taxonomy"/>
+          
+          <representedOrganization>
+            <!-- This is the organization TIN -->
+            <id root="2.16.840.1.113883.4.2" extension="1234567"/>
+            <!-- This is the organization CCN -->
+            <id root="2.16.840.1.113883.4.336" extension="54321"/>
+          </representedOrganization>
+          
+        </assignedEntity>
+        <assignedEntity>
+          
+        </assignedEntity>
+        <!--  
+          The functionCode, if present, SHOULD contain zero or one [0..1] @code, which SHOULD be selected from ValueSet ParticipationFunction urn:oid:2.16.840.1.113883.1.11.10267 STATIC (CONF:1198-32889)
+        -->
+        <functionCode codeErr="xxx" codeSystem="2.16.840.1.113883.1.11.10267"/>
+      </performer>
+    </serviceEvent>
+    
+    <!-- Failure a-1198-14836-error multiple serviceEvent  -->
+    <serviceEvent classCode="PCPR">
+      <!-- 
+        This serviceEvent SHALL contain exactly one [1..1] effectiveTime (CONF:1198-14837)
+        This effectiveTime SHALL contain exactly one [1..1] low (CONF:1198-14838)
+      -->
+      <effectiveTime>
+        <low value="20170101000000-0500"/>
+        <high value="20171231112959-0500"/>
+      </effectiveTime>
+      <!-- Failure a-1198-14837-error missing or multiple effectiveTime -->
+      <!-- Failure a-1198-14838-error missing or multiple low on effectiveTime -->
+      <effectiveTime></effectiveTime> 
+      
+      <!-- 
+        This serviceEvent SHOULD contain zero or more [0..*] performer (CONF:1198-14839)
+        The performer, if present, SHALL contain exactly one [1..1] @typeCode, which SHALL be 
+        selected from ValueSet x_ServiceEventPerformer urn:oid:2.16.840.1.113883.1.11.19601 STATIC 
+        (CONF:1198-14840)
+      -->
+ 
+    </serviceEvent>
+  </documentationOf>
+
+  <!-- 
+    MAY contain zero or more [0..*] authorization (CONF:1198-16792) such that it
+    SHALL contain exactly one [1..1] consent (CONF:1198-16793)
+  -->
+  <authorization typeCode="AUTH">
+    <consent classCode="CONS" moodCode="EVN">
+      <id root="629deb70-5306-11df-9879-0800200c9a66"/>
+      <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="64293-4"
+        displayName="Procedure consent"/>
+      <!-- 
+        This consent SHALL contain exactly one [1..1] statusCode (CONF:1198-16797)
+        This statusCode SHALL contain exactly one [1..1] @code="completed" Completed 
+        (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1198-16798)
+      -->
+      <statusCode code="completed"/>
+    </consent>
+  </authorization>
+
+  <!-- 
+    MAY contain zero or one [0..1] componentOf (CONF:1198-9955)
+  -->
+  <componentOf typeCode="COMP">
+    <!-- 
+      The componentOf, if present, SHALL contain exactly one [1..1] encompassingEncounter (CONF:1198-9956)
+    -->
+    <encompassingEncounter classCode="ENC" moodCode="EVN">
+        <id root="2.16.840.1.113883.4.6" extension="1cde86d84f14"/>
+        <effectiveTime>
+            <low value="20160101"/>
+            <high value="20161231"/>
+          </effectiveTime>
+    </encompassingEncounter>
+    <encompassingEncounter>
+      <id/>
+      <effectiveTime/>
+    </encompassingEncounter>
+  </componentOf>
+
+  <componentOf typeCode="COMP">
+    <encompassingEncounter classCode="ENC" moodCode="EVN">
+      <!-- 
+        This encompassingEncounter SHALL contain at least one [1..*] id (CONF:1198-9959)
+        This encompassingEncounter SHALL contain exactly one [1..1] effectiveTime (CONF:1198-9958)
+      -->
+     </encompassingEncounter>
+  </componentOf>
+  
+  <!-- ***** Structured Body ***** -->
+  <component>
+    <structuredBody>
+      <!-- ***** Measure Section ***** -->
+      <component>
+        <section>
+          <code code="55186-1" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Measure Section</title>
+          <text>Measure Section Text</text>
+        </section>
+      </component>
+
+    </structuredBody>
+  </component>
+</ClinicalDocument>

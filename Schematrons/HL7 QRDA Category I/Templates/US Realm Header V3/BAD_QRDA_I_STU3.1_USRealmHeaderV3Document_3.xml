@@ -14,9 +14,15 @@
    a-1198-5254-error         1
    a-1198-6387-error         1
    a-1198-5280-error         1
+   a-1198-5322-error         1
    a-1198-31347-error        1
    ______________________________________
-   Total errors              5                
+   Total Errors Expected:    6                
+	
+	a-1198-5303-warning        1
+	a-1198-5406-warning        1
+  ______________________________________
+   Total Warnings Expected:  2               
 	
 **************************************************************** -->
 
@@ -124,9 +130,15 @@
         Telecom Use (US Realm Header) urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:1198-5375)
       -->
       <!-- 
+        a-1198-5303-warning missing maritalStatuCode
+        a-1198-5406-warning missing languageCommunication
+      -->
+
+      <!-- 
         a-1198-5280-error
         patientRole/telecom missing
       -->
+      
       
       <!-- 
         This patientRole SHALL contain exactly one [1..1] patient (CONF:1198-5283)
@@ -160,6 +172,7 @@
         If sdtc:raceCode is present, then the patient SHALL contain [1..1] raceCode (CONF:1198-31347)
         -->
         <!-- 
+          a-1198-5322-error  patient shall have one raceCode
           a-1198-31347-error
           patient/sdtc:raceCode present, patient/raceCode missing
         -->

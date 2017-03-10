@@ -15,8 +15,9 @@
    a-1198-5271-error         1
    a-1198-5283-error         1
    ______________________________________
-   Total errors              4                
+   Total Errors Expected:    4                
 	
+	 Total Warnings Expected:  0
 **************************************************************** -->
 
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

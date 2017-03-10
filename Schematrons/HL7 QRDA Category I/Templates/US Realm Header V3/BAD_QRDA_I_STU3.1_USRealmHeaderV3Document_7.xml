@@ -15,8 +15,12 @@
    a-1198-5598-error         1
    a-1198-14838-error        1
    ______________________________________
-   Total errors              4                
-	
+   Total Errors Expected:    4                
+
+	 a-1198-5303-warning       1
+   ______________________________________
+   Total Warnings Expected:  1
+
 **************************************************************** -->
 
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -121,6 +125,11 @@
           <given>Eve</given>
           <family>Everygirl</family>
         </name>
+        
+        <!-- 
+           a-1198-5303-warning missing maritalStatuCode
+        -->
+        
         <!-- 
           This patient SHALL contain exactly one [1..1] administrativeGenderCode, which 
           SHALL be selected from ValueSet Administrative Gender (HL7 V3) 

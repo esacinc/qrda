@@ -17,7 +17,12 @@
    a-1198-5419-error         1
    a-1198-5422-error         1
    ______________________________________
-   Total errors              6                
+   Total Errors Expected:    6   
+   
+   a-1198-5303-warning       1
+   a-1198-5300-warning       1
+  ______________________________________
+   Total Warnings Expected:  2
 	
 **************************************************************** -->
 
@@ -123,6 +128,11 @@
           <given>Eve</given>
           <family>Everygirl</family>
         </name>
+        
+        <!-- 
+           a-1198-5303-warning missing maritalStatuCode
+        -->
+        
         <!-- 
           This patient SHALL contain exactly one [1..1] administrativeGenderCode, which 
           SHALL be selected from ValueSet Administrative Gender (HL7 V3) 
@@ -135,8 +145,8 @@
           SHOULD be precise to day (CONF:1198-5300)
         -->
         <!-- 
-          a-1198-5299-error
-          patient/birthTime value less precise than year
+          a-1198-5299-error   patient/birthTime value less precise than year
+          a-1198-5300-warning patient/birthTime value should be precise to the day
         -->
         <birthTime value="20"/>
         <!-- 

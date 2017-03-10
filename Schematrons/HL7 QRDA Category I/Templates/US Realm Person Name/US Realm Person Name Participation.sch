@@ -19,8 +19,8 @@
             | cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]/cda:dataEnterer/cda:assignedEntity/cda:assignedPerson/cda:name
             | cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]/cda:informationRecipient/cda:intendedRecipient/cda:informationRecipient/cda:name
             | cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1']]/cda:legalAuthenticator/cda:assignedEntity/cda:assignedPerson/cda:name">
-            <sch:assert id="a-81-9371-error" test="(cda:given and cda:family) or (count(cda:name/*)=0 and string-length(normalize-space(string(cda:name)))!=0)">The content of name SHALL be either a conformant Patient Name (PTN.US.FIELDED), or a string (CONF:81-9371).</sch:assert>
-            <sch:assert id="a-81-9372-error" test="(cda:given and cda:family) or (count(cda:name/*)=0)">The string SHALL NOT contain name parts (CONF:81-9372).</sch:assert>
+             <sch:assert id="a-81-9371-error" test="(cda:given and cda:family) or (count(../cda:name/*)=0 and string-length(../cda:name/text()[normalize-space()])!=0)">The content of name SHALL be either a conformant Patient Name (PTN.US.FIELDED), or a string (CONF:81-9371).</sch:assert>
+            <sch:assert id="a-81-9372-error" test="(cda:given and cda:family) or (count(../cda:name/*)=0)">The string SHALL NOT contain name parts (CONF:81-9372).</sch:assert>
          </sch:rule>
      </sch:pattern>
     

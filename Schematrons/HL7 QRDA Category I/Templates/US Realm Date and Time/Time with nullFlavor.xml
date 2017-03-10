@@ -10,9 +10,13 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 -->
 
 <!-- 	 
-	Total Errors Expected: 0
+	Total Errors Expected: 2
+		Failure a-81-10127-t-error SHALL be precise to the day (CONF:81-10127). (Occurs twice, below)
+		
 	
-	Total Warnings Expected: 0
+	Total Warnings Expected: 3
+		Failuer a-81-10130-e-warning If more precise than day, SHOULD include time-zone offset (CONF:81-10130).
+		Failure a-81-01128-t-warning SHOULD be precise to the minute (CONF:81-10128). (Occurs twice, below)
 -->
 
 <ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc"
@@ -38,6 +42,7 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 	<code code="55182-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
 		displayName="Quality Measure Report"/>
 	<title>QRDA Incidence Report</title>
+	<!-- Failure a-81-10130-e-warning time should include time-zone if more precise than day -->
 	<effectiveTime value="201212310000"/>
 	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
 	<languageCode code="en"/>
@@ -135,6 +140,8 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 		</patientRole>
 	</recordTarget>
 	<author>
+		<!-- Failure a-81-10127-t-error time not precise to the day -->
+		<!-- Failure a-81-10128-t-warning time should be precise to the minute -->
 		<time nullFlavor="NI"/>
 		<assignedAuthor>
 			<id nullFlavor="UNK" root="2.16.840.1.113883.4.6"/>
@@ -178,6 +185,8 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 		</intendedRecipient>
 	</informationRecipient>
 	<legalAuthenticator>
+		<!-- Failure a-81-10127-t-error time not precise to the day -->
+		<!-- Failure a-81-10128-t-warning time should be precise to the minute -->
 		<time nullFlavor="NI"/>
 		<signatureCode code="S"/>
 		<assignedEntity>

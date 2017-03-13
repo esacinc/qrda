@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title: Age Observation, Minimal sample with errors
+    Author: Dan Donahue
+    Date:   03-13-2017
+    
+    Total Errors Expected: 9
+     	Failure a-1098-7318-error SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-7318).</sch:assert>
+        Failure a-1098-7319-error SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:1098-7319).</sch:assert>
+        Failure a-1098-7317-error SHALL contain exactly one [1..1] templateId (CONF:1098-7317) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.28" (CONF:1098-10490).</sch:assert>
+        Failure a-1098-7320-error SHALL contain exactly one [1..1] code (CONF:1098-7320).</sch:assert>
+        Failure a-1098-7321-error SHALL contain exactly one [1..1] statusCode (CONF:1098-7321).</sch:assert>
+        Failure a-1098-7322-error SHALL contain exactly one [1..1] value with @xsi:type="CE", where the code SHALL be selected from ValueSet Problem Status urn:oid:2.16.840.1.113883.3.88.12.80.68 DYNAMIC (CONF:1098-7322).</sch:assert>
+        Failure a-1098-19131-error code SHALL contain exactly one [1..1] @code="33999-4" Status (CONF:1098-19131).</sch:assert>
+        Failure a-1098-32155-error code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:1098-32155).</sch:assert>
+        Failure a-1098-19087-error statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:1098-19087).</sch:assert>
+   
+   Total Warnings Expected: 0
+-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+	xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">	
+	
+	<!-- Failure a-1098-7318-error missing or bad classCode, Failure a-1098-7319-error missing or bad moodCode -->
+	<observation classCode="OBSErr" moodCode="EVNErr">
+		<templateId root="2.16.840.1.113883.10.20.22.4.28" />
+		<!-- ailure a-1098-7317-error multiple main templateIds -->
+		<templateId root="2.16.840.1.113883.10.20.22.4.28" />
+		<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+		<!-- Failure a-1098-7320-error missing or multiple code -->
+		<!-- Failure a-1098-19131-error code missing or bad code="33999-4" -->
+		<!-- Failure a-1098-32155-error code missing or bad codeSystem="2.16.840.1.113883.6.1" -->
+		<code code="33999-4Err" codeSystem="2.16.840.1.113883.6.1Err" codeSystemName="LOINC" />
+		<statusCode code="completed"/>
+		<!-- Failure a-1098-7321-error missing or multiple statusCode -->
+		<!-- Failure a-1098-19087-error statusCode missing or bad code="completed" -->
+		<statusCode code="completedErr"/>
+		<!-- Failure a-1098-7322-error missing or multiple value with xsi:type="CE" -->
+		<value xsi:type="CEErr" value="55561003" sdtc:valueSet="2.16.840.1.113883.3.88.12.80.68"/>
+	</observation>
+	
+</ClinicalDocument>

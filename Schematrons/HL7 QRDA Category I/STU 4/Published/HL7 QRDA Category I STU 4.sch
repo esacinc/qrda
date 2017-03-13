@@ -8,7 +8,7 @@
     GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
     THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
     ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-   Thu Mar 02 08:40:41 MST 2017 
+   Mon Mar 13 12:09:04 MDT 2017 
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="svs" uri="urn:ihe:iti:svs:2008" />
@@ -329,7 +329,7 @@
     <sch:rule id="Assessment_performed-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.144']]">
       <sch:assert id="a-3265-28670-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3265-28670).</sch:assert>
       <sch:assert id="a-3265-28669-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3265-28669).</sch:assert>
-      <sch:assert id="a-3265-28652-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.144'])=1">SHALL contain exactly one [1..1] templateId (CONF:3265-28652) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.144" (CONF:3265-28660).</sch:assert>
+      <sch:assert id="a-3265-28652-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.144'][@extension='2016-08-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3265-28652) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.144" (CONF:3265-28660) SHALL contain exactly one [1..1] @extension="2016-08-01" (CONF:3265-28701).</sch:assert>
       <sch:assert id="a-3265-28656-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:3265-28656).</sch:assert>
       <sch:assert id="a-3265-28653-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:3265-28653).</sch:assert>
       <sch:assert id="a-3265-28654-error" test="count(cda:effectiveTime)=1">SHALL contain exactly one [1..1] effectiveTime (CONF:3265-28654).</sch:assert>
@@ -351,9 +351,9 @@
     <sch:rule id="Assessment_recommended-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.145']]">
       <sch:assert id="a-3265-28682-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3265-28682).</sch:assert>
       <sch:assert id="a-3265-28681-error" test="@moodCode='INT'">SHALL contain exactly one [1..1] @moodCode="INT" Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3265-28681).</sch:assert>
-      <sch:assert id="a-3265-28673-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.145'])=1">SHALL contain exactly one [1..1] templateId (CONF:3265-28673) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.145" (CONF:3265-28676).</sch:assert>
+      <sch:assert id="a-3265-28673-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.145'][@extension='2016-08-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3265-28673) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.145" (CONF:3265-28676).</sch:assert>
       <sch:assert id="a-3265-28674-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:3265-28674).</sch:assert>
-      <sch:assert id="a-3265-28680-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']])=1">SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:3265-28680).</sch:assert>
+      <sch:assert id="a-3265-28680-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']])=1">SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:3265-28680) SHALL contain exactly one [1..1] @extension="2016-08-01" (CONF:3265-28702).</sch:assert>
     </sch:rule>
     <sch:rule id="Assessment_recommended-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.145']]/cda:code">
       <sch:assert id="a-3265-28679-error" test="@sdtc:valueSet">This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:3265-28679).</sch:assert>
@@ -765,7 +765,7 @@
       <sch:assert id="a-81-26502-error" test="@codeSystem='2.16.840.1.113883.6.96'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:81-26502).</sch:assert>
     </sch:rule>
     <sch:rule id="Drug-Vehicle-playingEntity-errors" context="cda:participantRole[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.24']]/cda:playingEntity">
-      <sch:assert id="a-81-7493-error" test="@code">This playingEntity SHALL contain exactly one [1..1] code (CONF:81-7493).</sch:assert>
+      <sch:assert id="a-81-7493-error" test="count(cda:code)=1">This playingEntity SHALL contain exactly one [1..1] code (CONF:81-7493).</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="eMeasure-Reference-QDM-pattern-warnings">
@@ -1141,12 +1141,12 @@
       <sch:assert id="a-3265-28379-error" test="count(sdtc:templateId[@root='2.16.840.1.113883.10.20.24.3.126'][@extension='2016-08-01'])=1">SHALL contain exactly one [1..1] sdtc:templateId (CONF:3265-28379) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.126" (CONF:3265-28382).  SHALL contain exactly one [1..1] @extension="2014-12-01" (CONF:3265-28383).</sch:assert>
       <sch:assert id="a-3265-28380-error" test="count(sdtc:actReference)=1">SHALL contain exactly one [1..1] sdtc:actReference (CONF:3265-28380).</sch:assert>
     </sch:rule>
-    <sch:rule id="Fulfills_V2-actReference-errors" context="sdtc:inFulfillmentOf1[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.126'][@extension='2016-08-01']]/sdtc:actReference">
+    <sch:rule id="Fulfills_V2-actReference-errors" context="sdtc:inFulfillmentOf1[sdtc:templateId[@root='2.16.840.1.113883.10.20.24.3.126'][@extension='2016-08-01']]/sdtc:actReference">
       <sch:assert id="a-3265-28384-error" test="@classCode">This sdtc:actReference SHALL contain exactly one [1..1] @classCode (CONF:3265-28384).</sch:assert>
       <sch:assert id="a-3265-28385-error" test="@moodCode">This sdtc:actReference SHALL contain exactly one [1..1] @moodCode (CONF:3265-28385).</sch:assert>
       <sch:assert id="a-3265-28386-error" test="count(sdtc:id)&gt;=1">This sdtc:actReference SHALL contain at least one [1..*] sdtc:id (CONF:3265-28386).</sch:assert>
     </sch:rule>
-    <sch:rule id="Fulfills_V2-actReference-id-errors" context="sdtc:inFulfillmentOf1[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.126'][@extension='2016-08-01']]/sdtc:actReference/sdtc:id">
+    <sch:rule id="Fulfills_V2-actReference-id-errors" context="sdtc:inFulfillmentOf1[sdtc:templateId[@root='2.16.840.1.113883.10.20.24.3.126'][@extension='2016-08-01']]/sdtc:actReference/sdtc:id">
       <sch:assert id="a-3265-28690-error" test="@root">Such sdtc:ids SHALL contain exactly one [1..1] @root (CONF:3265-28690).</sch:assert>
       <sch:assert id="a-3265-28691-error" test="@extension">Such sdtc:ids SHALL contain exactly one [1..1] @extension (CONF:3265-28691).</sch:assert>
     </sch:rule>
@@ -1515,7 +1515,7 @@
   </sch:pattern>
   <sch:pattern id="Measure-section-pattern-errors">
     <sch:rule id="Measure-section-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.24.2.2']]">
-      <sch:assert id="a-67-12801-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.2.2'])=1">SHALL contain exactly one [1..1] templateId (CONF:67-12801) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.2.2" (CONF:67-12802).</sch:assert>
+      <sch:assert id="a-67-12801-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.2.2'][not(@extension)])=1">SHALL contain exactly one [1..1] templateId (CONF:67-12801) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.2.2" (CONF:67-12802).</sch:assert>
       <sch:assert id="a-67-12798-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:67-12798).</sch:assert>
       <sch:assert id="a-67-12799-error" test="count(cda:title[translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')='measure section'])=1">SHALL contain exactly one [1..1] title="Measure Section" (CONF:67-12799).</sch:assert>
       <sch:assert id="a-67-12800-error" test="count(cda:text)=1">SHALL contain exactly one [1..1] text (CONF:67-12800).</sch:assert>
@@ -1583,7 +1583,7 @@
 					SHALL contain exactly one [1..1] @extension="2014-06-09" (CONF:1098-32498).</sch:assert>
       <sch:assert id="a-1098-7500-error" test="count(cda:id) &gt; 0">SHALL contain at least one [1..*] id (CONF:1098-7500).</sch:assert>
       <sch:assert id="a-1098-7507-error" test="count(cda:statusCode) = 1">SHALL contain exactly one [1..1] statusCode (CONF:1098-7507).</sch:assert>
-      <sch:assert id="a-1098-7508-error" test="count(cda:effectiveTime) = 1 and (cda:effectiveTime[@value] or count(cda:effectiveTime[cda:low])=1) and not(cda:effectiveTime[@value] and cda:effectiveTime[cda:low])">SHALL contain exactly one [1..1] effectiveTime (CONF:1098-7508) such that it
+      <sch:assert id="a-1098-7508-error" test="count(cda:effectiveTime[not(@operator='A')]) = 1 and (cda:effectiveTime[@value] or count(cda:effectiveTime[cda:low])=1) and not(cda:effectiveTime[@value] and cda:effectiveTime[cda:low])">SHALL contain exactly one [1..1] effectiveTime (CONF:1098-7508) such that it
 					SHALL contain either a low or a @value but not both (CONF:1098-32890).</sch:assert>
       <sch:assert id="a-1098-7516-error" test="count(cda:doseQuantity) = 1">SHALL contain exactly one [1..1] doseQuantity (CONF:1098-7516).</sch:assert>
       <sch:assert id="a-1098-7520-error" test="count(cda:consumable) = 1">SHALL contain exactly one [1..1] consumable (CONF:1098-7520).</sch:assert>
@@ -1757,7 +1757,7 @@
 					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.45" (CONF:2228-13852).
 					SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-26555).</sch:assert>
       <sch:assert id="a-2228-19440-error" test="count(cda:statusCode) = 1">SHALL contain exactly one [1..1] statusCode (CONF:2228-19440).</sch:assert>
-      <sch:assert id="a-2228-13856-error" test="count(cda:effectiveTime[@xsi:type='IVL_TS']) = 1">SHALL contain exactly one [1..1] effectiveTime (CONF:2228-13856).</sch:assert>
+      <sch:assert id="a-2228-13856-error" test="count(cda:effectiveTime[@xsi:type='IVL_TS']) = 1">SHALL contain exactly one [1..1] effectiveTime with xsi:type="IVL_TS" (CONF:2228-13856).</sch:assert>
       <sch:assert id="a-2228-28669-error" test="count(../../cda:templateId[@root='2.16.840.1.113883.10.20.24.3.139']) = 1">This template SHALL be contained by a Medication Dispensed Act (CONF:2228-28669).</sch:assert>
     </sch:rule>
     <sch:rule id="Medication_Dispensed_V3-statuscode-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2016-02-01']]/cda:statusCode">
@@ -2352,7 +2352,8 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="Problem-Observation-pattern-warnings">
-    <sch:rule id="Problem-Observation-participant-participantRole-warnings" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]">
+    <!-- Corrected cda:observation, was incorrectly prefixed with cda:act -->
+    <sch:rule id="Problem-Observation-participant-participantRole-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]">
       <sch:assert id="a-1198-31147-warning" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']])&gt;=1">SHOULD contain zero or more [0..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1198-31147).</sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -3135,7 +3136,6 @@
     </sch:rule>
     <sch:rule id="Symptom-Concern-Act-statusCode-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.138'][@extension='2016-08-01']]/cda:statusCode">
       <sch:assert id="a-3265-28545-error" test="@code">This statusCode SHALL contain exactly one [1..1] @code (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3265-28545).</sch:assert>
-      <sch:assert id="a-3265-28695-error" test="@code='active' or @code='resolved'">The statusCode/@code SHALL be either "active" or "resolved" (CONF:3265-28695).</sch:assert>
     </sch:rule>
     <sch:rule id="Symptom-Concern-Act-effectiveTime-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.138'][@extension='2016-08-01']]/cda:effectiveTime">
       <sch:assert id="a-3265-28546-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:3265-28546).</sch:assert>

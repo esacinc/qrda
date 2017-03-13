@@ -80,7 +80,6 @@
         displayName="Allopathic &amp; Osteopathic Physicians"/>
       <addr use="WP">
         <streetAddressLine>1020 Healthcare Drive</streetAddressLine>
-        <streetAddressLine>Suite 500</streetAddressLine>
         <city>Burlington</city>
         <state>MA</state>
         <postalCode>02368</postalCode>
@@ -714,7 +713,7 @@
               <!-- C-CDA R2.1 Family History Organizer (V3) -->
               <templateId root="2.16.840.1.113883.10.20.22.4.45" extension="2015-08-01"/>
               <!-- Family History Organizer QDM (V2) templateId -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.112" extension="2016-02-01"/>
+              <templateId root="2.16.840.1.113883.10.20.24.3.12" extension="2016-02-01"/>
               <id root="2cc2566e-4e7f-4820-817e-31912a61ea1a"/>
               <statusCode code="completed"/>
               <!-- Subject of the contained Diagnosis Family History template(s) -->
@@ -918,7 +917,7 @@
                 <!-- The classCode and moodCode are the same as the classCode and moodCode of the Device, Order we are referencing -->
                 <sdtc:actReference classCode="SPLY" moodCode="RQO">
                   <!-- The id is the same as the id of the Device, Order we are referencing -->
-                  <sdtc:id root="6a8d037d-f144-4071-9d1f-8a92a11dedc6" />
+                  <sdtc:id root="6a8d037d-f144-4071-9d1f-8a92a11dedc6" extension="1"/>
                 </sdtc:actReference>
               </sdtc:inFulfillmentOf1>
             </procedure>
@@ -3140,7 +3139,7 @@
             <substanceAdministration classCode="SBADM" moodCode="EVN">
               <!-- Conforms to C-CDA R2 Medication Activity (V2) -->
               <templateId root="2.16.840.1.113883.10.20.22.4.16" extension="2014-06-09"/>
-              <!-- Medication Active (V2) template -->
+              <!-- Medication Active (V3) template -->
               <!-- Updated extension for new CDA rule changes -->
               <templateId root="2.16.840.1.113883.10.20.24.3.41" extension="2016-02-01"/>
               <id root="c0ea7bf3-50e7-4e7a-83a3-e5a9ccbb8541"/>

@@ -139,7 +139,7 @@ public class SchematronMerge {
 							ArrayList<String> testFiles = new ArrayList<String>();
 							testFiles.add(testFilename);		
 							if (mergeInstructions.getValidator().validate(mergedFileName, testFiles, mergeInstructions) == 0) {
-								mergeInstructions.addResult(MergeInstructions.INDENT3 + "Schematron validation of test file results as expected.");
+								mergeInstructions.addResult(MergeInstructions.INDENT2 + "Schematron validation of test file results as expected (or no expted error count provided).");
 							};
 						}
 					}
@@ -413,15 +413,18 @@ public class SchematronMerge {
 				if (schematronTemplate.getTestFiles().isEmpty()) {
 					noTestsCount++;
 				}
-				int code = validator.validate(schematronTemplate.getSchematronPath(), schematronTemplate.getTestFiles(), mergeInstructions);
-				if (code > 0) {
-					totalInconsistentSchematrons++;
-				};
+				int failCount = validator.validate(schematronTemplate.getSchematronPath(), schematronTemplate.getTestFiles(), mergeInstructions);
+				totalInconsistentSchematrons += failCount;
 			}
 			if (totalInconsistentSchematrons  > 0) {
 					continueOk = !mergeInstructions.getStopOnError();
 			}
 		}
+		if (mergeInstructions.getVerbose()) {
+			mergeInstructions.addResult(MergeInstructions.INDENT3 + "_______________________________________________________________");
+		}
+
+		mergeInstructions.addResult(MergeInstructions.INDENT2 + "");
 		mergeInstructions.addResult(MergeInstructions.INDENT2 + "Found " + totalInconsistentSchematrons + " schematron template(s) that did not process test files as expected");
 		mergeInstructions.addResult(MergeInstructions.INDENT2 + noTestsCount + " schematron template(s) had no associated test files.");
 		if (!continueOk) {

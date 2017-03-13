@@ -83,12 +83,13 @@ public class Validator {
 		// Validate all of the files in the testFiles list using the given schematron. Populate the results list
 		// in the mergeInstructions with status messages generated during the merge process.
 		public int  validate(String schematronFile, List<String> testFiles, MergeInstructions mergeInstructions) {
+			boolean isVerbose = mergeInstructions.getVerbose();
 			if (results == null) {
 				results = mergeInstructions;
 			}
 			//if (results.getVerbose()) results.addResult(MergeInstructions.INDENT2+"Validating schematron: " + schematronFile);
 
-			int res = 0;
+			int failCount = 0; // count number of files that did not meet error count expectations
 			Properties props = loadProperties(propertiesFile);
 		
 			// If we could not read the properties file then exit with error
@@ -96,15 +97,17 @@ public class Validator {
 				String msg = "Unable to read properties file: " + propertiesFile;
 				results.addResult(MergeInstructions.INDENT3+msg);
 				System.err.println(msg);
-				return 1;
+				//return 1;
+				return failCount;
 			}
 		
 			boolean transformResult = transformSchematron(schematronFile,props);
 		
 			if (transformResult == false) {
-				res = 2;
-				System.err.println(res);
-				return res;
+				//res = 2;
+				System.err.println("No transformResult returned for transformSchematron call");
+				//return res;
+				return failCount;
 			}
 		
 			// If that worked we now have an XSL file to use on the XML to validate
@@ -115,8 +118,9 @@ public class Validator {
 				if (!reportResult) {
 					String msg = "Unable to process the report file " + props.getProperty("qrda.reportFile");
 					results.addResult(MergeInstructions.INDENT3+msg);
-					if (results.getVerbose()) System.err.println(msg);
-					return 3;
+					if (isVerbose) System.err.println(msg);
+					//return 3;
+					return failCount;
 				}
 				
 				// Create an error report object populated with the expected error and warning count present in the test file, if any.
@@ -128,56 +132,81 @@ public class Validator {
 				} catch (ParserConfigurationException e) {
 					String msg = "ParserConfigurationException Error processing the report file " + props.getProperty("qrda.reportFile") + ", " + e.getMessage();
 					results.addResult(MergeInstructions.INDENT3+msg);
-					if (results.getVerbose()) System.err.println(msg);
-					return 4;
+					if (isVerbose) System.err.println(msg);
+					//return 4;
+					return failCount;
 				} catch (SAXException e) {
 					String msg = "SAXException Error processing the report file " + props.getProperty("qrda.reportFile") + ", " + e.getMessage();
 					results.addResult(MergeInstructions.INDENT3+msg);
-					if (results.getVerbose()) System.err.println(msg);
-					return 5;
+					if (isVerbose) System.err.println(msg);
+					//return 5;
+					return failCount;
 				} catch (IOException e) {
 					String msg = "IO Exception Error processing the report file " + props.getProperty("qrda.reportFile") + ", " + e.getMessage();
 					results.addResult(MergeInstructions.INDENT3+msg);
-					if (results.getVerbose()) System.err.println(msg);
-					return 6;
+					if (isVerbose) System.err.println(msg);
+					//return 6;
+					return failCount;
 				}
-				
+				if (isVerbose) {
+					results.addResult(MergeInstructions.INDENT2 + "_______________________________________________________________");
+					results.addResult(MergeInstructions.INDENT2 + "Schematron File: " + schematronFile);
+					results.addResult(MergeInstructions.INDENT2 + "Running validation on " + testFile);
+				}
+				System.out.println("TESTFILE: " + testFile);
 				if (failures != null) {
 					int errs = 0;
 					int warns = 0;
 					for (Failure fail : failures) {
 						if (fail.isCritical()) {
+							if (isVerbose) {
+								results.addResult(MergeInstructions.INDENT4+"Error: " + fail.getId() + " at " + fail.getLocation() + ": " + fail.getTest());
+								results.addResult(MergeInstructions.INDENT5+ fail.getStatement());
+							}
 							errs++;
 						}
 						else {
+							if (isVerbose) {
+								results.addResult(MergeInstructions.INDENT4+"Warning: " + fail.getId() + "at " + fail.getLocation() + ": " + fail.getTest());
+								results.addResult(MergeInstructions.INDENT5+ fail.getStatement());
+							}
+
 							warns++;
 						}
 					}
 					errorReport.setErrors(errs);
 					errorReport.setWarnings(warns);
-					if (errorReport.getExpectedErrors() < 0) { // No expected errors value (and presumably expected warnings) present in the test file header.
+					int warningExp = errorReport.getExpectedWarnings();
+					int errorExp = errorReport.getExpectedErrors();
+					if (errorExp < 0) { // No expected errors value (and presumably expected warnings) present in the test file header.
 						if (errorReport.getErrors() == 0) { // No actual errors encountered, so assume file is good. No message needed.
-							res = 0;
+							//res = 0;  
 						}
 						else { // Actual errors present, so assume file has unintended errors.
-							res = 97;
-							mergeInstructions.addResult(MergeInstructions.INDENT3+testFile+": Expected Errors value not specified.  (" + errs + " critical error(s) and " + warns + " warning(s))");
+							//res = 97;
+							mergeInstructions.addResult(MergeInstructions.INDENT4+testFile+": Expected Errors value not specified.  (" + errs + " critical error(s) and " + warns + " warning(s))");
 						}
 					}
 					else { // Expected error value present in file header...
-						int warningExp = errorReport.getExpectedWarnings();
+						
 						if (!errorReport.asExpected()) { // If expected doesn't match actual, then output a message.
-							res = 98;
-							mergeInstructions.addResult(MergeInstructions.INDENT3+testFile+": Failure count inconsistent with expectations for this file. (Errors: expected " + errorReport.getExpectedErrors() + ", actual " + errs + ") (Warnings: expected " + ((warningExp < 0)?"N/A":warningExp) + ", actual " + warns +")");
+							//res = 98;
+							failCount++;
+							mergeInstructions.addResult(MergeInstructions.INDENT4+testFile+": Failure count inconsistent with expectations for this file. (Errors: expected " + errorReport.getExpectedErrors() + ", actual " + errs + ") (Warnings: expected " + ((warningExp < 0)?"N/A":warningExp) + ", actual " + warns +")");
 						}
 						else { // Otherwise, results as expected. No message needed.
-							res = 0;
+							//res = 0;
 						}
 					}
+					if (isVerbose) {
+						results.addResult(MergeInstructions.INDENT3 + "");
+						results.addResult(MergeInstructions.INDENT3 + "(Errors: expected " + errorReport.getExpectedErrors() + ", actual " + errs + ") (Warnings: expected " + ((warningExp < 0)?"N/A":warningExp) + ", actual " + warns +")");
+					}
+
 				}
-				
 			}
-			return res;
+
+			return failCount;
 	}
 	
 	/**

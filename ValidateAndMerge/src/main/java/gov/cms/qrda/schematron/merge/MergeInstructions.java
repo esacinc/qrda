@@ -69,6 +69,7 @@ public class MergeInstructions extends MergeProperties{
 	public final static String INDENT2 = "        ";
 	public final static String INDENT3 = "            ";
 	public final static String INDENT4 = "                ";
+	public final static String INDENT5 = "                    ";
 	
 	public MergeInstructions() {
 		super();

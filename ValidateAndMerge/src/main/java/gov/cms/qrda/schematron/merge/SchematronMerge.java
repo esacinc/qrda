@@ -82,6 +82,7 @@ public class SchematronMerge {
 	
 					// If it is ok to continue, then do the merge
 				if (continueOk) {
+					mergeInstructions.addResult(MergeInstructions.INDENT1 +" ");
 					mergeInstructions.addResult(MergeInstructions.INDENT1 +"Begin Merge Process....");
 	
 					// Retrieve the list of schematron template files we are to merge. (The mergeInstructions gathered this list during the "open" process)
@@ -139,7 +140,7 @@ public class SchematronMerge {
 							ArrayList<String> testFiles = new ArrayList<String>();
 							testFiles.add(testFilename);		
 							if (mergeInstructions.getValidator().validate(mergedFileName, testFiles, mergeInstructions) == 0) {
-								mergeInstructions.addResult(MergeInstructions.INDENT2 + "Schematron validation of test file results as expected (or no expted error count provided).");
+								mergeInstructions.addResult(MergeInstructions.INDENT2 + "Schematron validation of test file results as expected (or no expected error count provided).");
 							};
 						}
 					}
@@ -425,8 +426,8 @@ public class SchematronMerge {
 		}
 
 		mergeInstructions.addResult(MergeInstructions.INDENT2 + "");
-		mergeInstructions.addResult(MergeInstructions.INDENT2 + "Found " + totalInconsistentSchematrons + " schematron template(s) that did not process test files as expected");
-		mergeInstructions.addResult(MergeInstructions.INDENT2 + noTestsCount + " schematron template(s) had no associated test files.");
+		mergeInstructions.addResult(MergeInstructions.INDENT1 + "Found " + totalInconsistentSchematrons + " schematron template(s) that did not process test files as expected");
+		mergeInstructions.addResult(MergeInstructions.INDENT1 + noTestsCount + " schematron template(s) had no associated test files.");
 		if (!continueOk) {
 			mergeInstructions.addResult(MergeInstructions.INDENT1 +"Inconsistencies found in validations. Merge process aborting.");
 		}

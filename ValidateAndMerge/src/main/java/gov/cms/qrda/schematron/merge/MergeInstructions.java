@@ -418,21 +418,25 @@ public class MergeInstructions extends MergeProperties{
 	private void maybeCopyVocabFile(String filename) {
 		if (getDoValidation()) {  // No need for vocab file if we aren't doing validation.
 			if (filename != null && !filename.isEmpty()) {
+				addResult(INDENT2+"vocabFilename is " + filename);
 				setVocabFilename(filename);	
 				File source = new File(filename);
 				File dest = new File("voc.xml");
 				try {
 				    FileUtils.copyFile(source, dest);
 				    if (getVerbose()) {
-				    	addResult(INDENT2+"Copied vocabulary file: " + filename + " into project space as 'voc.xml'");
+				    	addResult(INDENT3+"Copied vocabulary file: " + filename + " into project space as 'voc.xml'");
 				    }
 				} catch (IOException e) {
 				    if (getVerbose()) {
-				    	System.err.println(INDENT1 + "IOException Error copying vocabulary from " + source.getAbsolutePath() + " to " + dest.getAbsolutePath());
+				    	System.err.println(INDENT3 + "IOException Error copying vocabulary from " + source.getAbsolutePath() + " to " + dest.getAbsolutePath());
 				    	e.printStackTrace();
 				    }
-				    addResult(INDENT2+"IOException Error copying vocabulary file from " + filename + ": " + e.getMessage());
+				    addResult(INDENT3+"IOException Error copying vocabulary file from " + filename + ": " + e.getMessage());
 				}
+			}
+			else {
+				addResult(INDENT2+"No vocabFilename specified.");
 			}
 		}
 	}

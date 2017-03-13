@@ -408,6 +408,7 @@ public class SchematronMerge {
 		int totalInconsistentSchematrons = 0;
 		int noTestsCount = 0;
 		if (mergeInstructions.getDoValidation()) {
+			mergeInstructions.addResult(MergeInstructions.INDENT1+"");
 			mergeInstructions.addResult(MergeInstructions.INDENT1+"Begin Template validations....");
 			Validator validator= mergeInstructions.getValidator();
 			for (SchematronTemplate schematronTemplate : mergeInstructions.getSchematrons()) {

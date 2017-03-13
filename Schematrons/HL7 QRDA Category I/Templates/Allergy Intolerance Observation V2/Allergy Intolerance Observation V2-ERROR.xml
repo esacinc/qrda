@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title: Allergy Intolerance Observation V2, Minimal sample with errors 
+    Author: Dan Donahue
+    Date:   03-13-2017
+    
+    Total Errors Expected: 13
+        Failure a-1098-7379-error SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-7379).</sch:assert>
+        Failure a-1098-7380-error SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:1098-7380).</sch:assert>
+        Failure a-1098-7381-error SHALL contain exactly one [1..1] templateId (CONF:1098-7381) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.7" (CONF:1098-10488). SHALL contain exactly one [1..1] @extension="2014-06-09" (CONF:1098-32526).</sch:assert>
+        Failure a-1098-7382-error SHALL contain at least one [1..*] id (CONF:1098-7382).</sch:assert>
+        Failure a-1098-15947-error SHALL contain exactly one [1..1] code (CONF:1098-15947).</sch:assert>
+        Failure a-1098-19084-error SHALL contain exactly one [1..1] statusCode (CONF:1098-19084).</sch:assert>
+        Failure a-1098-7387-error SHALL contain exactly one [1..1] effectiveTime (CONF:1098-7387).</sch:assert>
+        Failure a-1098-7390-error SHALL contain exactly one [1..1] value with @xsi:type="CD", where the code SHALL be selected from ValueSet Allergy and Intolerance Type urn:oid:2.16.840.1.113883.3.88.12.3221.6.2 DYNAMIC (CONF:1098-7390).</sch:assert>
+        Failure a-1098-7402-error SHALL contain exactly one [1..1] participant (CONF:1098-7402) such that it SHALL contain exactly one [1..1] @typeCode="CSM" Consumable (CodeSystem: HL7ParticipationType urn:oid:2.16.840.1.113883.5.90 STATIC) (CONF:1098-7403). SHALL contain exactly one [1..1] participantRole (CONF:1098-7404). This participantRole SHALL contain exactly one [1..1] @classCode="MANU" Manufactured Product (CodeSystem: RoleClass urn:oid:2.16.840.1.113883.5.110 STATIC) (CONF:1098-7405). This participantRole SHALL contain exactly one [1..1] playingEntity (CONF:1098-7406). This playingEntity SHALL contain exactly one [1..1] @classCode="MMAT" Manufactured Material (CodeSystem: EntityClass urn:oid:2.16.840.1.113883.5.41 STATIC) (CONF:1098-7407). This playingEntity SHALL contain exactly one [1..1] code, which SHALL be selected from ValueSet Substance-Reactant for Intolerance urn:oid:2.16.840.1.113762.1.4.1010.1 DYNAMIC (CONF:1098-7419).</sch:assert>
+        Failure a-1098-15948-error code SHALL contain exactly one [1..1] @code="ASSERTION" Assertion (CONF:1098-15948).</sch:assert>
+        Failure a-1098-32153-error code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.5.4" (CodeSystem: ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:1098-32153).</sch:assert>
+        Failure a-1098-19085-error statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:1098-19085).</sch:assert>
+        Failure a-1098-31538-error effectiveTime SHALL contain exactly one [1..1] low (CONF:1098-31538).</sch:assert>
+      
+   Total Warnings Expected: 4
+        Failure a-1098-31143-warning SHOULD contain zero or more [0..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-31143).</sch:assert>
+        Failure a-1098-7447-warning SHOULD contain zero or more [0..*] entryRelationship (CONF:1098-7447) such that it SHALL contain exactly one [1..1] @typeCode="MFST" Is Manifestation of (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:1098-7907). SHALL contain exactly one [1..1] @inversionInd="true" True (CONF:1098-7449). SHALL contain exactly one [1..1] Reaction Observation (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.9:2014-06-09) (CONF:1098-15955).</sch:assert>
+        Failure a-1098-9961-warning SHOULD NOT contain zero or one [0..1] entryRelationship (CONF:1098-9961) such that it SHALL contain exactly one [1..1] @typeCode="SUBJ" Has Subject (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:1098-9962). SHALL contain exactly one [1..1] @inversionInd="true" True (CONF:1098-9964). SHALL contain exactly one [1..1] Severity Observation (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.8:2014-06-09) (CONF:1098-15956).</sch:assert>
+        Failure a-1098-32910-warning SHOULD contain zero or one [0..1] entryRelationship (CONF:1098-32910) such that it SHALL contain exactly one [1..1] @typeCode="SUBJ" Has Subject (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:1098-32911). SHALL contain exactly one [1..1] Criticality Observation  (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.145) (CONF:1098-32913).</sch:assert>
+
+-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+	xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">	
+	
+	<!--  Failure a-1098-7379-error bad or missing classCode, Failure a-1098-7380-error bad or missing moodCode -->
+	<observation classCode="OBSErr" moodCode="EVNErr">
+		<!-- Conforms to C-CDA R2.1 Allergy - Intolerance Observation (V2) -->
+		<templateId root="2.16.840.1.113883.10.20.22.4.7" extension="2014-06-09"/>
+		<!-- Failure a-1098-7381-error multiple main templateIds -->
+		<templateId root="2.16.840.1.113883.10.20.22.4.7" extension="2014-06-09"/>
+		<!-- Failure a-1098-7382-error multiple or missing id -->
+		<!-- <id root="901db0f8-9355-4794-81cd-fd95aafe7819"/> -->
+		<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+		<!-- Failure a-1098-15947-error multiple or missing code -->
+		<!-- Failure a-1098-15948-error missing or bad code="ASSERTION" -->
+		<!-- Failure a-1098-32153-error missing or bad codeSystem="2.16.840.1.113883.5.4"-->
+		<code/>
+		<statusCode code="completed"/>
+		<!-- Failure a-1098-19084-error multiple or missing statusCode-->
+		<!--  Failure a-1098-19085-error missing or bad code="completed" -->
+		<statusCode></statusCode>
+		<effectiveTime>
+			<low value="20151101"/>
+		</effectiveTime>
+		<!-- Failure a-1098-7387-error multiple or missing effectiveTime -->
+		<!-- Failure a-1098-31538-error missing or multiple low -->
+		<effectiveTime>
+			<low value="20151101"/>
+			<low value="20151201"/>
+		</effectiveTime>
+		<!-- Failure a-1098-7390-error multiple or missing value with xsi:type="CD" -->
+		<value xsi:type="CDErr" code="419511003"
+			displayName="Propensity to adverse reactions to drug (disorder)"
+			codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+		<!-- Failure a-1098-7402-error multiple or missing participant with @typeCode="CSM", and one participantRole with @classCode="MANU" containing a single playingEntity with @classCode="MMAT" -->
+		<participant typeCode="CSM">
+			<participantRole classCode="MANU">
+				<playingEntity classCode="MMATErr"> <!-- here is the error -->
+					<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"
+						displayName="Assertion"/>
+					...
+				</playingEntity>
+			</participantRole>
+		</participant>
+		<!-- Failure a-1098-31143-warning should contain at least one AuthorParticipant -->
+		<!-- Failure a-1098-7447-warning should contain at least one entryReplationship with typeCode="MFST", inversionInd="true" and one Reaction Observation (2.16.840.1.113883.10.20.22.4.9:2014-06-09) -->
+		<entryRelationship typeCode="MFST" inversionInd="true">
+			<observation classCode="OBS" moodCode="EVN">
+				<!-- Conforms to C-CDA R2.1 Reaction Observation (V2) -->
+				<templateId root="2.16.840.1.113883.10.20.22.4.9" extension="2014-06-09Err"/> <!-- this is the warning error -->
+				...
+			</observation>
+		</entryRelationship>
+		<!-- Failure a-1098-9961-warning SHOULD NOT contain an entryRelationship @typeCode="SUBJ", inversionInd="true", and one Severity Observation (V2) (i2.16.840.1.113883.10.20.22.4.8:2014-06-09) -->
+		<entryRelationship typeCode="SUBJ" inversionInd="true">
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.22.4.8" extension="2014-06-09"/>
+				...
+			</observation>
+		</entryRelationship>
+		<!--  Failure a-1098-32910-warning SHOULD have one entryRelationship with typeCode="SUBJ" and one Criticality Observation  (2.16.840.1.113883.10.20.22.4.145)  -->
+		<!--
+		<entryRelationship typeCode="SUBJ">
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.22.4.145"/>
+				...
+			</observation>
+		</entryRelationship>
+		-->
+	</observation>
+	
+</ClinicalDocument>

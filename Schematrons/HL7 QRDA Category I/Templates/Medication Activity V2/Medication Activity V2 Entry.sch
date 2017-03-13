@@ -29,7 +29,7 @@
 			<sch:assert id="a-1098-7507-error" test="count(cda:statusCode) = 1">
 				SHALL contain exactly one [1..1] statusCode (CONF:1098-7507).			
 			</sch:assert>
-			<sch:assert id="a-1098-7508-error" test="count(cda:effectiveTime) = 1 and (cda:effectiveTime[@value] or count(cda:effectiveTime[cda:low])=1) and not(cda:effectiveTime[@value] and cda:effectiveTime[cda:low])">
+			<sch:assert id="a-1098-7508-error" test="count(cda:effectiveTime[not(@operator='A')]) = 1 and (cda:effectiveTime[@value] or count(cda:effectiveTime[cda:low])=1) and not(cda:effectiveTime[@value] and cda:effectiveTime[cda:low])">
 				SHALL contain exactly one [1..1] effectiveTime (CONF:1098-7508) such that it
 					SHALL contain either a low or a @value but not both (CONF:1098-32890).
 			</sch:assert>

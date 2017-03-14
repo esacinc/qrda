@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title: QRDA Category I Report CMS V4, Minimal sample
+    Author: Dan Donahue
+    Date:   03-14-2017
+    
+    Total Errors Expected: 0
+    Total Warnings Expected: 0
+-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+	xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">	
+	
+	<!-- QRDA Category I Report (V3) - CMS EH -->
+	<templateId root="2.16.840.1.113883.10.20.24.1.3" extension="2017-07-01" />
+	<languageCode code="en" />
+	<effectiveTime value="201112311230-0600" />
+	
+	<recordTarget>
+		<patientRole>
+			<!-- Patient Identifier Number (OID: 2.16.840.1.113883.3.249.15) -->
+			<id root="2.16.840.1.113883.3.249.15" extension="111223333A" />
+			<patient>
+				<name>
+					<given>Eve</given>
+					<family>Everygirl</family>
+				</name>
+				<administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" />
+				<!-- If the patient administrative sex is unknown, use nullFlavor="UNK" -->
+				<!-- <administrativeGenderCode nullFlavor="UNK"/> -->
+				<birthTime value="19850212" />
+				<raceCode code="2106-3" codeSystem="2.16.840.1.113883.6.238" displayName="White"/>
+				<!-- if the patient declined to specify his/her race, use nullFlavor="ASKU" -->
+				<!-- <raceCode nullFlavor="ASKU"/> -->
+				<!-- if the patient's race is unknown, use nullFlavor="UNK" -->
+				<!-- <raceCode nullFlavor="UNK"/> -->
+				<!-- Use sdtc:raceCode only if the patient has more than one race category -->
+				<!-- 
+					<sdtc:raceCode code="2054-5" displayName="Black or African American" codeSystem="2.16.840.1.113883.6.238"
+					sdtc:valueSet="2.16.840.1.114222.4.11.836"/> 
+				    <sdtc:raceCode code="1006-6" codeSystem="2.16.840.1.113883.6.238" displayName="Abenaki"/>
+				-->
+			</patient>
+		</patientRole>
+	</recordTarget>
+	
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<!-- CMS Certification Number -->
+				<id root="2.16.840.1.113883.4.336" extension="800890" />
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	
+	<informationRecipient>
+		<intendedRecipient>
+			<id root="2.16.840.1.113883.3.249.7" extension="HQR_EHR" />
+			<receivedOrganization></receivedOrganization>
+		</intendedRecipient>
+	</informationRecipient>
+	
+	<participant typeCode="DEV">
+		<associatedEntity classCode="RGPR">
+			<!-- CMS EHR Certification Number (formerly known as Office of the National Coordinator Certification Number) -->
+			<id root="2.16.840.1.113883.3.2074.1" extension="123456789"/>
+		</associatedEntity>
+	</participant>
+	
+	<documentationOf typeCode="DOC">
+		<serviceEvent classCode="PCPR">
+			<!-- You can include multiple performers, each with an NPI, TIN, CCN. -->
+			<performer typeCode="PRF">
+				<assignedEntity>
+					<representedOrganization>
+						<!-- This is the organization TIN -->
+						<!-- TIN is required for HQR but we expect hospitals to submit a nullFlavor -->
+						<id root="2.16.840.1.113883.4.2" nullFlavor="NA" />
+					</representedOrganization>
+				</assignedEntity>
+				...
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+	
+	<component>
+		<structuredBody>
+			
+			<component>
+				<section>
+					<!-- Reporting Parameters section CMS -->
+					<templateId root="2.16.840.1.113883.10.20.17.2.1.1" extension="2016-03-01"/>
+					...
+				</section>
+			</component>
+			
+			<component>
+				<section>
+					<!-- Patient Data Section QDM (V3) - CMS EH -->
+					<templateId root="2.16.840.1.113883.10.20.24.2.1.1" extension="2017-07-01" />
+					...
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+	
+</ClinicalDocument>

@@ -5,11 +5,11 @@
   xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
   <!-- 		
     Title: EH Quality Reporting Document Architecture Category I Sample 
-    Date: July 6, 2016
+    Date: March 14, 2017
   -->
   <!-- 	 
     This sample file contains an example of each Patient Data Section QDM contained 	 
-    template specified in the QRDA I STU 3.1 IG. 	 
+    template specified in the QRDA I STU 4 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to 	 
     see a valid (syntactically not clinically) example for each template. 	 
@@ -22,17 +22,17 @@
   <templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2015-08-01" />
   <!-- QRDA Category I Framework (V3) -->
   <templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2016-02-01" />
-  <!-- QDM-Based QRDA (V3) -->
-  <templateId root="2.16.840.1.113883.10.20.24.1.2" extension="2016-02-01" />
-  <!-- QRDA Category I Report (V3) - CMS EH -->
-  <templateId root="2.16.840.1.113883.10.20.24.1.3" extension="2016-03-01" />
+  <!-- QDM-Based QRDA (V4) -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.2" extension="2016-08-01" />
+  <!-- QRDA Category I Report - CMS (V4) -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.3" extension="2017-07-01" />
   <!-- This is the globally unique identifier for this QRDA document -->
   <id root="5b010313-eff2-432c-9909-6193d8416fac" />
   <!-- QRDA document type code -->
   <code code="55182-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Quality Measure Report" />
   <title>QRDA Incidence Report</title>
   <!-- This is the document creation time -->
-  <effectiveTime value="201112311230" />
+  <effectiveTime value="201803141230" />
   <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
   <languageCode code="en" />
   <!-- reported patient -->
@@ -97,7 +97,6 @@
       <code code="200000000X" codeSystem="2.16.840.1.113883.6.101" displayName="Allopathic &amp; Osteopathic Physicians" />
       <addr use="WP">
         <streetAddressLine>1020 Healthcare Drive</streetAddressLine>
-        <streetAddressLine>Suite 500</streetAddressLine>
         <city>Burlington</city>
         <state>MA</state>
         <postalCode>02368</postalCode>
@@ -191,7 +190,7 @@
     </intendedRecipient>
   </informationRecipient>
   <legalAuthenticator>
-    <time value="201112311230" />
+    <time value="201703141230" />
     <signatureCode code="S" />
     <assignedEntity>
       <id root="bc01a5d1-3a34-4286-82cc-43eb04c972a7" />
@@ -230,14 +229,14 @@
     <serviceEvent classCode="PCPR">
       <!-- care provision -->
       <effectiveTime>
-        <low value="20100601" />
-        <high value="20100915" />
+        <low value="20160601" />
+        <high value="20170915" />
       </effectiveTime>
       <!-- You can include multiple performers, each with an NPI, TIN, CCN. -->
       <performer typeCode="PRF">
         <time>
-          <low value="20020716" />
-          <high value="20070915" />
+          <low value="20160716" />
+          <high value="20170915" />
         </time>
         <assignedEntity>
           <!-- This is the provider NPI -->
@@ -381,7 +380,7 @@
           <code code="55187-9" codeSystem="2.16.840.1.113883.6.1" />
           <title>Reporting Parameters</title>
           <text><list>
-              <item>Reporting period: 01 Jan 2011 - 31 Dec 2011</item>
+              <item>Reporting period: 01 Jan 2017 - 31 Dec 2017</item>
             </list></text>
           <entry typeCode="DRIV">
             <act classCode="ACT" moodCode="EVN">
@@ -392,8 +391,8 @@
               <id root="3d7c11cf-b01b-4527-a704-c098c162779d" />
               <code code="252116004" codeSystem="2.16.840.1.113883.6.96" displayName="Observation Parameters" />
               <effectiveTime>
-                <low value="20110101" />
-                <high value="20111231" />
+                <low value="20170101" />
+                <high value="20171231" />
               </effectiveTime>
             </act>
           </entry>
@@ -408,10 +407,10 @@
         <section>
           <!-- Patient Data Section -->
           <templateId root="2.16.840.1.113883.10.20.17.2.4" />
-          <!-- Patient Data Section QDM (V3) -->
-          <templateId root="2.16.840.1.113883.10.20.24.2.1" extension="2016-02-01" />
-          <!-- Patient Data Section QDM (V3) - CMS EH -->
-          <templateId root="2.16.840.1.113883.10.20.24.2.1.1" extension="2016-03-01" />
+          <!-- Patient Data Section QDM (V4) -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.1" extension="2016-08-01" />
+          <!-- Patient Data Section QDM (V4) - CMS -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.1.1" extension="2017-07-01" />
           <code code="55188-7" codeSystem="2.16.840.1.113883.6.1" />
           <title>Patient Data</title>
           <text />
@@ -429,9 +428,9 @@
               <statusCode code="completed" />
               <effectiveTime>
                 <!-- QDM Attribute: Start Datetime -->
-                <low value="20110101" />
+                <low value="20170101" />
                 <!-- QDM Attribute: Stop Datetime -->
-                <high value="20111231" />
+                <high value="20171231" />
               </effectiveTime>
               <value xsi:type="CD" code="185481008" displayName="Dissatisfied with doctor (finding)"
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
@@ -449,9 +448,9 @@
               <statusCode code="completed" />
               <effectiveTime>
                 <!-- QDM Attribute: Start Datetime -->
-                <low value="20110101" />
+                <low value="20170101" />
                 <!-- QDM Attribute: Stop Datetime -->
-                <high value="20111231" />
+                <high value="20171231" />
               </effectiveTime>
               <value xsi:type="CD" code="445060000" displayName="Left against medical advice (finding)"
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
@@ -475,9 +474,9 @@
               <statusCode code="active" />
               <effectiveTime>
                 <!-- QDM Attribute: Start datetime -->
-                <low value="20140101" />
+                <low value="20170101" />
                 <!-- QDM Attribute: Stop datetime -->
-                <high value="20140102" />
+                <high value="20170102" />
               </effectiveTime>
               <value xsi:type="IVL_PQ">
                 <low value="92" unit="%" />
@@ -488,8 +487,8 @@
                 <!-- C-CDA R2 Author Participation -->
                 <templateId root="2.16.840.1.113883.10.20.22.4.119" />
                 <time xsi:type="IVL_TS">
-                  <low value="201204081130" />
-                  <high value="201204081135" />
+                  <low value="201703081130" />
+                  <high value="201703081135" />
                 </time>
                 <assignedAuthor>
                   <id root="2.16.840.1.113883.4.6" extension="1234567893" />
@@ -532,9 +531,9 @@
               <statusCode code="completed" />
               <effectiveTime>
                 <!-- QDM Attribute: Start datetime -->
-                <low value="20110101" />
+                <low value="20170101" />
                 <!-- QDM Attribute: Stop datetime -->
-                <high value="20111231" />
+                <high value="20171231" />
               </effectiveTime>
               <participant typeCode="AUT">
                 <participantRole classCode="ASSIGNED">
@@ -559,9 +558,9 @@
               <statusCode code="completed" />
               <effectiveTime>
                 <!-- QDM Attribute: Start datetime -->
-                <low value="20110101" />
+                <low value="20170101" />
                 <!-- QDM Attribute: Stop datetime -->
-                <high value="20111231" />
+                <high value="20171231" />
               </effectiveTime>
               <participant typeCode="AUT">
                 <participantRole classCode="PAT">
@@ -590,9 +589,9 @@
               <statusCode code="completed" />
               <effectiveTime>
                 <!-- QDM Attribute: Start datetime -->
-                <low value="20110101" />
+                <low value="20170101" />
                 <!-- QDM Attribute: Stop datetime -->
-                <high value="20111231" />
+                <high value="20171231" />
               </effectiveTime>
               <participant typeCode="AUT">
                 <participantRole classCode="ASSIGNED">
@@ -622,7 +621,7 @@
               <statusCode code="active" />
               <effectiveTime>
                 <!-- QDM Attribute: Start Datetime (equivalent to author/time/low in the contained observation) -->
-                <low value="201204081130" />
+                <low value="201703081130" />
               </effectiveTime>
               <entryRelationship typeCode="SUBJ">
                 <!--Diagnosis inactive-->
@@ -659,9 +658,9 @@
                     <templateId root="2.16.840.1.113883.10.20.22.4.119" />
                     <time xsi:type="IVL_TS">
                       <!-- QDM Attribute: Start Datetime (equivalent to effectiveTime/low in the containing act) -->
-                      <low value="201204081130" />
+                      <low value="201703081130" />
                       <!-- QDM Attribute: Stop Datetime (equivalent to effectiveTime/high in the containing act) -->
-                      <high value="201204081135" />
+                      <high value="201703081135" />
                     </time>
                     <assignedAuthor>
                       <id root="2.16.840.1.113883.4.6" extension="1234567893" />
@@ -755,9 +754,9 @@
               <statusCode code="suspended" />
               <effectiveTime>
                 <!-- QDM Attribute: Start Datetime (equivalent to author/time/low in the contained observation) -->
-                <low value="201204081130" />
+                <low value="201703081130" />
                 <!-- QDM Attribute: Stop Datetime (equivalent to author/time/high in the contained observation)-->
-                <high value="201204081135" />
+                <high value="201703081135" />
               </effectiveTime>
               <entryRelationship typeCode="SUBJ">
                 <!--Diagnosis inactive-->
@@ -802,7 +801,7 @@
                       <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                     </assignedAuthor>
                   </author>
-                  <!-- QDM Attribute: Severity -->
+                  <!-- QDM Attribute: Severity Observation -->
                   <entryRelationship typeCode="REFR">
                     <observation classCode="OBS" moodCode="EVN">
                       <templateId root="2.16.840.1.113883.10.20.22.4.8" extension="2014-06-09" />
@@ -829,9 +828,9 @@
               <statusCode code="completed" />
               <effectiveTime>
                 <!-- QDM Attribute: Start Datetime (equivalent to author/time/low in the contained observation) -->
-                <low value="201204081130" />
+                <low value="201703081130" />
                 <!-- QDM Attribute: Stop Datetime (equivalent to author/time/high in the contained observation) -->
-                <high value="201204081135" />
+                <high value="201703081135" />
               </effectiveTime>
               <entryRelationship typeCode="SUBJ">
                 <!--Diagnosis resolved-->
@@ -868,15 +867,15 @@
                     <templateId root="2.16.840.1.113883.10.20.22.4.119" />
                     <time xsi:type="IVL_TS">
                       <!-- QDM Attribute: Start Datetime (equivalent to effectiveTime/low in the containing act) -->
-                      <low value="201204081130" />
+                      <low value="201703081130" />
                       <!-- QDM Attribute: Stop Datetime (equivalent to effectiveTime/high in the containing act)-->
-                      <high value="201204081135" />
+                      <high value="201703081135" />
                     </time>
                     <assignedAuthor>
                       <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                     </assignedAuthor>
                   </author>
-                  <!-- QDM Attribute: Severity -->
+                  <!-- QDM Attribute: Severity Observation -->
                   <entryRelationship typeCode="REFR">
                     <observation classCode="OBS" moodCode="EVN">
                       <templateId root="2.16.840.1.113883.10.20.22.4.8" extension="2014-06-09" />
@@ -926,7 +925,7 @@
                 <observation classCode="OBS" moodCode="EVN">
                   <!-- Conforms to C-CDA R2 Reaction Observation (V2) -->
                   <templateId root="2.16.840.1.113883.10.20.22.4.9" extension="2014-06-09" />
-                  <!-- Reaction (QRDA I V2) -->
+                  <!-- Reaction (V2) -->
                   <templateId root="2.16.840.1.113883.10.20.24.3.85" extension="2014-12-01" />
                   <id root="80aed311-8af7-401f-ab7f-727260d2b033" />
                   <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"
@@ -974,7 +973,7 @@
                 <observation classCode="OBS" moodCode="EVN">
                   <!-- Conforms to C-CDA R2 Reaction Observation (V2) -->
                   <templateId root="2.16.840.1.113883.10.20.22.4.9" extension="2014-06-09" />
-                  <!-- Reaction (QRDA I V2) -->
+                  <!-- Reaction (V2) -->
                   <templateId root="2.16.840.1.113883.10.20.24.3.85" extension="2014-12-01" />
                   <id root="80aed311-8af7-401f-ab7f-727260d2b033" />
                   <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"
@@ -1098,109 +1097,127 @@
           </entry>
           <!-- QDM Datatype: Device, Order -->
           <entry>
-            <supply classCode="SPLY" moodCode="RQO">
-              <!-- Conforms to C-CDA R2 Planned Supply (V2) -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.43" extension="2014-06-09" />
-              <!-- Device Order (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.9" extension="2016-02-01" />
-              <id root="6a8d037d-f144-4071-9d1f-8a92a11dedc6" />
-              <statusCode code="active" />
-              <effectiveTime xsi:type="IVL_TS">
-                <low value="20141014" />
-                <high value="20141014" />
-              </effectiveTime>
-              <author>
-                <!-- C-CDA R2 Author Participation -->
-                <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201410101030" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201410101034" />
-                </time>
-                <assignedAuthor>
-                  <id root="2.16.840.1.113883.4.6" extension="1234567893" />
-                </assignedAuthor>
-              </author>
-              <participant typeCode="DEV">
-                <participantRole classCode="MANU">
-                  <playingDevice classCode="DEV">
-                    <!-- Device -->
-                    <code code="401608003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
-                      displayName="Suprapubic catheter (physical object)" sdtc:valueSet="2.16.840.1.113883.3.666.5.827"
-                     />
-                  </playingDevice>
-                </participantRole>
-              </participant>
-              <!-- QDM Attribute: Reason -->
-              <entryRelationship typeCode="RSON">
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
-                  <id root="aa348c15-ce6b-4988-b33b-7ae730c710e2" />
-                  <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
-                    displayName="Reason care action performed or not" codeSystemName="LOINC" />
-                  <statusCode code="completed" />
-                  <effectiveTime>
-                    <low value="20120105" />
+            <!-- Device Order Act -->
+            <act classCode="ACT" moodCode="RQO">
+              <templateId root="2.16.840.1.113883.10.20.24.3.130"/>
+              <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
+              <code code="SPLY" codeSystem="2.16.840.1.113883.5.6" displayName="Supply"
+                codeSystemName="ActClass"/>
+              <entryRelationship typeCode="SUBJ">
+                <supply classCode="SPLY" moodCode="RQO">
+                  <!-- Conforms to C-CDA R2 Planned Supply (V2) -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.43" extension="2014-06-09" />
+                  <!-- Device Order (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.9" extension="2016-02-01" />
+                  <id root="6a8d037d-f144-4071-9d1f-8a92a11dedc6" />
+                  <statusCode code="active" />
+                  <effectiveTime xsi:type="IVL_TS">
+                    <low value="20141014" />
+                    <high value="20141014" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="125629006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="Injury of colon" sdtc:valueSet="2.16.840.1.113883.3.464.1003.113.12.1036" />
-                </observation>
+                  <author>
+                    <!-- C-CDA R2 Author Participation -->
+                    <templateId root="2.16.840.1.113883.10.20.22.4.119" />
+                    <time xsi:type="IVL_TS">
+                      <!-- QDM Attribute: Start Datetime -->
+                      <low value="201410101030" />
+                      <!-- QDM Attribute: Stop Datetime -->
+                      <high value="201410101034" />
+                    </time>
+                    <assignedAuthor>
+                      <id root="2.16.840.1.113883.4.6" extension="1234567893" />
+                    </assignedAuthor>
+                  </author>
+                  <participant typeCode="DEV">
+                    <participantRole classCode="MANU">
+                      <playingDevice classCode="DEV">
+                        <!-- Device -->
+                        <code code="401608003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                          displayName="Suprapubic catheter (physical object)" sdtc:valueSet="2.16.840.1.113883.3.666.5.827"
+                         />
+                      </playingDevice>
+                    </participantRole>
+                  </participant>
+                  <!-- QDM Attribute: Reason -->
+                  <entryRelationship typeCode="RSON">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
+                      <id root="aa348c15-ce6b-4988-b33b-7ae730c710e2" />
+                      <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
+                        displayName="Reason care action performed or not" codeSystemName="LOINC" />
+                      <statusCode code="completed" />
+                      <effectiveTime>
+                        <low value="20120105" />
+                      </effectiveTime>
+                      <value xsi:type="CD" code="125629006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+                        displayName="Injury of colon" sdtc:valueSet="2.16.840.1.113883.3.464.1003.113.12.1036" />
+                    </observation>
+                  </entryRelationship>
+                </supply>
               </entryRelationship>
-            </supply>
+            </act>
           </entry>
           <!-- QDM Datatype: Device, Recommended -->
           <entry>
-            <supply classCode="SPLY" moodCode="INT">
-              <!-- C-CDA R2 : Planned Supply (V2) templateId -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.43" extension="2014-06-09" />
-              <!-- Device Recommended (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.10" extension="2016-02-01" />
-              <id root="6a8d037d-f144-4071-9d1f-8a92a11dedc6" />
-              <statusCode code="active" />
-              <effectiveTime xsi:type="IVL_TS">
-                <low value="20141014" />
-                <high value="20141014" />
-              </effectiveTime>
-              <author>
-                <!-- C-CDA R2 Author Participation -->
-                <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201410101030" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201410101034" />
-                </time>
-                <assignedAuthor>
-                  <id root="2.16.840.1.113883.4.6" extension="1234567893" />
-                </assignedAuthor>
-              </author>
-              <participant typeCode="DEV">
-                <participantRole classCode="MANU">
-                  <playingDevice classCode="DEV">
-                    <!-- Device -->
-                    <code code="401608003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
-                      displayName="Suprapubic catheter (physical object)" sdtc:valueSet="2.16.840.1.113883.3.666.5.827"
-                     />
-                  </playingDevice>
-                </participantRole>
-              </participant>
-              <!-- QDM Attribute: Reason -->
-              <entryRelationship typeCode="RSON">
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
-                  <id root="aa348c15-ce6b-4988-b33b-7ae730c710e2" />
-                  <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
-                    displayName="Reason care action performed or not" codeSystemName="LOINC" />
-                  <statusCode code="completed" />
-                  <effectiveTime>
-                    <low value="20120105" />
+            <!-- Device Recommended Act -->
+            <act classCode="ACT" moodCode="INT">
+              <templateId root="2.16.840.1.113883.10.20.24.3.131"/>
+              <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
+              <code code="SPLY" codeSystem="2.16.840.1.113883.5.6" displayName="Supply"
+                codeSystemName="ActClass"/>
+              <entryRelationship typeCode="SUBJ">
+                <supply classCode="SPLY" moodCode="INT">
+                  <!-- C-CDA R2 : Planned Supply (V2) templateId -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.43" extension="2014-06-09" />
+                  <!-- Device Recommended (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.10" extension="2016-02-01" />
+                  <id root="6a8d037d-f144-4071-9d1f-8a92a11dedc6" />
+                  <statusCode code="active" />
+                  <effectiveTime xsi:type="IVL_TS">
+                    <low value="20141014" />
+                    <high value="20141014" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="125629006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="Injury of colon" sdtc:valueSet="2.16.840.1.113883.3.464.1003.113.12.1036" />
-                </observation>
+                  <author>
+                    <!-- C-CDA R2 Author Participation -->
+                    <templateId root="2.16.840.1.113883.10.20.22.4.119" />
+                    <time xsi:type="IVL_TS">
+                      <!-- QDM Attribute: Start Datetime -->
+                      <low value="201410101030" />
+                      <!-- QDM Attribute: Stop Datetime -->
+                      <high value="201410101034" />
+                    </time>
+                    <assignedAuthor>
+                      <id root="2.16.840.1.113883.4.6" extension="1234567893" />
+                    </assignedAuthor>
+                  </author>
+                  <participant typeCode="DEV">
+                    <participantRole classCode="MANU">
+                      <playingDevice classCode="DEV">
+                        <!-- Device -->
+                        <code code="401608003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                          displayName="Suprapubic catheter (physical object)" sdtc:valueSet="2.16.840.1.113883.3.666.5.827"
+                         />
+                      </playingDevice>
+                    </participantRole>
+                  </participant>
+                  <!-- QDM Attribute: Reason -->
+                  <entryRelationship typeCode="RSON">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
+                      <id root="aa348c15-ce6b-4988-b33b-7ae730c710e2" />
+                      <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
+                        displayName="Reason care action performed or not" codeSystemName="LOINC" />
+                      <statusCode code="completed" />
+                      <effectiveTime>
+                        <low value="20120105" />
+                      </effectiveTime>
+                      <value xsi:type="CD" code="125629006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+                        displayName="Injury of colon" sdtc:valueSet="2.16.840.1.113883.3.464.1003.113.12.1036" />
+                    </observation>
+                  </entryRelationship>
+                </supply>
               </entryRelationship>
-            </supply>
+            </act>
           </entry>
           <!-- =============================================== -->
           <!-- QDM Category: Diagnostic Study -->
@@ -1776,63 +1793,72 @@
           </entry>
           <!-- QDM Datatype: Encounter, Order -->
           <entry>
-            <encounter classCode="ENC" moodCode="RQO">
-              <!-- Conforms to C-CDA R2 Planned Encounter (V2) template -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.40" extension="2014-06-09" />
-              <!-- Encounter Order (V3) template -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.22" extension="2016-02-01" />
-              <id root="2a620155-9d11-439e-92b3-5d9815ff4de8" />
-              <code code="185349003" displayName="encounter for check-up (procedure)" codeSystemName="SNOMED CT"
-                codeSystem="2.16.840.1.113883.6.96" sdtc:valueSet="2.16.840.1.113883.3.464.1003.101.12.1048" />
-              <text>Encounter for check-up (procedure)</text>
-              <statusCode code="active" />
-              <effectiveTime>
-                <!-- Admission datetime (or encounter start)-->
-                <low value="20140329090000" />
-                <!-- Discharge datetime (or encounter end)-->
-                <high value="20140329103000" />
-              </effectiveTime>
-              <author>
-                <!-- C-CDA R2 Author Participation -->
-                <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201204081130" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201204081135" />
-                </time>
-                <assignedAuthor>
-                  <id root="2.16.840.1.113883.4.6" extension="1234567893" />
-                </assignedAuthor>
-              </author>
-              <participant typeCode="LOC">
-                <participantRole classCode="SDLOC">
-                  <code code="31628002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="Hospital-based outpatient family medicine clinic (environment)"
-                    sdtc:valueSet="2.16.840.1.113883.3.67.1.101.950" />
-                  <addr><streetAddressLine>17 Daws Rd.</streetAddressLine><city>Blue Bell</city><state>MA</state><postalCode>02368</postalCode><country>US</country></addr>
-                  <telecom use="WP" value="tel:(555)555-1003" />
-                  <playingEntity classCode="PLC">
-                    <name>Good Health Clinic</name>
-                  </playingEntity>
-                </participantRole>
-              </participant>
-              <!-- QDM Attribute: Reason -->
-              <entryRelationship typeCode="RSON">
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
-                  <id root="aa348c15-ce6b-4988-b33b-7ae730c710e2" />
-                  <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
-                    displayName="Reason care action performed or not" codeSystemName="LOINC" />
-                  <statusCode code="completed" />
+            <act classCode="ACT" moodCode="RQO">
+              <!-- Encounter Order Act -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.132"/>
+              <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
+              <code code="ENC" codeSystem="2.16.840.1.113883.5.6" displayName="Encounter"
+                codeSystemName="ActClass"/>
+              <entryRelationship typeCode="SUBJ">
+                <encounter classCode="ENC" moodCode="RQO">
+                  <!-- Conforms to C-CDA R2 Planned Encounter (V2) template -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.40" extension="2014-06-09" />
+                  <!-- Encounter Order (V3) template -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.22" extension="2016-02-01" />
+                  <id root="2a620155-9d11-439e-92b3-5d9815ff4de8" />
+                  <code code="185349003" displayName="encounter for check-up (procedure)" codeSystemName="SNOMED CT"
+                    codeSystem="2.16.840.1.113883.6.96" sdtc:valueSet="2.16.840.1.113883.3.464.1003.101.12.1048" />
+                  <text>Encounter for check-up (procedure)</text>
+                  <statusCode code="active" />
                   <effectiveTime>
-                    <low value="20120105" />
+                    <!-- Admission datetime (or encounter start)-->
+                    <low value="20140329090000" />
+                    <!-- Discharge datetime (or encounter end)-->
+                    <high value="20140329103000" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="125629006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="Injury of colon" sdtc:valueSet="2.16.840.1.113883.3.464.1003.113.12.1036" />
-                </observation>
+                  <author>
+                    <!-- C-CDA R2 Author Participation -->
+                    <templateId root="2.16.840.1.113883.10.20.22.4.119" />
+                    <time xsi:type="IVL_TS">
+                      <!-- QDM Attribute: Start Datetime -->
+                      <low value="201204081130" />
+                      <!-- QDM Attribute: Stop Datetime -->
+                      <high value="201204081135" />
+                    </time>
+                    <assignedAuthor>
+                      <id root="2.16.840.1.113883.4.6" extension="1234567893" />
+                    </assignedAuthor>
+                  </author>
+                  <participant typeCode="LOC">
+                    <participantRole classCode="SDLOC">
+                      <code code="31628002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+                        displayName="Hospital-based outpatient family medicine clinic (environment)"
+                        sdtc:valueSet="2.16.840.1.113883.3.67.1.101.950" />
+                      <addr><streetAddressLine>17 Daws Rd.</streetAddressLine><city>Blue Bell</city><state>MA</state><postalCode>02368</postalCode><country>US</country></addr>
+                      <telecom use="WP" value="tel:(555)555-1003" />
+                      <playingEntity classCode="PLC">
+                        <name>Good Health Clinic</name>
+                      </playingEntity>
+                    </participantRole>
+                  </participant>
+                  <!-- QDM Attribute: Reason -->
+                  <entryRelationship typeCode="RSON">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
+                      <id root="aa348c15-ce6b-4988-b33b-7ae730c710e2" />
+                      <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
+                        displayName="Reason care action performed or not" codeSystemName="LOINC" />
+                      <statusCode code="completed" />
+                      <effectiveTime>
+                        <low value="20120105" />
+                      </effectiveTime>
+                      <value xsi:type="CD" code="125629006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+                        displayName="Injury of colon" sdtc:valueSet="2.16.840.1.113883.3.464.1003.113.12.1036" />
+                    </observation>
+                  </entryRelationship>
+                </encounter>
               </entryRelationship>
-            </encounter>
+            </act>
           </entry>
           <!-- QDM Datatype: Encounter, Performed -->
           <entry>
@@ -1878,63 +1904,72 @@
           </entry>
           <!-- QDM Datatype: Encounter, Recommended -->
           <entry>
-            <encounter classCode="ENC" moodCode="INT">
-              <!-- Conforms to C-CDA R2 Planned Encounter (V2) template -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.40" extension="2014-06-09" />
-              <!-- Encounter Recommended (V3) template -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.24" extension="2016-02-01" />
-              <id root="2a620155-9d11-439e-92b3-5d9815ff4de8" />
-              <code code="185349003" displayName="encounter for check-up (procedure)" codeSystemName="SNOMED CT"
-                codeSystem="2.16.840.1.113883.6.96" sdtc:valueSet="2.16.840.1.113883.3.464.1003.101.12.1048" />
-              <text>Encounter for check-up (procedure)</text>
-              <statusCode code="active" />
-              <effectiveTime>
-                <!-- Admission datetime (or encounter start)-->
-                <low value="20140329090000" />
-                <!-- Discharge datetime (or encounter end)-->
-                <high value="20140329103000" />
-              </effectiveTime>
-              <author>
-                <!-- C-CDA R2 Author Participation -->
-                <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201204081130" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201204081135" />
-                </time>
-                <assignedAuthor>
-                  <id root="2.16.840.1.113883.4.6" extension="1234567893" />
-                </assignedAuthor>
-              </author>
-              <participant typeCode="LOC">
-                <participantRole classCode="SDLOC">
-                  <code code="31628002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="Hospital-based outpatient family medicine clinic (environment)"
-                    sdtc:valueSet="2.16.840.1.113883.3.67.1.101.950" />
-                  <addr><streetAddressLine>17 Daws Rd.</streetAddressLine><city>Blue Bell</city><state>MA</state><postalCode>02368</postalCode><country>US</country></addr>
-                  <telecom use="WP" value="tel:(555)555-1003" />
-                  <playingEntity classCode="PLC">
-                    <name>Good Health Clinic</name>
-                  </playingEntity>
-                </participantRole>
-              </participant>
-              <!-- QDM Attribute: Reason -->
-              <entryRelationship typeCode="RSON">
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
-                  <id root="aa348c15-ce6b-4988-b33b-7ae730c710e2" />
-                  <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
-                    displayName="Reason care action performed or not" codeSystemName="LOINC" />
-                  <statusCode code="completed" />
+            <act classCode="ACT" moodCode="INT">
+              <!--Encounter Recommended Act -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.134"/>
+              <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
+              <code code="ENC" codeSystem="2.16.840.1.113883.5.6" displayName="Encounter"
+                codeSystemName="ActClass"/>
+              <entryRelationship typeCode="SUBJ">
+                <encounter classCode="ENC" moodCode="INT">
+                  <!-- Conforms to C-CDA R2 Planned Encounter (V2) template -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.40" extension="2014-06-09" />
+                  <!-- Encounter Recommended (V3) template -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.24" extension="2016-02-01" />
+                  <id root="2a620155-9d11-439e-92b3-5d9815ff4de8" />
+                  <code code="185349003" displayName="encounter for check-up (procedure)" codeSystemName="SNOMED CT"
+                    codeSystem="2.16.840.1.113883.6.96" sdtc:valueSet="2.16.840.1.113883.3.464.1003.101.12.1048" />
+                  <text>Encounter for check-up (procedure)</text>
+                  <statusCode code="active" />
                   <effectiveTime>
-                    <low value="20120105" />
+                    <!-- Admission datetime (or encounter start)-->
+                    <low value="20140329090000" />
+                    <!-- Discharge datetime (or encounter end)-->
+                    <high value="20140329103000" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="125629006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="Injury of colon" sdtc:valueSet="2.16.840.1.113883.3.464.1003.113.12.1036" />
-                </observation>
+                  <author>
+                    <!-- C-CDA R2 Author Participation -->
+                    <templateId root="2.16.840.1.113883.10.20.22.4.119" />
+                    <time xsi:type="IVL_TS">
+                      <!-- QDM Attribute: Start Datetime -->
+                      <low value="201204081130" />
+                      <!-- QDM Attribute: Stop Datetime -->
+                      <high value="201204081135" />
+                    </time>
+                    <assignedAuthor>
+                      <id root="2.16.840.1.113883.4.6" extension="1234567893" />
+                    </assignedAuthor>
+                  </author>
+                  <participant typeCode="LOC">
+                    <participantRole classCode="SDLOC">
+                      <code code="31628002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+                        displayName="Hospital-based outpatient family medicine clinic (environment)"
+                        sdtc:valueSet="2.16.840.1.113883.3.67.1.101.950" />
+                      <addr><streetAddressLine>17 Daws Rd.</streetAddressLine><city>Blue Bell</city><state>MA</state><postalCode>02368</postalCode><country>US</country></addr>
+                      <telecom use="WP" value="tel:(555)555-1003" />
+                      <playingEntity classCode="PLC">
+                        <name>Good Health Clinic</name>
+                      </playingEntity>
+                    </participantRole>
+                  </participant>
+                  <!-- QDM Attribute: Reason -->
+                  <entryRelationship typeCode="RSON">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
+                      <id root="aa348c15-ce6b-4988-b33b-7ae730c710e2" />
+                      <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
+                        displayName="Reason care action performed or not" codeSystemName="LOINC" />
+                      <statusCode code="completed" />
+                      <effectiveTime>
+                        <low value="20120105" />
+                      </effectiveTime>
+                      <value xsi:type="CD" code="125629006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+                        displayName="Injury of colon" sdtc:valueSet="2.16.840.1.113883.3.464.1003.113.12.1036" />
+                    </observation>
+                  </entryRelationship>
+                </encounter>
               </entryRelationship>
-            </encounter>
+            </act>
           </entry>
           <!-- =============================================== -->
           <!-- QDM Category: Functional Status -->
@@ -3311,47 +3346,56 @@
           </entry>
           <!-- QDM Datatype: Medication, Dispensed -->
           <entry>
-            <supply classCode="SPLY" moodCode="EVN">
-              <!-- Conforms to C-CDA R2 Medication Dispense (V2) template -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.18" extension="2014-06-09" />
-              <!-- Medication Dispensed (V3) template -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.45" extension="2016-02-01" />
-              <id root="50ed595a-dfb6-49f0-8b19-1901b5d01c1a" />
-              <statusCode code="completed" />
-              <effectiveTime xsi:type="IVL_TS">
-                <!-- QDM Attribute: Start Datetime -->
-                <low value="20110301" />
-                <!-- QDM Attribute: Stop Datetime -->
-                <high value="20120301" />
-              </effectiveTime>
-              <!-- QDM Attribute: Refills -->
-              <repeatNumber value="4" />
-              <independentInd value="false" />
-              <product>
-                <manufacturedProduct classCode="MANU">
-                  <!-- C-CDA R2 Medication Information (V2) -->
-                  <templateId root="2.16.840.1.113883.10.20.22.4.23" extension="2014-06-09" />
-                  <id root="37bfe02a-3e97-4bd6-9197-bbd0ed0de79e" />
-                  <manufacturedMaterial>
-                    <code code="329498" codeSystem="2.16.840.1.113883.6.88"
-                      displayName="Albuterol 0.09 MG/ACTUAT inhalant solution" codeSystemName="RxNorm"
-                      sdtc:valueSet="1.2.99999" />
-                  </manufacturedMaterial>
-                </manufacturedProduct>
-              </product>
-              <!-- QDM Attribute: Route -->
-              <entryRelationship typeCode="REFR">
-                <substanceAdministration classCode="SBADM" moodCode="EVN">
-                  <routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus"
-                    displayName="ORAL" sdtc:valueSet="1.2.9999" />
-                  <consumable>
-                    <manufacturedProduct>
-                      <manufacturedMaterial nullFlavor="NA" />
+            <act classCode="ACT" moodCode="EVN">
+              <!-- Medication Dispensed Act -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.139"/>
+              <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
+              <code code="SPLY" codeSystem="2.16.840.1.113883.5.6" displayName="supply"
+                codeSystemName="ActClass"/>
+              <entryRelationship typeCode="SUBJ">
+                <supply classCode="SPLY" moodCode="EVN">
+                  <!-- Conforms to C-CDA R2 Medication Dispense (V2) template -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.18" extension="2014-06-09" />
+                  <!-- Medication Dispensed (V3) template -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.45" extension="2016-02-01" />
+                  <id root="50ed595a-dfb6-49f0-8b19-1901b5d01c1a" />
+                  <statusCode code="completed" />
+                  <effectiveTime xsi:type="IVL_TS">
+                    <!-- QDM Attribute: Start Datetime -->
+                    <low value="20110301" />
+                    <!-- QDM Attribute: Stop Datetime -->
+                    <high value="20120301" />
+                  </effectiveTime>
+                  <!-- QDM Attribute: Refills -->
+                  <repeatNumber value="4" />
+                  <independentInd value="false" />
+                  <product>
+                    <manufacturedProduct classCode="MANU">
+                      <!-- C-CDA R2 Medication Information (V2) -->
+                      <templateId root="2.16.840.1.113883.10.20.22.4.23" extension="2014-06-09" />
+                      <id root="37bfe02a-3e97-4bd6-9197-bbd0ed0de79e" />
+                      <manufacturedMaterial>
+                        <code code="329498" codeSystem="2.16.840.1.113883.6.88"
+                          displayName="Albuterol 0.09 MG/ACTUAT inhalant solution" codeSystemName="RxNorm"
+                          sdtc:valueSet="1.2.99999" />
+                      </manufacturedMaterial>
                     </manufacturedProduct>
-                  </consumable>
-                </substanceAdministration>
+                  </product>
+                  <!-- QDM Attribute: Route -->
+                  <entryRelationship typeCode="REFR">
+                    <substanceAdministration classCode="SBADM" moodCode="EVN">
+                      <routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus"
+                        displayName="ORAL" sdtc:valueSet="1.2.9999" />
+                      <consumable>
+                        <manufacturedProduct>
+                          <manufacturedMaterial nullFlavor="NA" />
+                        </manufacturedProduct>
+                      </consumable>
+                    </substanceAdministration>
+                  </entryRelationship>
+                </supply>
               </entryRelationship>
-            </supply>
+            </act>
           </entry>
           <!-- QDM Datatype: Medication, Intolerance -->
           <entry>
@@ -4807,53 +4851,69 @@
           <!-- =============================================== -->
           <!-- QDM Datatype: Transfer From -->
           <entry typeCode="DRIV">
-            <encounter classCode="ENC" moodCode="EVN">
-              <!-- Transfer From (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.81" extension="2016-02-01" />
-              <id root="49d75f61-0dec-4972-9a51-e2490b18c772" />
-              <code code="77305-1" codeSystem="2.16.840.1.113883.6.1" displayName="Transferred from"
-                codeSystemName="LOINC" />
-              <statusCode code="completed" />
-              <participant typeCode="ORG">
-                <time>
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201411041030" />
-                  <!-- QDM Attribute: Start Datetime -->
-                  <high value="201411041030" />
-                </time>
-                <participantRole classCode="LOCE">
-                  <!-- Transfer from location -->
-                  <code code="309911002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="Respiratory intensive care unit (environment)"
-                    sdtc:valueSet="2.16.840.1.113883.3.666.5.684" />
-                </participantRole>
-              </participant>
-            </encounter>
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.24.3.141"/>
+              <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
+              <code code="ENC" codeSystem="2.16.840.1.113883.5.6" displayName="Encounter"
+                codeSystemName="ActClass"/>
+              <entryRelationship typeCode="SUBJ">
+                <encounter classCode="ENC" moodCode="EVN">
+                  <!-- Transfer From (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.81" extension="2016-02-01" />
+                  <id root="49d75f61-0dec-4972-9a51-e2490b18c772" />
+                  <code code="77305-1" codeSystem="2.16.840.1.113883.6.1" displayName="Transferred from"
+                    codeSystemName="LOINC" />
+                  <statusCode code="completed" />
+                  <participant typeCode="ORG">
+                    <time>
+                      <!-- QDM Attribute: Start Datetime -->
+                      <low value="201411041030" />
+                      <!-- QDM Attribute: Start Datetime -->
+                      <high value="201411041030" />
+                    </time>
+                    <participantRole classCode="LOCE">
+                      <!-- Transfer from location -->
+                      <code code="309911002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+                        displayName="Respiratory intensive care unit (environment)"
+                        sdtc:valueSet="2.16.840.1.113883.3.666.5.684" />
+                    </participantRole>
+                  </participant>
+                </encounter>
+              </entryRelationship>
+            </act>
           </entry>
           <!-- QDM Datatype: Transfer To -->
           <entry typeCode="DRIV">
-            <encounter classCode="ENC" moodCode="EVN">
-              <!-- Transfer To (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.82" extension="2016-02-01" />
-              <id root="49d75f61-0dec-4972-9a51-e2490b18c772" />
-              <code code="77306-9" codeSystem="2.16.840.1.113883.6.1" displayName="Discharge disposition"
-                codeSystemName="LOINC" />
-              <statusCode code="completed" />
-              <participant typeCode="DST">
-                <time>
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201411041030" />
-                  <!-- QDM Attribute: Start Datetime -->
-                  <high value="201411041030" />
-                </time>
-                <participantRole classCode="LOCE">
-                  <!-- Transfer to location -->
-                  <code code="309911002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="Respiratory intensive care unit (environment)"
-                    sdtc:valueSet="2.16.840.1.113883.3.666.5.684" />
-                </participantRole>
-              </participant>
-            </encounter>
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.24.3.142"/>
+              <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
+              <code code="ENC" codeSystem="2.16.840.1.113883.5.6" displayName="Encounter"
+                codeSystemName="ActClass"/>
+              <entryRelationship typeCode="SUBJ">
+                <encounter classCode="ENC" moodCode="EVN">
+                  <!-- Transfer To (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.82" extension="2016-02-01" />
+                  <id root="49d75f61-0dec-4972-9a51-e2490b18c772" />
+                  <code code="77306-9" codeSystem="2.16.840.1.113883.6.1" displayName="Discharge disposition"
+                    codeSystemName="LOINC" />
+                  <statusCode code="completed" />
+                  <participant typeCode="DST">
+                    <time>
+                      <!-- QDM Attribute: Start Datetime -->
+                      <low value="201411041030" />
+                      <!-- QDM Attribute: Start Datetime -->
+                      <high value="201411041030" />
+                    </time>
+                    <participantRole classCode="LOCE">
+                      <!-- Transfer to location -->
+                      <code code="309911002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+                        displayName="Respiratory intensive care unit (environment)"
+                        sdtc:valueSet="2.16.840.1.113883.3.666.5.684" />
+                    </participantRole>
+                  </participant>
+                </encounter>
+              </entryRelationship>
+            </act>
           </entry>
         </section>
       </component>

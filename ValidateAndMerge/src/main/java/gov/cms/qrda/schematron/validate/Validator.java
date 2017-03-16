@@ -112,6 +112,10 @@ public class Validator {
 		
 			// If that worked we now have an XSL file to use on the XML to validate
 			// So for each sample file in the properties file run a validation and report process
+			if (isVerbose) {
+				results.addResult(MergeInstructions.INDENT1 + "_______________________________________________________________");
+				results.addResult(MergeInstructions.INDENT1 + "SCHEMATRON: " + schematronFile);
+			}
 			for (String testFile : testFiles) {
 				boolean reportResult = performValidation(props, testFile);
 				
@@ -149,9 +153,10 @@ public class Validator {
 					return failCount;
 				}
 				if (isVerbose) {
-					results.addResult(MergeInstructions.INDENT2 + "_______________________________________________________________");
-					results.addResult(MergeInstructions.INDENT2 + "Schematron File: " + schematronFile);
-					results.addResult(MergeInstructions.INDENT2 + "Running validation on " + testFile);
+					//results.addResult(MergeInstructions.INDENT2 + "_______________________________________________________________");
+					//results.addResult(MergeInstructions.INDENT2 + "Schematron File: " + schematronFile);
+					results.addResult(MergeInstructions.INDENT2 + " ");
+					results.addResult(MergeInstructions.INDENT2 + "TEST FILE: " + testFile);
 				}
 				System.out.println("TESTFILE: " + testFile);
 				if (failures != null) {

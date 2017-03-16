@@ -44,6 +44,7 @@ public class MergeProperties {
 	protected String mainSourceDirectory = null;
 	protected String title = null;
 	protected String fileHeader = null;
+	protected String headerFormat = "\n    %s \n\n    %s\n\n    %s \n\n";
 	
 	protected boolean verbose = true;
 	protected boolean doValidation = false;
@@ -94,6 +95,13 @@ public class MergeProperties {
 	}
 	public void setFileHeader(String val) {
 		fileHeader = val;
+	}
+
+	public String getHeaderFormat() {
+		return headerFormat;
+	}
+	public void setHeaderFormat(String val) {
+		headerFormat = val;
 	}
 
 	public String getMergeReportFilename() {

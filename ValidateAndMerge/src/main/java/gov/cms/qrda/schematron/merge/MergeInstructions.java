@@ -129,6 +129,10 @@ public class MergeInstructions extends MergeProperties{
 			setMainSourceDirectory(getNodeValue(mergeProfile,"sourceMainDirectory"));
 			setTitle(getNodeValue(mergeProfile,"title"));
 			setFileHeader(getNodeValue(mergeProfile,"fileHeader"));
+			String hf = getNodeValue(mergeProfile,"headerFormat");
+			if (hf != null && !hf.isEmpty()) {
+				setHeaderFormat(hf);
+			}
 			setMergeReportFilename(getNodeValue(mergeProfile,"mergeReportFilename"));
 			System.out.println(INDENT1+  "See merge report in: " + getMergeReportFilename());
 			if (getMergeReportFilename() == null || getMergeReportFilename().isEmpty()) {
@@ -411,7 +415,7 @@ public class MergeInstructions extends MergeProperties{
 	}
 
 	public String getHeaderText() {
-		return String.format("\n   %s \n   %s\n   %s \n", getTitle(), getFileHeader(),new Date());
+		return String.format(getHeaderFormat(), getTitle(), getFileHeader(),new Date());
 	}
 	
 	// Copies the file found at filename to the application's main directory with the name "voc.xml"

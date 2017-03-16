@@ -7,7 +7,9 @@
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU 4 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
-    This sample file is informative only. 	
+    This sample file is informative only.
+    
+    Total Errors Expected: 0
   -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"

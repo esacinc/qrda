@@ -15,7 +15,7 @@
         <sch:rule id="Immunization_administered-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.140']]">
             <sch:assert id="a-2228-28588-error" test="@classCode='ACT'">SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28588).</sch:assert>
             <sch:assert id="a-2228-28589-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-28589).</sch:assert>
-            <sch:assert id="a-2228-28574-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.140'])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-28574) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.140" (CONF:2228-28581).</sch:assert>
+            <sch:assert id="a-2228-28574-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.140'][not(@extension)])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-28574) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.140" (CONF:2228-28581).</sch:assert>
             <sch:assert id="a-2228-28590-error" test="count(cda:id) &gt; 0">SHALL contain at least one [1..*] id (CONF:2228-28590).</sch:assert>
             <sch:assert id="a-2228-28575-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2228-28575).</sch:assert>
             <sch:assert id="a-2228-28576-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:2228-28576).</sch:assert>

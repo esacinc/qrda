@@ -17,7 +17,7 @@
 			<sch:assert id="a-1098-31946-error" test="@moodCode='INT'">
 				SHALL contain exactly one [1..1] @moodCode="INT" Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:1098-31946).			
 			</sch:assert>
-			<sch:assert id="a-1098-31947-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.129']) = 1">
+			<sch:assert id="a-1098-31947-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.129'][not(@extension)]) = 1">
 				SHALL contain exactly one [1..1] templateId (CONF:1098-31947) such that it
 					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.129" (CONF:1098-31948).
 			</sch:assert>

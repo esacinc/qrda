@@ -16,7 +16,7 @@
             <sch:assert id="a-2228-28510-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28510).</sch:assert>
             <sch:assert id="a-2228-28511-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-28511).</sch:assert>
             <sch:assert id="a-2228-28512-error" test="not(@negationInd)">SHALL NOT contain [0..0] @negationInd (CONF:2228-28512).</sch:assert>
-            <sch:assert id="a-2228-28498-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.135'])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-28498) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.135" (CONF:2228-28503).</sch:assert>
+            <sch:assert id="a-2228-28498-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.135'][not(@extension)])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-28498) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.135" (CONF:2228-28503).</sch:assert>
             <sch:assert id="a-2228-28499-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2228-28499).</sch:assert>
             <sch:assert id="a-2228-28500-error" test="count(cda:value[@xsi:type='CD'])=1">SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:2228-28500).</sch:assert>
             <sch:assert id="a-2228-28658-error" test="count(../../cda:templateId[@root='2.16.840.1.113883.10.20.24.3.137'][@extension='2016-08-01'])=1">This template SHALL be contained by a Diagnosis Concern Act (V2) (CONF:2228-28658).</sch:assert>

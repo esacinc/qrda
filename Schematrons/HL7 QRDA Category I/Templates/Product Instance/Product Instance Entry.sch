@@ -18,7 +18,7 @@
     <sch:pattern id="Product-Instance-pattern-errors">
         <sch:rule id="Product-Instance-errors" context="cda:participantRole[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.37']]">
             <sch:assert id="a-81-7900-error" test="@classCode='MANU'">SHALL contain exactly one [1..1] @classCode="MANU" Manufactured Product (CodeSystem: RoleClass urn:oid:2.16.840.1.113883.5.110 STATIC) (CONF:81-7900).</sch:assert>
-            <sch:assert id="a-81-7901-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.37'])=1">SHALL contain exactly one [1..1] templateId (CONF:81-7901) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.37" (CONF:81-10522). </sch:assert>
+            <sch:assert id="a-81-7901-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.37'][not(@extension)])=1">SHALL contain exactly one [1..1] templateId (CONF:81-7901) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.37" (CONF:81-10522). </sch:assert>
             <sch:assert id="a-81-7902-error" test="count(cda:id) &gt; 0">SHALL contain at least one [1..*] id (CONF:81-7902).</sch:assert>
             <sch:assert id="a-81-7903-error" test="count(cda:playingDevice)=1">SHALL contain exactly one [1..1] playingDevice (CONF:81-7903).</sch:assert>
             <sch:assert id="a-81-7905-error" test="count(cda:scopingEntity)=1">SHALL contain exactly one [1..1] scopingEntity (CONF:81-7905).</sch:assert>

@@ -19,7 +19,7 @@
         <sch:rule id="Immunization_order-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.143']]">
             <sch:assert id="a-2228-28645-error" test="@classCode='SBADM'">SHALL contain exactly one [1..1] @classCode="SBADM" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28645).</sch:assert>
             <sch:assert id="a-2228-28644-error" test="@moodCode='RQO'">SHALL contain exactly one [1..1] @moodCode="RQO" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-28644).</sch:assert>
-            <sch:assert id="a-2228-28627-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.143'])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-28627) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.143" (CONF:2228-28634).</sch:assert>
+            <sch:assert id="a-2228-28627-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.143'][not(@extension)])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-28627) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.143" (CONF:2228-28634).</sch:assert>
             <sch:assert id="a-2228-28646-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']])=1">SHALL contain exactly one [1..1] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:2228-28646).</sch:assert>
         </sch:rule>
         <sch:rule id="Immunization_order-routeCode-translation-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.143']]/cda:routeCode/cda:translation">

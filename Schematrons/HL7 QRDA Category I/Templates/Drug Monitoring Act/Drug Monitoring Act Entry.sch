@@ -15,7 +15,7 @@
         <sch:rule id="Drug-Monitoring-Act-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.123']]">
             <sch:assert id="a-1098-30823-error" test="@classCode='ACT'">SHALL contain exactly one [1..1] @classCode="ACT" act (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1098-30823). </sch:assert>
             <sch:assert id="a-1098-28656-error" test="@moodCode='INT'">SHALL contain exactly one [1..1] @moodCode="INT" (CONF:1098-28656). </sch:assert>
-            <sch:assert id="a-1098-28657-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.123'])=1">SHALL contain exactly one [1..1] templateId (CONF:1098-28657) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.123" (CONF:1098-28658). </sch:assert>
+            <sch:assert id="a-1098-28657-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.123'][not(@extension)])=1">SHALL contain exactly one [1..1] templateId (CONF:1098-28657) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.123" (CONF:1098-28658). </sch:assert>
             <sch:assert id="a-1098-31920-error" test="count(cda:id)&gt;=1">SHALL contain at least one [1..*] id (CONF:1098-31920).  </sch:assert>
             <sch:assert id="a-1098-28660-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:1098-28660). </sch:assert>
             <sch:assert id="a-1098-31921-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:1098-31921).  </sch:assert>

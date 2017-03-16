@@ -17,7 +17,7 @@
 			<sch:assert id="a-1109-18396-error" test="@moodCode='EVN'"> 
 				SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:1109-18396).			
 			</sch:assert>
-			<sch:assert id="a-1109-711255-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.25']) = 1"> 
+			<sch:assert id="a-1109-711255-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.25'][not(@extension)]) = 1"> 
 				SHALL contain exactly one [1..1] templateId (CONF:1109-711255) such that it
 					SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.25" (CONF:1109-711256).
 			</sch:assert>

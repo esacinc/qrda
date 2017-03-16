@@ -15,7 +15,7 @@
         <sch:rule id="Ethnicity_supp_data_element-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.7']]">
             <sch:assert id="a-77-18216-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:77-18216).</sch:assert>
             <sch:assert id="a-77-18217-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:77-18217).</sch:assert>
-            <sch:assert id="a-77-18218-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.7'])=1">SHALL contain exactly one [1..1] templateId (CONF:77-18218) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.7" (CONF:77-18219).</sch:assert>
+            <sch:assert id="a-77-18218-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.7'][not(@extension)])=1">SHALL contain exactly one [1..1] templateId (CONF:77-18218) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.7" (CONF:77-18219).</sch:assert>
             <sch:assert id="a-77-18220-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:77-18220).</sch:assert>
             <sch:assert id="a-77-18118-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:77-18118).</sch:assert>
             <sch:assert id="a-77-18222-error" test="count(cda:value[@xsi:type='CD'])=1">SHALL contain exactly one [1..1] value with @xsi:type="CD", where the code SHALL be selected from ValueSet Ethnicity urn:oid:2.16.840.1.114222.4.11.837 DYNAMIC (CONF:77-18222).</sch:assert>

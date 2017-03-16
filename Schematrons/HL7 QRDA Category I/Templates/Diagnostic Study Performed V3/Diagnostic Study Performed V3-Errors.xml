@@ -5,6 +5,7 @@
   -->
   <!-- 	 
     Errors added to test Diagnostic Study Performed V3 template schematron error assertions - Dan Donahue
+    
     Total Errors Expected: 10
           Failure a-2228-27639-error Bad Class Code
           Failure a-2228-12950-error Bad Mood Code
@@ -17,6 +18,8 @@
           Failure a-2228-12959 Missing or multiple low
           Failure a-2228-12960 Missing or multiple high
   
+    Total Warnings Expected: 0
+    
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 

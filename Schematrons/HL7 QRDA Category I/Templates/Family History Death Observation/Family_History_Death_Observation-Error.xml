@@ -12,6 +12,8 @@
           Failure a-81-19141-error Missing or bad code
           Failure a-81-8625-error Missing or multiple statusCode
           Failure a-81-8626-error Missing or multiple value with @xsi:type="CD"
+          
+   Total Warnings Expected: 0
 -->          
           
 <!-- 	 

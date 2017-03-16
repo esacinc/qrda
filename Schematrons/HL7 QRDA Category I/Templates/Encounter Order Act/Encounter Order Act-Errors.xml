@@ -5,12 +5,15 @@
   -->
   <!-- 	 
     Errors added to test Encounter Order Act template schematron error assertions - Dan Donahue
+
     Total Errors Expected: 5
           Failure a-2228-28469-error Bad Class Code
           Failure a-2228-28470-error Bad Mood Code
           Failure a-2228-28467-error Multiple main template ids
           Failure a-2228-28472-error Missing id
           Failure a-2228-28468-error Missing or multiple entryRelationship with @typeCode="SUBJ" and one encounter order
+   
+   Total Warnings Expected: 0
    
    This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 

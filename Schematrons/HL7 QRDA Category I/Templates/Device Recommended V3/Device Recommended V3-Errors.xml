@@ -5,12 +5,15 @@
   -->
   <!-- 	 
     Errors added to test Device Recommended V3 template schematron error assertions - Dan Donahue
+   
     Total Errors Expected: 5
           Failure a-2228-27722-error Bad Class Code
           Failure a-2228-12368-error Bad Mood Code
           Failure a-2228-12369-error Multiple main template ids
           Failure a-2228-27719-error Missing or multiple Author Participations
           Failure a-2228-12374-error No participant with: typeCode DEV, one role of class MANU and playingDevice with a classCode = DEV and a code from sdtc:valueSet
+
+    Total Warnings Expected: 0
 
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 

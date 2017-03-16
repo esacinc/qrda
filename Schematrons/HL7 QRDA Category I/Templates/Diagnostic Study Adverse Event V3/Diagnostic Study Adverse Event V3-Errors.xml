@@ -5,7 +5,8 @@
   -->
   <!-- 	 
    Errors added to test Diagnostic Study Adverse Event V3 template schematron error assertions - Dan Donahue
-   Total Errors Expected: 7
+  
+    Total Errors Expected: 7
           Failure a-2228-11767-error Bad Class Code
           Failure a-2228-11768-error Bad Mood Code
           Failure a-2228-11769-error Multiple main template ids
@@ -14,6 +15,8 @@
           Failure a-2228-26939-error Bad or missing codeSystem
           Failure a-2228-28142-error Missing or multiple entryRelationships with typeCode=CAUS, inversionInd = true,  and one Diagnostic Study Performed
 
+    Total Warnings Expected: 0
+  
    This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 

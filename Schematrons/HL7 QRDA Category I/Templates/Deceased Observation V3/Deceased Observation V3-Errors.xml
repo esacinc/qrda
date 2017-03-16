@@ -19,7 +19,9 @@
           Failure a-1198-14874-error Missing low
           Failure a-1198-14857-error More than one value of type CD
           Failure a-1198-15142-error Incorrect code value
-          
+     
+    Total Warnings Expected: 0
+    
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 

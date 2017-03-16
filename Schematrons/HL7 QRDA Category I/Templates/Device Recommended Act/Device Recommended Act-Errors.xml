@@ -5,12 +5,15 @@
   -->
   <!-- 	 
     Errors added to test Device Recommended Act template schematron error assertions - Dan Donahue
+    
     Total Errors Expected: 4
           Failure a-2228-28454-error Bad Class Code
           Failure a-2228-28455-error Bad Mood Code
           Failure a-2228-28457-error Missing id
           Failure a-2228-28453-error Missing an entryRelationship with: typeCode=SUBJ and a single device recommended 
 
+    Total Warnings Expected: 0
+  
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 

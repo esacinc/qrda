@@ -5,7 +5,8 @@
   -->
   <!-- 	 
      Errors added to test Discharge Medication V3 template schematron error assertions - Dan Donahue
-    Total Errors Expected: 8
+   
+   Total Errors Expected: 8
           Failure a-2228-16550-error Bad Class Code
           Failure a-2228-16551-error Bad Mood Code
           Failure a-2228-26956-error Multiple main template ids 
@@ -15,6 +16,8 @@
           Failure a-2228-28141-error Missing or multiple  @codeSystem="2.16.840.1.113883.6.1" 
           Failure a-2228-16553 Missing or multiple entryRelationship with @typeCode="SUBJ" and one mediacation activity
 
+    Total Warnings Expected: 0
+    
 This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU3.1 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 

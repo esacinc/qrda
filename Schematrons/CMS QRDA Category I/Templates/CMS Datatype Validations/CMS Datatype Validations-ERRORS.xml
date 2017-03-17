@@ -90,5 +90,12 @@
     
     <!-- A Coordinated Universal Time  (UTC time) offset should not be used anywhere in a QRDA Category I file or, 
          if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF: CMS_0121). -->
+    <!-- 
+          This assert (CMS_0121) is tested in the 
+          "CMS Datatype Validations Time Zone-ERRORS-1.xml",  
+          "CMS Datatype Validations Time Zone-ERRORS-2.xml", and 
+          "CMS Datatype Validations Time Zone-ERRORS-3.xml"
+          files in same directory as this file. 
+    -->
     
 </ClinicalDocument>

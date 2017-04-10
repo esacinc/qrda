@@ -32,8 +32,8 @@
 		</sch:rule>
 		
 		<sch:rule id="Performance_Rate_for_Proportion_Measure_CMS_V2-value-errors" context="cda:observation[cda:templateId[@root = '2.16.840.1.113883.10.20.27.3.25']]/cda:value">
-			<sch:assert id="a-2233-711294-error" test="(@value &gt;= 0) and (@value &lt;= 1)">The value, if present, SHALL be greater than or equal to 0 and less than or equal to 1 (CONF:2233-711294).</sch:assert>
-			<sch:assert id="a-2233-711295-error" test="string-length(substring-after(@value,'.')) &lt;= 6">The value, if present, SHALL contain no more than 6 digits to the right of the decimal (CONF:2233-711295).</sch:assert>
+			<sch:assert id="a-2233-711294-error" test="not(@value) or ((@value &gt;= 0) and (@value &lt;= 1))">The value, if present, SHALL be greater than or equal to 0 and less than or equal to 1 (CONF:2233-711294).</sch:assert>
+			<sch:assert id="a-2233-711295-error" test="not(@value) or (string-length(substring-after(@value,'.')) &lt;= 6)">The value, if present, SHALL contain no more than 6 digits to the right of the decimal (CONF:2233-711295).</sch:assert>
 		</sch:rule>
 
 		<sch:rule id="Performance_Rate_for_Proportion_Measure_CMS_V2-reference-errors" context="cda:observation[cda:templateId[@root = '2.16.840.1.113883.10.20.27.3.25']]/cda:reference">

@@ -21,8 +21,17 @@
   xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
   xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
   <realmCode code="US"/>
-  <templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2015-08-01"/>
-  <!-- Failure a-81-10127-e-error effectiveTime not precise to the day -->
+  
+  <!-- 
+    Note:     Only the presence of the ...22.1.1 templateID context will trigger the 2 errors and 4 warnings expected.
+              If you use either of the other two templateIDs (24.1.3 or 27.1.1 + extension) then only the effectiveTime errors and warnings will trigger
+              because the time errors and warnings do not include consider those template contexts.
+   -->
+   <templateId root="2.16.840.1.113883.10.20.22.1.1"/> 
+  <!-- <templateId root="2.16.840.1.113883.10.20.24.1.3" /> -->
+  <!-- <templateId root="2.16.840.1.113883.10.20.27.1.1" extension="2016-09-01"/> -->
+  
+    <!-- Failure a-81-10127-e-error effectiveTime not precise to the day -->
   <!-- Failure a-81-10128-e-warning effectiveTime not precide to minute -->
   <effectiveTime value="201512"/>
   <!-- Failure a-81-10130-e-warning effectiveTime precise beyond minute, but no time-zone offset -->

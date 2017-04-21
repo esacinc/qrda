@@ -50,9 +50,6 @@
     </sch:pattern>
     
     <sch:pattern id="QDM_based_QRDA_V3-pattern-warnings">
-        <sch:rule id="QDM_based_QRDA_V3-recordTarget-warnings" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2016-02-01']]/cda:recordTarget">
-            <sch:assert id="a-2228-16857-warning" test="cda:patientRole[count(cda:id[@root='2.16.840.1.113883.4.572'])=1]">This patientRole SHOULD contain zero or one [0..1] id (CONF:2228-16857) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.572" Medicare HIC number (CONF:2228-16858).</sch:assert>
-        </sch:rule>
         <sch:rule id="QDM_based_QRDA_V3-custodian-assignedCustodian-representedCustodianOrganization-warnings" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2016-02-01']]/cda:custodian/cda:assignedCustodian/cda:representedCustodianOrganization">
             <sch:assert id="a-2228-28241-warning" test="count(cda:id[@root='2.16.840.1.113883.4.336'][@extension])=1">This representedCustodianOrganization SHOULD contain zero or one [0..1] id (CONF:2228-28241) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.336" CMS Certification Number (CONF:2228-28244). SHALL contain exactly one [1..1] @extension (CONF:2228-28245).</sch:assert>
             <sch:assert id="a-2228-28242-warning" test="count(cda:id[@root='2.16.840.1.113883.4.2'][@extension])=1">This representedCustodianOrganization SHOULD contain zero or one [0..1] id (CONF:2228-28242) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:2228-28246). SHALL contain exactly one [1..1] @extension (CONF:2228-28247).</sch:assert>

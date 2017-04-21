@@ -16,9 +16,13 @@
             <sch:assert id="a-2228-28487-error" test="@classCode='ACT'">SHALL contain exactly one [1..1] @classCode="ACT" Act (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28487). </sch:assert>
             <sch:assert id="a-2228-28488-error" test="@moodCode='INT'">SHALL contain exactly one [1..1] @moodCode="INT" Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:2228-28488 </sch:assert>
             <sch:assert id="a-2228-28485-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.134'][not(@extension)])=1">SHALL contain exactly one [1..1] templateId (CONF:2228-28485) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.134" (CONF:2228-28490).  </sch:assert>
-            <sch:assert id="a-2228-28491-error" test="count(cda:id)&gt;=1">SHALL contain at least one [1..*] id (CONF:2228-28491).  </sch:assert>
+            <sch:assert id="a-2228-28491-error" test="count(cda:id)&gt;=1">SHALL contain at least one [1..*] id (CONF:2228-28491).</sch:assert>
+            <sch:assert id="a-2228-28677-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2228-28677).</sch:assert>
             <sch:assert id="a-2228-28486-error" test="count(cda:entryRelationship[@typeCode='SUBJ'][count(cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.24'][@extension='2016-02-01']])=1])=1">SHALL contain exactly one [1..1] entryRelationship (CONF:2228-28486) such that it SHALL contain exactly one [1..1] @typeCode="SUBJ" has subject (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:2228-28492).  SHALL contain exactly one [1..1] Encounter Recommended (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.24:2016-02-01) (CONF:2228-28493).  </sch:assert>
          </sch:rule>
+        <sch:rule id="Encounter-Recommended-Act-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.134']]/cda:code">
+            <sch:assert id="a-2228-28678-error" test="@code='ENC'">This code SHALL contain exactly one [1..1] @code="ENC" Encounter (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28678).</sch:assert>
+        </sch:rule>
     </sch:pattern>
     
 </sch:schema>

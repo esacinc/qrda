@@ -6,14 +6,15 @@
 	Filename: BAD_QRDA_I_STU3.1_QDM-BasedQRDAV3Document_5.xml
 	Revision History:  Created 5/4/2016
 	                   Modified 6/1/2016 - Minimum required elements
+	                   Modified 4/21/2017 - Conformant errors expected syntax, Removed trigger for 2228-16858, which was removed from .sch
 	Description: This test file contains data conformant to the QRDA Category I R1, STU 3.1 IG
 	              for the purposes of testing QDM Based QRDA V3 Document.sch.  
  	 
 	 Rule             	Number of errors
-   a-2228-16858-error        1
    a-2228-17082-error        1
    ______________________________________
-   Total errors              2                
+   Total errors expected:     1 
+   Total warnings expected:   0
 
 **************************************************************** -->
 
@@ -49,14 +50,10 @@
     -->
     <patientRole>
       <!-- 
-        This patientRole SHOULD contain zero or one [0..1] id (CONF:2228-16857) such that it
+        This patientRole MAY contain zero or one [0..1] id (CONF:2228-16857) such that it
         SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.572" Medicare HIC number (CONF:2228-16858)
       -->
-      <!-- 
-        a-2228-16858-error
-        patientRole/id/@root ≠ "2.16.840.1.113883.4.572"
-      -->
-      <id extension="111223333A" root="2.16.840.1.113883.4.123"/>
+      <id extension="111223333A" root="2.16.840.1.113883.4.572"/>
       <addr use="H">
         <streetAddressLine>2222 Home Street</streetAddressLine>
         <city>Burlington</city>

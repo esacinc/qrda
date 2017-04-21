@@ -6,6 +6,7 @@
 	Filename: BAD_QRDA_I_STU3.1_QDM-BasedQRDAV3Document_4.xml
 	Revision History:  Created 5/4/2016
 	                   Modified 6/1/2016 - Minimum required elements
+	                   Modified 4/21/2017 - Conformant errors expected syntax
 	Description: This test file contains data conformant to the QRDA Category I R1, STU 3.1 IG
 	              for the purposes of testing QDM Based QRDA V3 Document.sch.  
  	 
@@ -13,7 +14,8 @@
    a-2228-27571-error        1
    a-2228-17090-error        1
    ______________________________________
-   Total errors              2                
+   Total errors expected:     2  
+   Total warnings expected:   0
 
 **************************************************************** -->
 

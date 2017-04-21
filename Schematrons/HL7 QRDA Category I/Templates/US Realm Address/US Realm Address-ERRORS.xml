@@ -7,7 +7,7 @@
  
      Total Errors Expected: 2
           Failure a-81-7292-error Missing or multiple city
-          Failure a-81-7291-error Missing or multiple streetAddressLine
+          Failure a-81-7291-error Missing or > 4 streetAddressLine
                          
     Total Warnings Expected: 4
           Failure a-81-7290-warning Missing or bad @use
@@ -35,8 +35,11 @@
     <patientRole>
       <addr useErr="H"> <!-- a-81-7290-warning Missing or bad use -->
         <streetAddressLine>2222 Home Street</streetAddressLine>
-        <!-- a-81-7291-error Missing or multiple streetAddressLine -->
-        <streetAddressLine>Apt. Error</streetAddressLine>
+        <!-- a-81-7291-error Missing or more than 4  streetAddressLine -->
+        <streetAddressLine>Line 2</streetAddressLine>
+        <streetAddressLine>Line 3</streetAddressLine>
+        <streetAddressLine>Line 4</streetAddressLine>
+        <streetAddressLine>Line 5 - Too many!</streetAddressLine>
         <!-- a-81-7292-error Missing or multiple city -->
         <!-- 
           <city>Burlington</city>

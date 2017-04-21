@@ -6,13 +6,16 @@
 	Filename: BAD_QRDA_I_STU3.1_QDM-BasedQRDAV3Document_1.xml
 	Revision History:  Created 5/4/2016
 	                   Modified 6/1/2016 - Minimum required elements
+	                   Modified 4/21/2017 - Conformant errors expected syntax, added extra template id to trigger 12972
 	Description: This test file contains data conformant to the QRDA Category I R1, STU 3.1 IG
 	              for the purposes of testing QDM Based QRDA V3 Document.sch.  
  	 
 	 Rule             	Number of errors
-   a-2228-12972-error   		 1
+   a-2228-12972-error   		Multiple main template Ids
    ______________________________________
-   Total errors              1                
+   Total errors expected:     1  
+   Total warnings expected:   0
+
 
 **************************************************************** -->
 
@@ -24,17 +27,18 @@
   <!-- US Realm Header (V3) -->
   <templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2015-08-01"/>
   <!-- QRDA Category I Framework (V3) -->
-  <templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2016-02-01"/>
+  <templateId root="2.16.840.1.113883.10.20.24.1.2" extension="2016-02-01"/>
+  <!-- Failure a-2228-12972-error Multiple main template id -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.2" extension="2016-02-01"/>
+  
   <!-- QDM-based QRDA (V3) -->
   <!-- 
     SHALL contain exactly one [1..1] templateId (CONF:2228-12972) such that it
     SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.1.2" (CONF:2228-26943)
     SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:2228-26944)
   -->
-  <!-- 
-    a-2228-12972-error
-    templateId/@root ≠ "2.16.840.1.113883.10.20.24.1.2"
-  -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.345" extension="2016-02-01"/>
+
   <templateId root="2.16.840.1.113883.10.20.24.1.345" extension="2016-02-01"/>
   <id root="aedd9c6d-as16-48a8-a1bb-10f5968ce672"/>
   <code code="55182-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title: Patient Data Section QDM V4, Minimal sample
+    Author: Dan Donahue
+    Date:   03-14-2017
+    
+    Total Errors Expected: 0
+    Total Warnings Expected: 0
+-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+	xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">	
+	
+	<section>
+		<!-- Patient Data Section QDM (V4) - CMS EH -->
+		<templateId root="2.16.840.1.113883.10.20.24.2.1.1" extension="2017-07-01" />
+
+		<!-- SHALL contain at least one [1..*] entry (CONF:3265-14430_C01) such that it SHALL contain exactly one [1..1] Patient Characteristic Payer (identifier: urn:oid:2.16.840.1.113883.10.20.24.3.55) (CONF:3265-14431).-->
+		<entry typeCode="DRIV">
+			<observation classCode="OBS" moodCode="EVN">
+				<!-- Patient Characteristic Payer -->
+				<templateId root="2.16.840.1.113883.10.20.24.3.55" />
+				...
+			</observation>
+		</entry>
+		
+		<!-- SHALL contain at least one [1..*] entry (CONF:CMS_0051) such that it SHALL contain exactly one [1..1] entry template that is other than the Patient Characteristic Payer (identifier: urn:oid:2.16.840.1.113883.10.20.24.3.55) (CONF:CMS_0039)-->
+		<!-- QDM Datatype: Communication from Provider to Patient (V2) -->
+		<entry>
+			<!-- Communication from Provider to Patient -->
+			<act classCode="ACT" moodCode="EVN">
+				<!-- Communication from Provider to Patient (V3) -->
+				<templateId root="2.16.840.1.113883.10.20.24.3.3" extension="2016-02-01" />
+				<id root="e4f3f0f7-cc24-4f2a-8c5f-097dde3d7afa" />
+				<code code="428521000124106" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+					displayName="Patient informed - arrange follow-up care (situation)"
+					sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.378" />
+				<statusCode code="completed" />
+				<effectiveTime>
+					<!-- QDM Attribute: Start datetime -->
+					<low value="20170101" />
+					<!-- QDM Attribute: Stop datetime -->
+					<high value="20171231" />
+				</effectiveTime>
+				<participant typeCode="AUT">
+					<participantRole classCode="ASSIGNED">
+						<code code="158965000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+							displayName="Medical Practitioner" />
+					</participantRole>
+				</participant>
+				<participant typeCode="IRCP">
+					<participantRole classCode="PAT" />
+				</participant>
+			</act>
+		</entry>
+	...	
+	</section>
+	
+</ClinicalDocument>

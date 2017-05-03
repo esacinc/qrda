@@ -5,12 +5,11 @@
     Author: Dan Donahue
     Date:   10-13-2016
     
-    Total Errors Expected: 9
+    Total Errors Expected: 8
           Failure a-3259-21273-error Bad Class Code
           Failure a-3259-21274-error Bad Mood Code
           Failure a-3259-21248-error Multiple root templateIds
-          Failure a-3259-21241-error More than one statusCode
-          Failure a-3259-21242-error Missing reference with @typeCode='REFR' and one external document with classCode='DOC' and one id
+           Failure a-3259-21242-error Missing reference with @typeCode='REFR' and one external document with classCode='DOC' and one id
           Failure a-3259-21240-error Missing Performance Rate component 
           Failure a-3259-21312-error Missing ACI Numerator Denominator Type Measure Numerator Data component 
           Failure a-3259-21320-error Missing ACI Numerator Denominator Type Measure Denominator Data component 
@@ -43,8 +42,6 @@
 							<!-- Failure a-3259-21248-error Multiple root templateIds -->
 							<templateId root="2.16.840.1.113883.10.20.27.3.28" extension="2016-09-01"/>
 							<id root="ac575aef-7062-4ea2-b723-df517cfa470a"/>
-							<statusCode code="completed"/>
-							<!-- Failure a-3259-21241-error More than one statusCode -->
 							<!-- Failure a-3259-21257-error Missing @code='completed' in statusCode -->
 							<statusCode code="completedErr"/>
 							<!-- Failure a-3259-21242-error Missing reference with @typeCode='REFR' and one external document with classCode='DOC' and one id -->

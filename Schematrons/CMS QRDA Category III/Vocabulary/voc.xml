@@ -8,7 +8,8 @@
   </system>
   <system valueSetOid="2.16.840.1.113883.3.249.14.101" valueSetName="CMS Program Name">
     <code value="CPCPLUS" displayName="CPC+" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
-    <code value="MIPS" displayName="MIPS Individual" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
+    <code value="MIPS_INDIV" displayName="MIPS Individual" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
+    <code value="MIPS_GROUP" displayName="MIPS Group" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
   </system>
   <system valueSetOid="2.16.840.1.113883.1.11.16926" valueSetName="HL7 BasicConfidentialityKind">
     <code value="N" displayName="normal" codeSystemName="ConfidentialityCode" codeSystem="2.16.840.1.113883.5.25" />

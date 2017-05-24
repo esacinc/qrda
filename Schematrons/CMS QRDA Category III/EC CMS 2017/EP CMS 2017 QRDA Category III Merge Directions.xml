@@ -2,14 +2,18 @@
     
 <mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="true" >
  
-    <title>EC CMS 2017 QRDA Category III generated schematron</title>
+    <title>CMS 2017 QRDA Category III for Eligible Clinicians
+        
+    Version 0.2</title>
    
      <generatedFilename>
          /Users/mholck/Development/qrda/Schematrons/CMS QRDA Category III/EC CMS 2017/Published/EC CMS 2017 QRDA Category III.sch
     </generatedFilename>
+    
     <finalTestFilename>
-        /Users/mholck/Development/qrda/XML/CMS 2017 QRDA Category III/ComprehensivePrimaryCare_Sample_QRDA_III.xml
+        /Users/mholck/Development/qrda/Schematrons/CMS QRDA Category III/EC CMS 2017/TestFiles/EC_MU_GROUP_Sample_QRDA_III_Informative.xml
     </finalTestFilename>
+    
     <fileHeader>
     THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
     THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -18,16 +22,16 @@
     GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
     THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
     ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+            
+    Changes from version 0.1:
+    Added the 77- prefix to the text of the assert for 77-17580 (QRDA-104)
+    Added the check for [not(@extension)] to the templates that specifically do not have an extension (QRDA-110)
+    (QRDA-488)
+    Added a check to allow for no value provided to a-2233-711294-error and a-2233-711295-error (QRDA-497)
+    Added conformance statements 3259-21402 and 3259-21403 to ACI Numerator Denominator Type Measure Reference and Results (QRDA-170)
+    Corrected text missing in assert 3259-21422 for the typeCode (QRDA-171)
+    Added effectiveTime from QRDA Category III Report V3 to the context for US Realm Date and Time (QRDA-172)
     
-    CMS 2017 QRDA Category III for Eligible Clinicians
-        
-    Changes:
-    Spelled out Advancing Care Information in the assert text messages to match the updated IG
-    Added assert 2233-711340 to require the presence of the QRDA Category III Measure Section - CMS V2 when
-      program name is set to CPCPLUS (QRDA-98)
-    Changed the conformance number for the codeSystem check in the Measure Data CMS V2 template to be unique
-      and match the updated IG (QRDA-93)
-      
     </fileHeader>
     <mergeReportFilename>/Users/mholck/Development/qrda/Schematrons/CMS QRDA Category III/EC CMS 2017/mergeReport.txt</mergeReportFilename>
     <vocabFilename>/Users/mholck/Development/qrda/Schematrons/CMS QRDA Category III/Vocabulary/voc.xml</vocabFilename>
@@ -75,11 +79,6 @@
          <include>Reporting Parameters Section</include>
          <include>Reporting Parameters Act</include>
     </sourceDirectory>
-
-    <sourceDirectory selector='some'> 
-        <directoryName>CMS QRDA Category I/Templates</directoryName>
-        <include>CMS Datatype Validations</include> 
-     </sourceDirectory>
     
     <sourceDirectory selector='some'> 
         <directoryName>CMS QRDA Category III/Templates</directoryName>
@@ -97,6 +96,7 @@
         <include>Reporting Parameters Act CMS V2</include>
         <include>Reporting Stratum CMS</include>
         <include>Sex Supplemental Data Element CMS V2</include>
+        <include>CMS Datatype Validations</include>
     </sourceDirectory>
     
 </mergeProfile>

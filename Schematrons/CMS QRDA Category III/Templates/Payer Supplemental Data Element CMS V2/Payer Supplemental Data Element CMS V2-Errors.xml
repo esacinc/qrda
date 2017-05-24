@@ -3,12 +3,11 @@
 <!--
 		Payer Supplemental Data Element CMS (V2) test file - errors introduced by Maya Zuhl
 		
-		Total Errors Expected: 15
+		Total Errors Expected: 14
 			Failure a-2233-21155-error Wrong classCode
 			Failure a-2233-21156-error Wrong moodCode
 			Failure a-2233-711270-error Multiple templateId
 			Failure a-2233-18237-error Multiple templateId
-			Failure a-2233-12564-error No id
 			Failure a-2233-21158-error Multiple code
 			Failure a-2233-21159-error Wrong code
 			Failure a-2233-21165-error Wrong codeSystem

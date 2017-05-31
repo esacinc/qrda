@@ -6,6 +6,9 @@
 	<sch:phase id="errors">
 		<sch:active pattern="Goal_Observation-pattern-errors"/>
 	</sch:phase>
+	<sch:phase id="warnings">
+		<sch:active pattern="Goal_Observation-pattern-warnings"/>
+	</sch:phase>
 	<sch:pattern id="Goal_Observation-pattern-errors">
 		<sch:rule id="Goal_Observation-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.121']]">
 			<sch:assert id="a-1098-30418-error" test="@classCode='OBS'">

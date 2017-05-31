@@ -9,7 +9,9 @@
 	<sch:phase id="errors">
 		<sch:active pattern="Medication_Activity_V2-pattern-errors" />
 	</sch:phase>
-	
+	<sch:phase id="warnings">
+		<sch:active pattern="Medication_Activity_V2-pattern-warnings" />
+	</sch:phase>
 	<sch:pattern id="Medication_Activity_V2-pattern-errors">
 		<sch:rule id="Medication_Activity_V2-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]">
 			<sch:assert id="a-1098-7496-error" test="@classCode='SBADM'">

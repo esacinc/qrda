@@ -11,6 +11,10 @@
         <sch:active pattern="Device-Applied-V3-pattern-errors" />
     </sch:phase>
     
+    <sch:phase id="warnings">
+        <sch:active pattern="Device-Applied-V3-pattern-warnings" />
+    </sch:phase>
+    
     <sch:pattern id="Device-Applied-V3-pattern-errors">
         <sch:rule id="Device-Applied-V3-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.7'][@extension='2016-02-01']]">
             <sch:assert id="a-2228-28050-error" test="@classCode='PROC'">SHALL contain exactly one [1..1] @classCode="PROC" Procedure (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-28050).  </sch:assert>

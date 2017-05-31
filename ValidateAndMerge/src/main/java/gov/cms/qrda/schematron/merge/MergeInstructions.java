@@ -165,6 +165,7 @@ public class MergeInstructions extends MergeProperties{
 			System.out.println(INDENT1+ "Verbose debugging is : " + ((getVerbose())?"on":"off"));
 			
 			addResult(INDENT1 + "Title: " + getTitle());
+			addResult(INDENT1 + "Version: "   + getVersion());
 			addResult(INDENT1 + "Generated on " + new Date());
 			addResult(INDENT1 + "Verbose Reporting is turned " + ((getVerbose())?"on":"off"));
 			addResult(INDENT1 + "Merged file: " + getMergeFilename());

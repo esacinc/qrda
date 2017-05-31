@@ -103,7 +103,15 @@ public class MergeInstructions extends MergeProperties{
 	public void setGlobalStop(boolean val) {
 		globalStop = val;
 	}
+
+	public boolean getSeparateErrorsFromWarnings() {
+		return separateErrorsFromWarnings;
+	}
 	
+	public void setSeparateErrorsFromWarnings(boolean val) {
+		separateErrorsFromWarnings = val;
+	}
+
 	// Reads a mergeInstructions xml file, populates the data, begins collecting status result strings.
 	public Document open(String filename) {
 		globalStop = false;
@@ -120,6 +128,7 @@ public class MergeInstructions extends MergeProperties{
 			Document doc = db.parse(new File(filename));
 			setXmlDoc(doc);
 			Element mergeProfile = doc.getDocumentElement();
+			setSeparateErrorsFromWarnings(!"false".equalsIgnoreCase(mergeProfile.getAttribute("separateErrorsFromWarnings"))); // Default will be true if attribute not present
 			setVerbose("true".equalsIgnoreCase(mergeProfile.getAttribute("verboseDebug")));
 			setDoValidation("true".equalsIgnoreCase(mergeProfile.getAttribute("doValidation")));
 			setStopOnError("true".equalsIgnoreCase(mergeProfile.getAttribute("stopOnError")));
@@ -128,10 +137,24 @@ public class MergeInstructions extends MergeProperties{
 			setFinalTestFilename(getNodeValue(mergeProfile,"finalTestFilename"));
 			setMainSourceDirectory(getNodeValue(mergeProfile,"sourceMainDirectory"));
 			setTitle(getNodeValue(mergeProfile,"title"));
+			setVersion(getNodeValue(mergeProfile,"version"));
+			// Get comment text, if any, to place at the head of the merged file
 			setFileHeader(getNodeValue(mergeProfile,"fileHeader"));
 			String hf = getNodeValue(mergeProfile,"headerFormat");
 			if (hf != null && !hf.isEmpty()) {
 				setHeaderFormat(hf);
+			}
+			// Get comment text, if any, to place at the beginning of the error patterns.
+			// (Only used if "separateErrorsFromWarnings" is true)
+			String eh = getNodeValue(mergeProfile,"errorsHeader");
+			if (eh != null && !eh.isEmpty()) {
+				setErrorsHeader(eh);
+			}
+			// Get comment text, if any, to place at the beginning of the warning patterns.
+			// (Only used if "separateErrorsFromWarnings" is true)
+			String wh = getNodeValue(mergeProfile,"warningsHeader");
+			if (wh != null && !wh.isEmpty()) {
+				setWarningsHeader(wh);
 			}
 			setMergeReportFilename(getNodeValue(mergeProfile,"mergeReportFilename"));
 			System.out.println(INDENT1+  "See merge report in: " + getMergeReportFilename());
@@ -145,6 +168,12 @@ public class MergeInstructions extends MergeProperties{
 			addResult(INDENT1 + "Generated on " + new Date());
 			addResult(INDENT1 + "Verbose Reporting is turned " + ((getVerbose())?"on":"off"));
 			addResult(INDENT1 + "Merged file: " + getMergeFilename());
+			if (getSeparateErrorsFromWarnings()) {
+				addResult(INDENT2 + "  All Error patterns are generated before all Warning patterns");
+			}
+			else {
+				addResult(INDENT2 + "  Error patterns and Warning patterns are generated together for each template");
+			}
 			addResult(INDENT1 + "Merge report file located at: " + getMergeReportFilename());
 			//addResult(INDENT1 + "File header: " + getFileHeader());
 			
@@ -211,7 +240,8 @@ public class MergeInstructions extends MergeProperties{
 				res = nodes.item(0).getTextContent().trim();
 			}
 			else {
-				addResult(INDENT2 + "Failed to locate node: " + nodeName);
+				addResult(INDENT2 + "Failed to locate element: <" + nodeName + ">");
+				
 			}
 		}
 		return res;
@@ -415,7 +445,7 @@ public class MergeInstructions extends MergeProperties{
 	}
 
 	public String getHeaderText() {
-		return String.format(getHeaderFormat(), getTitle(), getFileHeader(),new Date());
+		return String.format(getHeaderFormat(), getTitle(), (getVersion().isEmpty()?"":"Version " + getVersion()), getFileHeader(),new Date());
 	}
 	
 	// Copies the file found at filename to the application's main directory with the name "voc.xml"

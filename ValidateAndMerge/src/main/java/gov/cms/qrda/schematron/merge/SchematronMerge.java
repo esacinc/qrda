@@ -86,12 +86,9 @@ public class SchematronMerge {
 					mergeInstructions.addResult(MergeInstructions.INDENT1 +"Begin Merge Process....");
 	
 					// Retrieve the list of schematron template files we are to merge. (The mergeInstructions gathered this list during the "open" process)
-					namesOfFilesToMerge = mergeInstructions.getSchematronsOnly();
 					String mergedFileName  = mergeInstructions.getMergeFilename();
 					mergeInstructions.addResult(String.format(MergeInstructions.INDENT2 +"Merging files into file \"%s\"." , mergedFileName));
-					Comment comment = new Comment(mergeInstructions.getHeaderText());  // Create an xml comment for the merged file.
-					Document mergedDocument = mergerTool.merge(namesOfFilesToMerge, comment); // Do the big merge
-					Element theTop = mergedDocument.getRootElement();
+					Document mergedDocument = mergerTool.merge(mergeInstructions);  // Do the big merge
 					
 					// Write the mergedDocument to the merged file specified in the instructions
 					// Remember the console
@@ -331,16 +328,12 @@ public class SchematronMerge {
 	}
 
 
-
-
-	public Document merge(List <String> listOfiles, Comment header){
-		String[] files = listOfiles.toArray(new String[0]);
-		return(merge(files, header));
-	}
-
-	public Document merge(String[] files, Comment header) {
-
-
+	public Document merge(MergeInstructions instructions) { 
+		
+		String[] files = instructions.getSchematronsOnly().toArray(new String[0]);
+		Comment header = new Comment(instructions.getHeaderText());
+		boolean separateErrorsFromWarnings = instructions.getSeparateErrorsFromWarnings();
+		
 		File xmlFiles[] = createFiles(files);
 		Document documents[] = createDocuments(xmlFiles);
 
@@ -383,6 +376,7 @@ public class SchematronMerge {
 		// Construct the new document that will hold the merge
 		Document mergedDoc = new Document(top); 
 		
+		
 		if (header!= null) mergedDoc.getContent().add(0,header);
 
 		// Add the merged content
@@ -391,12 +385,71 @@ public class SchematronMerge {
 
 		// Add the patterns (w/ rules, assertions, etc)
 		// from each of the files to be merged
-		for (Schematron s :sReps) {
-			Hashtable<String,Element> patterns = s.makePatterns();
-			mergedDoc.getRootElement().addContent(patterns.values());
+		
+		// If we are generating all error patterns before all warning patterns, 
+		// then we will gather all of them first prior to generating...
+		Hashtable<String, Element> allErrorPatterns = new Hashtable<String,Element>();
+		Hashtable<String, Element> allWarningPatterns = new Hashtable<String,Element>();
+		
+		if (instructions.getVerbose()) {
+			if (separateErrorsFromWarnings && instructions.getVerbose()) {
+				instructions.addResult(MergeInstructions.INDENT3 + "Generating all Error patterns first, then all Warning patterns.");
+			}
+			else {
+				instructions.addResult(MergeInstructions.INDENT3 + "Generating Error and Warnings patterns together with each included template");
+	
+			}
 		}
-
-
+		
+		for (Schematron s :sReps) {
+			// Get all the patterns from each template schematron...
+			Hashtable<String,Element> patterns = s.makePatterns();
+			// If we are we are generating all error patterns before all warning patterns, 
+			// build up the global error and warning pattern lists...
+			if (separateErrorsFromWarnings) {
+				// Determine if each template pattern it is an error or warning by 
+				// checking against all patterns listed in the error/warning phase lists created earlier
+				for (Element pattern : patterns.values()) {
+					String patternId = pattern.getAttributeValue("id");
+					boolean isError = false;
+					// Is this an error pattern?
+					for (Element listedPattern : pe1.getChildren()) {
+						if (patternId.equals(listedPattern.getAttributeValue("pattern"))) {
+							allErrorPatterns.put(patternId, pattern);
+							isError = true;
+							break;
+						}
+					}
+					// If not an error, then is this a warning pattern? (It had better be!)
+					if (!isError) {
+						for (Element listedPattern : pe2.getChildren()) {
+							if (patternId.equals(listedPattern.getAttributeValue("pattern"))) {
+								allWarningPatterns.put(patternId, pattern); 
+								break;
+							}
+						}
+					}
+				}
+			}
+			// If we aren't separating by error/warning, then just generate the patterns as we found them 
+			// in the current template...
+			else {
+				mergedDoc.getRootElement().addContent(patterns.values());
+			}
+		}
+		//  If we are we are generating all error patterns before all warning patterns, 
+		//  then generate them now in the proper order...
+		if (separateErrorsFromWarnings) {
+			if (instructions.getErrorsHeader() != null && !instructions.getErrorsHeader().isEmpty()) {
+				mergedDoc.getRootElement().addContent(new Comment(String.format("%n      %s%n  ",instructions.getErrorsHeader())));
+			}
+			mergedDoc.getRootElement().addContent(allErrorPatterns.values());
+			if (instructions.getWarningsHeader() != null && !instructions.getWarningsHeader().isEmpty()) {
+				mergedDoc.getRootElement().addContent(new Comment(String.format("%n      %s%n  ",instructions.getWarningsHeader())));
+			}
+			mergedDoc.getRootElement().addContent(allWarningPatterns.values());
+		}
+		
 		return (mergedDoc);
 	}
 

@@ -40,11 +40,16 @@ import java.util.List;
 public class MergeProperties {
 	protected ArrayList<String> results;   // A running list of status messages collected during a merge operation.
 	protected String mergeFilename = null;
+	protected boolean separateErrorsFromWarnings = true; // Controls how error/warning patterns are generated in the merged file
+
 	protected String finalTestFilename = null;
 	protected String mainSourceDirectory = null;
 	protected String title = null;
+	protected String version = "1.0";
 	protected String fileHeader = null;
-	protected String headerFormat = "\n    %s \n\n    %s\n\n    %s \n\n";
+	protected String headerFormat = "%n%s%n%s %n%n    %s %n%n%s%n";  // title, version, header, date
+	protected String errorsHeader = null;
+	protected String warningsHeader = null;
 	
 	protected boolean verbose = true;
 	protected boolean doValidation = false;
@@ -87,15 +92,34 @@ public class MergeProperties {
 		return title;
 	}
 	public void setTitle(String val) {
-		title = val;
+		title = (val == null)? "" : val;
 	}
-
+	public String getVersion() {
+		return version;
+	}
+	public void setVersion(String val) {
+		version = (val == null)? "" : val;
+	}
 	public String getFileHeader() {
 		return fileHeader;
 	}
 	public void setFileHeader(String val) {
-		fileHeader = val;
+		fileHeader = (val == null)? "" : val;
 	}
+
+	public String getErrorsHeader() {
+		return errorsHeader;
+	}
+	public void setErrorsHeader(String val) {
+		errorsHeader = val;
+	}
+	public String getWarningsHeader() {
+		return warningsHeader;
+	}
+	public void setWarningsHeader(String val) {
+		warningsHeader = val;
+	}
+
 
 	public String getHeaderFormat() {
 		return headerFormat;

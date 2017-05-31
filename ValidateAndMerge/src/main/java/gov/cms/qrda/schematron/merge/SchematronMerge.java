@@ -369,6 +369,8 @@ public class SchematronMerge {
 		pe1.addContent(mergedErrors);
 		pe2.addContent(mergedWarnings);
 
+		System.out.println("TOTAL ERROR patterns: " + mergedErrors.size());
+		System.out.println("TOTAL WARNING patterns: " + mergedWarnings.size());
 
 		// Add the Namespaces used in each of the merged file
 		top.addContent(mergedSpaces);
@@ -388,6 +390,7 @@ public class SchematronMerge {
 		
 		// If we are generating all error patterns before all warning patterns, 
 		// then we will gather all of them first prior to generating...
+		int countPatterns = 0;
 		Hashtable<String, Element> allErrorPatterns = new Hashtable<String,Element>();
 		Hashtable<String, Element> allWarningPatterns = new Hashtable<String,Element>();
 		
@@ -425,9 +428,15 @@ public class SchematronMerge {
 						for (Element listedPattern : pe2.getChildren()) {
 							if (patternId.equals(listedPattern.getAttributeValue("pattern"))) {
 								allWarningPatterns.put(patternId, pattern); 
+								isError = true;
 								break;
 							}
 						}
+					}
+					// If we didn't find this pattern id in either list of phases, then that is an error,
+					// most likely a missing phase declaration in the template.  Report that here.
+					if (!isError) {
+						instructions.addResult(MergeInstructions.INDENT3+"ERROR: Assert pattern id '" + patternId + "' not found in corresponding list of sch:active sch:phase elements.");
 					}
 				}
 			}
@@ -435,6 +444,7 @@ public class SchematronMerge {
 			// in the current template...
 			else {
 				mergedDoc.getRootElement().addContent(patterns.values());
+				countPatterns = countPatterns + patterns.size();
 			}
 		}
 		//  If we are we are generating all error patterns before all warning patterns, 
@@ -449,6 +459,11 @@ public class SchematronMerge {
 			}
 			mergedDoc.getRootElement().addContent(allWarningPatterns.values());
 		}
+		
+		System.out.println("OLD Generated total patterns: " + countPatterns);
+		System.out.println("NEW generated error patterns: " + allErrorPatterns.size());
+		System.out.println("NEW generated warning patterns: " + allWarningPatterns.size());
+		System.out.println("NEW generated total patterns: " + (allErrorPatterns.size()+allWarningPatterns.size()));
 		
 		return (mergedDoc);
 	}

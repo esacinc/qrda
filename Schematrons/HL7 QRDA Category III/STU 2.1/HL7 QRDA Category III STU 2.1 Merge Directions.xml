@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    
+<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="true" >
+ 
+    <title>HL7 QRDA III STU 2.1
+    
+    Version 1.0</title>
+   
+     <generatedFilename>
+        /Users/mholck/Development/qrda/Schematrons/HL7 QRDA Category III/STU 2.1/Published/HL7 QRDA Category III STU 2.1.sch
+    </generatedFilename>
+    <finalTestFilename>
+        /Users/mholck/Development/qrda/Schematrons/HL7 QRDA Category III/STU 2.1/TestFiles/CDAR2_QRDAIII_R2_STU2_1_2017JUNE.xml 
+    </finalTestFilename>
+    <fileHeader>
+    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+    THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+    IN NO EVENT SHALL ESAC INC., OR ANY OF THEIR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+    GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+    THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    </fileHeader>
+    
+    <mergeReportFilename>/Users/mholck/Development/qrda/Schematrons/HL7 QRDA Category III/STU 2.1/mergeReport.txt</mergeReportFilename>
+    
+    <vocabFilename>/Users/mholck/Development/qrda/Schematrons/HL7 QRDA Category III/Vocabulary/voc.xml</vocabFilename>
+    <!-- All schematrons expected to be under a single main directory -->
+    <sourceMainDirectory>
+        /Users/mholck/Development/qrda/Schematrons/
+    </sourceMainDirectory>
+    
+    <!-- Specify the schematrons to use in the merge below, separated by the templates found in each fo the source directories listed. -->
+    <!--    Note that the directoryName tags refer to directories relative to the sourceMainDirectory tag, above. -->
+    <!--    selector='all' means use all the schematron subdirectories found under directoryName, except for those listed in the 'exclude' tags. -->
+    <!--    selector='some' means only use the directoryName subdirectories listed in the 'include' tags --> 
+
+    <sourceDirectory selector='some'>
+        <directoryName>HL7 QRDA Category III/Templates</directoryName>
+        <!-- Document templates -->
+        <include>QRDA Category III Report V4</include>
+        <!-- Section templates -->
+        <include>Advancing Care Information Section V2</include>
+        <include>Improvement Activity Section V2</include>
+        <include>QRDA Category III Measure Section V4</include>
+        <include>QRDA Category III Reporting Parameters Section</include>
+        <!-- Entry templates -->
+        <include>ACI Measure Performed Measure Reference and Results</include>
+        <include>ACI Numerator Denominator Type Measure Denominator Data</include>
+        <include>ACI Numerator Denominator Type Measure Numerator Data</include>
+        <include>ACI Numerator Denominator Type Measure Reference and Results V2</include>
+        <include>Aggregate Count</include> 
+        <include>Continuous Variable Measure Value</include>
+        <include>Ethnicity Supplemental Data Element V2</include>
+        <include>Improvement Activity Performed Measure Reference and Results</include>
+        <include>Measure Data V3</include>
+        <include>Measure Performed</include>
+        <include>Measure Reference</include>
+        <include>Measure Reference and Results V3</include>
+        <include>Payer Supplemental Data Element V2</include>
+        <include>Performance Rate</include>
+        <include>Performance Rate for Proportion Measure V2</include>
+        <include>Postal Code Supplemental Data Element V2</include>
+        <include>Race Supplemental Data Element V2</include>
+        <include>Reporting Rate for Proportion Measure</include>
+        <include>Reporting Stratum</include>
+        <include>Service Encounter</include>
+        <include>Sex Supplemental Data Element V3</include>
+     </sourceDirectory>
+
+    <sourceDirectory selector='some'> 
+         <directoryName>HL7 QRDA Category I/Templates</directoryName>
+         <!-- Section templates -->
+         <include>Measure Section</include>
+         <include>Reporting Parameters Section</include>
+         <!-- Entry templates -->
+         <include>Reporting Parameters Act</include>
+    </sourceDirectory>
+    
+</mergeProfile>

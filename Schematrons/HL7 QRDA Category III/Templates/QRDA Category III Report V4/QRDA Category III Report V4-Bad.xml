@@ -9,67 +9,67 @@
 		JIRA: https://tracker.esacinc.com/browse/QRDA-188
 		
 		Total Errors Expected: 54
-          Failure a-3259-17226-error Multiple realmCode
-          Failure a-3259-17208-error Bad templateId
-          Failure a-3259-18186-error Multiple typeId
-          Failure a-3259-17236-error Missing Id
-          Failure a-3259-17210-error Multiple Code
-          Failure a-3259-17237-error Missing effectiveTime
-          Failure a-3259-17211-error Multiple title
-          Failure a-3259-17238-error Multiple confidentialityCode
-          Failure a-3259-17239-error Multiple languageCode
-          Failure a-3259-17212-error Multiple recordTarget
-          Failure a-3259-18156-error Bad author
-          Failure a-3259-17213-error Multiple custodian
-          Failure a-3259-17225-error Multiple legalAuthenticator
-          Failure a-3259-18187-error typeId bad root
-          Failure a-3259-18188-error typeId bad extension
-          Failure a-3259-17227-error realmCode invalid
-          Failure a-3259-19669-error languageCode missing @code
-          Failure a-3259-19549-error code invalid @code
-          Failure a-3259-21166-error code invalid @codeSystem
-          Failure a-3259-17232-error recordTarget missing patientRole
-          Failure a-3259-18163-error assignedAuthor missing representedOrganization
-          Failure a-3259-19667-error assignedAuthor missing assignedAuthoringDevice
-          Failure a-3259-18265-error representedOrganization missing name
-          Failure a-3259-18262-error assignedAuthoringDevice missing softwareName
-          Failure a-3259-17214-error custodian multiple assignedCustodian
-          Failure a-3259-17215-error assignedCustodian multiple representedCustodianOrganization
-          Failure a-3259-18165-error representedCustodianOrganization missing Id
-          Failure a-3259-18167-error legalAuthenticator missing time
-          Failure a-3259-18168-error legalAuthenticator multiple signatureCode
-          Failure a-3259-19670-error legalAuthenticator multiple assignedEntity
-          Failure a-3259-18169-error signatureCode wrong @code
-          Failure a-3259-19672-error representedOrganization missing Id  
-          Failure a-3259-18303-error participant associatedEntity invalid @classCode
-          Failure a-3259-20954-error participant associatedEntity missing id
-          Failure a-3259-18308-error participant associatedEntity code duplicate
-          Failure a-3259-18309-error participant associatedEntity code wrong @code
-          Failure a-3259-21167-error participant associatedEntity code wrong @codeSystem
-          Failure a-3259-18171-error documentationOf serviceEvent duplicate
-          Failure a-3259-18172-error documentationOf serviceEvent wrong @classCode
-          Failure a-3259-18173-error documentationOf serviceEvent missing performer
-          Failure a-3259-18174-error documentationOf serviceEvent performer missing @typeCode
-          Failure a-3259-18176-error documentationOf serviceEvent performer assignedEntity duplicate
-          Failure a-3259-19474-error documentationOf serviceEvent performer assignedEntity missing id
-          Failure a-3259-18180-error documentationOf serviceEvent performer assignedEntity representedOrganization duplicate
-          Failure a-3259-18364-error authorization consent missing statusCode
-          Failure a-3259-18361-error authorization consent missing id
-          Failure a-3259-18363-error authorization consent code duplicate
-          Failure a-3259-19550-error authorization consent code wrong @code
-          Failure a-3259-21172-error authorization consent code missing @codeSystem
-          Failure a-3259-19551-error authorization consent wrong @statusCode
-          Failure a-3259-18360-error authorization consent duplicate
-          Failure a-3259-17235-error component structuredBody duplicate
-          Failure a-3259-21394-error component structuredBody component missing section (Occurs twice)
-		  Failure a-3259-17217-error component duplicate
+          Failure a-3338-17226-error Multiple realmCode
+          Failure a-3338-17208-error Bad templateId
+          Failure a-3338-18186-error Multiple typeId
+          Failure a-3338-17236-error Missing Id
+          Failure a-3338-17210-error Multiple Code
+          Failure a-3338-17237-error Missing effectiveTime
+          Failure a-3338-17211-error Multiple title
+          Failure a-3338-17238-error Multiple confidentialityCode
+          Failure a-3338-17239-error Multiple languageCode
+          Failure a-3338-17212-error Multiple recordTarget
+          Failure a-3338-18156-error Bad author
+          Failure a-3338-17213-error Multiple custodian
+          Failure a-3338-17225-error Multiple legalAuthenticator
+          Failure a-3338-18187-error typeId bad root
+          Failure a-3338-18188-error typeId bad extension
+          Failure a-3338-17227-error realmCode invalid
+          Failure a-3338-19669-error languageCode missing @code
+          Failure a-3338-19549-error code invalid @code
+          Failure a-3338-21166-error code invalid @codeSystem
+          Failure a-3338-17232-error recordTarget missing patientRole
+          Failure a-3338-18163-error assignedAuthor missing representedOrganization
+          Failure a-3338-19667-error assignedAuthor missing assignedAuthoringDevice
+          Failure a-3338-18265-error representedOrganization missing name
+          Failure a-3338-18262-error assignedAuthoringDevice missing softwareName
+          Failure a-3338-17214-error custodian multiple assignedCustodian
+          Failure a-3338-17215-error assignedCustodian multiple representedCustodianOrganization
+          Failure a-3338-18165-error representedCustodianOrganization missing Id
+          Failure a-3338-18167-error legalAuthenticator missing time
+          Failure a-3338-18168-error legalAuthenticator multiple signatureCode
+          Failure a-3338-19670-error legalAuthenticator multiple assignedEntity
+          Failure a-3338-18169-error signatureCode wrong @code
+          Failure a-3338-19672-error representedOrganization missing Id  
+          Failure a-3338-18303-error participant associatedEntity invalid @classCode
+          Failure a-3338-20954-error participant associatedEntity missing id
+          Failure a-3338-18308-error participant associatedEntity code duplicate
+          Failure a-3338-18309-error participant associatedEntity code wrong @code
+          Failure a-3338-21167-error participant associatedEntity code wrong @codeSystem
+          Failure a-3338-18171-error documentationOf serviceEvent duplicate
+          Failure a-3338-18172-error documentationOf serviceEvent wrong @classCode
+          Failure a-3338-18173-error documentationOf serviceEvent missing performer
+          Failure a-3338-18174-error documentationOf serviceEvent performer missing @typeCode
+          Failure a-3338-18176-error documentationOf serviceEvent performer assignedEntity duplicate
+          Failure a-3338-19474-error documentationOf serviceEvent performer assignedEntity missing id
+          Failure a-3338-18180-error documentationOf serviceEvent performer assignedEntity representedOrganization duplicate
+          Failure a-3338-18364-error authorization consent missing statusCode
+          Failure a-3338-18361-error authorization consent missing id
+          Failure a-3338-18363-error authorization consent code duplicate
+          Failure a-3338-19550-error authorization consent code wrong @code
+          Failure a-3338-21172-error authorization consent code missing @codeSystem
+          Failure a-3338-19551-error authorization consent wrong @statusCode
+          Failure a-3338-18360-error authorization consent duplicate
+          Failure a-3338-17235-error component structuredBody duplicate
+          Failure a-3338-21394-error component structuredBody component missing section (Occurs twice)
+		  Failure a-3338-17217-error component duplicate
           
     	Total Warnings Expected: 5
-          Failure a-3259-17238-warning Multiple confidentialityCode
-		  Failure a-3259-18260-warning Multiple versionNumber
-		  Failure a-3259-18166-warning assignedCustodian representedCustodianOrganization missing name
-		  Failure a-3259-19673-warning legalAuthenticator assignedEntity representedOrganization multiple name
-		  Failure a-3259-19659-warning documentationOf serviceEvent performer assignedEntity representedOrganization multiple name
+          Failure a-3338-17238-warning Multiple confidentialityCode
+		  Failure a-3338-18260-warning Multiple versionNumber
+		  Failure a-3338-18166-warning assignedCustodian representedCustodianOrganization missing name
+		  Failure a-3338-19673-warning legalAuthenticator assignedEntity representedOrganization multiple name
+		  Failure a-3338-19659-warning documentationOf serviceEvent performer assignedEntity representedOrganization multiple name
 	-->
 	<!-- 
 		********************************************************
@@ -78,33 +78,33 @@
 	-->
 	<realmCode code="US"/>
 	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
-	<!-- Failure a-3259-17208-error QRDA Category III Report V3 multiple template ID  -->
+	<!-- Failure a-3338-17208-error QRDA Category III Report V3 multiple template ID  -->
 	<templateId root="2.16.840.1.113883.10.20.27.1.1" extension="2017-06-01"/>
 	<templateId root="2.16.840.1.113883.10.20.27.1.1" extension="2017-06-01"/>
-	<!-- Failure a-3259-17236-error QRDA Category III Report V3 missing Id  -->
+	<!-- Failure a-3338-17236-error QRDA Category III Report V3 missing Id  -->
 	<!--id root="2dcaebf2-96ef-4987-9d13-1b3565e2c5d9"/-->
 	<!-- SHALL QRDA III document type code -->
 	<code code="55184-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
 		displayName="Quality Reporting Document Architecture Calculated Summary Report"/>
-	<!-- Failure a-3259-17226-error QRDA Category III Report V3 realmCode extra -->
-	<!-- Failure a-3259-17227-error QRDA Category III Report V3 realmCode invalid -->
+	<!-- Failure a-3338-17226-error QRDA Category III Report V3 realmCode extra -->
+	<!-- Failure a-3338-17227-error QRDA Category III Report V3 realmCode invalid -->
 	<realmCode code="TX"/>
-	<!-- Failure a-3259-18186-error QRDA Category III Report V3 typeId extra -->
-	<!-- Failure a-3259-18187-error QRDA Category III Report V3 typeId bad root -->
-	<!-- Failure a-3259-18188-error QRDA Category III Report V3 typeId bad extension -->
+	<!-- Failure a-3338-18186-error QRDA Category III Report V3 typeId extra -->
+	<!-- Failure a-3338-18187-error QRDA Category III Report V3 typeId bad root -->
+	<!-- Failure a-3338-18188-error QRDA Category III Report V3 typeId bad extension -->
 	<typeId root="2.16.840.1.113883.1.33" extension="POCD_HD0000400"/>
-	<!-- Failure a-3259-17210-error QRDA Category III Report V3 code extra -->
-	<!-- Failure a-3259-19549-error QRDA Category III Report V3 code invalid @code -->
-	<!-- Failure a-3259-21166-error QRDA Category III Report V3 code invalid @codeSystem -->
+	<!-- Failure a-3338-17210-error QRDA Category III Report V3 code extra -->
+	<!-- Failure a-3338-19549-error QRDA Category III Report V3 code invalid @code -->
+	<!-- Failure a-3338-21166-error QRDA Category III Report V3 code invalid @codeSystem -->
 	<code code="55184-66" codeSystem="2.16.840.1.113883.6.11" codeSystemName="LOINC"
 		displayName="Quality Reporting Document Architecture Calculated Summary Report"/>
 	<!-- SHALL Title, content optional -->
 	<title>QRDA Calculated Summary Report for NQF 0436 and NQF 0496</title>
-	<!-- Failure a-3259-17236-error QRDA Category III Report V3 missing effectiveTime   -->
+	<!-- Failure a-3338-17236-error QRDA Category III Report V3 missing effectiveTime   -->
 	<!--effectiveTime value="20160301"/-->
 	<confidentialityCode codeSystem="2.16.840.1.113883.5.25" code="P"/>
 	<languageCode code="en-US"/>
-	<!-- Failure a-3259-18260-warning versionNumber more than 1-->
+	<!-- Failure a-3338-18260-warning versionNumber more than 1-->
 	<versionNumber value="1"/>
 	<versionNumber value="1"/>
 	<!-- SHALL contain recordTarget and ID - but ID is nulled to NA. This is an aggregate summary report. Therefore CDA's required patient identifier is nulled. -->
@@ -113,24 +113,24 @@
 			<id nullFlavor="NA"/>
 		</patientRole>
 	</recordTarget>
-	<!-- Failure a-3259-17211-error QRDA Category III Report V3 title extra -->
+	<!-- Failure a-3338-17211-error QRDA Category III Report V3 title extra -->
 	<title>Calculated Summary Report V3</title>
-	<!-- Failure a-3259-17238-error QRDA Category III Report V3 confidentialityCode extra -->
+	<!-- Failure a-3338-17238-error QRDA Category III Report V3 confidentialityCode extra -->
 	<confidentialityCode codeSystem="2.16.840.1.113883.5.250" code="Y"/>
-	<!-- Failure a-3259-17212-error QRDA Category III Report V3 recordTarget extra -->
-	<!-- Failure a-3259-17212-error QRDA Category III Report V3 recordTarget missing patientRole -->
+	<!-- Failure a-3338-17212-error QRDA Category III Report V3 recordTarget extra -->
+	<!-- Failure a-3338-17212-error QRDA Category III Report V3 recordTarget missing patientRole -->
 	<recordTarget/>
-	<!-- Failure a-3259-17239-error QRDA Category III Report V3 languageCode extra -->
-	<!-- Failure a-3259-17232-error QRDA Category III Report V3 languageCode missing @code -->
+	<!-- Failure a-3338-17239-error QRDA Category III Report V3 languageCode extra -->
+	<!-- Failure a-3338-17232-error QRDA Category III Report V3 languageCode missing @code -->
 	<languageCode lang="en-BR"/>
-	<!-- Failure a-3259-18156-error QRDA Category III Report V3 author bad missing time extra -->
+	<!-- Failure a-3338-18156-error QRDA Category III Report V3 author bad missing time extra -->
 	<author>
 		<!--time value="20160301"/-->
 		<assignedAuthor>
 			<!-- author ID. This may be an NPI, or any other type of ID. -->
 			<id root="2.16.840.1.113883.4.6" extension="111111111" assigningAuthorityName="NPI"/>
-			<!-- Failure a-3259-19667-error QRDA Category III Report V3 assignedAuthor missing assignedAuthoringDevice -->
-			<!-- Failure a-3259-18163-error QRDA Category III Report V3 assignedAuthor missing representedOrganization -->
+			<!-- Failure a-3338-19667-error QRDA Category III Report V3 assignedAuthor missing assignedAuthoringDevice -->
+			<!-- Failure a-3338-18163-error QRDA Category III Report V3 assignedAuthor missing representedOrganization -->
 			<!--assignedAuthoringDevice>
 				<softwareName>SOME Data Aggregator Transform Tool KP00017dev </softwareName>
 			</assignedAuthoringDevice>
@@ -140,7 +140,7 @@
 			</representedOrganization-->
 		</assignedAuthor>
 	</author>
-	<!-- Failure a-3259-18156-error QRDA Category III Report V3 author bad missing assignedAuthor extra -->
+	<!-- Failure a-3338-18156-error QRDA Category III Report V3 author bad missing assignedAuthor extra -->
 	<author>
 		<time value="20050329224411+0500"/>
 		<!--assignedAuthor>
@@ -162,12 +162,12 @@
 		<assignedAuthor>
 			<!-- author ID. This may be an NPI, or any other type of ID. -->
 			<id root="2.16.840.1.113883.4.6" extension="111111111" assigningAuthorityName="NPI"/>
-			<!-- Failure a-3259-18262-error QRDA Category III Report V3 assignedAuthoringDevice misssing softwareName -->
+			<!-- Failure a-3338-18262-error QRDA Category III Report V3 assignedAuthoringDevice misssing softwareName -->
 			<assignedAuthoringDevice>
 				<!--softwareName>SOME Data Aggregator Transform Tool KP00017dev </softwareName-->
 				<software>SOME Data Aggregator Transform Tool KP00017dev </software>
 			</assignedAuthoringDevice>
-			<!-- Failure a-3259-18265-error QRDA Category III Report V3 representedOrganization missing name -->
+			<!-- Failure a-3338-18265-error QRDA Category III Report V3 representedOrganization missing name -->
 			<representedOrganization>
 				<id root="2.16.840.1.113883.19.5" extension="98765"/>
 				<!--name>Good Health Hospital</name-->
@@ -204,21 +204,21 @@
 				<id root="2.16.840.1.113883.19.5"/>
 				<!-- SHOULD Name not required -->
 				<name>Good Health Hospital</name>
-				<!-- Failure a-3259-19673-warning multiple	name -->			
+				<!-- Failure a-3338-19673-warning multiple	name -->			
 				<name>Good Health Hospital2</name>
 			</representedOrganization>
 		</assignedEntity>
 	</legalAuthenticator>
-	<!--a-3259-17213-error  QRDA Category III Report V3 custodian extra -->
+	<!--a-3338-17213-error  QRDA Category III Report V3 custodian extra -->
 	<custodian>
 		<assignedCustodian>
-	<!-- QRDA Category III Report V3 a-3259-18166-warning missing name-->
+	<!-- QRDA Category III Report V3 a-3338-18166-warning missing name-->
 			<representedCustodianOrganization>
 				<id root="2.16.840.1.113883.19.5"/>
 				<!--name>Good Health Hospital</name-->
 			</representedCustodianOrganization>
 		</assignedCustodian>
-		<!-- Failure a-3259-17214-error QRDA Category III Report V3 assignedCustodian extra -->
+		<!-- Failure a-3338-17214-error QRDA Category III Report V3 assignedCustodian extra -->
 		<assignedCustodian>
 			<representedCustodianOrganization>
 				<!-- SHALL have an id - This is an example root -->
@@ -226,35 +226,35 @@
 				<!-- SHOULD Name not required -->
 				<name>Good Health Hospital</name>
 			</representedCustodianOrganization>
-			<!-- Failure a-3259-17215-error QRDA Category III Report V3 representedCustodianOrganization extra -->
+			<!-- Failure a-3338-17215-error QRDA Category III Report V3 representedCustodianOrganization extra -->
 			<representedCustodianOrganization>
-				<!-- Failure a-3259-18165-error QRDA Category III Report V3 missing Id -->
+				<!-- Failure a-3338-18165-error QRDA Category III Report V3 missing Id -->
 				<!--id root="2.16.840.1.113883.19.5"/-->
 				<!-- SHOULD Name not required -->
 				<name>Good Health Hospital</name>
 			</representedCustodianOrganization>
 		</assignedCustodian>
 	</custodian>
-	<!-- Failure a-3259-17225-error- QRDA Category III Report V3 legalAuthenticator extra -->
+	<!-- Failure a-3338-17225-error- QRDA Category III Report V3 legalAuthenticator extra -->
 	<legalAuthenticator>
-		<!-- Failure a-3259-18167-error legalAuthenticator missing time -->
+		<!-- Failure a-3338-18167-error legalAuthenticator missing time -->
 		<!--time value="20160301"/-->
-		<!-- Failure a-3259-18168-error legalAuthenticator signatureCode duplicate -->
+		<!-- Failure a-3338-18168-error legalAuthenticator signatureCode duplicate -->
 		<signatureCode code="S"/>
-		<!-- Failure a-3259-18169-error legalAuthenticator signatureCode wrong @code -->
+		<!-- Failure a-3338-18169-error legalAuthenticator signatureCode wrong @code -->
 		<signatureCode code="T"/>
 		<assignedEntity>
 			<!-- SHALL ID -->
 			<id root="bc01a5d1-3a34-4286-82cc-43eb04c972a7"/>
 			<!-- MAY -->
 			<representedOrganization>
-		<!-- Failure a-3259-19672-error legalAuthenticator/representedOrganization missing id -->
+		<!-- Failure a-3338-19672-error legalAuthenticator/representedOrganization missing id -->
 				<!--id root="2.16.840.1.113883.19.5"/-->
 				<!-- SHOULD Name not required -->
 				<name>Good Health Hospital</name>
 			</representedOrganization>
 		</assignedEntity>
-		<!-- Failure a-3259-19670-error legalAuthenticator assignedEntity duplicate -->
+		<!-- Failure a-3338-19670-error legalAuthenticator assignedEntity duplicate -->
 		<assignedEntity>
 			<!-- SHALL ID -->
 			<id root="bc01a5d1-3a34-4286-82cc-43eb04c972a7"/>
@@ -272,16 +272,16 @@
 		EHR Certification Number, represented by RGPR = regulated product: A product regulated by some governmental orgnization.  -->
 	<participant typeCode="DEV">
 		<!--associatedEntity classCode="RGPR"-->
-		<!-- Failure a-3259-18303-error participant associatedEntity wrong @classCode -->
+		<!-- Failure a-3338-18303-error participant associatedEntity wrong @classCode -->
 		<associatedEntity classCode="PRRG">
-		<!-- Failure a-3259-20954-error participant associatedEntity missing id -->
+		<!-- Failure a-3338-20954-error participant associatedEntity missing id -->
 			<!--id root="2.16.840.1.113883.3.2074.1" extension="1a2b3c" assigningAuthorityName="ONC"/-->
 			<!--id root="2.16.840.1.113883.3.249.21" extension="98765"/-->
-		<!-- Failure a-3259-18308-error participant associatedEntity code duplicate -->
+		<!-- Failure a-3338-18308-error participant associatedEntity code duplicate -->
 			<code code="129465004" displayName="medical record, device"
 				codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/>
-		<!-- Failure a-3259-18309-error participant associatedEntity code wrong @code -->
-		<!-- Failure a-3259-21167-error participant associatedEntity code wrong @codeSystem -->
+		<!-- Failure a-3338-18309-error participant associatedEntity code wrong @code -->
+		<!-- Failure a-3338-21167-error participant associatedEntity code wrong @codeSystem -->
 			<code code="129465005" displayName="medical record, device 2"
 				codeSystem="2.16.840.1.113883.6.97" codeSystemName="SNOMED-CT2"/>
 		</associatedEntity>
@@ -294,7 +294,7 @@
 				<low value="20160101"/>
 				<high value="20160301"/>
 			</effectiveTime>
-		<!-- Failure a-3259-18173-error documentationOf serviceEvent misssing performer -->
+		<!-- Failure a-3338-18173-error documentationOf serviceEvent misssing performer -->
 			<!--performer typeCode="PRF">
 				<time>
 					<low value="20160101"/>
@@ -314,15 +314,15 @@
 				</assignedEntity>
 			</performer-->
 		</serviceEvent>
-		<!-- Failure a-3259-18171-error documentationOf serviceEvent duplicate -->
-		<!-- Failure a-3259-18172-error documentationOf serviceEvent wrong @classCode -->
+		<!-- Failure a-3338-18171-error documentationOf serviceEvent duplicate -->
+		<!-- Failure a-3338-18172-error documentationOf serviceEvent wrong @classCode -->
 		<serviceEvent classCode="PRPC">
 			<!-- care provision -->
 			<effectiveTime>
 				<low value="20160101"/>
 				<high value="20160301"/>
 			</effectiveTime>
-			<!-- Failure a-3259-18174-error documentationOf serviceEvent missing @typeCode -->
+			<!-- Failure a-3338-18174-error documentationOf serviceEvent missing @typeCode -->
 			<!--performer typeCode="PRF"-->
 			<performer>
 				<time>
@@ -330,7 +330,7 @@
 					<high value="20160301"/>
 				</time>
 				<assignedEntity>
-					<!-- Failure a-3259-19474-error documentationOf serviceEvent assignedEntity missing id -->
+					<!-- Failure a-3338-19474-error documentationOf serviceEvent assignedEntity missing id -->
 					<!--id root="2.16.840.1.113883.4.6" extension="111111111"
 						assigningAuthorityName="NPI"/-->
 					<!-- MAY: The email address of the provider's data submitted -->
@@ -343,10 +343,10 @@
 						<id root="2.16.840.1.113883.4.336" extension="54321"
 							assigningAuthorityName="CCN"/>
 						<!-- SHOULD Name not required -->
-						<!-- Failure a-3259-19659-warning missingname -->			
+						<!-- Failure a-3338-19659-warning missingname -->			
 						<!--name>Good Health Hospital</name-->
 					</representedOrganization>
-					<!-- Failure a-3259-18180-error documentationOf serviceEvent assignedEntity representedOrganization duplicate -->
+					<!-- Failure a-3338-18180-error documentationOf serviceEvent assignedEntity representedOrganization duplicate -->
 					<representedOrganization>
 						<!-- This is the optional organization TIN -->
 						<id root="2.16.840.1.113883.4.2" extension="1234567"
@@ -358,7 +358,7 @@
 						<name>Good Health Hospital</name>
 					</representedOrganization>
 				</assignedEntity>
-				<!-- Failure a-3259-18176-error documentationOf serviceEvent assignedEntity duplicate -->
+				<!-- Failure a-3338-18176-error documentationOf serviceEvent assignedEntity duplicate -->
 				<assignedEntity>
 					<!-- SHALL contain at least one id -->
 					<!-- This is the optional provider NPI -->
@@ -385,21 +385,21 @@
 			<id root="84613250-e75e-11e1-aff1-0800200c9a66"/>
 			<code code="425691002" displayName="consent given for electronic record sharing"
 				codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/>
-			<!-- Failure a-3259-18364-error authorization consent missing statusCode -->
+			<!-- Failure a-3338-18364-error authorization consent missing statusCode -->
 			<!--statusCode code="completed"/-->
 		</consent>
-		<!-- Failure a-3259-18360-error authorization consent duplicate -->
+		<!-- Failure a-3338-18360-error authorization consent duplicate -->
 		<consent>
-			<!-- Failure a-3259-18361-error authorization consent missing id -->
+			<!-- Failure a-3338-18361-error authorization consent missing id -->
 			<!--id root="84613250-e75e-11e1-aff1-0800200c9a66"/-->
-			<!-- Failure a-3259-18363-error authorization consent code duplicate -->
+			<!-- Failure a-3338-18363-error authorization consent code duplicate -->
 			<code code="425691002" displayName="consent given for electronic record sharing"
 				codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/>
-			<!-- Failure a-3259-19550-error authorization consent code wrong @code-->
-			<!-- Failure a-3259-21172-error authorization consent code missing @codeSystem -->
+			<!-- Failure a-3338-19550-error authorization consent code wrong @code-->
+			<!-- Failure a-3338-21172-error authorization consent code missing @codeSystem -->
 			<code code="4256910023" displayName="consent given for electronic record sharing"
 				codeSystemName="SNOMED-CT"/>
-			<!-- Failure a-3259-19551-error authorization consent wrong @statusCode -->
+			<!-- Failure a-3338-19551-error authorization consent wrong @statusCode -->
 			<statusCode code="incomplete"/>
 		</consent>
 	</authorization>
@@ -409,7 +409,7 @@ CDA Body
 ********************************************************
 -->
 	<component>
-		<!-- Failure a-3259-17235-error component structuredBody duplicate -->
+		<!-- Failure a-3338-17235-error component structuredBody duplicate -->
 		<structuredBody>
 			<!-- 
 ********************************************************
@@ -444,14 +444,14 @@ Clinical Practice Improvement Activity Section
 			<component>
 				<section>
 					<!-- Clinical Practice Improvement Activity Section templateId -->
-		             <!-- Failure a-3259-21394-error component structuredBody component missing section -->
+		             <!-- Failure a-3338-21394-error component structuredBody component missing section -->
 					<!--templateId root="2.16.840.1.113883.10.20.27.2.4" extension="2017-06-01"/-->
 					...
 				</section>
 			</component>
 		</structuredBody>
 	</component>
-	<!-- Failure a-3259-17217-error component duplicate -->
+	<!-- Failure a-3338-17217-error component duplicate -->
 	<component>
 		...
 	</component>

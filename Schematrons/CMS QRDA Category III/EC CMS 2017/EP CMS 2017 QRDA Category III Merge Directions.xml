@@ -31,7 +31,13 @@
     Added conformance statements 3259-21402 and 3259-21403 to ACI Numerator Denominator Type Measure Reference and Results (QRDA-170)
     Corrected text missing in assert 3259-21422 for the typeCode (QRDA-171)
     Added effectiveTime from QRDA Category III Report V3 to the context for US Realm Date and Time (QRDA-172)
-    
+    Updated QRDA Category III Report template to V4 which updated required tempaltes in 3338-21394 (QRDA-188)
+    Updated Advancing Care Information Section to V2 which now requires a reporting parameters act template and a new
+        version of the Advancing Care Information Numerator Denominator Type Measure Reference and Results template (QRDA-189)
+    Updated Improvement Activity Section template to V2 which now requires a reporting parameters act template (QRDA-190)
+    Updated QRDA Category III Measure Section template to V4 which now requires a reporting parameters act template (QRDA-191)
+    Updated Advancing Care Information Numerator Denominator Type Measure Reference and Result template to V2 which
+        removed the requirement for performance rate (QRDA-192)
     </fileHeader>
     <mergeReportFilename>/Users/mholck/Development/qrda/Schematrons/CMS QRDA Category III/EC CMS 2017/mergeReport.txt</mergeReportFilename>
     <vocabFilename>/Users/mholck/Development/qrda/Schematrons/CMS QRDA Category III/Vocabulary/voc.xml</vocabFilename>
@@ -45,15 +51,18 @@
  
     <sourceDirectory selector='some'> 
         <directoryName>HL7 QRDA Category III/Templates</directoryName>
-        <include>QRDA Category III Report V3</include>
-        <include>Advancing Care Information Section</include>
-        <include>Improvement Activity Section</include>
-        <include>QRDA Category III Measure Section V3</include>
+        <!-- Document level templates -->
+        <include>QRDA Category III Report V4</include>
+        <!-- Section level templates -->
+        <include>Advancing Care Information Section V2</include>
+        <include>Improvement Activity Section V2</include>
+        <include>QRDA Category III Measure Section V4</include>
         <include>QRDA Category III Reporting Parameters Section</include>
+        <!-- Entry level templates -->
         <include>ACI Measure Performed Measure Reference and Results</include>
         <include>ACI Numerator Denominator Type Measure Denominator Data</include>
         <include>ACI Numerator Denominator Type Measure Numerator Data</include>
-        <include>ACI Numerator Denominator Type Measure Reference and Results</include>
+        <include>ACI Numerator Denominator Type Measure Reference and Results V2</include>
         <include>Aggregate Count</include>
         <include>Continuous Variable Measure Value</include>
         <include>Ethnicity Supplemental Data Element V2</include>
@@ -82,9 +91,12 @@
     
     <sourceDirectory selector='some'> 
         <directoryName>CMS QRDA Category III/Templates</directoryName>
-        <include>QRDA Category III Measure Section CMS V2</include>
+        <!-- Document level templates -->
         <include>QRDA Category III Report CMS V2</include>
+        <!-- Section level templates -->
+        <include>QRDA Category III Measure Section CMS V2</include>
         <include>QRDA Category III Reporting Parameters Section CMS V2</include>
+        <!-- Entry level templates -->
         <include>Aggregate Count CMS</include> 
         <include>Continuous Variable Measure Value CMS</include>
         <include>Ethnicity Supplemental Data Element CMS V2</include>

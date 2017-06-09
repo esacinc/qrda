@@ -2,10 +2,9 @@
     
 <mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="true" >
  
-    <title>CMS 2017 QRDA Category III for Eligible Clinicians
-        
-    Version 0.2</title>
-   
+    <title>EH CMS 2018 QRDA Category I</title>
+    <version>1.0</version>
+    
      <generatedFilename>
          /Users/mholck/Development/qrda/Schematrons/CMS QRDA Category III/EC CMS 2017/Published/EC CMS 2017 QRDA Category III.sch
     </generatedFilename>
@@ -40,12 +39,18 @@
         removed the requirement for performance rate (QRDA-192)
     Updated rule to allow for multiple occurences of one of the templates in the ACI section assert 3259-21439 (QRDA-507)
     </fileHeader>
+    
+    <errorsHeader>ERROR Patterns and Assertions</errorsHeader>
+    <warningsHeader>WARNING Patterns and Assertions</warningsHeader>
+    
     <mergeReportFilename>/Users/mholck/Development/qrda/Schematrons/CMS QRDA Category III/EC CMS 2017/mergeReport.txt</mergeReportFilename>
+    
     <vocabFilename>/Users/mholck/Development/qrda/Schematrons/CMS QRDA Category III/Vocabulary/voc.xml</vocabFilename>
+    
     <!-- All schematrons expected to be under a single main directory -->
     <sourceMainDirectory>/Users/mholck/Development/qrda/Schematrons/</sourceMainDirectory>
     
-    <!-- Specify the schematrons to use in the merge below, separated by the templates found in each fo the source directories listed. -->
+    <!-- Specify the schematrons to use in the merge below, separated by the templates found in each of the source directories listed. -->
     <!--    Note that the directoryName tags refer to directories relative to the sourceMainDirectory tag, above. -->
     <!--    selector='all' means use all the schematron subdirectories found under directoryName, except for those listed in the 'exclude' tags. -->
     <!--    selector='some' means only use the directoryName subdirectories listed in the 'include' tags --> 

@@ -2,8 +2,8 @@
     
 <mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="true" >
  
-    <title>EH CMS 2018 QRDA Category I</title>
-    <version>1.0</version>
+    <title>EC/EP CMS 2017 QRDA Category III</title>
+    <version>0.2</version>
     
      <generatedFilename>
          /Users/mholck/Development/qrda/Schematrons/CMS QRDA Category III/EC CMS 2017/Published/EC CMS 2017 QRDA Category III.sch

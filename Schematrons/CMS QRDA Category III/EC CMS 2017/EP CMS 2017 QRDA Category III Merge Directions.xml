@@ -31,13 +31,14 @@
     Added conformance statements 3259-21402 and 3259-21403 to ACI Numerator Denominator Type Measure Reference and Results (QRDA-170)
     Corrected text missing in assert 3259-21422 for the typeCode (QRDA-171)
     Added effectiveTime from QRDA Category III Report V3 to the context for US Realm Date and Time (QRDA-172)
-    Updated QRDA Category III Report template to V4 which updated required tempaltes in 3338-21394 (QRDA-188)
+    Updated QRDA Category III Report template to V4 which updated required templates in 3338-21394 (QRDA-188)
     Updated Advancing Care Information Section to V2 which now requires a reporting parameters act template and a new
         version of the Advancing Care Information Numerator Denominator Type Measure Reference and Results template (QRDA-189)
     Updated Improvement Activity Section template to V2 which now requires a reporting parameters act template (QRDA-190)
     Updated QRDA Category III Measure Section template to V4 which now requires a reporting parameters act template (QRDA-191)
     Updated Advancing Care Information Numerator Denominator Type Measure Reference and Result template to V2 which
         removed the requirement for performance rate (QRDA-192)
+    Updated rule to allow for multiple occurences of one of the templates in the ACI section assert 3259-21439 (QRDA-507)
     </fileHeader>
     <mergeReportFilename>/Users/mholck/Development/qrda/Schematrons/CMS QRDA Category III/EC CMS 2017/mergeReport.txt</mergeReportFilename>
     <vocabFilename>/Users/mholck/Development/qrda/Schematrons/CMS QRDA Category III/Vocabulary/voc.xml</vocabFilename>

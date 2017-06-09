@@ -369,8 +369,8 @@ public class SchematronMerge {
 		pe1.addContent(mergedErrors);
 		pe2.addContent(mergedWarnings);
 
-		System.out.println("TOTAL ERROR patterns: " + mergedErrors.size());
-		System.out.println("TOTAL WARNING patterns: " + mergedWarnings.size());
+		//System.out.println("TOTAL ERROR patterns: " + mergedErrors.size());
+		//System.out.println("TOTAL WARNING patterns: " + mergedWarnings.size());
 
 		// Add the Namespaces used in each of the merged file
 		top.addContent(mergedSpaces);
@@ -460,10 +460,10 @@ public class SchematronMerge {
 			mergedDoc.getRootElement().addContent(allWarningPatterns.values());
 		}
 		
-		System.out.println("OLD Generated total patterns: " + countPatterns);
-		System.out.println("NEW generated error patterns: " + allErrorPatterns.size());
-		System.out.println("NEW generated warning patterns: " + allWarningPatterns.size());
-		System.out.println("NEW generated total patterns: " + (allErrorPatterns.size()+allWarningPatterns.size()));
+		//System.out.println("OLD Generated total patterns: " + countPatterns);
+		//System.out.println("NEW generated error patterns: " + allErrorPatterns.size());
+		//System.out.println("NEW generated warning patterns: " + allWarningPatterns.size());
+		//System.out.println("NEW generated total patterns: " + (allErrorPatterns.size()+allWarningPatterns.size()));
 		
 		return (mergedDoc);
 	}

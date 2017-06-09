@@ -172,7 +172,7 @@ public class Validator {
 						}
 						else {
 							if (isVerbose) {
-								results.addResult(MergeInstructions.INDENT4+"Warning: " + fail.getId() + "at " + fail.getLocation() + ": " + fail.getTest());
+								results.addResult(MergeInstructions.INDENT4+"Warning: " + fail.getId() + " at " + fail.getLocation() + ": " + fail.getTest());
 								results.addResult(MergeInstructions.INDENT5+ fail.getStatement());
 							}
 

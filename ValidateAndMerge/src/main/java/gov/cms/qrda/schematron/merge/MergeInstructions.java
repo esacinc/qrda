@@ -300,7 +300,7 @@ public class MergeInstructions extends MergeProperties{
 					template.setSchematronPath(file.getAbsolutePath());
 					if (verbose) {
 						results.add(INDENT3 + "Located schematron file: " + file.getName());
-				}
+					}
 					break;
 				}
 			}
@@ -321,7 +321,7 @@ public class MergeInstructions extends MergeProperties{
 	}
 	
 	// Given a pathname to a directory, return a list of items corresponding to the subdirectories under the given parent directory.
-	// Each item is iteself a list of filenames found under the subdirectory. The first filename is a schematron file, the remaining
+	// Each item is itself a list of filenames found under the subdirectory. The first filename is a schematron file, the remaining
 	// are xml files.
 	private ArrayList<SchematronTemplate> getSchematrons(String parentDirPath, List<String> exceptions, String selector) {
 		results.add(INDENT2 + "Processing template directory: " + parentDirPath + ", selector: " + selector);

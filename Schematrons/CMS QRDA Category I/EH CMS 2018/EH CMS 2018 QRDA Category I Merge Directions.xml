@@ -2,8 +2,9 @@
     
 <mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="false">
  
-    <title>EH CMS 2018 QRDA Category I Version 1.0</title>
-   
+    <title>EH CMS 2018 QRDA Category I</title>
+    <version>0.2</version>
+    
     <generatedFilename>
         /Users/mholck/Development/qrda/Schematrons/CMS QRDA Category I/EH CMS 2018/Published/EH CMS 2018 QRDA Category I.sch
     </generatedFilename>
@@ -12,14 +13,21 @@
         /Users/mholck/Development/qrda/Schematrons/CMS QRDA Category I/EH CMS 2018/TestFiles/EH_Sample_QRDA_I_Informative.xml 
     </finalTestFilename>
     
-    <fileHeader>THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+    <fileHeader>
+    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
     THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
     IN NO EVENT SHALL ESAC INC., OR ANY OF THEIR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
     SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
     GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
     THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
     ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        
+    Changes from version 0.1:
+    Updated a-CMS_0051-error to allow any entry type rather than just an observation type (QRDATEST-1)
     </fileHeader>
+    
+    <errorsHeader>ERROR Patterns and Assertions</errorsHeader>
+    <warningsHeader>WARNING Patterns and Assertions</warningsHeader>
     
     <mergeReportFilename>/Users/mholck/Development/qrda/Schematrons/CMS QRDA Category I/EH CMS 2018/mergeReport.txt</mergeReportFilename>
     

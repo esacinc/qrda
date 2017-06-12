@@ -25,7 +25,6 @@
     Changes from version 0.1:
     Added the 77- prefix to the text of the assert for 77-17580 (QRDA-104)
     Added the check for [not(@extension)] to the templates that specifically do not have an extension (QRDA-110)
-    (QRDA-488)
     Added a check to allow for no value provided to a-2233-711294-error and a-2233-711295-error (QRDA-497)
     Added conformance statements 3259-21402 and 3259-21403 to ACI Numerator Denominator Type Measure Reference and Results (QRDA-170)
     Corrected text missing in assert 3259-21422 for the typeCode (QRDA-171)
@@ -101,7 +100,6 @@
         <include>QRDA Category III Report CMS V2</include>
         <!-- Section level templates -->
         <include>QRDA Category III Measure Section CMS V2</include>
-        <include>QRDA Category III Reporting Parameters Section CMS V2</include>
         <!-- Entry level templates -->
         <include>Aggregate Count CMS</include> 
         <include>Continuous Variable Measure Value CMS</include>
@@ -111,7 +109,6 @@
         <include>Payer Supplemental Data Element CMS V2</include>
         <include>Performance Rate for Proportion Measure CMS V2</include>
         <include>Race Supplemental Data Element CMS V2</include>
-        <include>Reporting Parameters Act CMS V2</include>
         <include>Reporting Stratum CMS</include>
         <include>Sex Supplemental Data Element CMS V2</include>
         <include>CMS Datatype Validations</include>

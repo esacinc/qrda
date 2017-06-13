@@ -7,12 +7,19 @@
 	Revision History:  7/1/2015 Created
 	                   9/23/2015 Updated code for Denominator Exclusions Populations. Changed "DENEXCL" to "DENEX"
 	                   11/03/2016 Updated for CMS QRDA III 2017 V2
+	                   06/12/2017 Updated for QRDA Category III Report CMS EC V2 changes
+	                              Updated for changes to Measure Section assert a-67-13003-error and removal of a-67-16677-error
+	                              Added optional references to accommodate 'SHOULD Reference the measure set it is a member of: CONF:3259-18358' warnings
 	Description: 1) This QRDA-III sample file is valid for PQRS_MU_GROUP program and is informative only. 
 	             2) This sample file correctly validates against the conformance statements specified in the 
 	             CMS Implementation Guide for Quality Reporting Document Architecture Category III
 	             Eligible Professional Programs Implementation Guide for 2017
 	             
    THIS SAMPLE FILE IS INFORMATIVE ONLY.
+   
+   Total Errors Expected: 0
+   Total Warnings Expected: 0
+
 -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="urn:hl7-org:v3 ../CDA_Schema_Files/infrastructure/cda/CDA_SDTC.xsd"
@@ -26,8 +33,10 @@ CDA Header
 	<realmCode code="US"/>
 	<!-- CDA Id -->
 	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
-	<!-- QRDA Category III Report (QRDA III) -->
+	<!-- QRDA Category III Report V4 -->
 	<templateId root="2.16.840.1.113883.10.20.27.1.1" extension="2016-09-01"/>
+	<!-- QRDA Category III Report CMS EC V2 -->
+	<templateId root="2.16.840.1.113883.10.20.27.1.1" extension="2017-06-01"/>
 	<!-- QRDA Category III Report - CMS EP -->
 	<templateId root="2.16.840.1.113883.10.20.27.1.2" extension="2016-11-01"/>
 	<!-- SHALL contain exactly one [1..1] id (CONF:17236).  This id SHALL be a globally unique identifier for the document (CONF:17242). -->
@@ -153,7 +162,7 @@ CDA Header
 			<!-- i.	Such intendedRecipients SHALL contain exactly one [1..1] id (CONF:711160).
 					1.	This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.7" CMS Program (CONF:711161). 
 					2.	idsThis id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet CMS Program Name 2.16.840.1.113883.3.249.14.101 (CONF:711162). -->
-			<id root="2.16.840.1.113883.3.249.7" extension="MIPS"/>
+			<id root="2.16.840.1.113883.3.249.7" extension="MIPS_GROUP"/>
 		</intendedRecipient>
 	</informationRecipient>
 	<!-- ** 1.1.5	legalAuthenticator ** -->
@@ -260,9 +269,11 @@ CDA Header
 			QRDA-III Reporting Parameters Section (CMS EP)
 			********************************************************
 			-->
+			<!--
 			<component>
+				
 				<section>
-					<templateId root="2.16.840.1.113883.10.20.17.2.1"/>
+					<templateId root="2.16.840.1.113883.10.20.17.2.1" extension="2017-06-01"/>
 					<templateId root="2.16.840.1.113883.10.20.27.2.2"/>
 					<templateId root="2.16.840.1.113883.10.20.27.2.6" extension="2016-11-01"/>
 					<code code="55187-9" codeSystem="2.16.840.1.113883.6.1"/>
@@ -287,6 +298,7 @@ CDA Header
 					</entry>
 				</section>
 			</component>
+			-->
 			<!--
 			********************************************************
 			QRDA Category III Measure Section (CMS EP)
@@ -294,9 +306,9 @@ CDA Header
 			-->
 			<component>
 				<section>
-					<templateId root="2.16.840.1.113883.10.20.27.2.1" extension="2016-09-01"/>
+					<templateId root="2.16.840.1.113883.10.20.27.2.1" extension="2017-06-01"/>
 					<templateId root="2.16.840.1.113883.10.20.24.2.2"/>
-					<templateId root="2.16.840.1.113883.10.20.27.2.3" extension="2016-11-01"/>
+					<templateId root="2.16.840.1.113883.10.20.27.2.3" extension="2017-07-01"/>
 					<code code="55186-1" codeSystem="2.16.840.1.113883.6.1"
 						displayName="measure section"/>
 					<title>Measure Section</title>
@@ -2443,6 +2455,22 @@ CDA Header
 							</item>
 						</list>
 					</text>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<!-- This is the templateId for Reporting Parameters Act -->
+							<templateId root="2.16.840.1.113883.10.20.17.3.8"/>
+							<templateId root="2.16.840.1.113883.10.20.24.3.98"/>
+							<!-- This is the templateId for Reporting Parameters Act - CMS EP & HQR -->
+							<templateId root="2.16.840.1.113883.10.20.17.3.8.1" extension="2016-03-01"/>
+							<id root="3d7c11cf-b01b-4527-a704-c098c162779d"/>
+							<code code="252116004" codeSystem="2.16.840.1.113883.6.96" displayName="Observation Parameters"/>
+							<effectiveTime>
+								<low value="20160101"/>
+								<high value="20161231"/>
+							</effectiveTime>
+						</act>
+					</entry>
+					
 					<!--Measure Entry for NQF 0018/ CMS165-->
 					<entry>
 						<organizer classCode="CLUSTER" moodCode="EVN">
@@ -2462,6 +2490,18 @@ CDA Header
 									<text>Controlling High Blood Pressure</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b6ac13e2-beb8-4e4f-94ed-fcc397406cd8"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set 2015-2016</text>
+								</externalObservation>
+							</reference>
+							
 							<!--Performance Rate-->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
@@ -4396,6 +4436,18 @@ CDA Header
 										Cessation Intervention</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b6ac13e2-beb8-4e4f-94ed-fcc397406cd8"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set 2015-2016</text>
+								</externalObservation>
+							</reference>
+							
 							<!--Performance Rate-->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
@@ -6306,6 +6358,7 @@ CDA Header
 											<id root="9ED6FBEC-69EE-4408-997E-1D9B6EFA5B6C"/>
 										</externalObservation>
 									</reference>
+									
 								</observation>
 							</component>
 						</organizer>
@@ -6329,6 +6382,18 @@ CDA Header
 									<text>Breast Cancer Screening</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b6ac13e2-beb8-4e4f-94ed-fcc397406cd8"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set 2015-2016</text>
+								</externalObservation>
+							</reference>
+							
 							<!--Performance Rate-->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
@@ -8251,6 +8316,7 @@ CDA Header
 											<id root="2520997A-816E-4780-823F-578A15CD78BE"/>
 										</externalObservation>
 									</reference>
+									
 								</observation>
 							</component>
 						</organizer>
@@ -8274,6 +8340,18 @@ CDA Header
 									<text>Colorectal Cancer Screening</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b6ac13e2-beb8-4e4f-94ed-fcc397406cd8"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set 2015-2016</text>
+								</externalObservation>
+							</reference>
+							
 							<!--Performance Rate-->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
@@ -10224,6 +10302,18 @@ CDA Header
 										Immunization</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b6ac13e2-beb8-4e4f-94ed-fcc397406cd8"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set 2015-2016</text>
+								</externalObservation>
+							</reference>
+							
 							<!--Performance Rate-->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
@@ -12173,6 +12263,18 @@ CDA Header
 									<text>Pneumonia Vaccination Status for Older Adults</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b6ac13e2-beb8-4e4f-94ed-fcc397406cd8"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set 2015-2016</text>
+								</externalObservation>
+							</reference>
+							
 							<!--Performance Rate-->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
@@ -13645,6 +13747,18 @@ CDA Header
 									<text>Diabetes: Hemoglobin A1c Poor Control</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b6ac13e2-beb8-4e4f-94ed-fcc397406cd8"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set 2015-2016</text>
+								</externalObservation>
+							</reference>
+							
 							<!--Performance Rate-->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
@@ -15117,6 +15231,18 @@ CDA Header
 									<text>Diabetes: Low Density Lipoprotein (LDL) Management</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b6ac13e2-beb8-4e4f-94ed-fcc397406cd8"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set 2015-2016</text>
+								</externalObservation>
+							</reference>
+							
 							<!--Performance Rate-->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
@@ -16590,6 +16716,18 @@ CDA Header
 										LDL Control</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b6ac13e2-beb8-4e4f-94ed-fcc397406cd8"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set 2015-2016</text>
+								</externalObservation>
+							</reference>
+							
 							<!--Performance Rate-->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
@@ -19514,6 +19652,18 @@ CDA Header
 										Ventricular Systolic Dysfunction (LVSD)</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b6ac13e2-beb8-4e4f-94ed-fcc397406cd8"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set 2015-2016</text>
+								</externalObservation>
+							</reference>
+							
 							<!--Performance Rate-->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
@@ -21463,6 +21613,18 @@ CDA Header
 									<text>Falls: Screening for Future Fall Risk</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b6ac13e2-beb8-4e4f-94ed-fcc397406cd8"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set 2015-2016</text>
+								</externalObservation>
+							</reference>
+							
 							<!--Performance Rate-->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
@@ -23413,6 +23575,18 @@ CDA Header
 										Depression and Follow-Up Plan</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b6ac13e2-beb8-4e4f-94ed-fcc397406cd8"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set 2015-2016</text>
+								</externalObservation>
+							</reference>
+							
 							<!--Performance Rate-->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
@@ -25840,6 +26014,18 @@ CDA Header
 										Record</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b6ac13e2-beb8-4e4f-94ed-fcc397406cd8"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set 2015-2016</text>
+								</externalObservation>
+							</reference>
+							
 							<!--Performance Rate-->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">

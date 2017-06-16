@@ -56,15 +56,38 @@ import gov.cms.qrda.schematron.validate.MergeProperties;
 import gov.cms.qrda.schematron.validate.TestFile;
 import gov.cms.qrda.schematron.validate.Validator;
 
-
+/**
+ * This is the class that holds all of the data required to merge a group of scheamtron templates into a
+ * single schematron file. It generates both the merged schematron file and a merge report file which is
+ * simply a text file containing logged messages generated during the merge process.
+ * 
+ * @author Dan Donahue ESAC Inc.
+ *
+ */
 public class MergeInstructions extends MergeProperties{
 
+	/**
+	 * xmlDoc is the XML document resulting from parsing the input source xml file
+	 */
 	private Document xmlDoc;
+	/**
+	 * The full pathname to the xml source file containing the merge instructions
+	 */
 	private String sourceFile;
+	/**
+	 * The list of schematron template objects resulting from parsing the sourceDirectory
+	 * elements in the merge instruction files.
+	 */
 	private ArrayList<SchematronTemplate> schematrons = new ArrayList<SchematronTemplate>();
 	
+	/**
+	 * Stop processing if true.
+	 */
 	private boolean globalStop = false;  // This may get set to true if processing needs to stop due to a detected error somewhere.
 	
+	/**
+	 * INDENT final static Strings used for pretty formatting the merge report output file
+	 */
 	public final static String INDENT1 = "    ";
 	public final static String INDENT2 = "        ";
 	public final static String INDENT3 = "            ";
@@ -112,7 +135,13 @@ public class MergeInstructions extends MergeProperties{
 		separateErrorsFromWarnings = val;
 	}
 
-	// Reads a mergeInstructions xml file, populates the data, begins collecting status result strings.
+	/**
+	 * Reads a mergeInstructions xml file, populates the data in the object, begins collecting status result strings.
+	 * 
+	 * @param filename The full pathname to the merge directions file
+	 * @return Document xml document containing the results of parsing the merge directions file
+	 */
+	// 
 	public Document open(String filename) {
 		globalStop = false;
 		sourceFile = filename;
@@ -232,7 +261,14 @@ public class MergeInstructions extends MergeProperties{
 	}
 	
 
-	// Returns the text content of the first occurrence of the given node name under the given start node.
+	/**
+	 * Returns the text content of the first occurrence of the given node name under the given start node.
+	 * 
+	 * @param startNode The parent node element under which to start searching for the node name
+	 * @param nodeName The name of the node to search for
+	 * @return The text content of the first node found matching nodeName
+	 */
+	// 
 	private String getNodeValue(Element startNode, String nodeName) {
 		String res = null;
 		if (xmlDoc != null) {
@@ -248,7 +284,14 @@ public class MergeInstructions extends MergeProperties{
 		return res;
 	}
 	
-	// Return a list of strings corresponding to the values of child nodes of a given name of the given start node.
+	/**
+	 * Returns a list of strings corresponding to the values of child nodes of a given name of the given start node.
+	 * 
+	 * @param startNode The parent node element under which to start searching for the node name
+	 * @param nodeName the name of the child node under startNode to search for
+	 * @return an ArrayList of values of each child node found
+	 */
+	// 
 	private ArrayList<String> getSubnodeValues(Element startNode, String nodeName) {
 		ArrayList<String> res = new ArrayList<String>();
 		if (xmlDoc != null) {
@@ -261,10 +304,16 @@ public class MergeInstructions extends MergeProperties{
 		return res;
 	}
 	
-	// Give a sourceDirectory element from the directions file, return a list where
-	// each element of the list item corresponding to each subdirectory of the source directory. 
-	// Each list item is a list of file names, the first of which is the schematron (.sch) located in the subdirectory,
-	// and the remaining file names are the .xml test files also in the subdirectory.
+	/**
+	 * Given a sourceDirectory element from the directions file, return a list where
+	 * each element of the list item corresponding to each subdirectory of the source directory. 
+	 * Each list item is a list of file names, the first of which is the schematron (.sch) located in the subdirectory,
+	 * and the remaining file names are the .xml test files also in the subdirectory.
+
+	 * @param parentNode The parent node element under which to start the search
+	 * @param selector can be one of "all" or "some", determining how to collect the child directories under the parent node
+	 * @return An array list of SchematronTemplate objects representing the schematron subdirectories under the parent node.
+	 */
 	private ArrayList<SchematronTemplate> getSourceDirectoryFiles(Element parentNode, String selector) {
 		ArrayList<SchematronTemplate> fileList = new ArrayList<SchematronTemplate>();
 		ArrayList<String> dirNames;
@@ -282,8 +331,13 @@ public class MergeInstructions extends MergeProperties{
 		return fileList;
 	}
 	
-	// Given a directory, returns a list of filenames from that directory. The first item in the list is the schematron file (ext .sch)
-	// and the rest of the filenames in the list are the test files (.xml) from the directory.
+	/**
+	 * Given a directory, returns a list of filenames from that directory. The first item in the list is the schematron file (ext .sch)
+	 * and the rest of the filenames in the list are the test files (.xml) from the directory.
+	 * 
+	 * @param fullDirPath the full pathname to the directory under which the search begins
+	 * @return a SchematronTemplate object  resulting from examining the files in the given fullDirPath
+	 */
 	private SchematronTemplate getFilesFromDirectory(String fullDirPath) {
 		SchematronTemplate template = new SchematronTemplate(fullDirPath);
 		File dir = new File(fullDirPath);
@@ -320,9 +374,20 @@ public class MergeInstructions extends MergeProperties{
 		
 	}
 	
-	// Given a pathname to a directory, return a list of items corresponding to the subdirectories under the given parent directory.
-	// Each item is itself a list of filenames found under the subdirectory. The first filename is a schematron file, the remaining
-	// are xml files.
+	/**
+	 * Given a pathname to a directory, return a list of items corresponding to the subdirectories under the given parent directory.
+	 * Each item is itself a list of filenames found under the subdirectory. The first filename is a schematron file, the remaining
+	 * are xml files.
+	 * 
+	 * @param parentDirPath the full pathname to a directory containing subdirectories which contain schematron and test files
+	 * @param exceptions a list of subdirectory names under the the parent directory. Can either represent subdirectories
+	 * to include, or those to exclude depending on the value of the selector param
+	 * @param selector a string that can be either 'all' or 'some'. 'all' implies include all subdirectories other than those
+	 * listed in the exceptions list. 'some' implies include ONLY those subdirectories listed in the exceptions list
+	 * 
+	 * @return an ArrayList of SchematronTemplate objects resulting from the parsing of the subdirectories as described above.
+	 */
+	// 
 	private ArrayList<SchematronTemplate> getSchematrons(String parentDirPath, List<String> exceptions, String selector) {
 		results.add(INDENT2 + "Processing template directory: " + parentDirPath + ", selector: " + selector);
 		boolean doAll= ("all".equalsIgnoreCase(selector));
@@ -405,7 +470,14 @@ public class MergeInstructions extends MergeProperties{
 		return fileList;
 	}
 	
-	// Adds the elements of the additions list param to the currentList param
+	/**
+	 *  Adds the elements of the additions list param to the currentList param
+	 *  
+	 * @param currentList the current ArrayList of SchematronTemplate objects
+	 * @param additions the ArrayList of SchematronTemplate objects to add
+	 * 
+	 * @return the new, combined ArrayList of SchematronTemplates
+	 */
 	private ArrayList<SchematronTemplate> appendLists(ArrayList<SchematronTemplate> currentList, ArrayList<SchematronTemplate> additions) {
 		for (SchematronTemplate item : additions) {
 			currentList.add(item);
@@ -413,7 +485,12 @@ public class MergeInstructions extends MergeProperties{
 		return currentList;
 	}
 	
-	// Returns the filenames of the schematrons found in the list of schematron template objects
+	/**
+	 *  Returns the filenames of the schematrons found in the list of schematron template objects
+	 *  
+	 * @return an ArrayList of strings containing the schematron filenames from all of the schematron templates currently
+	 * in the object's schematrons list.
+	 */
 	public ArrayList<String> getSchematronsOnly() {
 		ArrayList<String> filenames = new ArrayList<String>();
 		for (SchematronTemplate schematron : schematrons) {
@@ -422,8 +499,14 @@ public class MergeInstructions extends MergeProperties{
 		return filenames;
 	}
 	
-	// Static method to read a file containing a list of mergeInstruction filenames.
-	// Lines beginning with "#" are ignored.
+	/**
+	 *  Static method to read a file containing a list of mergeInstruction filenames.
+	 * @param instructionFileListFilename the full pathname to a file containing a list of mergeInstructions filenames,
+	 * one filename per line. 
+	 * Note: Lines beginning with "#" are ignored.
+	 * @return an ArrayList of full pathnames for each mergeInstructions filename found in the given filename.
+	 */
+	// 
 	public static ArrayList<String> getInstructionFiles(String instructionFileListFilename) {
 		ArrayList<String> mergeInstructionFiles = new ArrayList<String>();
 		try {
@@ -445,11 +528,22 @@ public class MergeInstructions extends MergeProperties{
 		return mergeInstructionFiles;
 	}
 
+	/**
+	 * Returns a formatted string using this object's header format as a formatter, and the values of
+	 * the object's title, version, fileHeader values along with the current date as data elements.
+	 * 
+	 * @return a string representing the header text to insert into the merge file
+	 */
 	public String getHeaderText() {
 		return String.format(getHeaderFormat(), getTitle(), (getVersion().isEmpty()?"":"Version " + getVersion()), getFileHeader(),new Date());
 	}
 	
-	// Copies the file found at filename to the application's main directory with the name "voc.xml"
+	/**
+	 * Copies the file found at filename to the application's main directory with the name "voc.xml"
+	 * 
+	 * @param filename the full pathname to the voc.xml file to copy. Note, regardless of the name of the 
+	 * given file, the copied version will be named "voc.xml"
+	 */
 	private void maybeCopyVocabFile(String filename) {
 		if (getDoValidation()) {  // No need for vocab file if we aren't doing validation.
 			if (filename != null && !filename.isEmpty()) {
@@ -476,8 +570,11 @@ public class MergeInstructions extends MergeProperties{
 		}
 	}
 	
-	// Add a listing of the schematron templates to the results list, The nature of the listing depends on the
-	// verbose and validation settings.
+	/**
+	 *  Add a listing of the schematron templates to the results list, The nature of the listing depends on the
+	 *  verbose and validation settings.
+	 */
+	// 
 	private void addSchematronListToResults() {
 		addResult(String.format("%s%d schematron templates identified for merging", INDENT2,schematrons.size()));
 		if (getVerbose()) {
@@ -502,7 +599,9 @@ public class MergeInstructions extends MergeProperties{
 		}
 	}
 	
-	// Writes the results string array to a file indicated by the value of mergeReportFilename
+	/**
+	 *  Writes the results string array to a file indicated by the value of mergeReportFilename
+	 */
 	public void writeResults() {
 		if (mergeReportFilename == null || mergeReportFilename.isEmpty()) {
 			System.err.println("Error writing to report filename: Merge instructions had no mergeReportFilename set.");
@@ -528,7 +627,15 @@ public class MergeInstructions extends MergeProperties{
 		}
 	}
 
-	// Opens the given file and attempts to read the expectedErrors and expectedWarnings line from the file.
+	/**
+	 *  Opens the given file and attempts to read the expectedErrors and expectedWarnings line from the file.
+	 *  
+	 * @param path the full pathname to the xml test file in which to search for the expectedErrors and expectedWarnings
+	 * comments.
+	 * 
+	 * @return a TestFile object containing information about the file (including its pathname) and expected errors and
+	 * warnings.
+	 */
 	public TestFile findExpectedErrorText(String path) {
 		final Integer MAXLINE = 100; // Search only the first 100 lines.
 		try {

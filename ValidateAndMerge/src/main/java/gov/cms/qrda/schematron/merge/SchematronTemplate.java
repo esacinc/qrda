@@ -31,6 +31,13 @@ POSSIBILITY OF SUCH DAMAGE.
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A class representing the contents of a directory on disk containing a schematron template file and
+ * zero or more xml test files that are used to test the validity of the schematron.
+ * 
+ * @author Dan Donahue ESAC Inc.
+ *
+ */
 public class SchematronTemplate {
 	private String parentPath;
 	private String schematronPath;

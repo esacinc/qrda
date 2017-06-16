@@ -69,7 +69,7 @@ import net.sf.saxon.TransformerFactoryImpl;
 /**
  * This class validates an xml file using a schematron.
  * 
- * @author michaelholck
+ * @author Michael Holck, ESAC Inc., additions by Dan Donahue ESAC Inc.
  *
  */
 public class Validator {
@@ -215,8 +215,9 @@ public class Validator {
 	}
 	
 	/**
-	 * loads the properties file
+	 * Loads the properties file
 	 * 
+	 * @param propertiesFilename the full pathname to the properties file to load
 	 * @return The properties file
 	 */
 	protected Properties loadProperties(String propertiesFilename) {
@@ -238,6 +239,7 @@ public class Validator {
 	/**
 	 * Performs the XSLT transforms to the Schematron file to create the XSL for validation
 	 * 
+	 * @param schematronFile the full pathname to schematron file to transform
 	 * @param props The properties file to use for locating the files to use
 	 * @return a boolean indicating success or not
 	 */
@@ -311,8 +313,9 @@ public class Validator {
 	 * Uses the generated transform file against the provided sample XML file to perform the validation
 	 * and generate the validation report
 	 * 
-	 * @param props
-	 * @return
+	 * @param props the Properties file to use for finding variaous transform filenames.
+	 * @param testFile the test file to perform validation on
+	 * @return true if transform finished without errors, false otherwise.
 	 */
 	protected boolean performValidation (Properties props, String testFile) {
 		boolean result = false;
@@ -360,7 +363,7 @@ public class Validator {
 	 * @param source This should be an XML file that needs to be transformed in some way
 	 * @param transform This should be an xslt file to perform the transformation
 	 * @param outputFilename This is the name of the file to write the transformed output too
-	 * @return
+	 * @return a FileOutputStream object representing the output file.
 	 */
 	protected FileOutputStream performTransform(InputStream source, InputStream transform, String outputFilename) {
 		//System.out.println("Transform output: " + outputFilename);
@@ -434,9 +437,9 @@ public class Validator {
 	 * 
 	 * @param props The properties file with the file values
 	 * @return An ArrayList of failures
-	 * @throws ParserConfigurationException
-	 * @throws SAXException
-	 * @throws IOException
+	 * @throws ParserConfigurationException if an exception occurs when setting up the transformation
+	 * @throws SAXException if an SAX exception happens during transformation
+	 * @throws IOException if an IO exception happens when opening source files.
 	 */
 	protected ArrayList<Failure> processReport(Properties props) throws ParserConfigurationException, SAXException, IOException {
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();

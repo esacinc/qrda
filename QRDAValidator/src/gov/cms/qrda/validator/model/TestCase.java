@@ -99,10 +99,10 @@ public class TestCase extends FileSpec implements Serializable {
 	 * This constructor creates a validationReportFilename from the given schematron filename by appending an underscore
 	 * "_" followed by the given filenamePostfix and an extension of ".svrlt"
 	 * .
-	 * @param schematron
-	 * @param schematronType
-	 * @param testFile
-	 * @param filenamePostfix
+	 * @param schematron Name of the schematron filename
+	 * @param schematronType Subdirectory name where the file is located
+	 * @param testFile Name of the test file
+	 * @param filenamePostfix postfix, usually a datetime representation, to add to the output filename of the test suite.
 	 */
 	public TestCase(String schematron, String schematronType, String testFile, String filenamePostfix) {
 		super(testFile, "", schematronType);   // Set up the test file information

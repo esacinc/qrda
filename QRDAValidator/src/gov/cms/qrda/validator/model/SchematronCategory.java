@@ -90,7 +90,7 @@ public class SchematronCategory implements Serializable{
 	/**
 	 * This method replaces all non-alphanumeric characters with an underscore ("_") character to insure a properly formed directory name
 	 * created from this name.
-	 * @param val
+	 * @param val string representing the new name. 
 	 */
 	public void setName(String val) {
 		name = val.trim().replaceAll("[^a-zA-Z0-9]", "_"); 
@@ -104,7 +104,7 @@ public class SchematronCategory implements Serializable{
 	/**
 	 * This method replaces all non-alphanumeric characters with an underscore ("_") character to insure a proper
 	 * comparison to the Name field.
-	 * @param val
+	 * @param val string representing the new value
 	 */
 	public void setOrigName(String val) {
 		origName = val.trim().replaceAll("[^a-zA-Z0-9]", "_"); // Insure only alphanumeric characters in name. Replace others with "_"

@@ -149,9 +149,9 @@ public class ValidationSuite implements Serializable {
 	/**
 	 * This constructor removes all non-alphanumeric characters in the resultsFolderBase name, and then calls the class's init() method.
 	 * @see #init(String, String)
-	 * @param name
-	 * @param schematronType
-	 * @param schematron
+	 * @param name The name of the file to same this suite.
+	 * @param schematronType The schematron type, typically the subdirectory name where the schematrons are located
+	 * @param schematron The schematron filename
 	 */
 	public ValidationSuite(String name, String schematronType, String schematron) {
 		this.name = name;
@@ -172,10 +172,10 @@ public class ValidationSuite implements Serializable {
 	/**
 	 * Initializes the class instance. Create interim filenames for files that are generated during the validation process.
 	 * Also creates the filename used for saving/serializing this instance to disc. The saved filename is of the form:
-	 * <p align='center'>name_timestamp.vs</p>
+	 * <p style="text-align:center">name_timestamp.vs</p>
 	 * 
-	 * @param schematronType
-	 * @param schematron
+	 * @param schematronType String indicating the schematron type, usually a subdirectory name
+	 * @param schematron a schematron filename
 	 */
 	protected void init(String schematronType, String schematron) {
 		this.schematronType = schematronType; 
@@ -257,7 +257,7 @@ public class ValidationSuite implements Serializable {
 	/**
 	 * Reads the names of the files needed to transform a schematron into a useable .xsd file for validation.
 	 * The filenames are stored in the validator.properties file found on the resource classpath.
-	 * @param props
+	 * @param props A Properties object
 	 */
 	public void initIsoFilenames(Properties props) {
 		// Get the names of the ISO transform files to use from the validator.properties file.
@@ -278,7 +278,7 @@ public class ValidationSuite implements Serializable {
 	
 	/** 
 	 * Returns the nth test case (0-based), or null if not found.
-	 * @param n
+	 * @param n Integer index
 	 * @return A TestCase object, or null.
 	 */
 	public TestCase getNth(Integer n) {

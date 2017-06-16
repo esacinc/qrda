@@ -28,10 +28,11 @@ POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-/**\
+/**
  * A class that holds the expected error and warning count present in schematron test files, along
  * with the actual error and warning counts found during validation.
- * @author dandonahue
+ * 
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 public class TestFile {

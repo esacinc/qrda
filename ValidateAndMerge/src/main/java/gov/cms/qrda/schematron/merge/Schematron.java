@@ -34,11 +34,17 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import org.jdom2.*;
 
-// This class is an encapsulation of a Schemetron file built atop the jdom2
-// representation of of XML documents (Document)
+/**
+ *  This class is an encapsulation of a Schemetron file built atop the jdom2
+ *  representation of of XML documents (Document)
+ *  The representation  is a root hierarchy to  get the top call getRoot().
+ *  This object is a temporary object used in the parsing of schematron templates and
+ *  generating a filnal merged schematron object.
+ *  
+ * @author Shon Vick ESAC Inc., additions by Dan Donahue ESAC Inc
+ *
+ */
 
-// The representation  is a root hierarchy to  get the top call getRoot()
-//
 
 public class Schematron {
 

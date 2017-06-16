@@ -9,6 +9,8 @@ public class AppContext {
     /**
      * Injected from the class "ApplicationContextProvider" which is automatically
      * loaded during Spring-Initialization.
+     * 
+     * @param applicationContext the ApplicationContext object
      */
     public static void setApplicationContext(ApplicationContext applicationContext) {
         ctx = applicationContext;
@@ -17,7 +19,7 @@ public class AppContext {
     /**
      * Get access to the Spring ApplicationContext from everywhere in your Application.
      *
-     * @return
+     * @return returns the application context object
      */
     public static ApplicationContext getApplicationContext() {
         return ctx;

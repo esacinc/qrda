@@ -32,7 +32,7 @@ POSSIBILITY OF SUCH DAMAGE.
  * This class holds the information about an assert failure generated during validation
  * of a file using a schematron.
  * 
- * @author michaelholck
+ * @author Michael Holck, ESAC Inc., additions by Dan Donahue ESAC Inc.
  *
  */
 public class Failure {

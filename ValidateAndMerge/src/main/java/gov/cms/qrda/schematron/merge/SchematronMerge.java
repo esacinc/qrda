@@ -51,11 +51,23 @@ import org.jdom2.output.XMLOutputter;
 
 import gov.cms.qrda.schematron.validate.Validator;
 
-
+/**
+ * The class implements the process of merging schematron template files into a single schematron file.
+ * It creates XML Document objects for each of the schematron files to merge, and parses each document,
+ * gathering the appropriate sections withing each, and writing them out in a particular order into a single
+ * merged document file.
+ * 
+ * @author Shon Vick, ESAC Inc., additions by Dan Donahue ESAC Inc.
+ *
+ */
 public class SchematronMerge {
 
 	static protected SAXBuilder builder = new SAXBuilder();
 
+	/** 
+	 * The main method implements the merge process.
+	 * @param namesOfPropertyFiles A String array. Deprecated, can be ignored.
+	 */
 	public static void main(String[] namesOfPropertyFiles) {
 
 		SchematronMerge mergerTool = new SchematronMerge();
@@ -154,9 +166,12 @@ public class SchematronMerge {
 
 
 
-	// Prints out the body of the resultant merged Document
-	// note that the output goes to stdout so stdout must be redirected first (see above)  if you want to send to a file and not stdout
-
+	/**
+	 *  Prints out the body of the resultant merged Document
+	 *  note that the output goes to stdout so stdout must be redirected first (see above)  if you want to send to a file and not stdout
+	 *
+	 * @param mergedDoc an xml Document object to print
+	 */
 	private void printMergedDocument(Document mergedDoc) {
 
 		// Actually output the merged file by redirecting stdout redirected from prinout
@@ -172,9 +187,13 @@ public class SchematronMerge {
 
 
 
-	// Creates the files associated with the Schematrons to be merged
-	// The method exits if all files are not valid - otherwise returns its an array of references to files
-
+	/**
+	 *  Creates the files associated with the Schematrons to be merged
+	 *  The method exits if all files are not valid - otherwise returns its an array of references to files
+	 *  
+	 * @param files a String array containing the full pathnames of files to process
+	 * @return an array of File objects
+	 */
 	private File[]  createFiles(String[] files){
 		File xmlFiles[] = new File[files.length];
 		for (int i = 0 ; i < files.length; i++) {
@@ -197,9 +216,13 @@ public class SchematronMerge {
 		return (xmlFiles);
 	}
 
-	// Transforms an array of File instance (for files that contained the XML code of the ".sch" file
-	// to an array of Document references
-	// If 
+	/**
+	 *  Transforms an array of File instance (for files that contained the XML code of the ".sch" file
+	 *  to an array of Document references
+	 *  
+	 * @param xmlFiles an array of File objects to process
+	 * @return an array of Document objects
+	 */
 	private Document[]  createDocuments(File xmlFiles[] ){
 		Document[]  docs = new Document[xmlFiles.length];
 
@@ -226,7 +249,12 @@ public class SchematronMerge {
 		return (docs);
 	}
 
-	// Transform an array of XML Document references to an array of Schmetron refereces
+	/**
+	 *  Transform an array of XML Document references to an array of Schmetron references
+	 *  
+	 * @param documents an array of Document objects
+	 * @return an array of Schematron objects
+	 */
 	private Schematron[] createSchematronRep(Document[] documents){
 		Schematron[] sReps = new Schematron[documents.length];
 		for(int i = 0; i < documents.length; i++){
@@ -238,7 +266,12 @@ public class SchematronMerge {
 		return (sReps);
 	}
 
-	// Find the namespaces that are added to in the root of each schematron
+	/**
+	 *  Find the namespaces that are added to in the root of each schematron
+	 *  
+	 * @param sReps an array of Schematron objects
+	 * @return a List of Namespace objects
+	 */
 	private List<Namespace> findNamespacesInScope(Schematron[] sReps){
 		List<Namespace> nsl = new ArrayList<Namespace>();
 		Hashtable <String,String> nsSeenSoFar = new Hashtable <String,String>();
@@ -266,6 +299,13 @@ public class SchematronMerge {
 	}
 
 
+	/**
+	 * Constructs a list of xml Element objects corresponding the the namespace elements found in the given
+	 * array of Schematron objects.
+	 * 
+	 * @param sReps an array of Schematron objects
+	 * @return a List of xml Elements
+	 */
 	private List<Element> constructMergedSpaces(Schematron[] sReps){
 		Hashtable<String,Element> nsSeenSoFar = new Hashtable<String,Element>();
 		List<Element> mergedSpaces = new ArrayList<Element> ();
@@ -286,7 +326,13 @@ public class SchematronMerge {
 	}
 
 
-
+	/**
+	 * Constructs a list of xml Element objects corresponding to the sum of all Error phase elements found
+	 * in the given array of Schematron objects.
+	 * 
+	 * @param sReps an array of Schematron objects
+	 * @return a List of xml Elements
+	 */
 	private List<Element> constructMergedErrors(Schematron[] sReps){
 		Hashtable<String,Element> errorsSoFar = new Hashtable<String,Element>();
 		List<Element> mergedErrors = new ArrayList<Element> ();
@@ -306,6 +352,14 @@ public class SchematronMerge {
 		return (mergedErrors );
 
 	}
+
+	/**
+	 * Constructs a list of xml Element objects corresponding to the sum of all Warning phase elements found
+	 * in the given array of Schematron objects.
+	 * 
+	 * @param sReps an array of Schematron objects
+	 * @return a List of xml Elements
+	 */
 
 	private List<Element> constructMergedWarnings(Schematron[] sReps){
 		Hashtable<String,Element> warningsSoFar = new Hashtable<String,Element>();
@@ -328,6 +382,13 @@ public class SchematronMerge {
 	}
 
 
+	/**
+	 * This is the main workhorse method in the class that actually performs the merge of schematron template files
+	 * into a single schematron document. 
+	 * 
+	 * @param instructions the MergeInstructions object containing the commands that control the processing of the merge.
+	 * @return an xml Document representing the final merged Schematron.
+	 */
 	public Document merge(MergeInstructions instructions) { 
 		
 		String[] files = instructions.getSchematronsOnly().toArray(new String[0]);

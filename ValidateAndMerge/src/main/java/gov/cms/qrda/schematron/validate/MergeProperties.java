@@ -34,7 +34,7 @@ import java.util.List;
 
 /**
  * This class holds the values found in a merge instructions xml file.
- * @author dandonahue
+ * @author Dan Donahue, ESAC Inc.
  *
  */
 public class MergeProperties {

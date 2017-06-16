@@ -129,6 +129,13 @@ POSSIBILITY OF SUCH DAMAGE.
 		    		 $("[name^='checkboxes']").hide();
 		    		 $("[name="+divName+"]").show();
 		    		 validationSubmissionForm.schematronType.value = testType;
+					 // Make the test name be the schematron file name, 
+					 var testName = validationSubmissionForm.name.value;
+					 //if (testName == 'TestRun' || testName == '') {
+						 var newName = $("input:radio[name='schematronFilename']:checked").val();
+						 validationSubmissionForm.name.value = newName.replace(".sch"," Test");
+					 //}
+
 	    		});
 	    	 
 	    	 // If any elements have bootstrap popovers, enable them as such.

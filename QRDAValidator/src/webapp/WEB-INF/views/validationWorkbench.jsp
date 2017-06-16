@@ -62,7 +62,7 @@ POSSIBILITY OF SUCH DAMAGE.
 	    	<form:hidden path="schematronType"/> 
 		     <h3><fmt:message key="global.title.inventory.workbench"/></h3>
 		     <h4 class="bg-primary"><fmt:message key="workbench.step0"/> </h4>
-		     	<form:input path="name" size="30"  /> </h4>
+		     	<form:input path="name" size="40"  /> </h4>
 		     <h4 class="bg-primary"><fmt:message key="workbench.step1"/></h4>
 		     <ul class="nav nav-pills nav-stacked">
 		        <c:forEach items="${schematronCategories}" var="cat">

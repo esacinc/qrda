@@ -27,7 +27,7 @@ Version 0.2
         removed the requirement for performance rate (QRDA-192)
     Updated rule to allow for multiple occurences of one of the templates in the ACI section assert 3259-21439 (QRDA-507) 
 
-Tue Jun 13 13:47:03 MDT 2017
+Mon Jun 19 12:55:01 MDT 2017
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="svs" uri="urn:ihe:iti:svs:2008" />

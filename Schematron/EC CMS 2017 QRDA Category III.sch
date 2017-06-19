@@ -27,7 +27,7 @@ Version 0.2
         removed the requirement for performance rate (QRDA-192)
     Updated rule to allow for multiple occurences of one of the templates in the ACI section assert 3259-21439 (QRDA-507) 
 
-Tue Jun 13 13:47:03 MDT 2017
+Mon Jun 19 13:15:54 MDT 2017
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="svs" uri="urn:ihe:iti:svs:2008" />
@@ -933,8 +933,8 @@ Tue Jun 13 13:47:03 MDT 2017
     <sch:rule id="QRDA_Category_III_CMS-errors" context="cda:ClinicalDocument">
       <sch:assert id="a-2233-17226-error" test="count(cda:realmCode)=1">SHALL contain exactly one [1..1] realmCode (CONF:2233-17226).</sch:assert>
       <sch:assert id="a-2233-18186-error" test="count(cda:typeId)=1">SHALL contain exactly one [1..1] typeId (CONF:2233-18186).</sch:assert>
-      <sch:assert id="a-2233-17208-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1'][@extension='2016-09-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-17208) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.1" (CONF:2233-17209). SHALL contain exactly one [1..1] @extension="2016-09-01" (CONF:2226-21168).</sch:assert>
-      <sch:assert id="a-2233-711280-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2016-11-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-711280) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.2" (CONF:2233-711281). SHALL contain exactly one [1..1] @extension="2016-11-01" (CONF:2233-711305).</sch:assert>
+      <sch:assert id="a-2233-17208-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1'][@extension='2017-06-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-17208) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.1" (CONF:2233-17209). SHALL contain exactly one [1..1] @extension="2017-06-01" (CONF:2226-21168).</sch:assert>
+      <sch:assert id="a-2233-711280-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2017-07-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:2233-711280) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.2" (CONF:2233-711281). SHALL contain exactly one [1..1] @extension="2017-07-01" (CONF:2233-711305).</sch:assert>
       <sch:assert id="a-2233-17236-error" test="count(cda:id)=1">SHALL contain exactly one [1..1] id (CONF:2233-17236).</sch:assert>
       <sch:assert id="a-2233-17210-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:2233-17210).</sch:assert>
       <sch:assert id="a-2233-17211-error" test="count(cda:title)=1">SHALL contain exactly one [1..1] title (CONF:2233-17211).</sch:assert>

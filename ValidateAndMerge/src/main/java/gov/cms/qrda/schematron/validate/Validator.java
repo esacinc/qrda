@@ -80,8 +80,19 @@ public class Validator {
 			results = mergeInst;
 		}
 		
-		// Validate all of the files in the testFiles list using the given schematron. Populate the results list
-		// in the mergeInstructions with status messages generated during the merge process.
+		/**
+		 * Validate all of the files in the testFiles list using the given schematron. Populate the results list
+		 * in the mergeInstructions with status messages generated during the merge process.
+		 * 
+		 * @param schematronFile the full pathname of the schematron file to use in the validation process
+		 * @param testFiles A List of full pathnames to any number of test xml files to validate
+		 * @param mergeInstructions A MergeInstructions object containing all the information required to run the validation
+		 * 
+		 * @see MergeInstructions
+		 * 
+		 * @return the total number of failure assertions generated during the validation process.
+		 */
+		// 
 		public int  validate(String schematronFile, List<String> testFiles, MergeInstructions mergeInstructions) {
 			boolean isVerbose = mergeInstructions.getVerbose();
 			if (results == null) {
@@ -215,7 +226,7 @@ public class Validator {
 	}
 	
 	/**
-	 * Loads the properties file
+	 * Loads a properties file used during the validation process
 	 * 
 	 * @param propertiesFilename the full pathname to the properties file to load
 	 * @return The properties file

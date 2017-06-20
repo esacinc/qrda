@@ -36,8 +36,20 @@ POSSIBILITY OF SUCH DAMAGE.
  *
  */
 public class TestFile {
-	private int expectedErrors = -1;    // -1 implies expected count not present in file comments
-	private int expectedWarnings = -1;  // -1 implies expected count not present in file comments
+	/**
+	 * If a test file contains the comment line:  <i>"Total Errors Expected: N"</i> within the first 100 lines of the file, and 
+	 * where "N" is the number of error assertions expected to be triggered when the file
+	 * is validated against a particular schematron, then this instance variable holds the value of N.
+	 * A value of -1 implies expected count comment is not present in file comments
+	 */
+	private int expectedErrors = -1;    // 
+	/**
+	 * If a test file contains the comment line:  <i>"Total Warnings Expected: N"</i> within the first 100 lines of the file, and 
+	 * where "N" is the number of warning assertions expected to be triggered when the file
+	 * is validated against a particular schematron, then this instance variable holds the value of N.
+	 * A value of -1 implies expected count comment is not present in file comments
+	 */
+	private int expectedWarnings = -1;  // 
 	private int errors = 0;
 	private int warnings = 0;
 	

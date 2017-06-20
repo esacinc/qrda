@@ -34,19 +34,30 @@ import java.util.List;
 
 /**
  * This class holds the values found in a merge instructions xml file.
+ * 
  * @author Dan Donahue, ESAC Inc.
  *
  */
 public class MergeProperties {
-	protected ArrayList<String> results;   // A running list of status messages collected during a merge operation.
+	/**
+	 * A running list of status text messages collected during a merge operation.
+	 */
+	protected ArrayList<String> results;   // 
 	protected String mergeFilename = null;
-	protected boolean separateErrorsFromWarnings = true; // Controls how error/warning patterns are generated in the merged file
+	/**
+	 * Controls how error/warning patterns are generated in the merged file
+	 */
+	protected boolean separateErrorsFromWarnings = true; // 
 
 	protected String finalTestFilename = null;
 	protected String mainSourceDirectory = null;
 	protected String title = null;
 	protected String version = "1.0";
 	protected String fileHeader = null;
+	/**
+	 * A format string used as the first parameter in a String.format command. The format string
+	 * must accommodate four text strings:  title, version, header and date, in that order.
+	 */
 	protected String headerFormat = "%n%s%n%s %n%n    %s %n%n%s%n";  // title, version, header, date
 	protected String errorsHeader = null;
 	protected String warningsHeader = null;
@@ -54,14 +65,29 @@ public class MergeProperties {
 	protected boolean verbose = true;
 	protected boolean doValidation = false;
 	protected boolean stopOnError = true;
+	/**
+	 * @deprecated
+	 */
 	protected boolean stopOnWarning = false; // deprecated
 	protected Validator validator = null;
 	
 	protected String mergeReportFilename = "";
 	protected String vocabFilename = "";
 
+	/**
+	 * If this value is true, then all log information is written to System.out as well as 
+	 * the merge report file (if any).  This value is false by default.  If no merge report filename
+	 * is present in the merge instructions file, then useSystemOut is set to true.
+	 */
 	protected boolean useSystemOut = false;
 	
+	/**
+	 * The name of an XSD file used to validate the final merged schematron file. 
+	 * The value is hard-coded to be   <i> Schema/CDA/infrastructure/cda/CDA_SDTC.xsd </i> relative to the deployment
+	 * directory of the merge application.  
+	 * 
+	 * Change the XSD file by over-writing the new file to the existing file in above location.
+	 */
 	public final static String XSD_FILENAME = "Schema" + File.separator + "CDA" + File.separator + "infrastructure" + File.separator + "cda" + File.separator + "CDA_SDTC.xsd";
 	
 	public MergeProperties() {
@@ -174,6 +200,15 @@ public class MergeProperties {
 		return results;
 	}
 	
+	/**
+	 * Adds the given string to the end of the current results list 
+	 * If the useSystemOut value in this object is true, then the string is
+	 * also printed to System.out
+	 * 
+	 * @see useSystemOut
+	 * 
+	 * @param line the string to add to the results list
+	 */
 	public void addResult(String line) {
 		results.add(line);
 		if (useSystemOut) {

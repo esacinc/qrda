@@ -14,7 +14,7 @@ Version 0.2
     Changes from version 0.1:
     Updated a-CMS_0051-error to allow any entry type rather than just an observation type (QRDATEST-1) 
 
-Tue Jun 13 13:47:16 MDT 2017
+Mon Jun 19 13:16:06 MDT 2017
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="svs" uri="urn:ihe:iti:svs:2008" />

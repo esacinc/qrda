@@ -7,7 +7,7 @@
   
      Total Errors Expected: 9
           Failure a-2228-28358-error Bad Class Code
-          Failure a-2228-13182-error Multiple  main templateId
+          Failure a-2228-13182-error Multiple main templateId root "2.16.840.1.113883.10.20.24.3.8"
           Failure a-2228-28360-error Missing id
           Failure a-2228-28352-error Missing or multiple code
           Failure a-2228-28361-error Missing or bad code @code="77306-9"
@@ -34,7 +34,7 @@
               <entryRelationship typeCode="SUBJ">
                  <encounter classCode="ENCErr" > <!-- a-2228-28358-error Bad Class Code -->
                   <!-- Transfer To (V3) -->
-                  <templateId root="2.16.840.1.113883.10.20.24.3.82" extension="2016-02-01"/>
+                   <templateId root="2.16.840.1.113883.10.20.24.3.82" extension="2016-02-01"/> <!-- Note: extension allowed, but not required -->
                    <!-- Failure a-2228-13182-error Multiple  main templateId -->
                   <templateId root="2.16.840.1.113883.10.20.24.3.82" extension="2016-02-01"/>
                    <!-- Failure a-2228-28360-error Missing id -->

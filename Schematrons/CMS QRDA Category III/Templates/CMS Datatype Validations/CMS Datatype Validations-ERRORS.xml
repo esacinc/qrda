@@ -4,6 +4,7 @@
     Title: CMS Datatype Validations, Minimal sample with errors
     Author: Dan Donahue
     Date:   03-15-2017
+    Updated June 30, 2017  For JIRA Ticket https://tracker.esacinc.com/browse/QRDATEST-5
     
     Total Errors Expected: 26
     Total Warnings Expected: 0
@@ -89,9 +90,9 @@
     <id root='2.16.840.1.113883.4.6'/>
     
     <!-- A Coordinated Universal Time  (UTC time) offset should not be used anywhere in a QRDA Category I file or, 
-         if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF: CMS_0121). -->
+         if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF: CMS_0122). -->
     <!-- 
-          This assert (CMS_0121) is tested in the 
+          This assert (CMS_0122) is tested in the 
           "CMS Datatype Validations Time Zone-ERRORS-1.xml",  
           "CMS Datatype Validations Time Zone-ERRORS-2.xml", and 
           "CMS Datatype Validations Time Zone-ERRORS-3.xml"

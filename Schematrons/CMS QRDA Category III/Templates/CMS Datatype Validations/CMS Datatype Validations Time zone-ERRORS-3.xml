@@ -2,6 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="cda.xsl"?>
 <!--
 Date: October 31, 2012
+Updated June 30, 2017  For JIRA Ticket https://tracker.esacinc.com/browse/QRDATEST-5
 Disclaimer: These QRDA sample files are designed to provide a file that is valid for errors against the CDA.sdtc schema and QRDA schematron using hypothetical patient data; however, the content of the QRDA sample 
 documents may not have "clinically" consistent data.  Additionally, the files are valid against the referenced eMeasure to provide a general idea about the content and structure of a QDM-based QRDA. When eMeasure data 
 criteria are “or”, the QRDA documents may not have all of the Quality Data Elements data criteria specified in the eMeasure. These expected errors are listed in the file where they occur. In the Patient Data Section, the 
@@ -11,9 +12,8 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 
 <!-- 	 
 	Total Errors Expected: 8
-	    Failure a-cms_0121-error UTC Timezone offset must be present if it is present anywhere else. 
-		Description: A Coordinated Universal Time (UTC time) offset should not be used anywhere in a QRDA Category I file or, 
-		             if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF_CMS_0121).
+	    Failure a-cms_0122-error A Coordinated Universal Time (UTC time) offset should not be used anywhere in a QRDA Category III file or, 
+	    if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF: CMS_0122).
 	
 	    Occures 8 times in this file.
 	
@@ -183,7 +183,7 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 		</intendedRecipient>
 	</informationRecipient>
 	<legalAuthenticator>
-		<time value="201212310000-0500"/> <!-- Failure a-cms_0121-error UTC Timezone offset must not be present if it is not present at top level time. -->
+		<time value="201212310000-0500"/> <!-- Failure a-CMS_0122-error UTC Timezone offset must not be present if it is not present at top level time. -->
 		<signatureCode code="S"/>
 		<assignedEntity>
 			<id extension="KP00017" root="2.16.840.1.113883.19"/>
@@ -247,7 +247,7 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 			<id root="2.16.840.1.113883.4.336" extension="171325"/>
 			<effectiveTime>
 				<!-- Attribute: Start Datetime -->
-				<low value="20140128090000-0500"/> <!-- Failure a-cms_0121-error UTC Timezone offset must not be present if it is not present at top level time. -->
+				<low value="20140128090000-0500"/> <!-- Failure a-CMS_0122-error UTC Timezone offset must not be present if it is not present at top level time. -->
 				<!-- Eric:  HITECH time period -->
 				<!-- Attribute: Stop Datetime -->
 				<high value="20140211123000"/> 
@@ -449,7 +449,7 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 						<!-- Attribute: admission datetime -->
 							<low value="20160102090000"/>
 						<!-- Attribute: discharge datetime -->
-							<high value="20160104103000-0500"/>  <!-- Failure a-cms_0121-error UTC Timezone offset must not be present if it is not present at top level time. -->
+							<high value="20160104103000-0500"/>  <!-- Failure a-CMS_0122-error UTC Timezone offset must not be present if it is not present at top level time. -->
 						</effectiveTime>
 						</encounter>
 						</entryRelationship>
@@ -476,7 +476,7 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 						<!-- This is the time that the diagnosis is authored in the patient's chart -->
 						<effectiveTime>
 						<!-- (equivalent to author/time in the contained observation) -->
-							<low value="20160102090000-0500"/> <!-- Failure a-cms_0121-error UTC Timezone offset must not be present if it is not present at top level time. -->
+							<low value="20160102090000-0500"/> <!-- Failure a-CMS_0122-error UTC Timezone offset must not be present if it is not present at top level time. -->
 						</effectiveTime>
 
 						<entryRelationship typeCode="SUBJ">
@@ -497,9 +497,9 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 						<statusCode code="completed"/>
 						<effectiveTime>
 						<!-- Attribute: Start Datetime -->
-							<low value="20160102080000-0500"/> <!-- Failure a-cms_0121-error UTC Timezone offset must not be present if it is not present at top level time. -->
+							<low value="20160102080000-0500"/> <!-- Failure a-CMS_0122-error UTC Timezone offset must not be present if it is not present at top level time. -->
 						<!-- Attribute: Stop Datetime -->
-							<high value="20160102083000-0500"/> <!-- Failure a-cms_0121-error UTC Timezone offset must not be present if it is not present at top level time. -->
+							<high value="20160102083000-0500"/> <!-- Failure a-CMS_0122-error UTC Timezone offset must not be present if it is not present at top level time. -->
 						</effectiveTime>
 						<!--<priorityCode code="63161005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Principal"/>-->
 						<value code="106007006"
@@ -544,8 +544,8 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 						<statusCode code="completed"/>
 						<!--Nataly added for CONF:26933 -->
 						<effectiveTime>
-							<low value="20160102090000-0500"/>  <!-- Failure a-cms_0121-error UTC Timezone offset must not be present if it is not present at top level time. -->
-							<high value="20160102103000-0500"/> <!-- Failure a-cms_0121-error UTC Timezone offset must not be present if it is not present at top level time. -->
+							<low value="20160102090000-0500"/>  <!-- Failure a-CMS_0122-error UTC Timezone offset must not be present if it is not present at top level time. -->
+							<high value="20160102103000-0500"/> <!-- Failure a-CMS_0122-error UTC Timezone offset must not be present if it is not present at top level time. -->
 						</effectiveTime>
 						<value code="1"
 						codeSystem="2.16.840.1.113883.3.221.5"

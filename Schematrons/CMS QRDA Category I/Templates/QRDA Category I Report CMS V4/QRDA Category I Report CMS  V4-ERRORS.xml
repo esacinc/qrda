@@ -6,37 +6,37 @@
     Date:   03-14-2017
     
     Total Errors Expected: 27
-        Failure a-CMS_0001-error SHALL contain exactly one [1..1] templateId (CONF:CMS_0001) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.1.3" (CONF:CMS_0002). SHALL contain exactly one [1..1] @extension="2017-07-01" (CONF:CMS_0003).</sch:assert>
-        Failure a-3265-16703_C01-error SHALL contain exactly one [1..1] informationRecipient (CONF:3265-16703_C01).</sch:assert>
-        Failure a-1198-10003_C01-error SHALL contain exactly one [1..1] participant (CONF:1198-10003_C01).</sch:assert>
-        Failure a-3265-16579_C01-error SHALL contain exactly one [1..1] documentationOf (CONF:3265-16579_C01) such that it SHALL contain exactly one [1..1] serviceEvent (CONF:3265-16580).</sch:assert>
-        Failure a-CMS_0010-error languageCode SHALL contain exactly one [1..1] @code="en" (CONF:CMS_0010).</sch:assert>
-        Failure a-CMS_0009-error patientRole SHALL contain exactly one [1..1] id (CONF:CMS_0009) such that it SHALL contain exactly one [1..1] @root (CONF:CMS_0053). SHALL contain exactly one [1..1] @extension (CONF:CMS_0103).</sch:assert>
-        Failure a-1198-5284_C01-error patient SHALL contain exactly one [1..1] US Realm Person Name (PN.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5284_C01).</sch:assert>
-        Failure a-CMS_0011-error patient SHALL contain exactly one [1..1] administrativeGenderCode, which SHALL be selected from ValueSet ONC Administrative Sex urn:oid:2.16.840.1.113762.1.4.1 DYNAMIC (CONF:CMS_0011).</sch:assert>
-        Failure a-CMS_0013-error patient SHALL contain exactly one [1..1] raceCode, which SHALL be selected from ValueSet Race urn:oid:2.16.840.1.114222.4.11.836 DYNAMIC (CONF:CMS_0013).</sch:assert>
-        Failure a-1198-5300_C01-error birthTime SHALL be precise to day (CONF:1198-5300_C01).</sch:assert>
-        Failure a-3265-28241_C01-error representedCustodianOrganization SHALL contain exactly one [1..1] id (CONF:3265-28241_C01) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.336" CMS Certification Number (CONF:3265-28244). SHALL contain exactly one [1..1] @extension (CONF:3265-28245).</sch:assert>
+        Failure a-CMS_0001-error SHALL contain exactly one [1..1] templateId (CONF:CMS_0001) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.1.3" (CONF:CMS_0002). SHALL contain exactly one [1..1] @extension="2017-07-01" (CONF:CMS_0003).
+        Failure a-3265-16703_C01-error SHALL contain exactly one [1..1] informationRecipient (CONF:3265-16703_C01).
+        Failure a-1198-10003_C01-error SHALL contain exactly one [1..1] participant (CONF:1198-10003_C01).
+        Failure a-3265-16579_C01-error SHALL contain exactly one [1..1] documentationOf (CONF:3265-16579_C01) such that it SHALL contain exactly one [1..1] serviceEvent (CONF:3265-16580).
+        Failure a-CMS_0010-error languageCode SHALL contain exactly one [1..1] @code="en" (CONF:CMS_0010).
+        Failure a-CMS_0009-error patientRole SHALL contain exactly one [1..1] id (CONF:CMS_0009) such that it SHALL contain exactly one [1..1] @root (CONF:CMS_0053). SHALL contain exactly one [1..1] @extension (CONF:CMS_0103).
+        Failure a-1198-5284_C01-error patient SHALL contain exactly one [1..1] US Realm Person Name (PN.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.1.1) (CONF:1198-5284_C01).
+        Failure a-CMS_0011-error patient SHALL contain exactly one [1..1] administrativeGenderCode, which SHALL be selected from ValueSet ONC Administrative Sex urn:oid:2.16.840.1.113762.1.4.1 DYNAMIC (CONF:CMS_0011).
+        Failure a-CMS_0013-error patient SHALL contain exactly one [1..1] raceCode, which SHALL be selected from ValueSet Race urn:oid:2.16.840.1.114222.4.11.836 DYNAMIC (CONF:CMS_0013).
+        Failure a-1198-5300_C01-error birthTime SHALL be precise to day (CONF:1198-5300_C01).
+        Failure a-3265-28241_C01-error representedCustodianOrganization SHALL contain exactly one [1..1] id (CONF:3265-28241_C01) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.336" CMS Certification Number (CONF:3265-28244). SHALL contain exactly one [1..1] @extension (CONF:3265-28245).
 		Failure a-CMS_0035-error extension SHALL be six to ten characters in length (CONF:CMS_0035).
-    	Failure a-3265-16705_C01-error intendedRecipient SHALL contain exactly one [1..1] id (CONF:3265-16705_C01).</sch:assert>
-        Failure a-CMS_0025-error id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.7" (CONF:CMS_0025).</sch:assert>
-        Failure a-CMS_0026-error id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet QRDA-I CMS Program Name urn:oid:2.16.840.1.113883.3.249.14.103 STATIC 2016-03-01 (CONF:CMS_0026).</sch:assert>
-        Failure a-CMS_0004-error participant SHALL contain exactly one [1..1] associatedEntity (CONF:CMS_0004).</sch:assert>
-        Failure a-CMS_0005-error associatedEntity SHALL contain exactly one [1..1] id (CONF:CMS_0005).</sch:assert>
-        Failure a-CMS_0006-error id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" CMS EHR Certification Identification Number (CONF:CMS_0006).</sch:assert>
-        Failure a-CMS_0008-error id SHALL contain exactly one [1..1] @extension (CONF:CMS_0008).</sch:assert>
-        Failure a-3265-16581-error serviceEvent SHALL contain exactly one [1..1] @classCode="PCPR" Care Provision (CONF:3265-16581).</sch:assert>
-        Failure a-3265-16583-error serviceEvent SHALL contain at least one [1..*] performer (CONF:3265-16583).</sch:assert>
-        Failure a-3265-16584-error performers SHALL contain exactly one [1..1] @typeCode="PRF" Performer (CONF:3265-16584).</sch:assert>
-        Failure a-3265-16586-error performers SHALL contain exactly one [1..1] assignedEntity (CONF:3265-16586).</sch:assert>
-        Failure a-3265-16591-error assignedEntity SHALL contain exactly one [1..1] representedOrganization (CONF:3265-16591).</sch:assert>
-        Failure a-2228-16593-error representedOrganization id, if present, SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:2228-16593).</sch:assert>
-        Failure a-3325-28474-error structuredBody SHALL contain at least one [1..*] component (CONF:3325-28474) such that it SHALL contain exactly one [1..1] Reporting Parameters Section - CMS (identifier: urn:hl7ii:2.16.840.1.113883.10.20.17.2.1.1:2016-03-01) (CONF:3325-28475).</sch:assert>
-        Failure a-3325-28476-error structuredBody SHALL contain at least one [1..*] component (CONF:3325-28476) such that it SHALL contain exactly one [1..1] Patient Data Section QDM (V4) - CMS (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.2.1.1:2017-07-01) (CONF:3325-28477).</sch:assert>
+    	Failure a-3265-16705_C01-error intendedRecipient SHALL contain exactly one [1..1] id (CONF:3265-16705_C01).
+        Failure a-CMS_0025-error id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.7" (CONF:CMS_0025).
+        Failure a-CMS_0026-error id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet QRDA-I CMS Program Name urn:oid:2.16.840.1.113883.3.249.14.103 STATIC 2016-03-01 (CONF:CMS_0026).
+        Failure a-CMS_0004-error participant SHALL contain exactly one [1..1] associatedEntity (CONF:CMS_0004).
+        Failure a-CMS_0005-error associatedEntity SHALL contain exactly one [1..1] id (CONF:CMS_0005).
+        Failure a-CMS_0006-error id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" CMS EHR Certification Identification Number (CONF:CMS_0006).
+        Failure a-CMS_0008-error id SHALL contain exactly one [1..1] @extension (CONF:CMS_0008).
+        Failure a-3265-16581-error serviceEvent SHALL contain exactly one [1..1] @classCode="PCPR" Care Provision (CONF:3265-16581).
+        Failure a-3265-16583-error serviceEvent SHALL contain at least one [1..*] performer (CONF:3265-16583).
+        Failure a-3265-16584-error performers SHALL contain exactly one [1..1] @typeCode="PRF" Performer (CONF:3265-16584).
+        Failure a-3265-16586-error performers SHALL contain exactly one [1..1] assignedEntity (CONF:3265-16586).
+        Failure a-3265-16591-error assignedEntity SHALL contain exactly one [1..1] representedOrganization (CONF:3265-16591).
+        Failure a-2228-16593-error representedOrganization id, if present, SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:2228-16593).
+        Failure a-3325-28474-error structuredBody SHALL exactly one [1..1] component (CONF:3325-28474) such that it SHALL contain exactly one [1..1] Reporting Parameters Section - CMS (identifier: urn:hl7ii:2.16.840.1.113883.10.20.17.2.1.1:2016-03-01) (CONF:3325-28475)
+        Failure a-3325-28476-error structuredBody SHALL contain at least one [1..*] component (CONF:3325-28476) such that it SHALL contain exactly one [1..1] Patient Data Section QDM (V4) - CMS (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.2.1.1:2017-07-01) (CONF:3325-28477).
  
      Total Warnings Expected: 2
-     	Failure a-81-10128-c-warning effectiveTime SHOULD be precise to the minute (CONF:81-10128).</sch:assert>
-        Failure a-81-10130-c-warning If more precise than day, SHOULD include time-zone offset (CONF:81-10130).</sch:assert>
+     	Failure a-81-10128-c-warning effectiveTime SHOULD be precise to the minute (CONF:81-10128).
+        Failure a-81-10130-c-warning If more precise than day, SHOULD include time-zone offset (CONF:81-10130).
 
 -->
 
@@ -164,7 +164,7 @@
 	<component>
 		<structuredBody>
 			
-			<!-- Failure a-3325-28474-error missing Reporting Parameters section -->
+			<!-- Failure a-3325-28474-error missing or multiple Reporting Parameters section -->
 			<!--
 			<component>
 				<section>

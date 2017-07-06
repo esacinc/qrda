@@ -4,9 +4,9 @@
   xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
   xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
   <!-- 		
-    Title: EH Quality Reporting Document Architecture Category I V2 Sample 
+    Title: EH Quality Reporting Document Architecture Category I Sample 
     Date: June 23, 2017
-
+  
     This sample file contains an example of each Patient Data Section QDM contained 	 
     template specified in the QRDA I STU 4 IG. 	 
     This sample file contains no narrative. 	 
@@ -15,7 +15,7 @@
     This sample file is informative only. 	
     
     Total Errors Expected: 0
-    Total Warnings Expected: 165
+    Total Warnings Expected: 155 	
   -->
 
   <realmCode code="US" />
@@ -28,21 +28,24 @@
   <templateId root="2.16.840.1.113883.10.20.24.1.2" extension="2016-08-01" />
   <!-- QRDA Category I Report - CMS (V4) -->
   <templateId root="2.16.840.1.113883.10.20.24.1.3" extension="2017-07-01" />
-  <!-- This is the globally unique identifier for this QRDA-I document -->
-  <id root="54f83c2b-ed90-439c-9f8d-92a7ad48c134" />
+  <!-- This is the globally unique identifier for this QRDA document -->
+  <id root="5b010313-eff2-432c-9909-6193d8416fac" />
   <!-- QRDA document type code -->
   <code code="55182-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Quality Measure Report" />
   <title>QRDA Incidence Report</title>
   <!-- This is the document creation time -->
-  <effectiveTime value="201612311230" />
+  <effectiveTime value="201712311230" />
   <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
   <languageCode code="en" />
   <!-- reported patient -->
   <recordTarget>
     <patientRole>
-      <!-- Patient Identifier Number (OID: 2.16.840.1.113883.3.249.15) The root OID could be provider's 
-      organization OID or other value -->
+      <!-- Patient Identifier Number (OID: 2.16.840.1.113883.3.249.15) -->
       <id root="2.16.840.1.113883.3.249.15" extension="111223333A" />
+      <!-- Medicare HIC Number is not required for HQR but should be submitted if the payer is Medicare and the patient has an HIC number assigned. -->
+      <id root="2.16.840.1.113883.4.572" extension="HIC_number_goes_here" />
+      <!-- Medicare Beneficiary Identifier (MBI) is not required for HQR but should be submitted if the payer is Medicare and the patient has an MBI number assigned. -->
+      <id root="2.16.840.1.113883.4.927" extension="Medicare_Beneficiary_Identifier_goes_here"/>
       <addr use="H">
         <streetAddressLine>2222 Home Street</streetAddressLine>
         <city>Burlington</city>
@@ -62,7 +65,7 @@
         <birthTime value="19850212" />
         <maritalStatusCode code="M" displayName="Married" codeSystem="2.16.840.1.113883.5.2"
           codeSystemName="MaritalStatusCode" />
-        <religiousAffiliationCode code="1013" codeSystem="2.16.840.1.113883.1.11.19185"
+        <religiousAffiliationCode code="1013" codeSystem="2.16.840.1.113883.5.1076"
           codeSystemName="HL7 Religious Affiliation " displayName="Christian (non-Catholic, non-specific)" />
         <!-- raceCode "2131-1 (Other Race)" shall not be used for either raceCode or sdtc:raceCode -->
         <raceCode code="2106-3" codeSystem="2.16.840.1.113883.6.238" displayName="White"/>
@@ -73,28 +76,17 @@
         <!-- Use sdtc:raceCode only if the patient has more than one race category -->
         <sdtc:raceCode code="2054-5" displayName="Black or African American" codeSystem="2.16.840.1.113883.6.238"
           sdtc:valueSet="2.16.840.1.114222.4.11.836"/> 
-        <sdtc:raceCode code="1006-6" codeSystem="2.16.840.1.113883.6.238" displayName="Abenaki"/>
-        <ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.114222.4.11.837" displayName="Not Hispanic or Latino" />
+        <ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.113883.6.238" displayName="Not Hispanic or Latino" />
         <!-- if the patient declined to specify his/her ethnicity, use nullFlavor="ASKU" -->
         <!-- <ethnicGroupCode nullFlavor="ASKU"/> -->
         <!-- if the patient's ethnicity is unknown, use nullFlavor="UNK" -->
         <!-- <ethnicGroupCode nullFlavor="UNK"/> -->
-        <languageCommunication>
-          <languageCode code="eng" />
-          <!-- "eng" is ISO 639-2 alpha-3 code for "English" -->
-          <modeCode code="ESP" displayName="Expressed spoken" codeSystem="2.16.840.1.113883.5.60"
-            codeSystemName="LanguageAbilityMode" />
-          <proficiencyLevelCode code="G" displayName="Good" codeSystem="2.16.840.1.113883.5.61"
-            codeSystemName="LanguageAbilityProficiency" />
-          <!-- Patient's preferred language -->
-          <preferenceInd value="true" />
-        </languageCommunication>
       </patient>
     </patientRole>
   </recordTarget>
   <!-- Example of an author who is a person -->
   <author>
-    <time value="20171231124411" />
+    <time value="20161231124411" />
     <assignedAuthor>
       <id root="2.16.840.1.113883.4.6" extension="1234567893" />
       <code code="200000000X" codeSystem="2.16.840.1.113883.6.101" displayName="Allopathic &amp; Osteopathic Physicians" />
@@ -136,37 +128,11 @@
       </assignedAuthoringDevice>
     </assignedAuthor>
   </author>
-  <dataEnterer>
-    <assignedEntity>
-      <id extension="1234567893" root="2.16.840.1.113883.4.6" />
-      <addr>
-        <streetAddressLine>1007 Healthcare Drive</streetAddressLine>
-        <city>Portland</city>
-        <state>OR</state>
-        <postalCode>99123</postalCode>
-        <country>US</country>
-      </addr>
-      <telecom use="WP" value="tel:+1(555)555-1050" />
-      <assignedPerson>
-        <name>
-          <given>Ellen</given>
-          <family>Enter</family>
-        </name>
-      </assignedPerson>
-    </assignedEntity>
-  </dataEnterer>
   <custodian>
     <assignedCustodian>
       <representedCustodianOrganization>
-        <!-- National Provider Identifier -->
-        <id root="2.16.840.1.113883.4.6" extension="1234567893" />
-        <!-- CMS Certification Number -->
-        <!-- @extension attribute contains the submitter's CCN. @nullFlavor is not allowed. -->
+        <!-- CMS Certification Number (CCN) -->
         <id root="2.16.840.1.113883.4.336" extension="800890" />
-        <!-- Tax ID Number -->
-        <id root="2.16.840.1.113883.4.2" extension="222222289" />
-        <!-- Joint Commission's Health Care Organization (HCO) -->
-        <id root="1.3.6.1.4.1.33895" extension="3333333" />
         <name>Good Health Hospital</name>
         <telecom use="WP" value="tel:(555)555-1003" />
         <addr use="WP">
@@ -179,30 +145,16 @@
       </representedCustodianOrganization>
     </assignedCustodian>
   </custodian>
-  <!-- Example for HQR. CMS Program Name for HQR is either "HQR_EHR", "HQR_IQR", or "HQR_EHR_IQR" -->
   <informationRecipient>
     <intendedRecipient>
-      <!-- CMS Program Name is required. @nullFlavor is not allowed -->
       <id root="2.16.840.1.113883.3.249.7" extension="HQR_EHR" />
-      <informationRecipient>
-        <name>
-          <given>Sara</given>
-          <family>Specialize</family>
-          <suffix qualifier="AC">M.D.</suffix>
-        </name>
-      </informationRecipient>
-      <receivedOrganization>
-        <name>The DoctorsApart Physician Group</name>
-      </receivedOrganization>
     </intendedRecipient>
   </informationRecipient>
   <legalAuthenticator>
-    <time value="201112311230" />
+    <time value="201712311230" />
     <signatureCode code="S" />
     <assignedEntity>
-      <id root="bc01a5d1-3a34-4286-82cc-43eb04c972a7" />
-      <code code="207QA0505X" displayName="Adult Medicine" codeSystem="2.16.840.1.113883.6.101"
-        codeSystemName="Healthcare Provider Taxonomy" />
+      <id root="2.16.840.1.113883.4.6" extension="1234567893"/>
       <addr use="WP">
         <streetAddressLine>21 North Ave.</streetAddressLine>
         <city>Burlington</city>
@@ -218,20 +170,14 @@
           <suffix>MD</suffix>
         </name>
       </assignedPerson>
-      <representedOrganization>
-        <id root="2.16.840.1.113883.19.5" />
-        <name>Good Health Hospital</name>
-      </representedOrganization>
     </assignedEntity>
   </legalAuthenticator>
   <participant typeCode="DEV">
     <associatedEntity classCode="RGPR">
-      <!-- CMS EHR Certification Number (formerly known as Office of the 
-        National Coordinator Certification Number) -->
-      <id root="2.16.840.1.113883.3.2074.1" extension="123456789"/>
+      <!-- CMS EHR Certification Number  -->
+      <id root="2.16.840.1.113883.3.2074.1" extension="0014ABC1D1EFG1H"/>
     </associatedEntity>
-  </participant>
-  
+  </participant>  
   <documentationOf typeCode="DOC">
     <serviceEvent classCode="PCPR">
       <!-- care provision -->
@@ -239,21 +185,13 @@
         <low value="20170601" />
         <high value="20170915" />
       </effectiveTime>
-      <!-- You can include multiple performers, each with an NPI, TIN, CCN. -->
       <performer typeCode="PRF">
-        <time>
-          <low value="20120716" />
-          <high value="20170915" />
-        </time>
         <assignedEntity>
           <!-- This is the provider NPI -->
-          <!-- NPI is required for HQR but we expect hospitals to submit nullFlavor -->
+          <!-- NPI may not be applicable, hospitals may submit nullFlavor -->
           <id root="2.16.840.1.113883.4.6" nullFlavor="NA" />
-          <code code="207QA0505X" displayName="Adult Medicine" codeSystem="2.16.840.1.113883.6.101"
-            codeSystemName="Healthcare Provider Taxonomy" />
+          <!-- TIN may not be applicable, hospitals may submit nullFlavor -->
           <representedOrganization>
-            <!-- This is the organization TIN -->
-            <!-- TIN is required for HQR but we expect hospitals to submit a nullFlavor -->
             <id root="2.16.840.1.113883.4.2" nullFlavor="NA" />
           </representedOrganization>
         </assignedEntity>
@@ -282,31 +220,19 @@
               <thead>
                 <tr>
                   <th>eMeasure Title</th>
-                  <th>Version neutral identifier</th>
-                  <th>eMeasure Version Number</th>
-                  <th>NQF eMeasure Number</th>
-                  <th>eMeasure Identifier (MAT)</th>
                   <th>Version specific identifier</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Children's Asthma Care (CAC-1) Relievers for Inpatient Asthma</td>
-                  <td>dc78ee5d-1487-4d79-84c3-1dfdaff0781c</td>
-                  <td>1</td>
-                  <td>0143</td>
-                  <td>93</td>
-                  <td>8a4d92b2-373f-82e2-0137-7b9e21cc5c8f</td>
+                  <td>Venous Thromboembolism Prophylaxis</td>
+                  <td>40280382-5abd-fa46-015b-1f6b95092a9d</td>
                 </tr>
               </tbody>
               <tbody>
                 <tr>
-                  <td>Children's Asthma Care (CAC-2) Systemic Corticosteroids for Inpatient Asthma</td>
-                  <td>d7c71959-3991-457c-b8ea-774238c87248</td>
-                  <td>1</td>
-                  <td>0144</td>
-                  <td>106</td>
-                  <td>8a4d92b2-373f-82e2-0137-baed84f55f93</td>
+                  <td>Intensive Care Unit Venous Thromboembolism Prophylaxis</td>
+                  <td>40280382-5abd-fa46-015b-1a63afe02779</td>
                 </tr>
               </tbody>
             </table></text>
@@ -319,24 +245,12 @@
               <templateId root="2.16.840.1.113883.10.20.24.3.97" />
               <id root="600be61c-cdd4-4902-945f-a768d1de404e" />
               <statusCode code="completed" />
-              <!-- Containing isBranch external references -->
               <reference typeCode="REFR">
                 <externalDocument classCode="DOC" moodCode="EVN">
                   <!-- This is the version specific identifier for the eMeasure -->
-                  <id root="2.16.840.1.113883.4.738" extension="12345" />
-                  <!-- SHOULD: This is the NQF Number, root is an NQF OID and 
-                    for eMeasure Number and extension is the eMeasure's NQF number -->
-                  <id root="2.16.840.1.113883.3.560.1" extension="0143" />
-                  <!-- SHOULD: eMeasure Measure Authoring Tool Identifier (not the real root yet-->
-                  <id root="2.16.840.1.113883.3.560.101.2" extension="93" />
-                  <code code="57024-2" displayName="Health Quality Mesaure Document" codeSystem="2.16.840.1.113883.6.1"
-                    codeSystemName="LOINC" />
+                  <id root="2.16.840.1.113883.4.738" extension="40280382-5abd-fa46-015b-1f6b95092a9d" />
                   <!-- SHOULD This is the title of the eMeasure -->
-                  <text>Children's Asthma Care (CAC-2) Systemic Corticosteroids for Inpatient Asthma</text>
-                  <!-- SHOULD: setId is the eMeasure version neutral id -->
-                  <setId root="dc78ee5d-1487-4d79-84c3-1dfdaff0781c" />
-                  <!-- This is the sequential eMeasure Version number -->
-                  <versionNumber value="1" />
+                  <text>Venous Thromboembolism Prophylaxis</text>
                 </externalDocument>
               </reference>       
             </organizer>
@@ -349,24 +263,12 @@
               <templateId root="2.16.840.1.113883.10.20.24.3.97" />
               <id root="a8180d5c-a918-494d-a2a1-e2b546167eb5" />
               <statusCode code="completed" />
-              <!-- Containing isBranch external references -->
               <reference typeCode="REFR">
                 <externalDocument classCode="DOC" moodCode="EVN">
                   <!-- This is the version specific identifier for the eMeasure -->
-                  <id root="2.16.840.1.113883.4.738" extension="22222" />
-                  <!-- SHOULD: This is the NQF Number, root is an NQF OID and for eMeasure Number and 
-                    extension is the eMeasure's NQF number -->
-                  <id root="2.16.840.1.113883.3.560.1" extension="0144" />
-                  <!-- SHOULD: eMeasure Measure Authoring Tool Identifier (not the real root yet-->
-                  <id root="2.16.840.1.113883.3.560.101.2" extension="106" />
-                  <code code="57024-2" displayName="Health Quality Mesaure Document" codeSystem="2.16.840.1.113883.6.1"
-                    codeSystemName="LOINC" />
+                  <id root="2.16.840.1.113883.4.738" extension="40280382-5abd-fa46-015b-1a63afe02779" />
                   <!-- SHOULD This is the title of the eMeasure -->
-                  <text>Children's Asthma Care (CAC-1) Relievers for Inpatient Asthma</text>
-                  <!-- SHOULD: setId is the eMeasure version neutral id -->
-                  <setId root="d7c71959-3991-457c-b8ea-774238c87248" />
-                  <!-- This is the sequential eMeasure Version number -->
-                  <versionNumber value="1" />
+                  <text>Intensive Care Unit Venous Thromboembolism Prophylaxis</text>
                 </externalDocument>
               </reference>
             </organizer>
@@ -387,7 +289,7 @@
           <code code="55187-9" codeSystem="2.16.840.1.113883.6.1" />
           <title>Reporting Parameters</title>
           <text><list>
-              <item>Reporting period: 01 Jan 2017 - 31 Dec 2017</item>
+              <item>Reporting period: 01 Jan 2018 - 31 Mar 2018</item>
             </list></text>
           <entry typeCode="DRIV">
             <act classCode="ACT" moodCode="EVN">
@@ -398,8 +300,8 @@
               <id root="3d7c11cf-b01b-4527-a704-c098c162779d" />
               <code code="252116004" codeSystem="2.16.840.1.113883.6.96" displayName="Observation Parameters" />
               <effectiveTime>
-                <low value="20170101" />
-                <high value="20171231" />
+                <low value="20180101" />
+                <high value="20180331" />
               </effectiveTime>
             </act>
           </entry>
@@ -418,7 +320,7 @@
           <templateId root="2.16.840.1.113883.10.20.24.2.1" extension="2016-08-01" />
           <!-- Patient Data Section QDM (V4) - CMS -->
           <templateId root="2.16.840.1.113883.10.20.24.2.1.1" extension="2017-07-01" />
-          <code code="55188-7" codeSystem="2.16.840.1.113883.6.1" displayName="Patient Data"/>
+          <code code="55188-7" codeSystem="2.16.840.1.113883.6.1" />
           <title>Patient Data</title>
           <text />
           <!-- =============================================== -->
@@ -493,10 +395,7 @@
               <author>
                 <!-- C-CDA R2 Author Participation -->
                 <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <low value="201604081130" />
-                  <high value="201604081135" />
-                </time>
+                <time value="201604081130"/> 
                 <assignedAuthor>
                   <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                 </assignedAuthor>
@@ -622,14 +521,14 @@
             <act classCode="ACT" moodCode="EVN">
               <!-- Conforms to C-CDA Problem Concern Act (V3) -->
               <templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2015-08-01" />
-              <!-- Diagnosis Concern Act -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.137" extension="2016-08-01" />
+              <!-- Diagnosis Concern Act V2 -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.137" extension="2016-08-01"/>
               <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7" />
               <code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern" />
-              <!-- The statusCode represents whether this is an active (active), inactive (suspended) or resolved (completed) diagnosis -->
+              <!-- The statusCode represents whether this is an active (active) or resolved (completed) diagnosis -->
               <statusCode code="active" />
               <effectiveTime>
-                <!-- QDM Attribute: Start Datetime (equivalent to author/time/low in the contained observation) -->
+                <!-- QDM Attribute: Start Datetime -->
                 <low value="201604081130" />
               </effectiveTime>
               <entryRelationship typeCode="SUBJ">
@@ -654,8 +553,6 @@
                     <high value="20160101" />
                   </effectiveTime>
                   <!-- QDM Attribute: Ordinality -->
-                  <!-- The following code may not be correct and may change in the future (if 
-                  the relevant eMeasure is changed -->
                   <priorityCode code="63161005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
                     displayName="Principal" />
                   <!-- Diagnosis -->
@@ -667,12 +564,7 @@
                   <author>
                     <!-- C-CDA R2 Author Participation -->
                     <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                    <time xsi:type="IVL_TS">
-                      <!-- QDM Attribute: Start Datetime (equivalent to effectiveTime/low in the containing act) -->
-                      <low value="201604081130" />
-                      <!-- QDM Attribute: Stop Datetime (equivalent to effectiveTime/high in the containing act) -->
-                      <high value="201604081135" />
-                    </time>
+                    <time value="201604081130" />
                     <assignedAuthor>
                       <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                     </assignedAuthor>
@@ -731,14 +623,11 @@
                     <high value="1967" />
                   </effectiveTime>
                   <!-- QDM Attribute: Ordinality -->
-                  <!-- The following code may not be correct and may change in the future (if 
-                  the relevant eMeasure is changed -->
                   <priorityCode code="63161005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
                     displayName="Principal" sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.14" />
                   <!-- Diagnosis/Condition/Problem -->
                   <value xsi:type="CD" code="22298006" codeSystem="2.16.840.1.113883.6.96"
                     displayName="Myocardial infarction" sdtc:valueSet="2.16.840.1.113883.3.526.3.403" />
-                  <!--<value xsi:type="CD" nullFlavor="OTH" codeSystem="2.16.840.1.113883.6.96"><translation code="I21.01" displayName="ST elevation (STEMI) myocardial infarction involving left main coronary artery" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" sdtc:valueSet="2.16.840.1.113883.3.464.1003.104.12.1001" /></value>-->
                   <!-- QDM Attribute: Severity -->
                   <entryRelationship typeCode="REFR">
                     <observation classCode="OBS" moodCode="EVN">
@@ -972,12 +861,7 @@
                   <author>
                     <!-- C-CDA R2 Author Participation -->
                     <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                    <time xsi:type="IVL_TS">
-                      <!-- QDM Attribute: Start Datetime -->
-                      <low value="201410101030" />
-                      <!-- QDM Attribute: Stop Datetime -->
-                      <high value="201410101034" />
-                    </time>
+                    <time value="201410101030" />
                     <assignedAuthor>
                       <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                     </assignedAuthor>
@@ -1033,12 +917,7 @@
                   <author>
                     <!-- C-CDA R2 Author Participation -->
                     <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                    <time xsi:type="IVL_TS">
-                      <!-- QDM Attribute: Start Datetime -->
-                      <low value="201410101030" />
-                      <!-- QDM Attribute: Stop Datetime -->
-                      <high value="201410101034" />
-                    </time>
+                    <time value="201410101030" />
                     <assignedAuthor>
                       <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                     </assignedAuthor>
@@ -1088,9 +967,9 @@
               <statusCode code="completed" />
               <effectiveTime>
                 <!-- QDM Attribute: Start Datetime -->
-                <low value="201602021030" />
+                <low value="201603291030" />
                 <!-- QDM Attribute: Stop Datetime -->
-                <high value="201603021030" />
+                <high value="201603291030" />
               </effectiveTime>
               <value xsi:type="CD" code="281647001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
                 displayName="Adverse reaction" />
@@ -1107,78 +986,10 @@
                   <text>Diagnostic Study, Performed: Breast Mammogram Diagnostic</text>
                   <statusCode code="completed" />
                   <effectiveTime>
-                    <!-- QDM Attribute: Start Datetime -->
                     <low value="20160329090000" />
-                    <!-- QDM Attribute: Stop Datetime -->
                     <high value="20160329103000" />
                   </effectiveTime>
                   <value xsi:type="CD" nullFlavor="NA" />
-                  <!-- QDM Attribute: Method -->
-                  <methodCode code="24623002" codeSystem="2.16.840.1.113883.6.96" displayName="Screening mammography"
-                    codeSystemName="SNOMED CT" sdtc:valueSet="1.2.99999" />
-                  <participant typeCode="LOC">
-                    <!-- Facility Location template -->
-                    <templateId root="2.16.840.1.113883.10.20.24.3.100" />
-                    <time>
-                      <!-- QDM Attribute: Facility location arrival datetime -->
-                      <low value="20160203" />
-                      <!-- QDM Attribute: Facility location departure datetime -->
-                      <high value="20160206" />
-                    </time>
-                    <participantRole classCode="SDLOC">
-                      <code code="309905000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                        displayName="Adult Intensive Care Unit" sdtc:valueSet="2.16.840.1.113883.3.666.5.2486" />
-                      <addr><streetAddressLine>17 Daws Rd.</streetAddressLine><city>Blue Bell</city><state>MA</state><postalCode>02368</postalCode><country>US</country></addr>
-                      <telecom use="WP" value="tel:(555)555-1003" />
-                      <playingEntity classCode="PLC">
-                        <name>Good Health Clinic</name>
-                      </playingEntity>
-                    </participantRole>
-                  </participant>
-                  <!-- QDM Attribute: Reason -->
-                  <entryRelationship typeCode="RSON">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
-                      <id root="5750a5bb-6a01-4b99-9b1c-cda56b1dce0c" />
-                      <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
-                        displayName="Reason care action performed or not" codeSystemName="LOINC" />
-                      <statusCode code="completed" />
-                      <effectiveTime>
-                        <low value="20160101" />
-                      </effectiveTime>
-                      <value xsi:type="CD" code="254838004" codeSystem="2.16.840.1.113883.6.96"
-                        codeSystemName="SNOMED CT" displayName="Carcinoma of breast"
-                        sdtc:valueSet="2.16.840.1.113883.3.526.3.389" />
-                    </observation>
-                  </entryRelationship>
-                  <entryRelationship typeCode="REFR">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Radiation Dosage and Duration (V2) -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.91" extension="2014-12-01" />
-                      <id root="fe9b6aab-70ef-4cec-88de-14f8fbaae06c" />
-                      <code xsi:type="CD" code="77304-4" displayName="Radiation dose [Energy/mass]"
-                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" sdtc:valueSet="1.2.9999" />
-                      <statusCode code="completed" />
-                      <!-- QDM Attribute: Radiation Duration -->
-                      <effectiveTime>
-                        <low value="20160329090000" />
-                        <high value="20160329103000" />
-                      </effectiveTime>
-                      <!-- QDM Attribute: Radiation Dosage -->
-                      <value xsi:type="PQ" value="50" unit="cGy{total}" />
-                    </observation>
-                  </entryRelationship>
-                  <entryRelationship typeCode="REFR">
-                    <!-- QDM Attribute: Status -->
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Status -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.93" />
-                      <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
-                      <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                        displayName="Status" />
-                      <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
-                    </observation>
-                  </entryRelationship>
                 </observation>
               </entryRelationship>
               <!-- QDM Attribute: Reaction -->
@@ -1199,9 +1010,9 @@
                   <value xsi:type="CD" code="404684003" displayName="Nausea" sdtc:valueSet="1.2.99999" />
                 </observation>
               </entryRelationship>
+              <!-- Radiation Dosage and Duration (V2) -->
               <entryRelationship typeCode="REFR">
                 <observation classCode="OBS" moodCode="EVN">
-                  <!-- Radiation Dosage and Duration (V2) -->
                   <templateId root="2.16.840.1.113883.10.20.24.3.91" extension="2014-12-01" />
                   <id root="fe9b6aab-70ef-4cec-88de-14f8fbaae06c" />
                   <code xsi:type="CD" code="77304-4" displayName="Radiation dose [Energy/mass]"
@@ -1250,78 +1061,10 @@
                   <text>Diagnostic Study, Performed: Breast Mammogram Diagnostic</text>
                   <statusCode code="completed" />
                   <effectiveTime>
-                    <!-- QDM Attribute: Start Datetime -->
                     <low value="20160329090000" />
-                    <!-- QDM Attribute: Stop Datetime -->
                     <high value="20160329103000" />
                   </effectiveTime>
                   <value xsi:type="CD" nullFlavor="NA" />
-                  <!-- QDM Attribute: Method -->
-                  <methodCode code="24623002" codeSystem="2.16.840.1.113883.6.96" displayName="Screening mammography"
-                    codeSystemName="SNOMED CT" sdtc:valueSet="1.2.99999" />
-                  <participant typeCode="LOC">
-                    <!-- Facility Location template -->
-                    <templateId root="2.16.840.1.113883.10.20.24.3.100" />
-                    <time>
-                      <!-- QDM Attribute: Facility location arrival datetime -->
-                      <low value="20160203" />
-                      <!-- QDM Attribute: Facility location departure datetime -->
-                      <high value="20160206" />
-                    </time>
-                    <participantRole classCode="SDLOC">
-                      <code code="309905000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                        displayName="Adult Intensive Care Unit" sdtc:valueSet="2.16.840.1.113883.3.666.5.2486" />
-                      <addr><streetAddressLine>17 Daws Rd.</streetAddressLine><city>Blue Bell</city><state>MA</state><postalCode>02368</postalCode><country>US</country></addr>
-                      <telecom use="WP" value="tel:(555)555-1003" />
-                      <playingEntity classCode="PLC">
-                        <name>Good Health Clinic</name>
-                      </playingEntity>
-                    </participantRole>
-                  </participant>
-                  <!-- QDM Attribute: Reason -->
-                  <entryRelationship typeCode="RSON">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
-                      <id root="5750a5bb-6a01-4b99-9b1c-cda56b1dce0c" />
-                      <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
-                        displayName="Reason care action performed or not" codeSystemName="LOINC" />
-                      <statusCode code="completed" />
-                      <effectiveTime>
-                        <low value="20160101" />
-                      </effectiveTime>
-                      <value xsi:type="CD" code="254838004" codeSystem="2.16.840.1.113883.6.96"
-                        codeSystemName="SNOMED CT" displayName="Carcinoma of breast"
-                        sdtc:valueSet="2.16.840.1.113883.3.526.3.389" />
-                    </observation>
-                  </entryRelationship>
-                  <entryRelationship typeCode="REFR">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Radiation Dosage and Duration (V2) -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.91" extension="2014-12-01" />
-                      <id root="fe9b6aab-70ef-4cec-88de-14f8fbaae06c" />
-                      <code xsi:type="CD" code="77304-4" displayName="Radiation dose [Energy/mass]"
-                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" sdtc:valueSet="1.2.9999" />
-                      <statusCode code="completed" />
-                      <!-- QDM Attribute: Radiation Duration -->
-                      <effectiveTime>
-                        <low value="20160329090000" />
-                        <high value="20160329103000" />
-                      </effectiveTime>
-                      <!-- QDM Attribute: Radiation Dosage -->
-                      <value xsi:type="PQ" value="50" unit="cGy{total}" />
-                    </observation>
-                  </entryRelationship>
-                  <entryRelationship typeCode="REFR">
-                    <!-- QDM Attribute: Status -->
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Status -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.93" />
-                      <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
-                      <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                        displayName="Status" />
-                      <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
-                    </observation>
-                  </entryRelationship>
                 </observation>
               </entryRelationship>
               <!-- QDM Attribute: Reaction -->
@@ -1342,9 +1085,9 @@
                   <value xsi:type="CD" code="404684003" displayName="Nausea" sdtc:valueSet="1.2.99999" />
                 </observation>
               </entryRelationship>
+              <!-- Radiation Dosage and Duration (V2) -->
               <entryRelationship typeCode="REFR">
                 <observation classCode="OBS" moodCode="EVN">
-                  <!-- Radiation Dosage and Duration (V2) -->
                   <templateId root="2.16.840.1.113883.10.20.24.3.91" extension="2014-12-01" />
                   <id root="fe9b6aab-70ef-4cec-88de-14f8fbaae06c" />
                   <code xsi:type="CD" code="77304-4" displayName="Radiation dose [Energy/mass]"
@@ -1386,12 +1129,7 @@
               <author>
                 <!-- C-CDA R2 Author Participation -->
                 <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201604081130" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201604081135" />
-                </time>
+                <time value="201604081130" />
                 <assignedAuthor>
                   <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                 </assignedAuthor>
@@ -1540,12 +1278,7 @@
               <author>
                 <!-- C-CDA R2 Author Participation -->
                 <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201604081130" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201604081135" />
-                </time>
+                <time value="201604081130" />
                 <assignedAuthor>
                   <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                 </assignedAuthor>
@@ -1671,12 +1404,7 @@
                   <author>
                     <!-- C-CDA R2 Author Participation -->
                     <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                    <time xsi:type="IVL_TS">
-                      <!-- QDM Attribute: Start Datetime -->
-                      <low value="201604081130" />
-                      <!-- QDM Attribute: Stop Datetime -->
-                      <high value="201604081135" />
-                    </time>
+                    <time value="201604081130" />
                     <assignedAuthor>
                       <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                     </assignedAuthor>
@@ -1806,12 +1534,7 @@
                   <author>
                     <!-- C-CDA R2 Author Participation -->
                     <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                    <time xsi:type="IVL_TS">
-                      <!-- QDM Attribute: Start Datetime -->
-                      <low value="201604081130" />
-                      <!-- QDM Attribute: Stop Datetime -->
-                      <high value="201604081135" />
-                    </time>
+                    <time value="201604081130" />
                     <assignedAuthor>
                       <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                     </assignedAuthor>
@@ -1846,176 +1569,6 @@
                 </encounter>
               </entryRelationship>
             </act>
-          </entry>
-          <!-- =============================================== -->
-          <!-- QDM Category: Functional Status -->
-          <!-- =============================================== -->
-          <!-- QDM Datatype: Functional Status, Order -->
-          <entry>
-            <observation classCode="OBS" moodCode="RQO">
-              <!-- Conforms to C-CDA R2 Planned Observation (V2) -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.44" extension="2014-06-09" />
-              <!-- Functional Status Order (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.25" extension="2016-02-01" />
-              <id root="7eda6f24-4019-471f-9fe4-6d8c3489916c" />
-              <!-- Functional Status Assessment -->
-              <code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                displayName="Physical limitation score [KCCQ]" sdtc:valueSet="2.16.840.1.113883.3.464.1003.118.12.1031" />
-              <text>Functional Status, Order: Physical limitation score [KCCQ]</text>
-              <statusCode code="active" />
-              <effectiveTime value="20120412"/>
-              <!-- QDM Attribute: Method -->
-              <methodCode code="72015-1" codeSystem="2.16.840.1.113883.6.1"
-                displayName="VR-12 Role physical (RP) score - oblique method" codeSystemName="LOINC"
-                sdtc:valueSet="2.16.840.1.113883.3.464.1003.118.12.1029" />
-              <author>
-                <!-- C-CDA R2 Author Participation -->
-                <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201604081130" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201604081135" />
-                </time>
-                <assignedAuthor>
-                  <id root="2.16.840.1.113883.4.6" extension="1234567893" />
-                </assignedAuthor>
-              </author>
-              <!-- QDM Attribute: Reason -->
-              <entryRelationship typeCode="RSON">
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
-                  <id root="5750a5bb-6a01-4b99-9b1c-cda56b1dce0c" />
-                  <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
-                    displayName="Reason care action performed or not" codeSystemName="LOINC" />
-                  <statusCode code="completed" />
-                  <effectiveTime>
-                    <low value="20160101" />
-                  </effectiveTime>
-                  <value xsi:type="CD" code="254838004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="Carcinoma of breast" sdtc:valueSet="2.16.840.1.113883.3.526.3.389" />
-                </observation>
-              </entryRelationship>
-            </observation>
-          </entry>
-          <!-- QDM Datatype: Functional Status, Performed -->
-          <entry>
-            <observation classCode="OBS" moodCode="EVN">
-              <!-- Conforms to C-CDA R2 Procedure Activity Observation (V2) -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09" />
-              <!-- Functional Status Performed (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.26" extension="2016-02-01" />
-              <id root="7eda6f24-4019-471f-9fe4-6d8c3489916c" />
-              <!-- Functional Status Assessment -->
-              <code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                displayName="Physical limitation score [KCCQ]" sdtc:valueSet="2.16.840.1.113883.3.464.1003.118.12.1031" />
-              <text>Functional Status, Performed: Physical limitation score [KCCQ]: Unable to walk</text>
-              <statusCode code="completed" />
-              <effectiveTime>
-                <!-- QDM Attribute: Start Datetime -->
-                <low value="201605061000" />
-                <!-- QDM Attribute: Stop Datetime -->
-                <high value="201605061015" />
-              </effectiveTime>
-              <!-- QDM Attribute: Result -->
-              <value xsi:type="CD" code="282145008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                displayName="unable to walk" sdtc:valueSet="2.16.840.1.113883.3.464.1003.118.12.1009" />
-              <!-- QDM Attribute: Method -->
-              <methodCode code="72015-1" codeSystem="2.16.840.1.113883.6.1"
-                displayName="VR-12 Role physical (RP) score - oblique method" codeSystemName="LOINC"
-                sdtc:valueSet="2.16.840.1.113883.3.464.1003.118.12.1029" />
-              <!-- QDM Attribute: Reason -->
-              <entryRelationship typeCode="RSON">
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
-                  <id root="5750a5bb-6a01-4b99-9b1c-cda56b1dce0c" />
-                  <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
-                    displayName="Reason care action performed or not" codeSystemName="LOINC" />
-                  <statusCode code="completed" />
-                  <effectiveTime>
-                    <low value="20160101" />
-                  </effectiveTime>
-                  <value xsi:type="CD" code="254838004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="Carcinoma of breast" sdtc:valueSet="2.16.840.1.113883.3.526.3.389" />
-                </observation>
-              </entryRelationship>
-              <!-- QDM Attribute: Result -->
-              <entryRelationship typeCode="REFR">
-                <observation classCode="OBS" moodCode="EVN">
-                  <!-- Conforms to C-CDA R2 Result Observation (V3) -->
-                  <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01" />
-                  <!-- Result (V3) -->
-                  <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2016-02-01" />
-                  <id root="ed971e73-c060-4258-8838-69c830254b5a" />
-                  <code code="36625-2" displayName="Breast Mammogram" codeSystem="2.16.840.1.113883.6.1"
-                    codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.113883.3.464.1003.108.12.1018" />
-                  <statusCode code="completed" />
-                  <effectiveTime value="201603231430" />
-                  <value xsi:type="CD" code="369895002" codeSystem="2.16.840.1.113883.6.96"
-                    displayName="T1: Breast tumor &lt; 2 cm in greatest dimension" codeSystemName="SNOMED CT"
-                    sdtc:valueSet="2.16.840.1.113883.3.526.3.1305" />
-                  <entryRelationship typeCode="REFR">
-                    <!-- QDM Attribute: Status (Result)-->
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Status -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.93" />
-                      <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
-                      <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                        displayName="Status" />
-                      <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
-                    </observation>
-                  </entryRelationship>
-                </observation>
-              </entryRelationship>
-            </observation>
-          </entry>
-          <entry>
-            <!-- QDM Datatype: Functional Status, Recommended -->
-            <observation classCode="OBS" moodCode="INT">
-              <!-- Conforms to C-CDA R2 Planned Observation (V2) -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.44" extension="2014-06-09" />
-              <!-- Functional Status Recommended (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.27" extension="2016-02-01" />
-              <id root="7eda6f24-4019-471f-9fe4-6d8c3489916d" />
-              <!-- Functional Status Assessment -->
-              <code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                displayName="Physical limitation score [KCCQ]" sdtc:valueSet="2.16.840.1.113883.3.464.1003.118.12.1031" />
-              <text>Functional Status, Order: Physical limitation score [KCCQ]</text>
-              <statusCode code="active" />
-              <effectiveTime value="20160412"/>
-              <!-- QDM Attribute: Method -->
-              <methodCode code="72015-1" codeSystem="2.16.840.1.113883.6.1"
-                displayName="VR-12 Role physical (RP) score - oblique method" codeSystemName="LOINC"
-                sdtc:valueSet="2.16.840.1.113883.3.464.1003.118.12.1029" />
-              <author>
-                <!-- C-CDA R2 Author Participation -->
-                <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201604081130" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201604081135" />
-                </time>
-                <assignedAuthor>
-                  <id root="2.16.840.1.113883.4.6" extension="1234567893" />
-                </assignedAuthor>
-              </author>
-              <!-- QDM Attribute: Reason -->
-              <entryRelationship typeCode="RSON">
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
-                  <id root="5750a5bb-6a01-4b99-9b1c-cda56b1dce0c" />
-                  <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
-                    displayName="Reason care action performed or not" codeSystemName="LOINC" />
-                  <statusCode code="completed" />
-                  <effectiveTime>
-                    <low value="20160101" />
-                  </effectiveTime>
-                  <value xsi:type="CD" code="254838004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="Carcinoma of breast" sdtc:valueSet="2.16.840.1.113883.3.526.3.389" />
-                </observation>
-              </entryRelationship>
-            </observation>
           </entry>
           <!-- =============================================== -->
           <!-- QDM Category: Individual Characteristic -->
@@ -2072,12 +1625,12 @@
               <value xsi:type="CD" code="419099009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
                 displayName="Dead" />
               <!-- QDM Attribute: Cause -->
-              <entryRelationship typeCode="CAUS" negationInd="false">
+              <entryRelationship typeCode="CAUS" inversionInd="false">
                 <observation classCode="OBS" moodCode="EVN">
                   <!-- C-CDA R2 Problem Observation (V3) -->
                   <templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01" />
                   <id root="d11275e7-67ae-11db-bd13-0800200c9a66" />
-                  <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7ActCode" >
+                  <code code="29308-4" codeSystem="2.16.840.1.113883.6.1" >
                     <translation code="75323-6" 
                       codeSystem="2.16.840.1.113883.6.1" 
                       codeSystemName="LOINC" 
@@ -2097,7 +1650,7 @@
           <entry>
             <observation classCode="OBS" moodCode="EVN">
               <!-- Patient Characteristic Payer -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.55" /> <!-- extension="2014-12-01"/>  ******* -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.55" />
               <id root="4ddf1cc3-e325-472e-ad76-b2c66a5ee164" />
               <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
                 displayName="Payment source" />
@@ -2166,7 +1719,7 @@
           <!-- =============================================== -->
           <!-- QDM Datatype: Intervention, Adverse Event -->
           <entry>
-            <!-- Intervention Adverse Event (V2) -->
+            <!-- Intervention Adverse Event (V3) -->
             <observation classCode="OBS" moodCode="EVN">
               <!-- Conforms to Act Intolerance or Adverse Event Observation (V3) -->
               <templateId root="2.16.840.1.113883.10.20.24.3.104" extension="2016-02-01" />
@@ -2195,67 +1748,9 @@
                     displayName="Hemoperfusion (procedure)" sdtc:valueSet="2.16.840.1.113883.3.464.1003.109.12.1015" />
                   <statusCode code="completed" />
                   <effectiveTime>
-                    <!-- QDM Attibute: Start Datetime -->
                     <low value="201603011130" />
-                    <!-- QDM Attibute: Stop Datetime -->
                     <high value="201603011330" />
                   </effectiveTime>
-                  <!-- QDM Attribute: Reason -->
-                  <entryRelationship typeCode="RSON">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
-                      <id root="5750a5bb-6a01-4b99-9b1c-cda56b1dce0c" />
-                      <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
-                        displayName="Reason care action performed or not" codeSystemName="LOINC" />
-                      <statusCode code="completed" />
-                      <effectiveTime>
-                        <low value="20140101" />
-                      </effectiveTime>
-                      <value xsi:type="CD" code="125629006" codeSystem="2.16.840.1.113883.6.96"
-                        codeSystemName="SNOMED CT" displayName="Injury of colon"
-                        sdtc:valueSet="2.16.840.1.113883.3.464.1003.113.12.1036" />
-                    </observation>
-                  </entryRelationship>
-                  <!-- QDM Attribute: Result -->
-                  <!-- QDM Attribute: Result -->
-                  <entryRelationship typeCode="REFR">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Conforms to C-CDA R2 Result Observation (V3) -->
-                      <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01" />
-                      <!-- Result (V3) -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2016-02-01" />
-                      <id root="ed971e73-c060-4258-8838-69c830254b5a" />
-                      <code code="36625-2" displayName="Breast Mammogram" codeSystem="2.16.840.1.113883.6.1"
-                        codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.113883.3.464.1003.108.12.1018" />
-                      <statusCode code="completed" />
-                      <effectiveTime value="200003231430" />
-                      <value xsi:type="CD" code="369895002" codeSystem="2.16.840.1.113883.6.96"
-                        displayName="T1: Breast tumor &lt; 2 cm in greatest dimension" codeSystemName="SNOMED CT"
-                        sdtc:valueSet="2.16.840.1.113883.3.526.3.1305" />
-                      <entryRelationship typeCode="REFR">
-                        <!-- QDM Attribute: Status (Result)-->
-                        <observation classCode="OBS" moodCode="EVN">
-                          <!-- Status -->
-                          <templateId root="2.16.840.1.113883.10.20.24.3.93" />
-                          <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
-                          <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                            displayName="Status" />
-                          <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
-                        </observation>
-                      </entryRelationship>
-                    </observation>
-                  </entryRelationship>
-                  <entryRelationship typeCode="REFR">
-                    <!-- QDM Attribute: Status -->
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Status -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.93" />
-                      <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
-                      <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                        displayName="Status" />
-                      <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
-                    </observation>
-                  </entryRelationship>
                 </act>
               </entryRelationship>
               <!-- QDM Attribute: Reaction -->
@@ -2314,62 +1809,6 @@
                     <!-- QDM Attibute: Stop Datetime -->
                     <high value="201603011330" />
                   </effectiveTime>
-                  <!-- QDM Attribute: Reason -->
-                  <entryRelationship typeCode="RSON">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
-                      <id root="5750a5bb-6a01-4b99-9b1c-cda56b1dce0c" />
-                      <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
-                        displayName="Reason care action performed or not" codeSystemName="LOINC" />
-                      <statusCode code="completed" />
-                      <effectiveTime>
-                        <low value="20160101" />
-                      </effectiveTime>
-                      <value xsi:type="CD" code="125629006" codeSystem="2.16.840.1.113883.6.96"
-                        codeSystemName="SNOMED CT" displayName="Injury of colon"
-                        sdtc:valueSet="2.16.840.1.113883.3.464.1003.113.12.1036" />
-                    </observation>
-                  </entryRelationship>
-                  <!-- QDM Attribute: Result -->
-                  <!-- QDM Attribute: Result -->
-                  <entryRelationship typeCode="REFR">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Conforms to C-CDA R2 Result Observation (V3) -->
-                      <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01" />
-                      <!-- Result (V3) -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2016-02-01" />
-                      <id root="ed971e73-c060-4258-8838-69c830254b5a" />
-                      <code code="36625-2" displayName="Breast Mammogram" codeSystem="2.16.840.1.113883.6.1"
-                        codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.113883.3.464.1003.108.12.1018" />
-                      <statusCode code="completed" />
-                      <effectiveTime value="201003231430" />
-                      <value xsi:type="CD" code="369895002" codeSystem="2.16.840.1.113883.6.96"
-                        displayName="T1: Breast tumor &lt; 2 cm in greatest dimension" codeSystemName="SNOMED CT"
-                        sdtc:valueSet="2.16.840.1.113883.3.526.3.1305" />
-                      <entryRelationship typeCode="REFR">
-                        <!-- QDM Attribute: Status (Result)-->
-                        <observation classCode="OBS" moodCode="EVN">
-                          <!-- Status -->
-                          <templateId root="2.16.840.1.113883.10.20.24.3.93" />
-                          <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
-                          <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                            displayName="Status" />
-                          <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
-                        </observation>
-                      </entryRelationship>
-                    </observation>
-                  </entryRelationship>
-                  <entryRelationship typeCode="REFR">
-                    <!-- QDM Attribute: Status -->
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Status -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.93" />
-                      <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
-                      <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                        displayName="Status" />
-                      <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
-                    </observation>
-                  </entryRelationship>
                 </act>
               </entryRelationship>
               <!-- QDM Attribute: Reaction -->
@@ -2408,12 +1847,7 @@
               <author>
                 <!-- C-CDA R2 Author Participation -->
                 <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201604081130" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201604081135" />
-                </time>
+                <time value="201604081130" />
                 <assignedAuthor>
                   <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                 </assignedAuthor>
@@ -2468,7 +1902,6 @@
                 </observation>
               </entryRelationship>
               <!-- QDM Attribute: Result -->
-              <!-- QDM Attribute: Result -->
               <entryRelationship typeCode="REFR">
                 <observation classCode="OBS" moodCode="EVN">
                   <!-- Conforms to C-CDA R2 Result Observation (V3) -->
@@ -2483,17 +1916,6 @@
                   <value xsi:type="CD" code="369895002" codeSystem="2.16.840.1.113883.6.96"
                     displayName="T1: Breast tumor &lt; 2 cm in greatest dimension" codeSystemName="SNOMED CT"
                     sdtc:valueSet="2.16.840.1.113883.3.526.3.1305" />
-                  <entryRelationship typeCode="REFR">
-                    <!-- QDM Attribute: Status (Result)-->
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Status -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.93" />
-                      <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
-                      <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                        displayName="Status" />
-                      <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
-                    </observation>
-                  </entryRelationship>
                 </observation>
               </entryRelationship>
               <entryRelationship typeCode="REFR">
@@ -2554,19 +1976,14 @@
               <templateId root="2.16.840.1.113883.10.20.24.3.33" extension="2016-02-01" />
               <id root="db734647-fc99-424c-a864-7e3cda82e703" />
               <!-- Intervention -->
-              <code code="419553002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CD"
+              <code code="419553002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
                 displayName="diet education" sdtc:valueSet="2.16.840.1.113883.3.600.1515" />
               <statusCode code="active" />
               <effectiveTime value="20160412"/>
               <author>
                 <!-- C-CDA R2 Author Participation -->
                 <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201204081130" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201204081135" />
-                </time>
+                <time value="201204081130" />
                 <assignedAuthor>
                   <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                 </assignedAuthor>
@@ -2629,37 +2046,6 @@
                   </effectiveTime>
                   <!-- QDM Attribute: Result -->
                   <value xsi:type="PQ" value="35.3" unit="%" />
-                  <!-- QDM Attribute: Method -->
-                  <methodCode code="104091002" codeSystem="2.16.840.1.113883.6.96"
-                    displayName="Hemogram, automated, with RBC, WBC, Hgb, Hct, Indices, Platelet count, and manual WBC differential"
-                    codeSystemName="SNOMED CT" sdtc:valueSet="1.2.99999" />
-                  <!-- QDM Attribute: Status -->
-                  <entryRelationship typeCode="REFR">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Status -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.93" />
-                      <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
-                      <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                        displayName="Status" />
-                      <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
-                    </observation>
-                  </entryRelationship>
-                  <!-- QDM Attribute: Reason -->
-                  <entryRelationship typeCode="RSON">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
-                      <id root="5750a5bb-6a01-4b99-9b1c-cda56b1dce0c" />
-                      <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
-                        displayName="Reason care action performed or not" codeSystemName="LOINC" />
-                      <statusCode code="completed" />
-                      <effectiveTime>
-                        <low value="20160101" />
-                      </effectiveTime>
-                      <value xsi:type="CD" code="254838004" codeSystem="2.16.840.1.113883.6.96"
-                        codeSystemName="SNOMED CT" displayName="Carcinoma of breast"
-                        sdtc:valueSet="2.16.840.1.113883.3.526.3.389" />
-                    </observation>
-                  </entryRelationship>
                 </observation>
               </entryRelationship>
               <!-- QDM Attribute: Reaction -->
@@ -2720,37 +2106,6 @@
                   </effectiveTime>
                   <!-- QDM Attribute: Result -->
                   <value xsi:type="PQ" value="35.3" unit="%" />
-                  <!-- QDM Attribute: Method -->
-                  <methodCode code="104091002" codeSystem="2.16.840.1.113883.6.96"
-                    displayName="Hemogram, automated, with RBC, WBC, Hgb, Hct, Indices, Platelet count, and manual WBC differential"
-                    codeSystemName="SNOMED CT" sdtc:valueSet="1.2.99999" />
-                  <!-- QDM Attribute: Status -->
-                  <entryRelationship typeCode="REFR">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Status -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.93" />
-                      <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
-                      <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                        displayName="Status" />
-                      <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
-                    </observation>
-                  </entryRelationship>
-                  <!-- QDM Attribute: Reason -->
-                  <entryRelationship typeCode="RSON">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
-                      <id root="5750a5bb-6a01-4b99-9b1c-cda56b1dce0c" />
-                      <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
-                        displayName="Reason care action performed or not" codeSystemName="LOINC" />
-                      <statusCode code="completed" />
-                      <effectiveTime>
-                        <low value="20160101" />
-                      </effectiveTime>
-                      <value xsi:type="CD" code="254838004" codeSystem="2.16.840.1.113883.6.96"
-                        codeSystemName="SNOMED CT" displayName="Carcinoma of breast"
-                        sdtc:valueSet="2.16.840.1.113883.3.526.3.389" />
-                    </observation>
-                  </entryRelationship>
                 </observation>
               </entryRelationship>
               <!-- QDM Attribute: Reaction -->
@@ -2792,12 +2147,7 @@
               <author>
                 <!-- C-CDA R2 Author Participation -->
                 <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201604081130" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201604081135" />
-                </time>
+                <time value="201604081130" />
                 <assignedAuthor>
                   <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                 </assignedAuthor>
@@ -2890,12 +2240,7 @@
               <author>
                 <!-- C-CDA R2 Author Participation -->
                 <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201604081130" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201604081135" />
-                </time>
+                <time value="201604081130" />
                 <assignedAuthor>
                   <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                 </assignedAuthor>
@@ -3375,12 +2720,7 @@
               <author>
                 <!-- C-CDA R2 Author Participation -->
                 <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201604081130" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201604081135" />
-                </time>
+                <time value="201604081130" />
                 <assignedAuthor>
                   <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                 </assignedAuthor>
@@ -3430,12 +2770,7 @@
               <author>
                 <!-- C-CDA R2 Author Participation -->
                 <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201604081130" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201604081135" />
-                </time>
+                <time value="201604081130" />
                 <assignedAuthor>
                   <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                 </assignedAuthor>
@@ -3523,12 +2858,7 @@
               <author>
                 <!-- C-CDA R2 Author Participation -->
                 <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201604081130" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201604081135" />
-                </time>
+                <time value="201604081130" />
                 <assignedAuthor>
                   <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                 </assignedAuthor>
@@ -3590,87 +2920,6 @@
                     <!-- QDM Attribute: Stop Datetime -->
                     <high value="20160329103000" />
                   </effectiveTime>
-                  <!-- QDM Attribute: Ordinality -->
-                  <!-- The following code may not be correct and may change in the future (if 
-                  the relevant eMeasure is changed -->
-                  <priorityCode code="63161005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="Principal" sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.14" />
-                  <!-- QDM Attribute: Method -->
-                  <methodCode code="446223002" codeSystem="2.16.840.1.113883.6.96"
-                    displayName="Hand assisted laparoscopic right colectomy" codeSystemName="SNOMED-CT"
-                    sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.255" />
-                  <!-- QDA Attribute: Anatomical Approach Site -->
-                  <approachSiteCode code="14742008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="large intestinal structure" sdtc:valueSet="1.2.9999" />
-                  <!-- QDM Attribute Anatomical Location Site -->
-                  <targetSiteCode code="71854001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="colon" sdtc:valueSet="1.2.9999" />
-                  <entryRelationship typeCode="REFR">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Radiation Dosage and Duration (V2) -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.91" extension="2014-12-01" />
-                      <id root="fe9b6aab-70ef-4cec-88de-14f8fbaae06c" />
-                      <code xsi:type="CD" code="77304-4" displayName="Radiation dose [Energy/mass]"
-                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" sdtc:valueSet="1.2.9999" />
-                      <statusCode code="completed" />
-                      <!-- QDM Attribute: Radiation Duration -->
-                      <effectiveTime>
-                        <low value="20160329090000" />
-                        <high value="20160329103000" />
-                      </effectiveTime>
-                      <!-- QDM Attribute: Radiation Dosage -->
-                      <value xsi:type="PQ" value="50" unit="cGy{total}" />
-                    </observation>
-                  </entryRelationship>
-                  <!-- QDM Attribute: Incision Datetime -->
-                  <entryRelationship typeCode="REFR">
-                    <procedure classCode="PROC" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.24.3.89" />
-                      <id root="2d5dc123-13ca-477d-9263-4a9c504186a1" />
-                      <code code="34896006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                        displayName="incision" />
-                      <effectiveTime value="20160329091500" />
-                    </procedure>
-                  </entryRelationship>
-                  <!-- QDM Attribute: Result -->
-                  <entryRelationship typeCode="REFR">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Conforms to C-CDA R2 Result Observation (V3) -->
-                      <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01" />
-                      <!-- Result (V3) -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2016-02-01" />
-                      <id root="ed971e73-c060-4258-8838-69c830254b5a" />
-                      <code code="36625-2" displayName="Breast Mammogram" codeSystem="2.16.840.1.113883.6.1"
-                        codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.113883.3.464.1003.108.12.1018" />
-                      <statusCode code="completed" />
-                      <effectiveTime value="201003231430" />
-                      <value xsi:type="CD" code="369895002" codeSystem="2.16.840.1.113883.6.96"
-                        displayName="T1: Breast tumor &lt; 2 cm in greatest dimension" codeSystemName="SNOMED CT"
-                        sdtc:valueSet="2.16.840.1.113883.3.526.3.1305" />
-                      <entryRelationship typeCode="REFR">
-                        <!-- QDM Attribute: Status (Result)-->
-                        <observation classCode="OBS" moodCode="EVN">
-                          <!-- Status -->
-                          <templateId root="2.16.840.1.113883.10.20.24.3.93" />
-                          <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
-                          <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                            displayName="Status" />
-                          <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
-                        </observation>
-                      </entryRelationship>
-                    </observation>
-                  </entryRelationship>
-                  <!-- QDM Attribute: Status -->
-                  <entryRelationship typeCode="REFR">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Status -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.93" />
-                      <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
-                      <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                        displayName="Status" />
-                      <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
-                    </observation>
-                  </entryRelationship>
                 </procedure>
               </entryRelationship>
               <!-- QDM Attribute: Reaction -->
@@ -3711,8 +2960,6 @@
                 <high value="201603021030" />
               </effectiveTime>
               <!-- QDM Attribute: Ordinality -->
-              <!-- The following code may not be correct and may change in the future (if 
-                  the relevant eMeasure is changed -->
               <priorityCode code="63161005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
                 displayName="Principal" sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.14" />
               <value xsi:type="CD" code="102460003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
@@ -3735,92 +2982,6 @@
                     <!-- QDM Attribute: Stop Datetime -->
                     <high value="20160329103000" />
                   </effectiveTime>
-                  <!-- QDM Attribute: Ordinality -->
-                  <!-- The following code may not be correct and may change in the future (if 
-                  the relevant eMeasure is changed -->
-                  <priorityCode code="63161005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="Principal" sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.14" />
-                  <!-- QDM Attribute: Method -->
-                  <methodCode code="446223002" codeSystem="2.16.840.1.113883.6.96"
-                    displayName="Hand assisted laparoscopic right colectomy" codeSystemName="SNOMED-CT"
-                    sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.255" />
-                  <!-- QDA Attribute: Anatomical Approach Site -->
-                  <approachSiteCode code="14742008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="large intestinal structure" sdtc:valueSet="1.2.9999" />
-                  <!-- QDM Attribute Anatomical Location Site -->
-                  <targetSiteCode code="71854001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    displayName="colon" sdtc:valueSet="1.2.9999" />
-                  <entryRelationship typeCode="REFR">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Radiation Dosage and Duration (V2) -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.91" extension="2014-12-01" />
-                      <id root="fe9b6aab-70ef-4cec-88de-14f8fbaae06c" />
-                      <code xsi:type="CD" code="77304-4" displayName="Radiation dose [Energy/mass]"
-                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" sdtc:valueSet="1.2.9999" />
-                      <statusCode code="completed" />
-                      <!-- QDM Attribute: Radiation Duration -->
-                      <effectiveTime>
-                        <low value="20160329090000" />
-                        <high value="20160329103000" />
-                      </effectiveTime>
-                      <!-- QDM Attribute: Radiation Dosage -->
-                      <value xsi:type="PQ" value="50" unit="cGy{total}" />
-                    </observation>
-                  </entryRelationship>
-                  <!-- QDM Attribute: Incision Datetime -->
-                  <entryRelationship typeCode="REFR">
-                    <procedure classCode="PROC" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.24.3.89" />
-                      <id root="2d5dc123-13ca-477d-9263-4a9c504186a1" />
-                      <code code="34896006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                        displayName="incision" />
-                      <effectiveTime value="20160329091500" />
-                    </procedure>
-                  </entryRelationship>
-                  <!-- QDM Attribute: Reason -->
-                  <entryRelationship typeCode="RSON">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
-                      <id root="5750a5bb-6a01-4b99-9b1c-cda56b1dce0c" />
-                      <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
-                        displayName="Reason care action performed or not" codeSystemName="LOINC" />
-                      <statusCode code="completed" />
-                      <effectiveTime>
-                        <low value="20160101" />
-                      </effectiveTime>
-                      <value xsi:type="CD" code="125629006" codeSystem="2.16.840.1.113883.6.96"
-                        codeSystemName="SNOMED CT" displayName="Injury of colon"
-                        sdtc:valueSet="2.16.840.1.113883.3.464.1003.113.12.1036" />
-                    </observation>
-                  </entryRelationship>
-                  <!-- QDM Attribute: Result -->
-                  <entryRelationship typeCode="REFR">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Conforms to C-CDA R2 Result Observation (V3) -->
-                      <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01" />
-                      <!-- Result (V3) -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2016-02-01" />
-                      <id root="ed971e73-c060-4258-8838-69c830254b5a" />
-                      <code code="36625-2" displayName="Breast Mammogram" codeSystem="2.16.840.1.113883.6.1"
-                        codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.113883.3.464.1003.108.12.1018" />
-                      <statusCode code="completed" />
-                      <effectiveTime value="201003231430" />
-                      <value xsi:type="CD" code="369895002" codeSystem="2.16.840.1.113883.6.96"
-                        displayName="T1: Breast tumor &lt; 2 cm in greatest dimension" codeSystemName="SNOMED CT"
-                        sdtc:valueSet="2.16.840.1.113883.3.526.3.1305" />
-                      <entryRelationship typeCode="REFR">
-                        <!-- QDM Attribute: Status (Result)-->
-                        <observation classCode="OBS" moodCode="EVN">
-                          <!-- Status -->
-                          <templateId root="2.16.840.1.113883.10.20.24.3.93" />
-                          <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
-                          <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                            displayName="Status" />
-                          <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
-                        </observation>
-                      </entryRelationship>
-                    </observation>
-                  </entryRelationship>
                 </procedure>
               </entryRelationship>
               <!-- QDM Attribute: Reaction -->
@@ -3857,8 +3018,6 @@
               <statusCode code="active" />
               <effectiveTime value="20120412"/>
               <!-- QDM Attribute: Ordinality -->
-              <!-- The following code may not be correct and may change in the future (if 
-                  the relevant eMeasure is changed -->
               <priorityCode code="63161005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
                 displayName="Principal" sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.14" />
               <!-- QDM Attribute: Method -->
@@ -3875,12 +3034,7 @@
               <author>
                 <!-- C-CDA R2 Author Participation -->
                 <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="20120329090000" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="20120329103000" />
-                </time>
+                <time value="20120329090000" />
                 <assignedAuthor>
                   <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                 </assignedAuthor>
@@ -3922,7 +3076,6 @@
           </entry>
           <!-- QDM Datatype: Procedure, Performed -->
           <entry typeCode="DRIV">
-            <!-- QDM Datatype: Procedure, Performed -->
             <procedure classCode="PROC" moodCode="EVN">
               <!-- Conforms to C-CDA R2 Procedure Activity Procedure (V2) -->
               <templateId root="2.16.840.1.113883.10.20.22.4.14" extension="2014-06-09" />
@@ -3940,8 +3093,6 @@
                 <high value="20160329103000" />
               </effectiveTime>
               <!-- QDM Attribute: Ordinality -->
-              <!-- The following code may not be correct and may change in the future (if 
-                  the relevant eMeasure is changed -->
               <priorityCode code="63161005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
                 displayName="Principal" sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.14" />
               <!-- QDM Attribute: Method -->
@@ -4011,17 +3162,6 @@
                   <value xsi:type="CD" code="369895002" codeSystem="2.16.840.1.113883.6.96"
                     displayName="T1: Breast tumor &lt; 2 cm in greatest dimension" codeSystemName="SNOMED CT"
                     sdtc:valueSet="2.16.840.1.113883.3.526.3.1305" />
-                  <entryRelationship typeCode="REFR">
-                    <!-- QDM Attribute: Status (Result)-->
-                    <observation classCode="OBS" moodCode="EVN">
-                      <!-- Status -->
-                      <templateId root="2.16.840.1.113883.10.20.24.3.93" />
-                      <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
-                      <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-                        displayName="Status" />
-                      <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
-                    </observation>
-                  </entryRelationship>
                 </observation>
               </entryRelationship>
             </procedure>
@@ -4041,8 +3181,6 @@
               <statusCode code="active" />
               <effectiveTime value="20160412"/>
               <!-- QDM Attribute: Ordinality -->
-              <!-- The following code may not be correct and may change in the future (if 
-                  the relevant eMeasure is changed -->
               <priorityCode code="63161005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
                 displayName="Principal" sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.14" />
               <!-- QDM Attribute: Method -->
@@ -4055,16 +3193,10 @@
               <!-- QDM Attribute: Anatomical Location Site -->
               <targetSiteCode code="71854001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
                 displayName="colon" sdtc:valueSet="1.2.9999" />
-              <!--<targetSiteCode nullFlavor="OTH" codeSystem="2.16.840.1.113883.6.96"><translation code="I21.01" displayName="Term not in Body Site value set" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" sdtc:valueSet="2.16.840.1.113883.3.464.1003.104.12.1001" /></targetSiteCode>-->
               <author>
                 <!-- C-CDA R2 Author Participation -->
                 <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="20120329090000" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="20120329103000" />
-                </time>
+                <time value="20120329090000" />
                 <assignedAuthor>
                   <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                 </assignedAuthor>
@@ -4085,31 +3217,6 @@
                 </observation>
               </entryRelationship>
             </procedure>
-          </entry>
-          <!-- =============================================== -->
-          <!-- QDM Category: Risk Category/Assessment -->
-          <!-- =============================================== -->
-          <!-- QDM Datatype: Risk Category Assessment -->
-          <entry typeCode="DRIV">
-            <!-- Risk Category Assessment (V2) -->
-            <observation classCode="OBS" moodCode="EVN">
-              <!-- Conforms to C-CDA R2 Assessment Scale Observation -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.69" />
-              <!-- Risk Category Assessment (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.69" extension="2016-02-01" />
-              <id root="30c11cf6-ba8d-4bbd-8430-43ee3c82ac37" />
-              <code code="71960-9" displayName="PROMIS-29 Physical function score" codeSystem="2.16.840.1.113883.6.1"
-                codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.113883.3.464.1003.118.12.1029" />
-              <statusCode code="completed" />
-              <effectiveTime>
-                <!-- QDM Attribute: Start Datetime -->
-                <low value="20150101" />
-                <!-- QDM Attribute: Stop Datetime -->
-                <high value="20151231" />
-              </effectiveTime>
-              <!-- QDM Attribute: Result -->
-              <value xsi:type="INT" value="7" />
-            </observation>
           </entry>
           <!-- =============================================== -->
           <!-- QDM Category: Substance -->
@@ -4362,12 +3469,7 @@
               <author>
                 <!-- C-CDA R2 Author Participation -->
                 <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201604081130" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201604081135" />
-                </time>
+                <time value="201604081130" />
                 <assignedAuthor>
                   <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                 </assignedAuthor>
@@ -4423,12 +3525,7 @@
               <author>
                 <!-- C-CDA R2 Author Participation -->
                 <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time xsi:type="IVL_TS">
-                  <!-- QDM Attribute: Start Datetime -->
-                  <low value="201604081130" />
-                  <!-- QDM Attribute: Stop Datetime -->
-                  <high value="201604081135" />
-                </time>
+                <time value="201604081130" />
                 <assignedAuthor>
                   <id root="2.16.840.1.113883.4.6" extension="1234567893" />
                 </assignedAuthor>
@@ -4453,25 +3550,26 @@
           <!-- =============================================== -->
           <!-- QDM Category: Symptom -->
           <!-- =============================================== -->
-          <!-- QDM Datatype: Symptom, Active -->
           <entry>
             <act classCode="ACT" moodCode="EVN">
               <!-- Conforms to C-CDA Problem Concern Act (V3) -->
               <templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2015-08-01" />
-              <!-- Symptom Active Concern Act -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.120" extension="2014-12-01" />
+              <!-- Symptom Concern Act -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.138" extension="2016-08-01"/>
               <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7" />
               <code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern" />
-              <!-- The statusCode represents whether this is an active (active), inactive (suspended) or resolved (completed) symptom -->
+              <!-- The statusCode represents whether this is an active (active) or resolved (completed) symptom -->
               <statusCode code="active" />
               <effectiveTime>
-                <!-- QDM Attribute: Start Datetime (equivalent to author/time/low in the contained observation) -->
+                <!-- QDM Attribute: Start Datetime -->
                 <low value="201604081130" />
               </effectiveTime>
               <entryRelationship typeCode="SUBJ">
                 <observation classCode="OBS" moodCode="EVN">
                   <!-- Conforms to C-CDA R2 Problem Observation (V3) template -->
                   <templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01" />
+                  <!-- Symptom -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.136"/>
                   <id root="e5d9e01e-d778-40ba-9bd0-351d0222b299" />
                   <code code="75325-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Symptom" >
                     <translation code="75323-6" 
@@ -4484,226 +3582,9 @@
                     <!-- The low value reflects the date of onset -->
                     <low value="201604081129" />
                   </effectiveTime>
-                  <!-- QDM Attribute: Ordinality -->
-                  <priorityCode code="267036007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
-                    displayName="Principal" />
                   <!-- Symptom -->
                   <value xsi:type="CD" code="233604007" codeSystem="2.16.840.1.113883.6.96"
                     displayName="Shortness of breath" sdtc:valueSet="1.2.99999" />
-                  <author>
-                    <!-- C-CDA R2 Author Participation -->
-                    <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                    <time xsi:type="IVL_TS">
-                      <!-- QDM Attribute: Start Datetime (equivalent to effectiveTime/low in the containing act) -->
-                      <low value="201604081130" />
-                    </time>
-                    <assignedAuthor>
-                      <id root="2.16.840.1.113883.4.6" extension="1234567893" />
-                    </assignedAuthor>
-                  </author>
-                  <!-- QDM Attribute: Severity -->
-                  <entryRelationship typeCode="REFR">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.22.4.8" extension="2014-06-09" />
-                      <code code="SEV" displayName="Severity Observation" codeSystem="2.16.840.1.113883.5.4"
-                        codeSystemName="ActCode" />
-                      <statusCode code="completed" />
-                      <value xsi:type="CD" code="371924009" displayName="Moderate to severe"
-                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
-                    </observation>
-                  </entryRelationship>
-                </observation>
-              </entryRelationship>
-            </act>
-          </entry>
-          <!-- QDM Datatype: Symptom, Assessed -->
-          <entry>
-            <act classCode="ACT" moodCode="EVN">
-              <!-- Conforms to C-CDA Problem Concern Act (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2015-08-01" />
-              <!-- Symptom Assessed Concern Act -->
-              <templateId root="2.16.840.1.113883.10.20.24.3.127" extension="2014-12-01" />
-              <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7" />
-              <code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern" />
-              <!-- The statusCode represents whether this is an active (active), inactive (suspended) or resolved (completed) symptom -->
-              <statusCode code="active" />
-              <effectiveTime>
-                <!-- QDM Attribute: Start Datetime (equivalent to author/time/low in the contained observation) -->
-                <low value="201604081130" />
-              </effectiveTime>
-              <entryRelationship typeCode="SUBJ">
-                <observation classCode="OBS" moodCode="EVN">
-                  <!-- Conforms to C-CDA R2 Problem Observation (V3) template -->
-                  <templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01" />
-                  <!-- Symptom Assessed (V2) template -->
-                  <templateId root="2.16.840.1.113883.10.20.24.3.77" extension="2014-12-01" />
-                  <id root="e5d9e01e-d778-40ba-9bd0-351d0222b299" />
-                  <code code="75325-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Symptom" >
-                    <translation code="75323-6" 
-                      codeSystem="2.16.840.1.113883.6.1" 
-                      codeSystemName="LOINC" 
-                      displayName="Condition"/>
-                  </code>
-                  <statusCode code="completed" />
-                  <effectiveTime>
-                    <!-- The low value reflects the date of onset -->
-                    <low value="201604081130" />
-                  </effectiveTime>
-                  <!-- QDM Attribute: Ordinality -->
-                  <priorityCode code="267036007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
-                    displayName="Principal" />
-                  <!-- Symptom -->
-                  <value xsi:type="CD" code="233604007" codeSystem="2.16.840.1.113883.6.96"
-                    displayName="Shortness of breath" sdtc:valueSet="1.2.99999" />
-                  <author>
-                    <!-- C-CDA R2 Author Participation -->
-                    <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                    <time xsi:type="IVL_TS">
-                      <!-- QDM Attribute: Start Datetime -->
-                      <low value="201604081130" />
-                      <!-- QDM Attribute: Stop Datetime -->
-                      <high value="201604081135" />
-                    </time>
-                    <assignedAuthor>
-                      <id root="2.16.840.1.113883.4.6" extension="1234567893" />
-                    </assignedAuthor>
-                  </author>
-                  <!-- QDM Attribute: Severity -->
-                  <entryRelationship typeCode="REFR">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.22.4.8" extension="2014-06-09" />
-                      <code code="SEV" displayName="Severity Observation" codeSystem="2.16.840.1.113883.5.4"
-                        codeSystemName="ActCode" />
-                      <statusCode code="completed" />
-                      <value xsi:type="CD" code="371924009" displayName="Moderate to severe"
-                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
-                    </observation>
-                  </entryRelationship>
-                </observation>
-              </entryRelationship>
-            </act>
-          </entry>
-          <!-- QDM Datatype: Symptom, Inactive -->
-          <entry>
-            <act classCode="ACT" moodCode="EVN">
-              <!-- Conforms to C-CDA Problem Concern Act (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2015-08-01" />
-              <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7" />
-              <code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern" />
-              <!-- The statusCode represents whether this is an active (active), inactive (suspended) or resolved (completed) symptom -->
-              <statusCode code="suspended" />
-              <effectiveTime>
-                <!-- QDM Attribute: Start Datetime (equivalent to author/time/low in the contained observation) -->
-                <low value="201604081130" />
-                <!-- QDM Attribute: Stop Datetime (equivalent to author/time/high in the contained observation)-->
-                <high value="201604081135" />
-              </effectiveTime>
-              <entryRelationship typeCode="SUBJ">
-                <observation classCode="OBS" moodCode="EVN">
-                  <!-- Conforms to C-CDA R2 Problem Observation (V3) template -->
-                  <templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01" />
-                  <!-- Symptom Inactive (V2) template -->
-                  <templateId root="2.16.840.1.113883.10.20.24.3.78" extension="2014-12-01" />
-                  <id root="e5d9e01e-d778-40ba-9bd0-351d0222b299" />
-                  <code code="75325-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Symptom" >
-                    <translation code="75323-6" 
-                      codeSystem="2.16.840.1.113883.6.1" 
-                      codeSystemName="LOINC" 
-                      displayName="Condition"/>
-                  </code>
-                  <statusCode code="completed" />
-                  <effectiveTime>
-                    <!-- The low value reflects the date of onset -->
-                    <low value="20150703" />
-                    <!-- The high value reflects the date the symptom became inactive -->
-                    <high value="20160703" />
-                  </effectiveTime>
-                  <!-- QDM Attribute: Ordinality -->
-                  <priorityCode code="267036007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
-                    displayName="Principal" />
-                  <!-- Symptom -->
-                  <value xsi:type="CD" code="233604007" codeSystem="2.16.840.1.113883.6.96"
-                    displayName="Shortness of breath" sdtc:valueSet="1.2.99999" />
-                  <author>
-                    <!-- C-CDA R2 Author Participation -->
-                    <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                    <time xsi:type="IVL_TS">
-                      <!-- QDM Attribute: Start Datetime (equivalent to effectiveTime/low in the containing act) -->
-                      <low value="201604081130" />
-                      <!-- QDM Attribute: Stop Datetime (equivalent to effectiveTime/high in the containing act) -->
-                      <high value="201604081135" />
-                    </time>
-                    <assignedAuthor>
-                      <id root="2.16.840.1.113883.4.6" extension="1234567893" />
-                    </assignedAuthor>
-                  </author>
-                  <!-- QDM Attribute: Severity -->
-                  <entryRelationship typeCode="REFR">
-                    <observation classCode="OBS" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.22.4.8" extension="2014-06-09" />
-                      <code code="SEV" displayName="Severity Observation" codeSystem="2.16.840.1.113883.5.4"
-                        codeSystemName="ActCode" />
-                      <statusCode code="completed" />
-                      <value xsi:type="CD" code="371924009" displayName="Moderate to severe"
-                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
-                    </observation>
-                  </entryRelationship>
-                </observation>
-              </entryRelationship>
-            </act>
-          </entry>
-          <!-- QDM Datatype: Symptom, Resolved -->
-          <entry>
-            <act classCode="ACT" moodCode="EVN">
-              <!-- Conforms to C-CDA Problem Concern Act (V3) -->
-              <templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2015-08-01" />
-              <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7" />
-              <code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern" />
-              <!-- The statusCode represents whether this is an active (active), inactive (suspended) or resolved (completed) symptom -->
-              <statusCode code="completed" />
-              <effectiveTime>
-                <!-- QDM Attribute: Start Datetime (equivalent to author/time/low in the contained observation) -->
-                <low value="201604081130" />
-                <!-- QDM Attribute: Stop Datetime (equivalent to author/time/high in the contained observation) -->
-                <high value="201604081135" />
-              </effectiveTime>
-              <entryRelationship typeCode="SUBJ">
-                <observation classCode="OBS" moodCode="EVN">
-                  <!-- Conforms to C-CDA R2 Problem Observation (V3) template -->
-                  <templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01" />
-                  <id root="e5d9e01e-d778-40ba-9bd0-351d0222b299" />
-                  <code code="75325-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Symptom" >
-                    <translation code="75323-6" 
-                      codeSystem="2.16.840.1.113883.6.1" 
-                      codeSystemName="LOINC" 
-                      displayName="Condition"/>
-                  </code>
-                  <statusCode code="completed" />
-                  <effectiveTime>
-                    <!-- The low value reflects the date of onset -->
-                    <low value="20150703" />
-                    <!-- The high value reflects the date of resolution -->
-                    <high value="20160703" />
-                  </effectiveTime>
-                  <!-- QDM Attribute: Ordinality -->
-                  <priorityCode code="267036007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
-                    displayName="Principal" />
-                  <!-- Symptom -->
-                  <value xsi:type="CD" code="233604007" codeSystem="2.16.840.1.113883.6.96"
-                    displayName="Shortness of breath" sdtc:valueSet="1.2.99999" />
-                  <author>
-                    <!-- C-CDA R2 Author Participation -->
-                    <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                    <time xsi:type="IVL_TS">
-                      <!-- QDM Attribute: Start Datetime (equivalent to effectiveTime/low in the containing act) -->
-                      <low value="201604081130" />
-                      <!-- QDM Attribute: Stop Datetime (equivalent to effectiveTime/high in the containing act)-->
-                      <high value="201604081135" />
-                    </time>
-                    <assignedAuthor>
-                      <id root="2.16.840.1.113883.4.6" extension="1234567893" />
-                    </assignedAuthor>
-                  </author>
                   <!-- QDM Attribute: Severity -->
                   <entryRelationship typeCode="REFR">
                     <observation classCode="OBS" moodCode="EVN">
@@ -4765,7 +3646,7 @@
               <entryRelationship typeCode="SUBJ">
                 <encounter classCode="ENC" moodCode="EVN">
                   <!-- Transfer To (V3) -->
-                  <templateId root="2.16.840.1.113883.10.20.24.3.82" extension="2016-02-01"/> 
+                  <templateId root="2.16.840.1.113883.10.20.24.3.82" extension="2016-02-01" />
                   <id root="49d75f61-0dec-4972-9a51-e2490b18c772" />
                   <code code="77306-9" codeSystem="2.16.840.1.113883.6.1" displayName="Discharge disposition"
                     codeSystemName="LOINC" />
@@ -4813,6 +3694,7 @@
                   <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01" />
                   <!-- Result (V3) -->
                   <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2016-02-01" />
+                  <id root="48c3913a-a3ab-418d-f537-9b9bcbe11807" />
                   <code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
                     displayName="Physical limitation score [KCCQ]"
                     sdtc:valueSet="2.16.840.1.113883.3.464.1003.118.12.1031" />
@@ -4836,14 +3718,14 @@
               <code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
                 displayName="Physical limitation score [KCCQ]"
                 sdtc:valueSet="2.16.840.1.113883.3.464.1003.118.12.1031" />
-              <text>Functional Status, Order: Physical limitation score [KCCQ]</text>
+              <text>Assessment Recommended: Physical limitation score [KCCQ]</text>
               <statusCode code="active" />
               <author>
                 <!-- C-CDA R2 Author Participation -->
                 <templateId root="2.16.840.1.113883.10.20.22.4.119" />
                 <time value="201604081130" />
                 <assignedAuthor>
-                  <id root="2.16.840.1.113883.4.6" extension="111111111" />
+                  <id root="2.16.840.1.113883.4.6" extension="1111111112" />
                 </assignedAuthor>
               </author>
               <!-- QDM Attribute: Reason -->

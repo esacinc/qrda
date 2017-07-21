@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+
+<!-- 
+  
+	Filename: QRDA Category I Framework V4 error file
+	Author: Michael Holck
+  Date:   07-21-2017
+ 	 
+	 Total Errors Expected: 15
+            Failure a-3343-12910-error SHALL contain exactly one [1..1] templateId (CONF:3343-12910) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.1.1" (CONF:3343-14613). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:3343-27005)</sch:assert>
+            Failure a-3343-12911-error SHALL contain exactly one [1..1] code (CONF:3343-12911).</sch:assert>
+            Failure a-3343-12912-error SHALL contain exactly one [1..1] title (CONF:3343-12912).</sch:assert>
+            Failure a-3343-12913-error SHALL contain exactly one [1..1] recordTarget (CONF:3343-12913).</sch:assert>
+            Failure a-3343-12914-error SHALL contain exactly one [1..1] custodian (CONF:3343-12914).</sch:assert>
+            Failure a-3343-12918-error SHALL contain exactly one [1..1] component (CONF:3343-12918).</sch:assert>
+            Failure a-3343-28137-error code SHALL contain exactly one [1..1] @code="55182-0" Quality Measure Report (CONF:3343-28137).</sch:assert>
+            Failure a-3343-28138-error code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3343-28138).</sch:assert>
+            Failure a-3343-28387-error recordTarget SHALL contain exactly one [1..1] patientRole (CONF:3343-28387).</sch:assert>
+            Failure a-3343-12915-error custodian SHALL contain exactly one [1..1] assignedCustodian (CONF:3343-12915).</sch:assert>
+            Failure a-3343-12916-error assignedCustodian SHALL contain exactly one [1..1] representedCustodianOrganization (CONF:3343-12916).</sch:assert>
+            Failure a-3343-12919-error component SHALL contain exactly one [1..1] structuredBody (CONF:3343-12919).</sch:assert>
+            Failure a-3343-12920-error structuredBody SHALL contain exactly one [1..1] component (CONF:3343-12920) such that it SHALL contain exactly one [1..1] Measure Section (identifier: urn:oid:2.16.840.1.113883.10.20.24.2.2) (CONF:3343-17078).</sch:assert>
+            Failure a-3343-12923-error structuredBody SHALL contain exactly one [1..1] component (CONF:3343-12923) such that it SHALL contain exactly one [1..1] Reporting Parameters Section (identifier: urn:oid:2.16.840.1.113883.10.20.17.2.1) (CONF:3343-17079).</sch:assert>
+            Failure a-3343-12924-error structuredBody SHALL contain exactly one [1..1] component (CONF:3343-12924) such that it SHALL contain exactly one [1..1] Patient Data Section (identifier: urn:oid:2.16.840.1.113883.10.20.17.2.4) (CONF:3343-17080).</sch:assert>
+	 
+   Total Warnings Expected: 0                
+	
+-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:hl7-org:v3 schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+ xmlns="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:voc="urn:hl7-org:v3/voc">
+  <templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2016-02-01"/>
+  <!-- Failure a-3343-12910-error multiple main templateIds -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2016-02-01"/>
+  <code code="55182-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+    displayName="Quality Measure Report"/>
+  <!-- Failure a-3343-12911-error Missing or multiple code -->
+  <!-- Failure a-3343-28137-error code missing or bad code="55182-0" -->
+  <!-- Failure a-3343-28138-error code missing or bad codeSystem="2.16.840.1.113883.6.1" -->
+  <code/>
+  <!-- Failure a-3343-12912-error missing or multiple title -->
+  <!-- <title>QRDA Sample Report</title> -->
+  <recordTarget>
+    <patientRole>
+      <patient>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <!-- Failure a-3343-12913-error missing or multiple recordTarget -->
+  <!-- Failure a-3343-28387-error missing or multiple patientRole in recordTarget -->
+  <recordTarget/>
+   <custodian>
+    <assignedCustodian>
+      <!-- Failure a-3343-12916-error missing or multiple representedCustodianOrganization in assignedCustodian -->
+    </assignedCustodian>
+  </custodian>
+  <!-- Failure a-3343-12914-error missing or multiple custodian -->
+  <!-- Failure a-3343-12915-error missing or multiple assignedCustodian in custodian -->
+  <custodian/>
+  
+  <component>
+     <structuredBody>
+       <component>
+        <!-- ***** Measure Section ***** -->
+        <section>
+          <!-- Measure Section -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.2"/>
+         </section>
+      </component>
+      <component>
+        <!-- ***** Reporting Parameters Section ***** -->
+        <section>
+          <!-- Reporting Parameters Section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.1"/>
+         </section>
+      </component>
+      <component>
+        <!-- ***** Patient Data Section ***** -->
+        <section>
+          <!-- Patient Data Section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.4"/>
+         </section>
+      </component>
+    </structuredBody>
+    <!-- Failure a-3343-12919-error missing or multiple structuredBody in top-level component -->
+    <structuredBody>
+      <!-- Failure a-3343-12920-error missing or multiple Measure Section component in structuredBody -->
+      <!-- Failure a-3343-12923-error missing or multiple Reporting Parameters Section component in structuredBody -->
+      <!-- Failure a-3343-12924-error missing or multiple Patient Data Section component in structuredBody -->
+    </structuredBody>
+  </component>
+  
+  <!-- Failure a-3343-12918-error missing or multiple top-level component -->
+  <component>
+    <structuredBody>
+      <component>
+        <!-- ***** Measure Section ***** -->
+        <section>
+          <!-- Measure Section -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.2"/>
+        </section>
+      </component>
+      <component>
+        <!-- ***** Reporting Parameters Section ***** -->
+        <section>
+          <!-- Reporting Parameters Section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.1"/>
+        </section>
+      </component>
+      <component>
+        <!-- ***** Patient Data Section ***** -->
+        <section>
+          <!-- Patient Data Section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.4"/>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

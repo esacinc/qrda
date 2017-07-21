@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+  <!-- 		
+    Title: Facility Location V2 Minimal sample file with errors
+    Author: Dan Donahue
+    Date 07-21-2017
+ 
+    Total Errors Expected: 8
+          Failure a-3343-13374-error Missing or bad @typeCode="LOC"
+          Failure a-3343-13375-error Multiple  main templateId
+          Failure a-3343-13371-error Missing or multiple time
+          Failure a-3343-13384-error Missing or multiple time low
+          Failure a-3343-13372-error Missing or multiple participantRole
+          Failure a-3343-13373-error Missing or bad participantRole @classCode="SDLOC"
+          Failure a-3343-13378-error Missing or multiple participantRole code
+          Failure a-3343-13382-error If playingEntity, Missing or bad  @classCode="PLC"
+                       
+    Total Warnings Expected: 2
+          Failure a-3343-13379-warning Missing addr
+          Failure a-3343-13380-warning Missing telecom
+    
+ 	
+  -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <!-- a-3343-13374-error Missing or bad @typeCode="LOC" -->
+  <participant typeCode="LOCErr">
+    <!-- Facility Location template -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.100" extension="2017-08-01"/>
+    <!-- Failure a-3343-13375-error Multiple  main templateId -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.100" extension="2017-08-01"/>
+    <time>
+      <!-- QDM Attribute: Location Period -->
+      <low value="20170203"/>
+      <high value="20170206"/>
+    </time>
+    <!-- Failure a-3343-13371-error Missing or multiple time -->
+    <time>
+      <!-- Failure a-3343-13384-error Missing or multiple time low -->
+      <high value="20170206"/>
+    </time>
+    <participantRole classCode="SDLOC">
+      <code code="GACH" codeSystem="2.16.840.1.113883.5.111" codeSystemName="HL7RoleCode" displayName="General Acute Care Hospital"/>
+      <addr>
+        <streetAddressLine>17 Daws Rd.</streetAddressLine>
+        <city>Blue Bell</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom nullFlavor="UNK"/>
+      <!-- Failure a-3343-13382-error If playingEntity, Missing or bad  @classCode="PLC" -->
+      <playingEntity classCode="PLCErr">
+        <name>Good Health Clinic</name>
+      </playingEntity>
+    </participantRole>
+    <!-- Failure a-3343-13372-error Missing or multiple participantRole -->
+    <!-- Failure a-3343-13373-error Missing or bad participantRole @classCode="SDLOC" -->
+    <!-- Failure a-3343-13378-error Missing or multiple participantRole code -->
+    <!-- Failure a-3343-13379-warning Missing addr -->
+    <!-- Failure a-3343-13380-warning Missing telecom -->
+    <participantRole classCodeErr="SDLOC">
+      
+    </participantRole>
+  </participant> 
+</ClinicalDocument>

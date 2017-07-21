@@ -3,7 +3,8 @@
   <!-- 		
     Title: Facility Location V2 Minimal sample file with errors
     Author: Dan Donahue
-    Date 07-21-2017
+    Date: 07-21-2017
+    JIRA: https://tracker.esacinc.com/browse/QRDA-198
  
     Total Errors Expected: 8
           Failure a-3343-13374-error Missing or bad @typeCode="LOC"

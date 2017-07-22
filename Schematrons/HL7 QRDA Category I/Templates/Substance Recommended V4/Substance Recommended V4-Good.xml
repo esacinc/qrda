@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+  <!-- 		
+    Title: Substance Recommended V4 minimal sample
+    Author: Dan Donahue
+    Date: 07-22-2017
+    JIRA: https://tracker.esacinc.com/browse/QRDA-204
+
+    Total Errors Expected: 0
+               
+    Total Warnings Expected: 0
+    
+   -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <substanceAdministration classCode="SBADM" moodCode="INT">
+    <!-- Conforms to C-CDA R2.1 Planned Medication Activity (V2) -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.42" extension="2014-06-09"/>
+    <!-- Substance Recommended (V4) -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.75" extension="2017-08-01"/>
+    <id root="df154906-9aaa-4651-a244-412cef74b8d5"/>
+    <text>Substance Recommended: Dietary fiber</text>
+    <statusCode code="active"/>
+    <effectiveTime value="20170408"/>
+    <consumable>
+      <manufacturedProduct classCode="MANU">
+        <!-- Conforms to C-CDA R2.1 Medication Information (V2) -->
+        <templateId root="2.16.840.1.113883.10.20.22.4.23" extension="2014-06-09"/>
+        <id root="39e2bc57-295f-4c81-82dd-38ede1463830"/>
+        <manufacturedMaterial>
+          <code code="116272000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED" displayName="Dietary Fiber" />
+        </manufacturedMaterial>
+        <manufacturerOrganization>
+          <name>Medication Factory Inc.</name>
+        </manufacturerOrganization>
+      </manufacturedProduct>
+    </consumable>
+    <author>
+      <time value="201704081130"/>
+      <assignedAuthor>
+        <id nullFlavor="NA"/>
+      </assignedAuthor>
+    </author>
+    <!-- QDM Attribute: Reason -->
+    <!-- ... -->
+  </substanceAdministration>
+</ClinicalDocument>

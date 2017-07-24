@@ -31,9 +31,9 @@
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="urn:hl7-org:v3 schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
  xmlns="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:voc="urn:hl7-org:v3/voc">
-  <templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2016-02-01"/>
+  <templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2017-08-01"/>
   <!-- Failure a-3343-12910-error multiple main templateIds -->
-  <templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2016-02-01"/>
+  <templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2017-08-01"/>
   <code code="55182-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
     displayName="Quality Measure Report"/>
   <!-- Failure a-3343-12911-error Missing or multiple code -->

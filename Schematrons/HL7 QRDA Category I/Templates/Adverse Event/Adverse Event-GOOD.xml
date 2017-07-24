@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title:  Adverse Event, Minimal sample
+    Author: Michael Holck
+    Date:   07-24-2017
+    
+    Total Errors Expected: 0
+    Total Warnings Expected: 0
+-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+	xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+	<observation classCode="OBS" moodCode="EVN">
+		<templateId root="2.16.840.1.113883.10.20.24.3.146" extension="2017-08-01"/>
+		<id root="508d3dc6-4883-480c-bf03-419daed0b02f"/>
+		<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Assertion"/>
+		<statusCode code="completed"/>
+		<effectiveTime>
+			<!-- QDM Attribute: Relevant Period - startTime -->
+			<low value="201702021030"/>
+			<!-- QDM Attribute: Relevant Period - stopTime -->
+			<high value="201702021030"/>
+		</effectiveTime>
+		<value xsi:type="CD" code="281647001" codeSystem="2.16.840.1.113883.6.96"
+			codeSystemName="SNOMED CT" displayName="Adverse reaction"/>
+		<author>
+			<time value="201702021030"/>
+			<assignedAuthor>
+				<id root="908d6dc6-4823-180c-3f03-419dabd0b02e"/>
+			</assignedAuthor>
+		</author>
+		<entryRelationship typeCode="CAUS" inversionInd="true">
+			<!-- Adverse Event Cause Assertion Observation -->
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.24.3.148" extension="2017-08-01"/>
+				<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"
+					displayName="Assertion"/>
+				<value xsi:type="CD" code="444179007" codeSystem="2.16.840.1.113883.6.96" 
+					displayName="Insertion of dual chamber pacemaker pulse generator (procedure)"/>
+			</observation>
+		</entryRelationship>
+		<!-- QDM Attribute: Reaction -->
+		<entryRelationship typeCode="MFST" inversionInd="true">
+			<!-- Reaction Observation V2 -->
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.22.4.9" extension="2014-06-09"/>
+				<id root="908d6dc6-4823-180c-3f03-419dabd0b02e"/>
+				<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"
+					displayName="Assertion"/>
+				<value xsi:type="CD" code="444179007" codeSystem="2.16.840.1.113883.6.96" 
+					displayName="Insertion of dual chamber pacemaker pulse generator (procedure)"/>
+			</observation>
+		</entryRelationship>
+	</observation>
+</ClinicalDocument>

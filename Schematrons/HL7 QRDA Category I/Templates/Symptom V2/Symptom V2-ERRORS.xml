@@ -20,7 +20,7 @@
           Failure a-3343-28854-error Missing or multiple effectiveTime
           Failure a-3343-28856-error Missing or multiple low in effectiveTime
           Failure a-3343-28516-error Missing or multiple value with @xsi:type="CD"
-          Failure a-3343-28667-error This template SHALL be contained by a Symptom Concern Act (V2) (CONF:3343-28667).
+          Failure a-3343-28667-error This template SHALL be contained by a Symptom Concern Act (V3) (CONF:3343-28667).
                 
     Total Warnings Expected: 0
   -->
@@ -31,7 +31,7 @@
     <!-- Conforms to C-CDA 2.1 Problem Concern Act (V3) -->
     <templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2015-08-01"/>
     <!-- Symptom Concern Act -->
-    <!--  Failure a-3343-28667 Symptom Concern Act encompassing Symptom entry SHALL have extension 2016-08-01 -->
+    <!--  Failure a-3343-28667 Symptom Concern Act encompassing Symptom entry SHALL have extension 2017-08-01 -->
     <templateId root="2.16.840.1.113883.10.20.24.3.138" />
     <effectiveTime>
       <low value="201504081130"/>

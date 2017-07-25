@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+<!-- 		
+    Title: Physical Exam Order V4 miminal sample with errors
+    Author: Dan Donahue
+    Date: 07-25-2017
+    JIRA: https://tracker.esacinc.com/browse/QRDA-214
+    
+	Total Errors Expected: 8
+		Failure a-3343-27550-error SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-27550).
+		Failure a-3343-12685-error SHALL contain exactly one [1..1] @moodCode="RQO" Request (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-12685).
+		Failure a-3343-12686-error SHALL contain exactly one [1..1] templateId (CONF:3343-12686) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.58" (CONF:3343-12687). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:3343-27078).
+		Failure a-3343-12689-error SHALL contain exactly one [1..1] code (CONF:3343-12689).
+		Failure a-3343-27345-error SHALL contain exactly one [1..1] author (CONF:3343-27345) such that it SHALL contain exactly one [1..1] time (CONF:3343-29050). SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29049).
+		Failure a-3343-13254-error SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:3343-13254). 
+		Failure a-3343-13242-error This code SHALL contain exactly one [1..1] @code="29545-1" physical examination (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3343-13242).
+        Failure a-3343-27650-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29051). 
+	
+	Total Warnings Expected: 0
+
+-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+	<!--  Failure a-3343-27550-error SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-27550).-->
+	<!--  Failure a-3343-12685-error SHALL contain exactly one [1..1] @moodCode="RQO" Request (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-12685). -->
+	<observation classCodeErr="OBS" moodCode="RQOErr">
+		<!-- Conforms to C-CDA R2.1 Planned Observation (V2) -->
+		<templateId root="2.16.840.1.113883.10.20.22.4.44" extension="2014-06-09"/>
+		<!-- Physical Exam Order (V4) -->
+		<templateId root="2.16.840.1.113883.10.20.24.3.58" extension="2017-08-01"/>
+		<!-- Failure a-3343-12686-error SHALL contain exactly one [1..1] templateId (CONF:3343-12686) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.58" (CONF:3343-12687). SHALL contain exactly one [1..1] @extension="2016-02-01" (CONF:3343-27078).-->
+		<templateId root="2.16.840.1.113883.10.20.24.3.58" extension="2017-08-01"/>
+		<id root="1fad091f-7b4e-4661-b61c-53f9a82515b6"/>
+		<code code="29545-1" codeSystem="2.16.840.1.113883.6.1" displayName="physical examination" codeSystemName="LOINC"/>
+		<!-- Failure a-3343-12689-error SHALL contain exactly one [1..1] code (CONF:3343-12689). -->
+		<!-- Failure a-3343-13242-error This code SHALL contain exactly one [1..1] @code="29545-1" physical examination (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3343-13242). -->
+		<code></code>
+		<!-- ... -->
+		<!-- Failure a-3343-13254-error SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:3343-13254). -->
+		<value xsi:type="CDErr" code="29463-7" codeSystem="2.16.840.1.113883.6.1"/>
+		<!-- QDM Attribute: Method -->
+		<!-- ... -->
+		<author>
+			<time value="201204081130"/>
+			<assignedAuthor>
+				<!-- Failure a-3343-27650-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29051). -->
+				<!-- <id nullFlavor="NA"/> -->
+			</assignedAuthor>
+		</author>
+		<!-- Failure a-3343-27345-error SHALL contain exactly one [1..1] author (CONF:3343-27345) such that it SHALL contain exactly one [1..1] time (CONF:3343-29050). SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29049). -->
+		<author>
+			<time value="201204081130"/>
+			<assignedAuthor>
+				<id nullFlavor="NA"/>
+			</assignedAuthor>
+		</author>
+		<!-- QDM Attribute: Reason -->
+		<!-- ... -->
+	</observation>
+</ClinicalDocument>

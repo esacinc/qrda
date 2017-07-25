@@ -50,6 +50,7 @@
         <include>Patient Data Section QDM V5</include>
         <include>Reporting Parameters Section</include>
         <!-- Entry templates -->
+        <include>Admission Source</include>
         <include>Adverse Event</include>
         <include>Adverse Event Cause Observation Assertion</include>
         <include>Age Observation</include>
@@ -121,6 +122,7 @@
         <include>Medication Supply Request V2</include>
         <include>Patient Care Experience V4</include>
         <include>Patient Characteristic Clinical Trial Participant V4</include>
+        <include>Patient Characteristic Coverage Type</include>
         <include>Patient Characteristic Expired V3</include>
         <include>Patient Characteristic Observation Assertion V4</include>
         <include>Patient Characteristic Payer</include>
@@ -136,6 +138,7 @@
         <include>Planned Procedure V2</include>
         <include>Planned Supply V2</include>
         <include>Precondition for Substance Administration V2</include>
+        <include>Principal Diagnosis</include>
         <include>Priority Preference</include>
         <include>Problem Concern Act V3</include>
         <include>Problem Observation V3</include>
@@ -150,7 +153,6 @@
         <include>Prognosis Observation</include>
         <include>Provider Care Experience V4</include>
         <include>Provider Characteristic Observation Assertion V3</include>
-        <include>Reaction V2</include>
         <include>Reaction Observation V2</include>
         <include>Reason V3</include>
         <include>Related To</include>

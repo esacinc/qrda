@@ -33,7 +33,7 @@
             <sch:assert id="a-3343-29035-error" test="count(cda:time)=1">This author SHALL contain exactly one [1..1] time (CONF:3343-29035).  </sch:assert>
         </sch:rule>
         <sch:rule id="Substance-Recommended-author-assignedAuthor-errors" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.75'][@extension='2017-08-01']]/cda:author/cda:assignedAuthor">
-            <sch:assert id="a-3343-29036-error" test="count(cda:id)=1">This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29036).   </sch:assert>
+            <sch:assert id="a-3343-29036-error" test="count(cda:id)&gt;=1">This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29036).   </sch:assert>
         </sch:rule>
         
     </sch:pattern>

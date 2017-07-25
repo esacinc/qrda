@@ -23,9 +23,6 @@
             <sch:assert id="a-3343-11362-error" test="@code='77301-0'">This code SHALL contain exactly one [1..1] @code="77301-0" Reason care action performed or not (CONF:3343-11362). </sch:assert>
             <sch:assert id="a-3343-27028-error" test="@codeSystem='2.16.840.1.113883.6.1'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3343-27028).</sch:assert>
         </sch:rule>               
-        <sch:rule id="Reason-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2017-08-01']]/cda:statusCode">
-            <sch:assert id="a-3343-11365-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-11365). </sch:assert>
-        </sch:rule>
         <sch:rule id="Reason-effectiveTime-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2017-08-01']]/cda:effectiveTime">
             <sch:assert id="a-3343-27551-error" test="count(cda:low)=1"> The effectiveTime, if present, SHALL contain exactly one [1..1] low (CONF:3343-27551).</sch:assert>
          </sch:rule>

@@ -4,6 +4,7 @@
     Title: Related To  minimal sample file
     Author: Dan Donahue
     Date: 07-24-2017
+    Updated: 07-26-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-205
  
     Total Errors Expected: 0
@@ -14,10 +15,23 @@
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
   xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
-  <observation classCode="OBS" moodCode="EVN">
-    <templateId root="2.16.840.1.113883.10.20.24.3.150" extension="2017-08-01" />
-      <id root="3a4aa411-78b9-484b-a0f1-33f1cf49b4ad" />
-      <code code="29463-7" displayName="Body weight"  codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.113883.3.464.1003.121.12.1015" />
-      <value xsi:type="PQ" unit="kg" value="65" />
-  </observation>
+  <procedure classCode="PROC" moodCode="EVN">
+    <!-- Conforms to C-CDA R2 Procedure Activity Procedure (V2) -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.14"  extension="2014-06-09" />
+    <!-- QRDA R3: Device Applied Template -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.7"  extension="2014-12-01" />
+    ...
+    <!-- This Device, Applied procedure is in fulfillment of a Device, Order 
+       defined elsewhere in the CDA XML -->
+    <!-- QRDA R3: Fulfills -->
+    <sdtc:inFulfillmentOf1 typeCode="FLFS">
+      <sdtc:templateId root="2.16.840.1.113883.10.20.24.3.150" extension="2017-08-01"/>
+      <!-- The classCode and moodCode are the same as the classCode and moodCode
+         of the Device, Order being referenced -->
+      <sdtc:actReference classCode="SPLY" moodCode="RQO">
+        <!-- The id is the same as the id of the Device, Order being referenced -->
+        <sdtc:id root="6a8d037d-f144-4071-9d1f-8a92a11dedc6"  />
+      </sdtc:actReference>
+    </sdtc:inFulfillmentOf1>
+  </procedure>
 </ClinicalDocument>

@@ -12,13 +12,20 @@
     </sch:phase>
     
     <sch:pattern id="Related-To-pattern-errors">
-        <sch:rule id="Related-To-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.150'][@extension='2017-08-01']]">
-            <sch:assert id="a-3343-28950-error" test="@classCode='OBS'"> SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-28950).</sch:assert>
-            <sch:assert id="a-3343-28951-error" test="@moodCode='EVN'"> SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: HL7ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-28951).</sch:assert>
-            <sch:assert id="a-3343-28945-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.150'][@extension='2017-08-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3343-28945) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.150" (CONF:3343-28947) SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-28948). </sch:assert>
-            <sch:assert id="a-3343-28946-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:3343-28946).</sch:assert>
-            <sch:assert id="a-3343-28949-error" test="count(cda:value)=1">SHALL contain exactly one [1..1] value (CONF:3343-28949). </sch:assert>
-        </sch:rule>
+        <sch:rule id="Related-To-errors" context="sdtc:inFulfillmentOf1[sdtc:templateId[@root='2.16.840.1.113883.10.20.24.3.150'][@extension='2017-08-01']]">
+            <sch:assert id="a-3343-29113-error" test="@typeCode='FLFS'">SHALL contain exactly one [1..1] @typeCode="FLFS" Fulfills (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3343-29113).</sch:assert>
+            <sch:assert id="a-3343-29104-error" test="count(sdtc:templateId[@root='2.16.840.1.113883.10.20.24.3.150'][@extension='2017-08-01'])=1">SHALL contain exactly one [1..1] sdtc:templateId (CONF:3343-29104) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.150" (CONF:3343-29107). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-29108).</sch:assert>
+            <sch:assert id="a-3343-29105-error" test="count(sdtc:actReference)=1">SHALL contain exactly one [1..1] sdtc:actReference (CONF:3343-29105).</sch:assert>
+         </sch:rule>
+        <sch:rule id="Related-To-actReference-errors" context="sdtc:inFulfillmentOf1[sdtc:templateId[@root='2.16.840.1.113883.10.20.24.3.150'][@extension='2017-08-01']]/sdtc:actReference">
+            <sch:assert id="a-3343-29114-error" test="@classCode">This sdtc:actReference SHALL contain exactly one [1..1] @classCode (CONF:3343-29114). </sch:assert>
+            <sch:assert id="a-3343-29110-error" test="@classCode">This sdtc:actReference SHALL contain exactly one [1..1] @moodCode (CONF:3343-29110).  </sch:assert>
+            <sch:assert id="a-3343-29106-error" test="count(sdtc:id)&gt;=1">This sdtc:actReference SHALL contain at least one [1..*] sdtc:id (CONF:3343-29106)</sch:assert>
+         </sch:rule>
+        <sch:rule id="Related-To-actReference-id-errors" context="sdtc:inFulfillmentOf1[sdtc:templateId[@root='2.16.840.1.113883.10.20.24.3.150'][@extension='2017-08-01']]/sdtc:actReference/sdtc:id">
+            <sch:assert id="a-3343-29111-error" test="@root">Such sdtc:ids SHALL contain exactly one [1..1] @root (CONF:3343-29111).</sch:assert>
+         </sch:rule>
+        
      </sch:pattern>
  
 </sch:schema>

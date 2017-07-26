@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+  <!-- 		
+    Title: Result V3  minimal sample file
+    Author: Michael Holck
+    Date: 07-24-2017
+ 
+    Total Errors Expected: 0
+              
+    Total Warnings Expected: 0
+
+   -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <observation classCode="OBS" moodCode="EVN">
+    <!-- Conforms to C-CDA R2.1 Result Observation (V3) -->
+    <!-- Updated extension for new CDA rule changes -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+    <!-- Result (V3) -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2016-02-01"/>
+    <id root="ed971e73-c060-4258-8838-69c830254b5a"/>
+    <code code="36625-2" displayName="Breast Mammogram"
+      codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+      sdtc:valueSet="2.16.840.1.113883.3.464.1003.108.12.1018"/> 
+    <effectiveTime value="201503231430"/>
+    <value xsi:type="CD" code="369895002" codeSystem="2.16.840.1.113883.6.96"
+           displayName="T1: Breast tumor &lt; 2 cm in greatest dimension"
+           codeSystemName="SNOMED CT" sdtc:valueSet="2.16.840.1.113883.3.526.3.1305"/>
+    <entryRelationship typeCode="REFR">
+      <!-- QDM Attribute: Status (Result)-->
+      <observation classCode="OBS" moodCode="EVN">
+        <!-- Status -->
+        <templateId root="2.16.840.1.113883.10.20.24.3.93"/>
+        <id root="29b776d3-089b-4a7f-b6e9-e45080091922"/>
+        <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+          displayName="Status"/>
+        <value xsi:type="CD" code="445665009" displayName="Final Report"
+          sdtc:valueSet="1.2.99999"/>
+      </observation>
+    </entryRelationship>
+  </observation>
+</ClinicalDocument>

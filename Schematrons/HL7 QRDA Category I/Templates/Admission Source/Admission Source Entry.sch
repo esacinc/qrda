@@ -9,6 +9,9 @@
     
     <sch:phase id="errors">
         <sch:active pattern="Admission_Source-pattern-errors" />
+    </sch:phase>
+    
+    <sch:phase id="warnings">
         <sch:active pattern="Admission_Source-pattern-warnings" />
     </sch:phase>
     

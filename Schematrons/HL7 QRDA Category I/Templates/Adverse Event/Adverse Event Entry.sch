@@ -9,6 +9,9 @@
     
     <sch:phase id="errors">
         <sch:active pattern="Adverse_Event-pattern-errors" />
+    </sch:phase>
+    
+    <sch:phase id="warnings">
         <sch:active pattern="Adverse_Event-pattern-warnings" />
     </sch:phase>
     

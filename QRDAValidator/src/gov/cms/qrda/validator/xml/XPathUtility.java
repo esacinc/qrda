@@ -120,6 +120,8 @@ public class XPathUtility {
 			logger.error("** SAX error" + ", " + err.getMessage(), err);
 		} catch (IOException err) {
 			logger.error("** IO Error error" + ", " + err.getMessage(),err);
+		} catch (Exception err) {
+			logger.error("** Exception," + err.getMessage(),err);
 		}
 		return doc;
 	}

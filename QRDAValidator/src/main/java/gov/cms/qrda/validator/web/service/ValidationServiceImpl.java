@@ -543,10 +543,20 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 		InputStream reportFile = fileService.openExtFileForReading(QRDA_URIResolver.REPOSITORY_RESULTS, folder, filename);
 		Document doc = XPathUtility.openXMLFile(reportFile);
 		
+		if (doc == null) {
+			tc.addStatusText(wrapErrorSpan("ERROR: Unable to open file " + filename + " as an XML document. Check for correct XML syntax"));
+			return new ArrayList<Failure>();  // early out
+		}
+		
 		// Open a version of the test file that has starting/ending line numbers of each node marked. (We'll use this info when
 		// populating the failure objects for each triggered assert in the report file.
 		InputStream testFile = fileService.openExtFileForReading(QRDA_URIResolver.REPOSITORY_TESTFILES, tc.getSubDir(), tc.getFilename());
 		Document testDoc  =  XPathUtility.openXMLFileWithLineNumbers(testFile);
+		
+		if (testDoc == null) {
+			tc.addStatusText(wrapErrorSpan("ERROR: Unable to open file " + filename + " as an XML document. Check for correct XML syntax"));
+			return new ArrayList<Failure>();  // early out
+		}
 		
 		// Look at the failed-assert elements to see what failed
 		NodeList failureNodes = doc.getElementsByTagName("svrl:failed-assert");

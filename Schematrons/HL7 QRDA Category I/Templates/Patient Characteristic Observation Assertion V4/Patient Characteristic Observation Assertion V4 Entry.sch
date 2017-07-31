@@ -14,7 +14,7 @@
 			<sch:assert id="a-3343-16536-error" test="@classCode='OBS'"> SHALL contain exactly one [1..1] @classCode="OBS" Observation (CONF:3343-16536).	 </sch:assert>
 			<sch:assert id="a-3343-16537-error" test="@moodCode='EVN'"> SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-16537). </sch:assert>
 			<sch:assert id="a-3343-28623-error" test="not(@negationInd)"> SHALL NOT contain [0..0] @negationInd (CONF:3343-28623). </sch:assert>
-			<sch:assert id="a-3343-26962-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.103'][@extension='2017-08-01']) = 1"> SHALL contain exactly one [1..1] templateId (CONF:3343-26962) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.103" (CONF:3343-26963)  </sch:assert>
+			<sch:assert id="a-3343-26962-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.103'][@extension='2017-08-01']) = 1"> SHALL contain exactly one [1..1] templateId (CONF:3343-26962) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.103" (CONF:3343-26963) SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-27781). </sch:assert>
 			<sch:assert id="a-3343-16538-error" test="count(cda:id) &gt; 0"> SHALL contain at least one [1..*] id (CONF:3343-16538). </sch:assert>
 			<sch:assert id="a-3343-16544-error" test="count(cda:code) = 1"> SHALL contain exactly one [1..1] code (CONF:3343-16544). </sch:assert>
 			<sch:assert id="a-3343-16539-error" test="count(cda:statusCode[@code='completed']) = 1">  SHALL contain exactly one [1..1] statusCode="completed" Completed (CONF:3343-16539).</sch:assert>

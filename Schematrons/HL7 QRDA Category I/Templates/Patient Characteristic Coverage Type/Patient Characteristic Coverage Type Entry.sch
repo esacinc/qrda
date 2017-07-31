@@ -10,7 +10,7 @@
 	</sch:phase>
 	
 	<sch:pattern id="Patient_Characteristic_Coverage_Type-pattern-errors">
-		<sch:rule id="Patient_Characteristic_Observation_Coverage_Type-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.154'][@extension='2017-08-01']]">
+		<sch:rule id="Patient_Characteristic_Coverage_Type-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.154'][@extension='2017-08-01']]">
 			<sch:assert id="a-3343-28974-error" test="@classCode='OBS'"> SHALL contain exactly one [1..1] @classCode="OBS" Observation (CONF:3343-29974).	 </sch:assert>
 			<sch:assert id="a-3343-28975-error" test="@moodCode='EVN'"> SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-28975). </sch:assert>
 			<sch:assert id="a-3343-28978-error" test="not(@negationInd)"> SHALL NOT contain [0..0] @negationInd (CONF:3343-28978). </sch:assert>

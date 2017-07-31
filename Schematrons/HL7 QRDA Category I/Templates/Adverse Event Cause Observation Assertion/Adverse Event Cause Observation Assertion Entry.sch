@@ -25,4 +25,5 @@
             <sch:assert id="a-3343-28734-error" test="@code='ASSERTION'">This code SHALL contain exactly one [1..1] @code="ASSERTION" Assertion (CONF:3343-28734).</sch:assert>
             <sch:assert id="a-3343-28735-error" test="@codeSystem='2.16.840.1.113883.5.4'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.5.4" (CodeSystem: ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:3343-28735).</sch:assert>
         </sch:rule>
+     </sch:pattern>
 </sch:schema>

@@ -16,6 +16,7 @@
         <sch:rule id="Principal-Diagnosis-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.152'][@extension='2017-08-01']]">
             <sch:assert id="a-3343-29004-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" Observation (CONF:3343-29004).</sch:assert>
             <sch:assert id="a-3343-29005-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-29005).</sch:assert>
+            <sch:assert id="a-3343-29006-error" test="not(@negationInd)">SHALL NOT contain [0..0] @negationInd (CONF:3343-29006).</sch:assert>
             <sch:assert id="a-3343-28998-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.152'][@extension='2017-08-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3343-28998) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.152" (CONF:3343-29001). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-29002).</sch:assert>
             <sch:assert id="a-3343-28997-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:3343-28997).</sch:assert>
             <sch:assert id="a-3343-29003-error" test="count(cda:value[@xsi:type='CD'])=1"> SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:3343-29003).</sch:assert>

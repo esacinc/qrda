@@ -19,7 +19,7 @@
          </sch:rule>
         <sch:rule id="Related-To-actReference-errors" context="sdtc:inFulfillmentOf1[sdtc:templateId[@root='2.16.840.1.113883.10.20.24.3.150'][@extension='2017-08-01']]/sdtc:actReference">
             <sch:assert id="a-3343-29114-error" test="@classCode">This sdtc:actReference SHALL contain exactly one [1..1] @classCode (CONF:3343-29114). </sch:assert>
-            <sch:assert id="a-3343-29110-error" test="@classCode">This sdtc:actReference SHALL contain exactly one [1..1] @moodCode (CONF:3343-29110).  </sch:assert>
+            <sch:assert id="a-3343-29110-error" test="@moodCode">This sdtc:actReference SHALL contain exactly one [1..1] @moodCode (CONF:3343-29110).  </sch:assert>
             <sch:assert id="a-3343-29106-error" test="count(sdtc:id)&gt;=1">This sdtc:actReference SHALL contain at least one [1..*] sdtc:id (CONF:3343-29106)</sch:assert>
          </sch:rule>
         <sch:rule id="Related-To-actReference-id-errors" context="sdtc:inFulfillmentOf1[sdtc:templateId[@root='2.16.840.1.113883.10.20.24.3.150'][@extension='2017-08-01']]/sdtc:actReference/sdtc:id">

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title:  Assessment Performed V2, Minimal sample
+    Author: Michael Holck
+    Date:   08-01-2017
+    
+    Total Errors Expected: 0
+    Total Warnings Expected: 0
+-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+	xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+		<observation classCode="OBS" moodCode="EVN">
+			<!-- Assessment Performed V2 -->
+			<templateId root="2.16.840.1.113883.10.20.24.3.144" extension="2017-08-01" />
+			<code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+				displayName="Physical limitation score [KCCQ]"
+				sdtc:valueSet="2.16.840.1.113883.3.464.1003.113.12.1036" />
+			<statusCode code="completed" />
+			<author>
+				<time value="20170801"/>
+				<assignedAuthor>
+					<id root="2.16.840.1.113883.4.6" extension="111111111"/>
+				</assignedAuthor>
+			</author>
+		</observation>
+</ClinicalDocument>

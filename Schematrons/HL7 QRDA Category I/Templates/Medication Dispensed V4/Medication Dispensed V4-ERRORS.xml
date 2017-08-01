@@ -4,7 +4,7 @@
     Title: Medication Dispensed V4 minimal file with errors
     Author: Dan Donahue
     Date: 08-01-2017
-    JIRA: https://tracker.esacinc.com/browse/QRDA-219
+    JIRA: https://tracker.esacinc.com/browse/QRDA-220
  
     Total Errors Expected: 16
 			Failure a-3343-27528-error SHALL contain exactly one [1..1] @classCode="SPLY" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-27528).

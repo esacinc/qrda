@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+  <!-- 		
+    Title: Allergy Intolerance - minimal sample error file
+    Author: Michael Holck
+    Date: 07-31-2017
+    JIRA: https://tracker.esacinc.com/browse/QRDA-229
+
+    Total Errors Expected: 17
+      Failure a-3343-28826-error SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:3343-28826).
+      Failure a-3343-28827-error SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: HL7ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:3343-28827).
+      Failure a-3343-28848-error SHALL NOT contain [0..0] @negationInd (CONF:3343-28848).
+      Failure a-3343-28816-error SHALL contain exactly one [1..1] templateId (CONF:3343-28816) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.147" (CONF:3343-28828). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-28829).
+      Failure a-3343-28817-error SHALL contain exactly one [1..1] code (CONF:3343-28817).
+      Failure a-3343-28819-error SHALL contain exactly one [1..1] effectiveTime (CONF:3343-28819).
+      Failure a-3343-28836-error SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:3343-28836).
+      Failure a-3343-28820-error SHALL contain exactly one [1..1] participant (CONF:3343-28820) such that it SHALL contain exactly one [1..1] @typeCode="CSM" Consumable (CodeSystem: HL7ParticipationType urn:oid:2.16.840.1.113883.5.90 STATIC) (CONF:3343-28837). SHALL contain exactly one [1..1] participantRole (CONF:3343-28821).
+      Failure a-3343-28831-error This code SHALL contain exactly one [1..1] @code="ASSERTION" Assertion (CONF:3343-28831).
+      Failure a-3343-28832-error This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.5.4" (CodeSystem: HL7ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:3343-28832).
+      Failure a-3343-28834-error This effectiveTime SHALL contain exactly one [1..1] low (CONF:3343-28834).
+      Failure a-3343-28849-error This value SHALL contain exactly one [1..1] @code="419199007" Allergy to substance (CONF:3343-28849).
+      Failure a-3343-28850-error This value SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:3343-28850).
+      Failure a-3343-28838-error This participantRole SHALL contain exactly one [1..1] @classCode="MANU" Manufactured Product (CodeSystem: HL7RoleClass urn:oid:2.16.840.1.113883.5.110 STATIC) (CONF:3343-28838).
+      Failure a-3343-28822-error This participantRole SHALL contain exactly one [1..1] playingEntity (CONF:3343-28822).
+      Failure a-3343-28839-error This playingEntity SHALL contain exactly one [1..1] @classCode="MMAT" Manufactured Material (CodeSystem: HL7EntityClass urn:oid:2.16.840.1.113883.5.41 STATIC) (CONF:3343-28839).
+      Failure a-3343-28840-error This playingEntity SHALL contain exactly one [1..1] code (CONF:3343-28840).
+            
+    Total Warnings Expected: 0
+
+-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <!-- Failure a-3343-28826-error Missing or bad classCode -->
+  <!-- Failure a-3343-28827-error Missing or bad moodCode -->
+  <!-- Failure a-3343-28848-error negationInd present -->
+  <observation classCode="OBSERR" negationInd="true">
+    <!-- Conforms to C-CDA R2.1 Substance or Device Allergy - Intolerance Observation (V2) -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.90" extension="2014-06-09"/>
+    <!-- Allergy Intolerance -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.147" extension="2017-08-01"/>
+    <!-- Failure a-3343-28816-error Multiple templateIds -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.147" extension="2017-08-01"/>
+    <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+    <!-- Failure a-3343-28817-error Missing or multiple code -->
+    <!-- Failure a-3343-28831-error Missing or bad code value-->
+    <!-- Failure a-3343-28832-error Missing or bad codeSystem-->
+    <code/>
+    <effectiveTime>
+      <!-- QDM Attribute: Relevant Period - onset date -->
+      <low value="20171101"/>
+    </effectiveTime>
+    <!-- Failure a-3343-28819-error Missing or multiple effectiveTime -->
+    <!-- Failure a-3343-28834-error Missing or multiple low -->
+    <effectiveTime/>
+    <value xsi:type="CD" code="419199007" displayName="Allergy to substance" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+    <!-- Failure a-3343-28836-error Missing or multiple value -->
+    <!-- Failure a-3343-28849-error Missing or invalid code value -->
+    <!-- Failure a-3343-28832-error Missing or invalid codeSystem value -->
+    <value xsi:type="CD" code="3" codeSystem="2"/>
+    <participant typeCode="CSM">
+      <participantRole classCode="MANU">
+        <playingEntity classCode="MMAT">
+          <!-- Medication -->
+          <code code="105152" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" displayName="Amoxicillin 60 MG/ML Oral Suspension"/>
+        </playingEntity>
+      </participantRole>
+    </participant>
+    <!-- Failure a-3343-28820-error Missing or multiple participant -->
+    <participant typeCode="CSM">
+      <participantRole classCode="MANU">
+        <playingEntity classCode="MMAT">
+          <!-- Medication -->
+          <code code="105152" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" displayName="Amoxicillin 60 MG/ML Oral Suspension"/>
+        </playingEntity>
+        <!-- Failure a-3343-28822-error Missing or multiple playingEntity -->
+        <!-- Failure a-3343-28839-error Missing or invalid classCode -->
+        <playingEntity classCode="MMATERR">
+          <!-- Failure a-3343-28840-error Missing or multiple code -->
+        </playingEntity>
+      </participantRole>
+      <!-- Failure a-3343-28838-error Missing or invalid classCode -->
+      <participantRole/>
+    </participant>
+    <!-- QDM Attribute: Reaction -->
+    <entryRelationship typeCode="MFST" inversionInd="true">
+      <observation classCode="OBS" moodCode="EVN">
+        <!-- Reaction Observation (V2) -->
+        <templateId root="2.16.840.1.113883.10.20.22.4.9" extension="2014-06-09"/>
+        <id root="80aed311-8af7-401f-ab7f-727260d2b033"/>
+        <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Assertion"/>
+        <statusCode code="completed"/>
+        <value xsi:type="CD" code="404684003" displayName="Nausea" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+      </observation>
+    </entryRelationship>
+  </observation>
+</ClinicalDocument>

@@ -14,7 +14,7 @@
 		Failure a-3343-27345-error SHALL contain exactly one [1..1] author (CONF:3343-27345) such that it SHALL contain exactly one [1..1] time (CONF:3343-29050). SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29049).
 		Failure a-3343-13254-error SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:3343-13254). 
 		Failure a-3343-13242-error This code SHALL contain exactly one [1..1] @code="29545-1" physical examination (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3343-13242).
-        Failure a-3343-27650-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29051). 
+        Failure a-3343-29051-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29051). 
 	
 	Total Warnings Expected: 0
 
@@ -42,7 +42,7 @@
 		<author>
 			<time value="201204081130"/>
 			<assignedAuthor>
-				<!-- Failure a-3343-27650-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29051). -->
+				<!-- Failure a-3343-29051-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29051). -->
 				<!-- <id nullFlavor="NA"/> -->
 			</assignedAuthor>
 		</author>

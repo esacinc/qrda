@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+<!-- 		
+    Title: Medication Dispensed V4 minimal file with errors
+    Author: Dan Donahue
+    Date: 08-01-2017
+    JIRA: https://tracker.esacinc.com/browse/QRDA-219
+ 
+    Total Errors Expected: 16
+			Failure a-3343-27528-error SHALL contain exactly one [1..1] @classCode="SPLY" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-27528).
+			Failure a-3343-27529-error SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-27529).
+			Failure a-3343-13851-error SHALL contain exactly one [1..1] templateId (CONF:3343-13851) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.45" (CONF:3343-13852). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-26555).
+			Failure a-3343-19440-error SHALL contain exactly one [1..1] statusCode (CONF:3343-19440).
+			Failure a-3343-28910-error SHALL contain exactly one [1..1] author (CONF:3343-28910).
+			Failure a-3343-28669-error This template SHALL be contained by a Medication Dispensed Act (V2) (CONF:3343-28908).
+		    Failure a-3343-29011-error This author SHALL contain exactly one [1..1] time (CONF:3343-29011).
+			Failure a-3343-29010-error This author SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29010).
+		    Failure a-3343-29012-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29012).
+		    Failure a-3343-19441-error This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-19441).
+			Failure a-3343-28226-error This substanceAdministration SHALL contain exactly one [1..1] @classCode="SBADM" Substance Administration (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-28226).	
+			Failure a-3343-28227-error This substanceAdministration SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: HL7ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-28227).
+			Failure a-3343-28229-error This substanceAdministration SHALL contain exactly one [1..1] consumable (CONF:3343-28229).
+		    Failure a-3343-28230-error This consumable SHALL contain exactly one [1..1] manufacturedProduct (CONF:3343-28230).
+		    Failure a-3343-28231-error This manufacturedProduct SHALL contain exactly one [1..1] manufacturedMaterial (CONF:3343-28231).
+		    Failure a-3343-28232-error This manufacturedMaterial SHALL contain exactly one [1..1] @nullFlavor="NA" (CodeSystem: HL7NullFlavor urn:oid:2.16.840.1.113883.5.1008) (CONF:3343-28232).
+
+	Total Warnings Expected: 0
+-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+	<act classCode="ACT" moodCode="EVN">
+		<!-- Medication Dispensed Act -->
+		<!-- Failure a-3343-28669-error This template SHALL be contained by a Medication Dispensed Act (V2) (CONF:3343-28908). -->
+		<templateId root="2.16.840.1.113883.10.20.24.3.139Err"/>
+		<entryRelationship typeCode="SUBJ">			
+			<!-- Must be contained in the Medication Dispensed Act (V2) template to represent the Medication, Dispensed QDM data type -->
+			<!-- Failure a-3343-27528-error SHALL contain exactly one [1..1] @classCode="SPLY" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-27528). -->
+			<!-- Failure a-3343-27529-error SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-27529). -->
+			<supply classCode="SPLYErr" moodCodeErr="EVN">
+				<!-- Conforms to C-CDA R2.1 Medication Dispense (V2) template -->
+				<templateId root="2.16.840.1.113883.10.20.22.4.18" extension="2014-06-09"/>
+				<!-- Medication Dispensed (V4) template -->
+				<templateId root="2.16.840.1.113883.10.20.24.3.45" extension="2017-08-01"/>
+				<!-- Failure a-3343-13851-error Multiple main templateId-->
+				<templateId root="2.16.840.1.113883.10.20.24.3.45" extension="2017-08-01"/>
+				<id root="50ed595a-dfb6-49f0-8b19-1901b5d01c1a"/>
+				<statusCode code="completed"/>
+				<!-- Failure a-3343-19440-error SHALL contain exactly one [1..1] statusCode (CONF:3343-19440). -->
+				<!-- Failure a-3343-19441-error This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-19441). -->
+				<!-- Failure a-3343-29010-error This author SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29010). -->
+				<statusCode code="completedErr"/>
+				<author>
+					<time value="201504081130"/>
+					<assignedAuthor>
+						<!-- Failure a-3343-29012-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29012).-->
+						<!-- <id nullFlavor="NA"/> -->
+					</assignedAuthor>
+				</author>
+				<!-- Failure a-3343-28910-error SHALL contain exactly one [1..1] author (CONF:3343-28910). -->
+				<!-- Failure a-3343-29011-error This author SHALL contain exactly one [1..1] time (CONF:3343-29011). -->
+				<author></author>
+				<!-- QDM Attribute: Refills -->
+				<!-- ... -->
+				<entryRelationship typeCode="REFR">
+					<!-- Failure a-3343-28226-error This substanceAdministration SHALL contain exactly one [1..1] @classCode="SBADM" Substance Administration 	 -->
+					<!-- Failure a-3343-28227-error This substanceAdministration SHALL contain exactly one [1..1] @moodCode="EVN" Event -->
+					<substanceAdministration classCode="SBADMErr" moodCodeErr="EVN">
+						<!-- ... -->
+						<consumable>
+							<manufacturedProduct>
+								<!-- Failure a-3343-28232-error This manufacturedMaterial SHALL contain exactly one [1..1] @nullFlavor="NA"  -->
+								<manufacturedMaterial nullFlavorErr="NA"/>
+							</manufacturedProduct>
+						</consumable>
+						<!-- Failure a-3343-28229-error This substanceAdministration SHALL contain exactly one [1..1] consumable (CONF:3343-28229). -->
+						<consumable>
+							<manufacturedProduct>
+								<manufacturedMaterial nullFlavor="NA"/>
+							</manufacturedProduct>
+							<!-- Failure a-3343-28230-error This consumable SHALL contain exactly one [1..1] manufacturedProduct (CONF:3343-28230). -->
+							<!-- Failure a-3343-28231-error This manufacturedProduct SHALL contain exactly one [1..1] manufacturedMaterial (CONF:3343-28231). -->
+							<manufacturedProduct></manufacturedProduct>
+						</consumable>
+					</substanceAdministration>
+				</entryRelationship>
+			</supply>
+		</entryRelationship>
+	</act></ClinicalDocument>

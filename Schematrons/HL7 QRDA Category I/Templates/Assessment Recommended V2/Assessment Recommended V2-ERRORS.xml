@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title:  Assessment Recommended, Minimal sample, with Errors
+    Author: Michael Holck
+    Date:   088-02-2016
+    JIRA : QRDA-239
+    
+    Total Errors Expected: 6
+           Failure a-3343-28682-error SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-28682)
+           Failure a-3343-28681-error SHALL contain exactly one [1..1] @moodCode="INT" Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-28681)
+           Failure a-3343-28673-error SHALL contain exactly one [1..1] templateId (CONF:3343-28673) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.145" (CONF:3343-28676) SHALL contain exactly one [1..1] @extension="2016-08-01" (CONF:3343-28702)
+           Failure a-3343-28674-error SHALL contain exactly one [1..1] code (CONF:3343-28674)
+           Failure a-3343-28680-error SHALL contain exactly one [1..1] author (CONF:3343-28680) such that it SHALL contain exactly one [1..1] time (CONF:3343-29038). SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29037).</sch:assert>
+           Failure a-3343-29039-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29039).</sch:assert>  
+ 
+    Total Warnings Expected: 0
+-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+	xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+	<!-- Failure a-3343-28682-error  Bad or missing classCode. -->
+	<!-- Failure a-3343-28681-error Bad or missing moodCode -->
+	<observation classCode="OBSERR" moodCode="INTERR">
+		<!-- Conforms to C-CDA R2.1 Planned Observation (V2) -->
+		<templateId root="2.16.840.1.113883.10.20.22.4.44" extension="2014-06-09" />
+		<!-- Assessment Recommended (V2) -->
+		<templateId root="2.16.840.1.113883.10.20.24.3.145" extension="2017-08-01"/>
+		<!-- Failure a-3343-28673-error Multiple templateId -->
+		<templateId root="2.16.840.1.113883.10.20.24.3.145" extension="2017-08-01"/>
+		<code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Physical limitation score [KCCQ]" />
+		<!-- Failure a-3343-28674-error Missing or multiple code -->
+		<code/>
+		<text>Assessment Recommended: Physical limitation score [KCCQ]</text>
+		<statusCode code="active" />
+		<author>
+			<time value="201504081130" />
+			<assignedAuthor>
+				<id nullFlavor="NA"/>
+			</assignedAuthor>
+		</author>
+		<!-- Failure a-3343-28680-error Missing or multiple author with time and assignedAuthor -->
+		<author>
+			<time/>
+			<!-- Failure a-3343-29039-error Missing id -->
+			<assignedAuthor/>
+		</author>
+	</observation>
+</ClinicalDocument>

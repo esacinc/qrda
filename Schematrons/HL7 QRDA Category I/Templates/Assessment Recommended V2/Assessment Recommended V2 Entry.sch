@@ -19,7 +19,7 @@
             <sch:assert id="a-3343-28674-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:3343-28674).</sch:assert>
             <sch:assert id="a-3343-28680-error" test="count(cda:author[count(cda:time)=1][count(cda:assignedAuthor)=1])=1">SHALL contain exactly one [1..1] author (CONF:3343-28680) such that it SHALL contain exactly one [1..1] time (CONF:3343-29038). SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29037).</sch:assert>
         </sch:rule>
-        <sch:rule id="Assessment_recommended-author-assignedAuthor-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.145'][@extension='2017-08-01']]/cda:author/cda:assignedAuthor">
+        <sch:rule id="Assessment_recommended-author-assignedAuthor-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.145'][@extension='2017-08-01']]/cda:author[count(cda:time)=1][count(cda:assignedAuthor)=1]/cda:assignedAuthor">
             <sch:assert id="a-3343-29039-error" test="count(cda:id) &gt; 0">This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29039).</sch:assert>
         </sch:rule>
     </sch:pattern>

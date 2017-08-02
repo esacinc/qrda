@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+<!-- 		
+    Title: Laboratory Test Performed V4 minimal sample file with errors
+    Author: Dan Donahue
+    Date: 08-02-2017
+    JIRA: https://tracker.esacinc.com/browse/QRDA-232
+    
+	Total Errors Expected: 15
+			Failure a-3343-11705-error SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-11705).
+			Failure a-3343-11706-error SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-11706).
+			Failure a-3343-11721-error SHALL contain exactly one [1..1] templateId (CONF:3343-11721) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.38" (CONF:3343-11722). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-27021).
+			Failure a-3343-11707-error SHALL contain at least one [1..*] id (CONF:3343-11707).
+			Failure a-3343-27637-error SHALL contain exactly one [1..1] code (CONF:3343-27637).	
+			Failure a-3343-11709-error SHALL contain exactly one [1..1] statusCode (CONF:3343-11709).
+			Failure a-3343-11711-error SHALL contain exactly one [1..1] effectiveTime (CONF:3343-11711) such that it  SHALL contain exactly one [1..1] low (CONF:3343-11712).  SHALL contain exactly one [1..1] high (CONF:3343-11713). 
+			Failure a-3343-29134-error SHALL NOT contain [0..0] value (CONF:3343-29134). 
+		    Failure a-3343-11710-error This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-11710).	
+		    Failure a-3343-29125-error The author, if present, SHALL contain exactly one [1..1] time (CONF:3343-29125). 
+			Failure a-3343-29121-error The author, if present, SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29121).
+		    Failure a-3343-29126-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29126).  
+		    Failure a-3343-29124-error The referenceRange, if present, SHALL contain exactly one [1..1] observationRange (CONF:3343-29124).
+		    Failure a-3343-29129-error This observationRange SHALL NOT contain [0..0] code (CONF:3343-29129).
+			Failure a-3343-29130-error This observationRange SHALL contain exactly one [1..1] value with @xsi:type="IVL_PQ" (CONF:3343-29130).
+	
+	Total Warnings Expected: 0
+-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+	
+	<!-- Failure a-3343-11705-error SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-11705). -->
+	<!-- Failure a-3343-11706-error SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-11706).-->
+	<observation classCodeErr="OBS" moodCode="EVNEff">
+		<!-- Conforms to C-CDA R2.1 Result Observation (V3) -->
+		<templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01" />
+		<!-- Laboratory Test Performed (V4) -->
+		<templateId root="2.16.840.1.113883.10.20.24.3.38" extension="2017-08-01" />
+		<!-- Failure a-3343-11721-error  Multiple main templateId -->
+		<templateId root="2.16.840.1.113883.10.20.24.3.38" extension="2017-08-01" />
+		<!-- Failure a-3343-11707-error SHALL contain at least one [1..*] id  -->
+		<!-- <id root="1fad091f-7b4e-4661-b61c-53f9a82515b6" /> -->
+		<!-- Laboratory Test -->
+		<!-- Failure a-3343-27637-error SHALL contain exactly one [1..1] code (CONF:3343-27637). -->
+		<!-- <code code="4544-3" displayName="Hematocrit [Volume Fraction] of Blood by Automated count" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" sdtc:valueSet="{$QDMElementValueSetOID}" /> -->
+		
+		<text>Laboratory Test, Hematocrit</text>
+		<statusCode code="completed" />
+		<!-- Failure a-3343-11709-error SHALL contain exactly one [1..1] statusCode -->
+		<!-- Failure a-3343-11710-error This statusCode SHALL contain exactly one [1..1] @code="completed"  -->
+		<statusCode code="completedErr" />
+		<!-- Failure a-3343-11711-error SHALL contain exactly one [1..1] effectiveTime (CONF:3343-11711) such that it  SHALL contain exactly one [1..1] low (CONF:3343-11712).  SHALL contain exactly one [1..1] high (CONF:3343-11713). -->
+		<effectiveTime>
+			<!-- QDM Attribute: Start Datetime -->
+			<low value="20150329090000+0500" />
+			<!-- Error is here...missing high -->
+			<!-- <high value="20150329103000+0500" /> -->
+		</effectiveTime>
+		<!-- Failure a-3343-29134-error SHALL NOT contain [0..0] value (CONF:3343-29134).  -->
+		<value></value>
+		<!-- Failure a-3343-29125-error The author, if present, SHALL contain exactly one [1..1] time -->
+		<!-- Failure a-3343-29121-error The author, if present, SHALL contain exactly one [1..1] assignedAuthor -->
+		<author>
+			<!-- <time value="201704081130"/> -->
+			<assignedAuthor>
+				<id nullFlavor="NA"/>
+			</assignedAuthor>
+			<assignedAuthor>
+				<!-- Failure a-3343-29126-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29126).  -->
+			</assignedAuthor>
+		</author>
+		<referenceRange>
+			<observationRange>
+				<value xsi:type="IVL_PQ"/>
+			</observationRange>
+			<!-- Failure a-3343-29124-error The referenceRange, if present, SHALL contain exactly one [1..1] observationRange -->
+			<!-- Failure a-3343-29129-error This observationRange SHALL NOT contain [0..0] code -->
+			<!-- This observationRange SHALL contain exactly one [1..1] value with @xsi:type="IVL_PQ" -->
+			<observationRange>
+				<code></code>
+				<value xsi:type="IVL_PQErr"/>
+			</observationRange>
+		</referenceRange>
+		<!-- QDM Attribute: Status -->
+		<!-- ... -->
+		<!-- QDM Attribute: Reason -->
+		<!-- ... -->
+		</observation>	
+	
+</ClinicalDocument>

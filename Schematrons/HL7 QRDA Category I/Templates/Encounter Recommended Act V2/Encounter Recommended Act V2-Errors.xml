@@ -23,7 +23,7 @@
   <!-- Failure a-2228-28487-error Bad Class Code -->
   <!-- Failure a-2228-28488-error Bad Mood Code -->
   <act classCodeErr="ACT" moodCodeErr="INT">
-    <!--Encounter Recommended Act -->
+    <!--Encounter Recommended Act V2-->
     <templateId root="2.16.840.1.113883.10.20.24.3.134" extension="2017-08-01"/>
     <!-- ailure a-2228-28485-error Multiple main template ids -->
     <templateId root="2.16.840.1.113883.10.20.24.3.134" extension="2017-08-01"/>

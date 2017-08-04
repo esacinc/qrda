@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+<!-- 		
+   Title: Encounter Recommended V4 minimal sample file
+    Author: Dan Donahue
+    Date: 08-04-2017
+    JIRA: https://tracker.esacinc.com/browse/QRDA-244
+
+    Total Errors Expected: 9
+            Failure a-3343-27549-error SHALL contain exactly one [1..1] @classCode="ENC" Encounter (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-27549). 
+            Failure a-3343-11911-error SHALL contain exactly one [1..1] @moodCode="INT" Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-11911).
+            Failure a-3343-11912-error SHALL contain exactly one [1..1] templateId (CONF:3343-11912) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.24" (CONF:3343-11913).  SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-27066). 
+            Failure a-3343-11915-error SHALL contain exactly one [1..1] code (CONF:3343-11915). 
+            Failure a-3343-27347-error SHALL contain exactly one [1..1] author (CONF:3343-27347).
+            Failure a-3343-28813-error This template SHALL be contained by an Encounter Recommended Act (V2) (CONF:3343-28813). 
+            Failure a-3343-29026-error This author SHALL contain exactly one [1..1] time (CONF:3343-29026). 
+            Failure a-3343-29025-error This author SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29025). 
+            Failure a-3343-29027-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29027). 
+
+    Total Warnings Expected: 0
+ -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+    xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+    <entry>
+      <act classCode="ACT" moodCode="INT">
+        <!--Encounter Recommended Act V2 -->
+        <templateId root="2.16.840.1.113883.10.20.24.3.134" extension="2017-08-01"/>
+        <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
+        <!-- Must be contained in the Encounter Recommended Act (V2) to represent Encounter, Recommended QDM data type -->  
+        <!-- Failure a-3343-27549-error SHALL contain exactly one [1..1] @classCode="ENC" Encounter (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-27549). -->
+        <!-- Failure a-3343-11911-error SHALL contain exactly one [1..1] @moodCode="INT" Intent (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-11911).  -->
+        <encounter classCode="ENCErr" moodCode="INTErr">
+          <!-- Conforms to C-CDA R2.1 Planned Encounter (V2) template -->
+          <templateId root="2.16.840.1.113883.10.20.22.4.40" extension="2014-06-09"/>
+          <!-- Encounter Recommended (V4) template -->
+          <templateId root="2.16.840.1.113883.10.20.24.3.24" extension="2017-08-01"/>
+          <!--  Failure a-3343-11912-error Multiple main templateIds -->
+          <templateId root="2.16.840.1.113883.10.20.24.3.24" extension="2017-08-01"/>
+          <id root="2a620155-9d11-439e-92b3-5d9815ff4de8"/>
+          <!-- Failure a-3343-11915-error SHALL contain exactly one [1..1] code (CONF:3343-11915).  -->
+          <!-- <code code="185349003" displayName="encounter for check-up (procedure)"  codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96"/> -->
+          <text>Encounter for check-up (procedure)</text>
+          <statusCode code="active"/>
+          <author>
+            <time value="201504081130"/>
+            <assignedAuthor>
+              <!-- Failure a-3343-29027-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29027). -->
+              <!-- <id nullFlavor="NA"/> -->
+            </assignedAuthor>
+          </author>
+          <!-- Failure a-3343-27347-error SHALL contain exactly one [1..1] author (CONF:3343-27347). -->
+          <!-- Failure a-3343-29026-error This author SHALL contain exactly one [1..1] time (CONF:3343-29026). -->
+          <!-- Failure a-3343-29025-error This author SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29025). -->
+          <author></author>
+          <!-- ... -->
+        </encounter> 
+      </act>
+    </entry>
+  </ClinicalDocument>
+</ClinicalDocument>

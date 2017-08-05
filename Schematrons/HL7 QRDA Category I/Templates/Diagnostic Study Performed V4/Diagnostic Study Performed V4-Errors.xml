@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+  <!-- 		
+    Title: Diagnostic Study Performed V4 minimal sample file with errors
+    Author: Dan Donahue
+    Date: 08-05-2017
+    JIRA: https://tracker.esacinc.com/browse/QRDA-250
+    
+    Total Errors Expected: 13
+          Failure a-3343-27639-error Bad Class Code
+          Failure a-3343-12950-error Bad Mood Code
+          Failure a-3343-12951-error Multiple main template id          
+          Failure a-3343-27617-error Missing or multiple code
+          Failure a-3343-12956-error Missing or multiple statusCode
+          Failure a-3343-12957-error @code not = completed in statusCode
+          Failure a-3343-12958-error Missing or multiple effectiveTime
+          Failure a-3343-12959-error Missing or multiple low
+          Failure a-3343-12960-error Missing or multiple high
+          Failure a-3343-29135-error Value present
+          Failure a-3343-29068-error Missing or multiple time in author
+          Failure a-3343-29067-error Missing or multiple assignedAuthor in author
+          Failure a-3343-29069-error Missing id in assignedAuthor
+          
+  
+    Total Warnings Expected: 1
+          Failure a-3343-28873 Missing or multiple author
+  -->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <!-- Failure a-3343-27639-error Bad Class Code -->
+  <!-- Failure a-3343-12950-error Bad Mood Code -->
+  <observation classCode="OBSErr" moodCodeErr="EVN">
+    <!-- Conforms to C-CDA R2.1 Procedure Activity Observation (V2) -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09"/>
+    <!-- Diagnostic Study Performed (V4) -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.18" extension="2017-08-01"/>
+    <!-- Failure a-3343-12951-error Multiple main template id -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.18" extension="2017-08-01"/>
+    <id root="1fad091f-7b4e-4661-b61c-53f9a82515b6"/>
+    <!-- Failure a-3343-27617-error Missing or multiple code -->
+    <!-- <code code="24605-8" codeSystem="2.16.840.1.113883.6.1" displayName="Breast Mammogram diagnostic" codeSystemName="LOINC"/> -->
+    <text>Diagnostic Study, Performed: Breast Mammogram Diagnostic</text>
+    <statusCode code="completed"/>
+    <!-- Failure a-3343-12956 Missing or multiple statusCode -->
+    <!-- Failure a-3343-12957 @code not = completed in statusCode -->
+    <statusCode code="completedErr"/>
+    <effectiveTime>
+      <!-- QDM Attribute: Relevant Period - Start dateTime -->
+      <low value="20170329090000+0500"/>
+      <!-- QDM Attribute: Relevant Period - Stop dateTime -->
+      <high value="20170329103000+0500"/>
+    </effectiveTime>
+    <!-- Failure a-3343-12958 Missing or multiple effectiveTime -->
+    <!-- Failure a-3343-12959 Missing or multiple low -->
+    <!-- Failure a-3343-12960 Missing or multiple high
+          Failure a-3343-29135 Value present -->
+    <effectiveTime>
+      <low value="20170329090000+0500"/>
+      <low value="20170329103000+0500"/>
+    </effectiveTime>
+    <!-- QDM Attribute: Result -->
+    <!--  Failure a-3343-29135 Value present -->
+    <value xsi:type="CD" nullFlavor="NA"/>
+    <author>
+      <time value="201704081130"/>
+      <assignedAuthor>
+        <!-- Failure a-3343-29069 Missing id in assignedAuthor -->
+        <!-- <id nullFlavor="NA" /> -->
+      </assignedAuthor>
+    </author>
+    <!-- Failure a-3343-28873-warning Missing or multiple author -->
+    <!-- Failure a-3343-29068 Missing or multiple time in author -->
+    <!-- Failure a-3343-29067 Missing or multiple assignedAuthor in author -->
+    <author>
+    </author>
+    <!-- ... -->
+   </observation>
+</ClinicalDocument>

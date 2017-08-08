@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+  <!-- 		
+   Title: Encounter Recommended Act V2 minimal sample file  with errors
+    Author: Dan Donahue
+    Date: 08-04-2017
+    JIRA: https://tracker.esacinc.com/browse/QRDA-243
+ 
+    Total Errors Expected: 6
+          Failure a-2228-28487-error Bad Class Code
+          Failure a-2228-28488-error Bad Mood Code
+          Failure a-2228-28485-error Multiple main template ids
+          Failure a-2228-28677-error Missing or multiple code
+          Failure a-2228-28814-error Missing or bad @code='ENC' in code
+          Failure a-2228-28486-error Missing or multiple entryRelationship with @typeCode="SUBJ" and one encounter recommended
+    
+    Total Warnings Expected: 0
+    
+  -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <!-- Failure a-2228-28487-error Bad Class Code -->
+  <!-- Failure a-2228-28488-error Bad Mood Code -->
+  <act classCodeErr="ACT" moodCodeErr="INT">
+    <!--Encounter Recommended Act V2-->
+    <templateId root="2.16.840.1.113883.10.20.24.3.134" extension="2017-08-01"/>
+    <!-- ailure a-2228-28485-error Multiple main template ids -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.134" extension="2017-08-01"/>
+    <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
+    <code code="ENC" codeSystem="2.16.840.1.113883.5.6" displayName="Encounter" codeSystemName="ActClass"/>
+    <!-- Failure a-2228-28677-error Missing or multiple code -->
+    <!-- Failure a-2228-28814-error Missing or bad @code='ENC' in code -->
+    <code code="ENCErr" />
+    <!-- Failure a-2228-28486-error Missing or multiple entryRelationship with @typeCode="SUBJ" and one encounter recommended -->
+    <entryRelationship typeCode="SUBJ">
+      <encounter classCode="ENC" moodCode="INT">
+        <!-- Conforms to C-CDA R2.1 Planned Encounter (V2) template -->
+        <templateId root="2.16.840.1.113883.10.20.22.4.40" extension="2014-06-09"/>
+        <!-- Encounter Recommended (V4) template -->
+        <templateId root="2.16.840.1.113883.10.20.24.3.24" extension="2017-08-01Err"/> <!-- Here is the error...bad templateId -->
+        <!-- ... -->
+      </encounter>
+    </entryRelationship>
+  </act></ClinicalDocument>

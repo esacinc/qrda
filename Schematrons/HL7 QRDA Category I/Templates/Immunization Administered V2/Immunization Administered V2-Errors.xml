@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+<!-- 		
+    Title: Immunization Administered V2 minimal sample file with errors
+    Author: Dan Donahue
+    Date: 08-03-2017
+    JIRA: https://tracker.esacinc.com/browse/QRDA-238
+  
+    Total Errors Expected: 9
+            Failure a-3343-28588-error SHALL contain exactly one [1..1] @classCode="SBADM" Substance Administration (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-28588).
+            Failure a-3343-28589-error SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-28589).
+            Failure a-3343-28574-error SHALL contain exactly one [1..1] templateId (CONF:3343-28574) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.140" (CONF:3343-28581). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-28958).
+            Failure a-3343-28576-error SHALL contain exactly one [1..1] statusCode (CONF:3343-28576).
+            Failure a-3343-28578-error SHALL contain exactly one [1..1] effectiveTime (CONF:3343-28578).
+            Failure a-3343-28957-error SHALL contain exactly one [1..1] consumable (CONF:3343-28957).
+            Failure a-3343-28585-error This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-28585).
+            Failure a-3343-28959-error This effectiveTime SHALL contain exactly one [1..1] @value (CONF:3343-28959).
+            Failure a-3343-28960-error This consumable SHALL contain exactly one [1..1] Immunization Medication Information (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.54:2014-06-09) (CONF:3343-28960).
+        
+                 
+    Total Warnings Expected: 0
+     
+  -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <!-- Failure a-3343-28588-error SHALL contain exactly one [1..1] @classCode="SBADM" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-28588). -->
+  <!-- Failure a-3343-28589-error SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-28589).-->
+  <substanceAdministration classCodeErr="SBADM" moodCode="EVNErr">
+    <!-- C-CDA R2 Immunization Activity -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.52" extension="2014-06-09"/>
+    <!-- Immunization Administered -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.140" extension="2017-08-01"/>
+    <!-- Failure a-3343-28574-error Multiple main templateIds -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.140" extension="2017-08-01"/>
+    <id root="1ea77951-61f4-425f-bb69-dd396d63c44f"/>
+    <statusCode code="completed"/>
+    <!--  Failure a-3343-28576-error SHALL contain exactly one [1..1] statusCode -->
+    <!--  Failure a-3343-28585-error This statusCode SHALL contain exactly one [1..1] @code="completed" -->
+    <statusCode code="completedErr"/> 
+    <effectiveTime value="20041215"/>
+    <!-- Failure a-3343-28578-error SHALL contain exactly one [1..1] effectiveTime (CONF:3343-28578). -->
+    <!-- Failure a-3343-28959-error This effectiveTime SHALL contain exactly one [1..1] @value  -->
+    <effectiveTime />
+    <consumable>
+      <manufacturedProduct classCode="MANU">
+        <!-- C-CDA R2.1 Immunization Medication Information (V2) -->
+        <templateId root="2.16.840.1.113883.10.20.22.4.54" extension="2014-06-09"/>
+        <id root="37bfe02a-3e97-4bd6-9197-bbd0ed0de79e"/>
+        <manufacturedMaterial>
+          <code code="33" codeSystem="2.16.840.1.113883.6.59"
+            displayName="Pneumococcal polysaccharide vaccine" codeSystemName="CVX">
+          </code>
+          <lotNumberText>1</lotNumberText>
+        </manufacturedMaterial>
+      </manufacturedProduct>
+    </consumable>
+    <!-- Failure a-3343-28957-error SHALL contain exactly one [1..1] consumable -->
+    <!-- Failure a-3343-28960-error This consumable SHALL contain exactly one [1..1] Immunization Medication Information (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.54:2014-06-09) -->
+    <consumable></consumable>
+    <!-- QDM Attribute: Dose -->
+    <doseQuantity value="1"/>
+    
+  </substanceAdministration>
+  
+</ClinicalDocument>

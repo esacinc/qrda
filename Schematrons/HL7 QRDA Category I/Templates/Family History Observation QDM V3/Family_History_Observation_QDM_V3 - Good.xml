@@ -1,0 +1,43 @@
+<!-- 	
+	Title: Family_Hstory_Observation_QDM_V3 minimal sample file with no errors
+	Author: Dan Donahue
+	Date: 06-23-2017
+	JIRA: https://tracker.esacinc.com/browse/QRDA-242
+	
+	Total Errors Expected: 0
+	
+	Total Warnings Expected: 0 
+	
+-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+	<organizer moodCode="EVN" classCode="CLUSTER">
+		<!-- C-CDA R2.1 Family History Organizer (V3) -->
+		<templateId root="2.16.840.1.113883.10.20.22.4.45" extension="2015-08-01"/>
+		<!-- Family History Organizer QDM (V4) templateId -->
+		<templateId root="2.16.840.1.113883.10.20.24.3.12" extension="2017-08-01"/>
+		<!-- ... -->
+		<component>
+			<!-- Must be contained in the Family History Organizer (V4) QDM template to represent the Family History QDM data type -->
+			<observation classCode="OBS" moodCode="EVN">
+				<!-- Conforms to C-CDA R2.1 Family History Observation (V3) -->
+				<templateId root="2.16.840.1.113883.10.20.22.4.46" extension="2015-08-01"/>
+				<!-- Family History QDM (V3) -->
+				<templateId root="2.16.840.1.113883.10.20.24.3.112" extension="2017-08-01"/>
+				<id root="d42ebf70-5c89-11db-b0de-0800200c9a66"/>
+				<code code="75323-6" displayName="Condition" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1">
+					<translation code="64572001" displayName="Condition" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96"/>
+				</code>
+				<statusCode code="completed"/>
+				<!-- Diagnosis/Condition/Problem -->
+				<value xsi:type="CD" code="22298006" codeSystem="2.16.840.1.113883.6.96" displayName="Myocardial infarction"/>
+				<author>
+					<time value="2017020101030"/>
+					<assignedAuthor>
+						<id nullFlavor="NA"/>
+					</assignedAuthor>
+				</author>
+			</observation>
+		</component>
+	</organizer>
+	
+</ClinicalDocument>

@@ -12,7 +12,7 @@
 			Failure a-3343-13764-error SHALL contain exactly one [1..1] templateId (CONF:3343-13764) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.33" (CONF:3343-13765). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-26557).
 			Failure a-3343-13767-error SHALL contain exactly one [1..1] code (CONF:3343-13767).
 			Failure a-3343-27349-error SHALL contain exactly one [1..1] author (CONF:3343-27349).
-		    Failure a-3343-27635-error This author SHALL contain exactly one [1..1] time (CONF:3343-29020). 
+		    Failure a-3343-29020-error This author SHALL contain exactly one [1..1] time (CONF:3343-29020). 
 			Failure a-3343-29019-error This author SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29019). 
 		    Failure a-3343-29021-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29021). 
 	
@@ -41,7 +41,7 @@
 			</assignedAuthor>
 		</author>
 		<!-- Failure a-3343-27349-error SHALL contain exactly one [1..1] author  -->
-		<!-- Failure a-3343-27635-error This author SHALL contain exactly one [1..1] time (CONF:3343-29020). -->
+		<!-- Failure a-3343-29020-error This author SHALL contain exactly one [1..1] time (CONF:3343-29020). -->
 		<!-- Failure a-3343-29019-error This author SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29019). -->
 		<author>
 		</author>

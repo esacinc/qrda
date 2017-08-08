@@ -18,7 +18,7 @@
 		</sch:rule>
 
 		<sch:rule id="Intervention_Recommended-author-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.33'][@extension='2017-08-01']]/cda:author">
-			<sch:assert id="a-3343-27635-error" test="count(cda:time)=1">This author SHALL contain exactly one [1..1] time (CONF:3343-29020). </sch:assert>
+			<sch:assert id="a-3343-29020-error" test="count(cda:time)=1">This author SHALL contain exactly one [1..1] time (CONF:3343-29020). </sch:assert>
 			<sch:assert id="a-3343-29019-error" test="count(cda:assignedAuthor)=1">This author SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29019). </sch:assert>
 		</sch:rule>
 		

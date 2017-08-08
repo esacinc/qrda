@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+  <!-- 		
+    Title: Device Order Act V2 minimal sample file
+    Author: Dan Donahue
+    Date: 08-08-2017
+    JIRA: https://tracker.esacinc.com/browse/QRDA-256
+ 
+    Total Errors Expected: 0
+
+    Total Warnings Expected: 0
+    
+  -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <act classCode="ACT" moodCode="RQO">
+    <templateId root="2.16.840.1.113883.10.20.24.3.130" extension="2017-08-01"/>
+    <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
+    <code code="SPLY" codeSystem="2.16.840.1.113883.5.6" displayName="Supply" codeSystemName="ActClass"/>
+    <entryRelationship typeCode="SUBJ">
+      <supply classCode="SPLY" moodCode="RQO">
+        <!-- Conforms to C-CDA R2.1 Planned Supply (V2) -->
+        <templateId root="2.16.840.1.113883.10.20.22.4.43" extension="2014-06-09"/>
+        <!-- Device Order (V4) -->
+        <templateId root="2.16.840.1.113883.10.20.24.3.9" extension="2017-08-01"/>
+        <id root="6a8d037d-f144-4071-9d1f-8a92a11dedc6"/>
+        <statusCode code="active"/>
+        <author>
+          <time value="201610101030"/>
+          <assignedAuthor>
+            <id nullFlavor="NA"/>
+          </assignedAuthor>
+        </author>
+        <participant typeCode="DEV">
+          <participantRole classCode="MANU">
+            <playingDevice classCode="DEV">
+              <!-- Device -->
+              <code code="401608003" codeSystem="2.16.840.1.113883.6.96"
+                codeSystemName="SNOMED-CT" displayName="Suprapubic catheter (physical object)"/>
+            </playingDevice>
+          </participantRole>
+        </participant>
+      </supply>
+    </entryRelationship>
+  </act>
+</ClinicalDocument>

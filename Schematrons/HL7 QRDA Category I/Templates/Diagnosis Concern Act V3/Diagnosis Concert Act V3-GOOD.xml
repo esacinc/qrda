@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title:  Diagnosis Concern Act V3, Minimal sample
+    Author: Dan Donahue
+    Date:   08-08-2017
+    JIRA:   https://tracker.esacinc.com/browse/QRDA-253
+    
+    Total Errors Expected: 0
+    Total Warnings Expected: 0
+-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+	xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+	<act classCode="ACT" moodCode="EVN">
+		<!-- Conforms to C-CDA 2.1 Problem Concern Act (V3) -->
+		<templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2015-08-01"/>
+		<!-- Diagnosis Concern Act (V3) -->
+		<templateId root="2.16.840.1.113883.10.20.24.3.137" extension="2017-08-01"/>
+		<id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
+		<code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern"/>
+		<!-- The statusCode represents whether this is an active (active) or resolved (completed) diagnosis -->
+		<statusCode code="active"/>
+		<!-- This is the time that the diagnosis is authored in the patient's chart -->
+		<effectiveTime>
+			<!-- (equivalent to author/time in the contained observation) -->
+			<low value="201504081130"/>
+		</effectiveTime>
+		<entryRelationship typeCode="SUBJ">
+			<observation classCode="OBS" moodCode="EVN">
+				<!-- Conforms to C-CDA R2.1 Problem Observation (V3) -->
+				<templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01"/>
+				<!-- Diagnosis (V2) -->
+				<templateId root="2.16.840.1.113883.10.20.24.3.135" extension="2017-08-01"/>
+				<id root="e5d9e01e-d778-40ba-9bd0-351d0222b26c"/>
+				<code code="29308-4" displayName="diagnosis" codeSystem="2.16.840.1.113883.6.1"
+					codeSystemName="LOINC">
+					<translation code="282291009" displayName="diagnosis" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+				</code>
+				<statusCode code="completed"/>
+				<effectiveTime>
+					<!-- Onset Datetime -->
+					<low value="20170101090000+0500"/>
+					<!-- Abatement Datetime -->
+					<high value="20170801090000+0500"/>
+				</effectiveTime>
+				<value xsi:type="CD" code="25907005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Diabetic gangrene (disorder)"/>
+				<!-- QDM Attribute Anatomical Location Site -->
+				<targetSiteCode code="56459004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="foot"/>
+			</observation>
+		</entryRelationship>
+		<!-- QDM Attribute: Severity -->
+		<entryRelationship typeCode="REFR">
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.22.4.8" extension="2014-06-09"/>
+				<code code="SEV" displayName="Severity Observation"
+					codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+				<value xsi:type="CD" code="24484000" displayName="Severe"
+					codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+			</observation>
+		</entryRelationship>
+	</act>
+</ClinicalDocument>

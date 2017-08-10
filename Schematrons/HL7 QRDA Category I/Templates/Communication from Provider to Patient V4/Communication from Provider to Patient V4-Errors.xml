@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+  <!-- 		
+     Title: Communication from Provider to Patient V4 minimal sample file
+    Author: Dan Donahue
+    Date: 08-10-2017
+    JIRA: https://tracker.esacinc.com/browse/QRDA-261
+  
+    
+    Total Errors Expected: 17
+            Failure a-3343-11840-error SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-11840). 
+            Failure a-3343-11841-error SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-11841). 
+            Failure a-3343-11842-error SHALL contain exactly one [1..1] templateId (CONF:3343-11842) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.3" (CONF:3343-11843). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-27280).
+            Failure a-3343-11845-error SHALL contain at least one [1..*] id (CONF:3343-11845).
+            Failure a-3343-11846-error SHALL contain exactly one [1..1] statusCode="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-11846). 
+            Failure a-3343-26947-error SHALL contain exactly one [1..1] code (CONF:3343-26947).
+            Failure a-3343-28920-error SHALL contain exactly one [1..1] author (CONF:3343-28920).
+            Failure a-3343-11850-error SHALL contain exactly one [1..1] participant (CONF:3343-11850) such that it SHALL contain exactly one [1..1] @typeCode="AUT" author (originator) (CodeSystem: HL7ParticipationType urn:oid:2.16.840.1.113883.5.90) (CONF:3343-11851). SHALL contain exactly one [1..1] participantRole (CONF:3343-11852).  
+            Failure a-3343-11856-error SHALL contain exactly one [1..1] participant (CONF:3343-11856) such that it SHALL contain exactly one [1..1] @typeCode="IRCP" information recipient (CodeSystem: HL7ParticipationType urn:oid:2.16.840.1.113883.5.90) (CONF:3343-11857). SHALL contain exactly one [1..1] participantRole (CONF:3343-11858). 
+            Failure a-3343-28992-error This author SHALL contain exactly one [1..1] time (CONF:3343-28992).
+            Failure a-3343-28991-error This author SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-28991).
+            Failure a-3343-28993-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-28993). 
+            Failure a-3343-12102-error This participantRole SHALL contain exactly one [1..1] @classCode="PAT" patient (CodeSystem: HL7RoleClass urn:oid:2.16.840.1.113883.5.110) (CONF:3343-12102).
+            Failure a-3343-12101-error This participantRole SHALL contain exactly one [1..1] @classCode="ASSIGNED" assigned entity (CodeSystem: HL7RoleClass urn:oid:2.16.840.1.113883.5.110) (CONF:3343-12101).
+            Failure a-3343-11853-error This participantRole SHALL contain exactly one [1..1] code (CONF:3343-11853).
+            Failure a-3343-26948-error This code SHALL contain exactly one [1..1] @code="158965000" Medical practitioner (CONF:3343-26948).
+            Failure a-3343-26949-error This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CONF:3343-26949).
+            
+    Total Warnings Expected: 0
+
+   -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <!-- Failure a-3343-11840-error SHALL contain exactly one [1..1] @classCode="ACT" -->
+  <!-- Failure a-3343-11841-error SHALL contain exactly one [1..1] @moodCode="EVN"  -->
+  <act classCode="ACTErr" moodCodeErr="EVN">
+    <templateId root="2.16.840.1.113883.10.20.24.3.3" extension="2017-08-01"/>
+    <!-- Failure a-3343-11842-error Multiple main templateIds -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.3" extension="2017-08-01"/>
+    <!-- Failure a-3343-11845-error SHALL contain at least one [1..*] id -->
+    <!-- <id root="2d5075da-2ffc-47a9-a350-4a24e6b052d1"/> -->
+    <!-- Failure a-3343-26947-error SHALL contain exactly one [1..1] code -->
+    <!-- <code code="371530004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Clinical consultation report (record artifact)"/> -->
+    <!-- Failure a-3343-11846-error SHALL contain exactly one [1..1] statusCode="completed" -->
+    <statusCode code="completedErr"/>
+    <author>
+      <time value="2017050101030"/>
+      <assignedAuthor>
+        <!--  Failure a-3343-28993-error This assignedAuthor SHALL contain at least one [1..*] id -->
+        <!-- <id nullFlavor="NA"/> -->
+      </assignedAuthor>
+    </author>
+    <!-- Failure a-3343-28920-error SHALL contain exactly one [1..1] author -->
+    <!-- Failure a-3343-28992-error This author SHALL contain exactly one [1..1] time -->
+    <!-- Failure a-3343-28991-error This author SHALL contain exactly one [1..1] assignedAuthor -->
+    <author></author>
+    <participant typeCode="AUT">
+      <participantRole classCode="ASSIGNED">
+        <code code="158965000" codeSystem="2.16.840.1.113883.6.96"
+          codeSystemName="SNOMED CT" displayName="Medical Practitioner"/>
+      </participantRole>
+    </participant>
+    <!-- Failure a-3343-11850-error SHALL contain exactly one [1..1] participant  with typeCode='AUT' and one participantRole -->
+    <participant typeCode="AUT">
+      <!-- Failure a-3343-12101-error This participantRole SHALL contain exactly one [1..1] @classCode="ASSIGNED" -->
+      <participantRole classCode="ASSIGNEDErr">
+        <code code="158965000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Medical Practitioner"/>
+        <!--  Failure a-3343-11853-error This participantRole SHALL contain exactly one [1..1] code -->
+        <!--  Failure a-3343-26948-error This code SHALL contain exactly one [1..1] @code="158965000" Medical practitioner -->
+        <!--  Failure a-3343-26949-error This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" -->
+        <code code="158965000Err" codeSystem="2.16.840.1.113883.6.96Err"/>
+      </participantRole>
+    </participant>
+    <participant typeCode="IRCP">
+      <participantRole classCode="PAT" />
+    </participant>
+    <!-- Failure a-3343-11856-error SHALL contain exactly one [1..1] participant with typeCode='IRCP' and one participantRole -->
+    <participant typeCode="IRCP">
+      <!-- Failure a-3343-12102-error  This participantRole SHALL contain exactly one [1..1] @classCode="PAT" patient (CodeSystem: HL7RoleClass urn:oid:2.16.840.1.113883.5.110) (CONF:3343-12102). -->
+      <participantRole classCode="PATErr" />
+    </participant>
+  </act>
+
+</ClinicalDocument>

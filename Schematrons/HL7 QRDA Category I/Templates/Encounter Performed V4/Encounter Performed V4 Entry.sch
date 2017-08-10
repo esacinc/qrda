@@ -41,7 +41,7 @@
             <sch:assert id="a-3343-29082-error" test="count(cda:assignedAuthor)=1">The author, if present, SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29082).</sch:assert>
         </sch:rule>
         
-        <sch:rule id="Encounter-Performed-author-assignedAuthor-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.23'][@extension='2017-08-01']]/cda:author/cda:assignedAuthor">
+        <sch:rule id="Encounter-Performed-author-assignedAuthor-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.23'][@extension='2017-08-01']]/cda:author/cda:assignedAuthor"> 
             <sch:assert id="a-3343-29084-error" test="count(cda:id)&gt;=1">This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29084). </sch:assert>
         </sch:rule>
     </sch:pattern>

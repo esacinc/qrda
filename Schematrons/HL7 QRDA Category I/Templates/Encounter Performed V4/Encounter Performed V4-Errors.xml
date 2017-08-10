@@ -65,19 +65,16 @@
         <!-- Failure a-3343-11878-error This effectiveTime SHALL contain exactly one [1..1] high (CONF:3343-11878). -->
         <effectiveTime></effectiveTime>
         <author>
-          <time></time>
-          <!--  Failure a-3343-29084-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29084). -->
-          <assignedAuthor></assignedAuthor>
+          <time value="201704081130"/>
+          <assignedAuthor>
+            <!--  Failure a-3343-29084-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29084). -->
+            <!-- <id nullFlavor="NA/> -->
+          </assignedAuthor>
         </author>
         <!-- Failure a-3343-29083-error The author, if present, SHALL contain exactly one [1..1] time (CONF:3343-29083). --> 
         <!-- Failure a-3343-29082-error The author, if present, SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29082). -->
         <author></author>
-        <author>
-          <time></time>
-          <!--  Failure a-3343-29084-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29084). -->
-          <assignedAuthor></assignedAuthor>
-        </author>
-      </encounter>
+       </encounter>
     </entryRelationship>
   </act>
 </ClinicalDocument>

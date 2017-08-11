@@ -22,7 +22,7 @@
 		<sch:rule id="Physical_Exam_Order-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.58'][@extension='2017-08-01']]/cda:code">
 			<sch:assert id="a-3343-13242-error" test="@code='29545-1'"> This code SHALL contain exactly one [1..1] @code="29545-1" physical examination (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3343-13242). </sch:assert>
 		</sch:rule>
-		<sch:rule id="Physical_Exam_Order-assignedAuthor-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.58'][@extension='2017-08-01']]/cda:author/cda:assignedAuthor">
+		<sch:rule id="Physical_Exam_Order-assignedAuthor-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.58'][@extension='2017-08-01']]/cda:author[count(cda:time)=1][count(cda:assignedAuthor)=1]/cda:assignedAuthor">
 			<sch:assert id="a-3343-29051-error" test="count(cda:id)&gt;=1"> This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29051). </sch:assert>
 		</sch:rule>
 	</sch:pattern>

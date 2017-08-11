@@ -33,10 +33,6 @@
         <sch:rule id="Communication-From-Provider-To-Patient-participant-participantRole-recipient-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.3'][@extension='2017-08-01']]/cda:participant[@typeCode='IRCP']/cda:participantRole">
             <sch:assert id="a-3343-12102-error" test="@classCode='PAT'">This participantRole SHALL contain exactly one [1..1] @classCode="PAT" patient (CodeSystem: HL7RoleClass urn:oid:2.16.840.1.113883.5.110) (CONF:3343-12102).</sch:assert>
         </sch:rule>
-        <sch:rule id="Communication-From-Provider-To-Patient-participant-participantRole-recipient-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.3'][@extension='2017-08-01']]/cda:participant[@typeCode='IRCP']/cda:participantRole/cda:code">
-            <sch:assert id="a-3343-26951-error" test="@code='158965000'">This code SHALL contain exactly one [1..1] @code="158965000" Medical practitioner (CONF:3343-26951).</sch:assert>
-            <sch:assert id="a-3343-26952-error" test="@codeSystem='2.16.840.1.113883.6.96'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:3343-26952).</sch:assert>
-        </sch:rule>
         <sch:rule id="Communication-From-Provider-To-Patient-participant-participantRole-author-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.3'][@extension='2017-08-01']]/cda:participant[@typeCode='AUT']/cda:participantRole">
             <sch:assert id="a-3343-12101-error" test="@classCode='ASSIGNED'">This participantRole SHALL contain exactly one [1..1] @classCode="ASSIGNED" assigned entity (CodeSystem: HL7RoleClass urn:oid:2.16.840.1.113883.5.110) (CONF:3343-12101).</sch:assert>
             <sch:assert id="a-3343-11853-error" test="count(cda:code)=1">This participantRole SHALL contain exactly one [1..1] code (CONF:3343-11853).</sch:assert>

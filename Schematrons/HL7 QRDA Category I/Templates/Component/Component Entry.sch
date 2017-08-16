@@ -13,7 +13,7 @@
     
     <sch:pattern id="Component-pattern-errors">
         <sch:rule id="Component-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.149'][@extension='2017-08-01']]">
-            <sch:assert id="a-3343-28778-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:3343-28788).</sch:assert>
+            <sch:assert id="a-3343-28788-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:3343-28788).</sch:assert>
             <sch:assert id="a-3343-28789-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: HL7ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:3343-28789). </sch:assert>
             <sch:assert id="a-3343-28786-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.149'][@extension='2017-08-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3343-28786) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.149" (CONF:3343-28793).SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-28796). </sch:assert>
             <sch:assert id="a-3343-28784-error" test="count(cda:code)=1"> SHALL contain exactly one [1..1] code (CONF:3343-28784). </sch:assert>

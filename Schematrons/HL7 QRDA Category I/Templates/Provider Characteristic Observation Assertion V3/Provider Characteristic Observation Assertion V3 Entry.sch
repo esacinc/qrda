@@ -53,7 +53,7 @@
            <sch:assert id="a-3343-28952-error" test="count(cda:author) = 1">SHOULD contain zero or one [0..1] author (CONF:3343-28952).</sch:assert>
         </sch:rule>
           
-        <sch:rule id="Provider-Characteristic-Observation-Assertion-participant-participantRole-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.114'][@extension='2017-08-01']]/cda:participant/cda:participantRole">
+          <sch:rule id="Provider-Characteristic-Observation-Assertion-participant-participantRole-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.114'][@extension='2017-08-01']]/cda:participant[@typeCode='IND']/cda:participantRole">
  		  <sch:assert id="a-3343-28221-warning" test="count(cda:id [@root='2.16.840.1.113883.4.6'][@extension])&gt;=1">This participantRole SHOULD contain zero or more [0..*] id (CONF:3343-28221) such that it  SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:3343-28222).  SHOULD contain zero or one [0..1] @extension (CONF:3343-28223). </sch:assert>
  		  <sch:assert id="a-3343-28218-warning" test="count(cda:code)=1">This participantRole SHOULD contain zero or one [0..1] code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy (HIPAA) urn:oid:2.16.840.1.114222.4.11.1066 (CONF:3343-28220). </sch:assert>
         </sch:rule>  

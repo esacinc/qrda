@@ -29,14 +29,14 @@
         <sch:rule id="Transfer-From-statusCode-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.81'][@extension='2016-02-01']]/cda:statusCode">
             <sch:assert id="a-2228-28312-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2228-28312). </sch:assert>
          </sch:rule>
-        <sch:rule id="Transfer-From-participant-time-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.81'][@extension='2016-02-01']]/cda:paticipant/cda:time">
+        <sch:rule id="Transfer-From-participant-time-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.81'][@extension='2016-02-01']]/cda:paticipant[@typeCode='ORG']/cda:time">
             <sch:assert id="a-2228-28314-error" test="count(cda:low)=1">This time SHALL contain exactly one [1..1] low (CONF:2228-28314).  </sch:assert>
         </sch:rule>
-        <sch:rule id="Transfer-From-participantRole-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.81'][@extension='2016-02-01']]/cda:participant/cda:participantRole">
+        <sch:rule id="Transfer-From-participantRole-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.81'][@extension='2016-02-01']]/cda:participant[@typeCode='ORG']/cda:participantRole">
             <sch:assert id="a-2228-28320-error" test="@classCode='LOCE'">This participantRole SHALL contain exactly one [1..1] @classCode="LOCE" Located entity (CodeSystem: RoleClass urn:oid:2.16.840.1.113883.5.110) (CONF:2228-28320).  </sch:assert>
             <sch:assert id="a-2228-28317-error" test="count(cda:code)=1">This participantRole SHALL contain exactly one [1..1] code (CONF:2228-28317).</sch:assert>
         </sch:rule>
-        <sch:rule id="Transfer-From-participantRole-code-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.81'][@extension='2016-02-01']]//cda:participant/cda:participantRole/cda:code">
+        <sch:rule id="Transfer-From-participantRole-code-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.81'][@extension='2016-02-01']]//cda:participant[@typeCode='ORG']/cda:participantRole[@classCode='LOCE']/cda:code">
             <sch:assert id="a-2228-28321-error" test="@sdtc:valueSet">This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:2228-28321).</sch:assert>
         </sch:rule>
         

@@ -11,7 +11,7 @@
 	<sch:pattern id="Family_History_Organizer_QDM-pattern-errors">
 		<sch:rule id="Family_History_Organizer_QDM-errors" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.12'][@extension='2017-08-01']]">
 			<sch:assert id="a-3343-14175-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.12'][@extension='2017-08-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3343-14175) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.12" (CONF:3343-14176). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-26553).</sch:assert>
-			<sch:assert id="a-3343-27715-error" test="(count(cda:component[count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.112']]) = 1]) &gt; 0)">SHALL contain at least one [1..*] component (CONF:3343-27715) such that it SHALL contain exactly one [1..1] Family History Observation QDM (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.112:2017-08-01) (CONF:3343-27716).</sch:assert>
+			<sch:assert id="a-3343-27715-error" test="(count(cda:component[count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.112'][@extension='2017-08-01']]) = 1]) &gt; 0)">SHALL contain at least one [1..*] component (CONF:3343-27715) such that it SHALL contain exactly one [1..1] Family History Observation QDM (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.112:2017-08-01) (CONF:3343-27716).</sch:assert>
 		</sch:rule>
 	</sch:pattern>
 	

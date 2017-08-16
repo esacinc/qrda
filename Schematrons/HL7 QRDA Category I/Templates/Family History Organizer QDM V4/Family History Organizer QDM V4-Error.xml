@@ -27,7 +27,7 @@
 				<!-- Conforms to C-CDA R2.1 Family History Observation (V3) -->
 				<templateId root="2.16.840.1.113883.10.20.22.4.46" extension="2015-08-01"/>
 				<!-- Family History QDM (V3) -->
-				<templateId root="2.16.840.1.113883.10.20.24.3.112Err" extension="2017-08-01"/> <!-- Error is here: bad templateId reoot -->
+				<templateId root="2.16.840.1.113883.10.20.24.3.112Err" extension="2017-08-01"/> <!-- Error is here: bad templateId root -->
 				<!-- ... -->
 			</observation>
 		</component>

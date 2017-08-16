@@ -35,7 +35,7 @@
             <sch:assert id="a-3343-12378-error" test="count(cda:playingDevice)=1">This participantRole SHALL contain exactly one [1..1] playingDevice (CONF:3343-12378).</sch:assert>
         </sch:rule>
         
-        <sch:rule id="Device-Recommended-participant-participantRole-playingDevice-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.10'][@extension='2017-08-01']]/cda:participant[@typeCode='DEV']/cda:participantRole/cda:playingDevice">
+        <sch:rule id="Device-Recommended-participant-participantRole-playingDevice-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.10'][@extension='2017-08-01']]/cda:participant[@typeCode='DEV']/cda:participantRole[@classCode='MANU']/cda:playingDevice">
             <sch:assert id="a-3343-12379-error" test="@classCode='DEV'">This playingDevice SHALL contain exactly one [1..1] @classCode="DEV" device, which SHALL be selected from CodeSystem HL7ParticipationType (urn:oid:2.16.840.1.113883.5.90) (CONF:3343-12379).</sch:assert>
             <sch:assert id="a-3343-12380-error" test="count(cda:code)=1">This playingDevice SHALL contain exactly one [1..1] code (CONF:3343-12380). </sch:assert>
         </sch:rule>

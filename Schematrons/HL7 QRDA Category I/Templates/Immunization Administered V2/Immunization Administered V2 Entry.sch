@@ -20,13 +20,13 @@
             <sch:assert id="a-3343-28578-error" test="count(cda:effectiveTime)=1">SHALL contain exactly one [1..1] effectiveTime (CONF:3343-28578).</sch:assert>
             <sch:assert id="a-3343-28957-error" test="count(cda:consumable)=1">SHALL contain exactly one [1..1] consumable (CONF:3343-28957).</sch:assert>
         </sch:rule>
-        <sch:rule id="Immunization_administered-statusCode-errors" context="cda:substanceAdministration [cda:templateId[@root='2.16.840.1.113883.10.20.24.3.140']]/cda:statusCode">
+        <sch:rule id="Immunization_administered-statusCode-errors" context="cda:substanceAdministration [cda:templateId[@root='2.16.840.1.113883.10.20.24.3.140'][@extension='2017-08-01']]/cda:statusCode">
             <sch:assert id="a-3343-28585-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-28585).</sch:assert>
         </sch:rule>
-        <sch:rule id="Immunization_administered-effectiveTime-errors" context="cda:substanceAdministration [cda:templateId[@root='2.16.840.1.113883.10.20.24.3.140']]/cda:effectiveTime">
+        <sch:rule id="Immunization_administered-effectiveTime-errors" context="cda:substanceAdministration [cda:templateId[@root='2.16.840.1.113883.10.20.24.3.140'][@extension='2017-08-01']]/cda:effectiveTime">
             <sch:assert id="a-3343-28959-error" test="@value">This effectiveTime SHALL contain exactly one [1..1] @value (CONF:3343-28959).</sch:assert>
         </sch:rule>
-        <sch:rule id="Immunization_administered-consumable-errors" context="cda:substanceAdministration [cda:templateId[@root='2.16.840.1.113883.10.20.24.3.140']]/cda:consumable">
+        <sch:rule id="Immunization_administered-consumable-errors" context="cda:substanceAdministration [cda:templateId[@root='2.16.840.1.113883.10.20.24.3.140'][@extension='2017-08-01']]/cda:consumable">
             <sch:assert id="a-3343-28960-error" test="count(cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.54'][@extension='2014-06-09']])=1">This consumable SHALL contain exactly one [1..1] Immunization Medication Information (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.54:2014-06-09) (CONF:3343-28960).</sch:assert>
         </sch:rule>
         

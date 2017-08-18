@@ -20,6 +20,8 @@
             <sch:assert id="a-3343-27624-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:3343-27624).</sch:assert>
             <sch:assert id="a-3343-11874-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:3343-11874).</sch:assert>
             <sch:assert id="a-3343-11876-error" test="count(cda:effectiveTime)=1">SHALL contain exactly one [1..1] effectiveTime (CONF:3343-11876).</sch:assert>
+            <sch:assert id="a-3343-28803-error" test="count(../../cda:templateId[@root='2.16.840.1.113883.10.20.24.3.133'][@extension='2017-08-01'])=1"> This template SHALL be contained by an Encounter Performed Act (V2) (CONF:3343-28803).</sch:assert> 
+            
         </sch:rule>   
         <sch:rule id="Encounter-Performed-id-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.23'][@extension='2017-08-01']]/cda:id">
             <sch:assert id="a-3343-28804-error" test="@root">Such ids SHALL contain exactly one [1..1] @root (CONF:3343-28804).</sch:assert>

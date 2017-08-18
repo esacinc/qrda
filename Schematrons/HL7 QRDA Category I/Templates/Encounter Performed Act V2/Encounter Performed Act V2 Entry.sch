@@ -19,7 +19,7 @@
             <sch:assert id="a-3343-28807-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:3343-28807).</sch:assert>
             <sch:assert id="a-3343-28476-error" test="count(cda:entryRelationship[@typeCode='SUBJ'][count(cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.23'][@extension='2017-08-01']])=1])=1">SHALL contain exactly one [1..1] entryRelationship (CONF:3343-28476) such that it SHALL contain exactly one [1..1] @typeCode="SUBJ" has subject (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3343-28481). SHALL contain exactly one [1..1] Encounter Performed (V4) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.23:2017-08-01) (CONF:3343-28482).</sch:assert>
          </sch:rule>
-        <sch:rule id="Encounter-Performed-Act-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.133']]/cda:code">
+        <sch:rule id="Encounter-Performed-Act-code-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.133'][@extension='2017-08-01']]/cda:code">
             <sch:assert id="a-3343-28808-error" test="@code='ENC'">This code SHALL contain exactly one [1..1] @code="ENC" Encounter (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-28808).</sch:assert>
         </sch:rule>
     </sch:pattern>

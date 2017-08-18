@@ -17,7 +17,7 @@
 			<sch:assert id="a-3343-13851-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2017-08-01']) = 1"> SHALL contain exactly one [1..1] templateId (CONF:3343-13851) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.45" (CONF:3343-13852). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-26555).</sch:assert>
 			<sch:assert id="a-3343-19440-error" test="count(cda:statusCode) = 1">SHALL contain exactly one [1..1] statusCode (CONF:3343-19440).</sch:assert>
 			<sch:assert id="a-3343-28910-error" test="count(cda:author) = 1">SHALL contain exactly one [1..1] author (CONF:3343-28910).</sch:assert>
-			<sch:assert id="a-3343-28908-error" test="count(../../cda:templateId[@root='2.16.840.1.113883.10.20.24.3.139']) = 1">This template SHALL be contained by a Medication Dispensed Act (V2) (CONF:3343-28908).</sch:assert>
+			<sch:assert id="a-3343-28908-error" test="count(../../cda:templateId[@root='2.16.840.1.113883.10.20.24.3.139'][@extension='2017-08-01']) = 1">This template SHALL be contained by a Medication Dispensed Act (V2) (CONF:3343-28908).</sch:assert>
 		</sch:rule>
 
 		<sch:rule id="Medication_Dispensed-author-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2017-08-01']]/cda:author">

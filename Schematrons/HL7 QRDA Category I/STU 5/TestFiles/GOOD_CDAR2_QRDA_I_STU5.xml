@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
   <!-- 		
-    Title: Quality Reporting Document Architecture Category I Sample 		 	 		 	
-  -->
-  <!-- 	 
+    Title:HL7 Quality Reporting Document Architecture Category I STU 5 Sample File 	
+    Date: August 24, 2017
+
     This sample file contains an example of each Patient Data Section QDM contained template specified in the QRDA I R1 STU 5 IG. 	 
     This sample file contains no narrative. 	 
     This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for each template. 	 
@@ -332,6 +332,16 @@
                   <td>8a4d92b2-373f-82e2-0137-baed84f55f93</td>
                 </tr>
               </tbody>
+              <!-- 2018 EH/CAH ecQM -->
+              <tbody>
+                <tr>
+                  <td>Venous Thromboembolism Prophylaxis</td>
+                  <td>38b0b5ec-0f63-466f-8fe3-2cd20ddd1622</td>
+                  <td>6</td>
+                  <td>0371</td>
+                  <td>40280381-4c18-79df-014c-2d6dc6ce0a53</td>
+                </tr>
+              </tbody>
             </table>
           </text>
           <!-- 1..* Organizers, each containing a reference to an eMeasure -->
@@ -388,6 +398,35 @@
                   <text>Children's Asthma Care (CAC-1) Relievers for Inpatient Asthma</text>
                   <!-- SHOULD: setId is the eMeasure version neutral id -->
                   <setId root="d7c71959-3991-457c-b8ea-774238c87248"/>
+                </externalDocument>
+              </reference>
+            </organizer>
+          </entry>
+          <!-- 2018 EH/CAH ecQM -->
+          <entry>
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <!-- This is the templateId for Measure Reference -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.98"/>
+              <!-- This is the templateId for eMeasure Reference QDM -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.97"/>
+              <!-- NATALY added for CONF:26992 -->
+              <id root="40280381-4c18-79df-014c-2d6dc6ce0a53"/>
+              <statusCode code="completed"/>
+              <reference typeCode="REFR">
+                <externalDocument classCode="DOC" moodCode="EVN">
+                  <!-- SHALL: This is the version specific identifier for eMeasure:   QualityMeasureDocument/id  it is a GUID-->
+                  <!-- NATALY: Change Version# and eMeasureID for HQR9.0-->
+                  <id root="2.16.840.1.113883.4.738"
+                    extension="40280381-4c18-79df-014c-2d6dc6ce0a53"/>
+                  <!-- SHOULD: This is the NQF Number, root is an NQF OID and for    eMeasure Number and extension is the eMeasure's NQF number -->
+                  <id extension="0371"
+                    root="2.16.840.1.113883.3.560.1"/>
+                  <!-- SHOULD This is the title of the eMeasure -->
+                  <text>Venous Thromboembolism Prophylaxis</text>
+                  <!-- SHOULD: setId is the eMeasure version neutral id  -->
+                  <setId root="38b0b5ec-0f63-466f-8fe3-2cd20ddd1622"/>
+                  <!-- This is the sequential eMeasure Version number -->
+                  <versionNumber value="6"/>
                 </externalDocument>
               </reference>
             </organizer>
@@ -1344,7 +1383,7 @@
               <id root="9a5f4d94-ccad-4d57-80ea-27737545c7bb"/>
               <statusCode code="active"/>
               <!-- Active dateTime: the date and time at which an order becomes active (intended to take place)-->
-              <effectiveTime>
+              <effectiveTime  xsi:type="IVL_TS">
                 <low value="201703011130"/>
               </effectiveTime>
               <!-- QDM Attribute: Route -->

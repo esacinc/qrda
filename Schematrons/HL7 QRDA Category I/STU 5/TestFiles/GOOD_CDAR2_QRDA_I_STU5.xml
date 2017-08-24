@@ -337,8 +337,8 @@
                 <tr>
                   <td>Venous Thromboembolism Prophylaxis</td>
                   <td>38b0b5ec-0f63-466f-8fe3-2cd20ddd1622</td>
-                  <td>6</td>
                   <td>0371</td>
+                  <td>6</td>
                   <td>40280381-4c18-79df-014c-2d6dc6ce0a53</td>
                 </tr>
               </tbody>
@@ -409,7 +409,6 @@
               <templateId root="2.16.840.1.113883.10.20.24.3.98"/>
               <!-- This is the templateId for eMeasure Reference QDM -->
               <templateId root="2.16.840.1.113883.10.20.24.3.97"/>
-              <!-- NATALY added for CONF:26992 -->
               <id root="40280381-4c18-79df-014c-2d6dc6ce0a53"/>
               <statusCode code="completed"/>
               <reference typeCode="REFR">

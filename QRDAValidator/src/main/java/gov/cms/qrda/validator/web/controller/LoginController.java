@@ -31,6 +31,7 @@ POSSIBILITY OF SUCH DAMAGE.
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Properties;
 
 import javax.servlet.http.HttpSession;
 
@@ -62,6 +63,7 @@ public class LoginController extends CommonUtilsImpl {
 
 	@Autowired
 	public SchematronCategoryService categoryService;
+	
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String showLogin(Locale locale, Model model, HttpSession session) {
@@ -99,8 +101,11 @@ public class LoginController extends CommonUtilsImpl {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
+		// Read password from properties file. If not present, use the default one defined as a static variable on the LoginForm + "!"
+		Properties props = fileService.loadPropertiesExt("validator.properties");
+		String pwd = props.getProperty("adminPassword",LoginForm.ADMINP + "!");
 		if (loginForm.getUsername().equalsIgnoreCase(LoginForm.ADMIN) &&
-		    loginForm.getPassword().equals(LoginForm.ADMINP + "!")) {
+		    loginForm.getPassword().equals(pwd)) {
 			logger.info("Successful admin login");
 			session.setAttribute("isAuthenticated", "true");
 			logger.info("Session setting: " + session.getAttribute("isAuthenticated"));

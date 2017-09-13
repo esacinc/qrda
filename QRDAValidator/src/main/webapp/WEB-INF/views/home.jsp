@@ -52,6 +52,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		    		<li><a href="javascript:handleIntroClick('introVocFiles')" ><h4><fmt:message key="introMenuVocFiles"/><small><span class="glyphicon glyphicon-triangle-right"></span></small></h4></a></li>
 		    		<li><a href="javascript:handleIntroClick('introWorkbench')" ><h4><fmt:message key="introMenuWorkbench"/><small><span class="glyphicon glyphicon-triangle-right"></span></small></h4></a></li>
 		    		<li><a href="javascript:handleIntroClick('introHistoryFiles')" ><h4><fmt:message key="introMenuHistoryFiles"/><small><span class="glyphicon glyphicon-triangle-right"></span></small></h4></a></li>
+		    		<li><a href="javascript:handleIntroClick('introAdmin')" ><h4><fmt:message key="introMenuAdmin"/><small><span class="glyphicon glyphicon-triangle-right"></span></small></h4></a></li>
 		    		<li><a href="javascript:handleIntroClick('introTechNotes')" ><h4><fmt:message key="introMenuTechNotes"/><small><span class="glyphicon glyphicon-triangle-right"></span></small></h4></a></li>
 		    		
 		    	</ul>
@@ -66,6 +67,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		         <div id="introVocFiles" ><h4><fmt:message key="intro.title.vocfiles"/></h4><fmt:message key="intro.descriptions.vocfiles"/></div>
 		         <div id="introWorkbench"><h4><fmt:message key="intro.title.workbench"/></h4><fmt:message key="intro.descriptions.workbench"/></div>
 		         <div id="introHistoryFiles" ><h4><fmt:message key="intro.title.historyfiles"/></h4><fmt:message key="intro.descriptions.historyfiles"/></div>
+		         <div id="introAdmin" ><h4><fmt:message key="intro.title.admin"/></h4><fmt:message key="intro.descriptions.admin"/></div>
 		         <div id="introTechNotes" ><h4><fmt:message key="intro.title.technotes"/></h4><fmt:message key="intro.descriptions.technotes"/></div>
 		         </div>
 		    </div>

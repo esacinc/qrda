@@ -2,6 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="cda.xsl"?>
 <!--
 Date: October 31, 2012
+Updated June 23, 2017
 Disclaimer: These QRDA sample files are designed to provide a file that is valid for errors against the CDA.sdtc schema and QRDA schematron using hypothetical patient data; however, the content of the QRDA sample 
 documents may not have "clinically" consistent data.  Additionally, the files are valid against the referenced eMeasure to provide a general idea about the content and structure of a QDM-based QRDA. When eMeasure data 
 criteria are “or”, the QRDA documents may not have all of the Quality Data Elements data criteria specified in the eMeasure. These expected errors are listed in the file where they occur. In the Patient Data Section, the 
@@ -10,12 +11,12 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 -->
 
 <!-- 	 
-	Total Errors Expected: 5
+	Total Errors Expected: 4
 	    Failure a-cms_0121-error UTC Timezone offset must be present if it is present anywhere else. 
 		Description: A Coordinated Universal Time (UTC time) offset should not be used anywhere in a QRDA Category I file or, 
 		             if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF_CMS_0121).
 	
-	    Occures 5 times in this file.
+	    Occures 4 times in this file.
 	    
 	Total Warnings Expected: 0
 -->
@@ -76,7 +77,7 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 				</name>
 				<administrativeGenderCode code="F"
 					codeSystem="2.16.840.1.113883.5.1" displayName="Female"/>
-				<birthTime value="1985112512"/> <!-- Failure a-cms_0121-error UTC Timezone offset must be present if it is present anywhere else. -->
+				<birthTime value="1985112512"/> 
 				<!-- Eric:  age >= 18 -->
 				<maritalStatusCode code="M" codeSystem="2.16.840.1.113883.5.2"
 					codeSystemName="MaritalStatusCode" displayName="Married"/>

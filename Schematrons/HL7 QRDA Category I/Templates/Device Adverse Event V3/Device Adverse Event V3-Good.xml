@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+  <!-- 		
+    Title: Device Adverse Event V3 minimal sample file 		
+    Author: Dan Donahue
+    Date: 09-12-2017
+
+    Total Errors Expected: 0
+ 
+    Total Warnings Expected: 0
+    
+  -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <observation classCode="OBS" moodCode="EVN">
+    <!-- Conforms to C-CDA R2.1 Substance or Device Allergy - Intolerance Observation (V2) -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.90" extension="2014-06-09" />
+    <!-- Device Adverse Event (V3) templateId -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.5" extension="2016-02-01" />
+    <id root="e5f26626-b63a-4b4a-9d5a-8a90215ddd5d" />
+    <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" />
+    <statusCode code="completed" />
+    <effectiveTime>
+      <!-- QDM Attribute: Start Datetime -->
+      <low value="20110101" />
+      <!-- QDM Attribute: Stop Datetime -->
+      <high value="20160101" />
+    </effectiveTime>
+    <value xsi:type="CD" code="420134006" displayName="propensity to adverse reactions" codeSystem="2.16.840.1.113883.6.96"
+      codeSystemName="SNOMED-CT" />
+    <participant typeCode="PRD">
+      <participantRole classCode="MANU">
+        <playingDevice classCode="DEV">
+          <!-- Device -->
+          <code code="69805005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+            displayName="Insulin pump, device (physical object)" sdtc:valueSet="$QDMElementValueSetOID}" />
+        </playingDevice>
+      </participantRole>
+    </participant>
+    <!-- QDM Attribute: Reaction -->
+    <entryRelationship typeCode="MFST" inversionInd="true">
+      <observation classCode="OBS" moodCode="EVN">
+        <!-- Conforms to C-CDA R2.1 Reaction Observation (V2) -->
+        <templateId root="2.16.840.1.113883.10.20.22.4.9" extension="2014-06-09" />
+        <!-- Reaction (V2) -->
+        <templateId root="2.16.840.1.113883.10.20.24.3.85" extension="2014-12-01" />
+        <id root="80aed311-8af7-401f-ab7f-727260d2b033" />
+        <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"
+          displayName="Assertion" />
+        <statusCode code="completed" />
+        <effectiveTime>
+          <low value="20110215" />
+          <high value="20110415"/>
+        </effectiveTime>
+        <value xsi:type="CD" code="404684003" displayName="Nausea" sdtc:valueSet="{$QDMElementValueSetOID}" />
+      </observation>
+    </entryRelationship>
+  </observation>
+</ClinicalDocument>

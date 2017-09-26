@@ -8,7 +8,9 @@
     
     Total Errors Expected: 0 
       
-    Total Warnings Expected: 0
+    Total Warnings Expected: 1
+      a-67-12869-warning This externalDocument SHOULD contain zero or one [0..1] versionNumber (CONF:67-12869).
+      (versionNumber should be intentionally left out, per guidance in the IG.)
     
    -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -27,7 +29,6 @@
           <!-- SHALL: This is the version specific identifier for eMeasure: 
           QualityMeasureDocument/id - the OID in the @root indicates that 
           the @extension (which is a GUID) contains the version specific identifier for eMeasure -->
-          <versionNumber value="1" />
           <id root="2.16.840.1.113883.4.738" extension="8a4d92b2-373f-82e2-0137-7b9e21cc5c8f"/>
           <!-- SHOULD: This is the NQF Number, root is an NQF OID and for 
           eMeasure Number and extension is the eMeasure's NQF number -->

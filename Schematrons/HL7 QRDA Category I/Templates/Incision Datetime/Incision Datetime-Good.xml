@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+  <!-- 		
+    Title: Incision Datetime minimal sample
+    Author: Dan Donahue
+    Date: 09-28-2017
+
+    Total Errors Expected: 0
+                    
+    Total Warnings Expected: 0
+
+   -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  
+  <procedure classCode="PROC" moodCode="EVN">
+    <templateId root="2.16.840.1.113883.10.20.24.3.89" />
+    <id root="2d5dc123-13ca-477d-9263-4a9c504186a1" />
+    <code code="34896006" 
+      codeSystem="2.16.840.1.113883.6.96" 
+      codeSystemName="SNOMED CT" 
+      displayName="incision" />
+    <effectiveTime value="20120329091500+0500" />
+  </procedure>
+
+</ClinicalDocument>

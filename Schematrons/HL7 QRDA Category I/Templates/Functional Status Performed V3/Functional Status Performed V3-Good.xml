@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+<!-- 		
+    Title: Functional Status Performed V3 minimal sample file
+    Author: Dan Donahue 
+    Date: 09-27-2017
+
+    Total Errors Expected: 0
+	
+	Total Warnings Expected: 0
+
+  -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+	<observation classCode="OBS" moodCode="EVN">
+		<!-- Conforms to C-CDA R2.1 Procedure Activity Observation (V2) -->
+		<templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09" />
+		<!-- Functional Status Performed (V3) -->
+		<templateId root="2.16.840.1.113883.10.20.24.3.26" extension="2016-02-01" />
+		<id root="7eda6f24-4019-471f-9fe4-6d8c3489916c" />
+		<!-- Functional Status Assessment -->
+		<code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+			displayName="Physical limitation score [KCCQ]"
+			sdtc:valueSet="{$QDMElementValueSetOID}" />
+		<text>Functional Status, Performed: Physical limitation score [KCCQ]: Unable
+			to walk</text>
+		<statusCode code="completed" />
+		<effectiveTime>
+			<!-- QDM Attribute: Start Datetime -->
+			<low value="201505061000" />
+			<!-- QDM Attribute: Stop Datetime -->
+			<high value="201505061015" />
+		</effectiveTime>
+		<!-- QDM Attribute: Result -->
+		<value xsi:type="CD" code="282145008" codeSystem="2.16.840.1.113883.6.96"
+			codeSystemName="SNOMED CT" displayName="unable to walk"
+			sdtc:valueSet="{$QDMElementValueSetOID}" />
+		<!-- QDM Attribute: Method -->
+		<methodCode code="72015-1" codeSystem="2.16.840.1.113883.6.1"
+			displayName="VR-12 Role physical (RP) score - oblique method"
+			codeSystemName="LOINC"
+			sdtc:valueSet="{$QDMElementValueSetOID}" />
+		<!-- QDM Attribute: Reason -->
+		<entryRelationship typeCode="RSON">
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
+				<!-- ... -->   
+			</observation>
+		</entryRelationship>
+		<!-- QDM Attribute: Result -->
+		<entryRelationship typeCode="REFR">
+			<observation classCode="OBS" moodCode="EVN">
+				<!-- Conforms to C-CDA R2.1 Result Observation (V3) -->
+				<templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01" />
+				<!-- Result (V3) -->
+				<templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2016-02-01" />
+				<!-- ... -->   
+			</observation>
+		</entryRelationship>
+	</observation>
+</ClinicalDocument>

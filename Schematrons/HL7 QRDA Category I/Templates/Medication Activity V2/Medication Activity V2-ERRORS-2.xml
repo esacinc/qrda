@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="cda.xsl"?>
 <!-- 		
-    Title: Medication Activity V2 minimal file 	
+    Title: Medication Activity V2 minimal file with errors for a-1098-30800 	
+    Author: Dan Donahue
     Date: 03-07-2017
 
-    Total Errors Expected: 0
-	
-	Total Warnings Expected: 0
+    Total Errors Expected: 1
+            Failure a-1098-7516-error SHALL contain exactly one [1..1] doseQuantity (CONF:1098-7516).
+	Total Warnings Expected: 1
+			Failure a-1098-30800-warning SHOULD include doseQuantity OR rateQuantity (CONF:1098-30800). 
+
 -->
 
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
@@ -39,7 +42,9 @@
 		<!-- QDM Attribute: Route -->
 		<routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" displayName="ORAL" sdtc:valueSet="1.2.9999"/>
 		<!-- QDM Attribute: Dose -->
-		<doseQuantity value="1" unit="ml"/>
+		<!-- Failure a-1098-30800-warning SHOULD include doseQuantity OR rateQuantity (CONF:1098-30800). -->
+		<!-- Failure a-1098-7516-error SHALL contain exactly one [1..1] doseQuantity (CONF:1098-7516). -->
+		<!-- <doseQuantity value="1" unit="ml"/> -->
 		<consumable>
 			<manufacturedProduct classCode="MANU">
 				<!-- Conforms to C-CDA R2 Medication Information (V2) -->
@@ -69,5 +74,5 @@
 			</observation>
 		</entryRelationship>
 	</substanceAdministration>
-
+	
 </ClinicalDocument>

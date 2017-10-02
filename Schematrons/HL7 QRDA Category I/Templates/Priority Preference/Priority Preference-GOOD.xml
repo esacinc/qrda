@@ -19,7 +19,10 @@
     <templateId root="2.16.840.1.113883.10.20.22.4.143" /> 
     <id root="d42ebf70-5c89-11db-b0de-0800200c9a66"/>
     <code code="225773000" codeSystem="2.16.840.1.113883.6.96" />
-    <value xsi:type="CD" sdtc:valueSet="2.16.840.1.113883.11.20.9.60" nullFlavor="NA"/>
+    <!--<value xsi:type="CD" sdtc:valueSet="2.16.840.1.113883.11.20.9.60" nullFlavor="NA"/> -->
+    <value xsi:type="CD" code="394849002" displayName="High priority"
+      codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96"
+      sdtc:valueSet="2.16.840.1.113883.11.20.9.60" />
     <effectiveTime/>
     <author>
       <templateId root="2.16.840.1.113883.10.20.22.4.119"/>

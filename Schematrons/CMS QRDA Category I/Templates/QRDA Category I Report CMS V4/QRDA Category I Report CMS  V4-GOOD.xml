@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
 <!-- 		
-    Title: QRDA Category I Report CMS V4, Minimal sample
-    Author: Dan Donahue
-    Date:   03-14-2017
+    Title:   QRDA Category I Report CMS V4, Minimal sample
+    Author:  Dan Donahue
+    Date:    03-14-2017
+    Updated: 10-03-2017 Adjusted patientRold for QRDA-303
+    JIRA:    https://tracker.esacinc.com/browse/QRDA-303
     
     Total Errors Expected: 0
     Total Warnings Expected: 0
@@ -22,6 +24,8 @@
 		<patientRole>
 			<!-- Patient Identifier Number (OID: 2.16.840.1.113883.3.249.15) -->
 			<id root="2.16.840.1.113883.3.249.15" extension="111223333A" />
+			<id root="2.16.840.1.113883.4.572" extension="xxx"/>
+			<id root="2.16.840.1.113883.4.927" extension="yyy"/>
 			<patient>
 				<name>
 					<given>Eve</given>
@@ -80,7 +84,7 @@
 						<id root="2.16.840.1.113883.4.2" nullFlavor="NA" />
 					</representedOrganization>
 				</assignedEntity>
-				...
+				<!-- ... -->
 			</performer>
 		</serviceEvent>
 	</documentationOf>
@@ -92,7 +96,7 @@
 				<section>
 					<!-- Reporting Parameters section CMS -->
 					<templateId root="2.16.840.1.113883.10.20.17.2.1.1" extension="2016-03-01"/>
-					...
+					<!-- ... -->
 				</section>
 			</component>
 			
@@ -100,7 +104,7 @@
 				<section>
 					<!-- Patient Data Section QDM (V3) - CMS EH -->
 					<templateId root="2.16.840.1.113883.10.20.24.2.1.1" extension="2017-07-01" />
-					...
+					<!-- ... -->
 				</section>
 			</component>
 		</structuredBody>

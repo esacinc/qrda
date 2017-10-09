@@ -441,20 +441,36 @@ public class FileServiceImpl implements FileService {
 			// Search each line of the first MAXLINEs in the file, and search for token error and/or warning text. If found, set value in give FileSpec object
 			while((strLine = br.readLine()) != null && lineNum < MAXLINE) {
 				lineNum++;
-				
+				// Make sure there are at least space-separated tokens, the fourth of which is expected to be the warning/error count.
 				strLine = strLine.toLowerCase();
 				logger.debug("Line " + lineNum +": " + strLine);
 				if (!errTxtFound && strLine.contains("total errors expected")) {
 					String[] split = strLine.trim().split(" ");
-					logger.debug("Total Errors are: " + split[split.length-1] );
-					spec.setExpectedErrors(Integer.valueOf(split[split.length-1]));
-					errTxtFound = true;;
+					if (split.length >= 4 ) {
+						logger.debug("Total Errors are: " + split[split.length-1] );
+						try {
+							int val = Integer.valueOf(split[3]);
+							spec.setExpectedErrors(val);
+							errTxtFound = true;
+						}
+						catch (Exception e) {
+							logger.error("Exception reading total errors expected value: " + split[3]);
+						}
+					}				
 				}
 				if (!warnTxtFound && strLine.contains("total warnings expected")) {
 					String[] split = strLine.trim().split(" ");
-					logger.debug("Total Warnings are: " + split[split.length-1] );
-					spec.setExpectedWarnings(Integer.valueOf(split[split.length-1]));
-					warnTxtFound = true;
+					if (split.length >= 4 ) {
+						logger.debug("Total Warnings are: " + split[split.length-1] );
+						try {
+							int val = Integer.valueOf(split[3]);
+							spec.setExpectedWarnings(val);
+							warnTxtFound = true;
+						}
+						catch (Exception e) {
+							logger.error("Exception reading total warnings expected value: " + split[3]);
+						}
+					}
 				}
 			}
 			br.close();

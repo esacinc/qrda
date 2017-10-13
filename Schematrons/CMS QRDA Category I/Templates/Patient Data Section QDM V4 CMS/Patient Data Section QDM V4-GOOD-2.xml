@@ -22,7 +22,7 @@
 			<observation classCode="OBS" moodCode="EVN">
 				<!-- Patient Characteristic Payer -->
 				<templateId root="2.16.840.1.113883.10.20.24.3.55" />
-				...
+				<!-- ... -->
 			</observation>
 		</entry>
 		
@@ -55,7 +55,7 @@
 				</participant>
 			</act>
 		</entry>
-	...	
+		<!-- ... -->	
 	</section>
 	
 </ClinicalDocument>

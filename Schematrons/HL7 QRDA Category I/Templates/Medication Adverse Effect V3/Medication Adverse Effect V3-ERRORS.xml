@@ -4,6 +4,11 @@
     Title: Medication Adverse Effect V3 minimal file with errors
     Author: Dan Donahue
     Date: 03-07-2017
+    Updated: 11-14-2017 JIRA QRDA-333
+                        Believe that the schematron contexts for assertions	a-2228-27970-error, a-2228-27967-error, and a-2228-27971-error are too restrictive. 
+                        (MANU and MMAT class codes should not be present in context)
+                        However, changed the test file to trigger those assertions as written (rather than change the schematron in mid-production.)
+ 
 
     Total Errors Expected: 13
 			Failure a-2228-14110-error SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2228-14110).
@@ -45,22 +50,32 @@
 		<value xsi:type="CD" />
 		<participant typeCode="CSM">
 			<participantRole classCode="MANU">
-				<!-- Failure a-2228-27970-error playingEntity missing or bad classCode="MMAT" -->
-				<playingEntity classCodeErr="MMAT">
-					<code  sdtc:valueSet="2.16.840.1.113883.3.464.1003.196.12.1001"/>
-					<!-- Failure a-2228-27967-error missing or multiple code in playingEntity -->
-					<!-- Failure a-2228-27971-error missing or bad sdtc:valueSet in code -->
-					<code />
+				<playingEntity classCode="MMAT">
+					<!-- Medication -->
+					<code code="105152" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" displayName="Amoxicillin 60 MG/ML Oral Suspension" sdtc:valueSet="2.16.840.1.113883.3.464.1003.196.12.1001"/>
+					<!-- Failure a-2228-27967-error Multiple code -->
+					<!-- Failure a-2228-27971-error code SHALL contain exactly one [1..1] @sdtc:valueSet  -->
+					<code sdtc:valueSetErr="2.16.840.1.113883.3.464.1003.196.12.1001"/>
+				</playingEntity>
+				<!-- Failure a-2228-27966-error Multiple playing entity  -->
+				<!-- Failure a-2228-27970-error  Missing classCode = MMAT-->
+				<playingEntity classCode="MMATErr">
+					<!-- Medication -->
+					<code code="105152" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" displayName="Amoxicillin 60 MG/ML Oral Suspension" sdtc:valueSet="2.16.840.1.113883.3.464.1003.196.12.1001"/>
 				</playingEntity>
 			</participantRole>
 		</participant>
-		<!-- Failure a-2228-27964-error multiple participant with typeCode="CSM" and one participant role -->
+		<!-- Failure a-2228-27964-error Multiple participant with typeCode='CSM and one participantRole -->
 		<participant typeCode="CSM">
-			<!-- Failure a-2228-27969-error participantRole participantRole missing classCode="MANU" -->
+			<!-- Failure a-2228-27969-error participantRole SHALL contain exactly one [1..1] @classCode="MANU"  -->
 			<participantRole classCode="MANUErr">
-				<!-- Failure a-2228-27966-error Missing or multiple playingEntity in participantRole -->
+				<playingEntity classCode="MMAT">
+					<!-- Medication -->
+					<code code="105152" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" displayName="Amoxicillin 60 MG/ML Oral Suspension" sdtc:valueSet="2.16.840.1.113883.3.464.1003.196.12.1001"/>
+				</playingEntity>
 			</participantRole>
 		</participant>
+		
 		<!-- Failure a-2228-14130-warning Missing or multiple entryRelationship with typeCode="MFST" , inversionInd="true" and one Reaction (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.85:2014-12-01) -->
 		<entryRelationship typeCode="MFST" inversionInd="true">
 		</entryRelationship>

@@ -4,8 +4,9 @@
     Title: Medication Information V2 minimal sample file with errors
     Author: Dan Donahue
     Date: 09-29-2017
+    Updated: 11-14-2017 JIRA QRDA-333 Corrected error count.
     
-	Total Errors Expected: 5
+	Total Errors Expected: 4
 			Failure a-1098-7408-error SHALL contain exactly one [1..1] @classCode="MANU" (CodeSystem: RoleClass urn:oid:2.16.840.1.113883.5.110 STATIC) (CONF:1098-7408).
 			Failure a-1098-7409-error SHALL contain exactly one [1..1] templateId (CONF:1098-7409) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.23" (CONF:1098-10506). SHALL contain exactly one [1..1] @extension="2014-06-09" (CONF:1098-32579).
 			Failure a-1098-7411-error SHALL contain exactly one [1..1] manufacturedMaterial (CONF:1098-7411).

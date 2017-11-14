@@ -3,7 +3,7 @@
 <mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="false">
  
     <title>EH CMS 2018 QRDA Category I</title>
-    <version>0.2</version>
+    <version>1.0</version>
     
     <generatedFilename>
         /Users/mholck/Development/qrda/Schematrons/CMS QRDA Category I/EH CMS 2018/Published/EH CMS 2018 QRDA Category I.sch
@@ -24,6 +24,7 @@
         
     Changes from version 0.1:
     Updated a-CMS_0051-error to allow any entry type rather than just an observation type (QRDATEST-1)
+    Updated a-3325-28474-error to only check for exactly 1 component rather than at least 1 component (QRDATEST-4)
     </fileHeader>
     
     <errorsHeader>ERROR Patterns and Assertions</errorsHeader>

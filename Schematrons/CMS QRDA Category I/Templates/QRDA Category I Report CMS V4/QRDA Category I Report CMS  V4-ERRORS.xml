@@ -36,10 +36,9 @@
         Failure a-3325-28474-error structuredBody SHALL exactly one [1..1] component (CONF:3325-28474) such that it SHALL contain exactly one [1..1] Reporting Parameters Section - CMS (identifier: urn:hl7ii:2.16.840.1.113883.10.20.17.2.1.1:2016-03-01) (CONF:3325-28475)
         Failure a-3325-28476-error structuredBody SHALL contain at least one [1..*] component (CONF:3325-28476) such that it SHALL contain exactly one [1..1] Patient Data Section QDM (V4) - CMS (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.2.1.1:2017-07-01) (CONF:3325-28477).
  
-     Total Warnings Expected: 3
+     Total Warnings Expected: 2
      	Failure a-81-10128-c-warning effectiveTime SHOULD be precise to the minute (CONF:81-10128).
         Failure a-81-10130-c-warning If more precise than day, SHOULD include time-zone offset (CONF:81-10130).
-        Failure a-3265-16857-warning This patientRole SHOULD contain zero or one [0..1] id (CONF:3265-16857) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.572" Medicare HIC number (CONF:3265-16858).
 -->
 
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -62,8 +61,7 @@
 		<patientRole>
 			<!-- Failure a-CMS_0009-error missing or multiple id with root and extension -->
 			<!-- <id root="2.16.840.1.113883.3.249.15" extensionErr="111223333A" /> -->
-			<!--  Failure a-3265-16857-warning This patientRole SHOULD contain zero or one [0..1] id (CONF:3265-16857) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.572" -->
-			<!-- <id root="2.16.840.1.113883.4.572" extension="xxx"/> -->
+			<id root="2.16.840.1.113883.4.572" extension="xxx"/>
 			<id root="2.16.840.1.113883.4.927" extension="yyy"/>
 			<patient>
 				<!-- Failure a-1198-5284_C01-error missing or multiple name -->

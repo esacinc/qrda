@@ -102,5 +102,6 @@
         <sch:rule id="QRDA_Category_I_Report_CMS-legalAuthenticator-assignedEntity-representedOrganization-warnings" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2016-03-01']]/cda:legalAuthenticator/cda:assignedEntity/cda:representedOrganization">
             <sch:assert id="a-2239-28485-warning" test="count(cda:name)=1">The representedOrganization, if present, SHOULD contain zero or one [0..1] name (CONF:2239-28485).</sch:assert>
         </sch:rule>
+        
      </sch:pattern>
 </sch:schema>

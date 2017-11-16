@@ -3,14 +3,14 @@
 <mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="false">
  
     <title>EH CMS 2018 QRDA Category I</title>
-    <version>1.0</version>
+    <version>1.1</version>
     
     <generatedFilename>
-        /Users/mholck/Development/qrda/Schematrons/CMS QRDA Category I/EH CMS 2018/Published/EH CMS 2018 QRDA Category I.sch
+        C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/EH CMS 2018/Published/EH CMS 2018 QRDA Category I.sch
     </generatedFilename>
     
     <finalTestFilename>
-        /Users/mholck/Development/qrda/Schematrons/CMS QRDA Category I/EH CMS 2018/TestFiles/EH_Sample_QRDA_I_Informative.xml 
+        C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/EH CMS 2018/TestFiles/EH_Sample_QRDA_I_Informative.xml 
     </finalTestFilename>
     
     <fileHeader>
@@ -22,20 +22,21 @@
     THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
     ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         
-    Changes from version 0.1:
-    Updated a-CMS_0051-error to allow any entry type rather than just an observation type (QRDATEST-1)
-    Updated a-3325-28474-error to only check for exactly 1 component rather than at least 1 component (QRDATEST-4)
+    Changes from version 1.0:
+       Updated a-CMS_0009-error to correctly test id[@root!='2.16.840.1.113883.4.572'][@root!='2.16.840.1.113883.4.927'][@extension] = 1 (QRDA-303)
+       Renamed several pattern and rule names to remove specific version numbers
+    
     </fileHeader>
     
     <errorsHeader>ERROR Patterns and Assertions</errorsHeader>
     <warningsHeader>WARNING Patterns and Assertions</warningsHeader>
     
-    <mergeReportFilename>/Users/mholck/Development/qrda/Schematrons/CMS QRDA Category I/EH CMS 2018/mergeReport.txt</mergeReportFilename>
+    <mergeReportFilename>C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/EH CMS 2018/mergeReport.txt</mergeReportFilename>
     
-    <vocabFilename>/Users/mholck/Development/qrda/Schematrons/CMS QRDA Category I/Vocabulary/voc.xml</vocabFilename>
+    <vocabFilename>C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/Vocabulary/voc.xml</vocabFilename>
     
     <!-- All schematrons expected to be under a single main directory -->
-    <sourceMainDirectory>/Users/mholck/Development/qrda/Schematrons/</sourceMainDirectory>
+    <sourceMainDirectory>C:/Development/QRDA-git/qrda/Schematrons/</sourceMainDirectory>
     
     <!-- Specify the schematrons to use in the merge below, separated by the templates found in each fo the source directories listed. -->
     <!--    Note that the directoryName tags refer to directories relative to the sourceMainDirectory tag, above. -->

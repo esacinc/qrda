@@ -5,8 +5,8 @@
     Instructions file: C:\\Development\\QRDA-git\\qrda\\Schematrons\\CMS QRDA Category III\\EC CMS 2018\\EP CMS 2018 QRDA Category III Merge Directions.xml
         Failed to locate element: <headerFormat>
     Title: EC/EP CMS 2018 QRDA Category III
-    Version: 1.1
-    Generated on Fri Nov 03 11:24:21 MDT 2017
+    Version: 1.0
+    Generated on Fri Nov 17 09:12:47 MST 2017
     Verbose Reporting is turned on
     Merged file: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/EC CMS 2018/Published/EC CMS 2018 QRDA Category III.sch
           All Error patterns are generated before all Warning patterns

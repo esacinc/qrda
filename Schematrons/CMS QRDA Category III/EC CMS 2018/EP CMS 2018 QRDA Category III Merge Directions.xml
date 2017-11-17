@@ -3,7 +3,7 @@
 <mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="true" >
  
     <title>EC/EP CMS 2018 QRDA Category III</title>
-    <version>1.1</version>
+    <version>1.0</version>
     
      <generatedFilename>
          c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/EC CMS 2018/Published/EC CMS 2018 QRDA Category III.sch
@@ -22,8 +22,7 @@
     THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
     ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             
-    Changes from version 1.0:
-      -  No changes from 2017 CMS QRDA III IG Schematron 1.0
+    
 	
     </fileHeader>
     

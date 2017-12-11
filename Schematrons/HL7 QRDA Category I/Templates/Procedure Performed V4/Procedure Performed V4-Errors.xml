@@ -5,8 +5,9 @@
     Author: Dan Donahue
     Date: 07-24-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-210
+    Update: 12-08-2017 Changes per QDM review
     
-    Total Errors Expected: 13
+    Total Errors Expected: 9
           Failure a-3343-27308-error Bad Class Code
           Failure a-3343-11261-error Bad Mood Code
           Failure a-3343-11262-error Multiple or bad extension with root on main template
@@ -16,15 +17,9 @@
           Failure a-3343-11669-error Missing or multiple effectiveTime
           Failure a-3343-11670-error Missing or multiple low
           Failure a-3343-11671-error Missing or multiple high
-          Failure a-3343-27766-error If targetSiteCode translation, Missing or bad @sdtc:valueSet 
-          Failure a-3343-29074-error Missing or multiple time in author
-          Failure a-3343-29073-error Missing or multiple assignedAuthor in author
-          Failure a-3343-29075-error Missing id in assignedAuthor
           
-    Total Warnings Expected: 2
+    Total Warnings Expected: 1
           Failure a-3343-27312-warning Missing targetSiteCode  (NOT tested)
-          Failure a-3343-28937-warning Missing or multiple author
-          Failure a-3343-27766-warning Missing sdtc:valueSet in targetSite translation
  
   -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -57,22 +52,9 @@
     <!-- Failure a-3343-11671-error Missing or multiple high -->
     <effectiveTime></effectiveTime>
     <!-- ... -->
-    <!-- Failure a-3343-27312-warning Missing targetSiteCode  (NOT tested) -->
-    <targetSiteCode code="71854001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="colon">
-      <!-- Failure a-3343-27766-error If targetSiteCode translation, Missing or bad @sdtc:valueSet -->
-      <translation></translation>
-    </targetSiteCode>
-    <author>
-      <time value="20170329090000+0500"/>
-      <assignedAuthor>
-        <!-- Failure a-3343-29075-error Missing id in assignedAuthor -->
-        <!-- <id nullFlavor="NA"/> -->
-      </assignedAuthor>
-    </author>
-    <!-- Failure a-33443-38937-warning Missing or multiple author -->
-    <!-- Failure a-3343-29074-error Missing or multiple time in author -->
-    <!-- Failure a-3343-29073-error Missing or multiple assignedAuthor in author -->
-    <author></author>
+    <!-- Failure a-3343-27312-warning Missing targetSiteCode  -->
+    <!-- <targetSiteCode code="71854001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="colon"/> -->
+    
     <!-- QDM Attribute: Incision Datetime -->
     <entryRelationship typeCode="REFR">
       <procedure classCode="PROC" moodCode="EVN">

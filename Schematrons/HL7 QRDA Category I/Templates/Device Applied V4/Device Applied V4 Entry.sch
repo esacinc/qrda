@@ -30,7 +30,7 @@
             <sch:assert id="a-3343-27356-error" test="@codeSystem='2.16.840.1.113883.6.96'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:3343-27536).</sch:assert>
         </sch:rule>
         <sch:rule id="Device-Applied-statusCode-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.7'][@extension='2017-08-01']]/cda:statusCode">
-            <sch:assert id="a-3343-28916-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: HL7ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-28916).</sch:assert>
+            <sch:assert id="a-3343-29140-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: HL7ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-29140).</sch:assert>
         </sch:rule>
         <sch:rule id="Device-Applied-effectiveTime-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.7'][@extension='2017-08-01']]/cda:effectiveTime">
             <sch:assert id="a-3343-27537-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:3343-27537).  </sch:assert>
@@ -43,19 +43,11 @@
             <sch:assert id="a-3343-12401-error" test="@classCode='DEV'">This playingDevice SHALL contain exactly one [1..1] @classCode="DEV" device, which SHALL be selected from CodeSystem HL7ParticipationType (urn:oid:2.16.840.1.113883.5.90) (CONF:3343-12401).</sch:assert>
             <sch:assert id="a-3343-12402-error" test="count(cda:code)=1">This playingDevice SHALL contain exactly one [1..1] code (CONF:3343-12402). </sch:assert>
         </sch:rule>  
-        <sch:rule id="Device-Applied-author-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.7'][@extension='2017-08-01']]/cda:author">
-            <sch:assert id="a-3343-29071-error" test="count(cda:time)=1">The author, if present, SHALL contain exactly one [1..1] time (CONF:3343-29071). </sch:assert>
-            <sch:assert id="a-3343-29070-error" test="count(cda:assignedAuthor)=1">The author, if present, SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29070).</sch:assert>
-        </sch:rule>  
-        <sch:rule id="Device-Applied-author-assignedAuthor-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.7'][@extension='2017-08-01']]/cda:author/cda:assignedAuthor">
-            <sch:assert id="a-3343-29072-error" test="count(cda:id)&gt;=1">This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29072). </sch:assert>
-        </sch:rule>  
     </sch:pattern>
     
     <sch:pattern id="Device-Applied-pattern-warnings">
         <sch:rule id="Device-Applied-warnings" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.7'][@extension='2017-08-01']]">
             <sch:assert id="a-3343-12416-warning" test="count(cda:targetSiteCode)=1">SHOULD contain zero or one [0..1] targetSiteCode (CONF:3343-12416). </sch:assert>
-            <sch:assert id="a-3343-28917-warning" test="count(cda:author)=1">SHOULD contain zero or one [0..1] author (CONF:3343-28917).</sch:assert>
         </sch:rule>
     </sch:pattern>
             

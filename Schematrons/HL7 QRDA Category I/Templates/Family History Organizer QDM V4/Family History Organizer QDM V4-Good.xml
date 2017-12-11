@@ -21,7 +21,7 @@
 		<!-- Subject of the contained Diagnosis Family History template(s) -->
 		<subject>
 			<relatedSubject classCode="PRS">
-				<code code="FTH" displayName="Father" codeSystemName="HL7RoleCode"           codeSystem="2.16.840.1.113883.5.111"/>
+				<code code="FTH" displayName="Father" codeSystemName="HL7RoleCode" codeSystem="2.16.840.1.113883.5.111"/>
 			</relatedSubject>
 		</subject>
 		<component>

@@ -30,8 +30,7 @@
     ...
     <!-- This Device, Applied procedure is in fulfillment of a Device, Order 
        defined elsewhere in the CDA XML -->
-    <!-- QRDA R3: Fulfills -->
-    <!-- Failure a-3343-29113-error SHALL contain exactly one [1..1] @typeCode="FLFS" -->
+     <!-- Failure a-3343-29113-error SHALL contain exactly one [1..1] @typeCode="FLFS" -->
     <sdtc:inFulfillmentOf1 typeCode="FLFSErr">
       <sdtc:templateId root="2.16.840.1.113883.10.20.24.3.150" extension="2017-08-01"/>
       <!-- Failure a-3343-29104-error Multiple main templates -->

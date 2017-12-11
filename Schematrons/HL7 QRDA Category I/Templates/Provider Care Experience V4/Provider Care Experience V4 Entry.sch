@@ -21,21 +21,12 @@
 		  <sch:assert id="a-3343-12485-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:3343-12485).</sch:assert>
 		  <sch:assert id="a-3343-12486-error" test="count(cda:statusCode[@code='completed'])=1">SHALL contain exactly one [1..1] statusCode="completed", which SHALL be selected from CodeSystem ActStatus (urn:oid:2.16.840.1.113883.5.14) (CONF:3343-12486).</sch:assert>
 		  <sch:assert id="a-3343-12572-error" test="count(cda:value[@xsi:type='CD'])=1">SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:3343-12572).</sch:assert>
-          <sch:assert id="a-3343-28941-error" test="count(cda:author)=1">SHALL contain exactly one [1..1] author (CONF:3343-28941).</sch:assert>
+            <sch:assert id="a-3343-28941-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.155'][@extension='2017-08-01']]) = 1">SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:3343-28941). </sch:assert>
         </sch:rule>        
         <sch:rule id="Provider-Care-Experience-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.67'][@extension='2017-08-01']]/cda:code">
 		  <sch:assert id="a-3343-27562-error" test="@code='77219-4'">This code SHALL contain exactly one [1..1] @code="77219-4" Provider satisfaction with healthcare delivery (CONF:3343-27562).</sch:assert>
 		  <sch:assert id="a-3343-27563-error" test="@codeSystem='2.16.840.1.113883.6.1'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3343-27563).</sch:assert>
        </sch:rule>               
-        <sch:rule id="Provider-Care-Experience-author-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.67'][@extension='2017-08-01']]/cda:author">
-            <sch:assert id="a-3343-29077-error" test="count(cda:time)=1">This author SHALL contain exactly one [1..1] time (CONF:3343-29077). </sch:assert>
-            <sch:assert id="a-3343-29076-error" test="count(cda:assignedAuthor)=1">This author SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29076). </sch:assert>
-        </sch:rule> 
-        
-        <sch:rule id="Provider-Care-Experience-author-assignedAuthor-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.67'][@extension='2017-08-01']]/cda:author/cda:assignedAuthor">
-            <sch:assert id="a-3343-29078-warning" test="count(cda:id)&gt;=1">This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29078).</sch:assert>
-        </sch:rule> 
-        
-      </sch:pattern>
+   </sch:pattern>
     
 </sch:schema>

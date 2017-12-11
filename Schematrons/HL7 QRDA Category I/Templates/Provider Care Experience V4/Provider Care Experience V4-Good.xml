@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date: 07-24-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-208
+    Update: 12-08-2017 Changes per QDM review
 
     Total Errors Expected: 0
             
@@ -25,6 +26,7 @@
       displayName="Left against medical advice (finding)"
       codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
     <author>
+      <templateId root="2.16.840.1.113883.10.20.24.3.155" extension="2017-08-01"/>
       <time value="2017050101030"/>
       <assignedAuthor>
         <id nullFlavor="NA"/>

@@ -4,7 +4,8 @@
     Title: Physical Exam Performed - minimal sample file
     Author: Dan Donahue
     Date: 07-25-2017
-    JIRA: https://tracker.esacinc.com/browse/QRDA-213 
+    JIRA: https://tracker.esacinc.com/browse/QRDA-213
+    Update: 12-08-2017 Changes per QDM review
  	 
 	Total Errors Expected: 9
 		Failure a-3343-27559-error SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-27559).
@@ -26,7 +27,7 @@
 	<observation classCodeErr="OBS" moodCode="EVNErr">
 		<!-- Conforms to C-CDA R2 Procedure Activity Observation (V2) -->
 		<templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09"/>
-		<!-- Physical Exam Performed (V3) -->
+		<!-- Physical Exam Performed (V4) -->
 		<templateId root="2.16.840.1.113883.10.20.24.3.59" extension="2017-08-01"/>
 		<!-- Failure a-3343-12644-error SHALL contain exactly one [1..1] templateId (CONF:3343-12644) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.59" (CONF:3343-12645). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-27135). -->
 		<templateId root="2.16.840.1.113883.10.20.24.3.59" extension="2017-08-01"/>

@@ -10,9 +10,6 @@
     <sch:phase id="errors">
         <sch:active pattern="Diagnosis-pattern-errors" />
     </sch:phase>
-    <sch:phase id="warnings">
-        <sch:active pattern="Diagnosis-pattern-warnings" />
-    </sch:phase>
     
     <sch:pattern id="Diagnosis-pattern-errors">
         <sch:rule id="Diagnosis-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.135'][@extension='2017-08-01']]">
@@ -31,20 +28,6 @@
         <sch:rule id="Diagnosis-code-translation-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.135'][@extension='2017-08-01']]/cda:code/cda:translation">
             <sch:assert id="a-3343-28888-error" test="@code='282291009'">This translation SHALL contain exactly one [1..1] @code="282291009" 2.16.840.1.113883.6.96 (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:3343-28888).</sch:assert>
         </sch:rule>
-        <sch:rule id="Diagnosis-code-author-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.135'][@extension='2017-08-01']]/cda:author">
-            <sch:assert id="a-3343-29065-error" test="count(cda:time)=1">The author, if present, SHALL contain exactly one [1..1] time (CONF:3343-29065). </sch:assert>
-            <sch:assert id="a-3343-29064-error" test="count(cda:assignedAuthor)=1">The author, if present, SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29064).</sch:assert>
-        </sch:rule>
-        <sch:rule id="Diagnosis-code-author-assignedAuthor-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.135'][@extension='2017-08-01']]/cda:author/cda:assignedAuthor">
-            <sch:assert id="a-3343-29066-error" test="count(cda:id)&gt;=1"> This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29066). </sch:assert>
-        </sch:rule>           
     </sch:pattern>
-    
-    <sch:pattern id="Diagnosis-pattern-warnings">
-        <sch:rule id="Diagnosis-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.135'][@extension='2017-08-01']]">
-            <sch:assert id="a-3343-28889-warning" test="count(cda:author)=1">SHOULD contain zero or one [0..1] author (CONF:3343-28889).</sch:assert>
-        </sch:rule>
-    </sch:pattern>
-            
     
 </sch:schema>

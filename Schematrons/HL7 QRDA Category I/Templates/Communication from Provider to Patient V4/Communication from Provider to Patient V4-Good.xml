@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date: 08-10-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-261
+    Update: 12-06-2017 Changes per QDM review
   
     Total Errors Expected: 0
             
@@ -17,9 +18,11 @@
     <templateId root="2.16.840.1.113883.10.20.24.3.3" extension="2017-08-01"/>
     <id root="e4f3f0f7-cc24-4f2a-8c5f-097dde3d7afa"/>
     <code code="428521000124106" codeSystem="2.16.840.1.113883.6.96"
-      codeSystemName="SNOMED CT"  displayName="Patient informed - arrange follow-up care (situation)"/>
+      codeSystemName="SNOMED CT" displayName="Patient informed - arrange follow-up care (situation)"/>
     <statusCode code="completed"/>
-    <author>        <time value="2017050101030"/>
+    <author>
+      <templateId root="2.16.840.1.113883.10.20.24.3.155" extension="2017-08-01"/>
+      <time value="2017050101030"/>
       <assignedAuthor>
         <id nullFlavor="NA"/>
       </assignedAuthor>

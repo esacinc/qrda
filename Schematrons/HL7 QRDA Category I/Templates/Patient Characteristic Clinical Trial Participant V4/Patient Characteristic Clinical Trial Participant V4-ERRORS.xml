@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date: 07-26-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-216
+    Update: 12-07-2017 Changes per QDM review
 
 	Total Errors Expected: 12
 		Failure a-3343-16711-error SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-16711).			
@@ -41,10 +42,7 @@
 		<!-- Failure a-3343-13042-error Missing or multiple statusCode with code="active" -->
 		<statusCode code="activeErr"/>
 		<effectiveTime>
-			<!-- QDM Attribute: Start Datetime -->
-			<low value="20120303"/>
-			<!-- QDM Attribute: End Datetime -->
-			<high value="20150405"/>
+			<low value="201706151030"/>
 		</effectiveTime>
 		<!-- Failure a-3343-12536-error Missing or multiple effectiveTime -->
 		<!-- Failure a-3343-27668-error Missing or multiple low -->

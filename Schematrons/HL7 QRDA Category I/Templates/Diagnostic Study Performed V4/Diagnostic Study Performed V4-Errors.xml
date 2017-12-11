@@ -5,8 +5,9 @@
     Author: Dan Donahue
     Date: 08-05-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-250
+    Update: 12-06-2017 Changes per QDM review
     
-    Total Errors Expected: 13
+    Total Errors Expected: 11
           Failure a-3343-27639-error Bad Class Code
           Failure a-3343-12950-error Bad Mood Code
           Failure a-3343-12951-error Multiple main template id          
@@ -16,14 +17,11 @@
           Failure a-3343-12958-error Missing or multiple effectiveTime
           Failure a-3343-12959-error Missing or multiple low
           Failure a-3343-12960-error Missing or multiple high
-          Failure a-3343-29135-error Value present
-          Failure a-3343-29068-error Missing or multiple time in author
-          Failure a-3343-29067-error Missing or multiple assignedAuthor in author
-          Failure a-3343-29069-error Missing id in assignedAuthor
+          Failure a-3343-29135-error Missing or multiple value 
+          Failure a-3343-29139-error Missing @nullFlavor='NA' in value
           
   
-    Total Warnings Expected: 1
-          Failure a-3343-28873 Missing or multiple author
+    Total Warnings Expected: 0
   -->
 
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -43,8 +41,8 @@
     <!-- <code code="24605-8" codeSystem="2.16.840.1.113883.6.1" displayName="Breast Mammogram diagnostic" codeSystemName="LOINC"/> -->
     <text>Diagnostic Study, Performed: Breast Mammogram Diagnostic</text>
     <statusCode code="completed"/>
-    <!-- Failure a-3343-12956 Missing or multiple statusCode -->
-    <!-- Failure a-3343-12957 @code not = completed in statusCode -->
+    <!-- Failure a-3343-12956-error Missing or multiple statusCode -->
+    <!-- Failure a-3343-12957-error @code not = completed in statusCode -->
     <statusCode code="completedErr"/>
     <effectiveTime>
       <!-- QDM Attribute: Relevant Period - Start dateTime -->
@@ -52,17 +50,18 @@
       <!-- QDM Attribute: Relevant Period - Stop dateTime -->
       <high value="20170329103000+0500"/>
     </effectiveTime>
-    <!-- Failure a-3343-12958 Missing or multiple effectiveTime -->
-    <!-- Failure a-3343-12959 Missing or multiple low -->
-    <!-- Failure a-3343-12960 Missing or multiple high
-          Failure a-3343-29135 Value present -->
+    <!-- Failure a-3343-12958-error Missing or multiple effectiveTime -->
+    <!-- Failure a-3343-12959-error Missing or multiple low -->
+    <!-- Failure a-3343-12960-error Missing or multiple high -->
     <effectiveTime>
       <low value="20170329090000+0500"/>
       <low value="20170329103000+0500"/>
     </effectiveTime>
     <!-- QDM Attribute: Result -->
-    <!--  Failure a-3343-29135 Value present -->
     <value xsi:type="CD" nullFlavor="NA"/>
+    <!--  Failure a-3343-29135-error Multiple Value -->
+    <!--  Failure a-3343-29139-error Missing nullFlavor='NA' in Value-->
+    <value xsi:type="CD" />
     <author>
       <time value="201704081130"/>
       <assignedAuthor>

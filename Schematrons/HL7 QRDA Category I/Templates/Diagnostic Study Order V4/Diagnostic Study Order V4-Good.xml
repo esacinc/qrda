@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date: 08-07-2016
     JIRA: https://tracker.esacinc.com/browse/QRDA-251
+    Update: 12-08-2017 Changes per QDM review
  
     Total Errors Expected: 0
     Total Warnings Expected: 0
@@ -29,7 +30,7 @@
       displayName="Breast Mammogram diagnostic" codeSystemName="LOINC"/>
     <!-- author/time indicates the time the diagnostic order was signed -->
     <author>
-      <time value="201204081130"/>
+      <time value="201706081130"/>
       <assignedAuthor>
         <id nullFlavor="NA"/>
       </assignedAuthor>

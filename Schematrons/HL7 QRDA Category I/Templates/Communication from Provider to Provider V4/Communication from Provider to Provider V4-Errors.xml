@@ -5,20 +5,18 @@
     Author: Dan Donahue
     Date: 08-10-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-260
+    Update: 12-06-2017 Changes per QDM review
   
-    Total Errors Expected: 20
+    Total Errors Expected: 17
             Failure a-3343-11816-error SHALL contain exactly one [1..1] @classCode="ACT" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-11816). 
             Failure a-3343-11817-error SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-11817). 
             Failure a-3343-11818-error SHALL contain exactly one [1..1] templateId (CONF:3343-11818) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.4" (CONF:3343-11819). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-27285).
             Failure a-3343-11821-error SHALL contain at least one [1..*] id (CONF:3343-11821).
             Failure a-3343-26950-error SHALL contain exactly one [1..1] code (CONF:3343-26950).
             Failure a-3343-11822-error SHALL contain exactly one [1..1] statusCode="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-11822). 
-            Failure a-3343-28921-error SHALL contain exactly one [1..1] author (CONF:3343-28921).
+            Failure a-3343-28921-error SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:3343-28921).
             Failure a-3343-11827-error SHALL contain exactly one [1..1] participant (CONF:3343-11827) such that it SHALL contain exactly one [1..1] @typeCode="IRCP" information recipient (CodeSystem: HL7ParticipationType urn:oid:2.16.840.1.113883.5.90) (CONF:3343-11828) SHALL contain exactly one [1..1] participantRole (CONF:3343-11829).   
             Failure a-3343-11837-error SHALL contain exactly one [1..1] participant (CONF:3343-11837) such that it SHALL contain exactly one [1..1] @typeCode="AUT" information recipient (CodeSystem: HL7ParticipationType urn:oid:2.16.840.1.113883.5.90) (CONF:3343-11838) SHALL contain exactly one [1..1] participantRole (CONF:3343-11839).  
-            Failure a-3343-28995-error This author SHALL contain exactly one [1..1] time (CONF:3343-28995). 
-            Failure a-3343-28994-error This author SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-28994).
-            Failure a-3343-28996-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-28996).
             Failure a-3343-12096-error This participantRole SHALL contain exactly one [1..1] @classCode="ASSIGNED" assigned entity (CodeSystem: HL7RoleClass urn:oid:2.16.840.1.113883.5.110) (CONF:3343-12096).
             Failure a-3343-11830-error This participantRole SHALL contain exactly one [1..1] code (CONF:3343-11830).
             Failure a-3343-26951-error This code SHALL contain exactly one [1..1] @code="158965000" Medical practitioner (CONF:3343-26951).
@@ -46,18 +44,12 @@
     <!-- <code code="371530004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Clinical consultation report (record artifact)"/> -->
     <!-- Failure a-3343-11822-error SHALL contain exactly one [1..1] statusCode="completed" -->
     <statusCode code="completedErr"/>
+    <!-- Failure a-3343-28921-error SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:3343-28921). -->
     <author>
-      <time value="2017050101030"/>
-      <assignedAuthor>
-        <!--  Failure a-3343-28996-error This assignedAuthor SHALL contain at least one [1..*] id -->
-        <!-- <id nullFlavor="NA"/> -->
-      </assignedAuthor>
+      <templateId root="2.16.840.1.113883.10.20.24.3.155Err" extension="2017-08-01"/>
+      <!-- ... -->
     </author>
-    <!-- Failure a-3343-28921-error SHALL contain exactly one [1..1] author -->
-    <!-- Failure a-3343-28995-error This author SHALL contain exactly one [1..1] time -->
-    <!-- Failure a-3343-28994-error This author SHALL contain exactly one [1..1] assignedAuthor -->
-    <author></author>
-    <participant typeCode="AUT">
+     <participant typeCode="AUT">
       <participantRole classCode="ASSIGNED">
         <code code="158965000" codeSystem="2.16.840.1.113883.6.96"
           codeSystemName="SNOMED CT" displayName="Medical Practitioner"/>

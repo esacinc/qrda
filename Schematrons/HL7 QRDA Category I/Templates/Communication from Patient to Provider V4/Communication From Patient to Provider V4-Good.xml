@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date: 08-10-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-262
+    Update: 12-06-2017 Changes per QDM review
   
     Total Errors Expected: 0
             
@@ -19,6 +20,7 @@
     <code code="401270003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="E-mail received from patient (event)"/>
     <statusCode code="completed"/>
     <author>
+      <templateId root="2.16.840.1.113883.10.20.24.3.155" extension="2017-08-01"/>
       <time value="2017050101030"/>
       <assignedAuthor>
         <id nullFlavor="NA"/>

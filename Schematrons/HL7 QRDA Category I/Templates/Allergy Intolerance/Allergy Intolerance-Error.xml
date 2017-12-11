@@ -5,6 +5,7 @@
     Author: Michael Holck
     Date: 07-31-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-229
+    Update: 12-08-2017 Changes per QDM review
 
     Total Errors Expected: 17
       Failure a-3343-28826-error SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:3343-28826).
@@ -82,16 +83,6 @@
       <!-- Failure a-3343-28838-error Missing or invalid classCode -->
       <participantRole/>
     </participant>
-    <!-- QDM Attribute: Reaction -->
-    <entryRelationship typeCode="MFST" inversionInd="true">
-      <observation classCode="OBS" moodCode="EVN">
-        <!-- Reaction Observation (V2) -->
-        <templateId root="2.16.840.1.113883.10.20.22.4.9" extension="2014-06-09"/>
-        <id root="80aed311-8af7-401f-ab7f-727260d2b033"/>
-        <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Assertion"/>
-        <statusCode code="completed"/>
-        <value xsi:type="CD" code="404684003" displayName="Nausea" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-      </observation>
-    </entryRelationship>
+
   </observation>
 </ClinicalDocument>

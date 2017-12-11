@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date: 08-01-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-221
+    Update: 12-07-2017 Changes per QDM review
 
     Total Errors Expected: 0
 	
@@ -19,7 +20,6 @@
 		<!-- Medication Administered -->
 		<templateId root="2.16.840.1.113883.10.20.24.3.42" extension="2017-08-01"/>
 		<id root="9069c123-80ad-47c8-a633-9dc02018ae56"/>
-		<code code="completed"/>
 		<statusCode code="completed"/>
 		<effectiveTime xsi:type="IVL_TS">
 			<low value="20170301150000+0500"/>
@@ -44,4 +44,6 @@
 				</manufacturedMaterial>
 			</manufacturedProduct>
 		</consumable>   
-	</substanceAdministration></ClinicalDocument>
+	</substanceAdministration>
+
+</ClinicalDocument>

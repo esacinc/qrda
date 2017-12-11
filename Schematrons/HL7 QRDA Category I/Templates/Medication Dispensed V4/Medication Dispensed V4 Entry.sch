@@ -30,10 +30,13 @@
 		</sch:rule>
 		
 		<sch:rule id="Medication_Dispensed-statuscode-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2017-08-01']]/cda:statusCode">
-			<sch:assert id="a-3343-19441-error" test="@code='completed'">
-				This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-19441).
-			</sch:assert>
+			<sch:assert id="a-3343-19441-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-19441).</sch:assert>
 		</sch:rule>
+		<sch:rule id="Medication_Dispensed-effectiveTime-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2017-08-01']]/cda:effectiveTime">
+			<sch:assert id="a-3343-29143-error" test="count(cda:low)=1">The effectiveTime, if present, SHALL contain exactly one [1..1] low (CONF:3343-29143). </sch:assert>
+			<sch:assert id="a-3343-29144-error" test="count(cda:high)=1">The effectiveTime, if present, SHALL contain exactly one [1..1] high (CONF:3343-29144). </sch:assert>
+		</sch:rule>
+		
 		<sch:rule id="Medication_Dispensed-entryRelationship-substanceAdministration-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2017-08-01']]/cda:entryRelationship[@typeCode='REFR']/cda:substanceAdministration">
 			<sch:assert id="a-3343-28226-error" test="@classCode='SBADM'">This substanceAdministration SHALL contain exactly one [1..1] @classCode="SBADM" Substance Administration (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-28226).	</sch:assert>
 			<sch:assert id="a-3343-28227-error" test="@moodCode='EVN'">This substanceAdministration SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: HL7ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-28227).</sch:assert>

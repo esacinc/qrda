@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date: 08-08-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-252
+    Update: 12-06-2017 Changes per QDM review
     
     Total Errors Expected: 0
  
@@ -31,17 +32,19 @@
         <code code="29308-4" displayName="diagnosis" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
           <translation code="282291009" displayName="diagnosis" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
         </code>
-        <author>
-          <time value="201204081130"/>
-          <assignedAuthor>
-           <id nullFlavor="NA"/> 
-          </assignedAuthor>
-        </author>
-       <!-- QDM Attribute Anatomical Location Site -->
+        <statusCode code="completed"/>
+        <effectiveTime>
+          <!-- Onset Datetime -->
+          <low value="20170101090000+0500"/>
+          <!-- Abatement Datetime -->
+          <high value="20170801090000+0500"/>
+        </effectiveTime>
+        <value xsi:type="CD" code="25907005" codeSystem="2.16.840.1.113883.6.96"
+          codeSystemName="SNOMED-CT" displayName="Diabetic gangrene (disorder)"/>
+        <!-- QDM Attribute Anatomical Location Site -->
         <targetSiteCode code="56459004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="foot"/>
-        <!-- ...  -->                
-      </observation>    
-    </entryRelationship>
+        <!-- ... -->                 
+      </observation>    </entryRelationship>
     <!-- QDM Attribute: Severity -->
     <!-- ... -->
   </act>

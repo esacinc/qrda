@@ -5,6 +5,7 @@
     Author: Michael Holck
     Date: 07-31-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-229
+    Update: 12-08-2017 Changes per QDM review
 
     Total Errors Expected: 0
             
@@ -19,10 +20,14 @@
     <templateId root="2.16.840.1.113883.10.20.24.3.90" extension="2014-06-09"/>
     <!-- Allergy Intolerance -->
     <templateId root="2.16.840.1.113883.10.20.24.3.147" extension="2017-08-01"/>
+    <id root="901db0f8-9355-4794-81cd-fd951efe7817"/>
     <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+    <statusCode code="completed"/>
     <effectiveTime>
       <!-- QDM Attribute: Relevant Period - onset date -->
       <low value="20171101"/>
+      <!-- QDM Attribute: Relevant Period - abatement date -->
+      <high nullFlavor="UNK"/>
     </effectiveTime>
     <value xsi:type="CD" code="419199007" displayName="Allergy to substance" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
     <participant typeCode="CSM">
@@ -33,16 +38,5 @@
         </playingEntity>
       </participantRole>
     </participant>
-    <!-- QDM Attribute: Reaction -->
-    <entryRelationship typeCode="MFST" inversionInd="true">
-      <observation classCode="OBS" moodCode="EVN">
-        <!-- Reaction Observation (V2) -->
-        <templateId root="2.16.840.1.113883.10.20.22.4.9" extension="2014-06-09"/>
-        <id root="80aed311-8af7-401f-ab7f-727260d2b033"/>
-        <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Assertion"/>
-        <statusCode code="completed"/>
-        <value xsi:type="CD" code="404684003" displayName="Nausea" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-      </observation>
-    </entryRelationship>
   </observation>
 </ClinicalDocument>

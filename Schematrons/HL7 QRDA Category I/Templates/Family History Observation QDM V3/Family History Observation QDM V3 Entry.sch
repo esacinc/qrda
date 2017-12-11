@@ -20,14 +20,6 @@
 			<sch:assert id="a-3343-28661-error" test="count(../../cda:templateId[@root='2.16.840.1.113883.10.20.24.3.12'][@extension='2017-08-01'])=1">This template SHALL be contained by a Family History Organizer QDM (V4) (CONF:3343-28661).</sch:assert>
 		</sch:rule>
 	
-		<sch:rule id="Family_History_Observation_QDM-author-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.112'][@extension='2017-08-01']]/cda:author">
-			<sch:assert id="a-3343-29008-error" test="count(cda:time)=1">The author, if present, SHALL contain exactly one [1..1] time (CONF:3343-29008). </sch:assert>
-			<sch:assert id="a-3343-29007-error" test="count(cda:assignedAuthor)=1">The author, if present, SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29007). </sch:assert>
-		</sch:rule>
-		<sch:rule id="Family_History_Observation_QDM-author-assignedAuthor-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.112'][@extension='2017-08-01']]/cda:author/cda:assignedAuthor">
-			<sch:assert id="a-3343-29009-error" test="count(cda:id)&gt;=1">This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29009). </sch:assert>
-		</sch:rule>
-		
 	</sch:pattern>
 
 </sch:schema>

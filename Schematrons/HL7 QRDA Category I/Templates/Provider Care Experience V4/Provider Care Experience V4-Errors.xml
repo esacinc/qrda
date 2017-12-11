@@ -5,8 +5,9 @@
     Author: Dan Donahue
     Date: 07-24-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-208
+    Update: 12-08-2017 Changes per QDM review
     
-    Total Errors Expected: 14
+    Total Errors Expected: 11
           Failure a-3343-12479-error Bad Class Code
           Failure a-3343-12480-error Bad Mood Code
           Failure a-3343-28100-error @negationInd present
@@ -17,10 +18,7 @@
           Failure a-3343-27563-error Missing or bad code @codeSystem="2.16.840.1.113883.6.1" 
           Failure a-3343-12486-error Missing or multiple statusCode="completed"
           Failure a-3343-12572-error Missing or multiple value with @xsi:type="CD" 
-          Failure a-3343-28941-error Missing or multiple author
-          Failure a-3343-29077-error Missing or multiple time in author
-          Failure a-3343-29076-error Missing or multiple assignedAuthor in author
-          Failure a-3343-29078-error Missing id in assignedAuthor
+          Failure a-3343-28941-error SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:3343-28941). 
             
     Total Warnings Expected: 0
            
@@ -46,16 +44,10 @@
     <!-- <statusCode code="completed"/> -->
     <!--  Failure a-3343-12572-error Missing or multiple value with @xsi:type="CD" -->
     <value xsi:type="CDErr" code="445060000" displayName="Left against medical advice (finding)" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+    <!--  Failure a-3343-28941-error SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) -->
     <author>
-      <time value="2017050101030"/>
-      <assignedAuthor>
-        <!-- Failure a-3343-29078-error Missing id in assignedAuthor -->
-        <!-- <id nullFlavor="NA"/> -->
-      </assignedAuthor>
+      <templateId root="2.16.840.1.113883.10.20.24.3.155" extension="2017-08-01Err"/>
+      <!-- ... -->
     </author>
-    <!-- Failure a-3343-28941-error Missing or multiple author -->
-    <!-- Failure a-3343-29077-error Missing or multiple time in author -->
-    <!-- Failure a-3343-29076-error Missing or multiple assignedAuthor in author -->
-    <author></author>
   </observation>
 </ClinicalDocument>

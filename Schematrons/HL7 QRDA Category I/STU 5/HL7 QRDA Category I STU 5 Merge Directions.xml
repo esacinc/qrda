@@ -122,7 +122,7 @@
         <include>Medication Supply Request V2</include>
         <include>Patient Care Experience V4</include>
         <include>Patient Characteristic Clinical Trial Participant V4</include>
-        <include>Patient Characteristic Coverage Type</include>
+        <include>Program Participation</include> <!-- Changed template name from Patient Characteristic Coverage Type, per QDM review -->
         <include>Patient Characteristic Expired V3</include>
         <include>Patient Characteristic Observation Assertion V4</include>
         <include>Patient Characteristic Payer</include>

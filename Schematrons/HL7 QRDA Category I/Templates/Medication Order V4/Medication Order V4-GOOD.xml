@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date: 08-01-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-218
+    Update: 12-07-2017 Changes per QDM review
 
     Total Errors Expected: 0
 	
@@ -18,15 +19,9 @@
 		<!-- Medication Order (V4) -->
 		<templateId root="2.16.840.1.113883.10.20.24.3.47" extension="2017-08-01"/>
 		<id root="9a5f4d94-ccad-4d57-80ea-27737545c7bb"/>
-		<!-- Begin optional data... -->
 		<text>Medication active: 0.09 MG/ACTUAT inhalant solution, 2 puffs QID PRN
 			wheezing</text>
 		<statusCode code="active"/>
-		<!-- Time that the medication activity should occur. -->
-		<effectiveTime xsi:type="IVL_TS">
-			<!-- QDM Attribute: Active dateTime -->
-			<low value="20170801"/>
-		</effectiveTime>
 		<!-- QDM Attribute: Frequency -->
 		<effectiveTime xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
 			<period value="6" unit="h"/>
@@ -47,13 +42,13 @@
 				</manufacturedMaterial>
 			</manufacturedProduct>
 		</consumable>
-		<!-- End optinal data... -->
 		<author>
-			<time value="201504081130"/>
+			<templateId root="2.16.840.1.113883.10.20.24.3.155" extension="2017-08-01"/>
+			<time value="201704081130"/>
 			<assignedAuthor>
 				<id nullFlavor="NA"/>
 			</assignedAuthor>
 		</author>
 	</substanceAdministration>
-
+	
 </ClinicalDocument>

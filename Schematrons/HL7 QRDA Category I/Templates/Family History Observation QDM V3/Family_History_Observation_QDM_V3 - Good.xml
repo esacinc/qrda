@@ -3,6 +3,7 @@
 	Author: Dan Donahue
 	Date: 06-23-2017
 	JIRA: https://tracker.esacinc.com/browse/QRDA-242
+	Update: 12-07-2017 Changes per QDM review
 	
 	Total Errors Expected: 0
 	
@@ -31,13 +32,13 @@
 				<!-- Diagnosis/Condition/Problem -->
 				<value xsi:type="CD" code="22298006" codeSystem="2.16.840.1.113883.6.96" displayName="Myocardial infarction"/>
 				<author>
+					<templateId root="2.16.840.1.113883.10.20.24.3.155" extension="2017-08-01"/>
 					<time value="2017020101030"/>
 					<assignedAuthor>
 						<id nullFlavor="NA"/>
 					</assignedAuthor>
 				</author>
-			</observation>
-		</component>
+			</observation>		</component>
 	</organizer>
 	
 </ClinicalDocument>

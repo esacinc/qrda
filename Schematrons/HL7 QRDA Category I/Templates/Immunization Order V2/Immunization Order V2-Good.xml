@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date: 08-03-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-237
+    Update: 12-07-2017 Changes per QDM review
   
     Total Errors Expected: 0
                     
@@ -22,8 +23,8 @@
     <id root="9a5f4d94-ccad-4d57-80ea-27737545c7bb"/>
     <statusCode code="active"/>
     <!-- Active dateTime: the date and time at which an order becomes active (intended to take place)-->
-    <effectiveTime>
-      <low value="201703011130"/>
+    <effectiveTime xsi:type="IVL_TS">
+      <low value="20170708"/>
     </effectiveTime>
     <!-- QDM Attribute: Route -->
     <routeCode code="IM" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration" displayName="Intramuscular injection"/>
@@ -41,6 +42,7 @@
       </manufacturedProduct>
     </consumable>
     <author>
+      <templateId root="2.16.840.1.113883.10.20.24.3.155" extension="2017-08-01"/>
       <time value="201504081130"/>
       <assignedAuthor>
         <id nullFlavor="NA"/>

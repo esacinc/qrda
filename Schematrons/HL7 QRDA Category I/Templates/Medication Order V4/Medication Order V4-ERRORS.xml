@@ -5,17 +5,16 @@ Title: Medication Order V4 minimal file	 with errors
     Author: Dan Donahue
     Date: 08-01-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-218
+    Update: 12-07-2017 Changes per QDM review
     
-    Total Errors Expected: 7
+    Total Errors Expected: 5
 		Failure a-3343-27377-error SHALL contain exactly one [1..1] @classCode="SBADM" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-27377).			
 		Failure a-3343-12639-error SHALL contain exactly one [1..1] @moodCode="RQO" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-12639).			
 		Failure a-3343-12585-error SHALL contain exactly one [1..1] templateId (CONF:3343-12585) such that it
 					               SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.47" (CONF:3343-12586).
 					               SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-27089).
-		Failure a-3343-27745-error SHALL contain exactly one [1..1] author (CONF:3343-27745).
-		Failure a-3343-29032-error This author SHALL contain exactly one [1..1] time (CONF:3343-29032).
-		Failure a-3343-29031-error This author SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29031).
-		Failure a-3343-29033-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29033). 
+		Failure a-3343-27740-error SHALL contain exactly one [1..1] effectiveTime (CONF:3343-27740) such that it SHALL contain exactly one [1..1] low (CONF:3343-27742) SHALL contain exactly one [1..1] high (CONF:3343-29141). 
+		Failure a-3343-27745-error SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:3343-27745).
 	
 	Total Warnings Expected: 0
 -->
@@ -31,18 +30,18 @@ Title: Medication Order V4 minimal file	 with errors
 		<!-- Failure a-3343-12585-error Multiple main templateIds -->
 		<templateId root="2.16.840.1.113883.10.20.24.3.47" extension="2017-08-01"/>
 		<id root="9a5f4d94-ccad-4d57-80ea-27737545c7bb"/>
-		<!-- ... -->
+		<!-- Failure a-3343-27740-error SHALL contain exactly one [1..1] effectiveTime (CONF:3343-27740) such that it SHALL contain exactly one [1..1] low (CONF:3343-27742) SHALL contain exactly one [1..1] high (CONF:3343-29141).  -->
+		<effectiveTime xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+			<period value="6" unit="h"/>
+		</effectiveTime>
+		<!-- Failure a-3343-27745-error SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:3343-27745). -->
 		<author>
-			<time value="201504081130"/>
+			<templateId root="2.16.840.1.113883.10.20.24.3.155Err" extension="2017-08-01"/>
+			<time value="201704081130"/>
 			<assignedAuthor>
-				<!-- Failure a-3343-29033-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29033). -->
-				<!-- <id nullFlavor="NA"/> -->
+				<id nullFlavor="NA"/>
 			</assignedAuthor>
-		</author>
-		<!-- Failure a-3343-27745-error SHALL contain exactly one [1..1] author (CONF:3343-27745). -->
-		<!-- Failure a-3343-29032-error This author SHALL contain exactly one [1..1] time (CONF:3343-29032). -->
-		<!-- Failure a-3343-29031-error This author SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29031). -->
-		<author></author>
+		</author>	
 	</substanceAdministration>
 
 </ClinicalDocument>

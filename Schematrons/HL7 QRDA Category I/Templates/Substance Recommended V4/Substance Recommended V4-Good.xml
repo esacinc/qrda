@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date: 07-22-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-204
+    Update: 12-08-2017 Changes per QDM review
 
     Total Errors Expected: 0
                
@@ -22,7 +23,9 @@
     <id root="df154906-9aaa-4651-a244-412cef74b8d5"/>
     <text>Substance Recommended: Dietary fiber</text>
     <statusCode code="active"/>
-    <effectiveTime value="20170408"/>
+    <effectiveTime xsi:type="PIVL_TS" operator="A">
+      <period value="8" unit="h"/>
+    </effectiveTime>
     <consumable>
       <manufacturedProduct classCode="MANU">
         <!-- Conforms to C-CDA R2.1 Medication Information (V2) -->

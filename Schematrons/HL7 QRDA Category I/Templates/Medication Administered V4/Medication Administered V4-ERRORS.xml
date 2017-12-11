@@ -5,14 +5,13 @@
     Author: Dan Donahue
     Date: 08-01-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-221
+    Update: 12-07-2017 Changes per QDM review
 
-    Total Errors Expected: 7
+    Total Errors Expected: 5
 			Failure a-3343-12444-error SHALL contain exactly one [1..1] @classCode="SBADM" Substance Administration (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-12444).
 			Failure a-3343-12445-error SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: HL7ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-12445).
 			Failure a-3343-12446-error SSHALL contain exactly one [1..1] templateId (CONF:3343-12446) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.42" (CONF:3343-12447). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-27023).
-			Failure a-3343-12449-error SHALL contain exactly one [1..1] code (CONF:3343-12449).			
 			Failure a-3343-12452-error SHALL contain exactly one [1..1] statusCode (CONF:3343-12452).			
-			Failure a-3343-12450-error This code SHALL contain exactly one [1..1] @code="completed" (CodeSystem: HL7ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-12450).			
 			Failure a-3343-13241-error This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: HL7ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-13241)			
 
      Total Warnings Expected: 0
@@ -30,10 +29,6 @@
 		<!-- Failure a-3343-12446-error Multiple main templateIds -->
 		<templateId root="2.16.840.1.113883.10.20.24.3.42" extension="2017-08-01"/>
 		<id root="9069c123-80ad-47c8-a633-9dc02018ae56"/>
-		<code code="completed" />
-		<!-- Failure a-3343-12449-error SHALL contain exactly one [1..1] code (CONF:3343-12449). -->
-		<!-- Failure a-3343-12450-error This code SHALL contain exactly one [1..1] @code="completed" (CodeSystem: HL7ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-12450). -->
-		<code code="completedErr" />
 		<statusCode code="completed"/>
 		<!-- Failure a-3343-12452-error SHALL contain exactly one [1..1] statusCode (CONF:3343-12452). -->
 		<!-- Failure a-3343-13241-error This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: HL7ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-13241) -->

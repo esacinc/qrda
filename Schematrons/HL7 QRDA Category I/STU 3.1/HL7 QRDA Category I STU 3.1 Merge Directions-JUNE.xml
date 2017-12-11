@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    
+<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="false" stopOnError="false" separateErrorsFromWarnings="true" >
+ 
+    <title>HL7 QRDA 1 STU 3.1 generated schematron</title>
+   
+    <generatedFilename>
+        c:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category I/STU 3.1/Published/HL7 QRDA Category I STU 3.1-JUNE-II.sch
+    </generatedFilename>
+    <finalTestFilename>
+        c:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category I/STU 3.1/TestFiles/GOOD_CDAR2_QRDA_I_R1_STU3.1.xml 
+    </finalTestFilename>
+    <fileHeader>HL7 QRDA I STU 3.1 generated schematron.</fileHeader>
+    <errorsHeader>.............ERROR PATTERNS...............</errorsHeader>
+    <warningsHeader>. 
+        .............WARNING PATTERNS...............
+  .
+    </warningsHeader>
+    <mergeReportFilename> c:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category I/STU 3.1/mergeReport-JUNE.txt</mergeReportFilename>
+    
+    <!-- All schematrons expected to be under a single main directory -->
+    <sourceMainDirectory>
+        c:/Development/QRDA-git/qrda/Schematrons/
+    </sourceMainDirectory>
+    
+    <!-- Specify the schematrons to use in the merge below, separated by the templates found in each fo the source directories listed. -->
+    <!--    Note that the directoryName tags refer to directories relative to the sourceMainDirectory tag, above. -->
+    <!--    selector='all' means use all the schematron subdirectories found under directoryName, except for those listed in the 'include' tags. -->
+    <!--    selector='some' means only use the directoryName subdirectories listed in the 'include' tags --> 
+
+    <sourceDirectory selector='some'> 
+        <directoryName>HL7 QRDA Category I/Templates/</directoryName>
+        <include>Assessment Performed</include> 
+		<include>Assessment Recommended</include>
+        <include>Diagnosis Concern Act V2</include>
+        <include>Fulfills V2</include>
+        <include>Patient Data Section QDM V4</include>
+        <include>QDM Based QRDA V4</include>
+        <include>Symptom Concern Act V2</include>
+    </sourceDirectory>
+
+</mergeProfile>

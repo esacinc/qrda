@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date: 07-24-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-207
+    Update: 12-08-2017 Changes per QDM review
 
     Total Errors Expected: 0
             
@@ -24,10 +25,10 @@
     <value xsi:type="CD" code="2135-2" codeSystem="2.16.840.1.113883.6.238"
       codeSystemName="CDCREC" displayName="Hispanic or Latino"/>
     <author>
-      <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+      <templateId root="2.16.840.1.113883.10.20.24.3.155" extension="2017-08-01"/>
       <time value="201704081130"/>
       <assignedAuthor>
-        <id root="2.16.840.1.113883.4.6" extension="111111111"/>
+        <id nullFlavor="NA"/>
       </assignedAuthor>
     </author>
     <participant typeCode="IND">

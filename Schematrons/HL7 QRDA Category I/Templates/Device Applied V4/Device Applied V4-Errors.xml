@@ -5,8 +5,9 @@
     Author: Dan Donahue
     Date: 08-09-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-258
+    Update: 12-08-2017 Changes per QDM review
 
-   Total Errors Expected: 18
+   Total Errors Expected: 15
             Failure a-3343-28050-error SHALL contain exactly one [1..1] @classCode="PROC" Procedure (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-28050).  
             Failure a-3343-28051-error SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-28051).  
             Failure a-3343-12391-error SHALL contain exactly one [1..1] templateId (CONF:3343-12391) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.7" (CONF:3343-12392).  SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-27132). 
@@ -16,19 +17,15 @@
             Failure a-3343-12396-error SHALL contain exactly one [1..1] participant (CONF:3343-12396) such that it SHALL contain exactly one [1..1] @typeCode="DEV" device, which SHALL be selected from CodeSystem HL7ParticipationType (urn:oid:2.16.840.1.113883.5.90) (CONF:3343-12397).  SHALL contain exactly one [1..1] participantRole (CONF:3343-12398). 
             Failure a-3343-12415-error This code SHALL contain exactly one [1..1] @code="360030002" application of device (CONF:3343-12415).  
             Failure a-3343-27356-error This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:3343-27536).
-            Failure a-3343-28916-error This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: HL7ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-28916).
+            Failure a-3343-29140-error This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: HL7ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-29140).
             Failure a-3343-27537-error This effectiveTime SHALL contain exactly one [1..1] low (CONF:3343-27537).  
             Failure a-3343-12399-error This participantRole SHALL contain exactly one [1..1] @classCode="MANU" manufactured product, which SHALL be selected from CodeSystem HL7RoleClass (urn:oid:2.16.840.1.113883.5.110) (CONF:3343-12399).
             Failure a-3343-12400-error This participantRole SHALL contain exactly one [1..1] playingDevice (CONF:3343-12400).
             Failure a-3343-12401-error This playingDevice SHALL contain exactly one [1..1] @classCode="DEV" device, which SHALL be selected from CodeSystem HL7ParticipationType (urn:oid:2.16.840.1.113883.5.90) (CONF:3343-12401).
             Failure a-3343-12402-error This playingDevice SHALL contain exactly one [1..1] code (CONF:3343-12402). 
-            Failure a-3343-29071-error The author, if present, SHALL contain exactly one [1..1] time (CONF:3343-29071). 
-            Failure a-3343-29070-error The author, if present, SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29070).
-            Failure a-3343-29072-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29072). 
  
-   Total Warnings Expected: 2
+   Total Warnings Expected: 1
             Failure a-3343-12416-warning SHOULD contain zero or one [0..1] targetSiteCode (CONF:3343-12416). 
-            Failure a-3343-28917-warning SHOULD contain zero or one [0..1] author (CONF:3343-28917).
   
    -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -51,7 +48,7 @@
     <code code="360030002Err" />
     <statusCode code="completed"/>
     <!-- Failure a-3343-12394-error SHALL contain exactly one [1..1] statusCode -->
-    <!-- Failure a-3343-28916-error This statusCode SHALL contain exactly one [1..1] @code="completed" -->
+    <!-- Failure a-3343-29140-error This statusCode SHALL contain exactly one [1..1] @code="completed" -->
     <statusCode code="completedErr"/>
     <effectiveTime>
       <!-- QDM Attribute: Relevant Period - Start dateTime -->
@@ -70,9 +67,11 @@
     <!-- <targetSiteCode code="71854001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="colon"/> -->
     <participant typeCode="DEV">
       <participantRole classCode="MANU">
-        <playingDevice classCode="DEV">
+        <!-- Failure a-3343-12401-error This playingDevice SHALL contain exactly one [1..1] @classCode="DEV" device -->
+        <!-- Failure a-3343-12402-error This playingDevice SHALL contain exactly one [1..1] code -->
+        <playingDevice classCode="DEVErr">
           <!-- Device -->
-          <code code="401608003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Suprapubic catheter (physical object)"/>
+          <!-- <code code="401608003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Suprapubic catheter (physical object)"/> -->
         </playingDevice>
       </participantRole>
     </participant>
@@ -85,23 +84,9 @@
           <code code="401608003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Suprapubic catheter (physical object)"/>
         </playingDevice>
         <!-- Failure a-3343-12400-error This participantRole SHALL contain exactly one [1..1] playingDevice (CONF:3343-12400). -->
-        <!-- Failure a-3343-12401-error This playingDevice SHALL contain exactly one [1..1] @classCode="DEV" device -->
-        <!-- Failure a-3343-12402-error This playingDevice SHALL contain exactly one [1..1] code -->
-        <playingDevice classCode="DEVErr"></playingDevice>
+        <playingDevice classCode="DEV"></playingDevice>
       </participantRole>
     </participant>
-    <author>
-      <time value="201610101030"/>
-      <assignedAuthor>
-        <!--  Failure a-3343-29072-error This assignedAuthor SHALL contain at least one [1..*] id  -->
-        <!-- <id nullFlavor="NA"/> -->
-      </assignedAuthor>
-    </author>
-    <!-- Failure a-3343-28917-warning SHOULD contain zero or one [0..1] author (CONF:3343-28917). -->
-    <!-- Failure a-3343-29071-error The author, if present, SHALL contain exactly one [1..1] time -->
-    <!-- Failure a-3343-29070-error The author, if present, SHALL contain exactly one [1..1] assignedAuthor -->
-    <author></author>
-    
     <!-- ...  -->    
   </procedure>
 </ClinicalDocument>

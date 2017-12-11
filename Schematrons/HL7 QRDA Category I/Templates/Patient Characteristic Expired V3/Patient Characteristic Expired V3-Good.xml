@@ -4,6 +4,7 @@
     Title: Patient Characteristic Expired V3 minimal sample file 
     Author: Dan Donahue
     Date: 10-09-2017
+    Update: 12-06-2017 Changes per QDM review
  
     Total Errors Expected: 0
 	
@@ -31,8 +32,10 @@
 				<!-- C-CDA R2.1 Problem Observation (V3) -->
 				<templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01" />
 				<id root="d11275e7-67ae-11db-bd13-0800200c9a66" />
-				<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
-					codeSystemName="HL7ActCode" />
+				<code code="64572001" displayName="Condition" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+					<translation code="75323-6" codeSystem="2.16.840.1.113883.6.1" 
+						codeSystemName="LOINC" displayName="Condition"/>
+				</code>
 				<statusCode code="completed" />
 				<effectiveTime>
 					<low value="20151215" />

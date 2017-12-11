@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date:   08-08-2017
     JIRA:   https://tracker.esacinc.com/browse/QRDA-253
+    Update: 12-06-2017 Changes per QDM review
     
     Total Errors Expected: 0
     Total Warnings Expected: 0
@@ -48,16 +49,16 @@
 				<value xsi:type="CD" code="25907005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Diabetic gangrene (disorder)"/>
 				<!-- QDM Attribute Anatomical Location Site -->
 				<targetSiteCode code="56459004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="foot"/>
-			</observation>
-		</entryRelationship>
-		<!-- QDM Attribute: Severity -->
-		<entryRelationship typeCode="REFR">
-			<observation classCode="OBS" moodCode="EVN">
-				<templateId root="2.16.840.1.113883.10.20.22.4.8" extension="2014-06-09"/>
-				<code code="SEV" displayName="Severity Observation"
-					codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
-				<value xsi:type="CD" code="24484000" displayName="Severe"
-					codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+				<!-- QDM Attribute: Severity -->
+				<entryRelationship typeCode="REFR">
+					<observation classCode="OBS" moodCode="EVN">
+						<templateId root="2.16.840.1.113883.10.20.22.4.8" extension="2014-06-09"/>
+						<code code="SEV" displayName="Severity Observation"
+							codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+						<value xsi:type="CD" code="24484000" displayName="Severe"
+							codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+					</observation>
+				</entryRelationship>
 			</observation>
 		</entryRelationship>
 	</act>

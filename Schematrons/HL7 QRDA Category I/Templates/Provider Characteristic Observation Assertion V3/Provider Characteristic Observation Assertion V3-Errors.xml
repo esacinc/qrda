@@ -5,8 +5,9 @@
     Author: Dan Donahue
     Date: 07-24-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-207
+    Update: 12-08-2017 Changes per QDM review
     
-    Total Errors Expected: 15
+    Total Errors Expected: 12
           Failure a-3343-27773-error Bad Class Code
           Failure a-3343-27774-error Bad Mood Code
           Failure a-3343-28101-error @negationInd present
@@ -17,16 +18,12 @@
           Failure a-3343-28136-error Missing or bad code @codeSystem="2.16.840.1.113883.5.4" 
           Failure a-3343-27776-error Missing or multiple statusCode="completed"
           Failure a-3343-27770-error Missing or multiple value with @xsi:type="CD"
-          Failure a-3343-29080-error If author, Missing or multiple time in author
-          Failure a-3343-29079-error If author, Missing or multiple assignedAuthor in author
-          Failure a-3343-29081-error If author, Missing id in assignedAuthor
           Failure a-3343-28219-error If participant, Missing or bad @typeCode="IND"
           Failure a-3343-28218-error If participant, Missing or multiple participantRole
            
-    Total Warnings Expected: 3
-          Failure a-3343-28952-warning Should contain only one author
-          Failure a-3343-28218-warning If participant participantRole, Missing id with @root="2.16.840.1.113883.4.6" and @extension 
-          Failure a-3343-28218-warning If participant participantRole, Missing or multiple code
+    Total Warnings Expected: 2
+          Failure a-3343-28221-warning This participantRole SHOULD contain zero or more [0..*] id (CONF:3343-28221) such that it  SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:3343-28222).  SHOULD contain zero or one [0..1] @extension (CONF:3343-28223).  
+          Failure a-3343-28220-warning This participantRole SHOULD contain zero or one [0..1] code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy (HIPAA) urn:oid:2.16.840.1.114222.4.11.1066 (CONF:3343-28220).
           
  -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -50,25 +47,6 @@
     <statusCode code="completedErr"/>
     <!-- Failure a-3343-27770-error Missing or multiple value with @xsi:type="CD" -->
     <value xsi:type="CDErr" code="2135-2" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" displayName="Hispanic or Latino"/>
-    <author>
-      <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
-      <time value="201704081130"/>
-      <assignedAuthor>
-        <!-- Failure a-3343-29081-error If author, Missing id in assignedAuthor -->
-        <!-- <id root="2.16.840.1.113883.4.6" extension="111111111"/> -->
-      </assignedAuthor>
-    </author>
-    <!-- Failure a-3343-28952-warning Should contain only one author -->
-    <author>
-      <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
-      <!-- Failure a-3343-29080-error If author, Missing or multiple time in author -->
-      <!-- <time value="201704081130"/> -->
-      <!-- Failure a-3343-29079-error If author, Missing or multiple assignedAuthor in author -->
-      <!-- <assignedAuthor>
-             <id root="2.16.840.1.113883.4.6" extension="111111111"/>
-            </assignedAuthor>
-      -->
-    </author> 
     <!-- Failure a-3343-28219-error If participant, Missing or bad @typeCode="IND" -->
     <participant typeCode="INDErr">
       <participantRole>
@@ -79,9 +57,12 @@
       </participantRole>
       <!--  Failure a-3343-28218-error If participant, Missing or multiple participantRole -->
       <participantRole>
-        <!-- Failure a-3343-28218-warning If participant participantRole, Missing id with @root="2.16.840.1.113883.4.6" and @extension  -->
-        <id root="2.16.840.1.113883.4.6" /> <!-- Extension required -->
-        <!-- Failure a-3343-28218-warning If participant participantRole, Missing or multiple code -->
+        <!-- Failure a-3343-28221-warning This participantRole SHOULD contain zero or more [0..*] id (CONF:3343-28221) such that it  SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:3343-28222).  SHOULD contain zero or one [0..1] @extension (CONF:3343-28223). -->
+        <!-- <id root="2.16.840.1.113883.4.6" /> --> 
+        <!-- Failure a-3343-28220-warning This participantRole SHOULD contain zero or one [0..1] code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy (HIPAA) urn:oid:2.16.840.1.114222.4.11.1066 (CONF:3343-28220).-->
+        <code code="207QA0505X" displayName="Adult Medicine" codeSystemName="Healthcare Provider Taxonomy"/>
+        <code code="207QA0505X" displayName="Adult Medicine" codeSystemName="Healthcare Provider Taxonomy"/> <!-- Only zero or one code should be herer -->
+        <code></code>
       </participantRole>
     </participant>
   </observation>

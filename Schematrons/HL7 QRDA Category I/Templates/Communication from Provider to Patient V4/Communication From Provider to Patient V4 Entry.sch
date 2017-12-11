@@ -19,17 +19,10 @@
             <sch:assert id="a-3343-11845-error" test="count(cda:id)&gt;=1">SHALL contain at least one [1..*] id (CONF:3343-11845).</sch:assert>
             <sch:assert id="a-3343-11846-error" test="count(cda:statusCode[@code='completed'])=1">SHALL contain exactly one [1..1] statusCode="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-11846). </sch:assert>
             <sch:assert id="a-3343-26947-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:3343-26947).</sch:assert>
-            <sch:assert id="a-3343-28920-error" test="count(cda:author)=1">SHALL contain exactly one [1..1] author (CONF:3343-28920).</sch:assert>
+            <sch:assert id="a-3343-28920-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.155'][@extension='2017-08-01']]) = 1">SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:3343-28920). </sch:assert>
             <sch:assert id="a-3343-11850-error" test="count(cda:participant[@typeCode='AUT'][count(cda:participantRole)=1])=1"> SHALL contain exactly one [1..1] participant (CONF:3343-11850) such that it SHALL contain exactly one [1..1] @typeCode="AUT" author (originator) (CodeSystem: HL7ParticipationType urn:oid:2.16.840.1.113883.5.90) (CONF:3343-11851). SHALL contain exactly one [1..1] participantRole (CONF:3343-11852). </sch:assert> 
             <sch:assert id="a-3343-11856-error" test="count(cda:participant[@typeCode='IRCP'] [count(cda:participantRole)=1])=1">SHALL contain exactly one [1..1] participant (CONF:3343-11856) such that it SHALL contain exactly one [1..1] @typeCode="IRCP" information recipient (CodeSystem: HL7ParticipationType urn:oid:2.16.840.1.113883.5.90) (CONF:3343-11857). SHALL contain exactly one [1..1] participantRole (CONF:3343-11858).</sch:assert> 
         </sch:rule>
-        <sch:rule id="Communication-From-Provider-To-Patient-author-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.3'][@extension='2017-08-01']]/cda:author">
-            <sch:assert id="a-3343-28992-error" test="count(cda:time)=1"> This author SHALL contain exactly one [1..1] time (CONF:3343-28992).</sch:assert>
-            <sch:assert id="a-3343-28991-error" test="count(cda:assignedAuthor)=1">This author SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-28991).</sch:assert>
-        </sch:rule>
-        <sch:rule id="Communication-From-Provider-To-Patient-author-assignedAuthor-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.3'][@extension='2017-08-01']]/cda:author/cda:assignedAuthor">
-            <sch:assert id="a-3343-28993-error" test="count(cda:id)&gt;=1">This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-28993). </sch:assert>
-        </sch:rule>   
         <sch:rule id="Communication-From-Provider-To-Patient-participant-participantRole-recipient-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.3'][@extension='2017-08-01']]/cda:participant[@typeCode='IRCP']/cda:participantRole">
             <sch:assert id="a-3343-12102-error" test="@classCode='PAT'">This participantRole SHALL contain exactly one [1..1] @classCode="PAT" patient (CodeSystem: HL7RoleClass urn:oid:2.16.840.1.113883.5.110) (CONF:3343-12102).</sch:assert>
         </sch:rule>

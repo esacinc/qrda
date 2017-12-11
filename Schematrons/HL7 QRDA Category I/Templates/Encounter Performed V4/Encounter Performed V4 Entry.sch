@@ -26,9 +26,6 @@
         <sch:rule id="Encounter-Performed-id-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.23'][@extension='2017-08-01']]/cda:id">
             <sch:assert id="a-3343-28804-error" test="@root">Such ids SHALL contain exactly one [1..1] @root (CONF:3343-28804).</sch:assert>
         </sch:rule>
-        <sch:rule id="Encounter-Performed-code-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.23'][@extension='2017-08-01']]/cda:code">
-            <sch:assert id="a-3343-27625-error" test="@sdtc:valueSet">This code SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:3343-27625).</sch:assert>
-        </sch:rule>
         <sch:rule id="Encounter-Performed-statusCode-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.23'][@extension='2017-08-01']]/cda:statusCode">
             <sch:assert id="a-3343-11875-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-11875).</sch:assert>
         </sch:rule>
@@ -38,14 +35,6 @@
             <sch:assert id="a-3343-11878-error" test="count(cda:high)=1">This effectiveTime SHALL contain exactly one [1..1] high (CONF:3343-11878).</sch:assert>
         </sch:rule>
         
-        <sch:rule id="Encounter-Performed-author-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.23'][@extension='2017-08-01']]/cda:author">
-            <sch:assert id="a-3343-29083-error" test="count(cda:time)=1">The author, if present, SHALL contain exactly one [1..1] time (CONF:3343-29083). </sch:assert>
-            <sch:assert id="a-3343-29082-error" test="count(cda:assignedAuthor)=1">The author, if present, SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29082).</sch:assert>
-        </sch:rule>
-        
-        <sch:rule id="Encounter-Performed-author-assignedAuthor-errors" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.23'][@extension='2017-08-01']]/cda:author/cda:assignedAuthor"> 
-            <sch:assert id="a-3343-29084-error" test="count(cda:id)&gt;=1">This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29084). </sch:assert>
-        </sch:rule>
     </sch:pattern>
     
 </sch:schema>

@@ -31,27 +31,13 @@
             <sch:assert id="a-3343-11670-error" test="count(cda:low)=1">This effectiveTime SHALL contain exactly one [1..1] low (CONF:3343-11670).</sch:assert>
             <sch:assert id="a-3343-11671-error" test="count(cda:high)=1">This effectiveTime SHALL contain exactly one [1..1] high (CONF:3343-11671).</sch:assert>
         </sch:rule>
-        <sch:rule id="Procedure-Performed-targetSiteCode-translation-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.64'][@extension='2017-08-01']]/cda:targetSiteCode/cda:translation">
-            <sch:assert id="a-3343-27766-error" test="@sdtc:valueSet">The translation, if present, SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:3343-27766).  </sch:assert>
-        </sch:rule>   
-        <sch:rule id="Procedure-Performed-author-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.64'][@extension='2017-08-01']]/cda:author">
-            <sch:assert id="a-3343-29074-error" test="count(cda:time)=1">The author, if present, SHALL contain exactly one [1..1] time (CONF:3343-29074).   </sch:assert>
-            <sch:assert id="a-3343-29073-error" test="count(cda:assignedAuthor)=1">The author, if present, SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29073). </sch:assert>
-        </sch:rule>
-        <sch:rule id="Procedure-Performed-author-assignedAuthor-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.64'][@extension='2017-08-01']]/cda:author/cda:assignedAuthor">
-            <sch:assert id="a-3343-29075-error" test="count(cda:id)&gt;=1">This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29075).  </sch:assert>
-         </sch:rule>  
         
      </sch:pattern>
     
     <sch:pattern id="Procedure-Performed-pattern-warnings">
         <sch:rule id="Procedure-Performed-warnings" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.64'][@extension='2017-08-01']]">
             <sch:assert id="a-3343-27312-warning" test="count(cda:targetSiteCode)&gt;=1">SHOULD contain zero or more [0..*] targetSiteCode (CONF:3343-27312).</sch:assert> 
-            <sch:assert id="a-3343-28937-warning" test="count(cda:author)=1">SHOULD contain zero or one [0..1] author (CONF:3343-28937).</sch:assert>
-        </sch:rule>
-        <sch:rule id="Procedure-Performed-targetSiteCode-warnings" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.64'][@extension='2017-08-01']]/cda:targetSiteCode/cda:translation">
-            <sch:assert id="a-3343-27766-warning" test="@sdtc:valueSet">The translation, if present, SHALL contain exactly one [1..1] @sdtc:valueSet (CONF:3343-27766) </sch:assert>
-        </sch:rule>       
-    </sch:pattern>
+         </sch:rule>
+     </sch:pattern>
     
 </sch:schema>

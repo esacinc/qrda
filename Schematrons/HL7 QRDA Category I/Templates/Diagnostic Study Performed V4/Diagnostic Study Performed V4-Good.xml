@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date: 08-05-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-250
+    Update: 12-06-2017 Changes per QDM review
  
     Total Errors Expected: 0
    
@@ -30,16 +31,8 @@
       <!-- QDM Attribute: Relevant Period - Stop dateTime -->
       <high value="20170329103000+0500"/>
     </effectiveTime>
-    <author>
-      <time value="201704081130"/>
-      <assignedAuthor>
-        <id nullFlavor="NA" /> 
-      </assignedAuthor>
-    </author>
     <!-- QDM Attribute: Result -->
-    <!-- Value NOT allowed -->
-    <!-- <value xsi:type="CD" nullFlavor="NA"/> -->
-    
+    <value xsi:type="CD" nullFlavor="NA"/>
     <!-- QDM Attribute: Method -->
     <methodCode code="24623002" codeSystem="2.16.840.1.113883.6.96"
       displayName="Screening mammography" codeSystemName="SNOMED CT"/>

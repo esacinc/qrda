@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date: 08-03-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-237
+    Update: 12-07-2017 Changes per QDM review
   
     Total Errors Expected: 9
            Failure a-3343-28645-error SHALL contain exactly one [1..1] @classCode="SBADM" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-28645).
@@ -36,9 +37,9 @@
     <id root="9a5f4d94-ccad-4d57-80ea-27737545c7bb"/>
     <statusCode code="active"/>
     <!-- Active dateTime: the date and time at which an order becomes active (intended to take place)-->
-    <effectiveTime>
-      <low value="201703011130"/>
-     </effectiveTime>
+    <effectiveTime xsi:type="IVL_TS">
+      <low value="20170708"/>
+    </effectiveTime>
     <!-- Failure a-3343-28924-error SHALL contain exactly one [1..1] effectiveTime (CONF:3343-28924).  -->
     <!-- Failure a-3343-28925-error This effectiveTime SHALL contain exactly one [1..1] low  -->
     <effectiveTime></effectiveTime>

@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date: 07-24-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-210
+    Update: 12-08-2017 Changes per QDM review
 
     Total Errors Expected: 0
           
@@ -42,18 +43,10 @@
     <!-- QDM Attribute Anatomical Location Site -->
     <targetSiteCode code="71854001" codeSystem="2.16.840.1.113883.6.96"
       codeSystemName="SNOMED CT" displayName="colon"/>
-    <author>
-      <time value="20170329090000+0500"/>
-      <assignedAuthor>
-        <id nullFlavor="NA"/>
-      </assignedAuthor>
-    </author>
-    
     <!-- QDM Attribute: Incision Datetime -->
     <entryRelationship typeCode="REFR">
       <procedure classCode="PROC" moodCode="EVN">
         <templateId root="2.16.840.1.113883.10.20.24.3.89"/>
-        <id root="2d5dc123-13ca-477d-9263-4a9c504186a1"/>
         <code code="34896006" codeSystem="2.16.840.1.113883.6.96"
           codeSystemName="SNOMED CT" displayName="incision"/>
         <effectiveTime value="20170329103000+0500"/>

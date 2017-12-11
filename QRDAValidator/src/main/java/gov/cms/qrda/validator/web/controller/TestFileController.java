@@ -46,6 +46,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import gov.cms.qrda.validator.model.FileSpec;
 import gov.cms.qrda.validator.model.SchematronCategory;
@@ -162,7 +163,15 @@ public class TestFileController extends CommonUtilsImpl{
         if (result.hasErrors()) {
         	return manageTestFiles(locale, model, request.getSession());
         }
- 		fileService.uploadFile(uploadFileForm.getPath(), QRDA_URIResolver.REPOSITORY_TESTFILES, uploadFileForm.getSubDir(), uploadFileForm.getName());
+        MultipartFile[] uploadedFiles = uploadFileForm.getPath();
+        logger.info("Loading " + uploadedFiles.length + " files...");
+        for (MultipartFile uploadedFile : uploadedFiles) {
+			logger.info("    Loading data file: " + uploadedFile.getOriginalFilename());
+	 		fileService.uploadFile(uploadedFile, QRDA_URIResolver.REPOSITORY_TESTFILES, uploadFileForm.getSubDir(), uploadFileForm.getName());
+
+		}
+
+ 		//fileService.uploadFile(uploadFileForm.getPath(), QRDA_URIResolver.REPOSITORY_TESTFILES, uploadFileForm.getSubDir(), uploadFileForm.getName());
 		return "redirect:/testFiles";
 	}
 

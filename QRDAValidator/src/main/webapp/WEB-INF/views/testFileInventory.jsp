@@ -59,6 +59,22 @@ POSSIBILITY OF SUCH DAMAGE.
 	           <a data-toggle="collapse" href="#collapse${cat.name}"><b>${cat.displayName}</b> <span class="caret"></span></a>
 		       <div id="collapse${cat.name}" class="panel-collapse collapse">
 		        <div class="panel-body bg-info">
+		          <div class="panel-footer">
+		        	<h5><fmt:message key="global.placeholder.upload"/></h5>
+				    <div class="input-group">
+				      <form:form commandName="upload${cat.name}" method="POST" action="${uploadFileURL }" enctype="multipart/form-data">
+				        <form:hidden path="subDir"/>
+	        			<form:input type="file" path="path" class="form-control"  multiple="multiple"/><br /> 
+	        			<form:input type="text" path="name" class="form-control" placeholder="${saveAsPlaceholder }" /> 
+	        		    <span class="input-group-btn">
+				          <button class="btn btn-primary" type="submit">
+				            <fmt:message key="global.button.upload"/><span class="glyphicon glyphicon-upload"></span>
+				          </button>
+				        </span>
+	   				 </form:form>
+			      </div>
+		        </div>
+		        
 		        <div class="list-group">
 			        <c:forEach items="${cat.files}" var="item">
 					      <div style="text-align:right;padding-bottom:5px;" ><a  href="${removeFileURL }${item.filename}&${cat.name}" onClick="return confirm('<fmt:message key="global.filedelete.confirm"/>');" ><span class="glyphicon glyphicon-remove text-danger" ></span></a></div>
@@ -73,21 +89,6 @@ POSSIBILITY OF SUCH DAMAGE.
 						  </div>
 			        </c:forEach>
 				  </div>
-		        </div>
-		        <div class="panel-footer">
-		        	<h5><fmt:message key="global.placeholder.upload"/></h5>
-				    <div class="input-group">
-				      <form:form commandName="upload${cat.name}" method="POST" action="${uploadFileURL }" enctype="multipart/form-data">
-				        <form:hidden path="subDir"/>
-	        			<form:input type="file" path="path" class="form-control"  /><br /> 
-	        			<form:input type="text" path="name" class="form-control" placeholder="${saveAsPlaceholder }" /> 
-	        		    <span class="input-group-btn">
-				          <button class="btn btn-primary" type="submit">
-				            <fmt:message key="global.button.upload"/><span class="glyphicon glyphicon-upload"></span>
-				          </button>
-				        </span>
-	   				 </form:form>
-			      </div>
 		        </div>
 		      </div>
 	   	    </li>

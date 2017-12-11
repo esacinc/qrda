@@ -39,16 +39,16 @@ import org.springframework.web.multipart.MultipartFile;
  */
 public class UploadFileForm {
 	
-    private MultipartFile path;  // The file to upload
+    private MultipartFile[] path;  // The file to upload
     private String name;         // New name for the file, if present
     private String subDir;       // The subDirectory to place the file. (For example "HL7", "HQR", "CEC", or "PQRS")
     
 
-	public void setPath(MultipartFile path) {
+	public void setPath(MultipartFile[] path) {
 		this.path =  path;
     }
     
-    public MultipartFile getPath() {
+    public MultipartFile[] getPath() {
     	return path;
     }
     

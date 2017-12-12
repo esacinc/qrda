@@ -199,7 +199,8 @@ POSSIBILITY OF SUCH DAMAGE.
      	     dataType: "text",
       	     url : '${getXMLStringURL}RESULT&${testCase.validationReportFilename}&${validationResults.resultsFolder}',   
      	     success : function(response) { 
-     			   displayXMLString(response,'xmlReportDisplayDiv');
+			 	   var txt = parseXMLString(response);
+       	    	   document.getElementById('xmlReportDisplayDiv').innerHTML = txt;
      			   $("#xmlReportControlBar").show();
      			   // The download icon has a bootstrap popover, and must be enabled as such...
      			   $('#xmlTitleReport span').html("${testCase.validationReportFilename} ${downloadIcon}");
@@ -223,8 +224,9 @@ POSSIBILITY OF SUCH DAMAGE.
     	     dataType: "text",
      	     url : '${getXMLStringURL}SCHEMATRON&${validationResults.schematronFilename}&${validationResults.schematronType}',   
     	     success : function(response) { 
-    			   displayXMLString(response,'xmlSchematronDisplayDiv');
-    			   $("#xmlSschematronControlBar").show();
+			       var txt = parseXMLString(response);
+       	    	   document.getElementById('xmlSchematronDisplayDiv').innerHTML = txt;
+     			   $("#xmlSschematronControlBar").show();
     			   $('#xmlTitleSchematron span').text("${validationResults.schematronFilename}");
     			   schematronFileShown = 1;
     			   waitOff();
@@ -244,7 +246,8 @@ POSSIBILITY OF SUCH DAMAGE.
 	   	     dataType: "text",
 	    	     url : '${getXMLStringURL}TEST&${testCase.filename}&${validationResults.schematronType}',   
 	   	     success : function(response) { 
-			  		   displayXMLString(response,'xmlTestFileDisplayDiv');
+						var txt = parseXMLString(response);
+						document.getElementById('xmlTestFileDisplayDiv').innerHTML = txt;
 					   $("#xmlTestFileControlBar").show();
 					   $('#xmlTitleTestFile span').text("${testCase.filename}");
 					   testFileShown = 1;

@@ -67,7 +67,8 @@ POSSIBILITY OF SUCH DAMAGE.
     	     dataType: "text",
      	     url : '${getXMLFilePath}?type=' + type + '&file=' + filename,   
     	     success : function(response) { 
-    	    	displayXMLString(response,'xmlDisplayDiv');
+    	    	var txt = parseXMLString(response);
+	     	    document.getElementById('xmlDisplayDiv').innerHTML = txt;
     	    	$("#xmlControlBar").show();
     	    	// Download icon must be enabled as a popover in order to override the left click properly
      			$('#xmlTitle span').html("<span class='text-primary'>" + typeTitle + ":</span> " + filename + " <a href='" + fullPath +"' ${downloadIcon}");

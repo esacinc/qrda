@@ -19,7 +19,6 @@ var ignoreAnnotations = true;  // ELM-specific Global variable controlling wheth
 var loadingLib = false;         // ELM-specific Global variables for loading library
 var errorFlag = true; 
 
-
 function parseXMLString(xmlStr) {
 	var x, parser, xmlDoc, txt, etxt;
 	try {
@@ -29,6 +28,8 @@ function parseXMLString(xmlStr) {
 		txt = ""; //<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
 		level = 0;
 		txt += aggregateResults(txt, x);
+		// Now remove any blank/empty lines from the results (really only applies when ignoreAnnotations is true, and there are annotations.)
+		txt = txt.replace(/(^[ \t]*\n)/gm, "");
 		level = 0;
 		// Now show the parse error elements, if any.
 		if (xmlDoc.getElementsByTagName("parsererror").length > 0) {
@@ -50,20 +51,20 @@ function aggregateResults(textSoFar, thisNode) {
     txt = "";
     kids = thisNode.childNodes;
     // If this node has no children, then just create the element with its attributes, and return
-    if (kids.length == 0) {
+    if (kids.length == 0 ) {
         textSoFar += writeNewLine() + writeSpaces(level) + "<" + writeNodeName(thisNode.nodeName) + getNodeAttributes(thisNode) + "/>";
         return textSoFar;
     }
     else {
         // This node has children, so create the element with attributes, then recurse for each child node
-        textSoFar += writeNewLine() + writeSpaces(level) + "<" + writeNodeName(thisNode.nodeName) + getNodeAttributes(thisNode) + ">";
+ 		textSoFar += writeNewLine() + writeSpaces(level) + "<" + writeNodeName(thisNode.nodeName) + getNodeAttributes(thisNode) + ">";
         for (i = 0; i < kids.length; i++) {
             childNode = kids[i];
 			
             if (childNode.nodeType == 1) { // This node is an element node. Continue as long as its not a "parseerror" node
                 // This is ELM specific:
                 // Only process the node if either ignoreAnnotations = false OR if the node is not an annotation node
-                if (!ignoreAnnotations || (childNode.nodeName != "annotation" && childNode.nodeName != "a:s")) {
+                if (!skipNode(childNode)) {
                     if (childNode.nodeName != "parsererror") {
                         level++;
                         textSoFar = aggregateResults(textSoFar, childNode); // Recurse for this child
@@ -82,8 +83,11 @@ function aggregateResults(textSoFar, thisNode) {
                     textSoFar += childNode.nodeType + childNode.nodeValue;
             } // end if not annotation
         } // end for loop
-        textSoFar += writeNewLine() + writeSpaces(level) + "&lt;/" + writeNodeName(thisNode.nodeName) + ">";
-
+		var endTag = "</";
+		if (writeFormat=="html") {
+			endTag = "&lt;/"
+		}
+        textSoFar += writeNewLine() + writeSpaces(level) + endTag + writeNodeName(thisNode.nodeName) + ">";
     }
     return textSoFar;
 }
@@ -108,9 +112,9 @@ function writeSpaces(x) {
     var i, txt = "";
     for (i = 0; i < x; i++) {
 		switch (writeFormat) {
-			case "text": txt += "      "; break;
-			case "html": txt += "&nbsp;&nbsp;&nbsp;    "; break;
-			default: txt += "&nbsp;&nbsp;&nbsp; "; break;
+			case "text": txt += "  "; break;
+			case "html": txt += "&nbsp;&nbsp;&nbsp; "; break;
+			default:     txt += "&nbsp;&nbsp;&nbsp; "; break;
 		}        
     }
     return txt;
@@ -119,7 +123,7 @@ function writeSpaces(x) {
 // Generate a newline character in text or html
 function writeNewLine() {
 	switch(writeFormat) {
-		case "text": return "\n";
+		case "text": return "";
 		case "html": return "<br/>";
 		default: return "<br/>";
 	}
@@ -193,3 +197,12 @@ function writeComment(msg) {
 	}
 }
 
+function isAnnotation(node) {
+	// An annotation node for ELM is either named "annotation" or "a:s"
+	return (node.nodeName == "annotation" || node.nodeName == "a:s");
+}
+
+function skipNode(node) {
+	// If ignoreAnnotations is true and this node is an annotation, then skip it
+	return (ignoreAnnotations == true && isAnnotation(node) );
+}

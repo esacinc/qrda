@@ -9,8 +9,8 @@ var writeFormat = "html";      // Global variable "text" or "html",  indicates h
 
 // Stylings for displaying generic XML when ignoreStyles = false
 var nodeNameStyle = "font-weight:bold;color: Crimson;";
-var attrNameStyle = "color:DarkGreen;";
-var attrValStyle = "color:blue";
+var attrNameStyle = "font-weight:bold;color:DarkOrange;";
+var attrValStyle = "color:Blue";
 var commentStyle = "color:DimGray;";
 
 

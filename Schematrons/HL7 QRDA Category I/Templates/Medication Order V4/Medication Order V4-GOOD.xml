@@ -22,6 +22,10 @@
 		<text>Medication active: 0.09 MG/ACTUAT inhalant solution, 2 puffs QID PRN
 			wheezing</text>
 		<statusCode code="active"/>
+		<effectiveTime xsi:type="IVL_TS">
+			<low value="201704081130"/>
+			<high value="201704081130"/>
+		</effectiveTime>
 		<!-- QDM Attribute: Frequency -->
 		<effectiveTime xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
 			<period value="6" unit="h"/>
@@ -50,5 +54,4 @@
 			</assignedAuthor>
 		</author>
 	</substanceAdministration>
-	
 </ClinicalDocument>

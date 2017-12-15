@@ -5,18 +5,21 @@
     Author: Dan Donahue
     Date: 08-01-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-220
+    Update: 12-15-2017 Updates per QDM 5.3 review
  
-    Total Errors Expected: 16
+    Total Errors Expected: 18
 			Failure a-3343-27528-error SHALL contain exactly one [1..1] @classCode="SPLY" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-27528).
 			Failure a-3343-27529-error SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-27529).
 			Failure a-3343-13851-error SHALL contain exactly one [1..1] templateId (CONF:3343-13851) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.45" (CONF:3343-13852). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-26555).
 			Failure a-3343-19440-error SHALL contain exactly one [1..1] statusCode (CONF:3343-19440).
 			Failure a-3343-28910-error SHALL contain exactly one [1..1] author (CONF:3343-28910).
-			Failure a-3343-28669-error This template SHALL be contained by a Medication Dispensed Act (V2) (CONF:3343-28908).
+			Failure a-3343-28908-error This template SHALL be contained by a Medication Dispensed Act (V2) (CONF:3343-28908).
 		    Failure a-3343-29011-error This author SHALL contain exactly one [1..1] time (CONF:3343-29011).
 			Failure a-3343-29010-error This author SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29010).
 		    Failure a-3343-29012-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29012).
 		    Failure a-3343-19441-error This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-19441).
+		    Failure a-3343-29143-error The effectiveTime, if present, SHALL contain exactly one [1..1] low (CONF:3343-29143). 
+			Failure a-3343-29144-error The effectiveTime, if present, SHALL contain exactly one [1..1] high (CONF:3343-29144). 
 			Failure a-3343-28226-error This substanceAdministration SHALL contain exactly one [1..1] @classCode="SBADM" Substance Administration (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-28226).	
 			Failure a-3343-28227-error This substanceAdministration SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: HL7ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-28227).
 			Failure a-3343-28229-error This substanceAdministration SHALL contain exactly one [1..1] consumable (CONF:3343-28229).
@@ -59,6 +62,9 @@
 				<!-- Failure a-3343-28910-error SHALL contain exactly one [1..1] author (CONF:3343-28910). -->
 				<!-- Failure a-3343-29011-error This author SHALL contain exactly one [1..1] time (CONF:3343-29011). -->
 				<author></author>
+				<!-- Failure a-3343-29143-error The effectiveTime, if present, SHALL contain exactly one [1..1] low -->
+				<!-- Failure a-3343-29144-error The effectiveTime, if present, SHALL contain exactly one [1..1] high  -->
+				<effectiveTime>	</effectiveTime>
 				<!-- QDM Attribute: Refills -->
 				<!-- ... -->
 				<entryRelationship typeCode="REFR">

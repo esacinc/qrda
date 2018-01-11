@@ -5,21 +5,21 @@
     Author: Dan Donahue
     Date: 03-08-2017
 
-    Total Errors Expected: 10
+    Total Errors Expected: 9
 		Failure a-1098-30418-error SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1098-30418).
 		Failure a-1098-30419-error SHALL contain exactly one [1..1] @moodCode="GOL" Goal (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:1098-30419).
 		Failure a-1098-8583-error SHALL contain exactly one [1..1] templateId (CONF:1098-8583) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.121" (CONF:1098-10512).
 		Failure a-1098-32332-error SHALL contain at least one [1..*] id (CONF:1098-32332).
 		Failure a-1098-30784-error SHALL contain exactly one [1..1] code, which SHOULD be selected from CodeSystem LOINC (urn:oid:2.16.840.1.113883.6.1) (CONF:1098-30784).
 		Failure a-1098-32333-error SHALL contain exactly one [1..1] statusCode (CONF:1098-32333).
-		Failure a-1098-30995-error SHALL contain at least one [1..*] author (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-30995).
 		Failure a-1098-32334-error statusCode statusCode SHALL contain exactly one [1..1] @code="active" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-32334)
 		Failure a-1098-32755-error reference, if present, SHALL contain exactly one [1..1] @typeCode="REFR" Refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:1098-32755)
 		Failure a-1098-32756-error reference, if present, SHALL contain exactly one [1..1] External Document Reference (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.115:2014-06-09) (CONF:1098-32756)
 
-	Total Warnings Expected: 3
+	Total Warnings Expected: 4
 		Failure a-1098-30784-c-warning code SHALL contain exactly one [1..1] codeSystem, which SHOULD be selected from CodeSystem LOINC (urn:oid:2.16.840.1.113883.6.1) (CONF:1098-30784)
 		Failure a-1098-32335-warning SHOULD contain zero or one [0..1] effectiveTime (CONF:1098-32335).
+		Failure a-1098-30995-warnign SHOULD contain zero or more [0..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-30995).
 		Failure a-1098-30785-warning SHOULD contain zero or one [0..1] entryRelationship (CONF:1098-30785) such that it
 					                 SHALL contain exactly one [1..1] @typeCode="REFR" Refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:1098-30786).
 					                 SHALL contain exactly one [1..1] Priority Preference (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.143) (CONF:1098-30787).

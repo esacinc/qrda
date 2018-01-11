@@ -17,7 +17,6 @@
 			<sch:assert id="a-1098-32332-error" test="count(cda:id) &gt; 0">SHALL contain at least one [1..*] id (CONF:1098-32332).</sch:assert>
 			<sch:assert id="a-1098-30784-error" test="count(cda:code) = 1">SHALL contain exactly one [1..1] code, which SHOULD be selected from CodeSystem LOINC (urn:oid:2.16.840.1.113883.6.1) (CONF:1098-30784).</sch:assert>
 			<sch:assert id="a-1098-32333-error" test="count(cda:statusCode) = 1">SHALL contain exactly one [1..1] statusCode (CONF:1098-32333).</sch:assert>
-			<sch:assert id="a-1098-30995-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']]) = 1">SHALL contain at least one [1..*] author (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-30995).</sch:assert>
 		</sch:rule>
 		<sch:rule id="Goal_Observation-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.121']]/cda:statusCode">
 			<sch:assert id="a-1098-32334-error" test="@code='active'">This statusCode SHALL contain exactly one [1..1] @code="active" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:1098-32334).</sch:assert>
@@ -35,6 +34,7 @@
 
 		<sch:rule id="Goal_Observation-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.121']]">
 			<sch:assert id="a-1098-32335-warning" test="count(cda:effectiveTime) = 1">SHOULD contain zero or one [0..1] effectiveTime (CONF:1098-32335).</sch:assert>
+			<sch:assert id="a-1098-30995-warning" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']]) &gt;= 1">SHOULD contain zero or more [0..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-30995).</sch:assert>
 			<sch:assert id="a-1098-30785-warning" test="count(cda:entryRelationship[@typeCode='REFR'][cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.143']]]) = 1">SHOULD contain zero or one [0..1] entryRelationship (CONF:1098-30785) such that it SHALL contain exactly one [1..1] @typeCode="REFR" Refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:1098-30786). SHALL contain exactly one [1..1] Priority Preference (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.143) (CONF:1098-30787).</sch:assert>
 		</sch:rule>
 	</sch:pattern>

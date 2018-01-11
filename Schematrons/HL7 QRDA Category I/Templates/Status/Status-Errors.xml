@@ -4,12 +4,12 @@
     Title: Status minimal sample file with errors
     Author: Dan Donahue
     Date: 10-12-2017
+     Update: 01-10-2018  Removed assertion test for <id> a-67-11884
  
-    Total Errors Expected: 8
+    Total Errors Expected: 7
           Failure a-67-11879-error Bad Class Code
           Failure a-67-11880-error Bad Mood Code 
           Failure a-67-11881-error Multiple  main templateId
-          Failure a-67-11884-error Missing id
           Failure a-67-11885-error Missing or multiple code
           Failure a-67-11886-error Missing or bad code  @code="33999-4"
           Failure a-67-27011-error Missing or bad code  @codeSystem="2.16.840.1.113883.6.1"
@@ -28,10 +28,6 @@
       <templateId root="2.16.840.1.113883.10.20.24.3.93"/>
       <!-- a-67-11881-error Multiple  main templateId -->
       <templateId root="2.16.840.1.113883.10.20.24.3.93"/>
-      <!-- a-67-11884-error Missing id -->
-      <!-- 
-        <id root="29b776d3-089b-4a7f-b6e9-e45080091922"/>
-      -->
       <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
         displayName="Status"/>
       <!-- a-67-11885-error Missing or multiple code -->

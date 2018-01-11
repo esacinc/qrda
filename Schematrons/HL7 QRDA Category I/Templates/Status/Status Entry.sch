@@ -16,7 +16,6 @@
             <sch:assert id="a-67-11879-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:67-11879).</sch:assert>
             <sch:assert id="a-67-11880-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:67-11880).</sch:assert>
             <sch:assert id="a-67-11881-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.93'][not(@extension)])=1">SHALL contain exactly one [1..1] templateId (CONF:67-11881) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.93" (CONF:67-11882).</sch:assert>
-            <sch:assert id="a-67-11884-error" test="count(cda:id) &gt;= 1">SHALL contain at least one [1..*] id (CONF:67-11884).</sch:assert>
             <sch:assert id="a-67-11885-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:67-11885).</sch:assert>
             <sch:assert id="a-67-11887-error" test="count(cda:value)=1">SHALL contain exactly one [1..1] value (CONF:67-11887).</sch:assert>
          </sch:rule>

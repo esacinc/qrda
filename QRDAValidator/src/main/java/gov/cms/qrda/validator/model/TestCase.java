@@ -31,6 +31,9 @@ POSSIBILITY OF SUCH DAMAGE.
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import gov.cms.qrda.validator.model.Failure;
 import gov.cms.qrda.validator.model.FileSpec;
 import gov.cms.qrda.validator.xml.QRDA_URIResolver;
@@ -51,6 +54,8 @@ import gov.cms.qrda.validator.xml.QRDA_URIResolver;
  *
  */
 public class TestCase extends FileSpec implements Serializable {
+	private static final Logger logger = LoggerFactory.getLogger(TestCase.class);
+
 
 	/**
 	 * Required for serialization
@@ -109,8 +114,17 @@ public class TestCase extends FileSpec implements Serializable {
 	public TestCase(String schematron, String schematronType, String testFile, String filenamePostfix) {
 		super(testFile, "", schematronType);   // Set up the test file information
 		schematronFilename = schematron;
+		logger.debug(String.format("Create Test Case: schematron filename: %s, testFile: %s, postfix: %s, index: %d", schematron, testFile, filenamePostfix, getFilename().lastIndexOf(".")));
+		String filename = getFilename();
+		int indx = getFilename().lastIndexOf(".");
+		if (indx > 0 -1) {
+			filename = filename.substring(0, indx);
+		}
+		else {
+			logger.error("TestCase filename " + getFilename() + " unable to locate '.' character.");
+		}
 		// Generate a unique name for the validation report. (The filenamePostfix is expected to be a formatted timestamp to insure uniqueness.)
-		validationReportFilename = getFilename().substring(0,getFilename().lastIndexOf(".")) + "_" + filenamePostfix + ".svrlt";
+		validationReportFilename = filename + "_" + filenamePostfix + ".svrlt";
  	}
 	
 	public String getSchematronFilename() {

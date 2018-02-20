@@ -368,6 +368,10 @@ public class FileServiceImpl implements FileService {
         		if (name == null || name.isEmpty()) {
         			name = file.getOriginalFilename();
         		}
+        		
+        		// Do not allow commas in filenames - they screw up the comma-delimited list of filenames used during validation
+        		name = name.replace(",", "_");
+
                 byte[] bytes = file.getBytes();
  
                 // Creating the directory to store file

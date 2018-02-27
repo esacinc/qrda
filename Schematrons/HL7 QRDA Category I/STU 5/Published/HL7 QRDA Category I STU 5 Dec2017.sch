@@ -11,7 +11,7 @@ Version 1.0
         THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
         ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
 
-Wed Jan 10 12:51:22 MST 2018
+Tue Feb 27 15:11:18 MST 2018
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="svs" uri="urn:ihe:iti:svs:2008" />
@@ -28,6 +28,7 @@ Wed Jan 10 12:51:22 MST 2018
     <sch:active pattern="Allergy_status_observation-pattern-errors" />
     <sch:active pattern="Assessment_performed-pattern-errors" />
     <sch:active pattern="Assessment_recommended-pattern-errors" />
+    <sch:active pattern="Author-pattern-errors" />
     <sch:active pattern="Author-Participation-pattern-errors" />
     <sch:active pattern="Care-Goal-pattern-errors" />
     <sch:active pattern="Communication-From-Patient-To-Provider-pattern-errors" />
@@ -2576,6 +2577,16 @@ Wed Jan 10 12:51:22 MST 2018
     <sch:rule id="Priority-Preference-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.143']]/cda:code">
       <sch:assert id="a-1098-30955-error" test="@code='225773000'">This code SHALL contain exactly one [1..1] @code="225773000" Preference (CONF:1098-30955).</sch:assert>
       <sch:assert id="a-1098-30956-error" test="@codeSystem='2.16.840.1.113883.6.96'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:1098-30956).</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="Author-pattern-errors">
+    <sch:rule id="Author-errors" context="cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.155'][@extension='2017-08-01']]">
+      <sch:assert id="a-3343-29151-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.155'][@extension='2017-08-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3343-29151) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.155" (CONF:3343-29160) SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-29161).</sch:assert>
+      <sch:assert id="a-3343-29152-error" test="count(cda:time)=1">SHALL contain exactly one [1..1] time (CONF:3343-29152).</sch:assert>
+      <sch:assert id="a-3343-29146-error" test="count(cda:assignedAuthor)=1">SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-29146).</sch:assert>
+    </sch:rule>
+    <sch:rule id="Author-assignedAuthor-errors" context="cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.155'][@extension='2017-08-01']]/cda:assignedAuthor">
+      <sch:assert id="a-3343-29147-error" test="count(cda:id)&gt;=1">This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-29147).</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="Procedure-Performed-pattern-errors">

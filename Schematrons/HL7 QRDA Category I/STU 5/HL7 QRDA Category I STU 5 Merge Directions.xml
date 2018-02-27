@@ -171,6 +171,7 @@
         <include>Facility Location V2</include>
         <!-- <include>Fulfills V2</include>  Fulfills is no longer an attribute. Remove -->
         <!-- Other templates -->
+		<include>Author</include>
         <include>Author Participation</include>
         <include>US Realm Address</include>
         <include>US Realm Date and Time</include>

@@ -34,7 +34,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * This is the class manages a timer that may or may not output a "." character
+ * This class manages a timer that may or may not output a "." character
  * to the system console as the merge process proceeds. Upon terminating the timer,
  * the elapsed time that the timer ran is returned (truncated to seconds)
  * 

@@ -85,8 +85,6 @@ public class MergeInstructions extends MergeProperties{
 	 */
 	private boolean globalStop = false;  // This may get set to true if processing needs to stop due to a detected error somewhere.
 
-	private int dotCount = 0;
-	private final static int DOT_MAX = 40;
 	
 	/**
 	 * INDENT final static Strings used for pretty formatting the merge report output file

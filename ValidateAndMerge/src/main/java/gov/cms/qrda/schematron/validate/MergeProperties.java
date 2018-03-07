@@ -63,6 +63,7 @@ public class MergeProperties {
 	protected String warningsHeader = null;
 	
 	protected boolean verbose = true;
+	protected boolean summaryOnly = false;
 	protected boolean doValidation = false;
 	protected boolean stopOnError = true;
 	/**
@@ -173,6 +174,13 @@ public class MergeProperties {
 	}
 	public void setVerbose(boolean val) {
 		verbose = val;
+	}
+
+	public boolean getSummaryOnly() {
+		return summaryOnly;
+	}
+	public void setSummaryOnly(boolean val) {
+		summaryOnly = val;
 	}
 
 	public boolean getDoValidation() {

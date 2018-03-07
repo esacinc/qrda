@@ -95,6 +95,7 @@ public class Validator {
 		// 
 		public int  validate(String schematronFile, List<String> testFiles, MergeInstructions mergeInstructions) {
 			boolean isVerbose = mergeInstructions.getVerbose();
+			boolean summaryOnly = mergeInstructions.getSummaryOnly();
 			if (results == null) {
 				results = mergeInstructions;
 			}
@@ -123,7 +124,7 @@ public class Validator {
 		
 			// If that worked we now have an XSL file to use on the XML to validate
 			// So for each sample file in the properties file run a validation and report process
-			if (isVerbose) {
+			if (!summaryOnly) {
 				results.addResult(MergeInstructions.INDENT1 + "_______________________________________________________________");
 				results.addResult(MergeInstructions.INDENT1 + "SCHEMATRON: " + schematronFile);
 			}
@@ -133,7 +134,7 @@ public class Validator {
 				if (!reportResult) {
 					String msg = "Unable to process the report file " + props.getProperty("qrda.reportFile");
 					results.addResult(MergeInstructions.INDENT3+msg);
-					if (isVerbose) System.err.println(msg);
+					if (isVerbose && !summaryOnly) { System.err.println(msg); }
 					//return 3;
 					return failCount;
 				}
@@ -147,42 +148,46 @@ public class Validator {
 				} catch (ParserConfigurationException e) {
 					String msg = "ParserConfigurationException Error processing the report file " + props.getProperty("qrda.reportFile") + ", " + e.getMessage();
 					results.addResult(MergeInstructions.INDENT3+msg);
-					if (isVerbose) System.err.println(msg);
+					if (isVerbose && !summaryOnly) { System.err.println(msg); }
 					//return 4;
 					return failCount;
 				} catch (SAXException e) {
 					String msg = "SAXException Error processing the report file " + props.getProperty("qrda.reportFile") + ", " + e.getMessage();
 					results.addResult(MergeInstructions.INDENT3+msg);
-					if (isVerbose) System.err.println(msg);
+					if (isVerbose && !summaryOnly) { System.err.println(msg); }
 					//return 5;
 					return failCount;
 				} catch (IOException e) {
 					String msg = "IO Exception Error processing the report file " + props.getProperty("qrda.reportFile") + ", " + e.getMessage();
 					results.addResult(MergeInstructions.INDENT3+msg);
-					if (isVerbose) System.err.println(msg);
+					if (isVerbose && !summaryOnly) { System.err.println(msg); }
 					//return 6;
 					return failCount;
 				}
-				if (isVerbose) {
+				if (!summaryOnly ) {
+
 					//results.addResult(MergeInstructions.INDENT2 + "_______________________________________________________________");
 					//results.addResult(MergeInstructions.INDENT2 + "Schematron File: " + schematronFile);
-					results.addResult(MergeInstructions.INDENT2 + " ");
+					if (isVerbose) {results.addResult(MergeInstructions.INDENT2 + " ");}
 					results.addResult(MergeInstructions.INDENT2 + "TEST FILE: " + testFile);
+					if (isVerbose) {
+						System.out.println("TESTFILE: " + testFile);
+					}
 				}
-				System.out.println("TESTFILE: " + testFile);
+				
 				if (failures != null) {
 					int errs = 0;
 					int warns = 0;
 					for (Failure fail : failures) {
 						if (fail.isCritical()) {
-							if (isVerbose) {
+							if (isVerbose && !summaryOnly) {
 								results.addResult(MergeInstructions.INDENT4+"Error: " + fail.getId() + " at " + fail.getLocation() + ": " + fail.getTest());
 								results.addResult(MergeInstructions.INDENT5+ fail.getStatement());
 							}
 							errs++;
 						}
 						else {
-							if (isVerbose) {
+							if (isVerbose && !summaryOnly) {
 								results.addResult(MergeInstructions.INDENT4+"Warning: " + fail.getId() + " at " + fail.getLocation() + ": " + fail.getTest());
 								results.addResult(MergeInstructions.INDENT5+ fail.getStatement());
 							}
@@ -200,7 +205,9 @@ public class Validator {
 						}
 						else { // Actual errors present, so assume file has unintended errors.
 							//res = 97;
-							mergeInstructions.addResult(MergeInstructions.INDENT4+testFile+": Expected Errors value not specified.  (" + errs + " critical error(s) and " + warns + " warning(s))");
+							if (!summaryOnly) {
+								mergeInstructions.addResult(MergeInstructions.INDENT4+testFile+": Expected Errors value not specified.  (" + errs + " critical error(s) and " + warns + " warning(s))");
+							}
 						}
 					}
 					else { // Expected error value present in file header...
@@ -208,20 +215,21 @@ public class Validator {
 						if (!errorReport.asExpected()) { // If expected doesn't match actual, then output a message.
 							//res = 98;
 							failCount++;
-							mergeInstructions.addResult(MergeInstructions.INDENT4+testFile+": Failure count inconsistent with expectations for this file. (Errors: expected " + errorReport.getExpectedErrors() + ", actual " + errs + ") (Warnings: expected " + ((warningExp < 0)?"N/A":warningExp) + ", actual " + warns +")");
+							if (!summaryOnly) {
+								mergeInstructions.addResult(MergeInstructions.INDENT4+testFile+": Failure count inconsistent with expectations for this file. (Errors: expected " + errorReport.getExpectedErrors() + ", actual " + errs + ") (Warnings: expected " + ((warningExp < 0)?"N/A":warningExp) + ", actual " + warns +")");
+							}
 						}
 						else { // Otherwise, results as expected. No message needed.
 							//res = 0;
 						}
 					}
-					if (isVerbose) {
-						results.addResult(MergeInstructions.INDENT3 + "");
+					if (!summaryOnly) {
+						if (isVerbose) {results.addResult(MergeInstructions.INDENT3 + "");}
 						results.addResult(MergeInstructions.INDENT3 + "(Errors: expected " + errorReport.getExpectedErrors() + ", actual " + errs + ") (Warnings: expected " + ((warningExp < 0)?"N/A":warningExp) + ", actual " + warns +")");
 					}
 
 				}
 			}
-
 			return failCount;
 	}
 	
@@ -256,6 +264,8 @@ public class Validator {
 	 */
 	protected boolean transformSchematron(String schematronFile, Properties props) {
 		boolean result = false;
+		boolean summaryOnly = results.getSummaryOnly();
+		
 		props.put("qrda.schematron", schematronFile);
 		
 		//System.out.println("Starting Schematron Transformation");
@@ -280,7 +290,7 @@ public class Validator {
 				} catch (FileNotFoundException e) {
 					String msg = "FileNotFoundException, First transform. Unable to read file " + props.getProperty("qrda.firstTransform") + ", " + e.getMessage();
 					results.addResult(MergeInstructions.INDENT3+msg);
-					if (results.getVerbose()) System.err.println(msg);
+					if (results.getVerbose()  && !summaryOnly ) System.err.println(msg);
 					result = false;
 				}
 				qrdaSecondTransform = performTransform(firstTransform, abstractXsl, props.getProperty("qrda.secondTransform"));
@@ -297,7 +307,7 @@ public class Validator {
 				} catch (FileNotFoundException e) {
 					String msg = "FileNotFoundException, Second Transform. Unable to read file " + props.getProperty("qrda.firstTransform") + ", " + e.getMessage();
 					results.addResult(MergeInstructions.INDENT3+msg);
-					if (results.getVerbose()) System.err.println(msg);
+					if (results.getVerbose() && !summaryOnly) System.err.println(msg);
 					result = false;
 				}
 				qrdaFinalTransform = performTransform(secondTransform, abstractXsl, props.getProperty("qrda.thirdTransform"));
@@ -313,7 +323,7 @@ public class Validator {
 		catch (Exception e) {
 			String msg = "Exception during transformation process: " + e.getMessage();
 			results.addResult(MergeInstructions.INDENT3+msg);
-			if (results.getVerbose()) System.err.println(msg);
+			if (results.getVerbose() && !summaryOnly) System.err.println(msg);
 			result = false;
 		}
 		
@@ -330,6 +340,8 @@ public class Validator {
 	 */
 	protected boolean performValidation (Properties props, String testFile) {
 		boolean result = false;
+		boolean summaryOnly = results.getSummaryOnly();
+		
 		//props.put("testFile", testFile);
 		FileOutputStream validationReport = null;
 		//System.out.println("Validate " + props.getProperty("sample.xml." + fileIndex) + " using " + props.getProperty("qrda.thirdTransform"));
@@ -341,7 +353,7 @@ public class Validator {
 		catch (Exception e) {
 			String msg = "Exception performing validation on file " + testFile + ", " + e.getMessage();
 			results.addResult(MergeInstructions.INDENT3+msg);
-			if (results.getVerbose()) System.err.println(msg);
+			if (results.getVerbose() && !summaryOnly) System.err.println(msg);
 			result = false;
 		}
 		//InputStream sampleXml = ClassLoader.getSystemResourceAsStream(props.getProperty("testFile"));
@@ -352,7 +364,7 @@ public class Validator {
 		} catch (FileNotFoundException e) {
 			String msg = "FileNotFoundException while performing validation. Unable to read file " + props.getProperty("qrda.thirdTransform");
 			results.addResult(MergeInstructions.INDENT3+msg);
-			if (results.getVerbose()) System.err.println(msg);
+			if (results.getVerbose() && !summaryOnly) System.err.println(msg);
 			result = false;
 		}
 		
@@ -378,6 +390,7 @@ public class Validator {
 	 */
 	protected FileOutputStream performTransform(InputStream source, InputStream transform, String outputFilename) {
 		//System.out.println("Transform output: " + outputFilename);
+		boolean summaryOnly = results.getSummaryOnly();
 		FileOutputStream result = null;
 		
 		// Force the use of Saxon for the transformer
@@ -397,7 +410,7 @@ public class Validator {
 				} catch (TransformerException e) {
 					String msg = "TransformerException: " + e.getMessage();
 					results.addResult(MergeInstructions.INDENT3+msg);
-					if (results.getVerbose()) {
+					if (results.getVerbose() && !summaryOnly) {
 						System.err.println(msg);
 						e.printStackTrace();
 					}
@@ -405,7 +418,7 @@ public class Validator {
 			} catch (TransformerConfigurationException e) {
 				String msg = "TransformerConfigurationExcetpion: " + e.getMessage();
 				results.addResult(MergeInstructions.INDENT3+msg);
-				if (results.getVerbose()) {
+				if (results.getVerbose() && !summaryOnly) {
 					System.err.println(msg);
 					e.printStackTrace();
 				}
@@ -416,7 +429,7 @@ public class Validator {
 			} catch (IOException e) {
 				String msg = "IOException closing output file " + outputFilename + ", " + e.getMessage();
 				results.addResult(MergeInstructions.INDENT3+msg);
-				if (results.getVerbose()) {
+				if (results.getVerbose() && !summaryOnly) {
 					System.err.println(msg); 
 					e.printStackTrace();
 				}
@@ -424,7 +437,7 @@ public class Validator {
 		} catch (FileNotFoundException e) {
 			String msg = outputFilename + "FileNotFoundException on file " + outputFilename + ": " + e.getMessage();
 			results.addResult(MergeInstructions.INDENT3+msg);
-			if (results.getVerbose()) {
+			if (results.getVerbose() && !summaryOnly) {
 				System.err.println(msg); 
 				e.printStackTrace();
 			}
@@ -432,7 +445,7 @@ public class Validator {
 			try {
 				result.close();
 			} catch (IOException e) {
-				if (results.getVerbose()) {
+				if (results.getVerbose() && !summaryOnly) {
 					System.err.println(MergeInstructions.INDENT3+"IOException when closing file. " + e.getMessage()); 
 					e.printStackTrace();
 				}
@@ -639,19 +652,25 @@ public class Validator {
 			result = true;
 		} 
 		catch (SAXException e) {
-			mergeInstructions.addResult(MergeInstructions.INDENT3 + "Failed XML validation against " +xsdFilename);
-			mergeInstructions.addResult(MergeInstructions.INDENT3 + "Reason: " + e.getMessage()); 
+			if (!mergeInstructions.getSummaryOnly()) {
+				mergeInstructions.addResult(MergeInstructions.INDENT3 + "Failed XML validation against " +xsdFilename);
+				mergeInstructions.addResult(MergeInstructions.INDENT3 + "Reason: " + e.getMessage()); 
+			}
 		} catch (MalformedURLException e) {
-			mergeInstructions.addResult(MergeInstructions.INDENT3 + "MalformedURLException during XML validation: " + e.getLocalizedMessage());
-			mergeInstructions.addResult(MergeInstructions.INDENT3 + "Reason: " + e.getLocalizedMessage());
-			if (mergeInstructions.getVerbose()){
-				e.printStackTrace();
+			if (!mergeInstructions.getSummaryOnly()) {
+				mergeInstructions.addResult(MergeInstructions.INDENT3 + "MalformedURLException during XML validation: " + e.getLocalizedMessage());
+				mergeInstructions.addResult(MergeInstructions.INDENT3 + "Reason: " + e.getLocalizedMessage());
+				if (mergeInstructions.getVerbose()){
+					e.printStackTrace();
+				}
 			}
 		} catch (IOException e) {
-			mergeInstructions.addResult(MergeInstructions.INDENT3 + "IOException during XML validation: " + e.getLocalizedMessage());
-			mergeInstructions.addResult(MergeInstructions.INDENT3 + "Reason: " + e.getLocalizedMessage());
-			if (mergeInstructions.getVerbose()){
-				e.printStackTrace();
+			if (!mergeInstructions.getSummaryOnly()) {
+				mergeInstructions.addResult(MergeInstructions.INDENT3 + "IOException during XML validation: " + e.getLocalizedMessage());
+				mergeInstructions.addResult(MergeInstructions.INDENT3 + "Reason: " + e.getLocalizedMessage());
+				if (mergeInstructions.getVerbose()){
+					e.printStackTrace();
+				}
 			}
 		}
 		return result;

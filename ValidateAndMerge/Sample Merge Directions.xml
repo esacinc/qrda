@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
     
-<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="true" >
+<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" summaryOnly="false" doValidation="true" stopOnError="true" >
  
     <title>EP CMS 2017 QRDA Category III generated schematron</title>
    

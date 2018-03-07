@@ -50,6 +50,7 @@ import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
 import gov.cms.qrda.schematron.validate.Validator;
+import gov.cms.qrda.schematron.merge.ProgressTimer;
 
 /**
  * The class implements the process of merging schematron template files into a single schematron file.
@@ -81,6 +82,9 @@ public class SchematronMerge {
 			boolean continueOk = true;
 			MergeInstructions mergeInstructions = new MergeInstructions();
 			mergeInstructions.open(file);  // Opens the instructions and processes them in preparation for the merge.
+			// If we are in summary mode only, or if non-verbose debugging, then create a timer that will
+			// output some progress dots on the console to indicate things are still happening.
+			ProgressTimer timer = new ProgressTimer(mergeInstructions.getSummaryOnly() || !mergeInstructions.getVerbose()); // Maybe set a timer for console progress indication
 			if (!mergeInstructions.getGlobalStop()) {  // Continue as long as there was no error during .open() that dictates a stoppage in processing.
 				List<String> namesOfFilesToMerge = mergeInstructions.getSchematronsOnly();
 				if (namesOfFilesToMerge == null || namesOfFilesToMerge.isEmpty()) {
@@ -95,7 +99,7 @@ public class SchematronMerge {
 					// If it is ok to continue, then do the merge
 				if (continueOk) {
 					mergeInstructions.addResult(MergeInstructions.INDENT1 +" ");
-					mergeInstructions.addResult(MergeInstructions.INDENT1 +"Begin Merge Process....");
+					mergeInstructions.addResult(MergeInstructions.INDENT1 +"Merge Process Results....");
 	
 					// Retrieve the list of schematron template files we are to merge. (The mergeInstructions gathered this list during the "open" process)
 					String mergedFileName  = mergeInstructions.getMergeFilename();
@@ -113,7 +117,7 @@ public class SchematronMerge {
 					} catch (FileNotFoundException e1) {
 						String fileNotFoundMsg = String.format(MergeInstructions.INDENT2 +"Fatal Error: Merged File (i.e. \"%s\" can't be created. Exception message: %s" , mergedFileName, e1.getMessage());
 						mergeInstructions.addResult(fileNotFoundMsg);
-						if (mergeInstructions.getVerbose()) {
+						if (mergeInstructions.getVerbose()  && !mergeInstructions.getSummaryOnly()) {
 							System.err.println(fileNotFoundMsg);
 							e1.printStackTrace();
 						}
@@ -147,16 +151,22 @@ public class SchematronMerge {
 							mergeInstructions.getValidator().validateXML(mergeInstructions);
 							mergeInstructions.addResult(MergeInstructions.INDENT2 +"Schematron Validation:");
 							ArrayList<String> testFiles = new ArrayList<String>();
-							testFiles.add(testFilename);		
-							if (mergeInstructions.getValidator().validate(mergedFileName, testFiles, mergeInstructions) == 0) {
-								mergeInstructions.addResult(MergeInstructions.INDENT2 + "Schematron validation of test file results as expected (or no expected error count provided).");
-							};
+							testFiles.add(testFilename);
+							int issues = 0;
+							issues = mergeInstructions.getValidator().validate(mergedFileName, testFiles, mergeInstructions);
+							if ( issues == 0) {
+								mergeInstructions.addResult(MergeInstructions.INDENT3 + "Schematron validation of test file results as expected (or no expected error count provided).");
+							} else {
+								mergeInstructions.addResult(MergeInstructions.INDENT3 + "Schematron validation of test file results did not match expected results.");
+							}
+							;
 						}
 					}
 				}
+				mergeInstructions.addResult(" ");
+				mergeInstructions.addResult(MergeInstructions.INDENT1 + "Merge Complete in " + timer.stop() + " seconds");
 				mergeInstructions.addResult("**************************************** end merge report ************************************************************************");
 				mergeInstructions.addResult(" ");
-				
 			}
 			mergeInstructions.writeResults();
 			System.out.println("Merge Processing Complete");
@@ -455,13 +465,15 @@ public class SchematronMerge {
 		Hashtable<String, Element> allErrorPatterns = new Hashtable<String,Element>();
 		Hashtable<String, Element> allWarningPatterns = new Hashtable<String,Element>();
 		
-		if (instructions.getVerbose()) {
-			if (separateErrorsFromWarnings && instructions.getVerbose()) {
-				instructions.addResult(MergeInstructions.INDENT3 + "Generating all Error patterns first, then all Warning patterns.");
-			}
-			else {
-				instructions.addResult(MergeInstructions.INDENT3 + "Generating Error and Warnings patterns together with each included template");
-	
+		if (!instructions.getSummaryOnly()) {
+			if (instructions.getVerbose()) {
+				if (separateErrorsFromWarnings && instructions.getVerbose()) {
+					instructions.addResult(MergeInstructions.INDENT3 + "Generating all Error patterns first, then all Warning patterns.");
+				}
+				else {
+					instructions.addResult(MergeInstructions.INDENT3 + "Generating Error and Warnings patterns together with each included template");
+		
+				}
 			}
 		}
 		
@@ -497,7 +509,9 @@ public class SchematronMerge {
 					// If we didn't find this pattern id in either list of phases, then that is an error,
 					// most likely a missing phase declaration in the template.  Report that here.
 					if (!isError) {
-						instructions.addResult(MergeInstructions.INDENT3+"ERROR: Assert pattern id '" + patternId + "' not found in corresponding list of sch:active sch:phase elements.");
+						if (!instructions.getSummaryOnly()) {
+							instructions.addResult(MergeInstructions.INDENT3+"ERROR: Assert pattern id '" + patternId + "' not found in corresponding list of sch:active sch:phase elements.");
+						}
 					}
 				}
 			}
@@ -537,8 +551,10 @@ public class SchematronMerge {
 		int totalInconsistentSchematrons = 0;
 		int noTestsCount = 0;
 		if (mergeInstructions.getDoValidation()) {
-			mergeInstructions.addResult(MergeInstructions.INDENT1+"");
-			mergeInstructions.addResult(MergeInstructions.INDENT1+"Begin Template validations....");
+			if (!mergeInstructions.getSummaryOnly()) {
+				mergeInstructions.addResult(MergeInstructions.INDENT1+"");
+				mergeInstructions.addResult(MergeInstructions.INDENT1+"Begin Template validations....");
+			}
 			Validator validator= mergeInstructions.getValidator();
 			for (SchematronTemplate schematronTemplate : mergeInstructions.getSchematrons()) {
 				if (schematronTemplate.getTestFiles().isEmpty()) {
@@ -551,7 +567,7 @@ public class SchematronMerge {
 					continueOk = !mergeInstructions.getStopOnError();
 			}
 		}
-		if (mergeInstructions.getVerbose()) {
+		if (mergeInstructions.getVerbose() && !mergeInstructions.getSummaryOnly()) {
 			mergeInstructions.addResult(MergeInstructions.INDENT3 + "_______________________________________________________________");
 		}
 

@@ -84,6 +84,9 @@ public class MergeInstructions extends MergeProperties{
 	 * Stop processing if true.
 	 */
 	private boolean globalStop = false;  // This may get set to true if processing needs to stop due to a detected error somewhere.
+
+	private int dotCount = 0;
+	private final static int DOT_MAX = 40;
 	
 	/**
 	 * INDENT final static Strings used for pretty formatting the merge report output file
@@ -146,12 +149,11 @@ public class MergeInstructions extends MergeProperties{
 		globalStop = false;
 		sourceFile = filename;
 		addResult(" ");
-		addResult("************************************************************************************************************");
-		addResult(" MERGE REPORT: " + filename);
-		addResult("************************************************************************************************************");
-		addResult(INDENT1+"Instructions file: " + filename);
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		DocumentBuilder db;
+		addResult("************************************************************************************************************");
+		addResult(INDENT1 + "SCHEMATRON MERGE REPORT ");	
+		addResult("************************************************************************************************************");
 		try {
 			db = dbf.newDocumentBuilder();
 			Document doc = db.parse(new File(filename));
@@ -159,6 +161,7 @@ public class MergeInstructions extends MergeProperties{
 			Element mergeProfile = doc.getDocumentElement();
 			setSeparateErrorsFromWarnings(!"false".equalsIgnoreCase(mergeProfile.getAttribute("separateErrorsFromWarnings"))); // Default will be true if attribute not present
 			setVerbose("true".equalsIgnoreCase(mergeProfile.getAttribute("verboseDebug")));
+			setSummaryOnly("true".equalsIgnoreCase(mergeProfile.getAttribute("summaryOnly")));
 			setDoValidation("true".equalsIgnoreCase(mergeProfile.getAttribute("doValidation")));
 			setStopOnError("true".equalsIgnoreCase(mergeProfile.getAttribute("stopOnError")));
 			setStopOnWarning("true".equalsIgnoreCase(mergeProfile.getAttribute("stopOnWarning"))); // deprecated
@@ -187,18 +190,35 @@ public class MergeInstructions extends MergeProperties{
 			}
 			setMergeReportFilename(getNodeValue(mergeProfile,"mergeReportFilename"));
 			System.out.println(INDENT1+  "See merge report in: " + getMergeReportFilename());
+			
+			
+			addResult(INDENT1+"Instructions file: " + filename);
+
 			if (getMergeReportFilename() == null || getMergeReportFilename().isEmpty()) {
 				useSystemOut = true;;
 				System.out.println(INDENT2 + "Merge Report filename not specified. Results will output to console.");
 			}
-			System.out.println(INDENT1+ "Verbose debugging is : " + ((getVerbose())?"on":"off"));
+			
+			if (getSummaryOnly()) {
+			} else {
+				
+			}
 			
 			addResult(INDENT1 + "Title: " + getTitle());
 			addResult(INDENT1 + "Version: "   + getVersion());
 			addResult(INDENT1 + "Generated on " + new Date());
-			addResult(INDENT1 + "Verbose Reporting is turned " + ((getVerbose())?"on":"off"));
+			
+			String verboseMsg = "";
+			if (getSummaryOnly()) {
+				verboseMsg = INDENT1+ "Only summary information presented in report. (Set instruction file's mergeProfile attribute summaryOnly='false' for normal or verbose debugging.)";
+			} else {
+				verboseMsg = INDENT1 + "Verbose Reporting is turned " + ((getVerbose())?"on":"off");
+			}
+			addResult(verboseMsg);
+			System.out.println(verboseMsg);
+			
 			addResult(INDENT1 + "Merged file: " + getMergeFilename());
-			if (getSeparateErrorsFromWarnings()) {
+			if (getSeparateErrorsFromWarnings() && !getSummaryOnly()) {
 				addResult(INDENT2 + "  All Error patterns are generated before all Warning patterns");
 			}
 			else {
@@ -210,8 +230,10 @@ public class MergeInstructions extends MergeProperties{
 			addResult(INDENT1 + "Validation is turned " + ((getDoValidation())?"on":"off"));
 			if (!globalStop && getDoValidation()) {
 				addResult(INDENT2 + "Validate final merged file using: " + getFinalTestFilename());
-				addResult(String.format(INDENT2 + "Merge Process will %sstop when validation inconsistencies are encountered in the template schematrons", (getStopOnError() ?"":"not ")));
-				maybeCopyVocabFile(getNodeValue(mergeProfile,"vocabFilename"));
+				if (!getSummaryOnly()) {
+					addResult(String.format(INDENT2 + "Merge Process will %sstop when validation inconsistencies are encountered in the template schematrons", (getStopOnError() ?"":"not ")));
+					maybeCopyVocabFile(getNodeValue(mergeProfile,"vocabFilename"));
+				}
 			}
 
 
@@ -233,22 +255,22 @@ public class MergeInstructions extends MergeProperties{
 				globalStop = true;
 				addResult("Parser Configuration Exception: " + e.getLocalizedMessage());
 				addResult(INDENT1 + "Process HALTED");
-				if (getVerbose()) e.printStackTrace();
+				if (getVerbose() && !getSummaryOnly()) e.printStackTrace();
 		} catch (SAXException e) {
 			globalStop = true;
 			addResult("SAXException: " + e.getLocalizedMessage());
 			addResult(INDENT1 + "Process HALTED");
-			if (getVerbose()) e.printStackTrace();
+			if (getVerbose() && !getSummaryOnly()) e.printStackTrace();
 		} catch (FileNotFoundException e) {
 			globalStop = true;
 			addResult("FileNotFoundException: " + e.getLocalizedMessage());
 			addResult(INDENT1 + "Process HALTED");
-			if (getVerbose()) e.printStackTrace();
+			if (getVerbose() && !getSummaryOnly()) e.printStackTrace();
 		} catch (IOException e) {
 			globalStop = true;
 			addResult("IOException: " + e.getLocalizedMessage());
 			addResult(INDENT1 + "Process HALTED");
-			if (getVerbose()) e.printStackTrace();
+			if (getVerbose() && !getSummaryOnly()) e.printStackTrace();
 		} 
 		if (globalStop) {
 			String msg = INDENT1 + "An error was encountered during setup causing processing to stop";
@@ -277,7 +299,9 @@ public class MergeInstructions extends MergeProperties{
 				res = nodes.item(0).getTextContent().trim();
 			}
 			else {
-				addResult(INDENT2 + "Failed to locate element: <" + nodeName + ">");
+				if (!getSummaryOnly()) {
+				    addResult(INDENT1 + "ALERT: Failed to locate element: <" + nodeName + ">");
+				}
 				
 			}
 		}
@@ -352,14 +376,16 @@ public class MergeInstructions extends MergeProperties{
 				if (file.getName().endsWith(".sch")) {
 					schFound = true;
 					template.setSchematronPath(file.getAbsolutePath());
-					if (verbose) {
+					if (verbose  && !getSummaryOnly()) {
 						results.add(INDENT3 + "Located schematron file: " + file.getName());
 					}
 					break;
 				}
 			}
 			if (!schFound) {
-				results.add(INDENT3 + "Could not find a schematron file in template directory: " + fullDirPath);
+				if ( !getSummaryOnly()) {
+					results.add(INDENT3 + "Could not find a schematron file in template directory: " + fullDirPath);
+				}
 				return null;
 			}
 			else {
@@ -553,11 +579,11 @@ public class MergeInstructions extends MergeProperties{
 				File dest = new File("voc.xml");
 				try {
 				    FileUtils.copyFile(source, dest);
-				    if (getVerbose()) {
+				    if (getVerbose() && !getSummaryOnly()) {
 				    	addResult(INDENT3+"Copied vocabulary file: " + filename + " into project space as 'voc.xml'");
 				    }
 				} catch (IOException e) {
-				    if (getVerbose()) {
+				    if (getVerbose() && !getSummaryOnly()) {
 				    	System.err.println(INDENT3 + "IOException Error copying vocabulary from " + source.getAbsolutePath() + " to " + dest.getAbsolutePath());
 				    	e.printStackTrace();
 				    }
@@ -577,25 +603,27 @@ public class MergeInstructions extends MergeProperties{
 	// 
 	private void addSchematronListToResults() {
 		addResult(String.format("%s%d schematron templates identified for merging", INDENT2,schematrons.size()));
-		if (getVerbose()) {
-			addResult(INDENT1+"Schematron files gleaned from merge instructions: ");
-			if (getVerbose() && getDoValidation()) {
-				for (SchematronTemplate schematron : schematrons) {
-					addResult(INDENT2+"------------------------------------");
-					addResult(INDENT2 + "Template Directory: " + schematron.getParentPath());
-					addResult(INDENT2 + "Schematron: " + schematron.getSchematronPath());
-					addResult(INDENT2 + "Test File(s): ");
-					for (String filename : schematron.getTestFiles()) {
-						addResult(INDENT3 + filename);
+		if (!getSummaryOnly()) {
+			if (getVerbose()) {
+				addResult(INDENT1+"Schematron files gleaned from merge instructions: ");
+				if (getVerbose() && getDoValidation()) {
+					for (SchematronTemplate schematron : schematrons) {
+						addResult(INDENT2+"------------------------------------");
+						addResult(INDENT2 + "Template Directory: " + schematron.getParentPath());
+						addResult(INDENT2 + "Schematron: " + schematron.getSchematronPath());
+						addResult(INDENT2 + "Test File(s): ");
+						for (String filename : schematron.getTestFiles()) {
+							addResult(INDENT3 + filename);
+						}
 					}
 				}
+				else {
+					for (SchematronTemplate schematron : schematrons) {
+						addResult(INDENT2 + schematron.getSchematronPath());
+					}	
+				}
+				addResult(INDENT2+"-------------- end schematron file list-------------------");
 			}
-			else {
-				for (SchematronTemplate schematron : schematrons) {
-					addResult(INDENT2 + schematron.getSchematronPath());
-				}	
-			}
-			addResult(INDENT2+"-------------- end schematron file list-------------------");
 		}
 	}
 	
@@ -667,7 +695,7 @@ public class MergeInstructions extends MergeProperties{
 			return spec;
 		}
 		catch (IOException e) {
-			if (getVerbose()) addResult(INDENT3+"IOError reading expected error/warning count from file: " + path + ", " + e.getMessage());
+			if (getVerbose()  && !getSummaryOnly()) addResult(INDENT3+"IOError reading expected error/warning count from file: " + path + ", " + e.getMessage());
 		}
 		return null;
 	}

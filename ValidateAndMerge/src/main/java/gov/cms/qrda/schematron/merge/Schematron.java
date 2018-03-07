@@ -1,3 +1,4 @@
+package gov.cms.qrda.schematron.merge;
 
 /*
 Copyright (c) 2016+, ESAC, Inc.
@@ -26,7 +27,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE
  */
 
-package gov.cms.qrda.schematron.merge;
+
 
 
 import java.util.List;

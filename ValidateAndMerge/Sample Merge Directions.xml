@@ -7,6 +7,10 @@
      <generatedFilename>
          c:/Development/qrdaGit/qrda/Schematrons/CMS QRDA Category III/EC CMS 2017/Published/EP CMS 2017 QRDA Category III.sch
     </generatedFilename>
+    
+    <!-- The following is useful if you want to compare the generated/merged file's asserts with the asserts in an original schematron - a sanity check to insure the merge is comprehensive of expected results. -->
+   <compareSchematronFilename></compareSchematronFilename>
+ 
     <finalTestFilename></finalTestFilename>
     <fileHeader>EP CMS 2017 QRDA Category III generated schematron.</fileHeader>
     <mergeReportFilename> c:/Development/qrdaGit/qrda/Schematrons/CMS QRDA Category III/EC CMS 2017/mergeReport.txt</mergeReportFilename>

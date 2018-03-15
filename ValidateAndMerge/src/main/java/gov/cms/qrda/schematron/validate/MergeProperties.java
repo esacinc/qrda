@@ -74,6 +74,8 @@ public class MergeProperties {
 	
 	protected String mergeReportFilename = "";
 	protected String vocabFilename = "";
+	
+	protected String compareSchematronFilename = ""; // Path to a schematron file. Compare asserts in this file to asserts in generated file
 
 	/**
 	 * If this value is true, then all log information is written to System.out as well as 
@@ -167,6 +169,13 @@ public class MergeProperties {
 	}
 	public void setVocabFilename(String val) {
 		vocabFilename = val;
+	}
+
+	public String getCompareSchematronFilename() {
+		return compareSchematronFilename;
+	}
+	public void setCompareSchematronFilename(String val) {
+		compareSchematronFilename = val;
 	}
 
 	public boolean getVerbose() {

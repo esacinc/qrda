@@ -222,6 +222,11 @@ public class MergeInstructions extends MergeProperties{
 			else {
 				addResult(INDENT2 + "  Error patterns and Warning patterns are generated together for each template");
 			}
+			setCompareSchematronFilename(getNodeValue(mergeProfile,"compareSchematronFilename"));
+			if (!getSummaryOnly() && getCompareSchematronFilename() != "") {
+				addResult(INDENT2 + "  Compare generated schematron asserts to asserts in file: " + getCompareSchematronFilename());
+			}
+
 			addResult(INDENT1 + "Merge report file located at: " + getMergeReportFilename());
 			//addResult(INDENT1 + "File header: " + getFileHeader());
 			

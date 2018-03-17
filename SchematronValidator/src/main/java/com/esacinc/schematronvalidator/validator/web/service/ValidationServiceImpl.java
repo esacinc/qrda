@@ -632,6 +632,9 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 					rule = XPathUtility.getPreviousSibling(rule, tc);
 				}
 			}
+			
+			fail.setCritical(true); // assume this is an error (as opposed to a warning).
+			
 			// Include info about the fired assert's rule & context
 			//Node parent = rule.getParentNode();
 			NamedNodeMap parentAttrs = rule.getAttributes();
@@ -640,6 +643,13 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 				String attrText = XPathUtility.getNodeText(attr);
 				if (attr.getNodeName().equals("id")) {
 					fail.setRule(attrText);
+					// We use the assert's rule id name to determine criticality of the failure. Assume the worst (error),
+					// then check to see if it is reall just a warning (id contains "warning" or starts with "w-") 
+					String lc = attrText.toLowerCase();
+					logger.debug("Node name: " + attr.getNodeName() + " Attr: " + lc);
+					if (lc.contains("warning") || lc.startsWith("w-")) {
+								fail.setCritical(false);
+					}
 				}
 				if (attr.getNodeName().equals("context")) {
 						fail.setContext(attrText);
@@ -659,11 +669,10 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 					// We use the assert id name to determine criticality of the failure. Assume the worst (error),
 					// then check to see if it is reall just a warning (id contains "warning" or starts with "w-") 
 					String lc = attrText.toLowerCase();
-					fail.setCritical(true);
 					logger.debug("Node name: " + attr.getNodeName() + " Attr: " + lc);
 					if (lc.contains("warning") || lc.startsWith("w-")) {
 								fail.setCritical(false);
-						}
+					}
 				}
 				
 				if (attr.getNodeName().equals("location")) {
@@ -676,8 +685,8 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 						String m = (String) loc.getUserData(XPathUtility.LINE_NUMBER_KEY_NAME);
 						String n = (String) loc.getUserData(XPathUtility.END_LINE_NUMBER_KEY_NAME);
 						String  src = XPathUtility.nodeToString(loc);
-						logger.info("Failure at line number: " + m);
-						logger.info("   Source: " + src);
+						logger.debug("Failure at line number: " + m);
+						logger.debug("   Source: " + src);
 						fail.setLineNumber(Integer.valueOf(m));
 						fail.setEndLineNumber(Integer.valueOf(n));
 						fail.setSourceNode(src);

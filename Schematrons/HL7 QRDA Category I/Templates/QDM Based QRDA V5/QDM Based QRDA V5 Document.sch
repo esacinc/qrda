@@ -20,7 +20,8 @@
             <sch:assert id="a-3343-12972-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2017-08-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3343-12972) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.1.2" (CONF:3343-26943). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-28696).</sch:assert>
             <sch:assert id="a-3343-16598-error" test="count(cda:recordTarget)=1">SHALL contain exactly one [1..1] recordTarget (CONF:3343-16598).</sch:assert>
             <sch:assert id="a-3343-16600-error" test="count(cda:custodian)=1">SHALL contain exactly one [1..1] custodian (CONF:3343-16600).</sch:assert>
-            <sch:assert id="a-3343-12973-error" test="count(cda:component[count(cda:structuredBody)=1])=1">SHALL contain exactly one [1..1] component (CONF:3343-12973) such that it SHALL contain exactly one [1..1] structuredBody (CONF:3343-17081).</sch:assert>
+            <!-- Changed 12973 by removing "such that" constraint to enforce the "only one component, period." rule. " -->
+            <sch:assert id="a-3343-12973-error" test="count(cda:component)=1">SHALL contain exactly one [1..1] component (CONF:3343-12973).</sch:assert>
         </sch:rule>
         <sch:rule id="QDM_based_QRDA_V5-recordTarget-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2017-08-01']]/cda:recordTarget">
             <sch:assert id="a-3343-16856-error" test="count(cda:patientRole)=1">This recordTarget SHALL contain exactly one [1..1] patientRole (CONF:3343-16856).</sch:assert>
@@ -46,6 +47,11 @@
     	<sch:rule id="QDM_based_QRDA_V5-informationRecipient-intendedRecipient-errors" 	context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2017-08-01']]/cda:informationRecipient/cda:intendedRecipient">
     		<sch:assert id="a-3343-16705-error" test="count(cda:id) &gt; 0">This intendedRecipient SHALL contain at least one [1..*] id (CONF:3343-16705).</sch:assert>
     	</sch:rule>
+        <!-- Added constraint to insure component has only one structured body -->
+        <sch:rule id="QDM_based_QRDA_V5-component-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2017-08-01']]/cda:component">
+            <sch:assert id="a-3343-17081-error" test="count(count(cda:structuredBody))=1">This component SHALL contain exactly one [1..1] structuredBody (CONF:3343-17081).</sch:assert>
+        </sch:rule>
+            
     	<sch:rule id="QDM_based_QRDA_V5-component-structuredBody-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2017-08-01']]/cda:component/cda:structuredBody">
     	    <sch:assert id="a-3343-17082-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.24.2.3']])=1])=1">This structuredBody SHALL contain exactly one [1..1] component (CONF:3343-17082). This component SHALL contain exactly one [1..1] Measure Section QDM (identifier: urn:oid:2.16.840.1.113883.10.20.24.2.3) (CONF:3343-17083).</sch:assert>
     	    <sch:assert id="a-3343-17090-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.17.2.1']])=1])=1">This structuredBody SHALL contain exactly one [1..1] component (CONF:3343-17090). This component SHALL contain exactly one [1..1] Reporting Parameters Section (identifier: urn:oid:2.16.840.1.113883.10.20.17.2.1) (CONF:3343-17092).</sch:assert>
@@ -67,7 +73,7 @@
     <sch:pattern id="QDM_based_QRDA_V5-pattern-warnings">
         <sch:rule id="QDM_based_QRDA_V5-documentationOf-serviceEvent-performer-assignedEntity-representedOrganization-warnings" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2017-08-01']]/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity/cda:representedOrganization">
             <sch:assert id="a-3343-16592-warning" test="count(cda:id[@root='2.16.840.1.113883.4.2'])=1">This representedOrganization SHOULD contain zero or one [0..1] id (CONF:3343-16592) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:3343-16593).</sch:assert>
-            <sch:assert id="a-3343-16595-warning" test="count(cda:id[@root='2.16.840.1.113883.4.336'][@extension])=1">This representedOrganization SHOULD contain zero or one [0..1] id (CONF:3343-16595) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.336" Facility CMS Certification Number (CONF:3343-16596). SHALL contain exactly one [1..1] @extension (CONF:3343-16597).</sch:assert>
+            <!-- 03-09-2018 Removed 3343-16595 as it is a "MAY such that" rather than a SHOULD -->
         </sch:rule>
     </sch:pattern>
     

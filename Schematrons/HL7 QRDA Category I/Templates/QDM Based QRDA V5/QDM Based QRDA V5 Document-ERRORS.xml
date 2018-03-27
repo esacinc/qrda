@@ -3,7 +3,8 @@
   <!-- 		
     Title: QDM Based QRDA V5 Good sample
     Author: Michael Holck
-    Date:   07-21-2017 		
+    Date:   07-21-2017 	
+    Update: 03-09-2018 Removed trigger for 3343-16595 as it is a "MAY such that" rather than a SHOULD
     
     Total Errors Expected: 22
         Failure a-3343-12972-error SHALL contain exactly one [1..1] templateId (CONF:3343-12972) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.1.2" (CONF:3343-26943). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-28696)
@@ -29,9 +30,8 @@
     	  Failure a-3343-17090-error structuredBody SHALL contain exactly one [1..1] component (CONF:3343-17090). This component SHALL contain exactly one [1..1] Reporting Parameters Section (identifier: urn:oid:2.16.840.1.113883.10.20.17.2.1) (CONF:3343-17092)
     	  Failure a-3343-17091-error structuredBody SHALL contain exactly one [1..1] component (CONF:3343-17091). This component SHALL contain exactly one [1..1] Patient Data Section QDM (V5) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.2.1:2017-08-01) (CONF:3343-17093)
    
-    Total Warnings Expected: 2
+    Total Warnings Expected: 1
         Warning a-3343-16592-warning representedOrganization SHOULD contain zero or one [0..1] id (CONF:3343-16592) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:3343-16593)
-        Warning a-3343-16595-warning representedOrganization SHOULD contain zero or one [0..1] id (CONF:3343-16595) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.336" Facility CMS Certification Number (CONF:3343-16596). SHALL contain exactly one [1..1] @extension (CONF:3343-16597)
  
   -->
 
@@ -144,8 +144,11 @@
             <!-- This is the organization CCN -->
             <id root="2.16.840.1.113883.4.336" extension="654321"/>
           </representedOrganization>
+          
           <!-- Failure a-3343-16591-error Zero or Multiple representedOrganization -->
+          <!-- Warning a-3343-16592-warning representedOrganization SHOULD contain zero or one [0..1] id (CONF:3343-16592) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:3343-16593) -->
           <representedOrganization/>
+          
         </assignedEntity>
       </performer>
       <!-- Failure a-3343-16584-error performer missing @typeCode='PRF' -->

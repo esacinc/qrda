@@ -86,6 +86,7 @@
           <templateId root="2.16.840.1.113883.10.20.24.2.2"/>
           <!-- This is the templateId for Measure Section QDM -->
           <templateId root="2.16.840.1.113883.10.20.24.2.3"/>
+          <!-- ... -->
         </section>
       </component>
       <!-- 				 
@@ -97,6 +98,7 @@
         <section>
           <!-- This is the templateId for Reporting Parameters section -->
           <templateId root="2.16.840.1.113883.10.20.17.2.1"/>
+          <!-- ... -->
         </section>
       </component>
       <!-- 				 
@@ -110,6 +112,7 @@
           <templateId root="2.16.840.1.113883.10.20.17.2.4"/>
           <!-- Patient Data Section QDM (V5) -->
           <templateId root="2.16.840.1.113883.10.20.24.2.1" extension="2017-08-01"/>
+          <!-- ... -->
         </section>
       </component>
     </structuredBody>

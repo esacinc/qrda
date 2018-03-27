@@ -1,0 +1,37 @@
+ 
+************************************************************************************************************
+    SCHEMATRON MERGE REPORT 
+************************************************************************************************************
+    Instructions file: C:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category I\EH CMS 2019\\EH CMS 2019 QRDA Category I Merge Directions.xml
+    Title: EH CMS 2019 QRDA Category I
+    Version: 1.0
+    Generated on Wed Mar 21 15:56:02 MDT 2018
+    Only summary information presented in report. (Set instruction file's mergeProfile attribute summaryOnly='false' for normal or verbose debugging.)
+    Merged file: C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/EH CMS 2019/Published/EH CMS 2019 QRDA Category I.sch
+          Error patterns and Warning patterns are generated together for each template
+    Merge report file located at: C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/EH CMS 2019/mergeReport.txt
+    Validation is turned on
+        Validate final merged file using: C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/EH CMS 2019/TestFiles/EH_Sample_QRDA_I_Informative.xml
+    Collect schematron template information from source directories...
+        Processing template directory: C:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category I/Templates/, selector: some
+        Processing template directory: C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/Templates/, selector: some
+        137 schematron templates identified for merging
+    Merge Setup Complete
+        
+    Found 0 schematron template(s) that did not process test files as expected
+    0 schematron template(s) had no associated test files.
+     
+    Merge Process Results....
+        Merging files into file "C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/EH CMS 2019/Published/EH CMS 2019 QRDA Category I.sch".
+        Wrote merged Schematron file to "C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/EH CMS 2019/Published/EH CMS 2019 QRDA Category I.sch".
+
+
+    Testing merged file C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/EH CMS 2019/Published/EH CMS 2019 QRDA Category I.sch using: C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/EH CMS 2019/TestFiles/EH_Sample_QRDA_I_Informative.xml
+        XML Validation:
+            Successful XML validation against Schema\CDA\infrastructure\cda\CDA_SDTC.xsd
+        Schematron Validation:
+            Schematron validation of test file results as expected (or no expected error count provided).
+ 
+    Merge Complete in 17 seconds
+**************************************** end merge report ************************************************************************
+ 

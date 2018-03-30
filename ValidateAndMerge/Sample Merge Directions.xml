@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
     
-<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" summaryOnly="false" doValidation="true" stopOnError="true" >
+<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" summaryOnly="false" doValidation="true" applyXSD="false" stopOnError="true" >
  
     <title>EP CMS 2017 QRDA Category III generated schematron</title>
    
@@ -10,6 +10,9 @@
     
     <!-- The following is useful if you want to compare the generated/merged file's asserts with the asserts in an original schematron - a sanity check to insure the merge is comprehensive of expected results. -->
    <compareSchematronFilename></compareSchematronFilename>
+ 
+     <!-- Used in conjunctions with applyXSD=true attribute, allows you to specify the location of the XSD stylesheet to apply to the final merge test file. (If not supplied, the validator will use the application's default XSD Stylesheet (CDA_SDTC.xsd) -->
+   <useXSDFilename></useXSDFilename>
  
     <finalTestFilename></finalTestFilename>
     <fileHeader>EP CMS 2017 QRDA Category III generated schematron.</fileHeader>

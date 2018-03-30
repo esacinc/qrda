@@ -212,7 +212,7 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 						// (Note: the expected counts are determined when the test case is initialized.)
 						if (testCase.getExpectedErrors() >= 0) {
 							testCase.addStatusText(indent + String.format("Expected %d Critical/Error failures", testCase.getExpectedErrors()));	
-							if (testCase.getExpectedErrors() == testCase.getErrorCount()) {
+							if (testCase.getExpectedErrors().equals(testCase.getErrorCount())) {
 								testCase.addStatusText(indent + wrapSuccessSpan("EXPECTED ERRORS = ENCOUNTERED ERRORS"));
 							}
 							else {
@@ -221,10 +221,9 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 						}
 						
 						testCase.addStatusText(String.format(specificTemplate, ((warningCount == 0)?"btn-success":"btn-warning"), warningCount, "Non-Critical/Warning"));
-
 						if (testCase.getExpectedWarnings() >= 0) {
 							testCase.addStatusText(indent + String.format("Expected %d Non-Critical/Warning failures", testCase.getExpectedWarnings()));
-							if (testCase.getExpectedWarnings() == testCase.getWarningCount()) {
+							if (testCase.getExpectedWarnings().equals(testCase.getWarningCount())) {
 								testCase.addStatusText(indent + wrapSuccessSpan("EXPECTED WARNINGS = ENCOUNTERED WARNINGS"));
 							}
 							else {

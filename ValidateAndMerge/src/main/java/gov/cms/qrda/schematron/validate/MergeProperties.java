@@ -65,6 +65,7 @@ public class MergeProperties {
 	protected boolean verbose = true;
 	protected boolean summaryOnly = false;
 	protected boolean doValidation = false;
+	protected boolean applyXSD = true;
 	protected boolean stopOnError = true;
 	/**
 	 * @deprecated
@@ -76,6 +77,8 @@ public class MergeProperties {
 	protected String vocabFilename = "";
 	
 	protected String compareSchematronFilename = ""; // Path to a schematron file. Compare asserts in this file to asserts in generated file
+
+	protected String auxXSDFilename = ""; // Path to an xsd file. If applyXSD=true, and if this is set, use this file as the XSD file in the XML Validation.
 
 	/**
 	 * If this value is true, then all log information is written to System.out as well as 
@@ -178,6 +181,13 @@ public class MergeProperties {
 		compareSchematronFilename = val;
 	}
 
+	public String getAuxXSDFilename() {
+		return auxXSDFilename;
+	}
+	public void setAuxXSDFilename(String val) {
+		auxXSDFilename = val;
+	}
+
 	public boolean getVerbose() {
 		return verbose;
 	}
@@ -198,7 +208,13 @@ public class MergeProperties {
 	public void setDoValidation(boolean val) {
 		doValidation = val;
 	}
-
+	public boolean getApplyXSD() {
+		return applyXSD;
+	}
+	public void setApplyXSD(boolean val) {
+		applyXSD = val;
+	}
+	
 	public boolean getStopOnError() {
 		return stopOnError;
 	}

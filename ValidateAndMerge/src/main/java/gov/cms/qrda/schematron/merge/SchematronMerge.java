@@ -154,8 +154,13 @@ public class SchematronMerge {
 							mergeInstructions.addResult(MergeInstructions.INDENT2 + "Test Filename not specified.");
 						}
 						else {
-							mergeInstructions.addResult(MergeInstructions.INDENT2 +"XML Validation:");
-							mergeInstructions.getValidator().validateXML(mergeInstructions);
+							if (mergeInstructions.getApplyXSD()) {
+								mergeInstructions.addResult(MergeInstructions.INDENT2 +"Test file XML Validation using XSD file: " + mergeInstructions.getAuxXSDFilename());
+							    mergeInstructions.getValidator().validateXML(mergeInstructions);
+							}
+							else {
+								mergeInstructions.addResult(MergeInstructions.INDENT2 +"No XML Validation performed");
+							}
 							mergeInstructions.addResult(MergeInstructions.INDENT2 +"Schematron Validation:");
 							ArrayList<String> testFiles = new ArrayList<String>();
 							testFiles.add(testFilename);

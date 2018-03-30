@@ -161,6 +161,8 @@ public class MergeInstructions extends MergeProperties{
 			setVerbose("true".equalsIgnoreCase(mergeProfile.getAttribute("verboseDebug")));
 			setSummaryOnly("true".equalsIgnoreCase(mergeProfile.getAttribute("summaryOnly")));
 			setDoValidation("true".equalsIgnoreCase(mergeProfile.getAttribute("doValidation")));
+			setApplyXSD("true".equalsIgnoreCase(mergeProfile.getAttribute("applyXSD")));
+			setAuxXSDFilename(getNodeValue(mergeProfile,"useXSDFilename"));
 			setStopOnError("true".equalsIgnoreCase(mergeProfile.getAttribute("stopOnError")));
 			setStopOnWarning("true".equalsIgnoreCase(mergeProfile.getAttribute("stopOnWarning"))); // deprecated
 			setMergeFilename(getNodeValue(mergeProfile,"generatedFilename"));
@@ -222,10 +224,12 @@ public class MergeInstructions extends MergeProperties{
 			else {
 				addResult(INDENT2 + "  Error patterns and Warning patterns are generated together for each template");
 			}
+			
 			setCompareSchematronFilename(getNodeValue(mergeProfile,"compareSchematronFilename"));
 			if (!getSummaryOnly() && getCompareSchematronFilename() != "") {
 				addResult(INDENT2 + "  Compare generated schematron asserts to asserts in file: " + getCompareSchematronFilename());
 			}
+
 
 			addResult(INDENT1 + "Merge report file located at: " + getMergeReportFilename());
 			//addResult(INDENT1 + "File header: " + getFileHeader());
@@ -233,6 +237,14 @@ public class MergeInstructions extends MergeProperties{
 			addResult(INDENT1 + "Validation is turned " + ((getDoValidation())?"on":"off"));
 			if (!globalStop && getDoValidation()) {
 				addResult(INDENT2 + "Validate final merged file using: " + getFinalTestFilename());
+				addResult(INDENT3 + "XML XSD validation of test file is turned " + ((getApplyXSD())?"on":"off"));
+				if (getApplyXSD()) {
+					if (getAuxXSDFilename() == null || getAuxXSDFilename().isEmpty()) {
+						setAuxXSDFilename(MergeProperties.XSD_FILENAME);
+					}
+					addResult(INDENT4 + "  For XML Validation of test file, use the XSD File found at: " + getAuxXSDFilename());
+				}
+
 				if (!getSummaryOnly()) {
 					addResult(String.format(INDENT2 + "Merge Process will %sstop when validation inconsistencies are encountered in the template schematrons", (getStopOnError() ?"":"not ")));
 					maybeCopyVocabFile(getNodeValue(mergeProfile,"vocabFilename"));

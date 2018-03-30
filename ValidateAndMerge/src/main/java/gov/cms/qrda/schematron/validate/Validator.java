@@ -629,7 +629,11 @@ public class Validator {
 	public boolean validateXML(MergeInstructions mergeInstructions) {
 		boolean result = false;
 		String xmlFilename = mergeInstructions.getFinalTestFilename();
-		String xsdFilename = MergeInstructions.XSD_FILENAME;
+		String xsdFilename = mergeInstructions.getAuxXSDFilename();
+		if (xsdFilename == null || xsdFilename.isEmpty()) {
+			mergeInstructions.addResult(MergeInstructions.INDENT3 + "No XSD Filename found");
+			return result;
+		}
 		final ArrayList<String>  exceptions = new ArrayList<String>();
 		try {
 			//URL schemaFile = new URL(xsdFilename);

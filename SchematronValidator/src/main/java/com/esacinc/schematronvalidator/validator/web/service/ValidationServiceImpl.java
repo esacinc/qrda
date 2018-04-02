@@ -245,7 +245,7 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 					testCase.addStatusText(String.format(specificTemplate, "btn-info", reportCount, " Report messages encountered"));
 					if (testCase.getExpectedReports() >= 0) {
 						testCase.addStatusText(indent + String.format("Expected %d Report Messages", testCase.getExpectedReports()));
-						if (testCase.getExpectedReports() == reportCount) {
+						if (testCase.getExpectedReports().equals(reportCount)) {
 							testCase.addStatusText(indent + wrapSuccessSpan("EXPECTED REPORTS = ENCOUNTERED REPORTS"));
 						}
 						else {

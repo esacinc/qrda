@@ -229,13 +229,13 @@
               <tbody>
                 <tr>
                   <td>Venous Thromboembolism Prophylaxis</td>
-                  <td>40280382-5abd-fa46-015b-1f6b95092a9d</td>
+                  <td>38b0b5ec-0f63-466f-8fe3-2cd20ddd1622</td>
                 </tr>
               </tbody>
               <tbody>
                 <tr>
                   <td>Intensive Care Unit Venous Thromboembolism Prophylaxis</td>
-                  <td>40280382-5abd-fa46-015b-1a63afe02779</td>
+                  <td>fa91ba68-1e66-4a23-8eb2-baa8e6df2f2f</td>
                 </tr>
               </tbody>
             </table></text>
@@ -251,7 +251,7 @@
               <reference typeCode="REFR">
                 <externalDocument classCode="DOC" moodCode="EVN">
                   <!-- This is the version specific identifier for the eMeasure -->
-                  <id root="2.16.840.1.113883.4.738" extension="40280382-5abd-fa46-015b-1f6b95092a9d" />
+                  <id root="2.16.840.1.113883.4.738" extension="38b0b5ec-0f63-466f-8fe3-2cd20ddd1622" />
                   <!-- SHOULD This is the title of the eMeasure -->
                   <text>Venous Thromboembolism Prophylaxis</text>
                 </externalDocument>
@@ -269,7 +269,7 @@
               <reference typeCode="REFR">
                 <externalDocument classCode="DOC" moodCode="EVN">
                   <!-- This is the version specific identifier for the eMeasure -->
-                  <id root="2.16.840.1.113883.4.738" extension="40280382-5abd-fa46-015b-1a63afe02779" />
+                  <id root="2.16.840.1.113883.4.738" extension="fa91ba68-1e66-4a23-8eb2-baa8e6df2f2f" />
                   <!-- SHOULD This is the title of the eMeasure -->
                   <text>Intensive Care Unit Venous Thromboembolism Prophylaxis</text>
                 </externalDocument>

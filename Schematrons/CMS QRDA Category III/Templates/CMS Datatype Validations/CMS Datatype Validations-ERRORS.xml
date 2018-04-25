@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date:   03-15-2017
     Updated June 30, 2017  For JIRA Ticket https://tracker.esacinc.com/browse/QRDATEST-5
+    Updated 04-23-2018 Updated conformance text for CMS_0107 re: https://tracker.esacinc.com/browse/QRDA-365
     
     Total Errors Expected: 26
     Total Warnings Expected: 0
@@ -13,8 +14,7 @@
     xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
     xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
 
-    <!-- Data types of CD or CE SHALL have either @code or @nullFlavor or both (@codeSystem and @nullFlavor) 
-                            but SHALL NOT have both @code and @nullFlavor and SHALL NOT have @codeSystem and @nullFlavor (CONF: CMS_0107)
+     <!-- Data types of CD or CE SHALL have either @code or @nullFlavor but SHALL NOT have both @code and @nullFlavor (CONF:CMS_0107).
          2 errors, below
     -->
     <value xsi:type="CD" code="..." nullFlavor="NA" codeSystem="..."  />

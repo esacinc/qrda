@@ -1163,6 +1163,7 @@
   </system>
   <system valueSetOid="2.16.840.1.113883.3.249.14.103" valueSetName="QRDA-I CMS Program Name ">
     <code value="CEC" displayName="Comprehensive End-Stage Renal Disease CARE Initiative" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
+    <code value="HQR_PI" displayName="Hospital Quality Reporting for the EHR Incentive Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
     <code value="HQR_EHR" displayName="Hospital Quality Reporting for the EHR Incentive Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
     <code value="HQR_IQR" displayName="Hospital Quality Reporting for the Inpatient Quality Reporting Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
     <code value="HQR_EHR_IQR" displayName="Hospital Quality Reporting for the EHR Incentive Program and the IQR Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />

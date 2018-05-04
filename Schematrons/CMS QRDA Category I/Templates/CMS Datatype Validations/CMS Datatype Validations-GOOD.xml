@@ -138,9 +138,9 @@
                               cda:effectiveTime/cda:low 
                               cda:effectiveTime/cda:high
     -->
-    <effectiveTime value="..."  />
+    <effectiveTime value="20170801034400+0500"  />
     <value xsi:type="TS" nullFlavor="NA" />
-    <time><low value="..."/><high nullFlavoar="NA"/></time>
+    <time><low value="20170801034400-0600"/><high nullFlavoar="NA"/></time>
     
     
     <!-- The NPI should have a correct checksum, using the Luhn algorithm. (CONF: CMS_0117) 

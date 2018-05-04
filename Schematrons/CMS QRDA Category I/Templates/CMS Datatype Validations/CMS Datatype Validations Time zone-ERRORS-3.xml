@@ -2,6 +2,8 @@
 <?xml-stylesheet type="text/xsl" href="cda.xsl"?>
 <!--
 Date: October 31, 2012
+Updated:  May 04, 2018   per JIRA: https://tracker.esacinc.com/browse/QRDA-417
+
 Disclaimer: These QRDA sample files are designed to provide a file that is valid for errors against the CDA.sdtc schema and QRDA schematron using hypothetical patient data; however, the content of the QRDA sample 
 documents may not have "clinically" consistent data.  Additionally, the files are valid against the referenced eMeasure to provide a general idea about the content and structure of a QDM-based QRDA. When eMeasure data 
 criteria are “or”, the QRDA documents may not have all of the Quality Data Elements data criteria specified in the eMeasure. These expected errors are listed in the file where they occur. In the Patient Data Section, the 
@@ -43,7 +45,7 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 	<code code="55182-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
 		displayName="Quality Measure Report"/>
 	<title>QRDA Incidence Report</title>
-	<effectiveTime value="201212310000"/>
+	<effectiveTime value="201212310000"/> <!-- a-cms_0121-error: No timezone offset is present, so no timezone should be present anywhere else. -->
 	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
 	<languageCode code="en"/>
 	<setId extension="111199021" root="2.16.840.1.113883.19"/>

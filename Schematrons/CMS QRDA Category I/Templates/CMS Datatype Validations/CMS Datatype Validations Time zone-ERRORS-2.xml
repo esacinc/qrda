@@ -3,6 +3,8 @@
 <!--
 Date: October 31, 2012
 Updated June 23, 2017
+Updated:  May 04, 2018   per JIRA: https://tracker.esacinc.com/browse/QRDA-417
+
 Disclaimer: These QRDA sample files are designed to provide a file that is valid for errors against the CDA.sdtc schema and QRDA schematron using hypothetical patient data; however, the content of the QRDA sample 
 documents may not have "clinically" consistent data.  Additionally, the files are valid against the referenced eMeasure to provide a general idea about the content and structure of a QDM-based QRDA. When eMeasure data 
 criteria are “or”, the QRDA documents may not have all of the Quality Data Elements data criteria specified in the eMeasure. These expected errors are listed in the file where they occur. In the Patient Data Section, the 
@@ -11,12 +13,12 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 -->
 
 <!-- 	 
-	Total Errors Expected: 6
+	Total Errors Expected: 5
 	    Failure a-cms_0121-error UTC Timezone offset must be present if it is present anywhere else. 
 		Description: A Coordinated Universal Time (UTC time) offset should not be used anywhere in a QRDA Category I file or, 
 		             if a UTC time offset is needed anywhere, then it must be specified everywhere a time field is provided (CONF_CMS_0121).
 	
-	    Occures 6 times in this file.
+	    Occures 5 times in this file.
 	
 	Total Warnings Expected: 0
 -->
@@ -44,7 +46,7 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 	<code code="55182-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
 		displayName="Quality Measure Report"/>
 	<title>QRDA Incidence Report</title>
-	<effectiveTime value="201212310000-0500"/>
+	<effectiveTime value="201212310000-0500"/>  <!-- a-cms_0121-error: Timezone offset is present, so timezone offset should be present everywhere else. -->
 	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
 	<languageCode code="en"/>
 	<setId extension="111199021" root="2.16.840.1.113883.19"/>
@@ -222,7 +224,7 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 			<!-- care provision -->
 			<effectiveTime>
 				<low nullFlavor="NI"/> 
-				<high value="20100915"/> <!-- Failure a-cms_0121-error UTC Timezone offset must be present if it is present anywhere else. -->
+				<high value="20100915"/> <!-- a-cms_0121-error UTC Timezone not triggered because this is a date only -->
 			</effectiveTime>
 			<!-- You can include multiple performers, each with an NPI, TIN, CCN. -->
 			<performer typeCode="PRF">
@@ -251,7 +253,7 @@ Eric:  This file was test file for Hr 6.0, now updated for HR 7.0 on 02 Sep 2014
 				<low value="20140128090000-0500"/>
 				<!-- Eric:  HITECH time period -->
 				<!-- Attribute: Stop Datetime -->
-				<high value="20140211123000"/>
+				<high value="20140211123000"/> <!-- Failure a-cms_0121-error UTC Timezone offset must be present if it is present anywhere else. -->
 			</effectiveTime>
 		</encompassingEncounter>
 	</componentOf>

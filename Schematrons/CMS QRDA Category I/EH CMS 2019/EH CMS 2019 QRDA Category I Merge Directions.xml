@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
     
-<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="false" summaryOnly="true" doValidation="true" stopOnError="false">
+<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" summaryOnly="false" applyXSD="true" doValidation="true" stopOnError="false">
  
     <title>EH CMS 2019 QRDA Category I</title>
     <version>1.0</version>

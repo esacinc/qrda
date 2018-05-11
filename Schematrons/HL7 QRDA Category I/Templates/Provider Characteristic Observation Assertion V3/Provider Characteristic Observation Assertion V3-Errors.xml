@@ -61,7 +61,7 @@
         <!-- <id root="2.16.840.1.113883.4.6" /> --> 
         <!-- Failure a-3343-28220-warning This participantRole SHOULD contain zero or one [0..1] code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy (HIPAA) urn:oid:2.16.840.1.114222.4.11.1066 (CONF:3343-28220).-->
         <code code="207QA0505X" displayName="Adult Medicine" codeSystemName="Healthcare Provider Taxonomy"/>
-        <code code="207QA0505X" displayName="Adult Medicine" codeSystemName="Healthcare Provider Taxonomy"/> <!-- Only zero or one code should be herer -->
+        <code code="207QA0505X" displayName="Adult Medicine" codeSystemName="Healthcare Provider Taxonomy"/> <!-- Only zero or one code should be here -->
         <code></code>
       </participantRole>
     </participant>

@@ -5,17 +5,17 @@
     <title>HL7 QRDA 1 STU 4 generated schematron</title>
    
     <generatedFilename>
-        c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category I/STU 4/Published/HL7 QRDA Category I STU 4.sch
+        c:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category I/STU 4/Published/HL7 QRDA Category I STU 4.sch
     </generatedFilename>
     <finalTestFilename>
-        c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category I/STU 4/TestFiles/GOOD_CDAR2_QRDA_I_STU4.xml 
+        c:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category I/STU 4/TestFiles/GOOD_CDAR2_QRDA_I_STU4.xml 
     </finalTestFilename>
     <fileHeader>HL7 QRDA I STU 4 generated schematron.</fileHeader>
-    <mergeReportFilename> c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category I/STU 4/mergeReport.txt</mergeReportFilename>
+    <mergeReportFilename> c:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category I/STU 4/mergeReport.txt</mergeReportFilename>
     
     <!-- All schematrons expected to be under a single main directory -->
     <sourceMainDirectory>
-        c:/Development/qrdaGit/qrda/Schematrons/
+        c:/Development/QRDA-git/qrda/Schematrons/
     </sourceMainDirectory>
     
     <!-- Specify the schematrons to use in the merge below, separated by the templates found in each fo the source directories listed. -->
@@ -23,20 +23,166 @@
     <!--    selector='all' means use all the schematron subdirectories found under directoryName, except for those listed in the 'exclude' tags. -->
     <!--    selector='some' means only use the directoryName subdirectories listed in the 'include' tags --> 
 
-    <sourceDirectory selector='all'>  
+    <!--  Changed below from selector='all' with exclusions to selector='some' with inclusions, since new versions to template schematrons are now present. 
+          Supporting https://oncprojectracking.healthit.gov/support/browse/QRDA-692   and  https://tracker.esacinc.com/browse/QRDA-425 
+    -->
+    <sourceDirectory selector='some'>  
         <directoryName>HL7 QRDA Category I/Templates/</directoryName>
-        <exclude>Assessment Scale Observation</exclude> 
-		<exclude>Assessment Scale Supporting Observation</exclude>
-        <exclude>Diagnosis Concern Act</exclude>
-        <exclude>Fulfills</exclude>
-        <exclude>Functional Status Order V3</exclude>
-        <exclude>Functional Status Performed V3</exclude>
-        <exclude>Functional Status Recommended V3</exclude>
-        <exclude>Patient Data Section QDM V3</exclude>
-        <exclude>QDM Based QRDA V3</exclude>
-        <exclude>Risk Category Assessment V3</exclude>
-        <exclude>Symptom Concern Act</exclude>
-        <exclude></exclude>
+        <!-- Document templates -->
+        <include>QDM Based QRDA V4</include>
+        <include>QRDA Category I Framework V3</include>
+        <include>US Realm Header V3</include>
+        <!-- Section templates -->
+        <include>Measure Section</include>
+        <include>Measure Section QDM</include>
+        <include>Patient Data Section</include>
+        <include>Patient Data Section QDM V4</include>
+        <include>Reporting Parameters Section</include>
+        <!-- Entry Templates -->
+        <include>Act Intolerance or Adverse Event Observation V3</include>
+        <include>Age Observation</include>
+        <include>Allergy Intolerance Observation V2</include>
+        <include>Allergy Status Observation</include>
+        <include>Assessment Performed</include>
+        <include>Assessment Recommended</include>
+        <include>Care Goal V3</include>
+        <include>Communication from Patient to Provider V3</include>
+        <include>Communication from Provider to Patient V3</include>
+        <include>Communication from Provider to Provider V3</include>
+        <include>Criticality Observation</include>
+        <include>Deceased Observation V3</include>
+        <include>Device Adverse Event V3</include>
+        <include>Device Allergy V3</include>
+        <include>Device Applied V3</include>
+        <include>Device Intolerance V3</include>
+        <include>Device Order Act</include>
+        <include>Device Order V3</include>
+        <include>Device Recommended Act</include>
+        <include>Device Recommended V3</include>
+        <include>Diagnosis</include>
+        <include>Diagnosis Concern Act V2</include>
+        <include>Diagnostic Study Adverse Event V3</include>
+        <include>Diagnostic Study Intolerance V3</include>
+        <include>Diagnostic Study Order V3</include>
+        <include>Diagnostic Study Performed V3</include>
+        <include>Diagnostic Study Recommended V3</include>
+        <include>Discharge Medication V3</include>
+        <include>Drug Monitoring Act</include>
+        <include>Drug Vehicle</include>
+        <include>eMeasure Reference QDM</include>
+        <include>Encounter Active V3</include>
+        <include>Encounter Activity V3</include>
+        <include>Encounter Diagnosis V3</include>
+        <include>Encounter Order Act</include>
+        <include>Encounter Order V3</include>
+        <include>Encounter Performed Act</include>
+        <include>Encounter Performed V3</include>
+        <include>Encounter Recommended Act</include>
+        <include>Encounter Recommended V3</include>
+        <include>Entry Reference</include>
+        <include>External Document Reference</include>
+        <include>Family History Death Observation</include>
+        <include>Family History Observation QDM V2</include>
+        <include>Family History Observation V3</include>
+        <include>Family History Organizer QDM V3</include>
+        <include>Family History Organizer V3</include>
+        <include>Goal Observation</include>
+        <include>Immunization Activity V2</include>
+        <include>Immunization Administered</include>
+        <include>Immunization Medication Information V2</include>
+        <include>Immunization Order</include>
+        <include>Immunization Refusal Reason</include>
+        <include>Incision Datetime</include>
+        <include>Indication V2</include>
+        <include>Instruction V2</include>
+        <include>Intervention Adverse Event V3</include>
+        <include>Intervention Intolerance V3</include>
+        <include>Intervention Order V3</include>
+        <include>Intervention Performed V3</include>
+        <include>Intervention Recommended V3</include>
+        <include>Laboratory Test Adverse Event V3</include>
+        <include>Laboratory Test Intolerance V3</include>
+        <include>Laboratory Test Order V3</include>
+        <include>Laboratory Test Performed V3</include>
+        <include>Laboratory Test Recommended V3</include>
+        <include>Measure Reference</include>
+        <include>Medication Active V3</include>
+        <include>Medication Activity V2</include>
+        <include>Medication Administered V3</include>
+        <include>Medication Adverse Effect V3</include>
+        <include>Medication Allergy V3</include>
+        <include>Medication Dispense V2</include>
+        <include>Medication Dispensed Act</include>
+        <include>Medication Dispensed V3</include>
+        <include>Medication Free Text Sig</include>
+        <include>Medication Information V2</include>
+        <include>Medication Intolerance V3</include>
+        <include>Medication Order V3</include>
+        <include>Medication Supply Order V2</include>
+        <include>Medication Supply Request V2</include>
+        <include>Patient Care Experience V3</include>
+        <include>Patient Characteristic Clinical Trial Participant V3</include>
+        <include>Patient Characteristic Expired V3</include>
+        <include>Patient Characteristic Observation Assertion V3</include>
+        <include>Patient Characteristic Payer</include>
+        <include>Physical Exam Order V3</include>
+        <include>Physical Exam Performed V3</include>
+        <include>Physical Exam Recommended V3</include>
+        <include>Planned Act V2</include>
+        <include>Planned Coverage</include>
+        <include>Planned Encounter V2</include>
+        <include>Planned Immunization Activity</include>
+        <include>Planned Medication Activity V2</include>
+        <include>Planned Observation V2</include>
+        <include>Planned Procedure V2</include>
+        <include>Planned Supply V2</include>
+        <include>Precondition for Substance Administration V2</include>
+        <include>Priority Preference</include>
+        <include>Problem Concern Act V3</include>
+        <include>Problem Observation V3</include>
+        <include>Problem Status</include>
+        <include>Procedure Activity Act V2</include>
+        <include>Procedure Activity Observation V2</include>
+        <include>Procedure Activity Procedure V2</include>
+        <include>Procedure Adverse Event V3</include>
+        <include>Procedure Intolerance V3</include>
+        <include>Procedure Order V3</include>
+        <include>Procedure Performed V3</include>
+        <include>Procedure Recommended V3</include>
+        <include>Product Instance</include>
+        <include>Prognosis Observation</include>
+        <include>Provider Care Experience V3</include>
+        <include>Provider Characteristic Observation Assertion V2</include>
+        <include>Radiation Dosage and Duration V2</include>
+        <include>Reaction Observation V2</include>
+        <include>Reaction V2</include>
+        <include>Reason V2</include>
+        <include>Reporting Parameters Act</include>
+        <include>Result Observation V3</include>
+        <include>Result V3</include>
+        <include>Service Delivery Location</include>
+        <include>Severity Observation V2</include>
+        <include>Status</include>
+        <include>Substance Administered Act</include>
+        <include>Substance or Device Allergy - Intolerance Observation V2</include>
+        <include>Substance Recommended V3</include>
+        <include>Symptom</include>
+        <include>Symptom Concern Act V2</include>
+        <include>Target Outcome</include>
+        <include>Transfer From Act</include>
+        <include>Transfer From V3</include>
+        <include>Transfer To Act</include>
+        <include>Transfer To V3</include>
+        <!-- Subentry Templates -->
+        <include>Facility Location</include>
+        <include>Fulfills V2</include>
+        <!-- Other templates -->
+        <include>Author Participation</include>
+        <include>US Realm Address</include>
+        <include>US Realm Date and Time</include>
+        <include>US Realm Patient Name</include>
+        <include>US Realm Person Name</include>
+        
     </sourceDirectory>
 
 </mergeProfile>

@@ -4,6 +4,9 @@
     Title: Medication Activity V2 minimal file with errors 	
     Author: Dan Donahue
     Date: 03-07-2017
+    Update: 05-16-2018 Removed valueSet guidance text from a-1098-7514-warning 
+            JIRA:  https://tracker.esacinc.com/browse/QRDA-427
+    Update: 06-05-2018  New conformance test for a-1098-7514-warning per TJC: https://tracker.esacinc.com/browse/QRDA-429 
 
     Total Errors Expected: 13
 	        Failure a-1098-7496-error SHALL contain exactly one [1..1] @classCode="SBADM" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-7496).
@@ -28,7 +31,7 @@
 					                    SHALL contain exactly one [1..1] @operator="A" (CONF:1098-9106).
 					                    SHALL contain exactly one [1..1] @xsi:type="PIVL_TS" or "EIVL_TS" (CONF:1098-28499).
 			Failure a-1098-7526-warning doseQuantity SHOULD contain zero or one [0..1] @unit, which SHALL be selected from ValueSet UnitsOfMeasureCaseSensitive urn:oid:2.16.840.1.113883.1.11.12839 DYNAMIC (CONF:1098-7526).
-			Failure a-1098-7514-warning SHOULD contain zero or one [0..1] routeCode, which SHALL be selected from ValueSet Medication Route FDA urn:oid:2.16.840.1.113883.3.88.12.3221.8.7 DYNAMIC (CONF:1098-7514).
+			Failure a-1098-7514-warning SHOULD contain zero or one [0..1] routeCode (CONF:1098-7514).
 			Failure a-1098-31150-warning SHOULD contain zero or more [0..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-31150).
 			Failure a-1098-30800-warning SHOULD include doseQuantity OR rateQuantity (CONF:1098-30800). Not tested
 

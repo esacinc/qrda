@@ -4,6 +4,7 @@
     Title: Medication Activity V2 minimal file with errors for a-1098-30800 	
     Author: Dan Donahue
     Date: 03-07-2017
+    Update: 06-05-2018  New conformance test for a-1098-7514-warning per TJC: https://tracker.esacinc.com/browse/QRDA-429 
 
     Total Errors Expected: 1
             Failure a-1098-7516-error SHALL contain exactly one [1..1] doseQuantity (CONF:1098-7516).

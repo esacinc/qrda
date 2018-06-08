@@ -96,13 +96,13 @@ public class SchematronCategoryServiceImpl extends CommonUtilsImpl implements Sc
 		// Create an initial list of schematron category objects corresponding to known schematron types we support. These can be edited later.
 		// This list will be serialized to disc for loading during runtime.
 		List<SchematronCategory> cats = new ArrayList<SchematronCategory>();
-		SchematronCategory next = new SchematronCategory("HL7","HL7 QRDA");
+		SchematronCategory next = new SchematronCategory("HL7 QRDA I","HL7 QRDA I");
 		cats.add(next);
-		next = new SchematronCategory("CEC","CMS CEC QRDA");
+		next = new SchematronCategory("CMS QRDA I","CMS QRDA I");
 		cats.add(next);
-		next = new SchematronCategory("HQR","CMS HQR QRDA");
+		next = new SchematronCategory("HL7 QRDA III","HL7 QRDA III");
 		cats.add(next);
-		next = new SchematronCategory("PQRS","CMS PQRS QRDA");
+		next = new SchematronCategory("CMS QRDA III","CMS QRDA III");
 		cats.add(next);
 		this.save(cats);
 		return cats;

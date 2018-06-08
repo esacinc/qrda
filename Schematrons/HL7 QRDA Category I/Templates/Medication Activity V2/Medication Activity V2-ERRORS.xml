@@ -6,7 +6,8 @@
     Date: 03-07-2017
     Update: 05-16-2018 Removed valueSet guidance text from a-1098-7514-warning 
             JIRA:  https://tracker.esacinc.com/browse/QRDA-427
-    Update: 06-05-2018  New conformance test for a-1098-7514-warning per TJC: https://tracker.esacinc.com/browse/QRDA-429 
+    Update: 06-05-2018  New conformance test for a-1098-7514-warning per TJC
+            JIRA: https://tracker.esacinc.com/browse/QRDA-429 
 
     Total Errors Expected: 13
 	        Failure a-1098-7496-error SHALL contain exactly one [1..1] @classCode="SBADM" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1098-7496).
@@ -26,98 +27,104 @@
 			Failure a-1098-31882-error precondition, if present, SHALL contain exactly one [1..1] @typeCode="PRCN" (CONF:1098-31882).
 			Failure a-1098-31883-error precondition, if present, SHALL contain exactly one [1..1] Precondition for Substance Administration (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.25:2014-06-09) (CONF:1098-31883).
 
-	Total Warnings Expected: 4
+	Total Warnings Expected: 3
 			Failure a-1098-7513-warning SHOULD contain zero or one [0..1] effectiveTime (CONF:1098-7513) such that it
 					                    SHALL contain exactly one [1..1] @operator="A" (CONF:1098-9106).
 					                    SHALL contain exactly one [1..1] @xsi:type="PIVL_TS" or "EIVL_TS" (CONF:1098-28499).
 			Failure a-1098-7526-warning doseQuantity SHOULD contain zero or one [0..1] @unit, which SHALL be selected from ValueSet UnitsOfMeasureCaseSensitive urn:oid:2.16.840.1.113883.1.11.12839 DYNAMIC (CONF:1098-7526).
-			Failure a-1098-7514-warning SHOULD contain zero or one [0..1] routeCode (CONF:1098-7514).
 			Failure a-1098-31150-warning SHOULD contain zero or more [0..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-31150).
-			Failure a-1098-30800-warning SHOULD include doseQuantity OR rateQuantity (CONF:1098-30800). Not tested
+			Not triggered: Failure a-1098-30800-warning SHOULD include doseQuantity OR rateQuantity (CONF:1098-30800). 
+			Not triggered; Failure a-1098-7514-warning SHOULD contain zero or one [0..1] routeCode, but only if parent act has no negationInd or negationInd="false" (CONF:1098-7514).  See below.
 
 -->
 
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
-
-	<!--  Failure a-1098-7496-error missing or bad classCode, Failure a-1098-7497-v-error missing or bad moodCode -->
-	<substanceAdministration classCodeErr="SBADM" moodCode="EVNErr">
-		<!-- Conforms to C-CDA R2 Medication Activity (V2) -->
-		<templateId root="2.16.840.1.113883.10.20.22.4.16" extension="2014-06-09"/>
-		<!-- Failure a-1098-7499-error multiple main templateId -->
-		<templateId root="2.16.840.1.113883.10.20.22.4.16" extension="2014-06-09"/>
-		<!-- Updated extension for new CDA rule changes -->
-		<templateId root="2.16.840.1.113883.10.20.24.3.41" extension="2016-02-01"/>
-		<!-- Failure a-1098-7500-error missing id -->
-		<!-- <id root="c0ea7bf3-50e7-4e7a-83a3-e5a9ccbb8541"/> -->
-		<statusCode code="active"/>
-		<!-- Failure a-1098-7507-error missing or multiple statusCode -->
-		<!-- Failure a-1098-32360-error statusCode missing or bad code in statusCode -->
-		<statusCode />
-		<!-- Failure a-1098-7525-error  if rateQuantity, missing or bad unit-->
-		<rateQuantity/>
-		<!-- Failure a-1098-7508-error effectiveTime with both a value and low -->
-		<effectiveTime xsi:type="IVL_TS" value="00000">
-			<!-- QDM Attribute: Start datetime -->
-			<low value="20110301" />
-			<!-- QDM Attribute: Stop datetime -->
-			<high value="20120301" />
-		</effectiveTime>
-		<!-- Failure a-1098-7513-warning should have effectiveTime with operator="A" and xsi:type="PIVL_TS" or "EIVL_TS" -->
-		<!-- <effectiveTime xsi:type="PIVL_TS" institutionSpecified="true" operator="AErr">
-			<period value="12" unit="h"/>
-		</effectiveTime>
-		-->
-		<!-- Failure a-1098-31150-warning should contain authorParticipation -->
-		<!--
-		<author>
-			<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
-		</author>
-		-->
-		<!-- Failure a-1098-7514-warning should containt routeCode -->
-		<!-- <routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" displayName="ORAL" sdtc:valueSet="1.2.9999"/> -->
-		<doseQuantity value="1" unit="ml"/>
-		<!-- Failure a-1098-7516-error missing or multiple doseQuantity -->
-		<!-- Failure a-1098-7526-warning doseQuantity should containt unit -->
-		<doseQuantity value="1" unitErr="ml"/>
-		<consumable>
-			<manufacturedProduct classCode="MANU">
-				<!-- Conforms to C-CDA R2 Medication Information (V2) -->
-				<templateId root="2.16.840.1.113883.10.20.22.4.23" extension="2014-06-09"/>
-				<id root="37bfe02a-3e97-4bd6-9197-bbd0ed0de79e"/>
-				<manufacturedMaterial>
-					<code code="105152" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" displayName="Amoxicillin 60 MG/ML Oral Suspension" sdtc:valueSet="2.16.840.1.113883.3.464.1003.196.12.1001"/>
-				</manufacturedMaterial>
-			</manufacturedProduct>
-		</consumable>
-		<!-- Failure a-1098-7520-error missing or multiple consumable -->
-		<consumable>
-			<!-- Failure a-1098-16085-error  missing or multipe  Medication Information (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.23:2014-06-09)-->
-			<manufacturedProduct classCode="MANU">
-				<!-- Conforms to C-CDA R2 Medication Information (V2) -->
-				<templateId root="2.16.840.1.113883.10.20.22.4.23" extension="2014-06-09Err"/>
-				</manufacturedProduct>
-		</consumable>
-		<!-- Failure a-1098-31882-error if precondition, missing or bad typeCode="PRCN"-->
-		<!-- Failure a-1098-31883-error if precondition, missing or multiple Substance Administration (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.25:2014-06-09) -->
-		<precondition></precondition>
-		<!-- QDM Attribute: Patient Preference -->
-		<entryRelationship typeCode="RSON">
-			<observation classCode="OBS" moodCode="EVN">
-				<templateId root="2.16.840.1.113883.10.20.24.3.83" extension="2014-12-01"/>
-				<id root="e3a5f9ac-f97d-4887-95a3-7ee7d9aca16a"/>
-				<code code="77302-8" codeSystem="2.16.840.1.113883.6.1" displayName="Patient preference for care action" codeSystemName="LOINC"/>
-				<value xsi:type="CD" code="105480006" codeSystem="2.16.840.1.113883.6.96" displayName="refusal of treatment by patient" codeSystemName="SNOMED CT" sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.93"/>
-			</observation>
-		</entryRelationship>
-		<!-- QDM Attribute: Provider Preference -->
-		<entryRelationship typeCode="RSON">
-			<observation classCode="OBS" moodCode="EVN">
-				<templateId root="2.16.840.1.113883.10.20.24.3.84" extension="2014-12-01"/>
-				<id root="033afa24-82a2-4298-9dda-dea9e60bf44a"/>
-				<code code="77303-6" codeSystem="2.16.840.1.113883.6.1" displayName="Provider preference for care action" codeSystemName="LOINC"/>
-				<value xsi:type="CD" code="11816003" codeSystem="2.16.840.1.113883.6.96" displayName="diet education" codeSystemName="SNOMED CT" sdtc:valueSet="2.16.840.1.113883.3.464.1003.195.12.1003"/>
-			</observation>
-		</entryRelationship>
-	</substanceAdministration>
+	<entry>
+		<act classCode="ACT" moodCode="EVN" negationInd="true">
+			<entryRelationship typeCode="COMP">
+				
+				<!--  Failure a-1098-7496-error missing or bad classCode, Failure a-1098-7497-v-error missing or bad moodCode -->
+				<substanceAdministration classCodeErr="SBADM" moodCode="EVNErr">
+					<!-- Conforms to C-CDA R2 Medication Activity (V2) -->
+					<templateId root="2.16.840.1.113883.10.20.22.4.16" extension="2014-06-09"/>
+					<!-- Failure a-1098-7499-error multiple main templateId -->
+					<templateId root="2.16.840.1.113883.10.20.22.4.16" extension="2014-06-09"/>
+					<!-- Updated extension for new CDA rule changes -->
+					<templateId root="2.16.840.1.113883.10.20.24.3.41" extension="2016-02-01"/>
+					<!-- Failure a-1098-7500-error missing id -->
+					<!-- <id root="c0ea7bf3-50e7-4e7a-83a3-e5a9ccbb8541"/> -->
+					<statusCode code="active"/>
+					<!-- Failure a-1098-7507-error missing or multiple statusCode -->
+					<!-- Failure a-1098-32360-error statusCode missing or bad code in statusCode -->
+					<statusCode />
+					<!-- Failure a-1098-7525-error  if rateQuantity, missing or bad unit-->
+					<rateQuantity/>
+					<!-- Failure a-1098-7508-error effectiveTime with both a value and low -->
+					<effectiveTime xsi:type="IVL_TS" value="00000">
+						<!-- QDM Attribute: Start datetime -->
+						<low value="20110301" />
+						<!-- QDM Attribute: Stop datetime -->
+						<high value="20120301" />
+					</effectiveTime>
+					<!-- Failure a-1098-7513-warning should have effectiveTime with operator="A" and xsi:type="PIVL_TS" or "EIVL_TS" -->
+					<!-- <effectiveTime xsi:type="PIVL_TS" institutionSpecified="true" operator="AErr">
+						<period value="12" unit="h"/>
+					</effectiveTime>
+					-->
+					<!-- Failure a-1098-31150-warning should contain authorParticipation -->
+					<!--
+					<author>
+						<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+					</author>
+					-->
+					<!-- Failure a-1098-7514-warning should containt routeCode, NOT triggered because parent act has a negationInd="true", so routeCode is not checked. -->
+					<!-- <routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" displayName="ORAL" sdtc:valueSet="1.2.9999"/> -->
+					<doseQuantity value="1" unit="ml"/>
+					<!-- Failure a-1098-7516-error missing or multiple doseQuantity -->
+					<!-- Failure a-1098-7526-warning doseQuantity should containt unit -->
+					<doseQuantity value="1" unitErr="ml"/>
+					<consumable>
+						<manufacturedProduct classCode="MANU">
+							<!-- Conforms to C-CDA R2 Medication Information (V2) -->
+							<templateId root="2.16.840.1.113883.10.20.22.4.23" extension="2014-06-09"/>
+							<id root="37bfe02a-3e97-4bd6-9197-bbd0ed0de79e"/>
+							<manufacturedMaterial>
+								<code code="105152" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" displayName="Amoxicillin 60 MG/ML Oral Suspension" sdtc:valueSet="2.16.840.1.113883.3.464.1003.196.12.1001"/>
+							</manufacturedMaterial>
+						</manufacturedProduct>
+					</consumable>
+					<!-- Failure a-1098-7520-error missing or multiple consumable -->
+					<consumable>
+						<!-- Failure a-1098-16085-error  missing or multipe  Medication Information (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.23:2014-06-09)-->
+						<manufacturedProduct classCode="MANU">
+							<!-- Conforms to C-CDA R2 Medication Information (V2) -->
+							<templateId root="2.16.840.1.113883.10.20.22.4.23" extension="2014-06-09Err"/>
+							</manufacturedProduct>
+					</consumable>
+					<!-- Failure a-1098-31882-error if precondition, missing or bad typeCode="PRCN"-->
+					<!-- Failure a-1098-31883-error if precondition, missing or multiple Substance Administration (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.25:2014-06-09) -->
+					<precondition></precondition>
+					<!-- QDM Attribute: Patient Preference -->
+					<entryRelationship typeCode="RSON">
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.24.3.83" extension="2014-12-01"/>
+							<id root="e3a5f9ac-f97d-4887-95a3-7ee7d9aca16a"/>
+							<code code="77302-8" codeSystem="2.16.840.1.113883.6.1" displayName="Patient preference for care action" codeSystemName="LOINC"/>
+							<value xsi:type="CD" code="105480006" codeSystem="2.16.840.1.113883.6.96" displayName="refusal of treatment by patient" codeSystemName="SNOMED CT" sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.93"/>
+						</observation>
+					</entryRelationship>
+					<!-- QDM Attribute: Provider Preference -->
+					<entryRelationship typeCode="RSON">
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.24.3.84" extension="2014-12-01"/>
+							<id root="033afa24-82a2-4298-9dda-dea9e60bf44a"/>
+							<code code="77303-6" codeSystem="2.16.840.1.113883.6.1" displayName="Provider preference for care action" codeSystemName="LOINC"/>
+							<value xsi:type="CD" code="11816003" codeSystem="2.16.840.1.113883.6.96" displayName="diet education" codeSystemName="SNOMED CT" sdtc:valueSet="2.16.840.1.113883.3.464.1003.195.12.1003"/>
+						</observation>
+					</entryRelationship>
+				</substanceAdministration>
+			</entryRelationship>
+		</act>
+	</entry>
 
 </ClinicalDocument>

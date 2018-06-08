@@ -46,8 +46,8 @@
             <sch:assert id="a-1198-15971-warning" test="@value">The reference, if present, SHOULD contain zero or one [0..1] @value (CONF:1198-15971). </sch:assert>
         </sch:rule>
         <sch:rule id="Encounter-Activity-dischargeDispositionCode-warnings" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.49'][@extension='2015-08-01']]/sdtc:dischargeDispositionCode">
-            <sch:assert id="a-1198-32177-warning" test="count(@code)=1">This sdtc:dischargeDispositionCode SHOULD contain exactly [1..1] @code, which SHOULD be selected from ValueSet 2.16.840.1.113883.3.88.12.80.33 NUBC UB-04 FL17-Patient Status (code system 2.16.840.1.113883.6.301.5) DYNAMIC or, if access to NUBC is unavailable, from CodeSystem 2.16.840.1.113883.12.112 HL7 Discharge Disposition (CONF:1198-32177).  </sch:assert>
-            <sch:assert id="a-1198-32377-warning" test="count(@codeSystem)=1">This sdtc:dischargeDispositionCode SHOULD contain exactly [1..1] @codeSystem, which SHOULD be either CodeSystem: NUBC 2.16.840.1.113883.6.301.5 OR CodeSystem: HL7 Discharge Disposition 2.16.840.1.113883.12.112 (CONF:1198-32377). </sch:assert>
+            <sch:assert id="a-1198-32177-warning" test="count(@code)=1">This sdtc:dischargeDispositionCode SHOULD contain exactly [1..1] @code(CONF:1198-32177).  </sch:assert>
+            <sch:assert id="a-1198-32377-warning" test="count(@codeSystem)=1">This sdtc:dischargeDispositionCode SHOULD contain exactly [1..1] @codeSystem (CONF:1198-32377). </sch:assert>
         </sch:rule>        
     </sch:pattern>
     

@@ -5,6 +5,8 @@
     Author: Dan Donahue
     Date:   03-13-2017
     Update: 04-23-2018 Test file unchanged, but schematron 1198032177, 1198-32377 fixed, re: https://oncprojectracking.healthit.gov/support/projects/QRDA/issues/QRDA-686
+    Update: 05-16-2018 Removed valueSet guidance text from a-1198-32177-warning and  a-1198-32377-warning
+            JIRA:  https://tracker.esacinc.com/browse/QRDA-428
     
     Total Errors Expected: 8
         Failure a-1198-8710-error SHALL contain exactly one [1..1] @classCode="ENC" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1198-8710). 
@@ -21,8 +23,8 @@
         Failure a-1198-8719-warning code SHOULD contain zero or one [0..1] originalText (CONF:1198-8719).  
         Failure a-1198-15970-warning The originalText, if present, SHOULD contain zero or one [0..1] reference (CONF:1198-15970). 
         Failure a-1198-15971-warning The reference, if present, SHOULD contain zero or one [0..1] @value (CONF:1198-15971). 
-        Failure a-1198-32177-warning sdtc:dischargeDispositionCode SHOULD contain exactly [1..1] @code, which SHOULD be selected from ValueSet 2.16.840.1.113883.3.88.12.80.33 NUBC UB-04 FL17-Patient Status (code system 2.16.840.1.113883.6.301.5) DYNAMIC or, if access to NUBC is unavailable, from CodeSystem 2.16.840.1.113883.12.112 HL7 Discharge Disposition (CONF:1198-32177).  
-        Failure a-1198-32377-warning sdtc:dischargeDispositionCode SHOULD contain exactly [1..1] @codeSystem, which SHOULD be either CodeSystem: NUBC 2.16.840.1.113883.6.301.5 OR CodeSystem: HL7 Discharge Disposition 2.16.840.1.113883.12.112 (CONF:1198-32377). 
+        Failure a-1198-32177-warning sdtc:dischargeDispositionCode SHOULD contain exactly [1..1] @code (CONF:1198-32177).  
+        Failure a-1198-32377-warning sdtc:dischargeDispositionCode SHOULD contain exactly [1..1] @codeSystem (CONF:1198-32377). 
 
 -->
 

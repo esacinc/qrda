@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!--
+		Measure Reference and Results CMS V2 Minimal sample file with errors
+        Author: Dan Donahue
+        Date:   06-05-2018
+		
+		Total Errors Expected: 3
+ 			Failure a-CMS_71-error SHALL contain exactly one [1..1] templateId (CONF:CMS_71) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.20.3.1" (CONF:CMS_72). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_73). 
+			Failure a-CMS_74-error SHALL contain exactly one [1..1] component (CONF:CMS_74).
+            Failure a-CMS_75-error This component SHALL contain exactly one [1..1] Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_75). 
+           
+    	Total Warnings Expected: 0
+	-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
+	<component>
+		<structuredBody>
+			<organizer classCode="CLUSTER" moodCode="EVN">
+				<!-- Improvement Activity Performed Reference and Results -->
+				<templateId root="2.16.840.1.113883.10.20.27.3.33" extension="2016-09-01"/>
+				<!-- Improvement Activity Performed Reference and Results CMS -->
+				<templateId root="2.16.840.1.113883.3.249.20.3.1" extension="2018-05-01"/>
+				<!-- Failure a-CMS_71-error Multiple main template id -->
+				<templateId root="2.16.840.1.113883.3.249.20.3.1" extension="2018-05-01"/>
+				<!-- ... -->
+				<component>
+					<entry>
+						<act>
+							<!--  Reporting Parameters Act -->
+							<templateId root="2.16.840.1.113883.10.20.17.3.8" />
+						</act>
+					</entry>
+				</component>
+				<!-- Failure a-CMS_74-error SHALL contain exactly one [1..1] component (CONF:CMS_74). -->
+				<!-- Failure a-CMS_75-error This component SHALL contain exactly one [1..1] Reporting Parameters Act -->
+				<component>
+					<entry>
+						<act>
+							<!--  Reporting Parameters Act -->
+							<templateId root="2.16.840.1.113883.10.20.17.3.8Err" />  <!-- Improper uid for Reporting Parameters Act -->
+						</act>
+					</entry>
+				</component>
+			</organizer>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

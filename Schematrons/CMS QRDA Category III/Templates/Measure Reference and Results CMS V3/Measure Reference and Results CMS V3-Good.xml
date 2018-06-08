@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!--
+		Measure Reference and Results CMS V2 Minimal sample
+        Author: Dan Donahue
+        Date:   11-04-2016
+		
+		Total Errors Expected: 0
+     	Total Warnings Expected: 0
+	-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
+	<organizer classCode="CLUSTER" moodCode="EVN">
+		<!-- Measure Reference template ID -->
+		<templateId root="2.16.840.1.113883.10.20.24.3.98" />
+		<!-- Measure Reference and Results (V3) template ID -->
+		<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2016-09-01"/>
+			<!-- Measure Reference and Results - CMS (V2) template ID -->
+			<templateId root="2.16.840.1.113883.10.20.27.3.17" extension="2016-11-01"/>
+				<statusCode code="completed" />
+				<reference typeCode="REFR">
+					<externalDocument classCode="DOC" moodCode="EVN">
+						<!-- This is the version-specific identifier for eMeasure -->
+						<id root="2.16.840.1.113883.4.738" 
+							extension="40280381-3d61-56a7-013e-66a5a5834990"/>
+						<code code="57024-2" 
+							displayName="Health Quality Measure Document" 
+							codeSystemName="LOINC"
+							codeSystem="2.16.840.1.113883.6.1" />
+						<!--  This is the title of the eMeasure -->
+						<text>Breast Cancer Screening</text>
+					</externalDocument>
+				</reference>
+				<component>
+					<!-- Performance Rate for Proportion Measure - CMS (V2) -->
+					<observation classCode="OBS" moodCode="EVN">
+						<templateId root="2.16.840.1.113883.10.20.27.3.16" extension="2016-11-01"/>
+					</observation>
+				</component>
+	</organizer>
+	
+</ClinicalDocument>

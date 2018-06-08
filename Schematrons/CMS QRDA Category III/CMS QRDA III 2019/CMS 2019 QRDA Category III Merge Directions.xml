@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    
+<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="true" >
+ 
+    <title>CMS 2019 QRDA Category III</title>
+    <version>1.0</version>
+    
+     <generatedFilename>
+         c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Published/CMS 2019 QRDA Category III.sch
+    </generatedFilename>
+    
+    <finalTestFilename>
+        c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/TestFiles/EC_MU_GROUP_Sample_QRDA_III_Informative.xml
+    </finalTestFilename>
+    
+    <fileHeader>
+    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+    THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+    IN NO EVENT SHALL ESAC INC., OR ANY OF THEIR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+    GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+    THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+            
+    
+	
+    </fileHeader>
+    
+    <errorsHeader>ERROR Patterns and Assertions</errorsHeader>
+    <warningsHeader>WARNING Patterns and Assertions</warningsHeader>
+    
+    <mergeReportFilename>c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/mergeReport.txt</mergeReportFilename>
+    
+    <vocabFilename>c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/Vocabulary/voc.xml</vocabFilename>
+    
+    <!-- All schematrons expected to be under a single main directory -->
+    <sourceMainDirectory>c:/Development/QRDA-git/qrda/Schematrons/</sourceMainDirectory>
+    
+    <!-- Specify the schematrons to use in the merge below, separated by the templates found in each of the source directories listed. -->
+    <!--    Note that the directoryName tags refer to directories relative to the sourceMainDirectory tag, above. -->
+    <!--    selector='all' means use all the schematron subdirectories found under directoryName, except for those listed in the 'exclude' tags. -->
+    <!--    selector='some' means only use the directoryName subdirectories listed in the 'include' tags --> 
+ 
+    <sourceDirectory selector='some'> 
+        <directoryName>CMS QRDA Category III/Templates</directoryName>
+            <!-- Document level templates -->
+                <include>QRDA Category III Report CMS V3</include>                                  <!-- updated from V2 -->
+            <!-- Section level templates -->
+                <include>QRDA Category III Measure Section CMS V3</include>                         <!-- updated from V2 -->
+                <!-- ?  --><include>Improvement Activity Section CMS</include>                      <!-- New for 2019 -->
+            <!-- Entry level templates -->
+                <include>Improvement Activity Performed Measure Reference and Results CMS</include> <!-- New for 2019 -->
+                <include>Measure Data CMS V3</include>                                              <!-- updated from V2 -->
+                <include>Measure Reference and Results CMS V3</include>                             <!-- updated from V2 -->
+                <include>Payer Supplemental Data Element CMS V3</include>                           <!-- updated from V2 -->
+                <include>Performance Rate for Proportion Measure CMS V3</include>                   <!-- updated from V2 -->
+                <include>CMS Datatype Validations</include>
+                <!-- <include>Aggregate Count CMS</include>  Removed for 2019 -->
+                <!-- <include>Continuous Variable Measure Value CMS</include> Removed for 2019 -->
+                <!-- <include>Ethnicity Supplemental Data Element CMS V2</include> Removed for 2019 -->
+                <!-- <include>Race Supplemental Data Element CMS V2</include> Removed for 2019 -->
+                <!-- <include>Reporting Stratum CMS</include>Removed for 2019 -->
+                <!-- <include>Sex Supplemental Data Element CMS V2</include> Removed for 2019 -->
+                
+    </sourceDirectory>
+    
+    <sourceDirectory selector='some'> 
+        <directoryName>HL7 QRDA Category III/Templates</directoryName>
+            <!-- Document level templates -->
+                <include>QRDA Category III Report V4</include>
+            <!-- Section level templates -->
+                <include>Improvement Activity Section V2</include>
+                <include>Promoting Interoperability Section V2</include> <!-- Cloned from Advancing Care Information Section V2 -->
+                <include>QRDA Category III Measure Section V4</include>
+                <include>QRDA Category III Reporting Parameters Section</include>
+            <!-- Entry level templates -->
+                <include>Aggregate Count</include>
+                <include>Continuous Variable Measure Value</include>
+                <include>Ethnicity Supplemental Data Element V2</include>
+                <include>Improvement Activity Performed Measure Reference and Results</include>
+                <include>Measure Data V3</include>
+                <include>Measure Performed</include>
+                <include>Measure Reference</include>
+                <include>Measure Reference and Results V3</include>
+                <include>Payer Supplemental Data Element V2</include>
+                <include>Performance Rate</include>
+                <include>Performance Rate for Proportion Measure V2</include>
+                <include>Postal Code Supplemental Data Element V2</include>
+                <include>Promoting Interoperability Measure Performed Measure Reference and Results</include>             <!-- Cloned from ACI Measure Performed Measure Reference and Results-->
+                <include>Promoting Interoperability Numerator Denominator Type Measure Denominator Data</include>         <!-- Cloned from ACI Numerator Denominator Type Measure Denominator Data -->
+                <include>Promoting Interoperability Numerator Denominator Type Measure Numerator Data</include>           <!-- Cloned from ACI Numerator Denominator Type Measure Numerator Data -->
+                <include>Promoting Interoperability Numerator Denominator Type Measure Reference and Results V2</include> <!-- Cloned from ACI Numerator Denominator Type Measure Reference and Results V2 -->
+                <include>Race Supplemental Data Element V2</include>
+                <include>Reporting Rate for Proportion Measure</include>
+                <include>Reporting Stratum</include>
+                <include>Service Encounter</include>
+                <include>Sex Supplemental Data Element V3</include>
+    </sourceDirectory>
+
+    <sourceDirectory selector='some'> 
+         <directoryName>HL7 QRDA Category I/Templates</directoryName>
+             <include>Measure Section</include>
+             <include>Reporting Parameters Section</include>
+             <include>Reporting Parameters Act</include>
+    </sourceDirectory>
+    
+
+</mergeProfile>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title: Measure Data CMS V3, Minimal sample
+    Author: Dan Donahue
+    Date:   05-24-2018
+    
+    Total Errors Expected: 0
+    Total Warnings Expected: 0
+-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
+	<observation classCode="OBS" moodCode="EVN">
+		<!-- Measure Data - CMS (V3) template ID -->
+		<templateId root="2.16.840.1.113883.10.20.27.3.16" extension="2018-05-01"/>
+
+		<!-- Payer Supplemental Data Element - CMS (V3)-->
+		<entryRelationship typeCode="COMP">
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.27.3.18" extension="2018-05-01" />
+				<!-- ... -->
+			</observation>
+		</entryRelationship>
+		<!-- Sex Supplemental Data Element - CMS (V3)-->
+		<entryRelationship typeCode="COMP">
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.27.3.6" extension="2016-09-01" />
+					<!-- ... -->
+			</observation>
+		</entryRelationship>
+		<!-- RaceSupplemental Data Element - CMS (V2)-->
+		<entryRelationship typeCode="COMP">
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01" />
+				<!-- ... -->
+			</observation>
+		</entryRelationship>
+		<!--  Ethnicity Supplemental Data Element (V2) -->
+		<entryRelationship typeCode="COMP">
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.27.3.7" extension="2016-09-01" />
+				<!-- ... -->
+			</observation>
+		</entryRelationship>
+		
+		<entryRelationship typeCode="DRIV">
+			<act classCode="ACT" moodCode="EVN">
+				<!-- This is the templateId for Reporting Parameters Act -->
+				<templateId root="2.16.840.1.113883.10.20.17.3.8" />
+				<!-- Reporting Parameters Act CMS -->
+				<!-- ... -->
+			</act>
+		</entryRelationship>
+	</observation>
+</ClinicalDocument>

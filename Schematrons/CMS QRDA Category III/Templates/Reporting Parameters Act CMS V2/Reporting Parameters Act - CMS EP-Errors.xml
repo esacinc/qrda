@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!--
+	Title: Reporting Parameters Act - CMS (V2)
+	Author: Maya Zuhl
+    Date:   11-04-2016
+-->
+<!--
+	Errors added to test Reporting Parameters Act - CMS (V2) template schematron error assertions - Maya Zuhl
+    Total Errors Expected: 12
+		Failure a-2233-3269-error Wrong classCode
+		Failure a-2233-3270-error Wrong moodCode
+		Failure a-2233-711272-error Multiple templateId
+		Failure a-2233-18098-error Multiple templateId
+		Failure a-2233-3272-error Multiple code
+		Failure a-2233-26550-error Wrong code
+		Failure a-2233-26551-error Wrong codeSystem
+		Failure a-2233-3273-error Multiple effectiveTime
+		Failure a-2233-3274-error Multiple low
+		Failure a-2233-71292-error Wrong value
+		Failure a-2233-3275-error Multiple high
+		Failure a-2233-711293-error Wrong value
+	Total Warnings Expected: 0
+-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
+	<section>
+		<component>
+			<structuredBody>
+				<entry>
+					<act classCode="ACTERR" moodCode="EVNERR"> <!--Failure a-2233-3269-error Wrong classCode, Failure a-2233-3270-error Wrong moodCode -->
+						<templateId root="2.16.840.1.113883.10.20.27.3.23" extension="2016-11-01"/>
+						<templateId root="2.16.840.1.113883.10.20.27.3.23" extension="2016-11-01"/> <!--Failure a-2233-711272-error Multiple templateId-->
+						<templateId root="2.16.840.1.113883.10.20.17.3.8"/>
+						<templateId root="2.16.840.1.113883.10.20.17.3.8"/> <!-- Failure a-2233-18098-error Multiple templateId -->
+						<id root="95944FB8-241B-11E5-1027-09173F13E4C5"/>
+						<code code="252116004"
+								codeSystem="2.16.840.1.113883.6.96"
+								displayName="Observation Parameters"/>
+						<code code="250000000"
+								codeSystem="2.16.840.1.113883.0.0.0.0"
+								displayName="Observation Parameters"/> <!-- Failure a-2233-3272-error Multiple code, Failure a-2233-26550-error Wrong code, Failure a-2233-26551-error Wrong codeSystem -->
+						<effectiveTime>
+							<low value="20170101"/>
+							<high value="20171231"/>
+						</effectiveTime>
+						<effectiveTime><!-- Failure a-2233-3273-error Multiple effectiveTime -->
+							<low value="20170101"/>
+							<low value="20170130"/> <!-- Failure a-2233-3274-error Multiple low, Failure a-2233-71292-error Wrong value -->
+							<high value="20171231"/>
+							<high value="20171201"/><!-- Failure a-2233-3275-error Multiple high, Failure a-2233-711293-error Wrong value -->
+						</effectiveTime>
+					</act>
+				</entry>
+			</structuredBody>
+		</component>
+	</section>
+</ClinicalDocument>

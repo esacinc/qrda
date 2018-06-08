@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!--
+		Measure Reference and Results CMS V2 Minimal sample file with errors
+        Author: Dan Donahue
+        Date:   11-04-2016
+		
+		Total Errors Expected: 12
+          Failure a-2233-17887-error Bad Class Code
+          Failure a-2233-17888-error Bad Mood Code
+          Failure a-2233-711268-error Multiple root templateIds with root='2.16.840.1.113883.10.20.27.3.17' and extenstion='2016-11-01'
+          Failure a-2233-19532-error Multiple root templateIds with root='2.16.840.1.113883.10.20.27.3.98'
+          Failure a-2233-17908-error Multiple root templateIds with root='2.16.840.1.113883.10.20.27.3.1' and extenstion='2016-09-01'
+          Failure a-2233-17889-error Missing or multiple statusCode
+          Failure a-2233-17890-error Missing or multiple reference with typeCode='REFR' and one externaldDocument
+          Failure a-2233-18425-error Missing component having one observation with root ='2.16.840.1.113883.10.20.27.3.16' and extension='2016-11-01' 
+          Failure a-2233-19552-error Missing @code='completed' in statusCode
+          Failure a-2233-19548-error Missing @classCode='DOC' in reference/externalDocument
+          Failure a-2233-18192-error Missing or multiple id with root='2.16.840.1.113883.4.738' and an extension in reference/externalDocument
+          Failure a-2233-19553-error Missing code='57024-2' in externalDocument code
+           
+    	Total Warnings Expected: 2
+		  Failure a-2233-17896-warning Multiple code elements in externalDocument 
+		  Failure a-2233-17897-warning Multiple text elements in externalDocument
+	-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
+	<organizer classCode="CLUSTERErr" moodCode="EVNErr"> <!-- Failure a-2233-17887-error Bad Class Code,  Failure a-2233-17888-error Bad Mood Code -->
+		<!--  Failure a-2233-19532-error Multiple root templateIds with root='2.16.840.1.113883.10.20.27.3.98' -->
+		<templateId root="2.16.840.1.113883.10.20.24.3.98" />
+		<templateId root="2.16.840.1.113883.10.20.24.3.98" />
+		<!-- Failure a-2233-17908-error Multiple root templateIds with root='2.16.840.1.113883.10.20.27.3.1' and extenstion='2016-09-01' -->
+		<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2016-09-01"/>
+		<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2016-09-01"/>
+		<!-- Failure a-2233-711268-error Multiple root templateIds with root='2.16.840.1.113883.10.20.27.3.17' and extenstion='2016-11-01' -->
+		<templateId root="2.16.840.1.113883.10.20.27.3.17" extension="2016-11-01"/>
+		<templateId root="2.16.840.1.113883.10.20.27.3.17" extension="2016-11-01"/>
+		<statusCode code="completed" />
+		<!-- Failure a-2233-17889-error Missing or multiple statusCode -->
+		<!-- Failure a-2233-19552-error Missing @code='completed' in statusCode -->
+		<statusCode code="completedErr" />
+		<reference typeCode="REFR">
+			<externalDocument classCode="DOC" moodCode="EVN">
+				<!-- This is the version-specific identifier for eMeasure -->
+				<id root="2.16.840.1.113883.4.738" 
+					extension="40280381-3d61-56a7-013e-66a5a5834990"/>
+				<code code="57024-2"  
+					displayName="Health Quality Measure Document" 
+					codeSystemName="LOINC"
+					codeSystem="2.16.840.1.113883.6.1" />
+				<!-- Failure a-2233-17896-warning Multiple code elements in externalDocument  -->
+				<!-- Failure a-2233-19553-error Missing code='57024-2' in externalDocument code -->
+				<code></code>
+				<text>Breast Cancer Screening</text>
+				<!-- Failure a-2233-17897-warning Multiple text elements in externalDocument -->
+				<text></text>
+			</externalDocument>
+		</reference>
+		<!-- Failure a-2233-17890-error Missing or multiple reference with typeCode='REFR' and one externaldDocument -->
+		<reference typeCode="REFR">
+			<externalDocument classCode="DOCErr" moodCode="EVN"> <!-- Failure a-2233-19548-error Missing @classCode='DOC' in reference/externalDocument -->
+				<!-- Failure a-2233-18192-error Missing or multiple id with root='2.16.840.1.113883.4.738' and an extension in reference/externalDocument -->
+				<id root="2.16.840.1.113883.4.738Err" 
+					extension="40280381-3d61-56a7-013e-66a5a5834990"/>
+				<code code="57024-2" 
+					displayName="Health Quality Measure Document" 
+					codeSystemName="LOINC"
+					codeSystem="2.16.840.1.113883.6.1" />
+				<!--  This is the title of the eMeasure -->
+				<text>Breast Cancer Screening</text>
+			</externalDocument>
+		</reference>
+		<!-- Failure a-2233-18425-error Missing component having one observation with root ='2.16.840.1.113883.10.20.27.3.16' and extension='2016-11-01'  -->
+		<component>
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.27.3.16" extension="2016-11-01Err"/>
+			</observation>
+		</component>
+	</organizer>
+	
+</ClinicalDocument>

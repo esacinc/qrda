@@ -4,14 +4,16 @@
     Title: Problem Observation V3 minimal file
     Author: Dan Donahue
     Date: 03-06-17
+    Update 06-08-2018 Remove assertion a-1198-32848-error
+                      JIRA https://tracker.esacinc.com/browse/QRDA-196
 
-  Total Errors Expected: 11
+  Total Errors Expected: 10
           Failure a-1198-9041-error Bad Class Code
           Failure a-1198-9042-error Bad Mood Code
           Failure a-1198-14926-error Multiple main template ids
           Failure a-1198-9043-error Missing id
           Failure a-1198-9045-error Missing or multiple code
-          Failure a-1198-32848-error Missing translation
+          Removed: Failure a-1198-32848-error Missing translation
           Failure a-1198-9049-error Missing or multiple statusCode
           Failure a-1198-19112-error Missing or bad statusCode @code="completed"
           Failure a-1198-9050-error Missing or multiple effectiveTime
@@ -36,7 +38,7 @@
         <!-- <id root="e5d9e01e-d778-40ba-9bd0-351d0222b26c"/> -->
         <code code="29308-4" displayName="diagnosis" codeSystem="2.16.840.1.113883.6.1"
           codeSystemName="LOINC">
-          <!-- a-1198-32848-error Missing translation -->
+          <!-- Removed: a-1198-32848-error Missing translation. Not triggered -->
          </code>
         <!-- a-1198-9045-error Missing or multiple code  -->
         <code code="29308-4" displayName="diagnosis" codeSystem="2.16.840.1.113883.6.1"

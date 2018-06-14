@@ -5,10 +5,12 @@
 	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
 	<!--
 		Title: QRDA Category III Report V3 minimal sample file with intentional errors
+		       Intended recipient: CPCPLUS
 		Date: 06-11-2018
 		Changed: Dan Donahue
 		JIRA https://tracker.esacinc.com/browse/QRDA-193
 		JIRA https://tracker.esacinc.com/browse/QRDA-432
+		JIRA https://tracker.esacinc.com/browse/QRDA-443 - removed warnings
 		
 		Total Errors Expected: 29
            Failure a-CMS_1-error SHALL contain exactly one [1..1] templateId (CONF:CMS_1) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.2" (CONF:CMS_2).SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_3). 
@@ -24,8 +26,8 @@
            Failure a-CMS_10-error This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.7" CMS Program (CONF:CMS_10). 
            Failure a-CMS_11-error This id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet QRDA III CMS Program Name urn:oid:2.16.840.1.113883.3.249.14.101 STATIC 2018-05-01 (CONF:CMS_11). 
            Failure a-CMS_12-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then ClinicalDocument/participant/@typeCode="LOC" SHALL be present (CONF:CMS_12).
-           Not tested: Failure a-CMS_13-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then QRDA Category III Measure Section – CMS (V3) SHALL be present (CONF:CMS_13).
-           Not tested: Failure a-CMS_14-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then Performance Rate for Proportion Measure – CMS (V3) SHALL be present (CONF:CMS_14).
+           Not tested (because intended recipient is CPCPLUS): Failure a-CMS_13-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then QRDA Category III Measure Section – CMS (V3) SHALL be present (CONF:CMS_13).
+           Not tested (because intended recipient is CPCPLUS: Failure a-CMS_14-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then Performance Rate for Proportion Measure – CMS (V3) SHALL be present (CONF:CMS_14).
            Failure a-CMS_18-error This associatedEntity SHALL contain exactly one [1..1] @classCode="SDLOC" Service Delivery Location (CONF:CMS_18).
            Failure a-CMS_19-error This associatedEntity SHALL contain exactly one [1..1] id (CONF:CMS_19).
            Failure a-CMS_22-error This associatedEntity SHALL contain exactly one [1..1] code (CONF:CMS_22). 
@@ -46,9 +48,7 @@
            Failure a-3338-21394_C01-error This structuredBody SHALL contain at least a QRDA Category III Measure Section - CMS (V3), or an Improvement Activity Section - CMS, or a Promoting Interoperability Section (V2) (CONF:3338-21394_C01). 
          
           
-    	Total Warnings Expected: 2
-           Failure a-3338-18181_C01-warning This representedOrganization SHOULD contain zero or one [0..1] id (CONF:3338-18181_C01) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:3338-18182).  SHALL contain exactly one [1..1] @extension (CONF:3338-18190). 
-           Failure a-CMS_79-warning This representedOrganization SHOULD contain zero or one [0..1] id (CONF:CMS_79) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.5.2" MIPS Virtual Group (CONF:CMS_80).  SHALL contain exactly one [1..1] @extension (CONF:CMS_81). 
+    	Total Warnings Expected: 0
 		  
 	-->
 	
@@ -181,11 +181,8 @@
 					<!-- MAY: The email address of the provider's data submitted -->
 					<telecom value="mailto:user@hostname"/>
 					<representedOrganization>
-						<!-- This is the optional organization TIN -->
-						<!--  -->
+						<!-- This is the organization TIN -->
 						<id root="2.16.840.1.113883.4.2" extension="990000999" assigningAuthorityName="TIN"/>
-						<!-- representedOrganization SHOULD contain zero or one [0..1] id  such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.5.2" and extension MIPS Virtual Group -->
-						<id root="2.16.840.1.113883.3.249.5.2" extension="MIPS_VIRTUALGROUP" />
 						<name>Good Health Clinic</name>
 					</representedOrganization>
 				</assignedEntity>

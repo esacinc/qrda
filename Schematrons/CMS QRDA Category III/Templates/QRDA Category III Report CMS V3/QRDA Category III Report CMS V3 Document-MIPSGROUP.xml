@@ -9,11 +9,11 @@
 		Date: 05-23-2018
 		Author: Dan Donahue
 		JIRA https://tracker.esacinc.com/browse/QRDA-432
+		JIRA https://tracker.esacinc.com/browse/QRDA-443 - removed warnings
 		
 		Total Errors Expected: 0
           
-    	Total Warnings Expected: 1
-    	   Failure a-3338-18181_C01-warning This representedOrganization SHOULD contain zero or one [0..1] id (CONF:3338-18181_C01) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:3338-18182).  SHALL contain exactly one [1..1] @extension (CONF:3338-18190). 
+    	Total Warnings Expected: 0
 
 	-->
 	<!-- 
@@ -71,11 +71,8 @@
 					<!-- MAY: The email address of the provider's data submitted -->
 					<telecom value="mailto:user@hostname"/>
 					<representedOrganization>
-						<!-- Failure a-3338-18181_C01-warning This representedOrganization SHOULD contain zero or one [0..1] id (CONF:3338-18181_C01) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:3338-18182).  SHALL contain exactly one [1..1] @extension (CONF:3338-18190). -->
 						<!-- This is the organization TIN, required for MIPS_GROUP -->
-						<!-- <id root="2.16.840.1.113883.4.2" extension="1234567" assigningAuthorityName="TIN"/> -->
-						<!-- This is the organization TIN, required for MIPS_GROUP -->
-						<id root="2.16.840.1.113883.3.249.5.2" extension="1234567" assigningAuthorityName="Virtual group ID"/> 
+						<id root="2.16.840.1.113883.4.2" extension="1234567" assigningAuthorityName="TIN"/> 
 					</representedOrganization>
 				</assignedEntity>
 			</performer>

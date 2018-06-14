@@ -13,9 +13,12 @@
         <sch:active pattern="QRDA_Category_III_CMS-pattern-errors" />
     </sch:phase>
     
+    <!-- Warnings (SHOULD) changed to (MAY) in IG, so no longer needed.  https://tracker.esacinc.com/browse/QRDA-443 -->
+    <!--  
     <sch:phase id="warnings">
         <sch:active pattern="QRDA_Category_III_CMS-pattern-warnings" />
     </sch:phase>
+    -->
     
     
     <sch:pattern id="QRDA_Category_III_CMS-pattern-errors">
@@ -91,10 +94,13 @@
         </sch:rule>
     </sch:pattern>
     
+    <!-- Warnings (SHOULD) changed to (MAY) in IG, so no longer needed.  https://tracker.esacinc.com/browse/QRDA-443 -->
+    <!--
     <sch:pattern id="QRDA_Category_III_CMS-pattern-warnings">
         <sch:rule id="QRDA_Category_III_CMS-documentationOf-serviceEvent-performer-assignedEntity-representedOrganization-warnings" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2018-05-01']]/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity/cda:representedOrganization">
             <sch:assert id="a-3338-18181_C01-warning" test="count(cda:id[@root='2.16.840.1.113883.4.2'][@extension]) &gt; 0">This representedOrganization SHOULD contain zero or one [0..1] id (CONF:3338-18181_C01) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:3338-18182).  SHALL contain exactly one [1..1] @extension (CONF:3338-18190).  </sch:assert>
             <sch:assert id="a-CMS_79-warning" test="count(cda:id[@root='2.16.840.1.113883.3.249.5.2'][@extension]) &gt; 0">This representedOrganization SHOULD contain zero or one [0..1] id (CONF:CMS_79) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.5.2" MIPS Virtual Group (CONF:CMS_80).  SHALL contain exactly one [1..1] @extension (CONF:CMS_81). </sch:assert>
         </sch:rule>
     </sch:pattern>
+   -->
 </sch:schema>

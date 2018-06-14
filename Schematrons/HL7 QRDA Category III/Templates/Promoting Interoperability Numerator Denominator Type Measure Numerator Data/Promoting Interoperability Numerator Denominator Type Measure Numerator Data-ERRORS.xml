@@ -4,6 +4,8 @@
     Title:  Promoting Interoperability Numerator Denominator Type Measure Numerator Data, Minimal sample with errors
     Author: Dan Donahue
     Date:   05-22-2018 Cloned from ACI Numerator Denominator Type Measure Numerator Data
+    JIRA https://tracker.esacinc.com/browse/QRDA-430
+	JIRA https://tracker.esacinc.com/browse/QRDA-432
     
     Total Errors Expected: 12
           Failure a-3259-21360-error Bad Class Code

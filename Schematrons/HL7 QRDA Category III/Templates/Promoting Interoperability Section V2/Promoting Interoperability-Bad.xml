@@ -4,7 +4,9 @@
 		Title: Promoting Interoperability sample file with  intentional errors
 		Author: Dan Donahue
 		Date: 05-22-2018 Cloned from Advancing Care Information sample file
-		JIRA https://tracker.esacinc.com/browse/QRDA-
+		JIRA https://tracker.esacinc.com/browse/QRDA-430
+		JIRA https://tracker.esacinc.com/browse/QRDA-432
+		
 		
 		Total Errors Expected: 3
 		  Failure a-3338-21231-error SHALL contain exactly one [1..1] templateId (CONF:3338-21231) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.2.5" (CONF:3338-21233). SHALL contain exactly one [1..1] @extension="2017-06-01" (CONF:3338-21395)

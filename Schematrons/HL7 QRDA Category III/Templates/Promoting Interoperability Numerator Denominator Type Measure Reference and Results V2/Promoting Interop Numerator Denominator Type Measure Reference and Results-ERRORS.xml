@@ -6,7 +6,8 @@
     Date:   05-22-2017 Cloned from ACI Numerator Denominator Type Measure Reference and Results
     Date:   06/02/2018  - Corrections to schematron and tests
 
-    JIRA:   https://tracker.esacinc.com/browse/QRDA-
+    JIRA https://tracker.esacinc.com/browse/QRDA-430
+	JIRA https://tracker.esacinc.com/browse/QRDA-432
     
     Total Errors Expected: 8
           Failure a-3338-21273-error Bad Class Code

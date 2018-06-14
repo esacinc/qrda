@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    
+
+<!-- See JIRA https://tracker.esacinc.com/browse/QRDA-432 -->    
+
 <mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="true" >
  
     <title>CMS 2019 QRDA Category III</title>
@@ -31,7 +33,7 @@
     
     <mergeReportFilename>c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/mergeReport.txt</mergeReportFilename>
     
-    <vocabFilename>c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/Vocabulary/voc.xml</vocabFilename>
+    <vocabFilename>c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Vocabulary/voc-2019.xml</vocabFilename>
     
     <!-- All schematrons expected to be under a single main directory -->
     <sourceMainDirectory>c:/Development/QRDA-git/qrda/Schematrons/</sourceMainDirectory>
@@ -46,8 +48,8 @@
             <!-- Document level templates -->
                 <include>QRDA Category III Report CMS V3</include>                                  <!-- updated from V2 -->
             <!-- Section level templates -->
-                <include>QRDA Category III Measure Section CMS V3</include>                         <!-- updated from V2 -->
-                <!-- ?  --><include>Improvement Activity Section CMS</include>                      <!-- New for 2019 -->
+                <include>QRDA Category III Measure Section CMS V3</include>                         <!-- updated from V2 --> <!-- ?  -->
+                <include>Improvement Activity Section CMS</include>                                 <!-- New for 2019 -->
             <!-- Entry level templates -->
                 <include>Improvement Activity Performed Measure Reference and Results CMS</include> <!-- New for 2019 -->
                 <include>Measure Data CMS V3</include>                                              <!-- updated from V2 -->
@@ -55,12 +57,12 @@
                 <include>Payer Supplemental Data Element CMS V3</include>                           <!-- updated from V2 -->
                 <include>Performance Rate for Proportion Measure CMS V3</include>                   <!-- updated from V2 -->
                 <include>CMS Datatype Validations</include>
-                <!-- <include>Aggregate Count CMS</include>  Removed for 2019 -->
-                <!-- <include>Continuous Variable Measure Value CMS</include> Removed for 2019 -->
+                <!-- <include>Aggregate Count CMS</include>                        Removed for 2019 -->
+                <!-- <include>Continuous Variable Measure Value CMS</include>      Removed for 2019 -->
                 <!-- <include>Ethnicity Supplemental Data Element CMS V2</include> Removed for 2019 -->
-                <!-- <include>Race Supplemental Data Element CMS V2</include> Removed for 2019 -->
-                <!-- <include>Reporting Stratum CMS</include>Removed for 2019 -->
-                <!-- <include>Sex Supplemental Data Element CMS V2</include> Removed for 2019 -->
+                <!-- <include>Race Supplemental Data Element CMS V2</include>      Removed for 2019 -->
+                <!-- <include>Reporting Stratum CMS</include>                      Removed for 2019 -->
+                <!-- <include>Sex Supplemental Data Element CMS V2</include>       Removed for 2019 -->
                 
     </sourceDirectory>
     

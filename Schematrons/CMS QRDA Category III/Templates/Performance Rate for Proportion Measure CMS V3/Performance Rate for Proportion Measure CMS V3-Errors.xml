@@ -1,85 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
 <!--
-		Performance Rate for Proportion Measure CMS (V2) test file - errors introduced by Maya Zuhl 
+		Title: Performance Rate for Proportion Measure CMS (V3) minimal sample file with errors
+		Author: Dan Donahue
+		Date: 06-12-2018
+		JIRA https://tracker.esacinc.com/browse/QRDA-432
 		
-		Total Errors Expected: 22
-			Failure a-2233-18395-error Wrong classCode
-			Failure a-2233-18396-error Wrong moodCode
-			Failure a-2233-711255-error Multiple templateId
-			Failure a-2233-711332-error Multiple templateId
-			Failure a-2233-19649-error No templateId
-			Failure a-2233-21294-error Multiple code
-			Failure a-2233-21305-error Wrong code
-			Failure a-2233-21306-error Wrong codeSystem
-			Failure a-2233-21297-error Multiple statusCode
-			Failure a-2233-21309-error Wrong code
-			Failure a-2233-21307-error Multiple value
-			Failure a-2233-711294-error Wrong value
-			Failure a-2233-711295-error More than 6 digits to the right of the decimal
-			Failure a-2233-711203-error Multiple references
-			Failure a-2233-19652-error Wrong typeCode
-			Failure a-2233-19653-error Multiple externalObservation
-			Failure a-2233-19654-error No classCode
-			Failure a-2233-711204-error Multiple id
-			Failure a-2233-19656-error No root
-			Failure a-2233-19657-error Multiple code
-			Failure a-2233-19658-error Wrong code
-			Failure a-2233-711319-error Wrong codeSystem
+		Total Errors Expected: 13
+			Failure a-CMS_59-error SHALL contain exactly one [1..1] templateId (CONF:CMS_59) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.25" (CONF:CMS_60). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_61). 
+			Failure a-3259-21307_C01-error SHALL contain exactly one [1..1] value with @xsi:type="REAL" (CONF:3259-21307_C01).
+			Failure a-3259-19651_C01-error SHALL contain exactly one [1..1] reference (CONF:3259-19651_C01). 
+		    Failure a-CMS_62-error The value, if present, SHALL be greater than or equal to 0 and less than or equal to 1 (CONF:CMS_62).
+			Failure a-CMS_63-error The value, if present, SHALL contain no more than 6 digits to the right of the decimal (CONF:CMS_63).
+		    Failure a-3259-19652_C01-error This reference SHALL contain exactly one [1..1] @typeCode="REFR" refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3259-19652_C01).
+			Failure a-3259-19653_C01 This reference SHALL contain exactly one [1..1] externalObservation (CONF:3259-19653_C01).
+		    Failure a-3259-19654-error This externalObservation SHALL contain exactly one [1..1] @classCode (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3259-19654).
+			Failure a-3259-19655-error This externalObservation SHALL contain exactly one [1..1] id (CONF:3259-19655).
+			Failure a-3259-19657-error This externalObservation SHALL contain exactly one [1..1] code (CONF:3259-19657).
+		    Failure a-3259-19656-error This id SHALL contain exactly one [1..1] @root (CONF:3259-19656).
+		    Failure a-3259-19658-error This code SHALL contain exactly one [1..1] @code="NUMER" Numerator (CONF:3259-19658).
+			Failure a-3259-21180-error This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.5.4" (CodeSystem: ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:3259-21180).
+
+
     	Total Warnings Expected: 0
 	-->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
 	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
 
-	<observation classCode="OBSERR" moodCode="EVNERR"> <!-- Failure a-2233-18395-error Wrong classCode, Failure a-2233-18396-error Wrong moodCode -->
-		<!-- Performance Rate for Proportion Measure - CMS (V2) template ID -->
-		<templateId root="2.16.840.1.113883.10.20.27.3.25" extension="2016-11-01"/>
-		<templateId root="2.16.840.1.113883.10.20.27.3.25" extension="2016-11-01"/> <!-- Failure a-2233-711255-error Multiple templateId -->
-		<!-- Performance Rate templateId -->
-		<templateId root="2.16.840.1.113883.10.20.27.3.30"
-					extension="2016-09-01"/>
-		<templateId root="2.16.840.1.113883.10.20.27.3.30"
-					extension="2016-09-01"/> <!-- Failure a-2233-711332-error Multiple templateId -->
-		<!-- Performance Rate for Proportion Measure (V2)template -->
-		<!-- <templateId root="2.16.840.1.113883.10.20.27.3.14" 
-					extension="2016-09-01"/> --> <!-- Failure a-2233-19649-error No templateId -->
-		<code code="72510-1" codeSystem="2.16.840.1.113883.6.1"
-				displayName="Performance Rate" 
-				codeSystemName="2.16.840.1.113883.6.1"/>
-		<code code="72500-0" codeSystem="2.16.840.1.113883.0.0.0.0"
-				displayName="Performance Rate" 
-				codeSystemName="2.16.840.1.113883.6.1"/> <!-- Failure a-2233-21294-error Multiple code, Failure a-2233-21305-error Wrong code, Failure a-2233-21306-error Wrong codeSystem -->
-		<statusCode code="completed"/>
-		<statusCode code="completedError"/> <!-- Failure a-2233-21297-error Multiple statusCode, Failure a-2233-21309-error Wrong code -->
+	<observation classCode="OBS" moodCode="EVN">
+		<!-- Performance Rate for Proportion Measure - CMS (V3) template ID -->
+		<templateId root="2.16.840.1.113883.10.20.27.3.25" extension="2018-05-01"/>
+		<!-- Failure a-CMS_59-error Multiple main template id -->
+		<templateId root="2.16.840.1.113883.10.20.27.3.25" extension="2018-05-01"/>
 		<value xsi:type="REAL" value="0.833000"/>
-		<value xsi:type="REAL" value="1.83333333"/> <!-- Failure a-2233-21307-error Multiple value, Failure a-2233-711294-error Wrong value, Failure a-2233-711295-error More than 6 digits to the right of the decimal -->
-		<!-- Note: this is the reference to the specific Numerator included in the calculation -->
+		<!-- Failure a-3259-21307_C01-error SHALL contain exactly one [1..1] value with @xsi:type="REAL"  -->
+		<!-- Failure a-CMS_62-error The value, if present, SHALL be greater than or equal to 0 and less than or equal to 1  -->
+		<!-- Failure a-CMS_63-error The value, if present, SHALL contain no more than 6 digits to the right of the decimal -->
+		<value xsi:type="REAL" value="1.1234567"/>
 		<reference typeCode="REFR">
 			<externalObservation classCode="OBS" moodCode="EVN">
 				<!-- The externalObservationID contains the ID of the numerator in the referenced eMeasure.	-->
 				<id root="63DD3232-4F74-4FA2-B5CF-A7B7DC8BC5B9"/>
-				<code code="NUMER" displayName="Numerator" codeSystem="2.16.840.1.113883.5.4"
-					codeSystemName="ActCode"/>
+				<code code="NUMER" displayName="Numerator" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
 			</externalObservation>
 		</reference>
-		<reference typeCode="REFRERROR"> <!-- Failure a-2233-711203-error Multiple references, Failure a-2233-19652-error Wrong typeCode --> 
+		<!-- Failure a-3259-19651_C01-error SHALL contain exactly one [1..1] reference -->
+		<!-- Failure a-3259-19652_C01-error This reference SHALL contain exactly one [1..1] @typeCode="REFR" -->
+		<reference typeCode="REFRErr">
 			<externalObservation classCode="OBS" moodCode="EVN">
 				<!-- The externalObservationID contains the ID of the numerator in the referenced eMeasure.	-->
 				<id root="63DD3232-4F74-4FA2-B5CF-A7B7DC8BC5B9"/>
-				<code code="NUMER" displayName="Numerator" codeSystem="2.16.840.1.113883.5.4"
-					codeSystemName="ActCode"/>
+				<code code="NUMER" displayName="Numerator" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
 			</externalObservation>
-			<externalObservation moodCode="EVN"> <!-- Failure a-2233-19653-error Multiple externalObservation, Failure a-2233-19654-error No classCode -->
-				<!-- The externalObservationID contains the ID of the numerator in the referenced eMeasure.	-->
+			<!-- Failure a-3259-19653_C01 This reference SHALL contain exactly one [1..1] externalObservation  -->
+			<!-- Failure a-3259-19654-error This externalObservation SHALL contain exactly one [1..1] @classCode  -->
+			<externalObservation classCodErr="OBS" >
 				<id root="63DD3232-4F74-4FA2-B5CF-A7B7DC8BC5B9"/>
-				<id /> <!-- Failure a-2233-711204-error Multiple id, Failure a-2233-19656-error No root -->
-				<code code="NUMER" displayName="Numerator" codeSystem="2.16.840.1.113883.5.4"
-					codeSystemName="ActCode"/>
-				<code code="NUMERERROR" displayName="Numerator" codeSystem="2.16.840.1.113883.0.0.0.0"
-					codeSystemName="ActCode"/> <!-- Failure a-2233-19657-error Multiple code, Failure a-2233-19658-error Wrong code, Failure a-2233-711319-error Wrong codeSystem -->
+				<!-- Failure a-3259-19655-error This externalObservation SHALL contain exactly one [1..1] id -->
+				<!-- Failure a-3259-19656-error This id SHALL contain exactly one [1..1] @root  -->
+				<id />
+				<code code="NUMER" displayName="Numerator" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+				<!-- Failure a-3259-19657-error This externalObservation SHALL contain exactly one [1..1] code (CONF:3259-19657). -->
+				<!-- Failure a-3259-19658-error This code SHALL contain exactly one [1..1] @code="NUMER" Numerator (CONF:3259-19658). -->
+				<!-- Failure a-3259-21180-error This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.5.4" -->
+				<code code="NUMERErr" displayName="Numerator" codeSystem="2.16.840.1.113883.5.4Err" codeSystemName="ActCode"/>
 			</externalObservation>
 		</reference>
 	</observation>
-
+	
 </ClinicalDocument>

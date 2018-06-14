@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
 <!--
-		Title: Improvement Activity Section CMS minimal file without errors
-		       Intended recipient = CPCPLUS
+		Title: Improvement Activity Section CMS minimal file with errors
+		       Intended recipient = MIPS_GROUP
 		Author: Dan Donahue
-		Date: 05-23-2018
+		Date: 06-12-2018
 		JIRA https://tracker.esacinc.com/browse/QRDA-432
 		
-		Total Errors Expected: 0
-          
+		Total Errors Expected: 1
+            Failure a-CMS_78-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_GROUP", then SHALL NOT contain [0..0] entry Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_78). 
+         
     	Total Warnings Expected: 0
 	-->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -18,7 +19,7 @@
 	<!--  Improvement Activity section conformance rules rely on value of intended recipient id/@extension, so the following stub is present for validation purposes. -->
 	<informationRecipient>
 		<intendedRecipient>
-			<id extension="CPCPLUS" />
+			<id extension="MIPS_GROUP" />
 		</intendedRecipient>
 	</informationRecipient>
 	<!-- 
@@ -32,14 +33,16 @@
 		<entry>
 			<!-- Improvement Activity Performed Measure Reference and Results - CMS  -->
 			<organizer classCode="CLUSTER" moodCode="EVN">
-				<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2018-05-01"/>
+				<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2018-05-01"/>  
 				<!-- ... -->
 			</organizer>
 		</entry>
-		<!-- Reporting parameters act not allowed if intended recipient is MIPS_INDIV, MIPS_GROUP, or MIPS_VIRTUALGROUP -->
 		<entry>
 			<act>
-				<templateId root="2.16.840.1.113883.10.20.17.3.8"/>
+				<!-- Reporting Parameters Act -->
+				<!-- Failure a-CMS_78-error Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) not allowed if intended recipient is MIPS_INDIV -->. 
+				
+				<templateId root="2.16.840.1.113883.10.20.17.3.8"></templateId>
 			</act>
 		</entry>
 	</section>

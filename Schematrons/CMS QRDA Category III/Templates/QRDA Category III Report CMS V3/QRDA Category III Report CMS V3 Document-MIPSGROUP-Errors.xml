@@ -4,16 +4,18 @@
 	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
 	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
 	<!--
-		Title: QRDA Category III Report V3 minimal sample file with no errors
+		Title: QRDA Category III Report V3 minimal sample file with errors specific to MIPS_GROUP 
 		       Intended Recipient: MIPS_GROUP
 		Date: 05-23-2018
 		Author: Dan Donahue
 		JIRA https://tracker.esacinc.com/browse/QRDA-432
 		
-		Total Errors Expected: 0
+		Total Errors Expected: 1
+           Failure a-CMS_82-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_GROUP", then this representedOrganization SHALL contain exactly one 1..1] id, which is the group's TIN (CONF:CMS_82). 
           
-    	Total Warnings Expected: 1
+    	Total Warnings Expected: 2
     	   Failure a-3338-18181_C01-warning This representedOrganization SHOULD contain zero or one [0..1] id (CONF:3338-18181_C01) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:3338-18182).  SHALL contain exactly one [1..1] @extension (CONF:3338-18190). 
+           Failure a-CMS_79-warning This representedOrganization SHOULD contain zero or one [0..1] id (CONF:CMS_79) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.5.2" MIPS Virtual Group (CONF:CMS_80).  SHALL contain exactly one [1..1] @extension (CONF:CMS_81). 
 
 	-->
 	<!-- 
@@ -71,11 +73,12 @@
 					<!-- MAY: The email address of the provider's data submitted -->
 					<telecom value="mailto:user@hostname"/>
 					<representedOrganization>
-						<!-- Failure a-3338-18181_C01-warning This representedOrganization SHOULD contain zero or one [0..1] id (CONF:3338-18181_C01) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:3338-18182).  SHALL contain exactly one [1..1] @extension (CONF:3338-18190). -->
 						<!-- This is the organization TIN, required for MIPS_GROUP -->
-						<!-- <id root="2.16.840.1.113883.4.2" extension="1234567" assigningAuthorityName="TIN"/> -->
-						<!-- This is the organization TIN, required for MIPS_GROUP -->
-						<id root="2.16.840.1.113883.3.249.5.2" extension="1234567" assigningAuthorityName="Virtual group ID"/> 
+						<!-- Failure a-CMS_82-error If intended recipient is "MIPS_GROUP", then this representedOrganization SHALL contain exactly one 1..1] id, which is the group's TIN (CONF:CMS_82).  -->
+						<!-- <id root="2.16.840.1.113883.3.249.5.2" extension="1234567" assigningAuthorityName="Virtual group ID"/> -->
+						
+						<!--  Failure a-3338-18181_C01-warning representedOrganization SHOULD contain zero or one [0..1] id with @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:3338-18182).   -->
+                        <!--  Failure a-CMS_79-warning representedOrganization SHOULD contain zero or one [0..1] id with @root="2.16.840.1.113883.3.249.5.2" MIPS Virtual Group (CONF:CMS_80).  -->
 					</representedOrganization>
 				</assignedEntity>
 			</performer>

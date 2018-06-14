@@ -5,81 +5,51 @@
 	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
 	<!--
 		Title: QRDA Category III Report V3 minimal sample file with intentional errors
-		Date: 06-09-2017
+		Date: 06-11-2018
 		Changed: Dan Donahue
-		JIRA: https://tracker.esacinc.com/browse/QRDA-193
+		JIRA https://tracker.esacinc.com/browse/QRDA-193
+		JIRA https://tracker.esacinc.com/browse/QRDA-432
 		
-		Total Errors Expected: 62
-          Failure a-2233-17226-error Multiple realmCode
-          Failure a-2233-17208-error Bad templateId 
-          Failure a-2233-711280-error Missing templateId
-          Failure a-2233-18186-error Multiple typeId
-          Failure a-2233-17236-error Missing Id
-          Failure a-2233-17210-error Multiple Code
-          Failure a-2233-17237-error Missing effectiveTime
-          Failure a-2233-17211-error Multiple title
-          Failure a-2233-711174-error Multiple confidentialityCode
-		  Failure a-2233-711246-error confidentialityCode bad code
-          Failure a-2233-711173-error Multiple languageCode
-          Failure a-2233-17212-error Multiple recordTarget
-          Failure a-2233-18156-error Bad author
-          Failure a-2233-17213-error Multiple custodian
-          Failure a-2233-711158-error Multiple informationRecipient
-          Failure a-2233-711159-error Multiple informationRecipient intendedRecipient
-          Failure a-2233-711160-error Multiple informationRecipient intendedRecipient id
-          Failure a-2233-711161-error informationRecipient intendedRecipient bad root
-          Failure a-2233-711162-error informationRecipient intendedRecipient bad extension 
-          Failure a-2233-711248-error If informationRecipient/intendedRecipient/id @extension="CPCPLUS", then paticipant @typeCode shall be "LOC"
-          Failure a-2233-17225-error Multiple legalAuthenticator
-		  Failure a-2233-711214-error documentationOf duplicate
-		  Failure a-2233-711167-error documentationOf serviceEvent performer assignedEntity duplicate id 
-		  Failure a-2233-711168-error documentationOf serviceEvent performer assignedEntity representedOrganization duplicate id
-          Failure a-2233-18187-error typeId bad root
-          Failure a-2233-18188-error typeId bad extension
-          Failure a-2233-17227-error realmCode invalid
-          Failure a-2233-711247-error languageCode missing or bad  @code='en'
-          Failure a-2233-19549-error code invalid @code
-          Failure a-2233-21166-error code invalid @codeSystem
-          Failure a-2233-17232-error recordTarget missing patientRole
-		  Failure a-2233-711240-error assignedAuthor missing id
-          Failure a-2233-18163-error assignedAuthor missing representedOrganization
-          Failure a-2233-19667-error assignedAuthor missing assignedAuthoringDevice
-          Failure a-2233-18265-error representedOrganization missing name
-          Failure a-2233-18262-error assignedAuthoringDevice missing softwareName
-          Failure a-2233-17214-error custodian multiple assignedCustodian
-          Failure a-2233-17215-error assignedCustodian multiple representedCustodianOrganization
-          Failure a-2233-18165-error representedCustodianOrganization missing Id
-          Failure a-2233-18167-error legalAuthenticator missing time
-          Failure a-2233-18168-error legalAuthenticator multiple signatureCode
-          Failure a-2233-19670-error legalAuthenticator multiple assignedEntity
-          Failure a-2233-18169-error signatureCode wrong @code
-          Failure a-2233-19672-error representedOrganization missing Id 
-          Failure a-2233-18171-error documentationOf serviceEvent duplicate
-          Failure a-2233-18172-error documentationOf serviceEvent wrong @classCode
-          Failure a-2233-18173-error documentationOf serviceEvent missing performer
-          Failure a-2233-18174-error documentationOf serviceEvent performer missing @typeCode
-          Failure a-2233-18176-error documentationOf serviceEvent performer assignedEntity duplicate
-          Failure a-2233-18180-error documentationOf serviceEvent performer assignedEntity representedOrganization duplicate
-          Failure a-2233-18364-error authorization consent missing statusCode
-          Failure a-2233-18361-error authorization consent missing id
-          Failure a-2233-18363-error authorization consent code duplicate
-          Failure a-2233-19550-error authorization consent code wrong @code
-          Failure a-2233-21172-error authorization consent code missing @codeSystem
-          Failure a-2233-19551-error authorization consent wrong @statusCode
-          Failure a-2233-18360-error authorization consent duplicate
-          Failure a-2233-17235-error Multiple structuredBody in component
-          Failure a-2233-711311-error  structuredBody SHALL contain at least a QRDA Category III Measure Section - CMS (V2) root='2.16.840.1.113883.10.20.27.2.3' extension='2017-07-01',
-				                                                          or an Improvement Activity Section (V2) root='2.16.840.1.113883.10.20.27.2.4' extension='2017-06-01' 
-				                                                          or an Advancing Care Information Section (V2) root='2.16.840.1.113883.10.20.27.2.5' extension='2017-06-01'
-		  Failure a-2233-17217-error component duplicate 
-		  Failure a-2233-711340-error if informationRecipient/intendedRecipient/di extension="CPCPLUS", then QRDA Cat III Measurre Section - CMS VS shall be present
-		  Failure a-2233-711341-error structuredBody SHALL NOT have a componen with  QRDA Category III Reporting Parameters Section oid:2.16.840.1.113883.10.20.27.2.2
+		Total Errors Expected: 29
+           Failure a-CMS_1-error SHALL contain exactly one [1..1] templateId (CONF:CMS_1) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.2" (CONF:CMS_2).SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_3). 
+           Failure a-3338-17238_C01-error SHALL contain exactly one [1..1] confidentialityCode (CONF:3338-17238_C01).
+           Failure a-3338-17239-error SHALL contain exactly one [1..1] languageCode (CONF:3338-17239).
+           Failure a-CMS_7-error SHALL contain exactly one [1..1] informationRecipient (CONF:CMS_7).
+           Failure a-338-18170_C01-error SHALL contain exactly one [1..1] documentationOf (CONF:3338-18170_C01). 
+           Failure a-3338-17217-error SHALL contain exactly one [1..1] component (CONF:3338-17217). 
+           Failure a-CMS_4-error This confidentialityCode SHALL contain exactly one [1..1] @code="N" Normal (CodeSystem: HL7Confidentiality urn:oid:2.16.840.1.113883.5.25) (CONF:CMS_4). 
+           Failure a-3338-19669_C01-error This languageCode SHALL contain exactly one [1..1] @code="en" English (CodeSystem: Language urn:oid:2.16.840.1.113883.6.121) (CONF:3338-19669_C01).
+           Failure a-CMS_8-error This informationRecipient SHALL contain exactly one [1..1] intendedRecipient (CONF:CMS_8). 
+           Failure a-CMS_9-error This intendedRecipient SHALL contain exactly one [1..1] id (CONF:CMS_9). 
+           Failure a-CMS_10-error This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.7" CMS Program (CONF:CMS_10). 
+           Failure a-CMS_11-error This id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet QRDA III CMS Program Name urn:oid:2.16.840.1.113883.3.249.14.101 STATIC 2018-05-01 (CONF:CMS_11). 
+           Failure a-CMS_12-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then ClinicalDocument/participant/@typeCode="LOC" SHALL be present (CONF:CMS_12).
+           Not tested: Failure a-CMS_13-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then QRDA Category III Measure Section – CMS (V3) SHALL be present (CONF:CMS_13).
+           Not tested: Failure a-CMS_14-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then Performance Rate for Proportion Measure – CMS (V3) SHALL be present (CONF:CMS_14).
+           Failure a-CMS_18-error This associatedEntity SHALL contain exactly one [1..1] @classCode="SDLOC" Service Delivery Location (CONF:CMS_18).
+           Failure a-CMS_19-error This associatedEntity SHALL contain exactly one [1..1] id (CONF:CMS_19).
+           Failure a-CMS_22-error This associatedEntity SHALL contain exactly one [1..1] code (CONF:CMS_22). 
+           Failure a-CMS_25-error This associatedEntity SHALL contain exactly one [1..1] addr (CONF:CMS_25).  
+           Failure a-CMS_20-error This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.5.1" CPC Practice Site (CONF:CMS_20). 
+           Failure a-CMS_21-error This id SHALL contain exactly one [1..1] @extension (CONF:CMS_21). 
+           Failure a-CMS_23-error This code SHALL contain exactly one [1..1] @code="394730007" Healthcare Related Organization (CONF:CMS_23).  
+           Failure a-CMS_24-error This code SHALL contain exactly one [1..1] @codeSystem (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:CMS_24).  
+           Failure a-3338-18171_C01-error his documentationOf SHALL contain exactly one [1..1] serviceEvent (CONF:3338-18171_C01). 
+           Failure a-3338-18173-error This serviceEvent SHALL contain at least one [1..*] performer (CONF:3338-18173).
+           Failure a-3338-18176-error Such performers SHALL contain exactly one [1..1] assignedEntity (CONF:3338-18176).
+           Failure a-3338-18177_C01-error This assignedEntity SHALL contain exactly one [1..1] id (CONF:3338-18177_C01) such that it  MAY contain zero or one [0..1] @nullFlavor (CONF:CMS_29). SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:3338-18178_C01).  MAY contain zero or one [0..1] @extension (CONF:3338-18247). 
+           Failure a-3338-18180_C01-error This assignedEntity SHALL contain exactly one [1..1] representedOrganization (CONF:3338-18180_C01).
+           Not tested: Failure a-CMS_82-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_GROUP", then this representedOrganization SHALL contain exactly one 1..1] id, which is the group's TIN (CONF:CMS_82). 
+           Not tested: Failure a-CMS_83-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_VIRTUALGROUP", then this representedOrganization SHALL contain exactly one 1..1] id, which is the virtual group's Virtual Group Identifier (CONF:CMS_83).  
+           Failure a-3338-17235-error This component SHALL contain exactly one [1..1] structuredBody (CONF:3338-17235).
+           Failure a-3338-17281_C01-error This structuredBody SHALL NOT contain [0..0] component (CONF:3338-17281_C01) such that it  SHALL contain exactly one [1..1] QRDA Category III Reporting Parameters Section (identifier: urn:oid:2.16.840.1.113883.10.20.27.2.2) (CONF:3338-17282). 
+           Failure a-3338-21394_C01-error This structuredBody SHALL contain at least a QRDA Category III Measure Section - CMS (V3), or an Improvement Activity Section - CMS, or a Promoting Interoperability Section (V2) (CONF:3338-21394_C01). 
+         
           
-    	Total Warnings Expected: 4
-		  Failure a-2233-18260-warning Multiple versionNumber
-		  Failure a-2233-18166-warning assignedCustodian representedCustodianOrganization missing name
-		  Failure a-2233-19673-warning legalAuthenticator assignedEntity representedOrganization multiple name
-		  Failure a-2233-19659-warning documentationOf serviceEvent performer assignedEntity representedOrganization multiple name
+    	Total Warnings Expected: 2
+           Failure a-3338-18181_C01-warning This representedOrganization SHOULD contain zero or one [0..1] id (CONF:3338-18181_C01) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:3338-18182).  SHALL contain exactly one [1..1] @extension (CONF:3338-18190). 
+           Failure a-CMS_79-warning This representedOrganization SHOULD contain zero or one [0..1] id (CONF:CMS_79) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.5.2" MIPS Virtual Group (CONF:CMS_80).  SHALL contain exactly one [1..1] @extension (CONF:CMS_81). 
+		  
 	-->
 	
 	<!-- 
@@ -87,479 +57,261 @@
 		CDA Header
 		********************************************************
 	-->
-	<realmCode code="US"/>
-	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
-	<!-- Failure a-2233-17208-error bad template ID  -->
-	<!--templateId root="2.16.840.1.113883.10.20.27.1.1" extension="2016-09-01"/-->
-	<templateId root="2.16.840.1.113883.10.20.27.1.1" extension="2016-08-01"/>
-	<templateId root="2.16.840.1.113883.10.20.27.1.2" extension="2016-11-01"/>
-	<!-- Failure a-2233-711280-error duplicate templateId -->
-	<templateId root="2.16.840.1.113883.10.20.27.1.2" extension="2016-11-01"/>
-	<!-- Failure a-2233-17236-error missing Id  -->
-	<!--id root="2dcaebf2-96ef-4987-9d13-1b3565e2c5d9"/-->
-	<!-- SHALL QRDA III document type code -->
-	<code code="55184-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
-		displayName="Quality Reporting Document Architecture Calculated Summary Report"/>
-	<!-- Failure a-2233-17226-error realmCode extra -->
-	<!-- Failure  a-2233-17227-error realmCode invalid-->
-	<realmCode code="TX"/>
-	<!-- Failure a-2233-18186-error typeId extra -->
-	<!-- Failure a-2233-18187-error typeId bad root -->
-	<!-- Failure a-2233-18188-error typeId bad extension -->
-	<typeId root="2.16.840.1.113883.1.33" extension="POCD_HD0000400"/>
-	<!-- Failure a-2233-17210-error code extra -->
-	<!-- Failure a-2233-19549-error code invalid @code -->
-	<!-- Failure a-2233-21166-error code invalid @codeSystem -->
-	<code code="55184-66" codeSystem="2.16.840.1.113883.6.11" codeSystemName="LOINC"
-		displayName="Quality Reporting Document Architecture Calculated Summary Report"/>
-	<!-- SHALL Title, content optional -->
-	<title>QRDA Calculated Summary Report for NQF 0436 and NQF 0496</title>
-	<!-- Failure a-2233-17236-error missing effectiveTime   -->
-	<!--effectiveTime value="20160301"/-->
+	<!-- QRDA Category III Report V3 template ID  -->
+	<!-- SHALL contain one templateID root="2.16.840.1.113883.10.20.27.1.2" extension="2018-05-01" -->
+	<templateId root="2.16.840.1.113883.10.20.27.1.2" extension="2018-05-01"/>
+	<!--  Failure a-CMS_1-error Multiple main templateId -->
+	<templateId root="2.16.840.1.113883.10.20.27.1.2" extension="2018-05-01"/>
+	<id root="2dcaebf2-96ef-4987-9d13-1b3565e2c5d9"/>
+	<!-- SHALL contain one confidentialityCode -->
 	<confidentialityCode codeSystem="2.16.840.1.113883.5.25" code="N"/>
+	<!-- Failure a-3338-17238_C01-error SHALL contain exactly one [1..1] confidentialityCode  -->
+	<!-- Failure a-CMS_4-error This confidentialityCode SHALL contain exactly one [1..1] @code="N" Normal  -->
+	<confidentialityCode codeSystem="2.16.840.1.113883.5.25" code="NErr"/>
+	<!-- SHALL contain one languageCode -->
 	<languageCode code="en"/>
-	<!-- Failure  a-2233-711173-error Multiple languageCode -->
-	<!-- Failure  a-2233-711247-error languageCode missing or bad  @code='en' -->
-	<languageCode code="en-US"/>
-	<!-- a-2233-18260-warning versionNumber more than 1-->
-	<versionNumber value="1"/>
-	<versionNumber value="1"/>
-	<!-- SHALL contain recordTarget and ID - but ID is nulled to NA. This is an aggregate summary report. Therefore CDA's required patient identifier is nulled. -->
-	<recordTarget>
-		<patientRole>
-			<id nullFlavor="NA"/>
-		</patientRole>
-	</recordTarget>
-	<!-- Failure a-2233-17211-error title extra -->
-	<title>Calculated Summary Report V3</title>
-	<!-- Failure a-2233-711174-error confidentialityCode extra -->
-	<!-- Failure a-2233-711246-error confidentialityCode bad code -->
-	<confidentialityCode codeSystem="2.16.840.1.113883.5.25" code="Y"/>
-	<!-- Failure a-2233-17212-error recordTarget extra -->
-	<!-- Failure a-2233-17212-error recordTarget missing patientRole -->
-	<recordTarget/>
-	<!-- Failure a-2233-17239-error languageCode extra -->
-	<!-- Failure a-2233-17232-error languageCode missing @code -->
-	<!-- Failure a-2233-18156-errorauthor bad missing time extra -->
-	<author>
-		<!--time value="20160301"/-->
-		<assignedAuthor>
-			<!-- author ID. This may be an NPI, or any other type of ID. -->
-			<id root="2.16.840.1.113883.4.6" extension="111111111" assigningAuthorityName="NPI"/>
-			<!-- Failure a-2233-19667-error assignedAuthor missing assignedAuthoringDevice -->
-			<!-- Failure a-2233-18163-error assignedAuthor missing representedOrganization -->
-			<!--assignedAuthoringDevice>
-				<softwareName>SOME Data Aggregator Transform Tool KP00017dev </softwareName>
-			</assignedAuthoringDevice>
-			<representedOrganization>
-				<id root="2.16.840.1.113883.19.5" extension="98765"/>
-				<name>Good Health Hospital</name>
-			</representedOrganization-->
-		</assignedAuthor>
-	</author>
-	<!-- Failure a-2233-18156-error author bad missing assignedAuthor extra -->
-	<author>
-		<time value="20050329224411+0500"/>
-		<!--assignedAuthor>
-			<id root="2.16.840.1.113883.4.6" extension="111111112" assigningAuthorityName="NPI"/>
-			<assignedPerson>
-				<name>
-					<given>Henry</given>
-					<family>Seven</family>
-				</name>
-			</assignedPerson>
-			<representedOrganization>
-				<id root="2.16.840.1.113883.19.5" extension="5454545"/>
-				<name>Good Health Hospital</name>
-			</representedOrganization>
-		</assignedAuthor-->
-	</author>
-	<author>
-		<!--time value="20160301"/-->
-		<assignedAuthor>
-			<!-- Failure a-2233-711240-error assignedAuthor misssing id -->
-			<!--id root="2.16.840.1.113883.4.6" extension="111111111" assigningAuthorityName="NPI"/-->
-			<!-- Failure a-2233-18262-error assignedAuthoringDevice misssing softwareName -->
-			<assignedAuthoringDevice>
-				<!--softwareName>SOME Data Aggregator Transform Tool KP00017dev </softwareName-->
-				<software>SOME Data Aggregator Transform Tool KP00017dev </software>
-			</assignedAuthoringDevice>
-			<!-- Failure a-2233-18265-error representedOrganization missing name -->
-			<representedOrganization>
-				<id root="2.16.840.1.113883.19.5" extension="98765"/>
-				<!--name>Good Health Hospital</name-->
-			</representedOrganization>
-		</assignedAuthor>
-	</author>
-	<!-- The custodian of the CDA document is the same as the legal authenticator in this 
-	example and represents the reporting organization. -->
-	<custodian>
-		<assignedCustodian>
-			<representedCustodianOrganization>
-				<!-- SHALL have an id - This is an example root -->
-				<id root="2.16.840.1.113883.19.5"/>
-				<!-- SHOULD Name not required -->
-				<name>Good Health Hospital</name>
-			</representedCustodianOrganization>
-		</assignedCustodian>
-	</custodian>
-	<!-- The legal authenticator of the CDA document is a single person who is at the 
-		same organization as the custodian in this example. This element must be present. -->
-	<!-- SHALL -->
-	<legalAuthenticator>
-		<!-- SHALL -->
-		<time value="20160301"/>
-		<!-- SHALL -->
-		<signatureCode code="S"/>
-		<assignedEntity>
-			<!-- SHALL ID -->
-			<id root="bc01a5d1-3a34-4286-82cc-43eb04c972a7"/>
-			<!-- MAY -->
-			<representedOrganization>
-				<!-- SHALL Id -->
-				<!-- example root -->
-				<id root="2.16.840.1.113883.19.5"/>
-				<!-- SHOULD Name not required -->
-				<name>Good Health Hospital</name>
-				<!-- a-2233-19673-warning multiple	name -->			
-				<name>Good Health Hospital2</name>
-			</representedOrganization>
-		</assignedEntity>
-	</legalAuthenticator>
+	<!-- Failure a-3338-17239-error SHALL contain exactly one [1..1] languageCode -->
+	<!-- Failure a-3338-19669_C01-error This languageCode SHALL contain exactly one [1..1] @code="en" English -->
+	<languageCode code="enErr"/>
+	<!-- SHALL contain one informationRecipient -->
 	<informationRecipient>
 		<intendedRecipient>
-			<!-- Failure a-2233-711248-error If informationRecipient/intendedRecipient/id @extension="CPCPLUS", then paticipant @typeCode shall be "LOC" -->
-			<!-- Failure a-2233-711340-error if informationRecipient/intendedRecipient/di extension="CPCPLUS", then QRDA Cat III Measurre Section - CMS VS shall be present -->
-			<id root="2.16.840.1.113883.3.249.7" extension="CPCPLUS" /> 
+			<id root="2.16.840.1.113883.3.249.7" extension="CPCPLUS"/>
 		</intendedRecipient>
-		<!-- Failure a-2233-711159-error informationRecipient intendedRecipient duplicate -->
+		<!-- Failure a-CMS_8-error This informationRecipient SHALL contain exactly one [1..1] intendedRecipient -->
 		<intendedRecipient>
-			<id root="2.16.840.1.113883.3.249.7" extension="MIPS_INDIV"/>
-			<!-- Failure a-2233-711160-error informationRecipient intendedRecipient id duplicate -->
-			<id root="2.16.840.1.113883.3.249.7" extension="MIPS_INDIV"/>
+			<id root="2.16.840.1.113883.3.249.7" extension="MIPS_INDIV"/> <!-- A document would never have a MIPS_INDIV and a CPCPLUS recipient. This is only added here to reduce the number of duplicate assertions triggered. -->
 		</intendedRecipient>
 	</informationRecipient>
-	<!-- Failure a-2233-711158-error informationRecipient duplicate -->
-	<!-- Failure a-2233-711161-error informationRecipient intendedRecipient bad root -->
-	<!-- Failure a-2233-711162-error informationRecipient intendedRecipient bad extension, "OUTOFIT" not valide -->
+	<!-- Failure a-CMS_7-error SHALL contain exactly one [1..1] informationRecipient  -->
 	<informationRecipient>
 		<intendedRecipient>
-			<id root="2.16.840.1.113883.3.249.8" extension="OUTOFIT"/>
+			<!-- Failure a-CMS_10-error This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.7" CMS Program -->
+			<!-- Failure a-CMS_11-error This id SHALL contain exactly one [1..1] @extension -->
+			<id root="2.16.840.1.113883.3.249.7Err" extension="MIPS_INDIV"/> <!-- A document would never have a MIPS_INDIV and a CPCPLUS recipient. This is only added here to reduce the number of duplicate assertions triggered. -->
+			<!--  Failure a-CMS_9-error This intendedRecipient SHALL contain exactly one [1..1] id -->
+			<id root="2.16.840.1.113883.3.249.7" extension="NOT_CPCPLUS"/>
 		</intendedRecipient>
 	</informationRecipient>
-	<!-- Failure a-2233-17213-error custodian extra -->
-	<custodian>
-		<assignedCustodian>
-		<!-- Failure a-2233-18166-warning missing name-->
-			<representedCustodianOrganization>
-				<id root="2.16.840.1.113883.19.5"/>
-				<!--name>Good Health Hospital</name-->
-			</representedCustodianOrganization>
-		</assignedCustodian>
-		<!-- Failure a-2233-17214-error assignedCustodian extra -->
-		<assignedCustodian>
-			<representedCustodianOrganization>
-				<!-- SHALL have an id - This is an example root -->
-				<id root="2.16.840.1.113883.19.5"/>
-				<!-- SHOULD Name not required -->
-				<name>Good Health Hospital</name>
-			</representedCustodianOrganization>
-			<!-- Failure a-2233-17215-error representedCustodianOrganization extra -->
-			<representedCustodianOrganization>
-				<!-- Failure a-2233-18165-error missing Id -->
-				<!--id root="2.16.840.1.113883.19.5"/-->
-				<!-- SHOULD Name not required -->
-				<name>Good Health Hospital</name>
-			</representedCustodianOrganization>
-		</assignedCustodian>
-	</custodian>
-	<!-- Failure a-2233-17225-error legalAuthenticator extra -->
-	<legalAuthenticator>
-		<!-- Failure a-2233-18167-error legalAuthenticator missing time -->
-		<!--time value="20160301"/-->
-		<!-- Failure a-2233-18168-error legalAuthenticator signatureCode duplicate -->
-		<signatureCode code="S"/>
-		<!-- Failure  a-2233-18169-error legalAuthenticator signatureCode wrong @code -->
-		<signatureCode code="T"/>
-		<assignedEntity>
-			<!-- SHALL ID -->
-			<id root="bc01a5d1-3a34-4286-82cc-43eb04c972a7"/>
-			<!-- MAY -->
-			<representedOrganization>
-				<!-- Failure a-2233-19672-error legalAuthenticator/representedOrganization missing id -->
-				<!--id root="2.16.840.1.113883.19.5"/-->
-				<!-- SHOULD Name not required -->
-				<name>Good Health Hospital</name>
-			</representedOrganization>
-		</assignedEntity>
-		<!-- Failure a-2233-19670-error legalAuthenticator assignedEntity duplicate -->
-		<assignedEntity>
-			<!-- SHALL ID -->
-			<id root="bc01a5d1-3a34-4286-82cc-43eb04c972a7"/>
-			<!-- MAY -->
-			<representedOrganization>
-				<!-- SHALL Id -->
-				<!-- example root -->
-				<id root="2.16.840.1.113883.19.5"/>
-				<!-- SHOULD Name not required -->
-				<name>Good Health Hospital</name>
-			</representedOrganization>
-		</assignedEntity>
-	</legalAuthenticator>
-	
-	<participant typeCode="DEV">
-		<!--associatedEntity classCode="RGPR"-->
-		<!-- Failure a-2233-18303-error participant associatedEntity wrong @classCode -->
-		<associatedEntity classCode="PRRG">
-			<!-- Failure a-2233-20954-error participant associatedEntity missing id -->
-			<!--id root="2.16.840.1.113883.3.2074.1" extension="1a2b3c" assigningAuthorityName="ONC"/-->
-			<!--id root="2.16.840.1.113883.3.249.21" extension="98765"/-->
-			<!-- Failure a-2233-18308-error participant associatedEntity code duplicate -->
-			<code code="129465004" displayName="medical record, device"
-				codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/>
-			<!-- Failure a-2233-18309-error participant associatedEntity code wrong @code -->
-			<!-- Failure a-2233-21167-error participant associatedEntity code wrong @codeSystem -->
-			<code code="129465005" displayName="medical record, device 2"
-				codeSystem="2.16.840.1.113883.6.97" codeSystemName="SNOMED-CT2"/>
+	<!-- SHALL contain one participant -->
+	<!-- Failure a-CMS_12-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then ClinicalDocument/participant/@typeCode="LOC" SHALL be present (CONF:CMS_12). -->
+  	<participant typeCode="LOCErr">
+  		<!-- Failure a-CMS_18-error This associatedEntity SHALL contain exactly one [1..1] @classCode="SDLOC" Service Delivery Location -->
+		<associatedEntity classCode="SDLOCErr">
+			<!-- SHALL have at  one id, CPC Practice Site -->
+			<id root="2.16.840.1.113883.3.249.5.1" extension="T2OR1234" assigningAuthorityName="CMS-CMMI"/>
+			<!-- Failure a-CMS_19-error This associatedEntity SHALL contain exactly one [1..1] id (CONF:CMS_19). -->
+			<!-- Failure a-CMS_20-error This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.5.1" CPC Practice Site  -->
+			<!-- Failure a-CMS_21-error This id SHALL contain exactly one [1..1] @extension (CONF:CMS_21). -->
+ 			<id root="2.16.840.1.113883.3.249.5.1Err" extensionErr="T2OR1234" assigningAuthorityName="CMS-CMMI"/>
+			<code code="394730007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="healthcare related organization"/>
+			<!-- Failure a-CMS_22-error This associatedEntity SHALL contain exactly one [1..1] code (CONF:CMS_22).  -->
+			<!-- Failure a-CMS_23-error This code SHALL contain exactly one [1..1] @code="394730007" Healthcare Related Organization (CONF:CMS_23). -->  
+			<!-- Failure a-CMS_24-error This code SHALL contain exactly one [1..1] @codeSystem (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:CMS_24).   -->
+			<code code="394730007Err" codeSystemErr="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="healthcare related organization"/>
+			<!--  Failure a-CMS_25-error This associatedEntity SHALL contain exactly one [1..1] addr (CONF:CMS_25).  -->
+			<!--
+			<addr>
+				<streetAddressLine>17 Any Rd.</streetAddressLine>
+				<city>Blue Bell</city>
+				<state>MA</state>
+				<postalCode>02368</postalCode>
+				<country>US</country>
+			</addr>
+			-->
 		</associatedEntity>
 	</participant>
-	<!-- MAY: information about the service provider -->
-	<documentationOf typeCode="DOC">
+	<!-- SHALL contain one documentationOf -->
+	<documentationOf >
 		<serviceEvent classCode="PCPR">
 			<!-- care provision -->
 			<effectiveTime>
-				<low value="20160101"/>
-				<high value="20160301"/>
+				<low value="20170101"/>
+				<high value="20170301"/>
 			</effectiveTime>
-			<!-- You can include multiple performers, each with optional NPI, TIN, CCN. -->
+			<!-- Multiple performers can be included for CPC+ only, each with an NPI and TIN -->
 			<performer typeCode="PRF">
 				<time>
-					<low value="20160101"/>
-					<high value="20160301"/>
+					<low value="20170101"/>
+					<high value="20170301"/>
 				</time>
 				<assignedEntity>
-					<!-- SHALL contain at least one id -->
-					<!-- This is the optional provider NPI -->
-					<id root="2.16.840.1.113883.4.6" extension="111111111"
-						assigningAuthorityName="NPI"/>
-					<!-- Failure a-2233-711167-error documentationOf serviceEvent performer assignedEntity duplicate id -->
-					<id root="2.16.840.1.113883.4.6" extension="111111111"
-						assigningAuthorityName="NPI"/>
+					<!-- Provider NPI -->
+					<id root="2.16.840.1.113883.4.6" extension="2589654740" assigningAuthorityName="NPI"/>
 					<!-- MAY: The email address of the provider's data submitted -->
 					<telecom value="mailto:user@hostname"/>
 					<representedOrganization>
 						<!-- This is the optional organization TIN -->
-						<id root="2.16.840.1.113883.4.2" extension="1234567"
-							assigningAuthorityName="TIN"/>
-						<!-- Failure a-2233-711168-error documentationOf serviceEvent performer assignedEntity representedOrganization duplicate id -->
-						<id root="2.16.840.1.113883.4.2" extension="54321"
-							assigningAuthorityName="CCN"/>
-						<!-- SHOULD Name not required -->
-						<name>Good Health Hospital</name>
+						<!-- Failure a-3338-18181_C01-warning This representedOrganization SHOULD contain zero or one [0..1] id (CONF:3338-18181_C01) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number -->
+						<id root="2.16.840.1.113883.4.2Err" extension="990000999" assigningAuthorityName="TIN"/>
+						<!-- Failure a-CMS_79-warning This representedOrganization SHOULD contain zero or one [0..1] id (CONF:CMS_79) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.5.2" MIPS Virtual Group (CONF:CMS_80). -->
+						<id root="2.16.840.1.113883.3.249.5.2Err" extension="MIPS_VIRTUALGROUP" />
+						<name>Good Health Clinic</name>
 					</representedOrganization>
+				</assignedEntity>
+				<!-- Failure a-3338-18176-error Such performers SHALL contain exactly one [1..1] assignedEntity  -->
+				<assignedEntity>
+					<!-- Provider NPI -->
+					<!-- Failure a-3338-18177_C01-error This assignedEntity SHALL contain exactly one [1..1] id (CONF:3338-18177_C01) such that it  MAY contain zero or one [0..1] @nullFlavor (CONF:CMS_29). SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:3338-18178_C01).  MAY contain zero or one [0..1] @extension (CONF:3338-18247). -->
+					<id root="2.16.840.1.113883.4.6Err" extension="2589654740" assigningAuthorityName="NPI"/>
+					<!-- MAY: The email address of the provider's data submitted -->
+					<telecom value="mailto:user@hostname"/>
+					<!-- Failure a-3338-18180_C01-error This assignedEntity SHALL contain exactly one [1..1] representedOrganization  -->
 				</assignedEntity>
 			</performer>
 		</serviceEvent>
 	</documentationOf>
-	<!-- Failure a-2233-711214-error documentationOf duplicate -->
-	<documentationOf typeCode="DOC">
+	<!-- Failure a-3338-18170_C01-error SHALL contain exactly one [1..1] documentationOf  -->
+	<documentationOf >
 		<serviceEvent classCode="PCPR">
 			<!-- care provision -->
 			<effectiveTime>
-				<low value="20160101"/>
-				<high value="20160301"/>
+				<low value="20170101"/>
+				<high value="20170301"/>
 			</effectiveTime>
-			<!-- Failure a-2233-18173-error documentationOf serviceEvent misssing performer -->
-			<!--performer typeCode="PRF">
+			<!-- Multiple performers can be included for CPC+ only, each with an NPI and TIN -->
+			<performer typeCode="PRF">
 				<time>
-					<low value="20160101"/>
-					<high value="20160301"/>
+					<low value="20170101"/>
+					<high value="20170301"/>
 				</time>
 				<assignedEntity>
-					<id root="2.16.840.1.113883.4.6" extension="111111111"
-						assigningAuthorityName="NPI"/>
-					<telecom value="mailto:user@hostname"/>
-					<representedOrganization>
-						<id root="2.16.840.1.113883.4.2" extension="1234567"
-							assigningAuthorityName="TIN"/>
-						<id root="2.16.840.1.113883.4.336" extension="54321"
-							assigningAuthorityName="CCN"/>
-						<name>Good Health Hospital</name>
-					</representedOrganization>
-				</assignedEntity>
-			</performer-->
-		</serviceEvent>
-		<!-- Failure a-2233-18171-error documentationOf serviceEvent duplicate -->
-		<!-- Failure a-2233-18172-error documentationOf serviceEvent wrong @classCode -->
-		<serviceEvent classCode="PRPC">
-			<!-- care provision -->
-			<effectiveTime>
-				<low value="20160101"/>
-				<high value="20160301"/>
-			</effectiveTime>
-			<!-- Failure a-2233-18174-error documentationOf serviceEvent missing @typeCode -->
-			<!--performer typeCode="PRF"-->
-			<performer>
-				<time>
-					<low value="20160101"/>
-					<high value="20160301"/>
-				</time>
-				<assignedEntity>
-					<id root="2.16.840.1.113883.4.6" extension="111111111" assigningAuthorityName="NPI"/>
+					<!-- Provider NPI -->
+					<id root="2.16.840.1.113883.4.6" extension="2589654740" assigningAuthorityName="NPI"/>
 					<!-- MAY: The email address of the provider's data submitted -->
 					<telecom value="mailto:user@hostname"/>
 					<representedOrganization>
 						<!-- This is the optional organization TIN -->
-						<id root="2.16.840.1.113883.4.2" extension="1234567"
-							assigningAuthorityName="TIN"/>
-						<!-- This is the optional organization CCN -->
-						<id root="2.16.840.1.113883.4.336" extension="54321"
-							assigningAuthorityName="CCN"/>
-						<!-- SHOULD Name not required -->
-						<!-- Failure a-2233-19659-warning missingname -->			
-						<!--name>Good Health Hospital</name-->
-					</representedOrganization>
-					<!-- Failure a-2233-18180-error documentationOf serviceEvent assignedEntity representedOrganization duplicate -->
-					<representedOrganization>
-						<!-- This is the optional organization TIN -->
-						<id root="2.16.840.1.113883.4.2" extension="1234567"
-							assigningAuthorityName="TIN"/>
-						<!-- This is the optional organization CCN -->
-						<id root="2.16.840.1.113883.4.336" extension="54321"
-							assigningAuthorityName="CCN"/>
-						<!-- SHOULD Name not required -->
-						<name>Good Health Hospital</name>
-					</representedOrganization>
-				</assignedEntity>
-				<!-- Failure a-2233-18176-error documentationOf serviceEvent assignedEntity duplicate -->
-				<assignedEntity>
-					<!-- SHALL contain at least one id -->
-					<!-- This is the optional provider NPI -->
-					<id root="2.16.840.1.113883.4.6" extension="111111111"
-						assigningAuthorityName="NPI"/>
-					<!-- MAY: The email address of the provider's data submitted -->
-					<telecom value="mailto:user@hostname"/>
-					<representedOrganization>
-						<!-- This is the optional organization TIN -->
-						<id root="2.16.840.1.113883.4.2" extension="1234567"
-							assigningAuthorityName="TIN"/>
-						<!-- This is the optional organization CCN -->
-						<id root="2.16.840.1.113883.4.336" extension="54321"
-							assigningAuthorityName="CCN"/>
-						<!-- SHOULD Name not required -->
-						<name>Good Health Hospital</name>
+						<!--  -->
+						<id root="2.16.840.1.113883.4.2" extension="990000999" assigningAuthorityName="TIN"/>
+						<!-- representedOrganization SHOULD contain zero or one [0..1] id  such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.5.2" and extension MIPS Virtual Group -->
+						<id root="2.16.840.1.113883.3.249.5.2" extension="MIPS_VIRTUALGROUP" />
+						<name>Good Health Clinic</name>
 					</representedOrganization>
 				</assignedEntity>
 			</performer>
 		</serviceEvent>
+		<!--  Failure a-3338-18171_C01-error The documentationOf, if present, SHALL contain exactly one [1..1] serviceEvent  -->
+		<serviceEvent classCode="PCPR">
+			<!-- ... -->
+			<!-- Failure a-3338-18173-error This serviceEvent SHALL contain at least one [1..*] performer  -->
+			<!-- ... -->
+		</serviceEvent>
 	</documentationOf>
-	<authorization>
-		<consent>
-			<id root="84613250-e75e-11e1-aff1-0800200c9a66"/>
-			<code code="425691002" displayName="consent given for electronic record sharing"
-				codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/>
-			<!-- Failure a-2233-18364-error authorization consent missing statusCode -->
-			<!--statusCode code="completed"/-->
-		</consent>
-		<!-- Failure a-2233-18360-error authorization consent duplicate -->
-		<consent>
-			<!-- Failure a-2233-18361-error authorization consent missing id -->
-			<!--id root="84613250-e75e-11e1-aff1-0800200c9a66"/-->
-			<!-- Failure a-2233-18363-error authorization consent code duplicate -->
-			<code code="425691002" displayName="consent given for electronic record sharing"
-				codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/>
-			<!-- Failure a-2233-19550-error authorization consent code wrong @code-->
-			<!-- Failure a-2233-21172-error authorization consent code missing @codeSystem -->
-			<code code="4256910023" displayName="consent given for electronic record sharing"
-				codeSystemName="SNOMED-CT"/>
-			<!-- Failure a-2233-19551-error authorization consent wrong @statusCode -->
-			<statusCode code="incomplete"/>
-		</consent>
-	</authorization>
-	
-	<!-- This component should trigger no errors -->
+	<!-- 
+********************************************************
+CDA Body
+********************************************************
+-->
 	<component>
 		<structuredBody>
 			<component>
 				<section>
-					<!-- QRDA Category III Measure Section V3 template -->
-					<templateId root="2.16.840.1.113883.10.20.27.2.3" extension="2016-11-01"/>
+					<!-- QRDA Category III Measure Section - CMS V3 template -->
+					<templateId root="2.16.840.1.113883.10.20.27.2.3" extension="2018-05-01"/>
 					<!-- ... -->
-					
+					<entry>
+						<organizer>
+							<component>
+								<observation>
+									<!-- Performance Rate for Proportion Measure - CMS V3 -->
+									<templateId root="2.16.840.1.113883.10.20.27.3.25" extension="2018-05-01" />
+								</observation>
+							</component>
+						</organizer>
+					</entry>
 				</section>
 			</component>
 			
-			<!-- ******************************************************** Advancing Care Information Section ********************************************************-->
+			<!-- 
+			********************************************************
+			Promoting Interoperability Section
+			********************************************************
+			-->
 			<component>
 				<section>
-					<!-- Advancing Care Information Section templateId -->
+					<!-- Promoting Interoperability Section V2 templateId -->
 					<templateId root="2.16.840.1.113883.10.20.27.2.5" extension="2017-06-01"/>
 					<!-- ... -->
 				</section>
 			</component>
-			<!-- ********************************************************Clinical Practice Improvement Activity Section***********************************************-->
+			<!-- 
+			********************************************************
+			Improvement Activity Section
+			********************************************************
+			-->
 			<component>
 				<section>
-					<!-- Clinical Practice Improvement Activity Section templateId -->
-					<templateId root="2.16.840.1.113883.10.20.27.2.4" extension="2016-09-01"/>
+					<!-- Improvement Activity Section V2 templateId -->
+					<templateId root="2.16.840.1.113883.10.20.27.2.4" extension="2017-06-01"/>
 					<!-- ... -->
 				</section>
 			</component>
 		</structuredBody>
 	</component>
 	
-	<!-- Failure a-2233-17217-error  Multiple components not allowed -->
+	<!-- Failure a-3338-17217-error SHALL contain exactly one [1..1] component -->
 	<component>
-		<!-- This structuredBody should trigger no errors -->
 		<structuredBody>
 			<component>
 				<section>
-					<!-- QRDA Category III Measure Section V3 template -->
-					<templateId root="2.16.840.1.113883.10.20.27.2.3" extension="2016-11-01"/>
+					<!-- QRDA Category III Measure Section - CMS V3 template -->
+					<!-- Failure a-CMS_13-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then QRDA Category III Measure Section – CMS (V3) SHALL be present (CONF:CMS_13). -->
+					<templateId root="2.16.840.1.113883.10.20.27.2.3" extension="2018-05-01Err"/>
 					<!-- ... -->
-					
+					<entry>
+						<organizer>
+							<component>
+								<observation>
+									<!-- Performance Rate for Proportion Measure - CMS V3 -->
+									<!-- Failure a-CMS_14-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then Performance Rate for Proportion Measure – CMS (V3) SHALL be present (CONF:CMS_13). -->
+									<templateId root="2.16.840.1.113883.10.20.27.3.25ERR" extension="2018-05-01" />
+								</observation>
+							</component>
+						</organizer>
+					</entry>
 				</section>
 			</component>
 			
-			<!-- ******************************************************** Advancing Care Information Section ********************************************************-->
+			<!-- 
+			********************************************************
+			Promoting Interoperability Section
+			********************************************************
+			-->
 			<component>
 				<section>
-					<!-- Advancing Care Information Section templateId -->
+					<!-- Promoting Interoperability Section V2 templateId -->
 					<templateId root="2.16.840.1.113883.10.20.27.2.5" extension="2017-06-01"/>
 					<!-- ... -->
 				</section>
 			</component>
-			<!-- ********************************************************Clinical Practice Improvement Activity Section***********************************************-->
+			<!-- 
+			********************************************************
+			Improvement Activity Section
+			********************************************************
+			-->
 			<component>
 				<section>
-					<!-- Clinical Practice Improvement Activity Section templateId -->
-					<templateId root="2.16.840.1.113883.10.20.27.2.4" extension="2016-09-01"/>
+					<!-- Improvement Activity Section V2 templateId -->
+					<templateId root="2.16.840.1.113883.10.20.27.2.4" extension="2017-06-01"/>
+					<!-- ... -->
+				</section>
+			</component>
+			<!-- Failure a-3338-17281_C01-error This structuredBody SHALL NOT contain [0..0] component (CONF:3338-17281_C01) such that it  SHALL contain exactly one [1..1] QRDA Category III Reporting Parameters Section (identifier: urn:oid:2.16.840.1.113883.10.20.27.2.2) (CONF:3338-17282). -->
+			<component>
+				<section>
+					<!-- RDA Category III Reporting Parameters Section -->
+					<templateId root="2.16.840.1.113883.10.20.27.2.2" extension="..."/>
 					<!-- ... -->
 				</section>
 			</component>
 		</structuredBody>
-		<!-- Failure a-2233-17235-error Multiple structuredBody in component not allowed -->
+
+		<!-- Failure a-3338-17235-error This component SHALL contain exactly one [1..1] structuredBody  -->
+		<!-- Failure a-3338-21394_C01-error This structuredBody SHALL contain at least a QRDA Category III Measure Section - CMS (V3), or an Improvement Activity Section - CMS, or a Promoting Interoperability Section (V2) (CONF:3338-21394_C01). -->
 		<structuredBody>
-			<!-- Failure a-2233-711341-error structuredBody SHALL NOT have a component with  QRDA Category III Reporting Parameters Section oid:2.16.840.1.113883.10.20.27.2.2  -->
-			<component>
-				<section>
-					<templateId root="2.16.840.1.113883.10.20.27.2.2"/>
-				</section>
-			</component>
-			<component>
-				<section>
-					<!-- QRDA Category III Measure Section V3 template -->
-					<templateId root="2.16.840.1.113883.10.20.27.2.3" extension="2016-11-01"/>
-					<!-- ... -->
-					
-				</section>
-			</component>
-			<!-- Failure a-2233-711311-error  structuredBody SHALL contain at least a QRDA Category III Measure Section - CMS (V2) root='2.16.840.1.113883.10.20.27.2.3' extension='2017-07-01',
-				                              or an Improvement Activity Section (V2) root='2.16.840.1.113883.10.20.27.2.4' extension='2017-06-01' 
-				                              or an Advancing Care Information Section (V2) root='2.16.840.1.113883.10.20.27.2.5' extension='2017-06-01'
-            -->
+			
 		</structuredBody>
-		
+
 	</component>
-	
 </ClinicalDocument>

@@ -3,12 +3,12 @@
 <!--
 		Measure Reference and Results CMS V2 Minimal sample file with errors
         Author: Dan Donahue
-        Date:   06-05-2018
+        Date:   06-12-2018
+        JIRA https://tracker.esacinc.com/browse/QRDA-432
 		
-		Total Errors Expected: 3
+		Total Errors Expected: 2
  			Failure a-CMS_71-error SHALL contain exactly one [1..1] templateId (CONF:CMS_71) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.20.3.1" (CONF:CMS_72). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_73). 
-			Failure a-CMS_74-error SHALL contain exactly one [1..1] component (CONF:CMS_74).
-            Failure a-CMS_75-error This component SHALL contain exactly one [1..1] Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_75). 
+			Failure a-CMS_74-error SHALL contain exactly one [1..1] component (CONF:CMS_74) such that it  SHALL contain exactly one [1..1] Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_75).
            
     	Total Warnings Expected: 0
 	-->
@@ -26,21 +26,12 @@
 				<!-- Failure a-CMS_71-error Multiple main template id -->
 				<templateId root="2.16.840.1.113883.3.249.20.3.1" extension="2018-05-01"/>
 				<!-- ... -->
+				<!-- Failure a-CMS_74-error SHALL contain exactly one [1..1] component with one Reporting Parameters Act (CONF:CMS_74). -->
 				<component>
 					<entry>
 						<act>
 							<!--  Reporting Parameters Act -->
-							<templateId root="2.16.840.1.113883.10.20.17.3.8" />
-						</act>
-					</entry>
-				</component>
-				<!-- Failure a-CMS_74-error SHALL contain exactly one [1..1] component (CONF:CMS_74). -->
-				<!-- Failure a-CMS_75-error This component SHALL contain exactly one [1..1] Reporting Parameters Act -->
-				<component>
-					<entry>
-						<act>
-							<!--  Reporting Parameters Act -->
-							<templateId root="2.16.840.1.113883.10.20.17.3.8Err" />  <!-- Improper uid for Reporting Parameters Act -->
+							<templateId root="2.16.840.1.113883.10.20.17.3.8Err" />  <!-- Improper root for Reporting Parameters Act -->
 						</act>
 					</entry>
 				</component>

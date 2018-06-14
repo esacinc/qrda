@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
 <!--
-		Payer Supplemental Data Element CMS (V2) test file - errors introduced by Maya Zuhl
+		Title: Payer Supplemental Data Element CMS (V2) minimal sample file
+		Author: Maya Zuhl
+		Update: Dan Donahue - 06-12-2018
+		JIRA https://tracker.esacinc.com/browse/QRDA-432
 		
-		Total Errors Expected: 14
-			Failure a-2233-21155-error Wrong classCode
-			Failure a-2233-21156-error Wrong moodCode
-			Failure a-2233-711270-error Multiple templateId
-			Failure a-2233-18237-error Multiple templateId
-			Failure a-2233-21158-error Multiple code
-			Failure a-2233-21159-error Wrong code
-			Failure a-2233-21165-error Wrong codeSystem
-			Failure a-2233-18106-error Multiple statusCode
-			Failure a-2233-18107-error Wrong code
-			Failure a-2233-711196-error Multiple value
-			Failure a-2233-711230-error Multiple translation
-			Failure a-2233-711231-error No code
-			Failure a-2233-711229-error Wrong nullFlavor
-			Failure a-2233-18108-error Multiple entryRelationship
+		Total Errors Expected: 5
+			Failure a-CMS_47-error SHALL contain exactly one [1..1] templateId (CONF:CMS_47) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.18" (CONF:CMS_48). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_49).
+			Failure a-CMS_50-error SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:CMS_50). 
+		    Failure a-CMS_52-error This value SHALL contain exactly one [1..1] translation (CONF:CMS_52).
+			Failure a-CMS_51-error This value SHALL contain exactly one [1..1] @nullFlavor="OTH" (CONF:CMS_51).
+		    Failure a-CMS_53-error This translation SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet CMS Payer Groupings urn:oid:2.16.840.1.113883.3.249.14.102 (CONF:CMS_53). 
+
+		
     	Total Warnings Expected: 0
 	-->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -25,66 +21,24 @@
 	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
 
 	<!-- Payer Supplemental Data Element -->
-	<observation classCode="OBSERR" moodCode="EVNERR"> <!-- Failure a-2233-21155-error Wrong classCode, Failure a-2233-21156-error Wrong moodCode -->
+	<observation classCode="OBS" moodCode="EVN">
 		<!-- Payer Supplemental Data Element - CMS (V2) template ID -->
-		<templateId root="2.16.840.1.113883.10.20.27.3.18" extension="2016-11-01"/>
-		<templateId root="2.16.840.1.113883.10.20.27.3.18" extension="2016-11-01"/> <!-- Failure a-2233-711270-error Multiple templateId -->
-		<!-- Payer Supplemental Data Element V2 template ID -->
-		<templateId root="2.16.840.1.113883.10.20.27.3.9" extension="2016-02-01"/>
-		<templateId root="2.16.840.1.113883.10.20.27.3.9" extension="2016-02-01"/> <!-- Failure a-2233-18237-error Multiple templateId --> 
-		<!-- implied template requires ID -->
-		<!-- <id nullFlavor="NA"/> --> <!-- Failure a-2233-12564-error No id -->
-		<!-- SHALL be single value binding to: -->
-		<code code="48768-6" displayName="Payment source" 
-			codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
-		<code code="48760-0" displayName="Payment source" 
-			codeSystem="2.16.840.1.113883.0.0.0.0" codeSystemName="LOINC"/> <!-- Failure a-2233-21158-error Multiple code, Failure a-2233-21159-error Wrong code, Failure a-2233-21165-error Wrong codeSystem -->
-		<statusCode code="completed"/>
-		<statusCode code="completedError"/> <!-- Failure a-2233-18106-error Multiple statusCode, Failure a-2233-18107-error Wrong code -->
-		<!-- SHALL be drawn from  Value Set: PHDSC Source of Payment Typology 2.16.840.1.114222.4.11.3591 DYNAMIC-->
+		<templateId root="2.16.840.1.113883.10.20.27.3.18" extension="2018-05-01"/>
+		<!-- Failure a-CMS_47-error Multiple main templateId -->
+		<templateId root="2.16.840.1.113883.10.20.27.3.18" extension="2018-05-01"/>
+		<!-- ... -->
 		<value xsi:type="CD" nullFlavor="OTH">
-			<translation code="A"
-						codeSystem="2.16.840.1.113883.3.249.12"
-						codeSystemName="CMS Clinical Codes"
-						displayName="Medicare"/>
+			<!-- ailure a-CMS_53-error This translation SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet CMS Payer Groupings urn:oid:2.16.840.1.113883.3.249.14.102 (CONF:CMS_53).  -->
+			<translation code="AErr"  codeSystem="2.16.840.1.113883.3.249.12" codeSystemName="CMS Clinical Codes" displayName="Medicare"/> <!-- AErr Not a valid code value -->
 		</value>
-		<value xsi:type="CD" nullFlavor="OTHError"> <!-- Failure a-2233-711196-error Multiple value, Failure a-2233-711229-error Wrong nullFlavor -->
-			<translation code="A"
-						codeSystem="2.16.840.1.113883.3.249.12"
-						codeSystemName="CMS Clinical Codes"
-						displayName="Medicare"/>
-			<translation 
-						codeSystem="2.16.840.1.113883.3.249.12"
-						codeSystemName="CMS Clinical Codes"
-						displayName="Medicare"/> <!-- Failure a-2233-711230-error Multiple translation, Failure a-2233-711231-error No code -->
+		<!-- Failure a-CMS_50-error SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:CMS_50). -->
+		<!-- Failure a-CMS_51-error This value SHALL contain exactly one [1..1] @nullFlavor="OTH" (CONF:CMS_51). -->
+		<value xsi:type="CD" nullFlavor="OTHErr">
+			<!-- Failure a-CMS_52-error This value SHALL contain exactly one [1..1] translation (CONF:CMS_52). -->
+			<!-- <translation code="A"	codeSystem="2.16.840.1.113883.3.249.12"	codeSystemName="CMS Clinical Codes"	displayName="Medicare"/> -->
 		</value>
-		<entryRelationship typeCode="SUBJ" inversionInd="true">
-			<observation classCode="OBS" moodCode="EVN">
-				<!-- SHALL 1..1 Aggregate Count CMS template -->
-				<templateId root="2.16.840.1.113883.10.20.27.3.24"/>
-				<code code="MSRAGG"
-					codeSystem="2.16.840.1.113883.5.4"
-					codeSystemName="ActCode"
-					displayName="rate aggregation"/>
-				<!--  SHALL value xsi:type="INT"-->
-				<value xsi:type="INT" value="250"/>
-				<methodCode code="COUNT" displayName="Count" codeSystem="2.16.840.1.113883.5.84"
-					codeSystemName="ObservationMethod"/>
-			</observation>
-		</entryRelationship>
-		<entryRelationship typeCode="SUBJ" inversionInd="true"> <!-- Failure a-2233-18108-error Multiple entryRelationship -->
-			<observation classCode="OBS" moodCode="EVN">
-				<!-- SHALL 1..1 Aggregate Count CMS template -->
-				<templateId root="2.16.840.1.113883.10.20.27.3.24"/>
-				<code code="MSRAGG"
-					codeSystem="2.16.840.1.113883.5.4"
-					codeSystemName="ActCode"
-					displayName="rate aggregation"/>
-				<!--  SHALL value xsi:type="INT"-->
-				<value xsi:type="INT" value="250"/>
-				<methodCode code="COUNT" displayName="Count" codeSystem="2.16.840.1.113883.5.84"
-					codeSystemName="ObservationMethod"/>
-			</observation>
-		</entryRelationship>
+		<!-- .. -->
 	</observation>
+	
+	
 </ClinicalDocument>

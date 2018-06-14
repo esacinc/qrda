@@ -2,8 +2,10 @@
 <?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
 <!--
 		Title: Improvement Activity Section CMS minimal file with errors
+		       Intended recipient = MIPS_VIRTUALGROUP
 		Author: Dan Donahue
 		Date: 06-01-2018
+		JIRA https://tracker.esacinc.com/browse/QRDA-432
 		
 		Total Errors Expected: 3
             Failure a-3377-711342-error SHALL contain exactly one [1..1] templateId (CONF:3377-711342) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.20.2.1" (CONF:CMS_70). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_76). 

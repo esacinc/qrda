@@ -4,6 +4,7 @@
     Title: Measure Data CMS V3, Minimal sample
     Author: Dan Donahue
     Date:   05-24-2018
+    JIRA https://tracker.esacinc.com/browse/QRDA-432
     
     Total Errors Expected: 0
     Total Warnings Expected: 0
@@ -30,7 +31,7 @@
 					<!-- ... -->
 			</observation>
 		</entryRelationship>
-		<!-- RaceSupplemental Data Element - CMS (V2)-->
+		<!-- Race Supplemental Data Element - CMS (V2)-->
 		<entryRelationship typeCode="COMP">
 			<observation classCode="OBS" moodCode="EVN">
 				<templateId root="2.16.840.1.113883.10.20.27.3.8" extension="2016-09-01" />

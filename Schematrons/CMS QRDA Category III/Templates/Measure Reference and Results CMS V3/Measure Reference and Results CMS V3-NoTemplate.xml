@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!--
+	Title:	Measure Reference and Results CMS V3 Minimal sample with missing CMS template
+    Author: Dan Donahue
+    Date:   06-15-2018
+    JIRA: https://tracker.esacinc.com/browse/QRDA-444
+    
+    Total Errors Expected: 1
+    	Failure a-CMS_54-error Missing main template
+    	
+    Total Warnings Expected: 0
+	-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
+	
+	<organizer classCode="CLUSTER" moodCode="EVN">
+		<!-- Measure Reference template ID -->
+		<templateId root="2.16.840.1.113883.10.20.24.3.98" />
+		<!-- Measure Reference and Results (V3) template ID -->
+		<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2016-09-01"/>
+		<!-- Measure Reference and Results - CMS (V3) template ID -->
+		<!-- <templateId root="2.16.840.1.113883.10.20.27.3.17" extension="2018-05-01"/> -->
+		<!-- ... -->
+		<component>
+			<!-- Performance Rate for Proportion Measure - CMS (V3) -->
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.27.3.16" extension="2018-05-01"/>
+				<!-- ... -->
+			</observation>
+		</component>
+	</organizer>
+	
+</ClinicalDocument>

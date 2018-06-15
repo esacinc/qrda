@@ -22,7 +22,8 @@
 		********************************************************
 	-->
 	<!-- QRDA Category III Report V3 template ID  -->
-	<!-- SHALL contain one templateID root="2.16.840.1.113883.10.20.27.1.2" extension="2018-05-01" -->
+	<templateId root="2.16.840.1.113883.10.20.27.1.1" extension="2017-06-01"/>
+	<!-- QRDA Category III Report CMS V3 template ID  -->
 	<templateId root="2.16.840.1.113883.10.20.27.1.2" extension="2018-05-01"/>
 	<id root="2dcaebf2-96ef-4987-9d13-1b3565e2c5d9"/>
 	<!-- SHALL contain one confidentialityCode -->

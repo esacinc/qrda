@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!--
+	Title: Reporting Parameters Act - CMS (V2) minimal file with missing CMS template
+    Author: Dan Donahue
+    Date:   06-15-2018
+    JIRA: https://tracker.esacinc.com/browse/QRDA-444
+    
+    Total Errors Expected: 1
+    	Failure a-2233-711257-error Missing main template
+    	
+    Total Warnings Expected: 0
+-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
+	<section>
+		<component>
+			<structuredBody>
+				<entry>
+					<act classCode="ACT" moodCode="EVN">
+						<templateId root="2.16.840.1.113883.10.20.17.3.8"/>
+						<!-- Failure a-2233-711257-error Missing main template -->
+						<!-- <templateId root="2.16.840.1.113883.10.20.27.3.23" extension="2016-11-01"/> -->
+						<id root="95944FB8-241B-11E5-1027-09173F13E4C5"/>
+						<code code="252116004"
+								codeSystem="2.16.840.1.113883.6.96"
+								displayName="Observation Parameters"/>
+						<effectiveTime>
+							<low value="20170101"/>
+							<high value="20171231"/>
+						</effectiveTime>
+					</act>
+				</entry>
+			</structuredBody>
+		</component>
+	</section>
+</ClinicalDocument>

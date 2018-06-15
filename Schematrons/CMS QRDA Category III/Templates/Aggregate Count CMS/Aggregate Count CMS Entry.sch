@@ -8,14 +8,21 @@
     <sch:ns prefix="cda" uri="urn:hl7-org:v3" />
     
     <sch:phase id="errors">
+        <sch:active pattern="Aggregate_count-pattern-errors" />
         <sch:active pattern="Aggregate_count_CMS-pattern-errors" />
     </sch:phase>
-    
+ 
+    <sch:pattern id="Aggregate_count-pattern-errors">
+        <!-- New rule. JIRA https://tracker.esacinc.com/browse/QRDA-444 -->
+        <sch:rule id="Aggregate_count-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.3']]">
+            <sch:assert id="a-1109-711262-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.24'][not(@extension)])=1">SHALL contain exactly one [1..1] templateId (CONF:1109-711262) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.24" (CONF:1109-711263).</sch:assert>
+        </sch:rule>
+    </sch:pattern>   
+        
     <sch:pattern id="Aggregate_count_CMS-pattern-errors">
         <sch:rule id="Aggregate_count_CMS-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.24']]">
             <sch:assert id="a-1109-17563-error" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1109-17563).</sch:assert>
             <sch:assert id="a-1109-17564-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:1109-17564).</sch:assert>
-            <sch:assert id="a-1109-711262-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.24'][not(@extension)])=1">SHALL contain exactly one [1..1] templateId (CONF:1109-711262) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.24" (CONF:1109-711263).</sch:assert>
             <sch:assert id="a-1109-17565-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.3'])=1">SHALL contain exactly one [1..1] templateId (CONF:1109-17565) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.3" (CONF:1109-18095).</sch:assert>
             <sch:assert id="a-1109-17566-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:1109-17566).</sch:assert>
             <sch:assert id="a-1109-711244-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:1109-711244).</sch:assert>

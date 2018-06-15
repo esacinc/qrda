@@ -8,12 +8,20 @@
 	<sch:ns prefix="cda" uri="urn:hl7-org:v3" />
 	
 	<sch:phase id="errors">
-		<sch:active pattern="Improvement_Activity_Performed_Measure_Referencea_and_Results_CMS-pattern-errors"/>
+		<sch:active pattern="Improvement_Activity_Performed_Measure_Reference_and_Results-pattern-errors"/>
+		<sch:active pattern="Improvement_Activity_Performed_Measure_Reference_and_Results_CMS-pattern-errors"/>
 	</sch:phase>
-	
-	<sch:pattern id="Improvement_Activity_Performed_Measure_Referencea_and_Results_CMS-pattern-errors">
-		<sch:rule id="Improvement_Activity_Performed_Measure_Referencea_and_Results_CMS-errors" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.3.249.20.3.1'][@extension='2018-05-01']]">
+
+	<sch:pattern id="Improvement_Activity_Performed_Measure_Reference_and_Results-pattern-errors">
+		<!-- New rule. JIRA https://tracker.esacinc.com/browse/QRDA-444 -->
+		<sch:rule id="Improvement_Activity_Performed_Reference_and_Result-errors" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.33'][@extension='2016-09-01']]">
 			<sch:assert id="a-CMS_71-error" test="count(cda:templateId[@root='2.16.840.1.113883.3.249.20.3.1'][@extension='2018-05-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:CMS_71) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.20.3.1" (CONF:CMS_72). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_73). </sch:assert>
+		</sch:rule>	
+	</sch:pattern>
+	
+	
+	<sch:pattern id="Improvement_Activity_Performed_Measure_Reference_and_Results_CMS-pattern-errors">
+		<sch:rule id="Improvement_Activity_Performed_Measure_Reference_and_Results_CMS-errors" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.3.249.20.3.1'][@extension='2018-05-01']]">
 			<sch:assert id="a-CMS_74-error" test="count(cda:component[count(cda:entry[cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]])=1]) = 1">SHALL contain exactly one [1..1] component (CONF:CMS_74) such that it  SHALL contain exactly one [1..1] Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_75). </sch:assert>
 		</sch:rule>
 

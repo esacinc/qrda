@@ -4,15 +4,15 @@
 	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
 	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
 	<!--
-		Title: QRDA Category III Report V3 minimal sample file with no errors
-		       Intended Recipient: CPCPLUS
-		Date: 05-23-2018
-		Author: Dan Donahue
-		JIRA https://tracker.esacinc.com/browse/QRDA-432
-		
-		Total Errors Expected: 0
-          
-    	Total Warnings Expected: 0
+	Title: QRDA Category III Report V3 minimal sample file with missing CMS teplate
+    Author: Dan Donahue
+    Date:   06-15-2018
+    JIRA: https://tracker.esacinc.com/browse/QRDA-444
+    
+    Total Errors Expected: 1
+    	Failure a-CMS_1-error Missing main template
+    	
+    Total Warnings Expected: 0
 	-->
 	<!-- 
 		********************************************************
@@ -22,7 +22,8 @@
 	<!-- QRDA Category III Report V3 template ID  -->
 	<templateId root="2.16.840.1.113883.10.20.27.1.1" extension="2017-06-01"/>
 	<!-- QRDA Category III Report CMS V3 template ID  -->
-	<templateId root="2.16.840.1.113883.10.20.27.1.2" extension="2018-05-01"/>
+	<!-- Failure a-CMS_1-error Missing main template -->
+	<!-- <templateId root="2.16.840.1.113883.10.20.27.1.2" extension="2018-05-01"/> -->
 	<id root="2dcaebf2-96ef-4987-9d13-1b3565e2c5d9"/>
 	<!-- SHALL contain one confidentialityCode -->
 	<confidentialityCode codeSystem="2.16.840.1.113883.5.25" code="N"/>

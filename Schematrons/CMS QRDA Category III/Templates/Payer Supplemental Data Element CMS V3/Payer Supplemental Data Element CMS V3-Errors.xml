@@ -22,6 +22,8 @@
 
 	<!-- Payer Supplemental Data Element -->
 	<observation classCode="OBS" moodCode="EVN">
+		<!-- Payer Supplemental Data Element  template ID -->
+		<templateId root="2.16.840.1.113883.10.20.27.3.9"/>
 		<!-- Payer Supplemental Data Element - CMS (V2) template ID -->
 		<templateId root="2.16.840.1.113883.10.20.27.3.18" extension="2018-05-01"/>
 		<!-- Failure a-CMS_47-error Multiple main templateId -->

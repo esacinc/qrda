@@ -23,6 +23,8 @@
 	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
 	
 	<observation classCode="OBS" moodCode="EVN">
+		<!-- Measure Data - template ID -->
+		<templateId root="2.16.840.1.113883.10.20.27.3.5" extension="2016-09-01"/>
 		<!-- Measure Data - CMS (V3) template ID -->
 		<templateId root="2.16.840.1.113883.10.20.27.3.16" extension="2018-05-01"/>
 		<!-- Failure a-CMS_41-error Multiple main template ID -->

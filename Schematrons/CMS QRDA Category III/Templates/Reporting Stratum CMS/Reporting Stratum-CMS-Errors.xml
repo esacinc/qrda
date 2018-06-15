@@ -5,10 +5,9 @@
     Author: Maya Zuhl
     Date:   11-04-2016
     
-    Total Errors Expected: 14
+    Total Errors Expected: 13
 		Failure a-1109-17575-error Wrong classCode
 		Failure a-1109-17576-error Wrong moodCode
-		Failure a-1109-711274-error Multiple templateId
 		Failure a-1109-18093-error No templateId
 		Failure a-1109-17577-error Multiple code
 		Failure a-1109-17578-error Wrong code
@@ -39,7 +38,6 @@
 										<observation classCode="OBSERR" moodCode="EVNERR"> <!-- Failure a-1109-17575-error Wrong classCode, Failure a-1109-17576-error Wrong moodCode -->
 											<!-- Reporting Startum - CMS template -->
 											<templateId root="2.16.840.1.113883.10.20.27.3.20"/>
-											<templateId root="2.16.840.1.113883.10.20.27.3.20"/><!-- Failure a-1109-711274-error Multiple templateId -->
 											<!-- Reporting Stratum template (QRDA III) -->
 											<!--<templateId root="2.16.840.1.113883.10.20.27.3.4"/> --> <!-- Failure a-1109-18093-error No templateId -->
 											<code code="ASSERTION"

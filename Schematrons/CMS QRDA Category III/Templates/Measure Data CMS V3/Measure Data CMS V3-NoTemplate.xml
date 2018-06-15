@@ -3,10 +3,12 @@
 <!-- 		
     Title: Measure Data CMS V3, Minimal sample
     Author: Dan Donahue
-    Date:   05-24-2018
-    JIRA https://tracker.esacinc.com/browse/QRDA-432
+    Date:   06-15-2018
+    JIRA: https://tracker.esacinc.com/browse/QRDA-444
     
-    Total Errors Expected: 0
+    Total Errors Expected: 1
+    	Failure a-CMS_41-error Missing main template
+    	
     Total Warnings Expected: 0
 -->
 
@@ -16,8 +18,9 @@
 	<observation classCode="OBS" moodCode="EVN">
 		<!-- Measure Data - template ID -->
 		<templateId root="2.16.840.1.113883.10.20.27.3.5" extension="2016-09-01"/>
+		
 		<!-- Measure Data - CMS (V3) template ID -->
-		<templateId root="2.16.840.1.113883.10.20.27.3.16" extension="2018-05-01"/>
+		<!-- <templateId root="2.16.840.1.113883.10.20.27.3.16" extension="2018-05-01"/> -->
 
 		<!-- Payer Supplemental Data Element - CMS (V3)-->
 		<entryRelationship typeCode="COMP">

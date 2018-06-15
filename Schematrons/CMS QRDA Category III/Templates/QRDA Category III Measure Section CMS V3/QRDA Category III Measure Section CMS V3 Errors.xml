@@ -36,9 +36,9 @@
 	<section>
 		<!-- Measure Section template ID -->
 		<templateId root="2.16.840.1.113883.10.20.24.2.2" />
-		<!-- QRDA Category III Measure Section (V3) template ID -->
-		<templateId root="2.16.840.1.113883.10.20.27.2.1" extension="2018-05-01"/>
-		<!-- QRDA Category III Measure Section - CMS (V2) template ID -->
+		<!-- QRDA Category III Measure Section (V4) template ID -->
+		<templateId root="2.16.840.1.113883.10.20.27.2.1" extension="2017-06-01"/>
+		<!-- QRDA Category III Measure Section - CMS (V3) template ID -->
 		<templateId root="2.16.840.1.113883.10.20.27.2.3" extension="2018-05-01"/>
 		<!-- Failure a-CMS_64-error Multiple main template ID -->
 		<templateId root="2.16.840.1.113883.10.20.27.2.3" extension="2018-05-01"/>

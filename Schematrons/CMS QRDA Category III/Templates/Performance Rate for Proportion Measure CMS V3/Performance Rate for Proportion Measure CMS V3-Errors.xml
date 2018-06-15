@@ -29,6 +29,8 @@
 	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
 
 	<observation classCode="OBS" moodCode="EVN">
+		<!-- Performance Rate for Proportion Measure template ID -->
+		<templateId root="2.16.840.1.113883.10.20.27.3.14" extension="2016-09-01"/>
 		<!-- Performance Rate for Proportion Measure - CMS (V3) template ID -->
 		<templateId root="2.16.840.1.113883.10.20.27.3.25" extension="2018-05-01"/>
 		<!-- Failure a-CMS_59-error Multiple main template id -->

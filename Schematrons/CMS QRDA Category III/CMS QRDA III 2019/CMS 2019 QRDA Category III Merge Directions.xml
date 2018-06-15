@@ -11,6 +11,7 @@
          c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Published/CMS 2019 QRDA Category III.sch
     </generatedFilename>
     
+	<!-- Change or edit final test file once test file is built -->
     <finalTestFilename>
         c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/TestFiles/EC_MU_GROUP_Sample_QRDA_III_Informative.xml
     </finalTestFilename>
@@ -87,7 +88,7 @@
                 <include>Payer Supplemental Data Element V2</include>
                 <include>Performance Rate</include>
                 <include>Performance Rate for Proportion Measure V2</include>
-                <include>Postal Code Supplemental Data Element V2</include>
+                <include>Postal Code Supplemental Data Element V2</include>   <!-- Not used, but still present in Trifolia IG -->
                 <include>Promoting Interoperability Measure Performed Measure Reference and Results</include>             <!-- Cloned from ACI Measure Performed Measure Reference and Results-->
                 <include>Promoting Interoperability Numerator Denominator Type Measure Denominator Data</include>         <!-- Cloned from ACI Numerator Denominator Type Measure Denominator Data -->
                 <include>Promoting Interoperability Numerator Denominator Type Measure Numerator Data</include>           <!-- Cloned from ACI Numerator Denominator Type Measure Numerator Data -->
@@ -95,14 +96,14 @@
                 <include>Race Supplemental Data Element V2</include>
                 <include>Reporting Rate for Proportion Measure</include>
                 <include>Reporting Stratum</include>
-                <include>Service Encounter</include>
+                <include>Service Encounter</include>   <!-- Not used, but still present in Trifolia IG -->
                 <include>Sex Supplemental Data Element V3</include>
     </sourceDirectory>
 
     <sourceDirectory selector='some'> 
          <directoryName>HL7 QRDA Category I/Templates</directoryName>
              <include>Measure Section</include>
-             <include>Reporting Parameters Section</include>
+             <include>Reporting Parameters Section</include>    <!-- Not used, but still present in Trifolia IG -->
              <include>Reporting Parameters Act</include>
     </sourceDirectory>
     

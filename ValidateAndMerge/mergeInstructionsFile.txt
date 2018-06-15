@@ -1,11 +1,25 @@
 # List the merge instruction files to process here.
 #
-C:\\Development\\qrdaGit\\qrda\\Schematrons\\HL7 QRDA Category I\\STU 3.1\\HL7 QRDA Category I STU 3.1 Merge Directions.xml
-C:\\Development\\qrdaGit\\qrda\\Schematrons\\HL7 QRDA Category I\\STU 4\\HL7 QRDA Category I STU 4 Merge Directions.xml
+#C:\\Development\\qrdaGit\\qrda\\Schematrons\\HL7 QRDA Category I\\STU 3.1\\HL7 QRDA Category I STU 3.1 Merge Directions.xml
+#C:\\Development\\qrdaGit\\qrda\\Schematrons\\HL7 QRDA Category I\\STU 4\\HL7 QRDA Category I STU 4 Merge Directions.xml
 #
-C:\\Development\\qrdaGit\\qrda\\Schematrons\\HL7 QRDA Category III\\STU 1.1\\HL7 QRDA Category III STU 1.1 Merge Directions.xml
-C:\\Development\\qrdaGit\\qrda\\Schematrons\\HL7 QRDA Category III\\STU 2\\HL7 QRDA Category III STU 2 Merge Directions.xml
+#C:\\Development\\qrdaGit\\qrda\\Schematrons\\HL7 QRDA Category III\\STU 1.1\\HL7 QRDA Category III STU 1.1 Merge Directions.xml
+#C:\\Development\\qrdaGit\\qrda\\Schematrons\\HL7 QRDA Category III\\STU 2\\HL7 QRDA Category III STU 2 Merge Directions.xml
 #
-C:\\Development\\qrdaGit\\qrda\\Schematrons\\CMS QRDA Category I\\EH CMS 2017\\EH CMS 2017 QRDA Category I Merge Directions.xml
-C:\\Development\\qrdaGit\\qrda\\Schematrons\\CMS QRDA Category I\\EC CMS 2017\\EC CMS 2017 QRDA Category I Merge Directions.xml
-C:\\Development\\qrdaGit\\qrda\\Schematrons\\CMS QRDA Category III\\EC CMS 2017\\EP CMS 2017 QRDA Category III Merge Directions.xml
+#C:\\Development\\qrdaGit\\qrda\\Schematrons\\CMS QRDA Category I\\EH CMS 2017\\EH CMS 2017 QRDA Category I Merge Directions.xml
+#C:\\Development\\qrdaGit\\qrda\\Schematrons\\CMS QRDA Category I\\EC CMS 2017\\EC CMS 2017 QRDA Category I Merge Directions.xml
+#C:\\Development\\qrdaGit\\qrda\\Schematrons\\CMS QRDA Category III\\EC CMS 2017\\EP CMS 2017 QRDA Category III Merge Directions.xml
+
+#C:\\Development\\Merges\\Projects\\2017 CMS EC QRDA III\\MergeDirections\\EP CMS 2017 QRDA Category III Merge Directions.xml
+#C:\\Development\\Merges\\Projects\\HL7 QRDA III STU 2.1\\MergeDirections\\HL7 QRDA Category III STU 2.1 Merge Directions.xml
+#C:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category I\EH CMS 2018\\EH CMS 2018 QRDA Category I Merge Directions.xml
+
+#C:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category I\STU 4\HL7 QRDA Category I STU 4 Merge Directions.xml
+
+#C:\\Development\\QRDA-git\\qrda\\Schematrons\\CMS QRDA Category III\\EC CMS 2018\\EP CMS 2018 QRDA Category III Merge Directions.xml
+
+#C:\\Development\\QRDA-git\\qrda\\Schematrons\\CMS QRDA Category III\\EC CMS 2018 - V2\\EP CMS 2018 QRDA Category III V2 Merge Directions.xml
+
+C:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\CMS QRDA III 2019\\CMS 2019 QRDA Category III Merge Directions.xml
+
+#c:\Development\Sandbox\QDM Templates for CQL-based HQMF\QDM Templates for CQL-based HQMF Merge Directions.xml

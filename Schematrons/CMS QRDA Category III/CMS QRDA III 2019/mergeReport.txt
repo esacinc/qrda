@@ -7,7 +7,7 @@
     Instructions file: C:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\CMS QRDA III 2019\\CMS 2019 QRDA Category III Merge Directions.xml
     Title: CMS 2019 QRDA Category III
     Version: 1.0
-    Generated on Thu Jun 07 10:56:02 MDT 2018
+    Generated on Fri Jun 15 14:54:08 MDT 2018
     Verbose Reporting is turned on
     Merged file: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Published/CMS 2019 QRDA Category III.sch
           All Error patterns are generated before all Warning patterns
@@ -18,8 +18,8 @@
         Validate final merged file using: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/TestFiles/EC_MU_GROUP_Sample_QRDA_III_Informative.xml
             XML XSD validation of test file is turned off
         Merge Process will stop when validation inconsistencies are encountered in the template schematrons
-        vocabFilename is c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/Vocabulary/voc.xml
-            Copied vocabulary file: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/Vocabulary/voc.xml into project space as 'voc.xml'
+        vocabFilename is c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Vocabulary/voc-2019.xml
+            Copied vocabulary file: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Vocabulary/voc-2019.xml into project space as 'voc.xml'
     Collect schematron template information from source directories...
         Processing template directory: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/Templates, selector: some
             Located schematron file: CMS Datatype Validations.sch
@@ -82,49 +82,64 @@
         Test File(s): 
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Performed Measure Reference and Results CMS\Improvement Activity Performed Measure Reference and Results CMS-Errors.xml
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Performed Measure Reference and Results CMS\Improvement Activity Performed Measure Reference and Results CMS-Good.xml
+            c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Performed Measure Reference and Results CMS\Improvement Activity Performed Measure Reference and Results CMS-NoTemplate.xml
         ------------------------------------
         Template Directory: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Section CMS
         Schematron: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Section CMS\Improvement Activity Section CMS.sch
         Test File(s): 
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Section CMS\Improvement Activity Section CMS - ERRORS.xml
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Section CMS\Improvement Activity Section CMS - GOOD.xml
+            c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Section CMS\Improvement Activity Section CMS - MIPS_GROUP - ERRORS.xml
+            c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Section CMS\Improvement Activity Section CMS - MIPS_INDIV - ERRORS.xml
+            c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Section CMS\Improvement Activity Section CMS - NoTemplate.xml
         ------------------------------------
         Template Directory: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Data CMS V3
         Schematron: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Data CMS V3\Measure Data CMS V3 Entry.sch
         Test File(s): 
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Data CMS V3\Measure Data CMS V3-ERRORS.xml
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Data CMS V3\Measure Data CMS V3-GOOD.xml
+            c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Data CMS V3\Measure Data CMS V3-NoTemplate.xml
         ------------------------------------
         Template Directory: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Reference and Results CMS V3
         Schematron: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Reference and Results CMS V3\Measure Reference and Results CMS V3 Entry.sch
         Test File(s): 
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Reference and Results CMS V3\Measure Reference and Results CMS V3-Errors.xml
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Reference and Results CMS V3\Measure Reference and Results CMS V3-Good.xml
+            c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Reference and Results CMS V3\Measure Reference and Results CMS V3-NoTemplate.xml
         ------------------------------------
         Template Directory: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Payer Supplemental Data Element CMS V3
         Schematron: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Payer Supplemental Data Element CMS V3\Payer Supplemental Data Element CMS V3 Entry.sch
         Test File(s): 
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Payer Supplemental Data Element CMS V3\Payer Supplemental Data Element CMS V3-Errors.xml
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Payer Supplemental Data Element CMS V3\Payer Supplemental Data Element CMS V3-Good.xml
+            c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Payer Supplemental Data Element CMS V3\Payer Supplemental Data Element CMS V3-NoTemplate.xml
         ------------------------------------
         Template Directory: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Performance Rate for Proportion Measure CMS V3
         Schematron: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Performance Rate for Proportion Measure CMS V3\Performance Rate for Proportion Measure CMS V3 Entry.sch
         Test File(s): 
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Performance Rate for Proportion Measure CMS V3\Performance Rate for Proportion Measure CMS V3-Errors.xml
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Performance Rate for Proportion Measure CMS V3\Performance Rate for Proportion Measure CMS V3-Good.xml
+            c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Performance Rate for Proportion Measure CMS V3\Performance Rate for Proportion Measure CMS V3-NoTemplate.xml
         ------------------------------------
         Template Directory: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Measure Section CMS V3
         Schematron: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Measure Section CMS V3\QRDA Category III Measure Section CMS V3.sch
         Test File(s): 
+            c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Measure Section CMS V3\QRDA Category III Measure Section CMS V3 - NoTemplate.xml
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Measure Section CMS V3\QRDA Category III Measure Section CMS V3 Errors.xml
+            c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Measure Section CMS V3\QRDA Category III Measure Section CMS V3 MIPS_GROUP Errors.xml
+            c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Measure Section CMS V3\QRDA Category III Measure Section CMS V3 MIPS_INDIV Errors.xml
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Measure Section CMS V3\QRDA Category III Measure Section CMS V3.xml
         ------------------------------------
         Template Directory: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3
         Schematron: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document.sch
         Test File(s): 
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document Errors.xml
+            c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-CPCPLUS-Errors.xml
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-CPCPLUS.xml
+            c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-MIPSGROUP-Errors.xml
             c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-MIPSGROUP.xml
+            c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-MIPSVIRTUALGROUP-Errors.xml
+            c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-NoTemplate.xml
         ------------------------------------
         Template Directory: c:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category III\Templates\Aggregate Count
         Schematron: c:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category III\Templates\Aggregate Count\Aggregate Count Entry.sch
@@ -415,16 +430,20 @@
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Performed Measure Reference and Results CMS\Improvement Activity Performed Measure Reference and Results CMS-Errors.xml
                 Error: a-CMS_71-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='organizer']: count(cda:templateId[@root='2.16.840.1.113883.3.249.20.3.1'][@extension='2018-05-01'])=1
                     SHALL contain exactly one [1..1] templateId (CONF:CMS_71) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.20.3.1" (CONF:CMS_72). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_73). 
-                Error: a-CMS_74-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='organizer']: count(cda:component) = 1
-                    SHALL contain exactly one [1..1] component (CONF:CMS_74).
-                Error: a-CMS_75-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='organizer']/*[local-name()='component'][2]: count(cda:entry[cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]])=1
-                    This component SHALL contain exactly one [1..1] Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_75). 
+                Error: a-CMS_74-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='organizer']: count(cda:component[count(cda:entry[cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]])=1]) = 1
+                    SHALL contain exactly one [1..1] component (CONF:CMS_74) such that it  SHALL contain exactly one [1..1] Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_75). 
             
-            (Errors: expected 3, actual 3) (Warnings: expected 0, actual 0)
+            (Errors: expected 2, actual 2) (Warnings: expected 0, actual 0)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Performed Measure Reference and Results CMS\Improvement Activity Performed Measure Reference and Results CMS-Good.xml
             
             (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Performed Measure Reference and Results CMS\Improvement Activity Performed Measure Reference and Results CMS-NoTemplate.xml
+                Error: a-CMS_71-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='organizer']: count(cda:templateId[@root='2.16.840.1.113883.3.249.20.3.1'][@extension='2018-05-01'])=1
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_71) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.20.3.1" (CONF:CMS_72). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_73). 
+            
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Section CMS\Improvement Activity Section CMS.sch
          
@@ -441,83 +460,174 @@
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Section CMS\Improvement Activity Section CMS - GOOD.xml
             
             (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Section CMS\Improvement Activity Section CMS - MIPS_GROUP - ERRORS.xml
+                Error: a-CMS_78-error at /*[local-name()='ClinicalDocument']/*[local-name()='section']: $intendedRecipient-IA != 'MIPS_GROUP' or ($intendedRecipient-IA='MIPS_GROUP' and count(cda:entry[cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]])=0)
+                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_GROUP", then SHALL NOT contain [0..0] entry Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_78). 
+            
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Section CMS\Improvement Activity Section CMS - MIPS_INDIV - ERRORS.xml
+                Error: a-CMS_77-error at /*[local-name()='ClinicalDocument']/*[local-name()='section']: $intendedRecipient-IA != 'MIPS_INDIV' or ($intendedRecipient-IA='MIPS_INDIV' and count(cda:entry[cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]])=0)
+                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_INDIV", then SHALL NOT contain [0..0] entry Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_77). 
+            
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Improvement Activity Section CMS\Improvement Activity Section CMS - NoTemplate.xml
+                Error: a-3377-711342-error at /*[local-name()='ClinicalDocument']/*[local-name()='section']: count(cda:templateId[@root='2.16.840.1.113883.3.249.20.2.1'][@extension='2018-05-01'])=1
+                    SHALL contain exactly one [1..1] templateId (CONF:3377-711342) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.20.2.1" (CONF:CMS_70). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_76). 
+            
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Data CMS V3\Measure Data CMS V3 Entry.sch
          
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Data CMS V3\Measure Data CMS V3-ERRORS.xml
-                c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Data CMS V3\Measure Data CMS V3-ERRORS.xml: Failure count inconsistent with expectations for this file. (Errors: expected 16, actual 0) (Warnings: expected 0, actual 0)
+                Error: a-CMS_41-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.16'][@extension='2018-05-01'])=1
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_41) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.16" (CONF:CMS_42). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_43). 
+                Error: a-3259-18141_C01-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:entryRelationship[@typeCode='COMP'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.18'][@extension='2018-05-01']])=1])>=1
+                    SHALL contain at least one [1..*] entryRelationship (CONF:3259-18141_C01) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:3259-18146). SHALL contain exactly one [1..1] Payer Supplemental Data Element - CMS (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.18:2018-05-01) (CONF:3259-18151_C01). 
+                Error: a-3259-18136_C01-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:entryRelationship[@typeCode='COMP'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.6'][@extension='2016-09-01']])=1])>=1
+                    SHALL contain at least one [1..*] entryRelationship (CONF:3259-18136_C01) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3259-18137). SHALL contain exactly one [1..1] Sex Supplemental Data Element (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.6:2016-09-01) (CONF:3259-18138). 
+                Error: a-3259-18140_C01-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:entryRelationship[@typeCode='COMP'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.8'][@extension='2016-09-01']])=1])>=1
+                    SHALL contain at least one [1..*] entryRelationship (CONF:3259-18140_C01) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3259-18150). SHALL contain exactly one [1..1] Race Supplemental Data Element (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.8:2016-09-01) (CONF:3259-18150). 
+                Error: a-3259-18139_C01-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:entryRelationship[@typeCode='COMP'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.7'][@extension='2016-09-01']])=1])>=1
+                    SHALL contain at least one [1..*] entryRelationship (CONF:3259-18139_C01) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3259-18144). SHALL contain exactly one [1..1] Ethnicity Supplemental Data Element (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.7:2016-09-01) (CONF:3259-18149). 
+                Warning: a-CMS_86-warning at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:entryRelationship[@typeCode='DRIV'][count(cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']])=1])=1
+                    SHOULD contain zero or one [0..1] entryRelationship (CONF:CMS_86) such that it SHALL contain exactly one [1..1] @typeCode="DRIV" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:CMS_87). SHALL contain exactly one [1..1] Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_88).  
             
-            (Errors: expected 16, actual 0) (Warnings: expected 0, actual 0)
+            (Errors: expected 5, actual 5) (Warnings: expected 1, actual 1)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Data CMS V3\Measure Data CMS V3-GOOD.xml
             
             (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Data CMS V3\Measure Data CMS V3-NoTemplate.xml
+                Error: a-CMS_41-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.16'][@extension='2018-05-01'])=1
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_41) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.16" (CONF:CMS_42). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_43). 
+            
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Reference and Results CMS V3\Measure Reference and Results CMS V3 Entry.sch
          
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Reference and Results CMS V3\Measure Reference and Results CMS V3-Errors.xml
-                Error: a-2233-17887-error at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']: @classCode='CLUSTER'
-                    SHALL contain exactly one [1..1] @classCode="CLUSTER" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:2233-17887).
-                Error: a-2233-17888-error at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']: @moodCode='EVN'
-                    SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:2233-17888).
-                Error: a-2233-711268-error at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.17'][@extension='2016-11-01'])=1
-                    SHALL contain exactly one [1..1] templateId (CONF:2233-711268) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.17" (CONF:2233-711269). SHALL contain exactly one [1..1] @extension="2016-11-01" (CONF:2233-711297).
-                Error: a-2233-19532-error at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']: count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.98'])=1
-                    SHALL contain exactly one [1..1] templateId (CONF:2233-19532) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.98" (CONF:2233-19533).
-                Error: a-2233-17908-error at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.1'][@extension='2016-09-01'])=1
-                    SHALL contain exactly one [1..1] templateId (CONF:2233-17908) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.1" (CONF:2233-17909). SHALL contain exactly one [1..1] @extension="2016-09-01" (CONF:2233-21170).
-                Error: a-2233-17889-error at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']: count(cda:statusCode)=1
-                    SHALL contain exactly one [1..1] statusCode (CONF:2233-17889).
-                Error: a-2233-17890-error at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']: count(cda:reference[@typeCode='REFR'][count(cda:externalDocument)=1])=1
-                    SHALL contain exactly one [1..1] reference (CONF:2233-17890) such that it SHALL contain exactly one [1..1] @typeCode="REFR" (CONF:2233-17891). SHALL contain exactly one [1..1] externalDocument (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:2233-17892).
-                Error: a-2233-18425-error at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']: count(cda:component[count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.16'][@extension='2016-11-01']])=1]) > 0
-                    SHALL contain at least one [1..*] component (CONF:2233-18425) such that it SHALL contain exactly one [1..1] Measure Data - CMS (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.16:2016-11-01) (CONF:2233-711296).
-                Error: a-2233-19552-error at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']/*[local-name()='statusCode'][2]: @code='completed'
-                    This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:2233-19552).
-                Error: a-2233-19553-error at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']/*[local-name()='reference'][1]/*[local-name()='externalDocument']/*[local-name()='code'][2]: @code='57024-2'
-                    The code, if present, SHALL contain exactly one [1..1] @code="57024-2" Health Quality Measure Document (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:2233-19553).
-                Error: a-2233-19548-error at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']/*[local-name()='reference'][2]/*[local-name()='externalDocument']: @classCode='DOC'
-                    This externalDocument SHALL contain exactly one [1..1] @classCode="DOC" Document (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:2233-19548).
-                Error: a-2233-18192-error at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']/*[local-name()='reference'][2]/*[local-name()='externalDocument']: count(cda:id[@root='2.16.840.1.113883.4.738'][@extension])=1
-                    This externalDocument SHALL contain exactly one [1..1] id (CONF:2233-18192) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.738" (CONF:2233-18193). SHALL contain exactly one [1..1] @extension (CONF:2233-711289).
-                Warning: a-2233-17896-warning at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']/*[local-name()='reference'][1]/*[local-name()='externalDocument']: count(cda:code)=1
-                    This externalDocument SHOULD contain zero or one [0..1] code (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1 STATIC) (CONF:2233-17896).
-                Warning: a-2233-17897-warning at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']/*[local-name()='reference'][1]/*[local-name()='externalDocument']: count(cda:text)=1
-                    This externalDocument SHOULD contain zero or one [0..1] text (CONF:2233-17897).
+                Error: a-CMS_54-error at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.17'][@extension='2018-05-01'])=1
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_54) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.17" (CONF:CMS_55). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_56). 
+                Error: a-3259-18425-error at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']: count(cda:component[count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.16'][@extension='2018-05-01']])=1]) > 0
+                    SHALL contain at least one [1..*] component (CONF:3259-18425) such that it SHALL contain exactly one [1..1] Measure Data - CMS (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.16:2018-05-01) (CONF:3259-18426_C01). 
             
-            (Errors: expected 12, actual 12) (Warnings: expected 2, actual 2)
+            (Errors: expected 2, actual 2) (Warnings: expected N/A, actual 0)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Reference and Results CMS V3\Measure Reference and Results CMS V3-Good.xml
             
             (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Measure Reference and Results CMS V3\Measure Reference and Results CMS V3-NoTemplate.xml
+                Error: a-CMS_54-error at /*[local-name()='ClinicalDocument']/*[local-name()='organizer']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.17'][@extension='2018-05-01'])=1
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_54) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.17" (CONF:CMS_55). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_56). 
+            
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Payer Supplemental Data Element CMS V3\Payer Supplemental Data Element CMS V3 Entry.sch
          
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Payer Supplemental Data Element CMS V3\Payer Supplemental Data Element CMS V3-Errors.xml
-                Error: a-CMS_53-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='value'][2]/*[local-name()='translation'][2]: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.249.14.102']/voc:code/@value
+                Error: a-CMS_47-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.18'][@extension='2018-05-01'])=1
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_47) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.18" (CONF:CMS_48). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_49).
+                Error: a-CMS_50-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:value[@xsi:type='CD'])=1
+                    SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:CMS_50). 
+                Error: a-CMS_53-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='value'][1]/*[local-name()='translation']: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.249.14.102']/voc:code/@value
                     This translation SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet CMS Payer Groupings urn:oid:2.16.840.1.113883.3.249.14.102 (CONF:CMS_53). 
-                c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Payer Supplemental Data Element CMS V3\Payer Supplemental Data Element CMS V3-Errors.xml: Failure count inconsistent with expectations for this file. (Errors: expected 14, actual 1) (Warnings: expected 0, actual 0)
+                Error: a-CMS_52-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='value'][2]: count(cda:translation)=1
+                    This value SHALL contain exactly one [1..1] translation (CONF:CMS_52).
+                Error: a-CMS_51-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='value'][2]: @nullFlavor='OTH'
+                    This value SHALL contain exactly one [1..1] @nullFlavor="OTH" (CONF:CMS_51).
             
-            (Errors: expected 14, actual 1) (Warnings: expected 0, actual 0)
+            (Errors: expected 5, actual 5) (Warnings: expected 0, actual 0)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Payer Supplemental Data Element CMS V3\Payer Supplemental Data Element CMS V3-Good.xml
             
             (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Payer Supplemental Data Element CMS V3\Payer Supplemental Data Element CMS V3-NoTemplate.xml
+                Error: a-CMS_47-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.18'][@extension='2018-05-01'])=1
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_47) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.18" (CONF:CMS_48). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_49).
+            
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Performance Rate for Proportion Measure CMS V3\Performance Rate for Proportion Measure CMS V3 Entry.sch
          
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Performance Rate for Proportion Measure CMS V3\Performance Rate for Proportion Measure CMS V3-Errors.xml
-                c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Performance Rate for Proportion Measure CMS V3\Performance Rate for Proportion Measure CMS V3-Errors.xml: Failure count inconsistent with expectations for this file. (Errors: expected 22, actual 0) (Warnings: expected 0, actual 0)
+                Error: a-CMS_59-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.25'][@extension='2018-05-01'])=1
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_59) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.25" (CONF:CMS_60). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_61). 
+                Error: a-3259-21307_C01-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:value[@xsi:type='REAL'])=1
+                    SHALL contain exactly one [1..1] value with @xsi:type="REAL" (CONF:3259-21307_C01).
+                Error: a-3259-19651_C01-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:reference)=1
+                    SHALL contain exactly one [1..1] reference (CONF:3259-19651_C01). 
+                Error: a-CMS_62-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='value'][2]: not(@value) or ((@value >= 0) and (@value <= 1))
+                    The value, if present, SHALL be greater than or equal to 0 and less than or equal to 1 (CONF:CMS_62).
+                Error: a-CMS_63-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='value'][2]: not(@value) or (string-length(substring-after(@value,'.')) <= 6)
+                    The value, if present, SHALL contain no more than 6 digits to the right of the decimal (CONF:CMS_63).
+                Error: a-3259-19652_C01-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='reference'][2]: @typeCode='REFR'
+                    This reference SHALL contain exactly one [1..1] @typeCode="REFR" refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3259-19652_C01).
+                Error: a-3259-19653_C01 at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='reference'][2]: count(cda:externalObservation)=1
+                    This reference SHALL contain exactly one [1..1] externalObservation (CONF:3259-19653_C01).
+                Error: a-3259-19654-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='reference'][2]/*[local-name()='externalObservation'][2]: @classCode
+                    This externalObservation SHALL contain exactly one [1..1] @classCode (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3259-19654).
+                Error: a-3259-19655-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='reference'][2]/*[local-name()='externalObservation'][2]: count(cda:id)=1
+                    This externalObservation SHALL contain exactly one [1..1] id (CONF:3259-19655).
+                Error: a-3259-19657-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='reference'][2]/*[local-name()='externalObservation'][2]: count(cda:code)=1
+                    This externalObservation SHALL contain exactly one [1..1] code (CONF:3259-19657).
+                Error: a-3259-19656-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='reference'][2]/*[local-name()='externalObservation'][2]/*[local-name()='id'][2]: @root
+                    This id SHALL contain exactly one [1..1] @root (CONF:3259-19656).
+                Error: a-3259-19658-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='reference'][2]/*[local-name()='externalObservation'][2]/*[local-name()='code'][2]: @code='NUMER'
+                    This code SHALL contain exactly one [1..1] @code="NUMER" Numerator (CONF:3259-19658).
+                Error: a-3259-21180-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='reference'][2]/*[local-name()='externalObservation'][2]/*[local-name()='code'][2]: @codeSystem='2.16.840.1.113883.5.4'
+                    This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.5.4" (CodeSystem: ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:3259-21180).
             
-            (Errors: expected 22, actual 0) (Warnings: expected 0, actual 0)
+            (Errors: expected 13, actual 13) (Warnings: expected 0, actual 0)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Performance Rate for Proportion Measure CMS V3\Performance Rate for Proportion Measure CMS V3-Good.xml
             
             (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\Performance Rate for Proportion Measure CMS V3\Performance Rate for Proportion Measure CMS V3-NoTemplate.xml
+                Error: a-CMS_59-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.25'][@extension='2018-05-01'])=1
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_59) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.25" (CONF:CMS_60). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_61). 
+            
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Measure Section CMS V3\QRDA Category III Measure Section CMS V3.sch
-            TransformerConfigurationExcetpion: Failed to compile stylesheet. 1 error detected.
-            SAXException Error processing the report file reports.svrlt, Premature end of file.
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Measure Section CMS V3\QRDA Category III Measure Section CMS V3 - NoTemplate.xml
+                Error: a-CMS_64-error at /*[local-name()='ClinicalDocument']/*[local-name()='section']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3'][@extension='2018-05-01'])=1
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_64) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.2.3" (CONF:CMS_65). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_66). 
+            
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Measure Section CMS V3\QRDA Category III Measure Section CMS V3 Errors.xml
+                Error: a-CMS_64-error at /*[local-name()='ClinicalDocument']/*[local-name()='section']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3'][@extension='2018-05-01'])=1
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_64) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.2.3" (CONF:CMS_65). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_66). 
+                Error: a-3338-17906-error at /*[local-name()='ClinicalDocument']/*[local-name()='section']: count(cda:entry[count(cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.17'][@extension='2018-05-01']])=1]) > 0
+                    SHALL contain at least one [1..*] entry (CONF:3338-17906) such that it SHALL contain exactly one [1..1] Measure Reference and Results - CMS (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.17:2018-05-01) (CONF:3338-17907_C01). 
+                Error: a-CMS_85-error at /*[local-name()='ClinicalDocument']/*[local-name()='section']: $intendedRecipient-Measure-CMS != 'MIPS_VIRTUALGROUP' or ($intendedRecipient-Measure-CMS='MIPS_VIRTUALGROUP' and count(cda:entry[cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]])=0)
+                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_VIRTUALGROUP", then SHALL NOT contain [0..0] entry Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_85). 
+            
+            (Errors: expected 3, actual 3) (Warnings: expected 0, actual 0)
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Measure Section CMS V3\QRDA Category III Measure Section CMS V3 MIPS_GROUP Errors.xml
+                Error: a-CMS_69-error at /*[local-name()='ClinicalDocument']/*[local-name()='section']: $intendedRecipient-Measure-CMS != 'MIPS_GROUP' or ($intendedRecipient-Measure-CMS='MIPS_GROUP' and count(cda:entry[cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]])=0)
+                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_GROUP", then SHALL NOT contain [0..0] entry Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_69). 
+            
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Measure Section CMS V3\QRDA Category III Measure Section CMS V3 MIPS_INDIV Errors.xml
+                Error: a-CMS_68-error at /*[local-name()='ClinicalDocument']/*[local-name()='section']: $intendedRecipient-Measure-CMS != 'MIPS_INDIV' or ($intendedRecipient-Measure-CMS='MIPS_INDIV' and count(cda:entry[cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]])=0)
+                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_INDIV", then SHALL NOT contain [0..0] entry Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_68). 
+            
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Measure Section CMS V3\QRDA Category III Measure Section CMS V3.xml
+            
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document.sch
          
@@ -534,23 +644,88 @@
                     SHALL contain exactly one [1..1] documentationOf (CONF:3338-18170_C01). 
                 Error: a-3338-17217-error at /*[local-name()='ClinicalDocument']: count(cda:component)=1
                     SHALL contain exactly one [1..1] component (CONF:3338-17217). 
-                c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document Errors.xml: Failure count inconsistent with expectations for this file. (Errors: expected 62, actual 6) (Warnings: expected 4, actual 0)
+                Error: a-CMS_4-error at /*[local-name()='ClinicalDocument']/*[local-name()='confidentialityCode'][2]: @code='N'
+                    This confidentialityCode SHALL contain exactly one [1..1] @code="N" Normal (CodeSystem: HL7Confidentiality urn:oid:2.16.840.1.113883.5.25) (CONF:CMS_4). 
+                Error: a-3338-19669_C01-error at /*[local-name()='ClinicalDocument']/*[local-name()='languageCode'][2]: @code='en'
+                    This languageCode SHALL contain exactly one [1..1] @code="en" English (CodeSystem: Language urn:oid:2.16.840.1.113883.6.121) (CONF:3338-19669_C01).
+                Error: a-CMS_8-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient'][1]: count(cda:intendedRecipient)=1
+                    This informationRecipient SHALL contain exactly one [1..1] intendedRecipient (CONF:CMS_8). 
+                Error: a-CMS_12-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient'][1]/*[local-name()='intendedRecipient'][1]/*[local-name()='id']: (@extension='CPCPLUS' and ../../../cda:participant[@typeCode='LOC']) or @extension!='CPCPLUS'
+                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then ClinicalDocument/participant/@typeCode="LOC" SHALL be present (CONF:CMS_12).
+                Error: a-CMS_9-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient'][2]/*[local-name()='intendedRecipient']: count(cda:id)=1
+                    This intendedRecipient SHALL contain exactly one [1..1] id (CONF:CMS_9). 
+                Error: a-CMS_10-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient'][2]/*[local-name()='intendedRecipient']/*[local-name()='id'][1]: @root='2.16.840.1.113883.3.249.7'
+                    This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.7" CMS Program (CONF:CMS_10). 
+                Error: a-CMS_11-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient'][2]/*[local-name()='intendedRecipient']/*[local-name()='id'][2]: @extension=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.249.14.101']/voc:code/@value
+                    This id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet QRDA III CMS Program Name urn:oid:2.16.840.1.113883.3.249.14.101 STATIC 2018-05-01 (CONF:CMS_11). 
+                Error: a-CMS_18-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant']/*[local-name()='associatedEntity']: @classCode='SDLOC'
+                    This associatedEntity SHALL contain exactly one [1..1] @classCode="SDLOC" Service Delivery Location (CONF:CMS_18).
+                Error: a-CMS_19-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant']/*[local-name()='associatedEntity']: count(cda:id)=1
+                    This associatedEntity SHALL contain exactly one [1..1] id (CONF:CMS_19).
+                Error: a-CMS_22-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant']/*[local-name()='associatedEntity']: count(cda:code)=1
+                    This associatedEntity SHALL contain exactly one [1..1] code (CONF:CMS_22). 
+                Error: a-CMS_25-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant']/*[local-name()='associatedEntity']: count(cda:addr)=1
+                    This associatedEntity SHALL contain exactly one [1..1] addr (CONF:CMS_25).  
+                Error: a-CMS_20-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant']/*[local-name()='associatedEntity']/*[local-name()='id'][2]: @root='2.16.840.1.113883.3.249.5.1'
+                    This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.5.1" CPC Practice Site (CONF:CMS_20). 
+                Error: a-CMS_21-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant']/*[local-name()='associatedEntity']/*[local-name()='id'][2]: count(@extension)=1
+                    This id SHALL contain exactly one [1..1] @extension (CONF:CMS_21). 
+                Error: a-CMS_23-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant']/*[local-name()='associatedEntity']/*[local-name()='code'][2]: @code='394730007'
+                    his code SHALL contain exactly one [1..1] @code="394730007" Healthcare Related Organization (CONF:CMS_23).  
+                Error: a-CMS_24-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant']/*[local-name()='associatedEntity']/*[local-name()='code'][2]: count(@codeSystem)=1
+                    This code SHALL contain exactly one [1..1] @codeSystem (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:CMS_24).  
+                Error: a-3338-18176-error at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf'][1]/*[local-name()='serviceEvent']/*[local-name()='performer']: count(cda:assignedEntity)=1
+                    Such performers SHALL contain exactly one [1..1] assignedEntity (CONF:3338-18176).
+                Error: a-3338-18177_C01-error at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf'][1]/*[local-name()='serviceEvent']/*[local-name()='performer']/*[local-name()='assignedEntity'][2]: count(cda:id[@root='2.16.840.1.113883.4.6'])=1
+                    This assignedEntity SHALL contain exactly one [1..1] id (CONF:3338-18177_C01) such that it  MAY contain zero or one [0..1] @nullFlavor (CONF:CMS_29). SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:3338-18178_C01).  MAY contain zero or one [0..1] @extension (CONF:3338-18247). 
+                Error: a-3338-18180_C01-error at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf'][1]/*[local-name()='serviceEvent']/*[local-name()='performer']/*[local-name()='assignedEntity'][2]: count(cda:representedOrganization)=1
+                    This assignedEntity SHALL contain exactly one [1..1] representedOrganization (CONF:3338-18180_C01).
+                Error: a-3338-18171_C01-error at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf'][2]: count(cda:serviceEvent)=1
+                    his documentationOf SHALL contain exactly one [1..1] serviceEvent (CONF:3338-18171_C01). 
+                Error: a-3338-18173-error at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf'][2]/*[local-name()='serviceEvent'][2]: count(cda:performer) > 0
+                    This serviceEvent SHALL contain at least one [1..*] performer (CONF:3338-18173).
+                Error: a-3338-17235-error at /*[local-name()='ClinicalDocument']/*[local-name()='component'][2]: count(cda:structuredBody)=1
+                    This component SHALL contain exactly one [1..1] structuredBody (CONF:3338-17235).
+                Error: a-3338-17281_C01-error at /*[local-name()='ClinicalDocument']/*[local-name()='component'][2]/*[local-name()='structuredBody'][1]: count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.2']])=1])=0
+                    This structuredBody SHALL NOT contain [0..0] component (CONF:3338-17281_C01) such that it  SHALL contain exactly one [1..1] QRDA Category III Reporting Parameters Section (identifier: urn:oid:2.16.840.1.113883.10.20.27.2.2) (CONF:3338-17282). 
+                Error: a-3338-21394_C01-error at /*[local-name()='ClinicalDocument']/*[local-name()='component'][2]/*[local-name()='structuredBody'][2]: count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3'][@extension='2018-05-01']])=1])=1 or count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.4'][@extension='2017-06-01']])=1])=1 or count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.5'][@extension='2017-06-01']])=1])=1
+                    This structuredBody SHALL contain at least a QRDA Category III Measure Section - CMS (V3), or an Improvement Activity Section - CMS, or a Promoting Interoperability Section (V2) (CONF:3338-21394_C01). 
             
-            (Errors: expected 62, actual 6) (Warnings: expected 4, actual 0)
+            (Errors: expected 29, actual 29) (Warnings: expected 0, actual 0)
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-CPCPLUS-Errors.xml
+                Error: a-CMS_13-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient']/*[local-name()='intendedRecipient']/*[local-name()='id']: (@extension='CPCPLUS' and count(../../../cda:component/cda:structuredBody/cda:component/cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3'][@extension='2018-05-01']])=1) or @extension!='CPCPLUS'
+                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then QRDA Category III Measure Section – CMS (V3) SHALL be present (CONF:CMS_13).
+                Error: a-CMS_14-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient']/*[local-name()='intendedRecipient']/*[local-name()='id']: (@extension='CPCPLUS' and count(../../../cda:component/cda:structuredBody/cda:component/cda:section/cda:entry/cda:organizer/cda:component/cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.25'][@extension='2018-05-01']])=1) or @extension!='CPCPLUS'
+                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then Performance Rate for Proportion Measure – CMS (V3) SHALL be present (CONF:CMS_14).
+            
+            (Errors: expected 2, actual 2) (Warnings: expected 0, actual 0)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-CPCPLUS.xml
-                Error: a-CMS_14-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient']/*[local-name()='intendedRecipient']/*[local-name()='id']: (@extension='CPCPLUS' and count(../../../cda:component/cda:structuredBody/cda:component/cda:section/cda:entry/cda:organizer/cda:component/cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.25'][@extension='2018-05-01']])=1) or @extension!='CPCPLUS'
-                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then Performance Rate for Proportion Measure – CMS (V3) SHALL be present (CONF:CMS_13).
-                c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-CPCPLUS.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-MIPSGROUP-Errors.xml
+                Error: a-CMS_82-error at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf']/*[local-name()='serviceEvent']/*[local-name()='performer']/*[local-name()='assignedEntity']/*[local-name()='representedOrganization']: $intendedRecipient-Doc != 'MIPS_GROUP' or ($intendedRecipient-Doc='MIPS_GROUP' and count(cda:id[@root='2.16.840.1.113883.4.2'][@extension])=1)
+                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_GROUP", then this representedOrganization SHALL contain exactly one 1..1] id such that it, SHALL be the group's TIN (CONF:CMS_82).  
+            
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-MIPSGROUP.xml
-                Error: a-CMS_82-error at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf']/*[local-name()='serviceEvent']/*[local-name()='performer']/*[local-name()='assignedEntity']/*[local-name()='representedOrganization']: $intendedRecipient != 'MIPS_GROUP' or ($intendedRecipient='MIPS_GROUP' and count(cda:id)=1)
-                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_GROUP", then this representedOrganization SHALL contain exactly one 1..1] id, which is the group's TIN (CONF:CMS_82). 
-                c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-MIPSGROUP.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-MIPSVIRTUALGROUP-Errors.xml
+                Error: a-CMS_83-error at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf']/*[local-name()='serviceEvent']/*[local-name()='performer']/*[local-name()='assignedEntity']/*[local-name()='representedOrganization']: $intendedRecipient-Doc != 'MIPS_VIRTUALGROUP' or ($intendedRecipient-Doc='MIPS_VIRTUALGROUP' and count(cda:id['2.16.840.1.113883.3.249.5.2'][@extension])=1)
+                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_VIRTUALGROUP", then this representedOrganization SHALL contain exactly one 1..1] idSHALL be the virtual group's Virtual Group Identifier (CONF:CMS_83).  
+            
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
+         
+        TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-NoTemplate.xml
+                Error: a-CMS_1-error at /*[local-name()='ClinicalDocument']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2018-05-01'])=1
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_1) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.2" (CONF:CMS_2).SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_3). 
+            
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category III\Templates\Aggregate Count\Aggregate Count Entry.sch
          
@@ -1447,10 +1622,64 @@
             (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
             _______________________________________________________________
         
-    Found 6 schematron template(s) that did not process test files as expected
+    Found 0 schematron template(s) that did not process test files as expected
     0 schematron template(s) had no associated test files.
-    Inconsistencies found in validations. Merge process aborting.
+     
+    Merge Process Results....
+        Merging files into file "c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Published/CMS 2019 QRDA Category III.sch".
+            Generating all Error patterns first, then all Warning patterns.
+        Wrote merged Schematron file to "c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Published/CMS 2019 QRDA Category III.sch".
+            Generated 391 asserts in generated (merged) file c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Published/CMS 2019 QRDA Category III.sch
+
+
+    Testing merged file c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Published/CMS 2019 QRDA Category III.sch using: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/TestFiles/EC_MU_GROUP_Sample_QRDA_III_Informative.xml
+        No XML Validation performed
+        Schematron Validation:
+    _______________________________________________________________
+    SCHEMATRON: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Published/CMS 2019 QRDA Category III.sch
+         
+        TEST FILE: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/TestFiles/EC_MU_GROUP_Sample_QRDA_III_Informative.xml
+                Error: a-3377-711342-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']: count(cda:templateId[@root='2.16.840.1.113883.3.249.20.2.1'][@extension='2018-05-01'])=1
+                    SHALL contain exactly one [1..1] templateId (CONF:3377-711342) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.20.2.1" (CONF:CMS_70). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_76).
+                Error: a-CMS_18-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant']/*[local-name()='associatedEntity']: @classCode='SDLOC'
+                    This associatedEntity SHALL contain exactly one [1..1] @classCode="SDLOC" Service Delivery Location (CONF:CMS_18).
+                Error: a-CMS_25-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant']/*[local-name()='associatedEntity']: count(cda:addr)=1
+                    This associatedEntity SHALL contain exactly one [1..1] addr (CONF:CMS_25).
+                Error: a-CMS_20-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant']/*[local-name()='associatedEntity']/*[local-name()='id']: @root='2.16.840.1.113883.3.249.5.1'
+                    This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.5.1" CPC Practice Site (CONF:CMS_20).
+                Error: a-CMS_21-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant']/*[local-name()='associatedEntity']/*[local-name()='id']: count(@extension)=1
+                    This id SHALL contain exactly one [1..1] @extension (CONF:CMS_21).
+                Error: a-CMS_23-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant']/*[local-name()='associatedEntity']/*[local-name()='code']: @code='394730007'
+                    his code SHALL contain exactly one [1..1] @code="394730007" Healthcare Related Organization (CONF:CMS_23).
+                Error: a-CMS_64-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3'][@extension='2018-05-01'])=1
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_64) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.2.3" (CONF:CMS_65). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_66).
+                Error: a-CMS_71-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][1]/*[local-name()='organizer']: count(cda:templateId[@root='2.16.840.1.113883.3.249.20.3.1'][@extension='2018-05-01'])=1
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_71) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.20.3.1" (CONF:CMS_72). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_73).
+                Warning: a-3259-18353-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']/*[local-name()='entry'][2]/*[local-name()='organizer']: count(cda:reference[count(cda:externalObservation[count(cda:id)=1][count(cda:code[@code='55185-3'][@codeSystem='2.16.840.1.113883.6.1'])=1][count(cda:text)=1])=1])=1
+                    SHOULD contain exactly one [1..1] reference (CONF:3259-18353) such that it SHALL contain exactly one [1..1] externalObservation (CONF:3259-18354). This externalObservation SHALL contain at least one [1..*] id (CONF:3259-18355). This externalObservation SHALL contain exactly one [1..1] code (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1 STATIC) (CONF:3259-18357). This code SHALL contain exactly one [1..1] @code="55185-3" measure set (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3259-19554). This externalObservation SHALL contain exactly one [1..1] text (CONF:3259-18358).
+                Warning: a-3259-18353-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']/*[local-name()='entry'][3]/*[local-name()='organizer']: count(cda:reference[count(cda:externalObservation[count(cda:id)=1][count(cda:code[@code='55185-3'][@codeSystem='2.16.840.1.113883.6.1'])=1][count(cda:text)=1])=1])=1
+                    SHOULD contain exactly one [1..1] reference (CONF:3259-18353) such that it SHALL contain exactly one [1..1] externalObservation (CONF:3259-18354). This externalObservation SHALL contain at least one [1..*] id (CONF:3259-18355). This externalObservation SHALL contain exactly one [1..1] code (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1 STATIC) (CONF:3259-18357). This code SHALL contain exactly one [1..1] @code="55185-3" measure set (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3259-19554). This externalObservation SHALL contain exactly one [1..1] text (CONF:3259-18358).
+                Warning: a-3259-18353-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']/*[local-name()='entry'][4]/*[local-name()='organizer']: count(cda:reference[count(cda:externalObservation[count(cda:id)=1][count(cda:code[@code='55185-3'][@codeSystem='2.16.840.1.113883.6.1'])=1][count(cda:text)=1])=1])=1
+                    SHOULD contain exactly one [1..1] reference (CONF:3259-18353) such that it SHALL contain exactly one [1..1] externalObservation (CONF:3259-18354). This externalObservation SHALL contain at least one [1..*] id (CONF:3259-18355). This externalObservation SHALL contain exactly one [1..1] code (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1 STATIC) (CONF:3259-18357). This code SHALL contain exactly one [1..1] @code="55185-3" measure set (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3259-19554). This externalObservation SHALL contain exactly one [1..1] text (CONF:3259-18358).
+                Warning: a-3259-18353-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']/*[local-name()='entry'][5]/*[local-name()='organizer']: count(cda:reference[count(cda:externalObservation[count(cda:id)=1][count(cda:code[@code='55185-3'][@codeSystem='2.16.840.1.113883.6.1'])=1][count(cda:text)=1])=1])=1
+                    SHOULD contain exactly one [1..1] reference (CONF:3259-18353) such that it SHALL contain exactly one [1..1] externalObservation (CONF:3259-18354). This externalObservation SHALL contain at least one [1..*] id (CONF:3259-18355). This externalObservation SHALL contain exactly one [1..1] code (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1 STATIC) (CONF:3259-18357). This code SHALL contain exactly one [1..1] @code="55185-3" measure set (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3259-19554). This externalObservation SHALL contain exactly one [1..1] text (CONF:3259-18358).
+                Warning: a-3259-18353-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']/*[local-name()='entry'][6]/*[local-name()='organizer']: count(cda:reference[count(cda:externalObservation[count(cda:id)=1][count(cda:code[@code='55185-3'][@codeSystem='2.16.840.1.113883.6.1'])=1][count(cda:text)=1])=1])=1
+                    SHOULD contain exactly one [1..1] reference (CONF:3259-18353) such that it SHALL contain exactly one [1..1] externalObservation (CONF:3259-18354). This externalObservation SHALL contain at least one [1..*] id (CONF:3259-18355). This externalObservation SHALL contain exactly one [1..1] code (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1 STATIC) (CONF:3259-18357). This code SHALL contain exactly one [1..1] @code="55185-3" measure set (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3259-19554). This externalObservation SHALL contain exactly one [1..1] text (CONF:3259-18358).
+                Warning: a-3259-18353-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']/*[local-name()='entry'][7]/*[local-name()='organizer']: count(cda:reference[count(cda:externalObservation[count(cda:id)=1][count(cda:code[@code='55185-3'][@codeSystem='2.16.840.1.113883.6.1'])=1][count(cda:text)=1])=1])=1
+                    SHOULD contain exactly one [1..1] reference (CONF:3259-18353) such that it SHALL contain exactly one [1..1] externalObservation (CONF:3259-18354). This externalObservation SHALL contain at least one [1..*] id (CONF:3259-18355). This externalObservation SHALL contain exactly one [1..1] code (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1 STATIC) (CONF:3259-18357). This code SHALL contain exactly one [1..1] @code="55185-3" measure set (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3259-19554). This externalObservation SHALL contain exactly one [1..1] text (CONF:3259-18358).
+                Warning: a-3259-18353-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']/*[local-name()='entry'][8]/*[local-name()='organizer']: count(cda:reference[count(cda:externalObservation[count(cda:id)=1][count(cda:code[@code='55185-3'][@codeSystem='2.16.840.1.113883.6.1'])=1][count(cda:text)=1])=1])=1
+                    SHOULD contain exactly one [1..1] reference (CONF:3259-18353) such that it SHALL contain exactly one [1..1] externalObservation (CONF:3259-18354). This externalObservation SHALL contain at least one [1..*] id (CONF:3259-18355). This externalObservation SHALL contain exactly one [1..1] code (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1 STATIC) (CONF:3259-18357). This code SHALL contain exactly one [1..1] @code="55185-3" measure set (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3259-19554). This externalObservation SHALL contain exactly one [1..1] text (CONF:3259-18358).
+                Warning: a-3259-18353-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']/*[local-name()='entry'][9]/*[local-name()='organizer']: count(cda:reference[count(cda:externalObservation[count(cda:id)=1][count(cda:code[@code='55185-3'][@codeSystem='2.16.840.1.113883.6.1'])=1][count(cda:text)=1])=1])=1
+                    SHOULD contain exactly one [1..1] reference (CONF:3259-18353) such that it SHALL contain exactly one [1..1] externalObservation (CONF:3259-18354). This externalObservation SHALL contain at least one [1..*] id (CONF:3259-18355). This externalObservation SHALL contain exactly one [1..1] code (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1 STATIC) (CONF:3259-18357). This code SHALL contain exactly one [1..1] @code="55185-3" measure set (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3259-19554). This externalObservation SHALL contain exactly one [1..1] text (CONF:3259-18358).
+                Warning: a-3259-18353-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']/*[local-name()='entry'][10]/*[local-name()='organizer']: count(cda:reference[count(cda:externalObservation[count(cda:id)=1][count(cda:code[@code='55185-3'][@codeSystem='2.16.840.1.113883.6.1'])=1][count(cda:text)=1])=1])=1
+                    SHOULD contain exactly one [1..1] reference (CONF:3259-18353) such that it SHALL contain exactly one [1..1] externalObservation (CONF:3259-18354). This externalObservation SHALL contain at least one [1..*] id (CONF:3259-18355). This externalObservation SHALL contain exactly one [1..1] code (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1 STATIC) (CONF:3259-18357). This code SHALL contain exactly one [1..1] @code="55185-3" measure set (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3259-19554). This externalObservation SHALL contain exactly one [1..1] text (CONF:3259-18358).
+                Warning: a-3259-18353-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']/*[local-name()='entry'][13]/*[local-name()='organizer']: count(cda:reference[count(cda:externalObservation[count(cda:id)=1][count(cda:code[@code='55185-3'][@codeSystem='2.16.840.1.113883.6.1'])=1][count(cda:text)=1])=1])=1
+                    SHOULD contain exactly one [1..1] reference (CONF:3259-18353) such that it SHALL contain exactly one [1..1] externalObservation (CONF:3259-18354). This externalObservation SHALL contain at least one [1..*] id (CONF:3259-18355). This externalObservation SHALL contain exactly one [1..1] code (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1 STATIC) (CONF:3259-18357). This code SHALL contain exactly one [1..1] @code="55185-3" measure set (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3259-19554). This externalObservation SHALL contain exactly one [1..1] text (CONF:3259-18358).
+                c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/TestFiles/EC_MU_GROUP_Sample_QRDA_III_Informative.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 8) (Warnings: expected 9, actual 10)
+            
+            (Errors: expected 0, actual 8) (Warnings: expected 9, actual 10)
+            Schematron validation of test file results did not match expected results.
  
-    Merge Complete in 6 seconds
+    Merge Complete in 7 seconds
 **************************************** end merge report ************************************************************************
  

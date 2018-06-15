@@ -13,7 +13,7 @@ Version 1.0
         
     Version 1.0 
 
-Fri May 04 09:45:28 MDT 2018
+Thu Jun 07 10:50:11 MDT 2018
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="svs" uri="urn:ihe:iti:svs:2008" />
@@ -2844,7 +2844,7 @@ Fri May 04 09:45:28 MDT 2018
   <sch:pattern id="Provider-Characteristic-Observation-Assertion-pattern-warnings">
     <sch:rule id="Provider-Characteristic-Observation-Assertion-participant-participantRole-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.114'][@extension='2017-08-01']]/cda:participant/cda:participantRole">
       <sch:assert id="a-3343-28221-warning" test="count(cda:id [@root='2.16.840.1.113883.4.6'][@extension])&gt;=1">This participantRole SHOULD contain zero or more [0..*] id (CONF:3343-28221) such that it  SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:3343-28222).  SHOULD contain zero or one [0..1] @extension (CONF:3343-28223).</sch:assert>
-      <sch:assert id="a-3343-28218-warning" test="count(cda:code)=1">This participantRole SHOULD contain zero or one [0..1] code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy (HIPAA) urn:oid:2.16.840.1.114222.4.11.1066 (CONF:3343-28220).</sch:assert>
+      <sch:assert id="a-3343-28220-warning" test="count(cda:code)=1">This participantRole SHOULD contain zero or one [0..1] code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy (HIPAA) urn:oid:2.16.840.1.114222.4.11.1066 (CONF:3343-28220).</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="Procedure-Activity-Observation-pattern-warnings">
@@ -3179,7 +3179,9 @@ Fri May 04 09:45:28 MDT 2018
       <sch:assert id="a-1098-7526-warning" test="@unit">This doseQuantity SHOULD contain zero or one [0..1] @unit, which SHALL be selected from ValueSet UnitsOfMeasureCaseSensitive urn:oid:2.16.840.1.113883.1.11.12839 DYNAMIC (CONF:1098-7526).</sch:assert>
     </sch:rule>
     <sch:rule id="Medication_Activity-warnings" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]">
-      <sch:assert id="a-1098-7514-warning" test="count(cda:routeCode) = 1">SHOULD contain zero or one [0..1] routeCode, which SHALL be selected from ValueSet Medication Route FDA urn:oid:2.16.840.1.113883.3.88.12.3221.8.7 DYNAMIC (CONF:1098-7514).</sch:assert>
+      <!-- <sch:assert id="a-1098-7514-warning" test="count(cda:routeCode) = 1">SHOULD contain zero or one [0..1] routeCode (CONF:1098-7514).</sch:assert> -->
+      <!-- New conformance test for a-1098-7514-warning per TJC: https://tracker.esacinc.com/browse/QRDA-429 -->
+      <sch:assert id="a-1098-7514-warning" test="((not(parent::node()[parent::node()[parent::node()[cda:act[@negationInd]]]]) or parent::node()[parent::node()[parent::node()[cda:act[@negationInd='false']]]]) and count(cda:routeCode) = 1) or parent::node()[parent::node()[parent::node()[cda:act[@negationInd='true']]]]">SHOULD contain zero or one [0..1] routeCode (CONF:1098-7514).</sch:assert>
       <sch:assert id="a-1098-31150-warning" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']]) &gt; 0">SHOULD contain zero or more [0..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-31150).</sch:assert>
       <sch:assert id="a-1098-30800-warning" test="(count(cda:doseQuantity) &gt; 0) or (count(cda:rateQuantity) &gt; 0)">Medication Activity SHOULD include doseQuantity OR rateQuantity (CONF:1098-30800).</sch:assert>
     </sch:rule>
@@ -3198,8 +3200,8 @@ Fri May 04 09:45:28 MDT 2018
       <sch:assert id="a-1198-15971-warning" test="@value">The reference, if present, SHOULD contain zero or one [0..1] @value (CONF:1198-15971).</sch:assert>
     </sch:rule>
     <sch:rule id="Encounter-Activity-dischargeDispositionCode-warnings" context="cda:encounter[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.49'][@extension='2015-08-01']]/sdtc:dischargeDispositionCode">
-      <sch:assert id="a-1198-32177-warning" test="count(@code)=1">This sdtc:dischargeDispositionCode SHOULD contain exactly [1..1] @code, which SHOULD be selected from ValueSet 2.16.840.1.113883.3.88.12.80.33 NUBC UB-04 FL17-Patient Status (code system 2.16.840.1.113883.6.301.5) DYNAMIC or, if access to NUBC is unavailable, from CodeSystem 2.16.840.1.113883.12.112 HL7 Discharge Disposition (CONF:1198-32177).</sch:assert>
-      <sch:assert id="a-1198-32377-warning" test="count(@codeSystem)=1">This sdtc:dischargeDispositionCode SHOULD contain exactly [1..1] @codeSystem, which SHOULD be either CodeSystem: NUBC 2.16.840.1.113883.6.301.5 OR CodeSystem: HL7 Discharge Disposition 2.16.840.1.113883.12.112 (CONF:1198-32377).</sch:assert>
+      <sch:assert id="a-1198-32177-warning" test="count(@code)=1">This sdtc:dischargeDispositionCode SHOULD contain exactly [1..1] @code(CONF:1198-32177).</sch:assert>
+      <sch:assert id="a-1198-32377-warning" test="count(@codeSystem)=1">This sdtc:dischargeDispositionCode SHOULD contain exactly [1..1] @codeSystem (CONF:1198-32377).</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="Product-Instance-pattern-warnings">

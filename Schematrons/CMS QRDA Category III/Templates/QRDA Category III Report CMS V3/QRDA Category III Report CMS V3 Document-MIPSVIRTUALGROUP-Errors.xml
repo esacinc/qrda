@@ -15,9 +15,7 @@
            Failure a-CMS_83-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_VIRTUALGROUP", then this representedOrganization SHALL contain exactly one 1..1] id, which is the virtual group's Virtual Group Identifier (CONF:CMS_83). 
           
     	Total Warnings Expected: 0
-    	   Failure a-3338-18181_C01-warning This representedOrganization SHOULD contain zero or one [0..1] id (CONF:3338-18181_C01) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:3338-18182).  SHALL contain exactly one [1..1] @extension (CONF:3338-18190). 
-           Failure a-CMS_79-warning This representedOrganization SHOULD contain zero or one [0..1] id (CONF:CMS_79) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.5.2" MIPS Virtual Group (CONF:CMS_80).  SHALL contain exactly one [1..1] @extension (CONF:CMS_81). 
-
+ 
 	-->
 	<!-- 
 		********************************************************

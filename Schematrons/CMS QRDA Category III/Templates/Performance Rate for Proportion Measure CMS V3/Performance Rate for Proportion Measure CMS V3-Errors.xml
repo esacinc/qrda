@@ -6,7 +6,7 @@
 		Date: 06-12-2018
 		JIRA https://tracker.esacinc.com/browse/QRDA-432
 		
-		Total Errors Expected: 13
+		Total Errors Expected: 7
 			Failure a-CMS_59-error SHALL contain exactly one [1..1] templateId (CONF:CMS_59) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.25" (CONF:CMS_60). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_61). 
 			Failure a-3259-21307_C01-error SHALL contain exactly one [1..1] value with @xsi:type="REAL" (CONF:3259-21307_C01).
 			Failure a-3259-19651_C01-error SHALL contain exactly one [1..1] reference (CONF:3259-19651_C01). 
@@ -14,6 +14,8 @@
 			Failure a-CMS_63-error The value, if present, SHALL contain no more than 6 digits to the right of the decimal (CONF:CMS_63).
 		    Failure a-3259-19652_C01-error This reference SHALL contain exactly one [1..1] @typeCode="REFR" refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3259-19652_C01).
 			Failure a-3259-19653_C01 This reference SHALL contain exactly one [1..1] externalObservation (CONF:3259-19653_C01).
+		   
+		    Following exist already in base HL7 IG...not tested here
 		    Failure a-3259-19654-error This externalObservation SHALL contain exactly one [1..1] @classCode (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3259-19654).
 			Failure a-3259-19655-error This externalObservation SHALL contain exactly one [1..1] id (CONF:3259-19655).
 			Failure a-3259-19657-error This externalObservation SHALL contain exactly one [1..1] code (CONF:3259-19657).
@@ -56,17 +58,9 @@
 				<code code="NUMER" displayName="Numerator" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
 			</externalObservation>
 			<!-- Failure a-3259-19653_C01 This reference SHALL contain exactly one [1..1] externalObservation  -->
-			<!-- Failure a-3259-19654-error This externalObservation SHALL contain exactly one [1..1] @classCode  -->
-			<externalObservation classCodErr="OBS" >
+			<externalObservation classCode="OBS" >
 				<id root="63DD3232-4F74-4FA2-B5CF-A7B7DC8BC5B9"/>
-				<!-- Failure a-3259-19655-error This externalObservation SHALL contain exactly one [1..1] id -->
-				<!-- Failure a-3259-19656-error This id SHALL contain exactly one [1..1] @root  -->
-				<id />
 				<code code="NUMER" displayName="Numerator" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
-				<!-- Failure a-3259-19657-error This externalObservation SHALL contain exactly one [1..1] code (CONF:3259-19657). -->
-				<!-- Failure a-3259-19658-error This code SHALL contain exactly one [1..1] @code="NUMER" Numerator (CONF:3259-19658). -->
-				<!-- Failure a-3259-21180-error This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.5.4" -->
-				<code code="NUMERErr" displayName="Numerator" codeSystem="2.16.840.1.113883.5.4Err" codeSystemName="ActCode"/>
 			</externalObservation>
 		</reference>
 	</observation>

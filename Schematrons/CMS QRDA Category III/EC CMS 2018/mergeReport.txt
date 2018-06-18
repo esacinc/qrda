@@ -1,12 +1,12 @@
  
 ************************************************************************************************************
- MERGE REPORT: C:\\Development\\QRDA-git\\qrda\\Schematrons\\CMS QRDA Category III\\EC CMS 2018\\EP CMS 2018 QRDA Category III Merge Directions.xml
+        Failed to locate element: <headerFormat>
+    VERBOSE MERGE REPORT 
 ************************************************************************************************************
     Instructions file: C:\\Development\\QRDA-git\\qrda\\Schematrons\\CMS QRDA Category III\\EC CMS 2018\\EP CMS 2018 QRDA Category III Merge Directions.xml
-        Failed to locate element: <headerFormat>
     Title: EC/EP CMS 2018 QRDA Category III
     Version: 1.0
-    Generated on Fri Nov 17 09:12:47 MST 2017
+    Generated on Tue Mar 06 17:22:06 MST 2018
     Verbose Reporting is turned on
     Merged file: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/EC CMS 2018/Published/EC CMS 2018 QRDA Category III.sch
           All Error patterns are generated before all Warning patterns
@@ -1941,7 +1941,7 @@
     Found 0 schematron template(s) that did not process test files as expected
     0 schematron template(s) had no associated test files.
      
-    Begin Merge Process....
+    Merge Process Results....
         Merging files into file "c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/EC CMS 2018/Published/EC CMS 2018 QRDA Category III.sch".
             Generating all Error patterns first, then all Warning patterns.
         Wrote merged Schematron file to "c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/EC CMS 2018/Published/EC CMS 2018 QRDA Category III.sch".
@@ -1977,5 +1977,8 @@
                 c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/EC CMS 2018/TestFiles/EC_MU_GROUP_Sample_QRDA_III_Informative.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 0) (Warnings: expected 9, actual 10)
             
             (Errors: expected 0, actual 0) (Warnings: expected 9, actual 10)
+            Schematron validation of test file results did not match expected results.
+ 
+    Merge Complete in 10 seconds
 **************************************** end merge report ************************************************************************
  

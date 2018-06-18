@@ -10,7 +10,7 @@
     <sch:ns prefix="cda" uri="urn:hl7-org:v3" />
     
     <sch:phase id="errors">
-        <sch:active pattern="Measure_data-pattern-errors" />
+        <sch:active pattern="Measure_data-template-pattern-errors" />
         <sch:active pattern="Measure_data_CMS-pattern-errors" />
     </sch:phase>
     
@@ -18,9 +18,9 @@
         <sch:active pattern="Measure_data_CMS-pattern-warnings" />
     </sch:phase>
 
-    <sch:pattern id="Measure_data-pattern-errors">
+    <sch:pattern id="Measure_data-template-pattern-errors">
         <!-- New rule. JIRA https://tracker.esacinc.com/browse/QRDA-444 -->
-        <sch:rule id="Measure_data-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.5'][@extension='2016-09-01']]">
+        <sch:rule id="Measure_data-template-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.5'][@extension='2016-09-01']]">
             <sch:assert id="a-CMS_41-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.16'][@extension='2018-05-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:CMS_41) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.16" (CONF:CMS_42). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_43). </sch:assert>
         </sch:rule>
     </sch:pattern>

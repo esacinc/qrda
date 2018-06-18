@@ -10,7 +10,7 @@
     <sch:ns prefix="cda" uri="urn:hl7-org:v3" />
     
     <sch:phase id="errors">
-        <sch:active pattern="Reporting_Stratum-pattern-errors" />
+        <sch:active pattern="Reporting_Stratum-template-pattern-errors" />
         <sch:active pattern="Reporting_Stratum_CMS-pattern-errors" />
     </sch:phase>
  
@@ -18,8 +18,8 @@
         <sch:active pattern="Reporting_Stratum_CMS-pattern-warnings" />
     </sch:phase>
 
-    <sch:pattern id="Reporting_Stratum-pattern-errors">
-        <sch:rule id="Reporting_Stratum-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.4']]">
+    <sch:pattern id="Reporting_Stratum-template-pattern-errors">
+        <sch:rule id="Reporting_Stratum-template-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.4']]">
             <sch:assert id="a-1109-711274-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.20'][not(@extension)])=1">SHALL contain exactly one [1..1] templateId (CONF:1109-711274) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.20" (CONF:1109-711275).</sch:assert>
         </sch:rule>   
     </sch:pattern>

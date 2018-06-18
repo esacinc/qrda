@@ -10,12 +10,12 @@
     <sch:ns prefix="cda" uri="urn:hl7-org:v3" />
     
     <sch:phase id="errors">
-        <sch:active pattern="Reporting-Parameters-Act-pattern-errors" />
+        <sch:active pattern="Reporting-Parameters-Act-template-pattern-errors" />
         <sch:active pattern="Reporting-Parameters-Act-CMS-pattern-errors" />
     </sch:phase>
 
-    <sch:pattern id="Reporting-Parameters-Act-pattern-errors">
-        <sch:rule id="Reporting-Parameters-Act-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]">
+    <sch:pattern id="Reporting-Parameters-Act-template-pattern-errors">
+        <sch:rule id="Reporting-Parameters-Act-template-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]">
             <sch:assert id="a-CMS_0044-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1'][@extension='2016-03-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:CMS_0044) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.17.3.8.1" (CONF:CMS_0045) SHALL contain exactly one [1..1] @extension="2016-03-01" (CONF:CMS_0046) </sch:assert>
         </sch:rule>
     </sch:pattern>

@@ -8,11 +8,11 @@
 	<sch:ns prefix="cda" uri="urn:hl7-org:v3" />
 	
 	<sch:phase id="errors">
-		<sch:active pattern="CMS_QRDA_Category_I_Patient_Data_Section_QDM_pattern-errors" />
+		<sch:active pattern="CMS_QRDA_Category_I_Patient_Data_Section_QDM_template-pattern-errors" />
 		<sch:active pattern="CMS_QRDA_Category_I_Patient_Data_Section_QDM_CMS_pattern-errors" />
 	</sch:phase>
-	<sch:pattern id="CMS_QRDA_Category_I_Patient_Data_Section_QDM_pattern-errors">
-		<sch:rule id="Patient_data_section_QDM-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.24.2.1'][@extension='2017-08-01']]">
+	<sch:pattern id="CMS_QRDA_Category_I_Patient_Data_Section_QDM_template-pattern-errors">
+		<sch:rule id="Patient_data_section_QDM-template-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.24.2.1'][@extension='2017-08-01']]">
 			<sch:assert id="a-CMS_0036-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.2.1.1'][@extension='2018-02-01']) = 1">SHALL contain exactly one [1..1] templateId (CONF:CMS_0036) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.2.1.1" (CONF:CMS_0037). SHALL contain exactly one [1..1] @extension="2018-02-01" (CONF:CMS_0038).</sch:assert> 
 		</sch:rule>	
 	</sch:pattern>

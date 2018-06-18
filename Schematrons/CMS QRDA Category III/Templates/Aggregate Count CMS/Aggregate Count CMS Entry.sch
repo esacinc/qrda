@@ -8,13 +8,13 @@
     <sch:ns prefix="cda" uri="urn:hl7-org:v3" />
     
     <sch:phase id="errors">
-        <sch:active pattern="Aggregate_count-pattern-errors" />
+        <sch:active pattern="Aggregate_count-pattern-template-errors" />
         <sch:active pattern="Aggregate_count_CMS-pattern-errors" />
     </sch:phase>
  
-    <sch:pattern id="Aggregate_count-pattern-errors">
+    <sch:pattern id="Aggregate_count-pattern-template-errors">
         <!-- New rule. JIRA https://tracker.esacinc.com/browse/QRDA-444 -->
-        <sch:rule id="Aggregate_count-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.3']]">
+        <sch:rule id="Aggregate_count-template-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.3']]">
             <sch:assert id="a-1109-711262-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.24'][not(@extension)])=1">SHALL contain exactly one [1..1] templateId (CONF:1109-711262) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.24" (CONF:1109-711263).</sch:assert>
         </sch:rule>
     </sch:pattern>   

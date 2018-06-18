@@ -8,13 +8,13 @@
     <sch:ns prefix="cda" uri="urn:hl7-org:v3" />
     
     <sch:phase id="errors">
-        <sch:active pattern="Continuous_variable_measure_value-pattern-errors" />
+        <sch:active pattern="Continuous_variable_measure_value-template-pattern-errors" />
         <sch:active pattern="Continuous_variable_measure_value_CMS-pattern-errors" />
     </sch:phase>
 
-    <sch:pattern id="Continuous_variable_measure_value-pattern-errors">
+    <sch:pattern id="Continuous_variable_measure_value-template-pattern-errors">
         <!-- New rule. JIRA https://tracker.esacinc.com/browse/QRDA-444 -->
-        <sch:rule id="Continuous_variable_measure_value-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.2']]">
+        <sch:rule id="Continuous_variable_measure_value-template-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.2']]">
             <sch:assert id="a-1109-711264-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.26'][not(@extension)])=1">SHALL contain exactly one [1..1] templateId (CONF:1109-711264) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.26" (CONF:1109-711265).</sch:assert>
         </sch:rule>
     </sch:pattern>

@@ -8,12 +8,12 @@
 	<sch:ns prefix="cda" uri="urn:hl7-org:v3" />
 	
 	<sch:phase id="errors">
-		<sch:active pattern="QRDA_Category_I_Reporting_Parameters_Section-pattern-errors" />
+		<sch:active pattern="QRDA_Category_I_Reporting_Parameters_Section-template-pattern-errors" />
 		<sch:active pattern="QRDA_Category_I_Reporting_Parameters_Section_CMS-pattern-errors" />
 	</sch:phase>
 
-	<sch:pattern id="QRDA_Category_I_Reporting_Parameters_Section-pattern-errors">
-		<sch:rule id="Reporting-parameters-section-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.17.2.1']]">
+	<sch:pattern id="QRDA_Category_I_Reporting_Parameters_Section-template-pattern-errors">
+		<sch:rule id="Reporting-parameters-section-template-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.17.2.1']]">
 			<sch:assert id="a-CMS_0040-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.17.2.1.1'][@extension='2016-03-01']) = 1">SHALL contain exactly one [1..1] templateId (CONF:CMS_0040) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.17.2.1.1" (CONF:CMS_0041). SHALL contain exactly one [1..1] @extension="2016-03-01" (CONF:CMS_0042).	</sch:assert>
 		</sch:rule>
 	</sch:pattern>

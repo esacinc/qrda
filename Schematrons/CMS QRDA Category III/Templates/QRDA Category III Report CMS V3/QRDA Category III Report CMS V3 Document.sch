@@ -11,7 +11,7 @@
     <sch:ns prefix="cda" uri="urn:hl7-org:v3" />
     
     <sch:phase id="errors">
-        <sch:active pattern="QRDA_Category_III-pattern-errors" />
+        <sch:active pattern="QRDA_Category_III-template-pattern-errors" />
         <sch:active pattern="QRDA_Category_III_CMS-pattern-errors" />
     </sch:phase>
     
@@ -21,8 +21,8 @@
         <sch:active pattern="QRDA_Category_III_CMS-pattern-warnings" />
     </sch:phase>
     -->
-    <sch:pattern id="QRDA_Category_III-pattern-errors">
-         <sch:rule id="QRDA_Category_III_Report-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1'][@extension='2017-06-01']]">
+    <sch:pattern id="QRDA_Category_III-template-pattern-errors">
+        <sch:rule id="QRDA_Category_III_Report-template-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1'][@extension='2017-06-01']]">
             <sch:assert id="a-CMS_1-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2018-05-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:CMS_1) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.2" (CONF:CMS_2).SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_3). </sch:assert>
         </sch:rule>   
     </sch:pattern>   

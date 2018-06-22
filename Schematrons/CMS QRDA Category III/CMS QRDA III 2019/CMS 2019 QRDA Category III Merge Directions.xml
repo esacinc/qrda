@@ -34,7 +34,7 @@
     
     <mergeReportFilename>c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/mergeReport.txt</mergeReportFilename>
     
-    <vocabFilename>c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Vocabulary/voc-2019.xml</vocabFilename>
+    <vocabFilename>c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Vocabulary/voc.xml</vocabFilename>
     
     <!-- All schematrons expected to be under a single main directory -->
     <sourceMainDirectory>c:/Development/QRDA-git/qrda/Schematrons/</sourceMainDirectory>

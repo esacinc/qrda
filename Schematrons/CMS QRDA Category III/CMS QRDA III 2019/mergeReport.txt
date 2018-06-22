@@ -7,7 +7,7 @@
     Instructions file: C:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\CMS QRDA III 2019\\CMS 2019 QRDA Category III Merge Directions.xml
     Title: CMS 2019 QRDA Category III
     Version: 1.0
-    Generated on Mon Jun 18 16:10:22 MDT 2018
+    Generated on Fri Jun 22 12:54:39 MDT 2018
     Verbose Reporting is turned on
     Merged file: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Published/CMS 2019 QRDA Category III.sch
           All Error patterns are generated before all Warning patterns
@@ -18,8 +18,8 @@
         Validate final merged file using: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/TestFiles/EC_MU_GROUP_Sample_QRDA_III_Informative.xml
             XML XSD validation of test file is turned off
         Merge Process will stop when validation inconsistencies are encountered in the template schematrons
-        vocabFilename is c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Vocabulary/voc-2019.xml
-            Copied vocabulary file: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Vocabulary/voc-2019.xml into project space as 'voc.xml'
+        vocabFilename is c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Vocabulary/voc.xml
+            Copied vocabulary file: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Vocabulary/voc.xml into project space as 'voc.xml'
     Collect schematron template information from source directories...
         Processing template directory: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/Templates, selector: some
             Located schematron file: CMS Datatype Validations.sch
@@ -689,7 +689,7 @@
          
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-MIPSGROUP-Errors.xml
                 Error: a-CMS_82-error at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf']/*[local-name()='serviceEvent']/*[local-name()='performer']/*[local-name()='assignedEntity']/*[local-name()='representedOrganization']: $intendedRecipient-Doc != 'MIPS_GROUP' or ($intendedRecipient-Doc='MIPS_GROUP' and count(cda:id[@root='2.16.840.1.113883.4.2'][@extension])=1)
-                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_GROUP", then this representedOrganization SHALL contain exactly one 1..1] id such that it, SHALL be the group's TIN (CONF:CMS_82).  
+                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_GROUP", then this representedOrganization SHALL contain exactly one [1..1] id such that it SHALL be the group's TIN (CONF:CMS_82).  
             
             (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
          
@@ -699,7 +699,7 @@
          
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-MIPSVIRTUALGROUP-Errors.xml
                 Error: a-CMS_83-error at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf']/*[local-name()='serviceEvent']/*[local-name()='performer']/*[local-name()='assignedEntity']/*[local-name()='representedOrganization']: $intendedRecipient-Doc != 'MIPS_VIRTUALGROUP' or ($intendedRecipient-Doc='MIPS_VIRTUALGROUP' and count(cda:id['2.16.840.1.113883.3.249.5.2'][@extension])=1)
-                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_VIRTUALGROUP", then this representedOrganization SHALL contain exactly one 1..1] idSHALL be the virtual group's Virtual Group Identifier (CONF:CMS_83).  
+                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_VIRTUALGROUP", then this representedOrganization SHALL contain exactly one [1..1] id such that it SHALL be the virtual group's Virtual Group Identifier (CONF:CMS_83).  
             
             (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
          
@@ -1754,6 +1754,6 @@
             (Errors: expected 0, actual 3) (Warnings: expected 9, actual 61)
             Schematron validation of test file results did not match expected results.
  
-    Merge Complete in 7 seconds
+    Merge Complete in 9 seconds
 **************************************** end merge report ************************************************************************
  

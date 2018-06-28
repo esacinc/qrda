@@ -15,7 +15,7 @@
 	</sch:phase>
 
 	<sch:pattern id="Payer_Supplemental_Data_Element-template-pattern-errors">
-		<sch:rule id="Payer_Supplemental_Data_Element-template-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.9']]">
+		<sch:rule id="Payer_Supplemental_Data_Element-template-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.9'][@extension='2016-02-01']]">
 			<sch:assert id="a-CMS_47-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.18'][@extension='2018-05-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:CMS_47) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.18" (CONF:CMS_48). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_49).</sch:assert>
 		</sch:rule>	
 	</sch:pattern>

@@ -2,11 +2,24 @@
     
 <mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" summaryOnly="false" doValidation="true" applyXSD="false" stopOnError="true" >
  
+    <!-- 
+        verboseDebug="true"  - if true, maximum output in the merge report
+        summaryOnly="false"  - if true, only summary data in merge report
+        doValidation="true"  - if true, validate all schematrons against xml files found in same diectory prior to merging
+        applyXSD="false"     - if true, apply XSD XML validation to merged schematron
+        stopOnError="true"   - if true, discontinue merge process when errors found in processing
+     -->
+     
     <title>EP CMS 2017 QRDA Category III generated schematron</title>
    
      <generatedFilename>
          c:/Development/qrdaGit/qrda/Schematrons/CMS QRDA Category III/EC CMS 2017/Published/EP CMS 2017 QRDA Category III.sch
     </generatedFilename>
+
+    <!-- Extra attributes to add to root schematron element. May have multiple <rootAttribute> elements
+         Use this, for example, to override the default query binding of xslt1
+    -->
+	<rootAttribute>queryBinding=xslt2</rootAttribute>
     
     <!-- The following is useful if you want to compare the generated/merged file's asserts with the asserts in an original schematron - a sanity check to insure the merge is comprehensive of expected results. -->
    <compareSchematronFilename></compareSchematronFilename>

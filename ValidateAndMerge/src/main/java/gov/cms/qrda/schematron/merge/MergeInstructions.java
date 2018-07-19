@@ -224,6 +224,7 @@ public class MergeInstructions extends MergeProperties{
 			else {
 				addResult(INDENT2 + "  Error patterns and Warning patterns are generated together for each template");
 			}
+			this.setRootAttributes(getSchematronAttributes(mergeProfile));
 			
 			setCompareSchematronFilename(getNodeValue(mergeProfile,"compareSchematronFilename"));
 			if (!getSummaryOnly() && getCompareSchematronFilename() != "") {
@@ -715,5 +716,15 @@ public class MergeInstructions extends MergeProperties{
 		return null;
 	}
 	
-
+	public List<String> getSchematronAttributes(Element mergeProfile) {
+		ArrayList<String> atts = new ArrayList<String>();
+		NodeList nodes = mergeProfile.getElementsByTagName("rootAttribute");
+		for (int i = 0; i < nodes.getLength(); i++) {
+			Element node = (Element)nodes.item(i);
+			String attr = node.getTextContent();
+			this.addResult(INDENT3+"Add schematron root attribute: " + attr);
+			atts.add(attr);
+		}
+		return atts;
+	}
  }

@@ -424,8 +424,7 @@ public class SchematronMerge {
 		Schematron firstSchematron = sReps[0];
 		Element root = firstSchematron.getRoot();
 		Element top = new Element(root.getName(), root.getNamespace());
-
-
+		
 		List<Namespace> nsl = findNamespacesInScope(sReps);
 		for (Namespace n : nsl) top.addNamespaceDeclaration(n);
 
@@ -468,6 +467,26 @@ public class SchematronMerge {
 		mergedDoc.getRootElement().addContent(pe1);
 		mergedDoc.getRootElement().addContent(pe2);
 
+		// Read the list of extra attributes (if any) to add to the root element
+		List<String> atts = instructions.getRootAttributes();
+		if (atts != null) {
+			for (String attr : atts) {
+				try {
+					String[] tokens = attr.split("=");
+					if (tokens[1].trim().contains("\"")) {
+						instructions.addResult(MergeInstructions.INDENT3 + "Malformed attribute <name>=<value>. Value should not contain quotes: " + attr + ". This attribute will not be added.");
+					}
+					else {	
+						mergedDoc.getRootElement().setAttribute(tokens[0],tokens[1]);
+						instructions.addResult(MergeInstructions.INDENT3 + "Added  " + attr + " attribute to root element.");
+					}
+				}
+				catch(Exception e) {
+					instructions.addResult(MergeInstructions.INDENT3 + "Malformed attribute <name>=<value>: " + attr + ". This attribute will not be added.");
+				}
+			}
+		}
+		
 		// Add the patterns (w/ rules, assertions, etc)
 		// from each of the files to be merged
 		

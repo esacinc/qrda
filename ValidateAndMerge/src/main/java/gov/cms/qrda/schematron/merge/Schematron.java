@@ -76,7 +76,7 @@ public class Schematron {
 		 */
 	}
 	
-	// Return root of the tree of Eelements that is the internal representation of the Schmematron
+	// Return root of the tree of Elements that is the internal representation of the Schmematron
 	public Element getRoot(){
 		return (rootNode) ;
 	}

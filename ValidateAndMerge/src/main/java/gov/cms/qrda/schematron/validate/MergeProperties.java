@@ -67,6 +67,8 @@ public class MergeProperties {
 	protected boolean doValidation = false;
 	protected boolean applyXSD = true;
 	protected boolean stopOnError = true;
+	protected List<String> rootAttributes = null;   // 
+	
 	/**
 	 * @deprecated
 	 */
@@ -202,6 +204,13 @@ public class MergeProperties {
 		summaryOnly = val;
 	}
 
+	public List<String> getRootAttributes() {
+		return rootAttributes;
+	}
+	public void setRootAttributes(List<String> val) {
+		rootAttributes = val;
+	}
+	
 	public boolean getDoValidation() {
 		return doValidation;
 	}

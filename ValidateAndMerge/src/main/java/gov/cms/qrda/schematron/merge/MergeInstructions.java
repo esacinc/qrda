@@ -716,6 +716,13 @@ public class MergeInstructions extends MergeProperties{
 		return null;
 	}
 	
+	/**
+	 * Reads merge instructions files and collect the text from all <rootAttribute> elements present in the file.
+	 * These strings will be used to add extra attributes to the merged schematron root element.
+	 * Expected format for each item is <rootAttribute>attribute=value</rootAttribute>, with no quotes surrounding value.
+	 * @param mergeProfile
+	 * @return
+	 */
 	public List<String> getSchematronAttributes(Element mergeProfile) {
 		ArrayList<String> atts = new ArrayList<String>();
 		NodeList nodes = mergeProfile.getElementsByTagName("rootAttribute");

@@ -39,7 +39,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.Hashtable;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -281,6 +282,7 @@ public class SchematronMerge {
 		Schematron[] sReps = new Schematron[documents.length];
 		for(int i = 0; i < documents.length; i++){
 			if (documents[i] != null) {
+				//System.out.println("Created internal schematron rep for  " + documents[i].getBaseURI());
 				sReps[i] = new Schematron(documents[i]);
 				//System.out.println("Created internal schematron rep for  " + sReps[i]);
 			}
@@ -296,7 +298,7 @@ public class SchematronMerge {
 	 */
 	private List<Namespace> findNamespacesInScope(Schematron[] sReps){
 		List<Namespace> nsl = new ArrayList<Namespace>();
-		Hashtable <String,String> nsSeenSoFar = new Hashtable <String,String>();
+		LinkedHashMap <String,String> nsSeenSoFar = new LinkedHashMap <String,String>();
 
 		// For each schematron
 		for (Schematron s : sReps ){
@@ -329,11 +331,11 @@ public class SchematronMerge {
 	 * @return a List of xml Elements
 	 */
 	private List<Element> constructMergedSpaces(Schematron[] sReps){
-		Hashtable<String,Element> nsSeenSoFar = new Hashtable<String,Element>();
+		LinkedHashMap<String,Element> nsSeenSoFar = new LinkedHashMap<String,Element>();
 		List<Element> mergedSpaces = new ArrayList<Element> ();
 
 		for (Schematron s : sReps) {
-			Hashtable<String,Element> ns = s.makeNamespaces();
+			LinkedHashMap<String,Element> ns = s.makeNamespaces();
 			for (String nsKey : ns.keySet()) {
 				if (nsSeenSoFar.get(nsKey) == null) {
 					Element value = ns.get(nsKey);
@@ -356,13 +358,13 @@ public class SchematronMerge {
 	 * @return a List of xml Elements
 	 */
 	private List<Element> constructMergedErrors(Schematron[] sReps){
-		Hashtable<String,Element> errorsSoFar = new Hashtable<String,Element>();
+		LinkedHashMap<String,Element> errorsSoFar = new LinkedHashMap<String,Element>();
 		List<Element> mergedErrors = new ArrayList<Element> ();
 
 		for (Schematron s : sReps) {
-			Hashtable<String,Element> errs = s.makeErrors();
+			LinkedHashMap<String,Element> errs = s.makeErrors();
 			for (String errKey : errs.keySet()) {
-				if (! errorsSoFar.contains(errKey)) {
+				if (! errorsSoFar.containsKey(errKey)) {
 					Element elemValue = errs.get(errKey);
 					mergedErrors.add(elemValue.clone());
 					errorsSoFar.put(errKey, elemValue);
@@ -384,13 +386,13 @@ public class SchematronMerge {
 	 */
 
 	private List<Element> constructMergedWarnings(Schematron[] sReps){
-		Hashtable<String,Element> warningsSoFar = new Hashtable<String,Element>();
+		LinkedHashMap<String,Element> warningsSoFar = new LinkedHashMap<String,Element>();
 		List<Element> mergedWarnings = new ArrayList<Element> ();
 
 		for (Schematron s : sReps) {
-			Hashtable<String,Element> warnings = s.makeWarnings();
+			LinkedHashMap<String,Element> warnings = s.makeWarnings();
 			for (String warnKey : warnings.keySet()) {
-				if (! warningsSoFar.contains(warnKey)) {
+				if (! warningsSoFar.containsKey(warnKey)) {
 					Element elemValue = warnings .get(warnKey);
 					mergedWarnings.add(elemValue.clone());
 					warningsSoFar.put(warnKey, elemValue);
@@ -493,8 +495,8 @@ public class SchematronMerge {
 		// If we are generating all error patterns before all warning patterns, 
 		// then we will gather all of them first prior to generating...
 		int countPatterns = 0;
-		Hashtable<String, Element> allErrorPatterns = new Hashtable<String,Element>();
-		Hashtable<String, Element> allWarningPatterns = new Hashtable<String,Element>();
+		LinkedHashMap<String, Element> allErrorPatterns = new LinkedHashMap<String,Element>();
+		LinkedHashMap<String, Element> allWarningPatterns = new LinkedHashMap<String,Element>();
 		
 		if (!instructions.getSummaryOnly()) {
 			if (instructions.getVerbose()) {
@@ -510,7 +512,7 @@ public class SchematronMerge {
 		
 		for (Schematron s :sReps) {
 			// Get all the patterns from each template schematron...
-			Hashtable<String,Element> patterns = s.makePatterns();
+			LinkedHashMap<String,Element> patterns = s.makePatterns();
 			// If we are we are generating all error patterns before all warning patterns, 
 			// build up the global error and warning pattern lists...
 			if (separateErrorsFromWarnings) {

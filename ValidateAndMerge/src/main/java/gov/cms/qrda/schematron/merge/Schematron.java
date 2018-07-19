@@ -32,7 +32,9 @@ POSSIBILITY OF SUCH DAMAGE
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Hashtable;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashMap;
+
 import org.jdom2.*;
 
 /**
@@ -97,10 +99,10 @@ public class Schematron {
 
 
 	// Construct representation for the merged file
-	public Hashtable<String,Element> makePatterns( ){
+	public LinkedHashMap<String,Element> makePatterns( ){
 
 		// Table used to record elements
-		Hashtable<String,Element> patternTable = new Hashtable<String,Element>();
+		LinkedHashMap<String,Element> patternTable = new LinkedHashMap<String,Element>();
 
 		List<Element> eList = rootNode.getChildren();
 
@@ -167,10 +169,10 @@ public class Schematron {
 	}
 
 
-	public Hashtable<String,Element> makeNamespaces( ){
+	public LinkedHashMap<String,Element> makeNamespaces( ){
 
 
-		Hashtable<String,Element> namespaceTable = new Hashtable<String,Element>();
+		LinkedHashMap<String,Element> namespaceTable = new LinkedHashMap<String,Element>();
 
 		List<Element> eList = rootNode.getChildren();
 
@@ -200,17 +202,17 @@ public class Schematron {
 	}
 
 
-	// Returns a Hashtable the keys are the string used to name the error
+	// Returns a LinkedHashMap the keys are the string used to name the error
 	// The value is the Xml element
 
-	public Hashtable<String,Element> makeErrors( ){
+	public LinkedHashMap<String,Element> makeErrors( ){
 
 
 		List<Element> eList = rootNode.getChildren();
 
 		//System.out.println("In makeErrors( ) found " + eList.size() + " children");
 
-		Hashtable<String,Element> eTable = new Hashtable<String,Element>();
+		LinkedHashMap<String,Element> eTable = new LinkedHashMap<String,Element>();
 
 		for (int temp = 0; temp < eList.size(); temp++) {    
 			Element el = eList.get(temp);
@@ -249,16 +251,16 @@ public class Schematron {
 	}
 
 
-	// Returns a HAshtable the keys are the string used to name the warning
+	// Returns a LinkedHashMap the keys are the string used to name the warning
 	// The value is the Xml element
-	public Hashtable<String,Element> makeWarnings( ){
+	public LinkedHashMap<String,Element> makeWarnings( ){
 
 
 		List<Element> eList = rootNode.getChildren();
 
 		//System.out.println("In makeWarnings( ) found " + eList.size() + " children");
 
-		Hashtable<String,Element> eTable = new Hashtable<String,Element>();
+		LinkedHashMap<String,Element> eTable = new LinkedHashMap<String,Element>();
 
 		for (int temp = 0; temp < eList.size(); temp++) {    
 			Element el = eList.get(temp);

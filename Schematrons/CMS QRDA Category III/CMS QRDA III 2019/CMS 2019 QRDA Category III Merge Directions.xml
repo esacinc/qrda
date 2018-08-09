@@ -47,6 +47,7 @@
     <sourceDirectory selector='some'> 
         <directoryName>CMS QRDA Category III/Templates</directoryName>
             <!-- Document level templates -->
+        <include>CMS QRDA III TemplateId Validations</include>                                      <!-- Added per ESAC JIRA QRDA-455 ticket -->
                 <include>QRDA Category III Report CMS V3</include>                                  <!-- updated from V2 -->
             <!-- Section level templates -->
                 <include>QRDA Category III Measure Section CMS V3</include>                         <!-- updated from V2 --> <!-- ?  -->

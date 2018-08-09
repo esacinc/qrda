@@ -124,6 +124,7 @@
         <include>Medication Information V2</include>
         <include>Medication Order V4</include>
         <include>Medication Supply Order V2</include>
+        <!-- <include>Medication Supply Request V2</include> -->  <!-- Was left out in 2019 version -->
         <include>Patient Care Experience V4</include>
         <include>Patient Characteristic Clinical Trial Participant V4</include>
         <include>Patient Characteristic Expired V3</include>
@@ -186,6 +187,7 @@
     <sourceDirectory selector='some'>  
         <directoryName>CMS QRDA Category I/Templates/</directoryName>
         <!-- Document templates -->
+        <include>CMS QRDA I TemplateId Validations</include> <!-- Added per ESAC JIRA QRDA-455 ticket -->
         <include>QRDA Category I Report CMS V5</include>
         <!-- Section templates -->
         <include>Patient Data Section QDM V5 CMS</include>

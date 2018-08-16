@@ -216,7 +216,7 @@ public class Validator {
 							//res = 98;
 							failCount++;
 							if (!summaryOnly) {
-								mergeInstructions.addResult(MergeInstructions.INDENT4+testFile+": Failure count inconsistent with expectations for this file. (Errors: expected " + errorReport.getExpectedErrors() + ", actual " + errs + ") (Warnings: expected " + ((warningExp < 0)?"N/A":warningExp) + ", actual " + warns +")");
+								mergeInstructions.addResult(MergeInstructions.INDENT4+testFile+": Failure count inconsistent with expectations for this file. (Errors: expected " + ((errorExp < 0)?"N/A":errorExp) + ", actual " + errs + ") (Warnings: expected " + ((warningExp < 0)?"N/A":warningExp) + ", actual " + warns +")");
 							}
 						}
 						else { // Otherwise, results as expected. No message needed.
@@ -225,7 +225,7 @@ public class Validator {
 					}
 					if (!summaryOnly) {
 						if (isVerbose) {results.addResult(MergeInstructions.INDENT3 + "");}
-						results.addResult(MergeInstructions.INDENT3 + "(Errors: expected " + errorReport.getExpectedErrors() + ", actual " + errs + ") (Warnings: expected " + ((warningExp < 0)?"N/A":warningExp) + ", actual " + warns +")");
+						results.addResult(MergeInstructions.INDENT3 + "(Errors: expected " + ((errorExp < 0)?"N/A":errorExp) + ", actual " + errs + ") (Warnings: expected " + ((warningExp < 0)?"N/A":warningExp) + ", actual " + warns +")");
 					}
 
 				}

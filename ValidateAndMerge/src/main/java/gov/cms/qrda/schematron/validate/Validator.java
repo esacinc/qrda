@@ -216,6 +216,7 @@ public class Validator {
 							//res = 98;
 							failCount++;
 							if (!summaryOnly) {
+								// QRDA-469  Output "N/A" when there is no expected errors count.
 								mergeInstructions.addResult(MergeInstructions.INDENT4+testFile+": Failure count inconsistent with expectations for this file. (Errors: expected " + ((errorExp < 0)?"N/A":errorExp) + ", actual " + errs + ") (Warnings: expected " + ((warningExp < 0)?"N/A":warningExp) + ", actual " + warns +")");
 							}
 						}
@@ -225,6 +226,7 @@ public class Validator {
 					}
 					if (!summaryOnly) {
 						if (isVerbose) {results.addResult(MergeInstructions.INDENT3 + "");}
+						// QRDA-469  Output "N/A" when there is no expected errors count.
 						results.addResult(MergeInstructions.INDENT3 + "(Errors: expected " + ((errorExp < 0)?"N/A":errorExp) + ", actual " + errs + ") (Warnings: expected " + ((warningExp < 0)?"N/A":warningExp) + ", actual " + warns +")");
 					}
 

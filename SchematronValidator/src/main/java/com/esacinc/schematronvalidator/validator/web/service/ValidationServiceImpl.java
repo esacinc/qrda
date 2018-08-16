@@ -645,7 +645,7 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 					// We use the assert's rule id name to determine criticality of the failure. Assume the worst (error),
 					// then check to see if it is reall just a warning (id contains "warning" or starts with "w-") 
 					String lc = attrText.toLowerCase();
-					logger.debug("Node name: " + attr.getNodeName() + " Attr: " + lc);
+					//logger.debug("Node name: " + attr.getNodeName() + " Attr: " + lc);
 					if (lc.contains("warning") || lc.startsWith("w-")) {
 								fail.setCritical(false);
 					}
@@ -662,13 +662,13 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 				
 				String attrText = XPathUtility.getNodeText(attr);
 				atts += attrText + ", ";
-				
+				//logger.info("Attr node name: " + attr.getNodeName() + ", Attribute: " + attrText);
 				if (attr.getNodeName().equals("id")) {
 					fail.setId(attrText);
 					// We use the assert id name to determine criticality of the failure. Assume the worst (error),
 					// then check to see if it is reall just a warning (id contains "warning" or starts with "w-") 
 					String lc = attrText.toLowerCase();
-					logger.debug("Node name: " + attr.getNodeName() + " Attr: " + lc);
+					//logger.debug("Node name: " + attr.getNodeName() + " Attr: " + lc);
 					if (lc.contains("warning") || lc.startsWith("w-")) {
 								fail.setCritical(false);
 					}
@@ -691,9 +691,9 @@ public class ValidationServiceImpl extends CommonUtilsImpl implements Validation
 						fail.setSourceNode(src);
 					}
 					else {
-						//tc.addStatusText(wrapErrorSpan("Error retrieving node " + attrText + " from raw report atribute " + attr.getNodeName() + " in " + nodeType + " attributes: " + atts));//
-						//tc.addStatusText(wrapErrorSpan("Error retrieving node " + attrText + " from raw report atribute " + attr.getNodeName() + " in " + nodeType + " attributes: " + atts));
-						//tc.addStatusText("-----------------------");
+						tc.addStatusText(wrapErrorSpan("Error retrieving node " + attrText + ", attr: " + attr.getNodeName() + " from raw report."));
+						tc.addStatusText(wrapErrorSpan("   Report Atribute " + attr.getNodeName() + " in " + nodeType + " attributes: " + atts));
+						tc.addStatusText("-----------------------");
 					}
 
 				}

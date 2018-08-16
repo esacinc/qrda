@@ -147,6 +147,7 @@ public class XPathUtility {
                 addTextIfNeeded();
                 final Element el = doc.createElement(qName);
                 for (int i = 0; i < attributes.getLength(); i++) {
+                	//logger.info("Doc attribute: " + i + ", " + attributes.getQName(i));
                     el.setAttribute(attributes.getQName(i), attributes.getValue(i));
                 }
                 el.setUserData(LINE_NUMBER_KEY_NAME, String.valueOf(this.locator.getLineNumber()), null);
@@ -219,6 +220,15 @@ public class XPathUtility {
 	static public Node getNode(Document doc, String xpathExpression, TestCase tc) {
 	    Node res = null;
 	    try {
+	    	// QRDA-468 The version of XPathFactory expects xpathExpressions to be in xslt1 format.
+	    	// If the schematron is using queryBinding='xslt2', then the expathExpressions are in a different format.
+	    	// So, for now at least, the simplest thing to do is convert the xpathExpression to xslt1 format at all times.
+	    	// This can be done by using two string replacements to keep the tags name the same, but replace the surrounding stuff...
+            // xslt2 path example: "/:QualityMeasureDocument[namespace-uri()='urn:hl7-org:v3'][1]/:observationCriteria[namespace-uri()='urn:hl7-org:v3'][1]"
+	    	// xslt1 path example: "/[local-name()='QualityMeasureDocument']/[local-name()='observationCriteria']"
+	    	xpathExpression=xpathExpression.replace("/*:", "/*[local-name()='");
+	    	xpathExpression=xpathExpression.replace("[namespace-uri()='urn:hl7-org:v3']", "']");
+	    	//logger.info("New xpath: " + xpathExpression);
 	    	XPath xpath = XPathFactory.newInstance().newXPath();        
         	XPathExpression expr =  xpath.compile(xpathExpression);
         	res = (Node)expr.evaluate(doc,XPathConstants.NODE);

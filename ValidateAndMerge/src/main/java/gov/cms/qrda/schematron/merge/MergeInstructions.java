@@ -219,16 +219,16 @@ public class MergeInstructions extends MergeProperties{
 			
 			addResult(INDENT1 + "Merged file: " + getMergeFilename());
 			if (getSeparateErrorsFromWarnings() && !getSummaryOnly()) {
-				addResult(INDENT2 + "  All Error patterns are generated before all Warning patterns");
+				addResult(INDENT2 + "All Error patterns are generated before all Warning patterns");
 			}
 			else {
-				addResult(INDENT2 + "  Error patterns and Warning patterns are generated together for each template");
+				addResult(INDENT2 + "Error patterns and Warning patterns are generated together for each template");
 			}
 			this.setRootAttributes(getSchematronAttributes(mergeProfile));
 			
 			setCompareSchematronFilename(getNodeValue(mergeProfile,"compareSchematronFilename"));
 			if (!getSummaryOnly() && getCompareSchematronFilename() != "") {
-				addResult(INDENT2 + "  Compare generated schematron asserts to asserts in file: " + getCompareSchematronFilename());
+				addResult(INDENT2 + "Compare generated schematron asserts to asserts in file: " + getCompareSchematronFilename());
 			}
 
 
@@ -729,7 +729,7 @@ public class MergeInstructions extends MergeProperties{
 		for (int i = 0; i < nodes.getLength(); i++) {
 			Element node = (Element)nodes.item(i);
 			String attr = node.getTextContent();
-			this.addResult(INDENT3+"Add schematron root attribute: " + attr);
+			this.addResult(INDENT2+"Add schematron root attribute: " + attr);
 			atts.add(attr);
 		}
 		return atts;

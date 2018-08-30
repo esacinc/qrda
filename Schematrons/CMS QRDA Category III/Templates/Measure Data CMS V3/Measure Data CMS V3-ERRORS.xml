@@ -5,6 +5,8 @@
     Author: Dan Donahue
     Date:   06-12-2018
     JIRA https://tracker.esacinc.com/browse/QRDA-432
+    Update: 08-29-2019 Removed warning CMS_86
+            JIRA https://tracker.esacinc.com/browse/QRDA-465
     
     Total Errors Expected: 5
            Failure a-CMS_41-error SHALL contain exactly one [1..1] templateId (CONF:CMS_41) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.16" (CONF:CMS_42). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_43). 
@@ -13,8 +15,7 @@
            Failure a-3259-18140_C01-error SHALL contain at least one [1..*] entryRelationship (CONF:3259-18140_C01) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3259-18150). SHALL contain exactly one [1..1] Race Supplemental Data Element (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.8:2016-09-01) (CONF:3259-18150). 
            Failure a-3259-18139_C01-error SHALL contain at least one [1..*] entryRelationship (CONF:3259-18139_C01) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3259-18144). SHALL contain exactly one [1..1] Ethnicity Supplemental Data Element (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.7:2016-09-01) (CONF:3259-18149). 
     
-   Total Warnings Expected: 1
-           Failure a-CMS_86-warning SHOULD contain zero or one [0..1] entryRelationship (CONF:CMS_86) such that it SHALL contain exactly one [1..1] @typeCode="DRIV" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:CMS_87). SHALL contain exactly one [1..1] Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_88).  
+   Total Warnings Expected: 0
  
 -->
 
@@ -48,7 +49,7 @@
 		<!-- Race Supplemental Data Element - CMS (V2)-->
 		<entryRelationship typeCode="COMP">
 			<observation classCode="OBS" moodCode="EVN">
-				<!-- ailure a-3259-18140_C01-error SHALL contain at least one Race Supplemental Data Element CMS V2 -->
+				<!-- Failure a-3259-18140_C01-error SHALL contain at least one Race Supplemental Data Element CMS V2 -->
 				<templateId root="2.16.840.1.113883.10.20.27.3.8Err" extension="2016-09-01" />
 				<!-- ... -->
 			</observation>
@@ -64,12 +65,6 @@
 		</entryRelationship>
 		-->
 		
-		<!-- Failure a-CMS_86-warning SHOULD contain zero or one Reporting Parameters Act -->
-		<entryRelationship typeCode="DRIV">
-			<act classCode="ACT" moodCode="EVN">
-				<templateId root="2.16.840.1.113883.10.20.17.3.8Err" />
-				<!-- ... -->
-			</act>
-		</entryRelationship>
+
 	</observation>
 </ClinicalDocument>

@@ -2,6 +2,7 @@
 
 <!-- JIRA https://tracker.esacinc.com/browse/QRDA-432 -->
 <!-- JIRA https://tracker.esacinc.com/browse/QRDA-444 -->
+<!-- JIRA https://tracker.esacinc.com/browse/QRDA-465 -->
 
 <sch:schema xmlns:voc="http://www.lantanagroup.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
@@ -26,9 +27,12 @@
             <!--   <sch:report id="recipient-value" test="1 = 1">The Recipient is <sch:value-of select="$intendedRecipient-Measure-CMS"/></sch:report> -->
             <!-- 3338-17906 Already exists in base HL7 IG, checking for a different extension, so changing this id to _C01 -->
             <sch:assert id="a-3338-17906_C01-error" test="count(cda:entry[count(cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.17'][@extension='2018-05-01']])=1]) &gt; 0">SHALL contain at least one [1..*] entry (CONF:3338-17906) such that it SHALL contain exactly one [1..1] Measure Reference and Results - CMS (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.17:2018-05-01) (CONF:3338-17907_C01). </sch:assert>
+            <!-- Remove performance period prohibition at category level. https://tracker.esacinc.com/browse/QRDA-465-->
+            <!--
             <sch:assert id="a-CMS_68-error" test="$intendedRecipient-Measure-CMS != 'MIPS_INDIV'   or ($intendedRecipient-Measure-CMS='MIPS_INDIV' and count(cda:entry[cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]])=0)">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_INDIV", then SHALL NOT contain [0..0] entry Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_68). </sch:assert>
             <sch:assert id="a-CMS_69-error" test="$intendedRecipient-Measure-CMS != 'MIPS_GROUP'   or ($intendedRecipient-Measure-CMS='MIPS_GROUP' and count(cda:entry[cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]])=0)">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_GROUP", then SHALL NOT contain [0..0] entry Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_69). </sch:assert>
             <sch:assert id="a-CMS_85-error" test="$intendedRecipient-Measure-CMS != 'MIPS_VIRTUALGROUP' or ($intendedRecipient-Measure-CMS='MIPS_VIRTUALGROUP' and count(cda:entry[cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]])=0)">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_VIRTUALGROUP", then SHALL NOT contain [0..0] entry Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_85). </sch:assert>
+            -->
         </sch:rule>
     </sch:pattern>
 </sch:schema>

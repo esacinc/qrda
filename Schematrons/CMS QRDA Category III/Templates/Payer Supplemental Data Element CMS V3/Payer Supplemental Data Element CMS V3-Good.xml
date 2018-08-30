@@ -5,6 +5,8 @@
 		Author: Dan Donahue
 		Date: 05-24-2018
 		JIRA https://tracker.esacinc.com/browse/QRDA-432
+		Update: 08-29-2018 Added extension="2016-02-01" to Payer Supplemental Data Element  template ID
+		        https://tracker.esacinc.com/browse/QRDA-465
 		
 		Total Errors Expected: 0
           
@@ -17,13 +19,13 @@
 	<!-- Payer Supplemental Data Element -->
 	<observation classCode="OBS" moodCode="EVN">
 		<!-- Payer Supplemental Data Element  template ID -->
-		<templateId root="2.16.840.1.113883.10.20.27.3.9"/>
+		<templateId root="2.16.840.1.113883.10.20.27.3.9"  extension="2016-02-01"/>
 		<!-- Payer Supplemental Data Element - CMS (V2) template ID -->
 		<templateId root="2.16.840.1.113883.10.20.27.3.18" extension="2018-05-01"/>
 		<!-- ... -->
 		<value xsi:type="CD" nullFlavor="OTH">
 			<translation code="A"
-						codeSystem="2.16.840.1.113883.3.249.12"
+				codeSystem="2.16.840.1.113883.3.249.12"
 						codeSystemName="CMS Clinical Codes"
 						displayName="Medicare"/>
 		</value>

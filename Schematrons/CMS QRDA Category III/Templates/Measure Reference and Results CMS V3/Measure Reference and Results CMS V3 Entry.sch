@@ -2,6 +2,7 @@
 
 <!-- JIRA https://tracker.esacinc.com/browse/QRDA-432 -->
 <!-- JIRA https://tracker.esacinc.com/browse/QRDA-444 -->
+<!-- JIRA https://tracker.esacinc.com/browse/QRDA-465 -->
 
 <sch:schema xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
  	<sch:ns prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- JIRA https://tracker.esacinc.com/browse/QRDA-432 -->
+<!-- JIRA https://tracker.esacinc.com/browse/QRDA-432 Remove HL7 base assertions -->
 <!-- JIRA https://tracker.esacinc.com/browse/QRDA-444 -->
 
 

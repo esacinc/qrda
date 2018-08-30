@@ -2,7 +2,7 @@
 
 <!-- See JIRA https://tracker.esacinc.com/browse/QRDA-432 -->    
 
-<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="true" >
+<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="false" >
  
     <title>CMS 2019 QRDA Category III</title>
     <version>1.0</version>
@@ -13,7 +13,11 @@
     
 	<!-- Change or edit final test file once test file is built -->
     <finalTestFilename>
-        c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/TestFiles/EC_MU_GROUP_Sample_QRDA_III_Informative.xml
+        c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/TestFiles/MIPS_GROUP_Sample_QRDA_III_Informative-new.xml
+        <!-- 
+        c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/TestFiles/MIPS_GROUP_Sample_QRDA_III_Informative.xml
+        c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/TestFiles/ComprehensivePrimaryCareSampleQRDA-III.xml
+        -->
     </finalTestFilename>
     
     <fileHeader>
@@ -25,7 +29,52 @@
     THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
     ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             
+    Changes made in the 2019 CMS Eligible Clinicians and EPs QRDA Schematron:
     
+            Document-level template:
+                - Added document-level check for presence of QRDA-Category-III-Report templateId and QRDA Category IIII Report - CMS templateId
+                - Renamed “Advancing Care Information” to “Promoting Interoperability"  throughout
+                - Updated QRDA Category III Report – CMS (V3) (identifier urn:hl7ii:2.16.840.1.113883.10.20.27.1.2:2018-05-01)
+                    - Updated assignedEntity/documentationOf/representedOrganization to support MIPS virtual group reporting.
+                        For MIPS virtual group reporting: it must contain exactly one performer, which contains on Virtual Group Identifier. No NPI is allowed.
+                        This assignedEntity SHALL contain exactly one [1..1] representedOrganization (CONF:3338-18180).
+                        This representedOrganization SHOULD contain zero or one [0..1] id (CONF:3338-18181_C01) such that it
+                             SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:3338-18182).
+                                   Note: This OID contained in the @root (2.16.840.1.113883.4.2) designates that the @extension must hold a Tax Identification Number (TIN).
+                             SHALL contain exactly one [1..1] @extension (CONF:3338-18190).
+                                   Note: This is the organization's TIN. 
+                        This representedOrganization SHOULD contain zero or one [0..1] id (CONF:CMS_79) such that it
+                             SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.5.2" MIPS Virtual Group (CONF:CMS_80).
+                                   Note: This OID contained in the @root (2.16.840.1.113883.3.249.5.2) designates that the @extension must hold a Virtual Group Identifier.
+                             SHALL contain exactly one [1..1] @extension (CONF:CMS_81).
+                                   Note: This is the Virtual Group Identifier.
+                    - Updated component to support that the performance period for both Quality and Improvement Activities performance categories for MIPS reporting must be specified at the individual measure/activity level. 
+                        This structuredBody MAY contain zero or one [0..1] component (CONF:3338-17283) such that it
+                             SHALL contain exactly one [1..1] QRDA Category III Measure Section - CMS (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.2.3:2018-05-01) (CONF:3338-17301_C01).
+                        This structuredBody MAY contain zero or one [0..1] component (CONF:3338-21173) such that it
+                             SHALL contain exactly one [1..1] Improvement Activity Section  - CMS (identifier: urn:hl7ii:2.16.840.1.113883.3.249.20.2.1:2018-05-01) (CONF:3338-21174_C01).
+            
+            Section-level templates:
+               - Removed constraints that prohibited performance period for the Improvement Activity Section performance at tbe category level (CMS_77, CMS_78, CMS_84).
+               - Removed constraints that prohibited performance period for the QRDA Category III Measure Section performance category for MIPS reporting must be specified at the individual measure level (CMS_68, CMS_69, CMS_85). 
+               - Added Improvement Activity Section – CMS (identifier urn:hl7ii: 2.16.840.1.113883.3.249.20.2.1:2018-05-01) as a new template.
+               
+            Entry-level templates:
+               - Added Improvement Activity Performed Measure Reference and Results CMS template
+               - Removed constraint that the performance period for the Improvement Activity performance category should be specified at the individual activity level.
+               - Removed constraint in Improvement Activity requiring exactly one [1..1] Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_75)
+               - Updated the Measure Data – CMS (V3) (identifier urn:hl7ii:2.16.840.1.113883.10.20.27.3.16:2018-05-01) to contain the following templates directly. 
+                 (The previous CMS specific templates  are deprecated and no longer used and no longer included.)
+                    Aggregate Count (identifier urn:oid:2.16.840.1.113883.10.20.27.3.3)
+                    Continuous Variable Measure Value (identifier urn:oid:2.16.840.1.113883.10.20.27.3.2)
+                    Ethnicity Supplemental Data Element (V2) (identifier urn:hl7ii:2.16.840.1.113883.10.20.27.3.7:2016-09-01)
+                    Race Supplemental Data Element (V2) (identifier urn:hl7ii:2.16.840.1.113883.10.20.27.3.8:2016-09-01)
+                    Reporting Stratum (identifier urn:oid:2.16.840.1.113883.10.20.27.3.4)
+                    Sex Supplemental Data Element (V2) (identifier urn:hl7ii:2.16.840.1.113883.10.20.27.3.6:2016-09-01)
+               - Updated Meausre Reference and Results – CMS (V3) (identifier urn:hl7ii:2.16.840.1.113883.10.20.27.3.17:2018-05-01) to remove conflict with HL7 conformance: 3259-1845_CO1
+               - Updated Payer Supplemental Data Element CMS (V3) (identifier urn:hl7ii:2.16.840.1.113883.10.20.27.3.18:2018-05-01) to contain only CMS related conformance assertions
+               - Updated Performance Rate for Proportion Measure – CMS (V3) (identifier urn:hl7ii:2.16.840.1.113883.10.20.27.3.25:2018-05-01) to contain only CMS related conformance assertions
+            
 	
     </fileHeader>
     
@@ -47,7 +96,7 @@
     <sourceDirectory selector='some'> 
         <directoryName>CMS QRDA Category III/Templates</directoryName>
             <!-- Document level templates -->
-        <include>CMS QRDA III TemplateId Validations</include>                                      <!-- Added per ESAC JIRA QRDA-455 ticket -->
+                <include>CMS QRDA III TemplateId Validations</include>                              <!-- Added per ESAC JIRA QRDA-455 ticket -->
                 <include>QRDA Category III Report CMS V3</include>                                  <!-- updated from V2 -->
             <!-- Section level templates -->
                 <include>QRDA Category III Measure Section CMS V3</include>                         <!-- updated from V2 --> <!-- ?  -->

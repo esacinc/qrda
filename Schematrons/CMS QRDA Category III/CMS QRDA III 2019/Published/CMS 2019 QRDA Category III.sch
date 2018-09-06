@@ -57,7 +57,7 @@ Version 1.0
                - Updated Payer Supplemental Data Element CMS (V3) (identifier urn:hl7ii:2.16.840.1.113883.10.20.27.3.18:2018-05-01) to contain only CMS related conformance assertions
                - Updated Performance Rate for Proportion Measure – CMS (V3) (identifier urn:hl7ii:2.16.840.1.113883.10.20.27.3.25:2018-05-01) to contain only CMS related conformance assertions 
 
-Thu Aug 30 12:33:04 MDT 2018
+Thu Sep 06 11:59:56 MDT 2018
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
@@ -368,17 +368,20 @@ Thu Aug 30 12:33:04 MDT 2018
       <sch:assert id="a-CMS_13-error" test="(@extension='CPCPLUS' and count(../../../cda:component/cda:structuredBody/cda:component/cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3'][@extension='2018-05-01']])=1) or @extension!='CPCPLUS'">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then QRDA Category III Measure Section – CMS (V3) SHALL be present (CONF:CMS_13).</sch:assert>
       <sch:assert id="a-CMS_14-error" test="(@extension='CPCPLUS' and count(../../../cda:component/cda:structuredBody/cda:component/cda:section/cda:entry/cda:organizer/cda:component/cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.25'][@extension='2018-05-01']])=1) or @extension!='CPCPLUS'">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then Performance Rate for Proportion Measure – CMS (V3) SHALL be present (CONF:CMS_14).</sch:assert>
     </sch:rule>
-    <sch:rule id="QRDA_Category_III_CMS-participant-associatedEntity-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2018-05-01']]/cda:participant/cda:associatedEntity">
+    <!-- Added LOC qualifier to rule context https://tracker.esacinc.com/browse/QRDA-477 -->
+    <sch:rule id="QRDA_Category_III_CMS-participant-associatedEntity-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2018-05-01']]/cda:participant[@typeCode='LOC']/cda:associatedEntity">
       <sch:assert id="a-CMS_18-error" test="@classCode='SDLOC'">This associatedEntity SHALL contain exactly one [1..1] @classCode="SDLOC" Service Delivery Location (CONF:CMS_18).</sch:assert>
       <sch:assert id="a-CMS_19-error" test="count(cda:id)=1">This associatedEntity SHALL contain exactly one [1..1] id (CONF:CMS_19).</sch:assert>
       <sch:assert id="a-CMS_22-error" test="count(cda:code)=1">This associatedEntity SHALL contain exactly one [1..1] code (CONF:CMS_22).</sch:assert>
       <sch:assert id="a-CMS_25-error" test="count(cda:addr)=1">This associatedEntity SHALL contain exactly one [1..1] addr (CONF:CMS_25).</sch:assert>
     </sch:rule>
-    <sch:rule id="QRDA_Category_III_CMS-participant-associatedEntity-id-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2018-05-01']]/cda:participant/cda:associatedEntity/cda:id">
+    <!-- Added LOC qualifier to rule context https://tracker.esacinc.com/browse/QRDA-477 -->
+    <sch:rule id="QRDA_Category_III_CMS-participant-associatedEntity-id-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2018-05-01']]/cda:participant[@typeCode='LOC']/cda:associatedEntity/cda:id">
       <sch:assert id="a-CMS_20-error" test="@root='2.16.840.1.113883.3.249.5.1'">This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.5.1" CPC Practice Site (CONF:CMS_20).</sch:assert>
       <sch:assert id="a-CMS_21-error" test="count(@extension)=1">This id SHALL contain exactly one [1..1] @extension (CONF:CMS_21).</sch:assert>
     </sch:rule>
-    <sch:rule id="QRDA_Category_III_CMS-participant-associatedEntity-code-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2018-05-01']]/cda:participant/cda:associatedEntity/cda:code">
+    <!-- Added LOC qualifier to rule context https://tracker.esacinc.com/browse/QRDA-477 -->
+    <sch:rule id="QRDA_Category_III_CMS-participant-associatedEntity-code-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2018-05-01']]/cda:participant[@typeCode='LOC']/cda:associatedEntity/cda:code">
       <sch:assert id="a-CMS_23-error" test="@code='394730007'">his code SHALL contain exactly one [1..1] @code="394730007" Healthcare Related Organization (CONF:CMS_23).</sch:assert>
       <sch:assert id="a-CMS_24-error" test="count(@codeSystem)=1">This code SHALL contain exactly one [1..1] @codeSystem (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:CMS_24).</sch:assert>
     </sch:rule>

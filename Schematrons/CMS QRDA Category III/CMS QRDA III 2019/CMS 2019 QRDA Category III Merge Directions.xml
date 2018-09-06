@@ -99,7 +99,7 @@
                 <include>CMS QRDA III TemplateId Validations</include>                              <!-- Added per ESAC JIRA QRDA-455 ticket -->
                 <include>QRDA Category III Report CMS V3</include>                                  <!-- updated from V2 -->
             <!-- Section level templates -->
-                <include>QRDA Category III Measure Section CMS V3</include>                         <!-- updated from V2 --> <!-- ?  -->
+                <include>QRDA Category III Measure Section CMS V3</include>                         <!-- updated from V2 --> 
                 <include>Improvement Activity Section CMS</include>                                 <!-- New for 2019 -->
             <!-- Entry level templates -->
                 <include>Improvement Activity Performed Measure Reference and Results CMS</include> <!-- New for 2019 -->

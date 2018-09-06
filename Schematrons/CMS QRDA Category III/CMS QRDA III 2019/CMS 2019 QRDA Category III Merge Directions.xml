@@ -13,11 +13,7 @@
     
 	<!-- Change or edit final test file once test file is built -->
     <finalTestFilename>
-        c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/TestFiles/MIPS_GROUP_Sample_QRDA_III_Informative-new.xml
-        <!-- 
-        c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/TestFiles/MIPS_GROUP_Sample_QRDA_III_Informative.xml
-        c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/TestFiles/ComprehensivePrimaryCareSampleQRDA-III.xml
-        -->
+        c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/TestFiles/MIPS_GROUP_Sample_QRDA_III_Informative-2019.xml
     </finalTestFilename>
     
     <fileHeader>

@@ -5,6 +5,8 @@
     Author: Dan Donahue
     Date: 08-02-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-232
+    Update: 09-19-2017 Fixed a-3343-29130-error test in schematron 
+    JIRA: https://tracker.esacinc.com/browse/QRDA-482
     
 	Total Errors Expected: 15
 			Failure a-3343-11705-error SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-11705).
@@ -73,7 +75,7 @@
 			</observationRange>
 			<!-- Failure a-3343-29124-error The referenceRange, if present, SHALL contain exactly one [1..1] observationRange -->
 			<!-- Failure a-3343-29129-error This observationRange SHALL NOT contain [0..0] code -->
-			<!-- This observationRange SHALL contain exactly one [1..1] value with @xsi:type="IVL_PQ" -->
+			<!-- Failure a-3343-29130-error This observationRange SHALL contain exactly one [1..1] value with @xsi:type="IVL_PQ" -->
 			<observationRange>
 				<code></code>
 				<value xsi:type="IVL_PQErr"/>

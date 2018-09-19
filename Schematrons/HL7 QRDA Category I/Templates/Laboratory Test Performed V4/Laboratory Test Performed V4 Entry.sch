@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- Update: 09-19-2017 Fixed a-3343-29130-error test in schematron  JIRA: https://tracker.esacinc.com/browse/QRDA-482 -->
+
 <sch:schema xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
 	<sch:ns prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance" />
 	<sch:ns prefix="sdtc" uri="urn:hl7-org:sdtc" />
@@ -36,7 +38,8 @@
 		</sch:rule>
 		<sch:rule id="Laboratory_Test_Performed-referenceRange-observationRange-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.38'][@extension='2017-08-01']]/cda:referenceRange/cda:observationRange">
 			<sch:assert id="a-3343-29129-error" test="count(cda:code)=0"> This observationRange SHALL NOT contain [0..0] code (CONF:3343-29129).</sch:assert>
-			<sch:assert id="a-3343-29130-error" test="count(cda:value[@xsi:type='IVL_PQ'])=0"> This observationRange SHALL contain exactly one [1..1] value with @xsi:type="IVL_PQ" (CONF:3343-29130).</sch:assert>
+			<!-- Fix for https://tracker.esacinc.com/browse/QRDA-482,  changed =0 to =1 -->
+			<sch:assert id="a-3343-29130-error" test="count(cda:value[@xsi:type='IVL_PQ'])=1"> This observationRange SHALL contain exactly one [1..1] value with @xsi:type="IVL_PQ" (CONF:3343-29130).</sch:assert>
 		</sch:rule>
 		
 		

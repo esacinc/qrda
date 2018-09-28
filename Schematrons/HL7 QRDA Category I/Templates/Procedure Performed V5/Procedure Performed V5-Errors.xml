@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+<!-- 		
+    Title: Procedure Performed V5 minimal sample file with errors
+    Author: Dan Donahue
+    Date: 07-24-2017
+    JIRA: https://tracker.esacinc.com/browse/QRDA-210
+    Update: 12-08-2017 Changes per QDM review
+    Update: 09-26-2018 for STU 5.1 - https://tracker.esacinc.com/browse/QRDA-460 
+		        Updated prefixes and templateId extension
+		        Added 4388-28608 Status observation value
+    
+    Total Errors Expected: 10
+          Failure a-4388-27308-error Bad Class Code
+          Failure a-4388-11261-error Bad Mood Code
+          Failure a-4388-11262-error Multiple or bad extension with root on main template
+          Failure a-4388-27309-error Missing or multiple code
+          Failure a-4388-27305-error Missing or multiple statusCode
+          Failure a-4388-27367-error Missing or bad statusCode @code="completed"
+          Failure a-4388-11669-error Missing or multiple effectiveTime
+          Failure a-4388-11670-error Missing or multiple low
+          Failure a-4388-11671-error Missing or multiple high
+          Failure a-4388-28608-error This observation SHALL contain exactly one [1..1] value with @xsi:type="CD"  
+          
+    Total Warnings Expected: 1
+          Failure a-4388-27312-warning Missing targetSiteCode  (NOT tested)
+ 
+  -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <!--  Failure a-4388-27308-error Bad Class Code Failure a-4388-11261-error Bad Mood Code -->
+  <procedure classCodeErr="PROC" moodCode="EVNErr">
+    <!-- Conforms to C-CDA R2.1 Procedure Activity Procedure (V2) -->
+    <templateId root="2.16.840.1.113883.10.20.22.4.14" extension="2014-06-09"/>
+    <!-- Procedure Performed (V5) -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.64" extension="2018-10-01"/>
+    <!-- Failure a-4388-11262-error Multiple or bad extension with root on main template -->
+    <templateId root="2.16.840.1.113883.10.20.24.3.64" extension="2018-10-01"/>
+    <id root="d68b7e32-7810-4f5b-9cc2-acd54b0fd85d"/>
+    <!-- Failure a-4388-27309-error Missing or multiple code -->
+    <!-- <code code="235326000" displayName="Right hemicolectomy" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/> -->
+    <!-- ... -->
+    <statusCode code="completed"/>
+    <!-- Failure a-4388-27305-error Missing or multiple statusCode -->
+    <!-- Failure a-4388-27367-error Missing or bad statusCode @code="completed" -->
+    <statusCode code="completedErr"/>
+    <effectiveTime>
+      <!-- QDM Attribute: Relevant Period - start dateTime -->
+      <low value="20170329090000+0500"/>
+      <!-- QDM Attribute: Relevant Period - stop dateTime -->
+      <high value="20170329103000+0500"/>
+    </effectiveTime>
+    <!-- Failure a-4388-11669-error Missing or multiple effectiveTime -->
+    <!-- Failure a-4388-11670-error Missing or multiple low -->
+    <!-- Failure a-4388-11671-error Missing or multiple high -->
+    <effectiveTime></effectiveTime>
+    <!-- ... -->
+    <!-- Failure a-4388-27312-warning Missing targetSiteCode  -->
+    <!-- <targetSiteCode code="71854001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="colon"/> -->
+    
+    <!-- QDM Attribute: Incision Datetime -->
+    <entryRelationship typeCode="REFR">
+      <procedure classCode="PROC" moodCode="EVN">
+        <templateId root="2.16.840.1.113883.10.20.24.3.89"/>
+        <id root="2d5dc123-13ca-477d-9263-4a9c504186a1"/>
+        <code code="34896006" codeSystem="2.16.840.1.113883.6.96"
+          codeSystemName="SNOMED CT" displayName="incision"/>
+        <effectiveTime value="20170329103000+0500"/>
+      </procedure>
+    </entryRelationship>
+    <entryRelationship typeCode="REFR">
+      <!-- QDM Attribute: Status -->
+      <observation classCode="OBS" moodCode="EVN">
+        <!-- Status -->
+        <templateId root="2.16.840.1.113883.10.20.24.3.93"/>
+        <id root="29b776d3-089b-4a7f-b6e9-e45080091922"/>
+        <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+          displayName="Status"/>
+        <!-- Failure a-4388-28608-error This observation SHALL contain exactly one [1..1] value with @xsi:type="CD"  -->
+        <value xsi:type="CDErr" code="445665009" displayName="Final Report"
+          sdtc:valueSet="1.2.99999"/>
+      </observation>
+    </entryRelationship>
+  </procedure>
+</ClinicalDocument>

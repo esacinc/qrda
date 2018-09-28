@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title:  Days Supplied, Minimal sample, with Errors
+    Author: Dan Donahue
+    Date:   09-25-2018
+    New template  for STU 5.1 - https://tracker.esacinc.com/browse/QRDA-460
+    
+    Total Errors Expected: 4
+        Failure a-4388-29196-error - test="@classCode='SPLY'" SHALL contain exactly one [1..1] @classCode="SPLY" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:4388-29196).
+        Failure a-4388-29197-error - test="@moodCode='EVN'" SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: HL7ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:4388-29197). 
+        Failure a-4388-29179-error - test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.157'][@extension='2018-10-01'])=1" SHALL contain exactly one [1..1] templateId (CONF:4388-29179) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.157" (CONF:4388-29198) SHALL contain exactly one [1..1] @extension="2018-10-01" (CONF:4388-29199). 
+        Failure a-4388-29211-error - test="count(cda:quantity)=1" SHALL contain exactly one [1..1] quantity (CONF:4388-29211).
+ 
+    Total Warnings Expected: 0
+-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+	xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+	
+	<!-- Failure a-4388-29196-error - test="@classCode='SPLY'" SHALL contain exactly one [1..1] @classCode="SPLY" -->
+	<!-- Failure a-4388-29197-error - test="@moodCode='EVN'" SHALL contain exactly one [1..1] @moodCode="EVN" -->
+	<supply classCodeErr="SPLY" moodCode="EVNErr">
+		<!-- Days Supplied -->
+		<templateId root="2.16.840.1.113883.10.20.24.3.157" extension="2018-10-01"/>
+		<!-- Failure a-4388-29179-error Multiple main templateIds -->
+		<templateId root="2.16.840.1.113883.10.20.24.3.157" extension="2018-10-01"/>
+		<id root="6fc75044-6dc4-4ef6-b1e4-736c951cdfe4"/>
+		<!--  Failure a-4388-29211-error - test="count(cda:quantity)=1" SHALL contain exactly one [1..1] quantity -->
+		<!-- <quantity value="10" unit="d" /> -->
+	</supply>
+	
+</ClinicalDocument>

@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
-  <!-- 	
+  <!--
+    Title:  Criticality Observation minimal sample file with errors
+    Author: Michael Holck
+    Date:   03-02-2017
+    Update: 09-25-2018  Updated for STU 5.1 - https://tracker.esacinc.com/browse/QRDA-460  
+                        Changed conformance prefixes from 1181-  to 81-  to match Trifolia IG 
+                        
+                        
     Errors added to test Communication from Criticality Observation template schematron error assertions - Michael Holck
     Total Errors Expected: 9
-          Failure a-1198-32921-error Bad Class Code
-          Failure a-1198-32922-error Bad Mood Code
-          Failure a-1198-32918-error Multiple main template ids
-          Failure a-1198-32919-error More than one code
-          Failure a-1198-32925-error Incorrect @code value
-          Failure a-1198-32926-error Incorrect @codeSystem
-          Failure a-1198-32920-error More than one statusCode
-          Failure a-1198-32920-error @code not = "completed"
-          Failure a-1198-32928-error No value where type is CD and code selected from 2.16.840.1.113883.1.11.20549 
+          Failure a-81-32921-error Bad Class Code
+          Failure a-81-32922-error Bad Mood Code
+          Failure a-81-32918-error Multiple main template ids
+          Failure a-81-32919-error More than one code
+          Failure a-81-32925-error Incorrect @code value
+          Failure a-81-32926-error Incorrect @codeSystem
+          Failure a-81-32920-error More than one statusCode
+          Failure a-81-32920-error @code not = "completed"
+          Failure a-81-32928-error No value where type is CD and code selected from 2.16.840.1.113883.1.11.20549 
             
     Total Warnings Expected: 0
   -->
@@ -19,24 +26,24 @@
   xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
   xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
   
-  <!-- a-1198-32921-error Bad Class Code -->
-  <!-- a-1198-32922-error Bad Mood Code -->
+  <!-- a-81-32921-error Bad Class Code -->
+  <!-- a-81-32922-error Bad Mood Code -->
   <observation classCode="ABC" moodCode="DEF">
     <templateId root="2.16.840.1.113883.10.20.22.4.145"/>
     <!-- Multiple main template ids -->
     <templateId root="2.16.840.1.113883.10.20.22.4.145"/>
     <code code="82606-5" codeSystem="2.16.840.1.113883.6.1" 
       displayName="Criticality" />
-    <!-- a-1198-32919-error More than one code -->
-    <!-- a-1198-32925-error Incorrect @code value -->
-    <!-- a-1198-32926-error Incorrect @codeSystem -->
+    <!-- a-81-32919-error More than one code -->
+    <!-- a-81-32925-error Incorrect @code value -->
+    <!-- a-81-32926-error Incorrect @codeSystem -->
     <code code="82606-7" codeSystem="2.16.840.1.113883.6.2" 
       displayName="Criticality" />
     <statusCode code="completed"/>
-    <!-- a-1198-32920-error More than one statusCode -->
-    <!-- a-1198-32920-error @code not = "completed" -->
+    <!-- a-81-32920-error More than one statusCode -->
+    <!-- a-81-32920-error @code not = "completed" -->
     <statusCode code="pending"/>
-    <!-- a-1198-32928-error No value where type is CD and code selected from 2.16.840.1.113883.1.11.20549 -->
+    <!-- a-81-32928-error No value where type is CD and code selected from 2.16.840.1.113883.1.11.20549 -->
     <value xsi:type="CD" code="TEST" displayName="Test incorrect" codeSystem="2.16.840.1.113883.5.1" 
       codeSystemName="Test Value"/>
   </observation>

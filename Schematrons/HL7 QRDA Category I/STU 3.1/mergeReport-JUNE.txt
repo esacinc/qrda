@@ -1,0 +1,46 @@
+ 
+************************************************************************************************************
+ MERGE REPORT: C:\\Development\\QRDA-git\\qrda\\Schematrons\\HL7 QRDA Category I\\STU 3.1\\HL7 QRDA Category I STU 3.1 Merge Directions-JUNE.xml
+************************************************************************************************************
+    Instructions file: C:\\Development\\QRDA-git\\qrda\\Schematrons\\HL7 QRDA Category I\\STU 3.1\\HL7 QRDA Category I STU 3.1 Merge Directions-JUNE.xml
+        Failed to locate element: <headerFormat>
+    Title: HL7 QRDA 1 STU 3.1 generated schematron
+    Generated on Tue May 30 16:26:16 MDT 2017
+    Verbose Reporting is turned on
+    Merged file: c:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category I/STU 3.1/Published/HL7 QRDA Category I STU 3.1-JUNE-II.sch
+          All Error patterns are generated before all Warning patterns
+    Merge report file located at: c:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category I/STU 3.1/mergeReport-JUNE.txt
+    Validation is turned off
+    Collect schematron template information from source directories...
+        Processing template directory: c:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category I/Templates/, selector: some
+            Located schematron file: Assessment Performed Entry.sch
+            Located schematron file: Assessment Recommended Entry.sch
+            Located schematron file: Diagnosis Concern Act V2 Entry.sch
+            Located schematron file: Fulfills V2 Subentry.sch
+            Located schematron file: Patient Data Section QDM V4.sch
+            Located schematron file: QDM Based QRDA V4 Document.sch
+            Located schematron file: Symptom Concern Act V2 Entry.sch
+            Processed 7 (7 expected) schematron folders.
+        7 schematron templates identified for merging
+    Schematron files gleaned from merge instructions: 
+        c:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category I\Templates\Assessment Performed\Assessment Performed Entry.sch
+        c:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category I\Templates\Assessment Recommended\Assessment Recommended Entry.sch
+        c:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category I\Templates\Diagnosis Concern Act V2\Diagnosis Concern Act V2 Entry.sch
+        c:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category I\Templates\Fulfills V2\Fulfills V2 Subentry.sch
+        c:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category I\Templates\Patient Data Section QDM V4\Patient Data Section QDM V4.sch
+        c:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category I\Templates\QDM Based QRDA V4\QDM Based QRDA V4 Document.sch
+        c:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category I\Templates\Symptom Concern Act V2\Symptom Concern Act V2 Entry.sch
+        -------------- end schematron file list-------------------
+    Merge Setup Complete
+            _______________________________________________________________
+        
+    Found 0 schematron template(s) that did not process test files as expected
+    0 schematron template(s) had no associated test files.
+     
+    Begin Merge Process....
+        Merging files into file "c:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category I/STU 3.1/Published/HL7 QRDA Category I STU 3.1-JUNE-II.sch".
+            Generating all Error patterns first, then all Warning patterns.
+        Wrote merged Schematron file to "c:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category I/STU 3.1/Published/HL7 QRDA Category I STU 3.1-JUNE-II.sch".
+
+**************************************** end merge report ************************************************************************
+ 

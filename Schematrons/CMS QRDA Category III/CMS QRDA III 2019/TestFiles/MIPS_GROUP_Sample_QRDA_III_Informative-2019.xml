@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
 <!-- 
-	Title: Merit-based Incentive Payment System (MIPS) Group Reporting Sample QRDA-III (Informative)
-	Filename: MIPS_GROUP_Sample_QRDA_III_Informative.xml
+	Title: Merit-based Incentive Payment System (MIPS) Group Reporting Sample QRDA-III (Informative) for 2019
+	Filename: MIPS_GROUP_Sample_QRDA_III_Informative-2019.xml
 	Version: 1.0
 	Revision History:  09/05/2018 Created
 	Description: 1) This QRDA-III sample file is valid for MIPS group reporting (MIPS_GROUP) and is informative only. 
@@ -19,7 +19,10 @@
    Total Warnings Expected: 0
    
    eCQMs included are:
-   MeasureID		NQF ID   Measure Name	                                    id (UUID)                               NQS Domain
+   _____________________________________________________________________________________________________________________________________________________________________________________________
+
+   MeasureID		NQF ID   Measure Name	                                    version-specific id (UUID)              NQS Domain
+   _____________________________________________________________________________________________________________________________________________________________________________________________
    CMS125v7			2372     Breast Cancer Screening			                40280382-6258-7581-0162-927500b514ef	Effective Clinical Care     
    CMS130v7	        0034     Colorectal Cancer Screening		                40280382-6258-7581-0162-92959376159d    Effective Clinical Care
    CMS165v7	        0018     Controlling High Blood Pressure	                40280382-6258-7581-0162-92d6e6db1680    Effective Clinical Care
@@ -32,7 +35,8 @@
    CMS2v8			0418     Screening for Depression and Follow-up plan        40280382-5fa6-fe85-0160-0ed2838423ca	Community/Population Health
    CMS138v7			0028     Tobacco Use: Screening/Cessation Intervention      40280382-6240-b6b9-0162-54815a310c2c    Community/Population Health (multiple performance rates)
    CMS136v8			0108     Follow-up for Children Prescribed ADHA Medication	40280382-6258-7581-0162-929d3fb415c3	Effective Clinical Care (multiple performance rates)
-   
+   _____________________________________________________________________________________________________________________________________________________________________________________________
+      
    Promoting Interoperability Measures included are:
    MeasureID    Measure Name						Type
    PI_PPHI_1    Security Risk Analysis 			    Yes/No

@@ -7,7 +7,7 @@
     Instructions file: C:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\CMS QRDA III 2019\\CMS 2019 QRDA Category III Merge Directions.xml
     Title: CMS 2019 QRDA Category III
     Version: 1.0
-    Generated on Thu Sep 06 14:45:38 MDT 2018
+    Generated on Tue Oct 02 13:08:28 MDT 2018
     Verbose Reporting is turned on
     Merged file: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Published/CMS 2019 QRDA Category III.sch
         All Error patterns are generated before all Warning patterns
@@ -619,11 +619,9 @@
                     This languageCode SHALL contain exactly one [1..1] @code="en" English (CodeSystem: Language urn:oid:2.16.840.1.113883.6.121) (CONF:3338-19669_C01).
                 Error: a-CMS_8-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient'][1]: count(cda:intendedRecipient)=1
                     This informationRecipient SHALL contain exactly one [1..1] intendedRecipient (CONF:CMS_8). 
-                Error: a-CMS_12-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient'][1]/*[local-name()='intendedRecipient'][1]/*[local-name()='id']: (@extension='CPCPLUS' and ../../../cda:participant[@typeCode='LOC']) or @extension!='CPCPLUS'
-                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then ClinicalDocument/participant/@typeCode="LOC" SHALL be present (CONF:CMS_12).
                 Error: a-CMS_13-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient'][1]/*[local-name()='intendedRecipient'][1]/*[local-name()='id']: (@extension='CPCPLUS' and count(../../../cda:component/cda:structuredBody/cda:component/cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3'][@extension='2018-05-01']])=1) or @extension!='CPCPLUS'
                     If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then QRDA Category III Measure Section – CMS (V3) SHALL be present (CONF:CMS_13).
-                Error: a-CMS_14-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient'][1]/*[local-name()='intendedRecipient'][1]/*[local-name()='id']: (@extension='CPCPLUS' and count(../../../cda:component/cda:structuredBody/cda:component/cda:section/cda:entry/cda:organizer/cda:component/cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.25'][@extension='2018-05-01']])=1) or @extension!='CPCPLUS'
+                Error: a-CMS_14-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient'][1]/*[local-name()='intendedRecipient'][1]/*[local-name()='id']: (@extension='CPCPLUS' and count(../../../cda:component/cda:structuredBody/cda:component/cda:section/cda:entry/cda:organizer/cda:component/cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.25'][@extension='2018-05-01']]) > 0) or @extension!='CPCPLUS'
                     If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then Performance Rate for Proportion Measure – CMS (V3) SHALL be present (CONF:CMS_14).
                 Error: a-CMS_9-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient'][2]/*[local-name()='intendedRecipient']: count(cda:id)=1
                     This intendedRecipient SHALL contain exactly one [1..1] id (CONF:CMS_9). 
@@ -631,6 +629,22 @@
                     This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.7" CMS Program (CONF:CMS_10). 
                 Error: a-CMS_11-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient'][2]/*[local-name()='intendedRecipient']/*[local-name()='id'][2]: @extension=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.249.14.101']/voc:code/@value
                     This id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet QRDA III CMS Program Name urn:oid:2.16.840.1.113883.3.249.14.101 STATIC 2018-05-01 (CONF:CMS_11). 
+                Error: a-CMS_18-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant'][1]/*[local-name()='associatedEntity']: @classCode='SDLOC'
+                    This associatedEntity SHALL contain exactly one [1..1] @classCode="SDLOC" Service Delivery Location (CONF:CMS_18).
+                Error: a-CMS_19-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant'][1]/*[local-name()='associatedEntity']: count(cda:id)=1
+                    This associatedEntity SHALL contain exactly one [1..1] id (CONF:CMS_19).
+                Error: a-CMS_22-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant'][1]/*[local-name()='associatedEntity']: count(cda:code)=1
+                    This associatedEntity SHALL contain exactly one [1..1] code (CONF:CMS_22). 
+                Error: a-CMS_25-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant'][1]/*[local-name()='associatedEntity']: count(cda:addr)=1
+                    This associatedEntity SHALL contain exactly one [1..1] addr (CONF:CMS_25).  
+                Error: a-CMS_20-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant'][1]/*[local-name()='associatedEntity']/*[local-name()='id'][2]: @root='2.16.840.1.113883.3.249.5.1'
+                    This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.5.1" CPC Practice Site (CONF:CMS_20). 
+                Error: a-CMS_21-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant'][1]/*[local-name()='associatedEntity']/*[local-name()='id'][2]: count(@extension)=1
+                    This id SHALL contain exactly one [1..1] @extension (CONF:CMS_21). 
+                Error: a-CMS_23-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant'][1]/*[local-name()='associatedEntity']/*[local-name()='code'][2]: @code='394730007'
+                    his code SHALL contain exactly one [1..1] @code="394730007" Healthcare Related Organization (CONF:CMS_23).  
+                Error: a-CMS_24-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant'][1]/*[local-name()='associatedEntity']/*[local-name()='code'][2]: count(@codeSystem)=1
+                    This code SHALL contain exactly one [1..1] @codeSystem (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:CMS_24).  
                 Error: a-3338-18177_C01-error at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf'][1]/*[local-name()='serviceEvent']/*[local-name()='performer']/*[local-name()='assignedEntity'][2]: count(cda:id[@root='2.16.840.1.113883.4.6'])=1
                     This assignedEntity SHALL contain exactly one [1..1] id (CONF:3338-18177_C01) such that it  MAY contain zero or one [0..1] @nullFlavor (CONF:CMS_29). SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:3338-18178_C01).  MAY contain zero or one [0..1] @extension (CONF:3338-18247). 
                 Error: a-3338-18180_C01-error at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf'][1]/*[local-name()='serviceEvent']/*[local-name()='performer']/*[local-name()='assignedEntity'][2]: count(cda:representedOrganization)=1
@@ -641,17 +655,18 @@
                     This structuredBody SHALL NOT contain [0..0] component (CONF:3338-17281_C01) such that it  SHALL contain exactly one [1..1] QRDA Category III Reporting Parameters Section (identifier: urn:oid:2.16.840.1.113883.10.20.27.2.2) (CONF:3338-17282). 
                 Error: a-3338-21394_C01-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody'][2]: count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3'][@extension='2018-05-01']])=1])=1 or count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.4'][@extension='2017-06-01']])=1])=1 or count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.5'][@extension='2017-06-01']])=1])=1
                     This structuredBody SHALL contain at least a QRDA Category III Measure Section - CMS (V3), or an Improvement Activity Section - CMS, or a Promoting Interoperability Section (V2) (CONF:3338-21394_C01). 
-                c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document Errors.xml: Failure count inconsistent with expectations for this file. (Errors: expected 26, actual 18) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 26, actual 18) (Warnings: expected 0, actual 0)
+            (Errors: expected 25, actual 25) (Warnings: expected 0, actual 0)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-CPCPLUS-Errors.xml
+                Error: a-CMS_12-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient']/*[local-name()='intendedRecipient']/*[local-name()='id']: (@extension='CPCPLUS' and ../../../cda:participant[@typeCode='LOC']) or @extension!='CPCPLUS'
+                    If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then ClinicalDocument/participant/@typeCode="LOC" SHALL be present (CONF:CMS_12).
                 Error: a-CMS_13-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient']/*[local-name()='intendedRecipient']/*[local-name()='id']: (@extension='CPCPLUS' and count(../../../cda:component/cda:structuredBody/cda:component/cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3'][@extension='2018-05-01']])=1) or @extension!='CPCPLUS'
                     If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then QRDA Category III Measure Section – CMS (V3) SHALL be present (CONF:CMS_13).
-                Error: a-CMS_14-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient']/*[local-name()='intendedRecipient']/*[local-name()='id']: (@extension='CPCPLUS' and count(../../../cda:component/cda:structuredBody/cda:component/cda:section/cda:entry/cda:organizer/cda:component/cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.25'][@extension='2018-05-01']])=1) or @extension!='CPCPLUS'
+                Error: a-CMS_14-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient']/*[local-name()='intendedRecipient']/*[local-name()='id']: (@extension='CPCPLUS' and count(../../../cda:component/cda:structuredBody/cda:component/cda:section/cda:entry/cda:organizer/cda:component/cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.25'][@extension='2018-05-01']]) > 0) or @extension!='CPCPLUS'
                     If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then Performance Rate for Proportion Measure – CMS (V3) SHALL be present (CONF:CMS_14).
             
-            (Errors: expected 2, actual 2) (Warnings: expected 0, actual 0)
+            (Errors: expected 3, actual 3) (Warnings: expected 0, actual 0)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V3\QRDA Category III Report CMS V3 Document-CPCPLUS.xml
             
@@ -1574,7 +1589,7 @@
             (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
             _______________________________________________________________
         
-    Found 1 schematron template(s) that did not process test files as expected
+    Found 0 schematron template(s) that did not process test files as expected
     0 schematron template(s) had no associated test files.
      
     Merge Process Results....
@@ -1595,6 +1610,6 @@
             (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
             Schematron validation of test file results as expected (or no expected error count provided).
  
-    Merge Complete in 9 seconds
+    Merge Complete in 19 seconds
 **************************************** end merge report ************************************************************************
  

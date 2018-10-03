@@ -35,6 +35,8 @@ Version 1.0
                              SHALL contain exactly one [1..1] QRDA Category III Measure Section - CMS (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.2.3:2018-05-01) (CONF:3338-17301_C01).
                         This structuredBody MAY contain zero or one [0..1] component (CONF:3338-21173) such that it
                              SHALL contain exactly one [1..1] Improvement Activity Section  - CMS (identifier: urn:hl7ii:2.16.840.1.113883.3.249.20.2.1:2018-05-01) (CONF:3338-21174_C01).
+                    - Updated CMS_14 conformance assertion: If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then Performance Rate for Proportion Measure – CMS (V3) SHALL be present (CONF:CMS_14)
+                             Changed assert to allow for more than one Performance Rate for Proportion Measure – CMS (V3)
             
             Section-level templates:
                - Removed constraints that prohibited performance period for the Improvement Activity Section performance at tbe category level (CMS_77, CMS_78, CMS_84).
@@ -57,7 +59,7 @@ Version 1.0
                - Updated Payer Supplemental Data Element CMS (V3) (identifier urn:hl7ii:2.16.840.1.113883.10.20.27.3.18:2018-05-01) to contain only CMS related conformance assertions
                - Updated Performance Rate for Proportion Measure – CMS (V3) (identifier urn:hl7ii:2.16.840.1.113883.10.20.27.3.25:2018-05-01) to contain only CMS related conformance assertions 
 
-Thu Sep 06 14:45:45 MDT 2018
+Tue Oct 02 13:08:46 MDT 2018
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
@@ -366,7 +368,8 @@ Thu Sep 06 14:45:45 MDT 2018
       <sch:assert id="a-CMS_11-error" test="@extension=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.249.14.101']/voc:code/@value">This id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet QRDA III CMS Program Name urn:oid:2.16.840.1.113883.3.249.14.101 STATIC 2018-05-01 (CONF:CMS_11).</sch:assert>
       <sch:assert id="a-CMS_12-error" test="(@extension='CPCPLUS' and ../../../cda:participant[@typeCode='LOC']) or @extension!='CPCPLUS'">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then ClinicalDocument/participant/@typeCode="LOC" SHALL be present (CONF:CMS_12).</sch:assert>
       <sch:assert id="a-CMS_13-error" test="(@extension='CPCPLUS' and count(../../../cda:component/cda:structuredBody/cda:component/cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3'][@extension='2018-05-01']])=1) or @extension!='CPCPLUS'">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then QRDA Category III Measure Section – CMS (V3) SHALL be present (CONF:CMS_13).</sch:assert>
-      <sch:assert id="a-CMS_14-error" test="(@extension='CPCPLUS' and count(../../../cda:component/cda:structuredBody/cda:component/cda:section/cda:entry/cda:organizer/cda:component/cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.25'][@extension='2018-05-01']])=1) or @extension!='CPCPLUS'">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then Performance Rate for Proportion Measure – CMS (V3) SHALL be present (CONF:CMS_14).</sch:assert>
+      <!-- CMS_14 should be > 0, not = 1.  https://tracker.esacinc.com/browse/QRDA-486 -->
+      <sch:assert id="a-CMS_14-error" test="(@extension='CPCPLUS' and count(../../../cda:component/cda:structuredBody/cda:component/cda:section/cda:entry/cda:organizer/cda:component/cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.25'][@extension='2018-05-01']]) &gt; 0) or @extension!='CPCPLUS'">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then Performance Rate for Proportion Measure – CMS (V3) SHALL be present (CONF:CMS_14).</sch:assert>
     </sch:rule>
     <!-- Added LOC qualifier to rule context https://tracker.esacinc.com/browse/QRDA-477 -->
     <sch:rule id="QRDA_Category_III_CMS-participant-associatedEntity-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2018-05-01']]/cda:participant[@typeCode='LOC']/cda:associatedEntity">

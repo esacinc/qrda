@@ -9,8 +9,10 @@
 		Date: 05-23-2018
 		Author: Dan Donahue
 		JIRA https://tracker.esacinc.com/browse/QRDA-432
+		JIRA JIRA https://tracker.esacinc.com/browse/QRDA-486 - Added CMS_12 error - 10-02-2018
 		
-		Total Errors Expected: 2
+		Total Errors Expected: 3
+		   Failure a-CMS_12-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then ClinicalDocument/participant/@typeCode="LOC" SHALL be present (CONF:CMS_12).  Added for QRDA-486
            Failure a-CMS_13-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then QRDA Category III Measure Section – CMS (V3) SHALL be present (CONF:CMS_13).
            Failure a-CMS_14-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then Performance Rate for Proportion Measure – CMS (V3) SHALL be present (CONF:CMS_13).
           
@@ -37,7 +39,8 @@
 		</intendedRecipient>
 	</informationRecipient>
 	<!-- SHALL contain one participant -->
-	<participant typeCode="LOC">
+	<!-- Failure a-CMS_12-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then ClinicalDocument/participant/@typeCode="LOC" SHALL be present (CONF:CMS_12). -->
+	<participant typeCode="LOCErr">
 		<associatedEntity classCode="SDLOC">
 			<!-- SHALL have at  one id, CPC Practice Site -->
 			<id root="2.16.840.1.113883.3.249.5.1" extension="T2OR1234" assigningAuthorityName="CMS-CMMI"/>

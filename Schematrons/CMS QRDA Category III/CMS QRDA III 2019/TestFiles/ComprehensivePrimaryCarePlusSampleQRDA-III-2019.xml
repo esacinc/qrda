@@ -232,7 +232,7 @@ QRDA Category III Measure Section (CMS EP)
                   <table border="1" width="100%">
                      <thead>
                         <tr>
-                           <th>eMeasure Title</th>
+                           <th>eCQM Title</th>
                            <th>Version neutral identifier</th>
                            <th>Version specific identifier</th>
                         </tr>
@@ -381,7 +381,7 @@ QRDA Category III Measure Section (CMS EP)
                   <table border="1" width="100%">
                      <thead>
                         <tr>
-                           <th>eMeasure Title</th>
+                           <th>eCQM Title</th>
                            <th>Version neutral identifier</th>
                            <th>Version specific identifier</th>
                         </tr>
@@ -1084,7 +1084,7 @@ QRDA Category III Measure Section (CMS EP)
                                  </entryRelationship>
                               </observation>
                            </entryRelationship>
-                           <!--IPOP Population ID from eMeasure-->			
+                           <!--IPOP Population ID from eCQM-->			
                            <reference typeCode="REFR">
                               <externalObservation classCode="OBS" moodCode="EVN">
                                  <id root="A15C0CC7-E072-4D9F-BB29-80429C6335DB"/>
@@ -1593,7 +1593,7 @@ QRDA Category III Measure Section (CMS EP)
                                  </entryRelationship>
                               </observation>
                            </entryRelationship>
-                           <!--DENOM Population ID from eMeasure-->			
+                           <!--DENOM Population ID from eCQM-->			
                            <reference typeCode="REFR">
                               <externalObservation classCode="OBS" moodCode="EVN">
                                  <id root="F50E5334-415D-482F-A30D-0623C082B602"/>
@@ -2102,7 +2102,7 @@ QRDA Category III Measure Section (CMS EP)
                                  </entryRelationship>
                               </observation>
                            </entryRelationship>
-                           <!--DENEX Population ID from eMeasure-->			
+                           <!--DENEX Population ID from eCQM-->			
                            <reference typeCode="REFR">
                               <externalObservation classCode="OBS" moodCode="EVN">
                                  <id root="B88574B5-AE7B-4AAF-9925-6E4D75B595FA"/>
@@ -2611,7 +2611,7 @@ QRDA Category III Measure Section (CMS EP)
                                  </entryRelationship>
                               </observation>
                            </entryRelationship>
-                           <!--DENOM Population ID from eMeasure-->			
+                           <!--DENOM Population ID from eCQM-->			
                            <reference typeCode="REFR">
                               <externalObservation classCode="OBS" moodCode="EVN">
                                  <id root="BD70E166-D478-41A4-B8C8-041CE9F75850"/>
@@ -3164,7 +3164,7 @@ QRDA Category III Measure Section (CMS EP)
                                  </entryRelationship>
                               </observation>
                            </entryRelationship>
-                           <!--IPOP Population ID from eMeasure-->			
+                           <!--IPOP Population ID from eCQM-->			
                            <reference typeCode="REFR">
                               <externalObservation classCode="OBS" moodCode="EVN">
                                  <id root="A096B729-ECCA-4C7A-9CA0-A601D8D70396"/>
@@ -3673,7 +3673,7 @@ QRDA Category III Measure Section (CMS EP)
                                  </entryRelationship>
                               </observation>
                            </entryRelationship>
-                           <!--DENOM Population ID from eMeasure-->			
+                           <!--DENOM Population ID from eCQM-->			
                            <reference typeCode="REFR">
                               <externalObservation classCode="OBS" moodCode="EVN">
                                  <id root="BA4CB92A-1635-4E1B-BC23-1ED7B967072A"/>
@@ -4182,7 +4182,7 @@ QRDA Category III Measure Section (CMS EP)
                                  </entryRelationship>
                               </observation>
                            </entryRelationship>
-                           <!--DENEX Population ID from eMeasure-->			
+                           <!--DENEX Population ID from eCQM-->			
                            <reference typeCode="REFR">
                               <externalObservation classCode="OBS" moodCode="EVN">
                                  <id root="4A61F526-AFFA-465F-89C9-B2DB8E6ECEBC"/>
@@ -4691,7 +4691,7 @@ QRDA Category III Measure Section (CMS EP)
                                  </entryRelationship>
                               </observation>
                            </entryRelationship>
-                           <!--NUMER Population ID from eMeasure-->			
+                           <!--NUMER Population ID from eCQM-->			
                            <reference typeCode="REFR">
                               <externalObservation classCode="OBS" moodCode="EVN">
                                  <id root="A815D9EA-5CE0-4AD8-A703-BC69D19E360B"/>

@@ -9,7 +9,9 @@
 
     <!-- Updated 09-25-2018 for STU 5.1 - https://tracker.esacinc.com/browse/QRDA-460 
                                New conformance prefix,  New extension, 
-                               added "such that"  text to a-4388-17082-error, a-4388-17090-error, a-4388-17091-error -->
+                               added "such that"  text to a-4388-17082-error, a-4388-17090-error, a-4388-17091-error 
+         Updated 10-22-2018 QRDA-501  Fixed broken test for 3343-17081: test="count(count(cda:structuredBody))=1"
+    -->
     
     <sch:phase id="errors">
         <sch:active pattern="QDM_based_QRDA-pattern-errors" />
@@ -53,7 +55,8 @@
     	</sch:rule>
         <!-- Added constraint to insure component has only one structured body -->
         <sch:rule id="QDM_based_QRDA-component-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2018-10-01']]/cda:component">
-            <sch:assert id="a-4388-17081-error" test="count(count(cda:structuredBody))=1">This component SHALL contain exactly one [1..1] structuredBody (CONF:4388-17081).</sch:assert>
+            <!-- QRDA-501 Fixed incorrect test -->
+            <sch:assert id="a-4388-17081-error" test="count(cda:structuredBody)=1">This component SHALL contain exactly one [1..1] structuredBody (CONF:4388-17081).</sch:assert>
         </sch:rule>
             
     	<sch:rule id="QDM_based_QRDA-component-structuredBody-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2018-10-01']]/cda:component/cda:structuredBody">

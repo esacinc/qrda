@@ -59,7 +59,7 @@ Version 1.0
                - Updated Payer Supplemental Data Element CMS (V3) (identifier urn:hl7ii:2.16.840.1.113883.10.20.27.3.18:2018-05-01) to contain only CMS related conformance assertions
                - Updated Performance Rate for Proportion Measure – CMS (V3) (identifier urn:hl7ii:2.16.840.1.113883.10.20.27.3.25:2018-05-01) to contain only CMS related conformance assertions 
 
-Tue Oct 02 13:08:46 MDT 2018
+Mon Oct 22 15:08:36 MDT 2018
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />

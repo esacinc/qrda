@@ -33,6 +33,7 @@ Version 1.0
              Templates updated with conformance ID prefixes and new version extension and actual assertion changes:
                  QDM Based QRDA V6
                      Added "such that"  text to a-4388-17082-error, a-4388-17090-error, a-4388-17091-error
+                     Fixed test for assertion a-4388-17081-error that was originally incorrect.
                  Medication Dispensed V5
                      Added conformance 4388-29223: This participantRole SHALL contain at least one [1..*] id (CONF:4388-29223)
                  Medication Dispensed Act V3
@@ -43,9 +44,9 @@ Version 1.0
                      Added conformance 4388-28608: This observation SHALL contain exactly one [1..1] value with @xsi:type="CD" (CONF:4388-28608).
                  Procedure Recommended V5
                      Adjusted conformance 4388-27352 to correctly check for Author: SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:4388-27352)
-                     Removed conformance statements no longer present in IG template: 4388-29058, 4388-29059, 4388-29060 
+                     Removed conformance statements no longer present in IG template, dealing with cda:author requirments: 4388-29058, 4388-29059, 4388-29060 
 
-Wed Sep 26 11:46:50 MDT 2018
+Mon Oct 22 15:11:55 MDT 2018
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
@@ -2166,7 +2167,8 @@ Wed Sep 26 11:46:50 MDT 2018
     </sch:rule>
     <!-- Added constraint to insure component has only one structured body -->
     <sch:rule id="QDM_based_QRDA-component-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2018-10-01']]/cda:component">
-      <sch:assert id="a-4388-17081-error" test="count(count(cda:structuredBody))=1">This component SHALL contain exactly one [1..1] structuredBody (CONF:4388-17081).</sch:assert>
+      <!-- QRDA-501 Fixed incorrect test -->
+      <sch:assert id="a-4388-17081-error" test="count(cda:structuredBody)=1">This component SHALL contain exactly one [1..1] structuredBody (CONF:4388-17081).</sch:assert>
     </sch:rule>
     <sch:rule id="QDM_based_QRDA-component-structuredBody-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2018-10-01']]/cda:component/cda:structuredBody">
       <sch:assert id="a-4388-17082-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.24.2.3']])=1])=1">This structuredBody SHALL contain exactly one [1..1] component (CONF:4388-17082) such that This component SHALL contain exactly one [1..1] Measure Section QDM (identifier: urn:oid:2.16.840.1.113883.10.20.24.2.3) (CONF:4388-17083).</sch:assert>

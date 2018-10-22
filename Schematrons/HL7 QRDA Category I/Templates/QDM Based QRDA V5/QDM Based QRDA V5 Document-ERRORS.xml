@@ -5,12 +5,13 @@
     Author: Michael Holck
     Date:   07-21-2017 	
     Update: 03-09-2018 Removed trigger for 3343-16595 as it is a "MAY such that" rather than a SHOULD
+    Update: 10-22-2018 QRDA-501  Added test for 3343-17081
     
-    Total Errors Expected: 22
+    Total Errors Expected: 23
         Failure a-3343-12972-error SHALL contain exactly one [1..1] templateId (CONF:3343-12972) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.1.2" (CONF:3343-26943). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-28696)
         Failure a-3343-16598-error SHALL contain exactly one [1..1] recordTarget (CONF:3343-16598)
         Failure a-3343-16600-error SHALL contain exactly one [1..1] custodian
-        Failure a-3343-12973-error SHALL contain exactly one [1..1] component (CONF:3343-12973) such that it SHALL contain exactly one [1..1] structuredBody (CONF:3343-17081)
+        Failure a-3343-12973-error SHALL contain exactly one [1..1] component (CONF:3343-12973) 
         Failure a-3343-16856-error recordTarget SHALL contain exactly one [1..1] patientRole (CONF:3343-16856)
         Failure a-3343-27570-error patientRole SHALL contain exactly one [1..1] patient (CONF:3343-27570)
         Failure a-3343-27571-error patient SHALL contain exactly one [1..1] birthTime (CONF:3343-27571)
@@ -26,6 +27,7 @@
     	  Failure a-3343-16584-error Such performers SHALL contain exactly one [1..1] @typeCode="PRF" Performer (CONF:3343-16584).
     	  Failure a-3343-16586-error Such performers SHALL contain exactly one [1..1] assignedEntity (CONF:3343-16586).
     	  Failure a-3343-16591-error This assignedEntity SHALL contain exactly one [1..1] representedOrganization (CONF:3343-16591).
+    	  Failure a-3343-17081-error Component SHALL contain exactly one [1..1] structuredBody (CONF:3343-17081)
     	  Failure a-3343-17082-error structuredBody SHALL contain exactly one [1..1] component (CONF:3343-17082). This component SHALL contain exactly one [1..1] Measure Section QDM (identifier: urn:oid:2.16.840.1.113883.10.20.24.2.3) (CONF:3343-17083)
     	  Failure a-3343-17090-error structuredBody SHALL contain exactly one [1..1] component (CONF:3343-17090). This component SHALL contain exactly one [1..1] Reporting Parameters Section (identifier: urn:oid:2.16.840.1.113883.10.20.17.2.1) (CONF:3343-17092)
     	  Failure a-3343-17091-error structuredBody SHALL contain exactly one [1..1] component (CONF:3343-17091). This component SHALL contain exactly one [1..1] Patient Data Section QDM (V5) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.2.1:2017-08-01) (CONF:3343-17093)
@@ -206,6 +208,47 @@
         </section>
       </component>
     </structuredBody>
+    
+    <!-- Failure a-3343-17081-error Component SHALL contain exactly one [1..1] structuredBody (CONF:3343-17081) -->
+        <structuredBody>
+          <component>
+            <section>
+            <!-- 						 
+                ***************************************************************** 						 
+                Measure Section 						
+                ***************************************************************** 					 
+              -->
+        <!-- This is the templateId for Measure Section -->
+        <templateId root="2.16.840.1.113883.10.20.24.2.2"/>
+        <!-- This is the templateId for Measure Section QDM -->
+        <templateId root="2.16.840.1.113883.10.20.24.2.3"/>
+        </section>
+      </component>
+      <!-- 				 
+            ***************************************************************** 				 
+            Reporting Parameters Section 				 
+            ***************************************************************** 			 
+          -->
+      <component>
+        <section>
+          <!-- This is the templateId for Reporting Parameters section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.1"/>
+        </section>
+      </component>
+      <!-- 				 
+            ***************************************************************** 				 
+            Patient Data Section QDM (V5) 				 
+            ***************************************************************** 			 
+          -->
+      <component>
+        <section>
+          <!-- Patient Data Section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.4"/>
+          <!-- Patient Data Section QDM (V5) -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.1" extension="2017-08-01"/>
+        </section>
+      </component>
+      </structuredBody>
   </component>
   
   <!-- Failure a-3343-12973-error Zero or Multiple component -->
@@ -214,7 +257,7 @@
       <!-- Failure a-3343-17082-error Zero or multiple Measure section -->
       <!-- Failure a-3343-17090-error Zero or multiple Reporting Parameters Section -->
       <!-- Failure a-3343-17091-error Zero or multiple Patient Data section -->
-    </structuredBody>
+    </structuredBody>  
   </component>
 
 </ClinicalDocument>

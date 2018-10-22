@@ -7,6 +7,10 @@
     <sch:ns prefix="sdtc" uri="urn:hl7-org:sdtc" />
     <sch:ns prefix="cda" uri="urn:hl7-org:v3" />
     
+    <!-- 
+        Updated 10-22-2018  QRDA-502 Removed assertion for 3343-16591 as it is present already in QDM Based QRDA template in HL7 templates
+    -->
+    
     <sch:phase id="errors">
         <sch:active pattern="QRDA_Category_I_Report_CMS-pattern-errors" />
     </sch:phase>
@@ -58,9 +62,12 @@
             <sch:assert id="a-CMS_0006-error" test="@root='2.16.840.1.113883.3.2074.1'">This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" CMS EHR Certification Identification Number (CONF:CMS_0006).</sch:assert>
             <sch:assert id="a-CMS_0008-error" test="@extension">This id SHALL contain exactly one [1..1] @extension (CONF:CMS_0008).</sch:assert>
         </sch:rule>
+        <!-- QRDA-502 Removed assertion for 3343-16591 as it is present already in QDM Based QRDA template in HL7 templates -->
+        <!--
         <sch:rule id="QRDA_Category_I_Report_CMS-documentationOf-serviceEvent-performer-assignedEntity-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2018-02-01']]/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity">
             <sch:assert id="a-3343-16591-error" test="count(cda:representedOrganization)=1">This assignedEntity SHALL contain exactly one [1..1] representedOrganization (CONF:3343-16591).</sch:assert>
         </sch:rule>
+        -->
         <sch:rule id="QRDA_Category_I_Report_CMS-documentationOf-serviceEvent-performer-assignedEntity-representedOrganization-id-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2018-02-01']]/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity/cda:representedOrganization/cda:id">
             <sch:assert id="a-3343-16593-error" test="@root='2.16.840.1.113883.4.2'">The id, if present, SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:3343-16593).</sch:assert>
         </sch:rule>

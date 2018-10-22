@@ -6,8 +6,10 @@
     Date:    03-14-2017
     Updated: 03-02-2018 Adjusted for 2019 QRDA Cat I CMS
     JIRA:    https://tracker.esacinc.com/browse/QRDA-390
+    Updated  10-22-2018 Removed assertion for 3343-16591 as it is present already in QDM Based QRDA template in HL7 templates
+             https://tracker.esacinc.com/browse/QRDA-502
     
-    Total Errors Expected: 22
+    Total Errors Expected: 21
             Failure a-CMS_0001-error SHALL contain exactly one [1..1] templateId (CONF:CMS_0001) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.1.3" (CONF:CMS_0002). SHALL contain exactly one [1..1] @extension="2018-02-01" (CONF:CMS_0003).
             Failure a-3343-16703_C01-error SHALL contain exactly one [1..1] informationRecipient (CONF:3343-16703_C01).
             Failure a-1198-10003_C01-error SHALL contain exactly one [1..1] participant (CONF:1198-10003_C01).
@@ -26,7 +28,6 @@
             Failure a-CMS_0005-error This associatedEntity SHALL contain exactly one [1..1] id (CONF:CMS_0005).
             Failure a-CMS_0006-error This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" CMS EHR Certification Identification Number (CONF:CMS_0006).
             Failure a-CMS_0008-error This id SHALL contain exactly one [1..1] @extension (CONF:CMS_0008).
-            Failure a-33435-16591-error This assignedEntity SHALL contain exactly one [1..1] representedOrganization (CONF:3343-16591).
             Failure a-2228-16593-error The id, if present, SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:2228-16593).
             Failure a-CMS-0056-error This structuredBody SHALL contain exactly one [1..1] component (CONF:CMS_0056) such that it SHALL contain exactly one [1..1] Reporting Parameters Section - CMS (identifier: urn:hl7ii:2.16.840.1.113883.10.20.17.2.1.1:2016-03-01) (CONF:CMS_0054).
             Failure a-CMS_0057-error This structuredBody SHALL contain exactly one [1..1] component (CONF:CMS_0057) such that it SHALL contain exactly one [1..1] Patient Data Section QDM (V5) - CMS (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.2.1.1:2018-02-01) (CONF:CMS_0055).
@@ -197,8 +198,6 @@
 						<!--  Failure a-2228-16593-error The id, if present, SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number -->
 						<id root="2.16.840.1.113883.4.2-ERR"/>
 					</representedOrganization>
-					<!-- Failure a-33435-16591-error This assignedEntity SHALL contain exactly one [1..1] representedOrganization (CONF:3343-16591). -->
-					<representedOrganization/>
 				</assignedEntity>
 			</performer>
 		</serviceEvent>

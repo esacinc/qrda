@@ -7,6 +7,8 @@
     <sch:ns prefix="sdtc" uri="urn:hl7-org:sdtc" />
     <sch:ns prefix="cda" uri="urn:hl7-org:v3" />
     
+    <!--  Update: 10-22-2018 QRDA-501  Fixed broken test for 3343-17081: test="count(count(cda:structuredBody))=1" -->
+    
     <sch:phase id="errors">
         <sch:active pattern="QDM_based_QRDA_V5-pattern-errors" />
     </sch:phase>
@@ -49,7 +51,8 @@
     	</sch:rule>
         <!-- Added constraint to insure component has only one structured body -->
         <sch:rule id="QDM_based_QRDA_V5-component-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2017-08-01']]/cda:component">
-            <sch:assert id="a-3343-17081-error" test="count(count(cda:structuredBody))=1">This component SHALL contain exactly one [1..1] structuredBody (CONF:3343-17081).</sch:assert>
+            <!-- QRDA-501 Fixed incorrect test -->
+            <sch:assert id="a-3343-17081-error" test="count(cda:structuredBody)=1">This component SHALL contain exactly one [1..1] structuredBody (CONF:3343-17081).</sch:assert>
         </sch:rule>
             
     	<sch:rule id="QDM_based_QRDA_V5-component-structuredBody-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2017-08-01']]/cda:component/cda:structuredBody">

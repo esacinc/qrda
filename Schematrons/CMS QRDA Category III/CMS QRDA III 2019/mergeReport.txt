@@ -7,7 +7,7 @@
     Instructions file: C:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\CMS QRDA III 2019\\CMS 2019 QRDA Category III Merge Directions.xml
     Title: CMS 2019 QRDA Category III
     Version: 1.0
-    Generated on Tue Oct 02 13:08:28 MDT 2018
+    Generated on Mon Oct 22 15:08:29 MDT 2018
     Verbose Reporting is turned on
     Merged file: c:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category III/CMS QRDA III 2019/Published/CMS 2019 QRDA Category III.sch
         All Error patterns are generated before all Warning patterns
@@ -1610,6 +1610,6 @@
             (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
             Schematron validation of test file results as expected (or no expected error count provided).
  
-    Merge Complete in 19 seconds
+    Merge Complete in 8 seconds
 **************************************** end merge report ************************************************************************
  

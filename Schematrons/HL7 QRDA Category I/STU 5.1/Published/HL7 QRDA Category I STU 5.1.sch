@@ -46,7 +46,7 @@ Version 1.0
                      Adjusted conformance 4388-27352 to correctly check for Author: SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:4388-27352)
                      Removed conformance statements no longer present in IG template, dealing with cda:author requirments: 4388-29058, 4388-29059, 4388-29060 
 
-Mon Oct 22 15:11:55 MDT 2018
+Tue Oct 23 16:14:20 MDT 2018
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />

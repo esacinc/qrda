@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
     
-<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="false">
+<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" summaryOnly="true" doValidation="true" stopOnError="false" applyXSD="true">
  
     <title>HL7 QRDA 1 STU 5.1 schematron</title>
     <version>1.0</version>
@@ -11,6 +11,10 @@
     <finalTestFilename>
         c:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category I/STU 5.1/TestFiles/CDAR2_IG_QRDA_I_R1_STU5_1_Sample.xml 
     </finalTestFilename>
+    
+    <vocabFilename>C:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category I\Vocabulary\voc.xml</vocabFilename>
+    
+    <useXSDFilename>C:\Development\QRDA-git\qrda\ValidateAndMerge\Schema\CDA\infrastructure\cda\CDA_SDTC.xsd</useXSDFilename>
     
     <fileHeader>
         THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,

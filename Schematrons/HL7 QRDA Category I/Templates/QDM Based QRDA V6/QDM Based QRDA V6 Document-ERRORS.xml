@@ -30,7 +30,7 @@
     	  Failure a-4388-16584-error Such performers SHALL contain exactly one [1..1] @typeCode="PRF" Performer (CONF:4388-16584).
     	  Failure a-4388-16586-error Such performers SHALL contain exactly one [1..1] assignedEntity (CONF:4388-16586).
     	  Failure a-4388-16591-error This assignedEntity SHALL contain exactly one [1..1] representedOrganization (CONF:4388-16591).
-    	  Failure a-4388-17018-error Component SHALL contain exactly one [1..1] structuredBody (CONF:4388-17081)
+    	  Failure a-4388-17081-error Component SHALL contain exactly one [1..1] structuredBody (CONF:4388-17081)
     	  Failure a-4388-17082-error structuredBody SHALL contain exactly one [1..1] component (CONF:4388-17082) such that This component SHALL contain exactly one [1..1] Measure Section QDM (identifier: urn:oid:2.16.840.1.113883.10.20.24.2.3) (CONF:4388-17083)
     	  Failure a-4388-17090-error structuredBody SHALL contain exactly one [1..1] component (CONF:4388-17090) such that This component SHALL contain exactly one [1..1] Reporting Parameters Section (identifier: urn:oid:2.16.840.1.113883.10.20.17.2.1) (CONF:4388-17092)
     	  Failure a-4388-17091-error structuredBody SHALL contain exactly one [1..1] component (CONF:4388-17091) such that This component SHALL contain exactly one [1..1] Patient Data Section QDM (V5) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.2.1:2018-10-01) (CONF:4388-17093)

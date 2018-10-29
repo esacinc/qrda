@@ -36,6 +36,7 @@ Version 1.0
                      Fixed test for assertion a-4388-17081-error that was originally incorrect.
                  Medication Dispensed V5
                      Added conformance 4388-29223: This participantRole SHALL contain at least one [1..*] id (CONF:4388-29223)
+                     Updated 4388-28910 to use Author template, Removed associated 4388-28010, 28011, 28012 assertions
                  Medication Dispensed Act V3
                      Edited conformance 4388-28557 to reference Medication Dispensed V5
                  Medication Order V5
@@ -46,7 +47,7 @@ Version 1.0
                      Adjusted conformance 4388-27352 to correctly check for Author: SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:4388-27352)
                      Removed conformance statements no longer present in IG template, dealing with cda:author requirments: 4388-29058, 4388-29059, 4388-29060 
 
-Tue Oct 23 16:14:20 MDT 2018
+Mon Oct 29 10:45:42 MDT 2018
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
@@ -1401,16 +1402,24 @@ Tue Oct 23 16:14:20 MDT 2018
       <sch:assert id="a-4388-27529-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:4388-27529).</sch:assert>
       <sch:assert id="a-4388-13851-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2018-10-01']) = 1">SHALL contain exactly one [1..1] templateId (CONF:4388-13851) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.45" (CONF:4388-13852). SHALL contain exactly one [1..1] @extension="2018-10-01" (CONF:4388-26555).</sch:assert>
       <sch:assert id="a-4388-19440-error" test="count(cda:statusCode) = 1">SHALL contain exactly one [1..1] statusCode (CONF:4388-19440).</sch:assert>
-      <sch:assert id="a-4388-28910-error" test="count(cda:author) = 1">SHALL contain exactly one [1..1] author (CONF:4388-28910).</sch:assert>
+      <!-- QRDA-505 - Template should test for Author template, not <author> element -->
+      <!-- 
+				<sch:assert id="a-4388-28910-error" test="count(cda:author) = 1">SHALL contain exactly one [1..1] author (CONF:4388-28910).</sch:assert>
+		    -->
+      <sch:assert id="a-4388-28910-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.155'][@extension='2017-08-01']]) = 1">SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2018-10-01) (CONF:4388-28910).</sch:assert>
       <sch:assert id="a-4388-28908-error" test="count(../../cda:templateId[@root='2.16.840.1.113883.10.20.24.3.139'][@extension='2018-10-01']) = 1">This template SHALL be contained by a Medication Dispensed Act (V2) (CONF:4388-28908).</sch:assert>
     </sch:rule>
-    <sch:rule id="Medication_Dispensed-author-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2018-10-01']]/cda:author">
-      <sch:assert id="a-4388-29011-error" test="count(cda:time) = 1">This author SHALL contain exactly one [1..1] time (CONF:4388-29011).</sch:assert>
-      <sch:assert id="a-4388-29010-error" test="count(cda:assignedAuthor) = 1">This author SHALL contain exactly one [1..1] assignedAuthor (CONF:4388-29010).</sch:assert>
-    </sch:rule>
-    <sch:rule id="Medication_Dispensed-author-assignedAuthor-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2018-10-01']]/cda:author/cda:assignedAuthor">
-      <sch:assert id="a-4388-29012-error" test="count(cda:id) &gt;= 1">This assignedAuthor SHALL contain at least one [1..*] id (CONF:4388-29012).</sch:assert>
-    </sch:rule>
+    <!-- QRDA-505 Author sub-rules no longer used -->
+    <!--
+		<sch:rule id="Medication_Dispensed-author-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2018-10-01']]/cda:author">
+			<sch:assert id="a-4388-29011-error" test="count(cda:time) = 1">This author SHALL contain exactly one [1..1] time (CONF:4388-29011).</sch:assert>
+			<sch:assert id="a-4388-29010-error" test="count(cda:assignedAuthor) = 1">This author SHALL contain exactly one [1..1] assignedAuthor (CONF:4388-29010).</sch:assert>
+		</sch:rule>
+		
+		<sch:rule id="Medication_Dispensed-author-assignedAuthor-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2018-10-01']]/cda:author/cda:assignedAuthor">
+			<sch:assert id="a-4388-29012-error" test="count(cda:id) &gt;= 1"> This assignedAuthor SHALL contain at least one [1..*] id (CONF:4388-29012).</sch:assert>
+		</sch:rule>
+		-->
     <sch:rule id="Medication_Dispensed-statuscode-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2018-10-01']]/cda:statusCode">
       <sch:assert id="a-4388-19441-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:4388-19441).</sch:assert>
     </sch:rule>

@@ -50,6 +50,7 @@
                      Fixed test for assertion a-4388-17081-error that was originally incorrect.
                  Medication Dispensed V5
                      Added conformance 4388-29223: This participantRole SHALL contain at least one [1..*] id (CONF:4388-29223)
+                     Updated 4388-28910 to use Author template, Removed associated 4388-28010, 28011, 28012 assertions
                  Medication Dispensed Act V3
                      Edited conformance 4388-28557 to reference Medication Dispensed V5
                  Medication Order V5

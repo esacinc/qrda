@@ -5,7 +5,7 @@
     Instructions file: C:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category I\STU 5.1\HL7 QRDA Category I STU 5.1 Merge Directions.xml
     Title: HL7 QRDA 1 STU 5.1 schematron
     Version: 1.0
-    Generated on Tue Oct 23 16:14:07 MDT 2018
+    Generated on Mon Oct 29 10:45:23 MDT 2018
     Only summary information presented in report. (Set instruction file's mergeProfile attribute summaryOnly='false' for normal or verbose debugging.)
     Merged file: c:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category I/STU 5.1/Published/HL7 QRDA Category I STU 5.1.sch
         Error patterns and Warning patterns are generated together for each template
@@ -32,8 +32,8 @@
         Test file XML Validation using XSD file: C:\Development\QRDA-git\qrda\ValidateAndMerge\Schema\CDA\infrastructure\cda\CDA_SDTC.xsd
             Successful XML validation against C:\Development\QRDA-git\qrda\ValidateAndMerge\Schema\CDA\infrastructure\cda\CDA_SDTC.xsd
         Schematron Validation:
-            Schematron validation of test file results as expected (or no expected error count provided).
+            Schematron validation of test file results did not match expected results.
  
-    Merge Complete in 14 seconds
+    Merge Complete in 20 seconds
 **************************************** end merge report ************************************************************************
  

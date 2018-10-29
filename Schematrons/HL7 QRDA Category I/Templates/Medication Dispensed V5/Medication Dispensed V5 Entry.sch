@@ -9,6 +9,8 @@
 	<!-- Updated 09-25-2018 for STU 5.1 - https://tracker.esacinc.com/browse/QRDA-460 
 		 Updated prefixes and templateId extension
 		 Added conformance 4388-29223: This participantRole SHALL contain at least one [1..*] id (CONF:4388-29223)
+		 Updated 10-16-2018 Use Author template now (4388-28910)
+		     https://tracker.esacinc.com/browse/QRDA-505
     -->
 	
 	<sch:phase id="errors">
@@ -21,10 +23,17 @@
 			<sch:assert id="a-4388-27529-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:4388-27529).</sch:assert>
 			<sch:assert id="a-4388-13851-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2018-10-01']) = 1"> SHALL contain exactly one [1..1] templateId (CONF:4388-13851) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.45" (CONF:4388-13852). SHALL contain exactly one [1..1] @extension="2018-10-01" (CONF:4388-26555).</sch:assert>
 			<sch:assert id="a-4388-19440-error" test="count(cda:statusCode) = 1">SHALL contain exactly one [1..1] statusCode (CONF:4388-19440).</sch:assert>
-			<sch:assert id="a-4388-28910-error" test="count(cda:author) = 1">SHALL contain exactly one [1..1] author (CONF:4388-28910).</sch:assert>
+			<!-- QRDA-505 - Template should test for Author template, not <author> element -->
+			<!-- 
+				<sch:assert id="a-4388-28910-error" test="count(cda:author) = 1">SHALL contain exactly one [1..1] author (CONF:4388-28910).</sch:assert>
+		    -->
+			<sch:assert id="a-4388-28910-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.155'][@extension='2017-08-01']]) = 1">SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2018-10-01) (CONF:4388-28910). </sch:assert>
+			
 			<sch:assert id="a-4388-28908-error" test="count(../../cda:templateId[@root='2.16.840.1.113883.10.20.24.3.139'][@extension='2018-10-01']) = 1">This template SHALL be contained by a Medication Dispensed Act (V2) (CONF:4388-28908).</sch:assert>
 		</sch:rule>
 
+		<!-- QRDA-505 Author sub-rules no longer used -->
+		<!--
 		<sch:rule id="Medication_Dispensed-author-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2018-10-01']]/cda:author">
 			<sch:assert id="a-4388-29011-error" test="count(cda:time) = 1">This author SHALL contain exactly one [1..1] time (CONF:4388-29011).</sch:assert>
 			<sch:assert id="a-4388-29010-error" test="count(cda:assignedAuthor) = 1">This author SHALL contain exactly one [1..1] assignedAuthor (CONF:4388-29010).</sch:assert>
@@ -33,6 +42,7 @@
 		<sch:rule id="Medication_Dispensed-author-assignedAuthor-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2018-10-01']]/cda:author/cda:assignedAuthor">
 			<sch:assert id="a-4388-29012-error" test="count(cda:id) &gt;= 1"> This assignedAuthor SHALL contain at least one [1..*] id (CONF:4388-29012).</sch:assert>
 		</sch:rule>
+		-->
 		
 		<sch:rule id="Medication_Dispensed-statuscode-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2018-10-01']]/cda:statusCode">
 			<sch:assert id="a-4388-19441-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:4388-19441).</sch:assert>

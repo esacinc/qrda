@@ -10,18 +10,17 @@
             STU 5.1 - https://tracker.esacinc.com/browse/QRDA-460 
 		    Updated prefixes and templateId extension
 		    Added conformance 4388-29223: This participantRole SHALL contain at least one [1..*] id (CONF:4388-29223)
-
+    Update: 10-29-2018
+            STU 5.1 - https://tracker.esacinc.com/browse/QRDA-505
+            Changed a-4388-28910 to use Author templateId, removed a-4388-29011, 29010, 29012
  
-    Total Errors Expected: 19
+    Total Errors Expected: 16
 			Failure a-4388-27528-error SHALL contain exactly one [1..1] @classCode="SPLY" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:4388-27528).
 			Failure a-4388-27529-error SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:4388-27529).
 			Failure a-4388-13851-error SHALL contain exactly one [1..1] templateId (CONF:4388-13851) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.45" (CONF:4388-13852). SHALL contain exactly one [1..1] @extension="2018-10-01" (CONF:4388-26555).
 			Failure a-4388-19440-error SHALL contain exactly one [1..1] statusCode (CONF:4388-19440).
-			Failure a-4388-28910-error SHALL contain exactly one [1..1] author (CONF:4388-28910).
+			Failure a-4388-28910-error SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2018-10-01) (CONF:4388-28910).
 			Failure a-4388-28908-error This template SHALL be contained by a Medication Dispensed Act (V2) (CONF:4388-28908).
-		    Failure a-4388-29011-error This author SHALL contain exactly one [1..1] time (CONF:4388-29011).
-			Failure a-4388-29010-error This author SHALL contain exactly one [1..1] assignedAuthor (CONF:4388-29010).
-		    Failure a-4388-29012-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:4388-29012).
 		    Failure a-4388-19441-error This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:4388-19441).
 		    Failure a-4388-29216-error The effectiveTime, if present, SHALL contain exactly one [1..1] low (CONF:4388-29216). 
 			Failure a-4388-29217-error The effectiveTime, if present, SHALL contain exactly one [1..1] high (CONF:4388-29217). 
@@ -58,21 +57,12 @@
 				<!-- Failure a-4388-19441-error This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:4388-19441). -->
 				<!-- Failure a-4388-29010-error This author SHALL contain exactly one [1..1] assignedAuthor (CONF:4388-29010). -->
 				<statusCode code="completedErr"/>
-				<author>
-					<time value="201504081130"/>
-					<assignedAuthor>
-						<!-- Failure a-4388-29012-error This assignedAuthor SHALL contain at least one [1..*] id (CONF:4388-29012).-->
-						<!-- <id nullFlavor="NA"/> -->
-					</assignedAuthor>
-				</author>
 				<participant typeCode="PRF">
 					<participantRole>
 						<!-- Failure a-4388-29223-error This participantRole SHALL contain at least one [1..*] id (CONF:4388-29223) -->
 					</participantRole>
 				</participant>
 				<!-- Failure a-4388-28910-error SHALL contain exactly one [1..1] author (CONF:4388-28910). -->
-				<!-- Failure a-4388-29011-error This author SHALL contain exactly one [1..1] time (CONF:4388-29011). -->
-				<author></author>
 				<!-- Failure a-4388-29216-error The effectiveTime, if present, SHALL contain exactly one [1..1] low -->
 				<!-- Failure a-4388-29217-error The effectiveTime, if present, SHALL contain exactly one [1..1] high  -->
 				<effectiveTime>	</effectiveTime>

@@ -14,7 +14,7 @@
    
     Expected Schematron Validation results against schematron file "HL7 QRDA Category I STU 5 Dec2017.sch":
        Total Errors Expected: 0
-        Total Warnings Expected: 100
+        Total Warnings Expected: 103
         
   -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -35,7 +35,7 @@
     displayName="Quality Measure Report"/>
   <title>QRDA Incidence Report</title>
   <!-- This is the document creation time -->
-  <effectiveTime value="201512311230-0800"/>
+  <effectiveTime value="201810011230"/>
   <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
   <languageCode code="en"/>
   <!-- reported patient -->
@@ -81,7 +81,7 @@
   </recordTarget>
   <!-- Example of an author who is a person -->
   <author>
-    <time value="20181231124411+0600"/>
+    <time value="20181231124411"/>
     <assignedAuthor>
       <id root="2.16.840.1.113883.4.6" extension="123456789"/>
       <code code="200000000X" codeSystem="2.16.840.1.113883.6.101"
@@ -182,7 +182,7 @@
     </intendedRecipient>
   </informationRecipient>
   <legalAuthenticator>
-    <time value="201801311230-0800"/>
+    <time value="201801311230"/>
     <signatureCode code="S"/>
     <assignedEntity>
       <id root="2.16.840.1.113883.4.6" extension="1234567893"/>
@@ -260,8 +260,8 @@
       <!-- You can include multiple performers, each with an NPI, TIN, CCN. -->
       <performer typeCode="PRF">
         <time>
-          <low value="20020716"/>
-          <high value="20070915"/>
+          <low value="20180101"/>
+          <high value="20181231"/>
         </time>
         <assignedEntity>
           <!-- This is the provider NPI -->
@@ -403,7 +403,7 @@
           <title>Reporting Parameters</title>
           <text>
             <list>
-              <item>Reporting period: 01 Jan 2015 - 31 Dec 2015</item>
+              <item>Reporting period: 01 Jan 2018 - 31 Dec 2018</item>
             </list>
           </text>
           <entry typeCode="DRIV">
@@ -414,8 +414,8 @@
               <code code="252116004" codeSystem="2.16.840.1.113883.6.96"
                 displayName="Observation Parameters"/>
               <effectiveTime>
-                <low value="20150101"/>
-                <high value="20151231"/>
+                <low value="20180101"/>
+                <high value="20181231"/>
               </effectiveTime>
             </act>
           </entry>
@@ -423,7 +423,7 @@
       </component>
       <!-- 				 
         ***************************************************************** 				 
-        Patient Data Section QDM (V5) 				 
+        Patient Data Section QDM (V6) 				 
         ***************************************************************** 			 
       -->
       <component>
@@ -551,16 +551,7 @@
              <id root="f07d6d5e-cbb3-4306-b572-5d79069ec165" />
              <code code="72195-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Physical limitation score [KCCQ]" />
              <text>Assessment Order: Physical limitation score [KCCQ]</text>
-             <statusCode code="active" />
-             <effectiveTime>
-               <!-- QDM Attribute: Relevant Period - Start dateTime -->
-               <low value="20180329090000"/>
-               <!-- QDM Attribute: Relevant Period - Stop dateTime -->
-               <high value="20180329103000"/>
-             </effectiveTime>
-             <!-- QDM Attribute: Anatomical Location Site -->
-             <targetSiteCode code="71854001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="colon" sdtc:valueSet="1.2.9999"/>
-             
+             <statusCode code="active" />        
              <author>
                <templateId root="2.16.840.1.113883.10.20.24.3.155" extension="2017-08-01"/>
                <time value="2017050101030"/>
@@ -629,72 +620,27 @@
                 codeSystemName="LOINC" 
                 displayName="Oxygen saturation in Arterial blood by Pulse oximetry" />
               <statusCode code="active" />
-              <effectiveTime value="20130902" />
+              <effectiveTime value="20170101" />
               <value xsi:type="IVL_PQ">
                 <low value="92" unit="%" />
               </value>
-              <!--
-              If the author is set to the recordTarget (patient), this is a patient goal.  
-              If the author is set to a provider, this is a provider goal. 
-              If both patient and provider are set as authors, this is a negotiated goal.
-              -->
-              <!-- Provider Author -->
-              <author>
-                <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time value="201808081130" />
-                <assignedAuthor>
-                  <id root="2.16.840.1.113883.4.6" extension="111111111" />
-                  <code code="363LA2100X" displayName="Nurse Practitioner - Acute Care" codeSystemName="Healthcare Provider Taxonomy (HIPAA)" codeSystem="2.16.840.1.113883.6.101" />
-                </assignedAuthor>
-              </author>
-              <!-- Patient Author -->
-              <author typeCode="AUT">
-                <templateId root="2.16.840.1.113883.10.20.22.4.119" />
-                <time value="201808081130" />
-                <assignedAuthor>
-                  <id root="2.16.840.1.113883.4.6" extension="111111111" />
-                  <code code="363LA2100X" displayName="Nurse Practitioner - Acute Care" codeSystemName="Healthcare Provider Taxonomy (HIPAA)" codeSystem="2.16.840.1.113883.6.101" />
-                </assignedAuthor>
-              </author>
-              <!-- This entryRelationship represents the relationship "Goal REFERS TO Health Concern" -->
+              <!-- QDM Attribute: Target Outcome -->
               <entryRelationship typeCode="REFR">
-                <!-- Entry Reference Concern Act -->
-                <act classCode="ACT" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.22.4.122" />
-                  <!-- This id points to an already defined Health Concern in the Health Concerns Section -->
-                  <id root="4eab0e52-dd7d-4285-99eb-72d32ddb195c" />
-                  <!-- The code is nulled to "NP" Not Present" -->
-                  <code nullFlavor="NP" />
-                  <statusCode code="completed" />
-                </act>
-              </entryRelationship>
-              <!-- Priority Preference -->
-              <entryRelationship typeCode="RSON">
-                <!-- Priority Preference - this is the preference that the patient (specified by the Author Participation template)
-                  places on the Goal -->
                 <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.22.4.143" />
-                  <id root="d42ebf70-5c89-11db-b0de-0800200c9a66"/>
-                  <code code="225773000" codeSystem="2.16.840.1.113883.6.96" />
-                  <value xsi:type="CD" code="394849002" displayName="High priority"
-                    codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96"
-                    sdtc:valueSet="2.16.840.1.113883.11.20.9.60" />
+                  <templateId root="2.16.840.1.113883.10.20.24.3.119" extension="2017-08-01"/>
+                  <id root="3a4aa411-78b9-484b-a0f1-33f1cf49b4ad"/>
+                  <code code="29463-7" displayName="Body weight" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <value xsi:type="PQ" unit="kg" value="65"/>
                 </observation>
               </entryRelationship>
-              <!--  Priority Preference - this is the preference that the provider 
-              (specified by the Author Participation template)
-               places on the Goal -->
-              <entryRelationship typeCode="RSON">
-                <!--  Priority Preference -->
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.22.4.143" />
-                  <id root="d42ebf70-5c89-11db-b0de-0800200c9a75"/>
-                  <code code="225773000" codeSystem="2.16.840.1.113883.6.96" />
-                  <value xsi:type="CD" code="394849002" displayName="High priority"
-                    codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96"
-                    sdtc:valueSet="2.16.840.1.113883.11.20.9.60" />
-                </observation>
-              </entryRelationship>
+              <!-- QDM Attribute: relatedTo -->
+              <sdtc:inFulfillmentOf1 typeCode="FLFS">
+                <sdtc:templateId root="2.16.840.1.113883.10.20.24.3.150" extension="2017-08-01"/>
+                <sdtc:actReference classCode="SPLY" moodCode="RQO">
+                  <!-- For example, the id is the same as the id of another QDM element instance contained in the same QRDA I document being referenced -->
+                  <sdtc:id root="1fad091f-7b4e-4661-b61c-53f9a82515b6"/>
+                </sdtc:actReference>
+              </sdtc:inFulfillmentOf1>              
             </observation>          
           </entry>
 
@@ -1021,17 +967,7 @@
                 displayName="Breast Mammogram diagnostic" codeSystemName="LOINC"/>
               <text>Diagnostic Study, Order: Breast Mammogram Diagnostic</text>
               <statusCode code="active"/>
-              <!-- author/time indicates the time the diagnostic order was signed -->
-              <effectiveTime>
-                <!-- QDM Attribute: Relevant Period - Start dateTime -->
-                <low value="20180329090000"/>
-                <!-- QDM Attribute: Relevant Period - Stop dateTime -->
-                <high value="20180329103000"/>
-              </effectiveTime>
               <value xsi:type="CD" nullFlavor="NA"/>
-              <!-- QDM Attribute: Method -->
-              <methodCode code="24605-8" codeSystem="2.16.840.1.113883.6.1"
-                displayName="Breast Mammogram diagnostic" codeSystemName="LOINC"/>
                <author>
                 <templateId root="2.16.840.1.113883.10.20.24.3.155" extension="2017-08-01"/>
                 <time value="201805101030"/>
@@ -1070,8 +1006,7 @@
                 <!-- QDM Attribute: Relevant Period - Stop dateTime -->
                 <high value="20180329103000"/>
               </effectiveTime>
-              <!-- QDM Attribute: Result -->
-              <value xsi:type="CD" nullFlavor="NA"/>
+               <value xsi:type="CD" nullFlavor="NA"/>
               <!-- QDM Attribute: Method -->
               <methodCode code="24623002" codeSystem="2.16.840.1.113883.6.96"
                 displayName="Screening mammography" codeSystemName="SNOMED CT"/>
@@ -1133,9 +1068,6 @@
               <text>Diagnostic Study, Recommended: Breast Mammogram Diagnostic</text>
               <statusCode code="active"/>
               <value xsi:type="CD" nullFlavor="NA"/>
-              <!-- QDM Attribute: Method -->
-              <methodCode code="24605-8" codeSystem="2.16.840.1.113883.6.1"
-                displayName="Breast Mammogram diagnostic" codeSystemName="LOINC"/>
               <author>
                 <templateId root="2.16.840.1.113883.10.20.24.3.155" extension="2017-08-01"/>
                 <time value="201804081130"/>
@@ -1261,9 +1193,6 @@
                       <id root="92587992-6147-467e-8ce7-b080ef569df4"/>
                       <code code="8319008" codeSystem="2.16.840.1.113883.6.96"
                         displayName="Principal Diagnosis" codeSystemName="SNOMED"/>
-                      <effectiveTime>
-                        <low value="20180301"/>
-                      </effectiveTime>
                       <value xsi:type="CD" code="8319008" codeSystem="2.16.840.1.113883.6.96"
                         codeSystemName="SNOMED CT" displayName="Acute atrial infarction (disorder)"
                       />
@@ -1298,9 +1227,9 @@
                    <statusCode code="completed"/>
                   <effectiveTime>
                     <!-- QDM Attribute: admission datetime -->
-                    <low value="20150301090000"/>
+                    <low value="20180301090000"/>
                     <!-- QDM Attribute: discharge datetime -->
-                    <high value="20150303103000"/>
+                    <high value="20180303103000"/>
                   </effectiveTime>
                   <!-- Service Delivery Location -->
                   <participant typeCode="LOC">
@@ -1672,10 +1601,6 @@
               <code code="4544-3" displayName="Hematocrit" codeSystem="2.16.840.1.113883.6.1"
                 codeSystemName="LOINC"/>
               <statusCode code="active"/>
-              <!-- QDM Attribute: Method -->
-              <methodCode code="58410-2"
-                displayName="Complete blood count (hemogram) panel - Blood by Automated count"
-                codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
               <author>
                 <templateId root="2.16.840.1.113883.10.20.24.3.155" extension="2017-08-01"/>
                 <time value="201804081130"/>
@@ -1709,9 +1634,9 @@
               <statusCode code="completed"/>
               <effectiveTime>
                 <!-- QDM Attribute: Relevant Period - Start dateTime -->
-                <low value="20150329090000"/>
+                <low value="20180329090000"/>
                 <!-- QDM Attribute: Relevant Period - Stop dateTime -->
-                <high value="20150329103000"/>
+                <high value="20180329103000"/>
               </effectiveTime>
               <!-- QDM Attribute: Method -->
               <methodCode code="104091002" codeSystem="2.16.840.1.113883.6.96"
@@ -1747,7 +1672,7 @@
                   <id root="ed971e73-c060-4258-8838-69c830254b5a"/>
                   <code code="4544-3" displayName="Hematocrit" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                   <statusCode code="completed"/>
-                  <effectiveTime value="201803231430+0600"/>
+                  <effectiveTime value="201803231430"/>
                   <value xsi:type="PQ" value="35.3" unit="%"/>
                   <entryRelationship typeCode="REFR">
                     <!-- QDM Attribute: Status (Result)-->
@@ -1780,9 +1705,6 @@
                 codeSystemName="LOINC"/>
               <statusCode code="active"/>
               <!-- QDM Attribute: Method -->
-              <methodCode code="58410-2"
-                displayName="Complete blood count (hemogram) panel - Blood by Automated count"
-                codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
               <author>
                 <templateId root="2.16.840.1.113883.10.20.24.3.155" extension="2017-08-01"/>
                 <time value="201804081130"/>
@@ -1811,7 +1733,7 @@
             <substanceAdministration classCode="SBADM" moodCode="EVN">
               <!-- Conforms to C-CDA R2 Medication Activity (V2) -->
               <templateId root="2.16.840.1.113883.10.20.22.4.16" extension="2014-06-09"/>
-              <!-- Medication Active (V3) -->
+              <!-- Medication Active (V4) -->
               <templateId root="2.16.840.1.113883.10.20.24.3.41" extension="2017-08-01"/>
               <id root="c0ea7bf3-50e7-4e7a-83a3-e5a9ccbb8541"/>
               <statusCode code="active"/>
@@ -1847,7 +1769,7 @@
             <substanceAdministration classCode="SBADM" moodCode="EVN">
               <!-- C-CDA R2.1 Medication Activity -->
               <templateId root="2.16.840.1.113883.10.20.22.4.16" extension="2014-06-09"/>
-              <!-- Medication Administered -->
+              <!-- Medication Administered (V4) -->
               <templateId root="2.16.840.1.113883.10.20.24.3.42" extension="2017-08-01"/>
               <id root="9069c123-80ad-47c8-a633-9dc02018ae56"/>
               <statusCode code="completed"/>
@@ -2022,12 +1944,12 @@
                     </manufacturedProduct>
                   </product>
                   <author>
-                    <time value="2018050101030"/>
+                    <templateId root="2.16.840.1.113883.10.20.24.3.155" extension="2017-08-01"/>
+                    <time value="201804081130"/>
                     <assignedAuthor>
                       <id nullFlavor="NA"/>
                     </assignedAuthor>
-                  </author>
-                  
+                  </author>             
                   <entryRelationship typeCode="REFR">
                     <substanceAdministration classCode="SBADM" moodCode="EVN">
                       <!-- QDM Attribute: Frequency -->
@@ -2130,9 +2052,6 @@
               <statusCode code="active"/>
               <effectiveTime value="20180412"/>
               <value xsi:type="CD" code="29463-7" codeSystem="2.16.840.1.113883.6.1"/>
-              <!-- QDM Attribute: Method -->
-              <methodCode code="8350-1" codeSystem="2.16.840.1.113883.6.1"
-                displayName="Body weight Measured --with clothes" codeSystemName="LOINC"/>
               <author>
                 <templateId root="2.16.840.1.113883.10.20.24.3.155" extension="2017-08-01"/>
                 <time value="201804081130"/>
@@ -2203,10 +2122,6 @@
               <effectiveTime value="20180412"/>
               <value xsi:type="CD" code="29463-7" codeSystem="2.16.840.1.113883.6.1"
                 displayName="Body weight" codeSystemName="LOINC"/>
-              <!-- QDM Attribute: Method -->
-              <methodCode code="8350-1" codeSystem="2.16.840.1.113883.6.1"
-                displayName="Body weight Measured --with clothes" codeSystemName="LOINC"
-                sdtc:valueSet="2.16.840.1.113883.3.464.1003.121.12.1015"/>
               <author>
                 <templateId root="2.16.840.1.113883.10.20.24.3.155" extension="2017-08-01"/>
                 <time value="201804081130"/>
@@ -2245,9 +2160,6 @@
               <!-- QDM Attribute: Ordinality -->
               <priorityCode code="63161005" codeSystem="2.16.840.1.113883.6.96"
                 codeSystemName="SNOMED CT" displayName="Principal"/>
-              <!-- QDA Attribute: Anatomical Approach Site -->
-              <approachSiteCode code="14742008" codeSystem="2.16.840.1.113883.6.96"
-                codeSystemName="SNOMED CT" displayName="large intestinal structure"/>
               <!-- QDM Attribute: Anatomical Location Site -->
               <targetSiteCode code="71854001" codeSystem="2.16.840.1.113883.6.96"
                 codeSystemName="SNOMED CT" displayName="colon"/>

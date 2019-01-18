@@ -11,7 +11,12 @@ Version 1.0
     THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
     ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         
-    Version 1.0 
+    Version 1.0.1 
+    
+    Additions and changes for version 1.0.1
+    
+       Fixed test in assertion 3343-17081 n QDM Based QRDA (V5) template
+       Removed duplicate assertion 3343-16591 from QRDA Category I Report CMS (V5) template
 
 Mon Oct 22 15:12:06 MDT 2018
 -->

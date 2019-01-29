@@ -13,7 +13,7 @@
     
     <sch:pattern id="Improvement_Activity-pattern-errors">
         <sch:rule id="Improvement_Activity-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.4'][@extension='2019-02-01']]">
-            <sch:assert id="a-4408-21175-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.2.4'][@extension='2017-06-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:4408-21175) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.2.4" (CONF:4408-21177). SHALL contain exactly one [1..1] @extension="2017-06-01" (CONF:4408-21398).</sch:assert>
+            <sch:assert id="a-4408-21175-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.2.4'][@extension='2019-02-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:4408-21175) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.2.4" (CONF:4408-21177). SHALL contain exactly one [1..1] @extension="2017-06-01" (CONF:4408-21398).</sch:assert>
             <!-- STU 2.2 Section must include Improvement Activity Performed Measure Reference and Results V2 (updated from V1) -->
             <sch:assert id="a-4408-21181-error" test="count(cda:entry[count(cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.33'][@extension='2019-02-01']])=1]) &gt; 0">SHALL contain at least one [1..*] entry (CONF:4408-21181) such that it SHALL contain exactly one [1..1] Improvement Activity Performed Measure Reference and Results V2 (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.33:2016-09-01) (CONF:4408-21436).</sch:assert>
             <!-- STU 2.2 Changed test for entry from required "SHALL such that" (4408-21447) to not required "MAY such that" (4408-21450)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
     
-<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  verboseDebug="true" summaryOnly="false" applyXSD="true" doValidation="true" stopOnError="false" >
+<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  verboseDebug="false" summaryOnly="false" applyXSD="true" doValidation="true" stopOnError="false" >
 
     <!-- Merge directions file for HL7 QRDA Category III STU 2.2
          https://tracker.esacinc.com/browse/QRDA-527 -->
@@ -12,7 +12,7 @@
         c:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category III/STU 2.2/Published/HL7 QRDA Category III STU 2.2 January 2019.sch
     </generatedFilename>
     <finalTestFilename>
-       <!--  c:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category III/STU 2.2/TestFiles/CDAR2_QRDAIII_R2_STU2_1_2017JUNE.xml --> 
+         c:/Development/QRDA-git/qrda/Schematrons/HL7 QRDA Category III/STU 2.2/TestFiles/CDAR2_QRDAIII_R2_STU2_2_Jan_2019.xml 
     </finalTestFilename>
     
     <fileHeader>
@@ -25,7 +25,8 @@
     ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     STU 2.2 v1.0
-    Templates changed from STU 2.1 (Listed below with new versions):
+    Templates changed from STU 2.1 (Listed below with new version names):
+    
         - Document-level templates:
              - QRDA Category III Report V5   
                      * Changed templateId extension (version date) to 2019-02-01
@@ -54,7 +55,7 @@
                      * New conformance 4408-18258 "If this reference is to an eCQM, this id SHALL equal the id defined in the corresponding eCQM population criteria section (CONF:4408-18258). "
                            cannot be tested via schematron.
         
-    Note:  Templates of type "ACI ..." and "Advancing Care Information ..." have been renamed to "Promoting Interoperability ..." in STU 2.2.
+    Note:  Templates with names like "ACI ..." and "Advancing Care Information ..." have been renamed to "Promoting Interoperability ..." in STU 2.2.
     
     </fileHeader>
 

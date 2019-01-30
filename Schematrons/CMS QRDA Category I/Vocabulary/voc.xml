@@ -1162,14 +1162,11 @@
     <code value="cancelled" displayName="Cancelled" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
   </system>
   <system valueSetOid="2.16.840.1.113883.3.249.14.103" valueSetName="QRDA-I CMS Program Name ">
-    <code value="CEC" displayName="Comprehensive End-Stage Renal Disease CARE Initiative" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
-    <code value="HQR_PI" displayName="Hospital Quality Reporting for the EHR Incentive Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
-    <code value="HQR_EHR" displayName="Hospital Quality Reporting for the EHR Incentive Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
+    <code value="HQR_PI" displayName="Hospital Quality Reporting for the Promoting Interoperability Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
     <code value="HQR_IQR" displayName="Hospital Quality Reporting for the Inpatient Quality Reporting Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
-    <code value="HQR_EHR_IQR" displayName="Hospital Quality Reporting for the EHR Incentive Program and the IQR Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
-    <code value="CDAC_HQR_EHR" displayName="CDAC_HQR_EHR" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
+    <code value="HQR_PI_IQR" displayName="Hospital Quality Reporting for the Promoting Interoperability Program and the Inpatient Quality Reporting Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
     <code value="HQR_IQR_VOL" displayName="Hospital Quality Reporting for Inpatient Quality Reporting Program voluntary submissions" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
-    <code value="HQR_EPM_VOL" displayName="Hospital Quality Reporting for Episode Payment Model voluntary submissions" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
+    <code value="CDAC_HQR_EHR" displayName="CDAC_HQR_EHR" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
   </system>
   <system valueSetOid="2.16.840.1.113883.11.20.9.39" valueSetName="Result Status">
     <code value="aborted" displayName="aborted" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />

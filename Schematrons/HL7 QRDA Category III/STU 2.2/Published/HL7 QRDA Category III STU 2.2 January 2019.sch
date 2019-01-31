@@ -39,8 +39,6 @@ Version 1.0
              - Measure Data V4 
                      * Changed templateId extension (version date) to 2019-02-01
                      * Made conformance 4408-18241 its own conformance assertion rather that being part of the 4408-18239 "such that" clause
-                     * New conformance 4408-18258 "If this reference is to an eCQM, this id SHALL equal the id defined in the corresponding eCQM population criteria section (CONF:4408-18258). "
-                           cannot be tested via schematron.
         
     Note:  Templates with names like "ACI ..." and "Advancing Care Information ..." have been renamed to "Promoting Interoperability ..." in STU 2.2. 
 

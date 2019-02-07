@@ -19,7 +19,7 @@
    THIS SAMPLE FILE IS INFORMATIVE ONLY.
    
    Total Errors Expected: 0
-   Total Warnings Expected: 12 (All eCQMs in this sample file do not belong to a measure set, the warnings for CONF:3259-18354 are expected)
+   Total Warnings Expected: 13 (All eCQMs in this sample file do not belong to a measure set, the warnings for CONF:3259-18354 are expected)
    =====================================================================================================================================================     
    eCQMs included are:
    MeasureID		NQF ID   Measure Name	                                    eCQM version specific id (UUID)         NQS Domain

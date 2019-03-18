@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    
+<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" summaryOnly="false" applyXSD="true" doValidation="true" stopOnError="false">
+ 
+    <title>EH CMS 2020 QRDA Category I</title>
+    <version>1.0</version>
+    
+    <generatedFilename>
+        C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/EH CMS 2020/Published/EH CMS 2020 QRDA Category I.sch
+    </generatedFilename>
+    
+    <finalTestFilename>
+        C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/EH CMS 2020/TestFiles/EH_Sample_QRDA_I_Informative.xml 
+    </finalTestFilename>
+    
+    <fileHeader>
+    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+    THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+    IN NO EVENT SHALL ESAC INC., OR ANY OF THEIR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+    GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+    THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        
+    Version 1.0.0
+    
+    Additions and changes for version 1.0.0 of CMS QRDA I 2020 schematorn
+    https://tracker.esacinc.com/browse/QRDA-543
+    
+        Template QRDA Category I Report CMS V6:
+            - Updated 2.16.840.1.113883.10.20.24.1.3 extension to 2019-02-01 throughout
+            - Updated conf. prefix from 3343 to 4388 throughout
+            - STATIC version in CMS_0026 changed to 2019-02-01 to reflect removal of CDAC_HQR_EHR program name from voc.xml
+    
+        Template Patient Data Section QDM V6 CMS
+            - Updated 2.16.840.1.113883.10.20.24.2.1.1 extension to 2019-02-01 throughout
+            - Updated 2.16.840.1.113883.10.20.24.2.1 (referenced conformant base template) extension to 2018-10-01 from 2017-08-01
+            - Updated conf. prefix from 3343 to 4388 throughout
+         
+        Added template Assessment Order
+        Added template Communication Performed
+        Added template Days Supplied
+        Added template Medication Supply Request V2
+        
+        Associated vocabulary file voc.xml
+            - In value set 2.16.840.1.113883.3.249.14.103 "QRDA-I CMS Program Name"
+                  - Removed errant trailing space from valueSetName
+                  - Removed CDAC_HQR_EHR from value set
+                  
+        Base IG templates that had been changed prior to this version
+            - QDM Based QRDA V6  (was V5)
+            - Patient Data Section QDM V6 (was V5)
+            - Device Applied V5 (was V4)
+            - Discharge Medication V4 (was V3)
+            - Medication Dispensed V5 (was V4)
+            - Medication Dispensed Act V3 (was V2)
+            - Medication Order V5 (was V4)
+            - Procedure Order V5 (was V4)
+            - Procedure Performed V5 (was V4)
+            - Procedure Recommended V5 (was V4)
+        
+        Base IG templates removed (deprecated) in this version, supplanted by Communication Performed template
+            - Communication from Patient to Provider V4   
+            - Communication from Provider to Patient V4    
+            - Communication from Provider to Provider V4 
+        
+                  
+    </fileHeader>
+    
+    <errorsHeader>ERROR Patterns and Assertions</errorsHeader>
+    <warningsHeader>WARNING Patterns and Assertions</warningsHeader>
+    
+    <mergeReportFilename>C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/EH CMS 2020/mergeReport.txt</mergeReportFilename>
+    
+    <vocabFilename>C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/EH CMS 2020/Vocabulary/voc.xml</vocabFilename>
+    
+    <!-- All schematrons expected to be under a single main directory -->
+    <sourceMainDirectory>C:/Development/QRDA-git/qrda/Schematrons/</sourceMainDirectory>
+    
+    <!--    Specify the schematrons to use in the merge below, separated by the templates found in each of the source directories listed. -->
+    <!--    Note that the directoryName tags refer to directories relative to the sourceMainDirectory tag, above. -->
+    <!--    selector='all' means use all the schematron subdirectories found under directoryName, except for those listed in the 'exclude' tags. -->
+    <!--    selector='some' means only use the directoryName subdirectories listed in the 'include' tags --> 
+
+    <sourceDirectory selector='some'>  
+        <directoryName>HL7 QRDA Category I/Templates/</directoryName>
+        <!-- Document templates -->
+        <include>QDM Based QRDA V6</include>                <!-- Updated from V5 -->
+        <include>QRDA Category I Framework V4</include>
+        <include>US Realm Header V3</include>
+        <!-- Section templates -->
+        <include>Measure Section</include>
+        <include>Measure Section QDM</include>
+        <include>Patient Data Section</include>
+        <include>Patient Data Section QDM V6</include>      <!-- Updated from V5 -->
+        <include>Reporting Parameters Section</include>
+        <!-- Entry templates -->
+		<include>Admission Source</include> 
+		<include>Adverse Event</include>
+		<include>Adverse Event Cause Observation Assertion</include>
+        <include>Age Observation</include>
+		<include>Allergy Intolerance</include> 
+        <include>Allergy Status Observation</include>
+        <include>Assessment Order</include>                   <!-- Added -->
+        <include>Assessment Performed V2</include> 
+        <include>Assessment Recommended V2</include> 
+        <include>Care Goal V4</include> 
+        <!-- Following removed, deprecated -->
+        <!-- 
+            <include>Communication from Patient to Provider V4</include>    
+            <include>Communication from Provider to Patient V4</include>    
+            <include>Communication from Provider to Provider V4</include> 
+        -->
+        <include>Communication Performed</include>
+		<include>Component</include> 
+        <include>Criticality Observation</include>
+        <include>Days Supplied</include>                  <!-- Added -->
+        <include>Deceased Observation V3</include>
+        <include>Device Applied V5</include>              <!-- Updated from V4 -->
+        <include>Device Order V4</include>
+        <include>Device Order Act V2</include>
+        <include>Device Recommended V4</include>
+        <include>Device Recommended Act V2</include>
+        <include>Diagnosis V2</include>
+        <include>Diagnosis Concern Act V3</include>
+        <include>Diagnostic Study Order V4</include>
+        <include>Diagnostic Study Performed V4</include>
+        <include>Diagnostic Study Recommended V4</include>
+        <include>Discharge Medication V4</include>    <!-- Updated from V3 -->
+        <include>Drug Monitoring Act</include>
+        <include>Drug Vehicle</include>
+        <include>eMeasure Reference QDM</include>
+        <include>Encounter Activity V3</include>
+        <include>Encounter Diagnosis V3</include>
+        <include>Encounter Order Act V2</include>
+        <include>Encounter Order V4</include>
+        <include>Encounter Performed V4</include>
+        <include>Encounter Performed Act V2</include>
+        <include>Encounter Recommended V4</include>
+        <include>Encounter Recommended Act V2</include>
+        <include>Entry Reference</include>
+        <include>External Document Reference</include>
+        <include>Family History Death Observation</include>
+        <include>Family History Observation V3</include>
+        <include>Family History Observation QDM V3</include>
+        <include>Family History Organizer V3</include>
+        <include>Family History Organizer QDM V4</include>
+        <include>Goal Observation</include>
+        <include>Immunization Activity V2</include>
+        <include>Immunization Administered V2</include>
+        <include>Immunization Medication Information V2</include>
+        <include>Immunization Order V2</include>
+        <include>Immunization Refusal Reason</include>
+        <include>Incision Datetime</include>
+        <include>Indication V2</include>
+        <include>Instruction V2</include>
+        <include>Intervention Order V4</include>
+        <include>Intervention Performed V4</include>
+        <include>Intervention Recommended V4</include>
+        <include>Laboratory Test Order V4</include>
+        <include>Laboratory Test Performed V4</include>
+        <include>Laboratory Test Recommended V4</include>
+        <include>Measure Reference</include>
+        <include>Medication Active V4</include>
+        <include>Medication Activity V2</include>
+        <include>Medication Administered V4</include>
+        <include>Medication Dispense V2</include>
+        <include>Medication Dispensed V5</include>       <!-- Updated from V4 -->
+        <include>Medication Dispensed Act V3</include>   <!-- Updated from V2 -->
+        <include>Medication Free Text Sig</include>
+        <include>Medication Information V2</include>
+        <include>Medication Order V5</include>           <!-- Updated from V4 -->
+        <include>Medication Supply Order V2</include>
+        <include>Medication Supply Request V2</include>  <!-- Was left out in 2019 version, re-added in 2020 -->
+        <include>Patient Care Experience V4</include>
+        <include>Patient Characteristic Clinical Trial Participant V4</include>
+        <include>Patient Characteristic Expired V3</include>
+        <include>Patient Characteristic Observation Assertion V4</include>
+        <include>Patient Characteristic Payer</include>
+        <include>Physical Exam Order V4</include>
+        <include>Physical Exam Performed V4</include>
+        <include>Physical Exam Recommended V4</include>
+        <include>Planned Act V2</include>
+        <include>Planned Coverage</include>
+        <include>Planned Encounter V2</include>
+        <include>Planned Immunization Activity</include>
+        <include>Planned Medication Activity V2</include>
+        <include>Planned Observation V2</include>
+        <include>Planned Procedure V2</include>
+        <include>Planned Supply V2</include>
+        <include>Precondition for Substance Administration V2</include>
+		<include>Principal Diagnosis</include> 
+        <include>Priority Preference</include>
+        <include>Problem Concern Act V3</include>
+        <include>Problem Observation V3</include>
+        <include>Problem Status</include>
+        <include>Procedure Activity Act V2</include>
+        <include>Procedure Activity Observation V2</include>
+        <include>Procedure Activity Procedure V2</include>
+        <include>Procedure Order V5</include>         <!-- Updated from V4 -->
+        <include>Procedure Performed V5</include>     <!-- Updated from V4 -->
+        <include>Procedure Recommended V5</include>   <!-- Updated from V4 -->
+        <include>Product Instance</include>
+        <include>Prognosis Observation</include>
+		<include>Program Participation</include> 
+        <include>Provider Care Experience V4</include>
+		<include>Provider Characteristic Observation Assertion V3</include> 
+        <include>Reaction Observation V2</include>
+        <include>Reason V3</include>
+        <include>Reporting Parameters Act</include>
+        <include>Result Observation V3</include>
+        <include>Service Delivery Location</include>
+        <include>Severity Observation V2</include>
+        <include>Status</include>
+        <include>Substance Administered Act</include>
+        <include>Substance or Device Allergy - Intolerance Observation V2</include>
+        <include>Substance Recommended V4</include>
+        <include>Symptom V2</include>
+        <include>Symptom Concern Act V3</include>
+        <include>Target Outcome V2</include>
+		<!-- Subentry templates -->
+        <include>Facility Location V2</include>
+		<include>Related To</include> 
+        <!-- Other templates -->
+		<include>Author</include> 
+        <include>Author Participation</include>
+        <include>US Realm Address</include>       <!-- (AD.US.FIELDED) -->
+        <include>US Realm Date and Time</include> <!-- (DTM.US.FIELDED) -->
+        <include>US Realm Patient Name</include>  <!-- (PTN.US.FIELDED) -->
+        <include>US Realm Person Name</include>   <!-- (PN.US.FIELDED) -->
+    </sourceDirectory>
+
+ 
+    <sourceDirectory selector='some'>  
+        <directoryName>CMS QRDA Category I/Templates/</directoryName>
+        <!-- Document templates -->
+        <include>CMS QRDA I TemplateId Validations</include> 
+        <include>QRDA Category I Report CMS V6</include>     <!-- Changes added from V5 -->
+        <!-- Section templates -->
+        <include>Patient Data Section QDM V6 CMS</include>   <!-- Changes added from V5 -->
+        <include>Reporting Parameters Section CMS</include>
+        <!-- Entry templates -->
+        <include>Reporting Parameters Act CMS</include>
+        <!-- Other templates -->
+        <include>CMS Datatype Validations</include>
+    </sourceDirectory>
+    
+    
+</mergeProfile>

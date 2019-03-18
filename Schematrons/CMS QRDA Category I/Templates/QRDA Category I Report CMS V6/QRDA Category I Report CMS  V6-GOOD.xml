@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title:   QRDA Category I Report CMS V6, Minimal sample
+    Author:  Dan Donahue
+    Date:    02-28-2019
+    JIRA:   https://tracker.esacinc.com/browse/QRDA-543
+    
+    Total Errors Expected: 0
+    Total Warnings Expected: 0
+-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+	xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">	
+	
+		<realmCode code="US"/>
+		<typeId root="2.16.840.1.113883.1.3"  extension="POCD_HD000040"/>
+		<!-- US Realm Header (V3) -->
+		<templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2015-08-01"/>
+		<!-- QRDA Category I Framework (V4) -->
+	   <templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2017-08-01"/>
+		<!-- QDM-based QRDA (V6) -->
+		<templateId root="2.16.840.1.113883.10.20.24.1.2" extension="2018-10-01"/>
+		<!-- QRDA Category I Report - CMS (V6) -->
+		<templateId root="2.16.840.1.113883.10.20.24.1.3" extension="2019-02-01"/>
+			<!-- This is the globally unique identifier for this QRDA-I document -->
+			<id root="d651b289-c487-4436-95d2-4c816e50b447"/>
+			<code code="55182-0" codeSystem="2.16.840.1.113883.6.1" 
+				codeSystemName="LOINC" displayName="Quality Measure Report"/>
+			<title>Good Health QRDA-I Report</title>
+			<!-- This is the document creation time -->
+			<effectiveTime value="201801109171504+0500"/>
+			<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"
+				codeSystemName="HL7Confidentiality"/>
+			<languageCode code="en"/>
+			<!-- ... -->
+		<recordTarget>
+			<patientRole>
+				<!-- Patient Identifier Number. The root OID could be provider's organization OID or other value -->
+				<id root="2.16.840.1.113883.123.123.1" extension="022354" />
+				<!-- Should contain Medicare HIC number -->
+				<id root="2.16.840.1.113883.4.572" extension="22222" />
+				<!-- Should contain a Medicat Beneficiary Identifier -->
+				<id root="2.16.840.1.113883.4.927"  extension="33333" />
+				<addr use="HP">
+					<streetAddressLine>101 North Pole Lane</streetAddressLine>
+					<city>Ames</city>
+					<state>IA</state>
+					<postalCode>50014</postalCode>
+					<country>US</country>
+				</addr>
+				<telecom use="WP" value="tel:+1-781-271-3000"/>
+				<patient>
+					<name>
+						<given>Jane</given>
+						<family>Doe</family>
+					</name>
+					<administrativeGenderCode code="F" 
+						codeSystem="2.16.840.1.113883.5.1"/>
+					<!-- If the patient administrative sex is unknown, use  nullFlavor="UNK" -->
+					<!-- <administrativeGenderCode nullFlavor="UNK"/> -->
+					<birthTime value="19460102"/>
+					<!-- raceCode "2131-1 (Other Race)" shall not be used for  either raceCode or sdtc:raceCode -->
+					<raceCode code="2106-3" codeSystem="2.16.840.1.113883.6.238"/>
+					<!-- if the patient declined to specify his/her race, use  nullFlavor="ASKU" -->
+					<!-- <raceCode nullFlavor="ASKU"/> -->
+					<!-- if the patient's race is unknown, use nullFlavor="UNK" -->
+					<!-- <raceCode nullFlavor="UNK"/> -->
+					<!-- Use sdtc:raceCode only if the patient has more than one race category -->
+					<!-- <sdtc:raceCode code="2054-5" codeSystem="2.16.840.1.113883.6.238"/> -->
+					<ethnicGroupCode code="2186-5" 
+						codeSystem="2.16.840.1.113883.6.238"/>
+					<!-- if the patient declined to specify his/her ethnicity, use  nullFlavor="ASKU" -->
+					<!-- <ethnicGroupCode nullFlavor="ASKU"/> -->
+					<!-- if the patient's ethnicity is unknown, use  nullFlavor="UNK" -->
+					<!-- <ethnicGroupCode nullFlavor="UNK"/> -->
+				</patient>
+			</patientRole>
+		</recordTarget>	
+		<!-- This is an example for QRDA-I test submission to HQR. CCN is required for HQR.-->
+		<custodian>
+			<assignedCustodian>
+				<representedCustodianOrganization>
+					<!-- @extension attribute contains the submitter's CCN. @nullFlavor is not allowed. -->
+					<id root="2.16.840.1.113883.4.336" extension="800890"/>
+					<name>Good Health Hospital</name>
+					<telecom value="tel:(555)555-1212" use="WP"/>
+					<addr use="WP">
+						<streetAddressLine>17 Daws Rd.</streetAddressLine>
+						<city>Blue Bell</city>
+						<state>MA</state>
+						<postalCode>02368</postalCode>
+						<country>US</country>
+					</addr>
+				</representedCustodianOrganization>
+			</assignedCustodian>
+		</custodian>
+	    <!-- This example shows the @extension attribute with a value of "HQR_IQR", which indicates that this QRDA-I report is submitted to the ospital Quality Reporting for the Inpatient Quality Reporting Program -->
+		<informationRecipient>
+			<intendedRecipient>
+				<!-- CMS Program Name is required. @nullFlavor is not allowed -->
+				<id root="2.16.840.1.113883.3.249.7" extension="HQR_IQR"/>
+			</intendedRecipient>
+		</informationRecipient>
+		<participant typeCode="DEV">
+			<associatedEntity classCode="RGPR">
+				<id root="2.16.840.1.113883.3.2074.1" extension=" A0H1301CFES9EAB"
+					assigningAuthorityName="ONC"/>
+				<code code="129465004" displayName="medical record, device"
+					codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/>
+				<!-- Nataly: Added for CONF:10006. -->
+				<associatedPerson/>
+			</associatedEntity>
+		</participant>
+		<!-- ... -->
+		<documentationOf>
+			<serviceEvent classCode="PCPR">
+				<!-- ... -->
+				<performer typeCode="PRF">
+					<assignedEntity>
+						<!-- Opt. tax ID number -->
+						<id root="2.16.840.1.113883.4.6" extension="12345678"/> 
+						<representedOrganization/>
+					</assignedEntity>
+				</performer>
+			</serviceEvent>
+		</documentationOf> 
+</ClinicalDocument>

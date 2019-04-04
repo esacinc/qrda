@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Removed conformance 67-26984 on 04/04/2019. Will affect all schematrons using this template from this date forward. https://tracker.esacinc.com/browse/QRDA-568 -->
 
 <sch:schema xmlns:voc="http://www.lantanagroup.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
@@ -16,8 +17,9 @@
             <sch:assert id="a-67-14559-error" test="@classCode='PROC'">SHALL contain exactly one [1..1] @classCode="PROC" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:67-14559).</sch:assert>
             <sch:assert id="a-67-11401-error" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:67-11401).</sch:assert>
             <sch:assert id="a-67-11402-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.89'][not(@extension)])=1">SHALL contain exactly one [1..1] templateId (CONF:67-11402) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.89" (CONF:67-11403).</sch:assert>
-            <sch:assert id="a-67-26984-error" test="count(cda:id) &gt; 0"> SHALL contain at least one [1..*] id (CONF:67-26984).</sch:assert>
-            <sch:assert id="a-67-14562-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:67-14562).</sch:assert>
+            <!-- Removed conformance 67-26984 on 04/04/2019. Will affect all schematrons using this template from this date forward. https://tracker.esacinc.com/browse/QRDA-568 -->
+            <!-- <sch:assert id="a-67-26984-error" test="count(cda:id) &gt; 0"> SHALL contain at least one [1..*] id (CONF:67-26984).</sch:assert> -->
+            <sch:assert id="a-67-14562-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:67-14562).</sch:assert> 
             <sch:assert id="a-67-14561-error" test="count(cda:effectiveTime)=1">SHALL contain exactly one [1..1] effectiveTime (CONF:67-14561).</sch:assert>
         </sch:rule>
         <sch:rule id="Incision_datetime-code-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.89']]/cda:code">

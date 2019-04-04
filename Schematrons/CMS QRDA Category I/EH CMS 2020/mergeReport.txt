@@ -7,7 +7,7 @@
     Instructions file: C:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category I\EH CMS 2020\EH CMS 2020 QRDA Category I Merge Directions.xml
     Title: EH CMS 2020 QRDA Category I
     Version: 1.0
-    Generated on Fri Mar 01 14:31:14 MST 2019
+    Generated on Thu Apr 04 10:55:28 MDT 2019
     Verbose Reporting is turned on
     Merged file: C:/Development/QRDA-git/qrda/Schematrons/CMS QRDA Category I/EH CMS 2020/Published/EH CMS 2020 QRDA Category I.sch
         All Error patterns are generated before all Warning patterns
@@ -2620,16 +2620,15 @@
                     SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:67-11401).
                 Error: a-67-11402-error at /*[local-name()='ClinicalDocument']/*[local-name()='procedure']: count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.89'][not(@extension)])=1
                     SHALL contain exactly one [1..1] templateId (CONF:67-11402) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.89" (CONF:67-11403).
-                Error: a-67-26984-error at /*[local-name()='ClinicalDocument']/*[local-name()='procedure']: count(cda:id) > 0
-                     SHALL contain at least one [1..*] id (CONF:67-26984).
                 Error: a-67-14562-error at /*[local-name()='ClinicalDocument']/*[local-name()='procedure']: count(cda:code)=1
                     SHALL contain exactly one [1..1] code (CONF:67-14562).
                 Error: a-67-14561-error at /*[local-name()='ClinicalDocument']/*[local-name()='procedure']: count(cda:effectiveTime)=1
                     SHALL contain exactly one [1..1] effectiveTime (CONF:67-14561).
                 Error: a-67-27014-error at /*[local-name()='ClinicalDocument']/*[local-name()='procedure']/*[local-name()='code'][2]: @codeSystem='2.16.840.1.113883.6.96'
                     This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:67-27014).
+                C:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category I\Templates\Incision Datetime\Incision Datetime-Errors.xml: Failure count inconsistent with expectations for this file. (Errors: expected 7, actual 6) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 7, actual 7) (Warnings: expected 0, actual 0)
+            (Errors: expected 7, actual 6) (Warnings: expected 0, actual 0)
          
         TEST FILE: C:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category I\Templates\Incision Datetime\Incision Datetime-Good.xml
             
@@ -5548,7 +5547,7 @@
             (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
             _______________________________________________________________
         
-    Found 0 schematron template(s) that did not process test files as expected
+    Found 1 schematron template(s) that did not process test files as expected
     0 schematron template(s) had no associated test files.
      
     Merge Process Results....
@@ -5571,6 +5570,6 @@
             SAXException Error processing the report file reports.svrlt, Premature end of file.
             Schematron validation of test file results as expected (or no expected error count provided).
  
-    Merge Complete in 18 seconds
+    Merge Complete in 20 seconds
 **************************************** end merge report ************************************************************************
  

@@ -58,6 +58,7 @@
             - Procedure Order V5 (was V4)
             - Procedure Performed V5 (was V4)
             - Procedure Recommended V5 (was V4)
+            - Incision Datetime - removed conformance requiring and ID: 67-26984
         
         Base IG templates removed (deprecated) in this version, supplanted by Communication Performed template
             - Communication from Patient to Provider V4   

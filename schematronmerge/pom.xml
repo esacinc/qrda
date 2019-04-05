@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- This is an obsolete, deprecated project as of 2017 -->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -17,7 +19,8 @@
         
         <!-- Dependency versions -->
         <eclipse-collections.version>7.1.0</eclipse-collections.version>
-        <fasterxml-jackson.version>2.7.4</fasterxml-jackson.version>
+        <!--  Remove Jackson dependency (not needed)This avoids automated security messages from github  04-04-2019 -->
+        <!-- <fasterxml-jackson.version>2.7.4</fasterxml-jackson.version> -->
         <jdom2.version>2.0.6</jdom2.version>
 		<typesafe-config.version>1.3.0</typesafe-config.version>
         
@@ -258,6 +261,8 @@
 			<version>${eclipse-collections.version}</version>
 		</dependency>
 		<!-- FasterXML :: Jackson -->
+        <!--  Remove Jackson dependency (not needed)This avoids automated security messages from github  04-04-2019 -->
+        <!--
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
@@ -308,6 +313,7 @@
             <artifactId>jackson-module-afterburner</artifactId>
             <version>${fasterxml-jackson.version}</version>
         </dependency>
+        -->
         <!-- JDOM 2 -->
         <dependency>
             <groupId>org.jdom</groupId>

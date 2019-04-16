@@ -561,7 +561,7 @@ which require a preprocess.
      or @queryBinding='xslt1' or @queryBinding='XSLT' or @queryBinding='XSLT1'
      or @queryBinding='xpath']">
      <xsl:if test="
-	     @queryBinding='xslt1' or @queryBinding='XSLT' or @queryBinding='XSLT1'">
+     	@queryBinding='xslt1' or @queryBinding='XSLT' or @queryBinding='XSLT1'">
 	     <xsl:message><xsl:call-template name="outputLocalizedMessage" ><xsl:with-param name="number">2</xsl:with-param></xsl:call-template></xsl:message>
 	</xsl:if>
 	<axsl:stylesheet>

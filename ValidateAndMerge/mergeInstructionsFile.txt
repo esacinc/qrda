@@ -20,6 +20,14 @@
 
 #C:\\Development\\QRDA-git\\qrda\\Schematrons\\CMS QRDA Category III\\EC CMS 2018 - V2\\EP CMS 2018 QRDA Category III V2 Merge Directions.xml
 
-C:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\CMS QRDA III 2019\\CMS 2019 QRDA Category III Merge Directions.xml
+#C:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category III\CMS QRDA III 2019\\CMS 2019 QRDA Category III Merge Directions.xml
 
-#c:\Development\Sandbox\QDM Templates for CQL-based HQMF\QDM Templates for CQL-based HQMF Merge Directions.xml
+#C:\Development\CQL\GIT Repositories\CQL-based-HQMF-Schematron\QDM Templates for CQL-based HQMF\2018 CQL-HQMF QDM Version 3\QDM Templates for CQL-based HQMF Merge Directions.xml
+
+# C:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category I\STU 5.1\HL7 QRDA Category I STU 5.1 Merge Directions.xml
+
+#C:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category I\EH CMS 2019\EH CMS 2019 QRDA Category I Merge Directions.xml
+
+#C:\Development\QRDA-git\qrda\Schematrons\HL7 QRDA Category III\STU 2.2\HL7 QRDA Category III STU 2.2 Merge Directions.xml
+C:\Development\QRDA-git\qrda\Schematrons\CMS QRDA Category I\EH CMS 2020\EH CMS 2020 QRDA Category I Merge Directions.xml
+

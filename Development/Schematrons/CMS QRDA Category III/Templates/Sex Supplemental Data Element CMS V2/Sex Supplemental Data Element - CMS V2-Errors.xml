@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!--
+	Title: Sex Supplemental Data Element CMS (V2)
+	Author: Maya Zuhl
+    Date:   11-04-2016
+-->
+<!--
+	Errors introduced by Maya Zuhl
+    Total Errors Expected: 11
+		Failure a-2233-18230-error Wrong classCode
+		Failure a-2233-18231-error Wrong moodCode
+		Failure a-2233-711259-error Multiple templateId
+		Failure a-2233-18232-error Multiple templateId
+		Failure a-2233-18234-error Multiple code
+		Failure a-2233-18235-error Wrong code
+		Failure a-2233-21163-error Wrong codeSystem
+		Failure a-2233-18124-error Multiple statusCode
+		Failure a-2233-18125-error Wrong code
+		Failure a-2233-18236-error Multiple value
+		Failure a-2233-18126-error No entryRelationship
+		
+	Total Warnings Expected: 0
+-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
+	<section>
+		<component>
+			<structuredBody>
+				<entry>
+					<component>
+
+						<!-- Sex Supplemental Data Element CMS (V2) -->
+						<observation classCode="OBSERR" moodCode="EVNERR"> <!-- Failure a-2233-18230-error Wrong classCode, Failure a-2233-18231-error Wrong moodCode -->
+							<!-- Sex Supplemental Data Element CMS (V2) template ID -->
+							<templateId root="2.16.840.1.113883.10.20.27.3.21"
+										extension="2016-11-01"/>
+							<templateId root="2.16.840.1.113883.10.20.27.3.21"
+										extension="2016-11-01"/> <!-- Failure a-2233-711259-error Multiple templateId --> 			
+							<!-- Sex Supplemental Data Element (V3) template ID -->
+							<templateId root="2.16.840.1.113883.10.20.27.3.6" 
+										extension="2016-09-01"/>
+							<templateId root="2.16.840.1.113883.10.20.27.3.6" 
+										extension="2016-09-01"/> <!-- Failure a-2233-18232-error Multiple templateId -->
+							<!-- SHALL be single value binding to: -->
+							<code code="76689-9" 
+									displayName="Sex assigned at birth"
+									codeSystem="2.16.840.1.113883.6.1"
+									codeSystemName="LOINC"/>
+							<code code="76000-0" 
+									displayName="Sex assigned at birth"
+									codeSystem="2.16.840.1.113883.0.0.0.0"
+									codeSystemName="LOINC"/>  <!-- Failure a-2233-18234-error Multiple code, Failure a-2233-18235-error Wrong code, Failure a-2233-21163-error Wrong codeSystem -->
+							<statusCode code="completed"/>
+							<statusCode code="completedError"/> <!-- Failure a-2233-18124-error Multiple statusCode, Failure a-2233-18125-error Wrong code -->
+							<!-- SHALL be drawn from  Value Set: ONC Administrative Sex 2.16.840.1.113762.1.4.1 DYNAMIC-->
+							<!-- Female -->
+							<value xsi:type="CD" code="F"
+									codeSystem="2.16.840.1.113883.5.1"
+									codeSystemName="AdministrativeGender" />
+							<value xsi:type="CD" code="F"
+									codeSystem="2.16.840.1.113883.5.1"
+									codeSystemName="AdministrativeGender" /> <!-- Failure a-2233-18236-error Multiple value -->
+							<!-- <entryRelationship typeCode="SUBJ" inversionInd="true">
+								<observation classCode="OBS" moodCode="EVN">
+									<code code="MSRAGG" displayName="rate aggregation"
+											codeSystem="2.16.840.1.113883.5.4"
+											codeSystemName="ActCode"/>
+									<value xsi:type="INT" value="600"/>
+									<methodCode code="COUNT" displayName="Count"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"/>
+								</observation>
+							</entryRelationship> --> <!-- Failure a-2233-18126-error No entryRelationship -->
+						</observation>
+					</component>
+				</entry>
+			</structuredBody>
+		</component>
+	</section>
+</ClinicalDocument>

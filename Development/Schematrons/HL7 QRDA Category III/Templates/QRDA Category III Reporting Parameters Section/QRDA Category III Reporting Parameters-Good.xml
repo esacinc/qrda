@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!--
+		QRDA Category III Reporting Parameters Section sample file
+		
+		Total Errors Expected: 0
+          
+    	Total Warnings Expected: 0
+	-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
+	<!-- 
+********************************************************
+QRDA Category III Reporting Parameters 
+********************************************************
+-->
+	<section>
+		<!-- QRDA Reporting Parameters Section template -->
+		<templateId root="2.16.840.1.113883.10.20.17.2.1"/>
+		<!-- QRDA Category III Reporting Parameters templateId -->
+		<templateId root="2.16.840.1.113883.10.20.27.2.2"/>
+		<code code="55187-9" codeSystem="2.16.840.1.113883.6.1"/>
+		<title>Reporting Parameters</title>
+		<text>
+			<list>
+				<item>Reporting period: 01 January 2016 - 31 December 2016</item>
+				<item>First encounter: 02 January 2016</item>
+				<item>Last encounter: 1 March 2016</item>
+			</list>
+		</text>
+		<entry typeCode="DRIV">
+			<act classCode="ACT" moodCode="EVN">
+				<!-- Reporting Parameters Act -->
+				<templateId root="2.16.840.1.113883.10.20.17.3.8"/>
+				<id root="55a43e20-6463-46eb-81c3-9a3a1ad41225"/>
+				<code code="252116004" codeSystem="2.16.840.1.113883.6.96"
+					displayName="Observation Parameters"/>
+				<!-- This reporting period shows that Good Health Clinic is sending data for the first quarter of the year.
+							The referenced measure definition may be valid for the entire year or more-->
+				<effectiveTime>
+					<low value="20160101"/>
+					<!-- The first day of the period reported. -->
+					<high value="20161231"/>
+					<!-- The last day of the period reported. -->
+				</effectiveTime>
+			</act>
+		</entry>
+		<entry>
+			<encounter classCode="ENC" moodCode="EVN">
+				<!-- Optional encounter dates in the reporting period -->
+				<!-- Service Encounter -->
+				<templateId root="2.16.840.1.113883.10.20.27.3.11"/>
+				<!-- Optional id of the first encounter of the reporting period-->
+				<id root="4fd7e43d-e21d-45b3-a0ed-fe122efb96a9"/>
+				<effectiveTime>
+					<!-- The month, day and year of the first service
+				        encounter of the reporting period (From date) -->
+					<low value="20160102"/>
+				</effectiveTime>
+			</encounter>
+		</entry>
+		<entry>
+			<encounter classCode="ENC" moodCode="EVN">
+				<!-- Optional encounter dates in the reporting period -->
+				<!-- Service Encounter -->
+				<templateId root="2.16.840.1.113883.10.20.27.3.11"/>
+				<!-- Optional id of the last encounter of the reporting period-->
+				<id root="3e2b00b6-f846-4941-adb6-53eb88876a30"/>
+				<effectiveTime>
+					<!-- The month, day and year of the last service
+				        encounter of the reporting period (To date) -->
+					<high value="20160301"/>
+				</effectiveTime>
+			</encounter>
+		</entry>
+	</section>
+</ClinicalDocument>

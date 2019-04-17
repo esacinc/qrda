@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    
+<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="true" >
+ 
+    <title>HL7 QRDA III STU 1.1 generated schematron</title>
+   
+     <generatedFilename>
+        c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category III/STU 1.1/Published/HL7 QRDA Category III STU 1.1.sch
+    </generatedFilename>
+    <finalTestFilename>
+        c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category III/STU 1.1/TestFiles/CDAR2_QRDAIII_R1_STU1.1_2016FEB.xml 
+    </finalTestFilename>
+    <fileHeader>HL7 QRDA III STU 1.1 generated schematron.</fileHeader>
+    <mergeReportFilename> c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category III/STU 1.1/mergeReport.txt</mergeReportFilename>
+    <vocabFilename>c:/Development/qrdaGit/qrda/Schematrons/HL7 QRDA Category III/Vocabulary/voc.xml</vocabFilename>
+    <!-- All schematrons expected to be under a single main directory -->
+    <sourceMainDirectory>
+        c:/Development/qrdaGit/qrda/Schematrons/
+    </sourceMainDirectory>
+    
+    <!-- Specify the schematrons to use in the merge below, separated by the templates found in each fo the source directories listed. -->
+    <!--    Note that the directoryName tags refer to directories relative to the sourceMainDirectory tag, above. -->
+    <!--    selector='all' means use all the schematron subdirectories found under directoryName, except for those listed in the 'exclude' tags. -->
+    <!--    selector='some' means only use the directoryName subdirectories listed in the 'include' tags --> 
+
+    <sourceDirectory selector='some'> 
+        <directoryName>HL7 QRDA Category III/Templates</directoryName>
+        <include>Aggregate Count</include> 
+        <include>Continuous Variable Measure Value</include>
+        <include>Ethnicity Supplemental Data Element</include>
+        <include>Measure Data V2</include>
+        <include>Measure Reference</include>
+        <include>Measure Reference and Results V2</include>
+        <include>Payer Supplemental Data Element V2</include>
+        <include>Performance Rate for Proportion Measure</include>
+        <include>Postal Code Supplemental Data Element</include>
+        <include>QRDA Category III Measure Section V2</include>
+        <include>QRDA Category III Report V2</include>
+        <include>QRDA Category III Reporting Parameters Section</include>
+        <include>Race Supplemental Data Element</include>
+        <include>Reporting Rate for Proportion Measure</include>
+        <include>Reporting Stratum</include>
+        <include>Service Encounter</include>
+        <include>Sex Supplemental Data Element V2</include>
+    </sourceDirectory>
+
+    <sourceDirectory selector='some'> 
+         <directoryName>HL7 QRDA Category I/Templates</directoryName>
+         <include>Measure Section</include>
+         <include>Reporting Parameters Section</include>
+         <include>Reporting Parameters Act </include>
+    </sourceDirectory>
+    
+</mergeProfile>

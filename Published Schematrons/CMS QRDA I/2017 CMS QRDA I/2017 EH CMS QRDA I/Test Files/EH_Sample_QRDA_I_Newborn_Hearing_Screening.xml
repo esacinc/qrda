@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <!-- 		
+    Title: EH Quality Reporting Document Architecture Category I Hearing Screening Prior To Hospital Discharge Measure
+    Date: July 13, 2017
+	Author: Maya Zuhl
+  -->
+  <!-- 	 
+    This sample file contains an example of each Patient Data Section QDM contained 	 
+    template specified in the QRDA I STU 3.1 IG. 	 
+    This sample file contains no narrative. 	 
+    This sample file is not clinically valid - it is for use by implementers to 	 
+    see a valid (syntactically not clinically) example for each template. 	 
+    This sample file is informative only. 	
+  -->
+
+  <realmCode code="US" />
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+  <!-- US Realm Header (V3) -->
+  <templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2015-08-01" />
+  <!-- QRDA Category I Framework (V3) -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2016-02-01" />
+  <!-- QDM-Based QRDA (V3) -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.2" extension="2016-02-01" />
+  <!-- QRDA Category I Report (V3) - CMS EH -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.3" extension="2016-03-01" />
+  <!-- This is the globally unique identifier for this QRDA document -->
+  <id root="0924fbae-3fdb-4d0a-aab7-9f354e699fde" />
+  <!-- QRDA document type code -->
+  <code code="55182-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Quality Measure Report" />
+  <title>QRDA Incidence Report</title>
+  <!-- This is the document creation time -->
+  <effectiveTime value="201612311230" />
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
+  <languageCode code="en" />
+  <!-- reported patient -->
+  <recordTarget>
+    <patientRole>
+      <!-- Patient Identifier Number (OID: 2.16.840.1.113883.3.249.15) -->
+      <id root="2.16.840.1.113883.3.249.15" extension="111223333A" />
+      <addr use="H">
+        <streetAddressLine>2222 Home Street</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="HP" value="tel:(555)301-1212" />
+      <patient>
+        <name>
+          <given>Adam</given>
+          <family>Smith</family>
+        </name>
+        <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" />
+        <!-- If the patient administrative sex is unknown, use nullFlavor="UNK" -->
+        <!-- <administrativeGenderCode nullFlavor="UNK"/> -->
+        <birthTime value="20160715" />
+        <religiousAffiliationCode code="1026" codeSystem="2.16.840.1.113883.1.11.19185"
+          codeSystemName="HL7 Religious Affiliation " displayName="Judaism" />
+        <!-- raceCode "2131-1 (Other Race)" shall not be used for either raceCode or sdtc:raceCode -->
+		<raceCode code="2106-3" codeSystem="2.16.840.1.114222.4.11.836" displayName="White"/>
+        <!-- if the patient declined to specify his/her race, use nullFlavor="ASKU" -->
+        <!-- <raceCode nullFlavor="ASKU"/> -->
+        <!-- if the patient's race is unknown, use nullFlavor="UNK" -->
+        <!-- <raceCode nullFlavor="UNK"/> -->
+        <!-- Use sdtc:raceCode only if the patient has more than one race category -->
+        <ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.114222.4.11.837" displayName="Not Hispanic or Latino" />
+        <!-- if the patient declined to specify his/her ethnicity, use nullFlavor="ASKU" -->
+        <!-- <ethnicGroupCode nullFlavor="ASKU"/> -->
+        <!-- if the patient's ethnicity is unknown, use nullFlavor="UNK" -->
+        <!-- <ethnicGroupCode nullFlavor="UNK"/> -->
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <!-- Example of an author who is a person -->
+  <author>
+    <time value="20161227124411" />
+    <assignedAuthor>
+      <id root="2.16.840.1.113883.4.6" extension="1234567893" />
+      <code code="200000000X" codeSystem="2.16.840.1.113883.6.101" displayName="Allopathic &amp; Osteopathic Physicians" />
+      <addr use="WP">
+        <streetAddressLine>1020 Healthcare Drive</streetAddressLine>
+        <streetAddressLine>Suite 500</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="WP" value="tel:(555)555-1003" />
+      <!-- Quality Manager -->
+      <assignedPerson>
+        <name>
+          <given>Ann</given>
+          <family>Quality</family>
+          <suffix>RN</suffix>
+        </name>
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+  <dataEnterer>
+    <assignedEntity>
+      <id extension="1234567893" root="2.16.840.1.113883.4.6" />
+      <addr>
+        <streetAddressLine>1007 Healthcare Drive</streetAddressLine>
+        <city>Portland</city>
+        <state>OR</state>
+        <postalCode>99123</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="WP" value="tel:+1(555)555-1050" />
+      <assignedPerson>
+        <name>
+          <given>Ellen</given>
+          <family>Enter</family>
+        </name>
+      </assignedPerson>
+    </assignedEntity>
+  </dataEnterer>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <!-- National Provider Identifier -->
+        <id root="2.16.840.1.113883.4.6" extension="1234567893" />
+        <!-- CMS Certification Number -->
+        <id root="2.16.840.1.113883.4.336" extension="800890" />
+        <!-- Tax ID Number -->
+        <id root="2.16.840.1.113883.4.2" extension="222222289" />
+        <!-- Joint Commission's Health Care Organization (HCO) -->
+        <id root="1.3.6.1.4.1.33895" extension="3333333" />
+        <name>Good Health Hospital</name>
+        <telecom use="WP" value="tel:(555)555-1003" />
+        <addr use="WP">
+          <streetAddressLine>21 North Ave.</streetAddressLine>
+          <city>Burlington</city>
+          <state>MA</state>
+          <postalCode>02368</postalCode>
+          <country>US</country>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <informationRecipient>
+    <intendedRecipient>
+      <id root="2.16.840.1.113883.3.249.7" extension="HQR_EHR" />
+      <informationRecipient>
+        <name>
+          <given>Sara</given>
+          <family>Specialize</family>
+          <suffix qualifier="AC">M.D.</suffix>
+        </name>
+      </informationRecipient>
+      <receivedOrganization>
+        <name>The DoctorsApart Physician Group</name>
+      </receivedOrganization>
+    </intendedRecipient>
+  </informationRecipient>
+  <legalAuthenticator>
+    <time value="201612301230" />
+    <signatureCode code="S" />
+    <assignedEntity>
+      <id root="bc01a5d1-3a34-4286-82cc-43eb04c972a7" />
+      <code code="231H00000X" displayName="Audiologist" codeSystem="2.16.840.1.113883.6.101"
+        codeSystemName="Healthcare Provider Taxonomy" />
+      <addr use="WP">
+        <streetAddressLine>21 North Ave.</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="WP" value="tel:(555)555-1003" />
+      <assignedPerson>
+        <name>
+          <given>Virgil</given>
+          <family>Verify</family>
+          <suffix>MD</suffix>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root="2.16.840.1.113883.19.5" />
+        <name>Good Health Hospital</name>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <participant typeCode="DEV">
+    <associatedEntity classCode="RGPR">
+      <!-- CMS EHR Certification Number (formerly known as Office of the 
+        National Coordinator Certification Number) -->
+      <id root="2.16.840.1.113883.3.2074.1" extension="123456789"/>
+    </associatedEntity>
+  </participant>
+  
+  <documentationOf typeCode="DOC">
+    <serviceEvent classCode="PCPR">
+      <!-- care provision -->
+      <effectiveTime>
+        <low value="20160601" />
+        <high value="20160915" />
+      </effectiveTime>
+      <!-- You can include multiple performers, each with an NPI, TIN, CCN. -->
+      <performer typeCode="PRF">
+        <time>
+          <low value="20160616" />
+          <high value="20160915" />
+        </time>
+        <assignedEntity>
+          <!-- This is the provider NPI -->
+          <!-- NPI is required for HQR but we expect hospitals to submit nullFlavor -->
+          <id root="2.16.840.1.113883.4.6" nullFlavor="NA" />
+          <code code="231H00000X" displayName="Audiologist" codeSystem="2.16.840.1.113883.6.101"
+            codeSystemName="Healthcare Provider Taxonomy" />
+          <representedOrganization>
+            <!-- This is the organization TIN -->
+            <!-- TIN is required for HQR but we expect hospitals to submit a nullFlavor -->
+            <id root="2.16.840.1.113883.4.2" nullFlavor="NA" />
+          </representedOrganization>
+        </assignedEntity>
+      </performer>
+    </serviceEvent>
+  </documentationOf>
+  <!-- QRDA Body -->
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <!-- 						 
+            ***************************************************************** 						 
+            Measure Section 						
+            ***************************************************************** 					 
+          -->
+          <!-- This is the templateId for Measure Section -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.2" />
+          <!-- This is the templateId for Measure Section QDM -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.3" />
+          <!-- This is the LOINC code for "Measure document". 
+            This stays the same for all measure section required by QRDA standard -->
+          <code code="55186-1" codeSystem="2.16.840.1.113883.6.1" />
+          <title>Measure Section</title>
+          <text><table border="1" width="100%">
+              <thead>
+                <tr>
+                  <th>eMeasure Title</th>
+                  <th>Version neutral identifier</th>
+                  <th>eMeasure Version Number</th>
+                  <th>NQF eMeasure Number</th>
+                  <th>eMeasure Identifier (MAT)</th>
+                  <th>Version specific identifier</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Hearing Screening Prior To Hospital Discharge</td>
+                  <td>0924fbae-3fdb-4d0a-aab7-9f354e699fde</td>
+                  <td>5.1.000</td>
+                  <td>1354</td>
+                  <td>31</td>
+                  <td>40280381-537c-f767-0153-85ab862f020d</td>
+                </tr>
+              </tbody>
+            </table></text>
+          <!-- 1..* Organizers, each containing a reference to an eMeasure -->
+          <entry>
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <!-- This is the templateId for Measure Reference -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.98" />
+              <!-- This is the templateId for eMeasure Reference QDM -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.97" />
+              <id root="600be61c-cdd4-4902-945f-a768d1de404e" />
+              <statusCode code="completed" />
+              <!-- Containing isBranch external references -->
+              <reference typeCode="REFR">
+                <externalDocument classCode="DOC" moodCode="EVN">
+                  <!-- This is the version specific identifier for the eMeasure -->
+                  <id root="2.16.840.1.113883.4.738" extension="12345" />
+                  <!-- SHOULD: This is the NQF Number, root is an NQF OID and 
+                    for eMeasure Number and extension is the eMeasure's NQF number -->
+                  <id root="2.16.840.1.113883.3.560.1" extension="0143" />
+                  <!-- SHOULD: eMeasure Measure Authoring Tool Identifier (not the real root yet-->
+                  <id root="2.16.840.1.113883.3.560.101.2" extension="93" />
+                  <code code="57024-2" displayName="Health Quality Mesaure Document" codeSystem="2.16.840.1.113883.6.1"
+                    codeSystemName="LOINC" />
+                  <!-- SHOULD This is the title of the eMeasure -->
+                  <text>Hearing Screening Prior To Hospital Discharge</text>
+                  <!-- SHOULD: setId is the eMeasure version neutral id -->
+                  <setId root="0924fbae-3fdb-4d0a-aab7-9f354e699fde" />
+                  <!-- This is the sequential eMeasure Version number -->
+                  <versionNumber value="1" />
+                </externalDocument>
+              </reference>       
+            </organizer>
+          </entry>
+          <entry>
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <!-- This is the templateId for Measure Reference -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.98" />
+              <!-- This is the templateId for eMeasure Reference QDM -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.97" />
+              <id root="a8180d5c-a918-494d-a2a1-e2b546167eb5" />
+              <statusCode code="completed" />
+              <!-- Containing isBranch external references -->
+              <reference typeCode="REFR">
+                <externalDocument classCode="DOC" moodCode="EVN">
+                  <!-- This is the version specific identifier for the eMeasure -->
+                  <id root="2.16.840.1.113883.4.738" extension="22222" />
+                  <!-- SHOULD: This is the NQF Number, root is an NQF OID and for eMeasure Number and 
+                    extension is the eMeasure's NQF number -->
+                  <id root="2.16.840.1.113883.3.560.1" extension="0144" />
+                  <!-- SHOULD: eMeasure Measure Authoring Tool Identifier (not the real root yet-->
+                  <id root="2.16.840.1.113883.3.560.101.2" extension="106" />
+                  <code code="57024-2" displayName="Health Quality Mesaure Document" codeSystem="2.16.840.1.113883.6.1"
+                    codeSystemName="LOINC" />
+                  <!-- SHOULD This is the title of the eMeasure -->
+                  <text>Hearing Screening Prior To Hospital Discharge</text>
+                  <!-- SHOULD: setId is the eMeasure version neutral id -->
+                  <setId root="0924fbae-3fdb-4d0a-aab7-9f354e699fde" />
+                  <!-- This is the sequential eMeasure Version number -->
+                  <versionNumber value="1" />
+                </externalDocument>
+              </reference>
+            </organizer>
+          </entry>
+        </section>
+      </component>
+      <!-- 				 
+        ***************************************************************** 				 
+        Reporting Parameters Section 				 
+        ***************************************************************** 			 
+      -->
+      <component>
+        <section>
+          <!-- This is the templateId for Reporting Parameters section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.1" />
+          <!-- Reporting Parameters section CMS -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.1.1" extension="2016-03-01"/>
+          <code code="55187-9" codeSystem="2.16.840.1.113883.6.1" />
+          <title>Reporting Parameters</title>
+          <text><list>
+              <item>Reporting period: 01 Jan 2016 - 31 Dec 2016</item>
+            </list></text>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <!-- This is the templateId for Reporting Parameters Act -->
+              <templateId root="2.16.840.1.113883.10.20.17.3.8" />
+              <!-- Reporting Parameters Act CMS -->
+              <templateId root="2.16.840.1.113883.10.20.17.3.8.1" extension="2016-03-01" />
+              <id root="3d7c11cf-b01b-4527-a704-c098c162779d" />
+              <code code="252116004" codeSystem="2.16.840.1.113883.6.96" displayName="Observation Parameters" />
+              <effectiveTime>
+                <low value="20160101" />
+                <high value="20161231" />
+              </effectiveTime>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <!-- 				 
+        ***************************************************************** 				 
+        Patient Data Section QDM (V2) 				 
+        ***************************************************************** 			 
+      -->
+      <component>
+        <section>
+          <!-- Patient Data Section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.4" />
+          <!-- Patient Data Section QDM (V3) -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.1" extension="2016-02-01" />
+          <!-- Patient Data Section QDM (V3) - CMS EH -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.1.1" extension="2016-03-01" />
+          <code code="55188-7" codeSystem="2.16.840.1.113883.6.1" />
+          <title>Patient Data</title>
+          <text />
+          <!-- =============================================== -->
+          <!-- QDM Category: Condition/Diagnosis/Problem  ??????????????????????? Needs review-->
+          <!-- =============================================== -->
+          <!-- QDM Datatype: Diagnosis, Active -->
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <!-- Conforms to C-CDA Problem Concern Act (V3) -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2015-08-01" />
+              <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7" />
+              <code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern" />
+              <!-- The statusCode represents whether this is an active (active), inactive (suspended) or resolved (completed) diagnosis -->
+              <statusCode code="active" />
+              <effectiveTime>
+                <!-- QDM Attribute: Start Datetime (equivalent to author/time/low in the contained observation) -->
+                <low value="201607150830" />
+              </effectiveTime>
+              <entryRelationship typeCode="SUBJ">
+                <!--Diagnosis inactive-->
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conforms to C-CDA Problem Observation (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01" />
+                  <id root="e5d9e01e-d778-40ba-9bd0-351d0222b26c" />
+                  <code code="29308-4" displayName="diagnosis" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
+                    <translation code="75323-6" 
+                      codeSystem="2.16.840.1.113883.6.1" 
+                      codeSystemName="LOINC" 
+                      displayName="Condition"/>
+                  </code>
+				  <text>Diagnosis: Live Birth Newborn Born in Hospital</text>
+                  <statusCode code="completed" />
+                  <effectiveTime>
+                    <!-- Onset date -->
+                    <low value="20160715" />
+                    <!-- Resolution date -->
+                    <high nullFlavor='UNK' />
+                  </effectiveTime>
+                  <!-- QDM Attribute: Ordinality -->
+                  <!-- The following code may not be correct and may change in the future (if 
+                  the relevant eMeasure is changed -->
+                  <priorityCode code="63161005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                    displayName="Principal" />
+                  <!-- Diagnosis -->
+                  <value xsi:type="CD" code="169826009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                    displayName="Live Birth Newborn Born in Hospital" sdtc:valueSet="2.16.840.1.113762.1.4.1046.6" />
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <!-- =============================================== -->
+          <!-- QDM Category: Diagnostic Study -->
+          <!-- =============================================== -->
+          <entry>
+            <!-- QDM Datatype: Diagnostic Study, Performed -->
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conforms to C-CDA R2 Procedure Activity Observation (V2) -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09" />
+              <!-- Diagnostic Study Performed (V3) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.18" extension="2016-02-01" />
+              <id root="1fad091f-7b4e-4661-b61c-53f9a82515b6" />
+              <code code=" 54108-6 " codeSystem="2.16.840.1.113883.6.1" displayName="Newborn Hearing Screen Left"
+                codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.114222.4.1.214079.1.1.3" />
+              <text>Diagnostic Study, Performed: Newborn Hearing Screen Left</text>
+              <statusCode code="completed" />
+              <effectiveTime>
+                <!-- QDM Attribute: Start Datetime -->
+                <low value="201607151530" />
+                <!-- QDM Attribute: Stop Datetime -->
+                <high value="201607151545" />
+              </effectiveTime>
+              <value xsi:type="CD" nullFlavor="NA" />
+              <!-- QDM Attribute: Reason -->
+              <entryRelationship typeCode="RSON">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
+                  <id root="5750a5bb-6a01-4b99-9b1c-cda56b1dce0c" />
+                  <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
+                    displayName="Reason care action performed or not" codeSystemName="LOINC" />
+                  <statusCode code="completed" />
+                  <effectiveTime>
+                    <low value="20160715" />
+                  </effectiveTime>
+                  <value xsi:type="CD" code="54108-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                    displayName="Newborn hearing screen of Ear - left" sdtc:valueSet="2.16.840.1.114222.4.1.214079.1.1.3" />
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="REFR">
+                <!-- QDM Attribute: Status -->
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Status -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.93" />
+                  <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
+                  <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status" />
+                  <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
+                </observation>
+              </entryRelationship>
+			  <!-- QDM Attribute: Result -->
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conforms to C-CDA R2 Result Observation (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01" />
+                  <!-- Result (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2016-02-01" />
+                  <id root="ed971e73-c060-4258-8838-69c830254b5a" />
+                  <code code="30954-2" displayName="Results" codeSystem="2.16.840.1.113883.6.1"
+                    codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.114222.4.1.214079.1.1.6"/>
+                  <statusCode code="completed" />
+                  <effectiveTime value="201607151530" />
+                  <value xsi:type="CD" code="54108-6" codeSystem="2.16.840.1.113883.6.96"
+                    displayName="Result: Pass Or Refer" codeSystemName="SNOMED CT"
+                    sdtc:valueSet="2.16.840.1.114222.4.1.214079.1.1.6" />
+                  <entryRelationship typeCode="REFR">
+                    <!-- QDM Attribute: Status (Result)-->
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Status -->
+                      <templateId root="2.16.840.1.113883.10.20.24.3.93" />
+                      <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
+                      <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                        displayName="Status" />
+                      <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
+                    </observation>
+                  </entryRelationship>
+                </observation>
+              </entryRelationship>
+			</observation>
+          </entry>
+		  <entry>
+            <!-- QDM Datatype: Diagnostic Study, Performed -->
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conforms to C-CDA R2 Procedure Activity Observation (V2) -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09" />
+              <!-- Diagnostic Study Performed (V3) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.18" extension="2016-02-01" />
+              <id root="1fad091f-7b4e-4661-b61c-53f9a82515b6" />
+              <code code="24605-8" codeSystem="2.16.840.1.113883.6.1" displayName="Newborn Hearing Screen Right"
+                codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.114222.4.1.214079.1.1.4" />
+              <text>Diagnostic Study, Performed: Newborn Hearing Screen Right</text>
+              <statusCode code="completed" />
+              <effectiveTime>
+                <!-- QDM Attribute: Start Datetime -->
+                <low value="201607151545" />
+                <!-- QDM Attribute: Stop Datetime -->
+                <high value="201607151600" />
+              </effectiveTime>
+              <value xsi:type="CD" nullFlavor="NA" />
+              <!-- QDM Attribute: Reason -->
+              <entryRelationship typeCode="RSON">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2014-12-01" />
+                  <id root="5750a5bb-6a01-4b99-9b1c-cda56b1dce0c" />
+                  <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
+                    displayName="Reason care action performed or not" codeSystemName="LOINC" />
+                  <statusCode code="completed" />
+                  <effectiveTime>
+                    <low value="20160715" />
+                  </effectiveTime>
+                  <value xsi:type="CD" code="54109-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                    displayName="Newborn hearing screen of Ear - right" sdtc:valueSet="2.16.840.1.114222.4.1.214079.1.1.4" />
+                </observation>
+              </entryRelationship>
+              <!-- QDM Attribute: Result -->
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conforms to C-CDA R2 Result Observation (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01" />
+                  <!-- Result (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2016-02-01" />
+                  <id root="ed971e73-c060-4258-8838-69c830254b5a" />
+                  <code code="30954-2" displayName="Results" codeSystem="2.16.840.1.113883.6.1"
+                    codeSystemName="LOINC" sdtc:valueSet="2.16.840.1.114222.4.1.214079.1.1.6"/>
+                  <statusCode code="completed" />
+                  <effectiveTime value="201607151530" />
+                  <value xsi:type="CD" code="54108-6" codeSystem="2.16.840.1.113883.6.96"
+                    displayName="Result: Pass Or Refer" codeSystemName="SNOMED CT"
+                    sdtc:valueSet="2.16.840.1.114222.4.1.214079.1.1.6" />
+                  <entryRelationship typeCode="REFR">
+                    <!-- QDM Attribute: Status (Result)-->
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Status -->
+                      <templateId root="2.16.840.1.113883.10.20.24.3.93" />
+                      <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
+                      <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                        displayName="Status" />
+                      <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
+                    </observation>
+                  </entryRelationship>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="REFR">
+                <!-- QDM Attribute: Status -->
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Status -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.93" />
+                  <id root="29b776d3-089b-4a7f-b6e9-e45080091922" />
+                  <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status" />
+                  <value xsi:type="CD" code="445665009" displayName="Final Report" sdtc:valueSet="1.2.99999" />
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+          <!-- =============================================== -->
+          <!-- QDM Category: Encounter -->
+          <!-- =============================================== -->
+          <!-- QDM Datatype: Encounter, Performed -->
+          <entry>
+            <!--Encounter performed: Emergency Department Visit-->
+            <encounter classCode="ENC" moodCode="EVN">
+              <!-- Conforms to C-CDA R2 Encounter Activity (V3) -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.49" extension="2015-08-01" />
+              <!-- Encounter Performed (V3) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.23" extension="2016-02-01" />
+              <id root="d7577d0f-df6e-4dbe-b2c0-d7d7666e8172" />
+              <code code="32485007" displayName="Emergency Department visit" codeSystem="2.16.840.1.113883.6.96"
+                codeSystemName="SNOMED CT" sdtc:valueSet="2.16.840.1.113883.3.666.5.307" />
+              <text>Encounter, Performed: Encounter Inpatient</text>
+              <statusCode code="completed" />
+              <effectiveTime>
+                <!-- QDM Attribute: admission datetime -->
+                <low value="20160715052800" />
+                <!-- QDM Attribute: discharge datetime -->
+                <high value="20160717103000" />
+              </effectiveTime>
+            </encounter>
+          </entry>
+          <!-- QDM Datatype: Encounter, Performed -->
+          <entry>
+            <!--Encounter Performed: Inpatient Encounter-->
+            <encounter classCode="ENC" moodCode="EVN">
+              <!-- Conforms to C-CDA R2 Encounter Activity (V3) -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.49" extension="2015-08-01" />
+              <!-- Encounter Performed (V3) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.23" extension="2016-02-01" />
+              <id root="dccf424e-18dd-4058-887f-a81514eaaa55" />
+              <code code="32485007" displayName="hospital admission" codeSystem="2.16.840.1.113883.6.96"
+                codeSystemName="SNOMED CT" sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.23" />
+              <text>Encounter, Performed: hospital admission</text>
+              <statusCode code="completed" />
+              <effectiveTime>
+                <!-- QDM Attribute: admission datetime -->
+                <low value="20160715052800" />
+                <!-- QDM Attribute: discharge datetime -->
+                <high value="20160717103000" />
+              </effectiveTime>
+            </encounter>
+          </entry>
+          <!-- =============================================== -->
+          <!-- QDM Category: Individual Characteristic -->
+          <!-- =============================================== -->
+          <!-- QDM Datatype: Patient Characteristic, Payer-->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Patient Characteristic Payer -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.55" />
+              <id root="4ddf1cc3-e325-472e-ad76-b2c66a5ee164" />
+              <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                displayName="Payment source" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <!-- QDM Attribute: Start Datetime -->
+                <low value="20160715" />
+                <!-- QDM Attribute: Stop Datetime -->
+                <high value="20170715" />
+              </effectiveTime>
+              <!-- Payer -->
+              <value xsi:type="CD" code="1" codeSystem="2.16.840.1.113883.3.221.5"
+                codeSystemName="Source of Payment Typology" displayName="Medicare"
+                sdtc:valueSet="2.16.840.1.114222.4.11.3591" />
+            </observation>
+          </entry>
+          <!-- QDM Datatype: Patient Characteristic -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Patient Characteristic Observation Assertion (V3) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.103" extension="2016-02-01" />
+              <id root="94de1700-9629-40b4-b56d-a4eac5f48726" />
+              <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <!-- QDM Attribute: Start Datetime -->
+                <low value="20160715" />
+                <!-- QDM Attribute: Stop Datetime -->
+                <high value="20170715" />
+              </effectiveTime>
+              <!-- Patient Characteristic -  Race characteristic-->
+              <value xsi:type="CD" code="2106-3" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC"
+                displayName="White" sdtc:valueSet="2.16.840.1.114222.4.11.836" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

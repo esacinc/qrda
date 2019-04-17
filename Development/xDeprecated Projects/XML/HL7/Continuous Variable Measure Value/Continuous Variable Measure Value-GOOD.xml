@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title: Continuous Variable Measure Value, Minimal sample
+    Author: Dan Donahue
+    Date:   10-14-2016
+    
+    Total Errors Expected: 0
+    Total Warnings Expected: 0
+-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<entry>
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.27.3.5" extension="2016-09-01"/>
+									<entryRelationship typeCode="COMP">
+										<!-- Continuous Variable Measure Value template -->
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.27.3.2"/>
+											<code nullFlavor="OTH">
+												<originalText>Time Difference</originalText>
+											</code>
+											<statusCode code="completed"/>
+											<value xsi:type="PQ" value="55" unit="min"/>
+											<!-- drawn from  ObservationMeasureAggregate value set, with a SHALL Dynamic binding -->
+											<methodCode code="MEDIAN" displayName="Median"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"/>
+											<reference typeCode="REFR">
+												<!-- reference to the relevant measure observation in the eMeasure,
+												in this case the median method is applied to the time difference
+												referenced by this identifier -->
+												<externalObservation classCode="OBS" moodCode="EVN">
+												<id root="bcefe756-fb9f-4e46-aadc-d19de340b6b5"/>
+												</externalObservation>
+											</reference>
+											<!-- MAY 0..1 Used to represent the predicted continuous variable value based on the measure’s risk-adjustment model. -->
+											<referenceRange>
+												<observationRange>
+												<value xsi:type="PQ" value="60" unit="min"/>
+												</observationRange>
+											</referenceRange>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

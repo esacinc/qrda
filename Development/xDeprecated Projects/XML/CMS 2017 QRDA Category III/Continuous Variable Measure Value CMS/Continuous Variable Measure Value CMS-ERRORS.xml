@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title:  Continuous Variable Measure Value CMS, Minimal sample with errors
+    Author: Dan Donahue
+    Date:   11-03-2016
+    
+    Total Errors Expected: 12
+          Failure a-1109-17569-error Bad Class Code
+          Failure a-1109-17570-error Bad Mood Code
+          Failure a-1109-711264-error Multiple root templateIds
+          Failure a-1109-18096-error Multiple root templateIds
+          Failure a-1109-17571-error Missing or multiple code
+          Failure a-1109-711241-error Missing or multiple statusCode
+          Failure a-1109-17572-error Missing or multiple value
+          Failure a-1109-18242-error Missing or multiple methodCode
+          Failure a-1109-18243-error Missing or multiple reference
+          Failure a-1109-711242-error Missing @code=complete in statusCode
+          Failure a-1109-18244-error Missing or multiple externalObservation in reference
+          Failure a-1109-711205-error Missing or multiple id in externalObservation
+     
+    Total Warnings Expected: 0
+-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<entry>
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<entryRelationship typeCode="COMP">
+										<!-- Continuous Variable Measure Value template -->
+										<observation classCode="OBSErr" moodCode="EVNErr"> <!-- Failure a-1109-17569-error Bad Class Code,  Failure a-1109-17570-error Bad Mood Code -->
+											<!-- Failure a-1109-711264-error Multiple root templateIds -->
+											<templateId root="2.16.840.1.113883.10.20.27.3.2"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.2"/>
+											<!--Failure a-1109-18096-error Multiple root templateIds -->
+											<templateId root="2.16.840.1.113883.10.20.27.3.26"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.26"/>
+											<code nullFlavor="OTH">
+												<originalText>Time Difference</originalText>
+											</code>
+											<!-- Failure a-1109-17571-error Missing or multiple code -->
+											<code></code>
+											<statusCode code="completed"/>
+											<!-- Failure a-1109-711241-error Missing or multiple statusCode -->
+											<!-- Failure a-1109-711242-error Missing @code=complete in statusCode -->
+											<statusCode></statusCode>
+											<!-- Failure a-1109-17572-error Missing or multiple value -->
+											<!-- <value xsi:type="PQ" value="55" unit="min"/> -->
+											<!-- Failure a-1109-18242-error Missing or multiple methodCode -->
+											<!-- 
+												<methodCode code="MEDIAN" displayName="Median" 
+												codeSystem="2.16.840.1.113883.5.84" 
+												codeSystemName="ObservationMethod"/> -->
+											<!-- reference to the relevant measure observation in the eMeasure -->
+											<reference typeCode="REFR">
+												<externalObservation classCode="OBS" moodCode="EVN">
+													<id root="bcefe756-fb9f-4e46-aadc-d19de340b6b5"/>
+													<!-- Failure a-1109-711205-error Missing or multiple id in externalObservation -->
+													<id></id>
+												</externalObservation>
+											</reference>
+											<!-- Failure a-1109-18243-error Missing or multiple reference -->
+											<!-- Failure a-1109-18244-error Missing or multiple externalObservation in reference -->
+											<reference></reference>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

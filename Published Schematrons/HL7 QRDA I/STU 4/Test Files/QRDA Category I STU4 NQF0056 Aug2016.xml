@@ -1,0 +1,1272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+
+<!--
+	Title: Quality Reporting Document Architecture Category I Sample
+-->
+<!-- 
+    This sample file is informative only.
+    This is a sample QRDA Category I report for quality measure NQF 0056: 
+	  Diabetes: Foot Exam
+	  Measure Scoring: Proportion
+    
+    Created by Michael Holck (ESAC Inc)
+    Created on August 10, 2016
+-->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:hl7-org:v3   ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+    xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+    <!-- QDM-Based QRDA (V4) Document template -->
+    <!-- Must have a templateId with root="2.16.840.1.113883.10.20.24.1.2" and extension="2016-08-01" -->
+    <templateId root="2.16.840.1.113883.10.20.24.1.2" extension="2016-08-01"/>
+    
+    <!-- QRDA Category I Framework V3 Document template -->
+    <!-- Must have a templateId with root="2.16.840.1.113883.10.20.24.1.1" and extension="2016-02-01" -->
+    <templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2016-02-01"/>
+    
+    <!-- US Realm Header (V3) Document template -->
+    <!-- Must have a realmCode and it must have @code="US" -->
+    <realmCode code="US"/>
+    
+    <!-- Must have a typeId and it must have @root="2.16.840.1.113883.1.3" and @extension="POCD_HD000040" -->
+    <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+    
+    <!-- Must have a templateId with root="2.16.840.1.113883.10.20.22.1.1" and extension="2015-08-01" -->
+    <templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2015-08-01"/>
+    
+    <!-- Must have an id which must be a guid for this document -->
+    <id root="12543678-ffff-2222-3333-4444aaaa5555"/> <!-- @root DYNAMIC -->
+    
+    <!-- Must have a code that specifies the type of document this is -->
+    <code code="55182-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+        displayName="Quality Measure Report"/> 
+    
+    <!-- Must have a title -->
+    <title>QRDA Incidence Report</title>    <!-- DYNAMIC -->
+    
+    <!-- Must have an effectiveTime that is the document creation time
+        Since it is a US Realm Date and Time it must be specific to day and it is
+        recommended that it be precise to minute. If it is more specific than day
+        it must include the time zone offset -->
+    <effectiveTime value="20160810074648-0600"/> <!-- @value DYNAMIC -->
+    
+    <!-- Must have a confidentialityCode that specifies the confidentiality of this report
+         Valid values are N, R, or V 
+         which stand for Normal, Restricted, and Very Restricted -->
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/> <!-- @code DYNAMIC -->
+
+    <!-- Must have a languageCode -->
+    <languageCode code="en"/>   <!-- @code DYNAMIC -->
+    
+    <!-- setId and versionNumber are optional but if you have one you must have both -->
+    <setId root="dc78ee5d-1487-4d79-84c3-1dfdaff0781c"/>    <!-- @root DYNAMIC -->
+    <versionNumber value="1"/>  <!-- @value DYNAMIC -->
+    
+    <!-- recordTarget
+         The recordTarget records the administrative and demographic data of the patient
+         whose health information is described by the clinical document -->
+    <recordTarget>
+        <!-- Must have a patientRole -->
+        <patientRole>
+            <!-- Can have multiple patient IDs but must have at least one
+                The root designates the type of identifier
+                The extension is the actual ID value
+                one id must be a HIC number with root="2.16.840.1.113883.4.572" -->
+            <id root="2.16.840.1.113883.4.572" extension="2222222222"/> <!-- @extension DYNAMIC -->
+            
+            <!-- Can have multiple patient addresses but must have at least one
+                Since this is required to be a US Realm Address the 
+                streetAddressLine and city are required everything else
+                is optional but recommended -->
+            <addr use="H">  <!-- @use DYNAMIC -->
+                <streetAddressLine>1234 Home Street</streetAddressLine> <!-- DYNAMIC -->
+                <city>Evergreen</city> <!-- DYNAMIC -->
+                <state>CO</state>   <!-- DYNAMIC -->
+                <postalCode>80439</postalCode>  <!-- DYNAMIC -->
+                <country>USA</country>  <!-- DYNAMIC -->
+            </addr>
+            
+            <!-- Can have multiple telecoms but must have at least one -->
+            <telecom use="HP" value="tel:(303)555-1212"/>   <!-- @use and @value DYNAMIC -->
+            
+            <!-- Must have one patient -->
+            <patient>
+                <!-- Can have multiple names but must have at least one -->
+                <name>
+                    <given>Skott</given>  <!-- DYNAMIC -->
+                    <family>Jones</family>  <!-- DYNAMIC -->
+                </name>
+                
+                <!-- Must have administrativeGenderCode to specify gender -->
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/> <!-- @code DYNAMIC -->
+                
+                <!-- Must have birthTime and it must be specific to year and should be
+                    specific to day and can be to minute -->
+                <birthTime value="19690201"/> <!-- @value DYNAMIC -->
+                
+                <!-- Marital status is optional but recommended -->
+                <maritalStatusCode code="M" displayName="Married" codeSystem="2.16.840.1.113883.5.2"
+                    codeSystemName="MaritalStatusCode"/> <!-- @code and @displayName DYNAMIC -->
+                
+                <!-- religiousAffiliation is optional -->
+                <religiousAffiliationCode code="1004" codeSystem="2.16.840.1.113883.5.1076"
+                    codeSystemName="HL7 Religious Affiliation "
+                    displayName="Agnosticism"/> <!-- @code and @displayName DYNAMIC -->
+                
+                <!-- raceCode is required -->
+                <raceCode code="2106-3" codeSystem="2.16.840.1.113883.6.238" displayName="White"/> <!-- @code and @displayName DYNAMIC -->
+                
+                <!-- ethnicGroupCode is required -->
+                <ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.113883.6.238"
+                    displayName="Not Hispanic or Latino"/> <!-- @code and @displayName DYNAMIC -->
+                
+                <!-- birthPlace is optional -->
+                <birthplace>
+                    <!-- birthplace must have one place -->
+                    <place>
+                        <!-- place must have one address -->
+                        <addr>
+                            <!-- Address should have country and if country is US it must have state -->
+                            <city>Denver</city> <!-- DYNAMIC -->
+                            <state>CO</state>   <!-- DYNAMIC -->
+                            <country>USA</country>  <!-- DYNAMIC -->
+                        </addr>
+                    </place>
+                </birthplace>
+                
+                <!-- languageCommunication is optional but recommended and can have multiple-->
+                <languageCommunication>
+                    <!-- Must have a languageCode -->
+                    <languageCode code="eng"/>  <!-- @code DYNAMIC -->
+                    <!-- "eng" is ISO 639-2 alpha-3 code for "English" -->
+                    <!-- moodCode is optional but recommended -->
+                    <modeCode code="ESP" displayName="Expressed spoken" codeSystem="2.16.840.1.113883.5.60"
+                        codeSystemName="LanguageAbilityMode"/>  <!-- @code and @displayName DYNAMIC -->
+                    <!-- proficiency level is optional but recommended -->
+                    <proficiencyLevelCode code="E" displayName="Excellent" codeSystem="2.16.840.1.113883.5.61"
+                        codeSystemName="LanguageAbilityProficiency"/> <!-- @code and @displayName DYNAMIC -->
+                    <!-- Patient's preferred language indicator is optional but recommended-->
+                    <preferenceInd value="true"/>
+                </languageCommunication>
+            </patient>
+            
+            <!-- providerOrganization is optional but recommended -->
+            <providerOrganization>
+                <!-- can have multiple ids but must have one
+                    It is recommended that one be the National Provider Identifier (NPI) -->
+                <id root='2.16.840.1.113883.4.6' extension='111111111'/>    <!-- @extension DYNAMIC -->
+                
+                <!-- Can have multiple but must have at least one name -->
+                <name>National Provider</name>  <!-- DYNAMIC -->
+                
+                <!-- Can have multiple telecoms but must have at least one and use is recommended -->
+                <telecom use="WP" value="tel:(303)555-1212"/>   <!-- @use and @value DYNAMIC -->
+                
+                <!-- Can have multiple addresses but must have at least one
+                        Since this is required to be a US Realm Address the 
+                        streetAddressLine and city are required everything else
+                        is optional but recommended -->
+                <addr>
+                    <streetAddressLine>2222 Healthcare Street</streetAddressLine> <!-- DYNAMIC -->
+                    <city>Lakewood</city> <!-- DYNAMIC -->
+                    <state>CO</state>   <!-- DYNAMIC -->
+                    <postalCode>80232</postalCode>  <!-- DYNAMIC -->
+                    <country>USA</country>  <!-- DYNAMIC -->
+                </addr>
+            </providerOrganization>
+        </patientRole>
+    </recordTarget>
+    
+    <!-- author 
+        The author element represents the creator of the clinical document
+        The author may be a device or a person
+        Can have multiple authors but must have at least one -->
+    <author>
+        <!-- This is the time when the author created the document
+            Since it is a US Realm Date and Time it must be specific to day
+            It can be more specific and include time zone offset -->
+        <time value="20160810124411-0600"/> <!-- @value DYNAMIC -->
+        
+        <!-- Must have an assignedAuthor -->
+        <assignedAuthor>
+            <!-- Can have multiple ids but must have at least one
+                If the author is a person this must be an NPI -->
+            <id root="2.16.840.1.113883.4.6" extension="123456789"/> <!-- @extension DYNAMIC -->
+            
+            <!-- code is optional but recommended when the author is a person
+                codeSystem recommended to be from the Healthcare Provider Taxonomy (HIPAA) -->
+            <code code="111NI0900X" codeSystem="2.16.840.1.113883.6.101"
+                displayName="Internist"/> <!-- @code and @displayName DYNAMIC -->
+            
+            <!-- Can have multiple addresses but must have at least one
+                Since this is required to be a US Realm Address the 
+                streetAddressLine and city are required everything else
+                is optional but recommended -->
+            <addr>
+                <streetAddressLine>2222 Healthcare Street</streetAddressLine> <!-- DYNAMIC -->
+                <city>Lakewood</city> <!-- DYNAMIC -->
+                <state>CO</state>   <!-- DYNAMIC -->
+                <postalCode>80232</postalCode>  <!-- DYNAMIC -->
+                <country>US</country>   <!-- DYNAMIC -->
+            </addr>
+            
+            <!-- Can have multiple telecoms but must have at least one and use is recommended -->
+            <telecom use="WP" value="tel:(303)555-1003"/>   <!-- @use and @value DYNAMIC -->
+            
+            <!-- must have either an assignedPerson or assignedAuthoringDevice
+                so if the author is a person you must have assignedPerson -->
+            <assignedPerson>
+                <!-- Can have multiple but must have at least one name -->
+                <name>
+                    <given>Ann</given>  <!-- DYNAMIC -->
+                    <family>Quality</family>    <!-- DYNAMIC -->
+                    <suffix>RN</suffix> <!-- DYNAMIC -->
+                </name>
+            </assignedPerson>
+        </assignedAuthor>
+    </author>
+    
+    <!-- dataEnterer
+        The dataEnterer element represents the person who transferred the content,
+        written or dictated, into the clinical document. To clarify, an author provides
+        the content found within the header or body of a document,
+        subject to their own interpretation; a dataEnterer adds an author's information
+        to the electronic system.
+        dataEnterer is completely optional -->
+    <dataEnterer>
+        <!-- Must have an assigned entity -->
+        <assignedEntity>
+            <!-- Can have multiple ids but must have at least one and it is recommended
+                that the one id be NPI -->
+            <id root="2.16.840.1.113883.4.6" extension="123456789"/> <!-- @extension DYNAMIC -->
+            
+            <!-- code is optional and codeSystem recommended to be from the
+                Healthcare Provider Taxonomy (HIPAA) -->
+            <code code="374700000X" codeSystem="2.16.840.1.113883.6.101"
+                displayName="Technician"/> <!-- @code and @displayName DYNAMIC -->
+            
+            <!-- Can have multiple addresses but must have at least one
+                Since this is required to be a US Realm Address the 
+                streetAddressLine and city are required everything else
+                is optional but recommended -->
+            <addr>
+                <streetAddressLine>2222 Healthcare Street</streetAddressLine> <!-- DYNAMIC -->
+                <city>Lakewood</city> <!-- DYNAMIC -->
+                <state>CO</state>   <!-- DYNAMIC -->
+                <postalCode>80232</postalCode>  <!-- DYNAMIC -->
+                <country>US</country>   <!-- DYNAMIC -->
+            </addr>
+            
+            <!-- Can have multiple telecoms but must have at least one and use is recommended -->
+            <telecom use="WP" value="tel:(303)555-1003"/> <!-- @use and @value DYNAMIC -->
+            
+            <!-- must have an assignedPerson -->
+            <assignedPerson>
+                <!-- Can have multiple but must have at least one name -->
+                <name>
+                    <given>Joe</given>  <!-- DYNAMIC -->
+                    <family>Data</family>    <!-- DYNAMIC -->
+                </name>
+            </assignedPerson>
+        </assignedEntity>
+    </dataEnterer>
+    
+    <!-- informant
+        The informant element describes an information source for any content within the clinical document.
+        There are two types of informant one is a health care provider and the other is either the patient
+        or a relative of the patient. informant is optional and can have multiple informants -->
+    <!-- This informant is constrained for use when the source of information is an assigned health care
+        provider for the patient. -->
+    <informant>
+        <assignedEntity>
+            <!-- Can have multiple ids but must have at least one and it is recommended
+                that the one id be NPI for a health care provider -->
+            <id root="2.16.840.1.113883.4.6" extension="12122345"/> <!-- @extension DYNAMIC -->
+            
+            <!-- code is optional and codeSystem recommended to be from the
+                Healthcare Provider Taxonomy (HIPAA) -->
+            <code code="363LP2300X" codeSystem="2.16.840.1.113883.6.101"
+                displayName="Primary Care"/> <!-- @code and @displayName DYNAMIC -->
+            
+            <!-- Can have multiple addresses but must have at least one
+                Since this is required to be a US Realm Address the 
+                streetAddressLine and city are required everything else
+                is optional but recommended -->
+            <addr>
+                <streetAddressLine>6349 Healthcare Dr.</streetAddressLine>    <!-- DYNAMIC -->
+                <city>Lakewood</city> <!-- DYNAMIC -->
+                <state>CO</state>   <!-- DYNAMIC -->
+                <postalCode>80232</postalCode>  <!-- DYNAMIC -->
+                <country>US</country>   <!-- DYNAMIC -->
+            </addr>
+            
+            <!-- must have an assignedPerson -->
+            <assignedPerson>
+                <!-- Can have multiple but must have at least one name -->
+                <name>
+                    <given>Joe</given>  <!-- DYNAMIC -->
+                    <family>Doctor</family>    <!-- DYNAMIC -->
+                    <suffix>MD</suffix>    <!-- DYNAMIC -->
+                </name>
+            </assignedPerson>
+        </assignedEntity>
+    </informant>
+    
+    <!-- custodian
+        The custodian element represents the organization that is in charge of maintaining and is
+        entrusted with the care of the document.
+        There is only one custodian per CDA document. Allowing that a CDA document may not represent
+        the original form of the authenticated document, the custodian represents the steward of the
+        original source document. The custodian may be the document originator, a health information
+        exchange, or other responsible party.
+        You must have a single custodian for the document -->
+    <custodian>
+        <!-- Must have an assignedCustodian -->
+        <assignedCustodian>
+            <!-- Must have a representedCustodianOrganization -->
+            <representedCustodianOrganization>
+                <!-- Can have multiple ids but must have at least one and it is recommended
+                that one id be NPI -->
+                <id root="2.16.840.1.113883.4.6" extension="123456789"/> <!-- @extension DYNAMIC -->
+                
+                <!-- QDM-Based QRDA V4 recommends that you have a CMS Certification Number id -->
+                <id root="2.16.840.1.113883.4.336" extension="44444444"/>   <!-- @extension DYNAMIC -->
+                
+                <!-- QDM-Based QRDA V4 recommends that you have a Tax ID Number -->
+                <id root="2.16.840.1.113883.4.2" extension="55555555"/>   <!-- @extension DYNAMIC -->
+                
+                <!-- QDM-Based QRDA V4 recommends that you have a Joint Commission’s Health Care Organization (HCO) Identification Number -->
+                <id root="1.3.6.1.4.1.33895" extension="66666666"/>   <!-- @extension DYNAMIC -->
+                
+                <!-- Must have a name -->
+                <name>Good Health Hospital</name>   <!-- DYNAMIC -->
+                
+                <!-- Must have a telecom and use is recommended -->
+                <telecom use="WP" value="tel:(303)555-1003"/> <!-- @use and @value DYNAMIC -->
+                
+                <!-- Must have an address
+                Since this is required to be a US Realm Address the 
+                streetAddressLine and city are required everything else
+                is optional but recommended -->
+                <addr>
+                    <streetAddressLine>2222 Healthcare Street</streetAddressLine> <!-- DYNAMIC -->
+                    <city>Lakewood</city> <!-- DYNAMIC -->
+                    <state>CO</state>   <!-- DYNAMIC -->
+                    <postalCode>80232</postalCode>  <!-- DYNAMIC -->
+                    <country>US</country>   <!-- DYNAMIC -->
+                </addr>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    
+    <!-- informationRecipient
+        The informationRecipient element records the intended recipient of the information
+        at the time the document was created. In cases where the intended recipient of the
+        document is the patient's health chart, set the receivedOrganization to the scoping
+        organization for that chart.
+        informationRecipient is optional and there can be multiple -->
+    <informationRecipient>
+        <!-- Must have an intendedRecipient -->
+        <intendedRecipient>
+            <!-- Must have one id but can have multiple -->
+            <id root="2.16.840.1.113883.4.6" extension="111111111"/> <!-- @root and @extension DYNAMIC -->
+            
+            <!-- informationRecipient is optional -->
+            <informationRecipient>                
+                <!-- Can have multiple but must have at least one name -->
+                <name>
+                    <given>Sara</given>     <!-- DYNAMIC -->
+                    <family>Specialize</family> <!-- DYNAMIC -->
+                    <suffix qualifier="AC">M.D.</suffix>    <!-- DYNAMIC -->
+                </name>
+            </informationRecipient>
+            
+            <!-- receivedOrganization is optional -->
+            <receivedOrganization>
+                <!-- Must have a name -->
+                <name>The DoctorsApart Physician Group</name>   <!-- DYNAMIC -->
+            </receivedOrganization>
+        </intendedRecipient>
+    </informationRecipient>
+    
+    <!-- legalAuthenticator
+        The legalAuthenticator identifies the single person legally responsible for the document
+        and must be present if the document has been legally authenticated. A clinical document that
+        does not contain this element has not been legally authenticated.
+        The act of legal authentication requires a certain privilege be granted to the legal
+        authenticator depending upon local policy. Based on local practice, clinical documents
+        may be released before legal authentication.  
+        All clinical documents have the potential for legal authentication, given the appropriate
+        credentials.
+        Local policies MAY choose to delegate the function of legal authentication to a device or
+        system that generates the clinical document. In these cases, the legal authenticator is a
+        person accepting responsibility for the document, not the generating device or system.
+
+        Must have a legalAuthenticator
+        Note that the legal authenticator should be a person but can just be the name of the
+        submitting organization -->
+    <legalAuthenticator>
+        <!-- Must have a time and it must be a US realm date and time which means it must be specific
+            to day and is recommended to be precise to minute and can be specific to second but if it
+            is more precise then day it is recommended to include timezone offset -->
+        <time value="20160810121523-0600"/> <!-- @value DYNAMIC -->
+        
+        <!-- Must have a signatureCode and it must have a @code="S" -->
+        <signatureCode code="S"/>
+        
+        <!-- sdtc:signatureText is optional but provides a means to include a textual or multimedia
+            depiction of the signature by which the participant endorses and accepts responsibility
+            for his or her participation in the Act -->
+        <sdtc:signatureText>
+            -----BEGIN PGP SIGNATURE----- 
+            Version: PGPfreeware 6.5.8
+            iQA/AwUBP7Z2M4NxG4rj7+GnEQKyPQCfaOxVJCSfv1Ej0W1Leo/FNC+zBSsAoNrC 
+            vkPIrX6tsLdCT/uHOXGN06pF 
+            =vqQX 
+            -----END PGP SIGNATURE-----
+        </sdtc:signatureText>
+        
+        <!-- Must have an assignedEntity -->
+        <assignedEntity>
+            <!-- Can have multiple ids but must have at least one and it is recommended
+                that the one id be NPI -->
+            <id root="2.16.840.1.113883.4.6" extension="123456789"/> <!-- @extension DYNAMIC -->
+
+            <!-- code is optional and codeSystem recommended to be from the
+                Healthcare Provider Taxonomy (HIPAA) -->
+            <code code="207QA0505X" displayName="Adult Medicine" codeSystem="2.16.840.1.113883.6.101"
+                codeSystemName="Healthcare Provider Taxonomy"/> <!-- @code and @displayName DYNAMIC -->
+            
+            <!-- Can have multiple addresses but must have at least one
+                Since this is required to be a US Realm Address the 
+                streetAddressLine and city are required everything else
+                is optional but recommended -->
+            <addr>
+                <streetAddressLine>2222 Healthcare Street</streetAddressLine> <!-- DYNAMIC -->
+                <city>Lakewood</city> <!-- DYNAMIC -->
+                <state>CO</state>   <!-- DYNAMIC -->
+                <postalCode>80232</postalCode>  <!-- DYNAMIC -->
+                <country>US</country>   <!-- DYNAMIC -->
+            </addr>
+            
+            <!-- Can have multiple telecoms but should have at least one and use is recommended -->
+            <telecom use="WP" value="tel:(303)555-1003"/> <!-- @use and @value DYNAMIC -->
+            
+            <!-- Must have an assignedPerson -->
+            <assignedPerson>
+                <!-- Can have multiple but must have at least one name -->
+                <name>
+                    <given>Virgil</given>     <!-- DYNAMIC -->
+                    <family>Verify</family> <!-- DYNAMIC -->
+                    <suffix>MD</suffix>    <!-- DYNAMIC -->
+                </name>
+            </assignedPerson>
+        </assignedEntity>
+    </legalAuthenticator>
+    
+    <!-- authenticator
+        The authenticator identifies a participant or participants who attest to the accuracy of the
+        information in the document.
+        authenticator is optional and there can be multiple -->
+    <authenticator>
+        <!-- Must have a time and it must be a US realm date and time which means it must be specific
+            to day and is recommended to be precise to minute and can be specific to second but if it
+            is more precise then day it is recommended to include timezone offset -->
+        <time value="20160810121523-0600"/> <!-- @value DYNAMIC -->
+        
+        <!-- Must have a signatureCode and it must have a @code="S" -->
+        <signatureCode code="S"/>
+        
+        <!-- sdtc:signatureText is optional but provides a means to include a textual or multimedia
+            depiction of the signature by which the participant endorses and accepts responsibility
+            for his or her participation in the Act -->
+        <sdtc:signatureText>
+            -----BEGIN PGP SIGNATURE----- 
+            Version: PGPfreeware 6.5.8
+            iQA/AwUBP7Z2M4NxG4rj7+GnEQKyPQCfaOxVJCSfv1Ej0W1Leo/FNC+zBSsAoNrC 
+            vkPIrX6tsLdCT/uHOXGN06pF 
+            =vqQX 
+            -----END PGP SIGNATURE-----
+        </sdtc:signatureText>
+        
+        <!-- Must have an assignedEntity -->
+        <assignedEntity>
+            <!-- Can have multiple ids but must have at least one and it is recommended
+                that the one id be NPI -->
+            <id root="2.16.840.1.113883.4.6" extension="123456789"/> <!-- @extension DYNAMIC -->
+            
+            <!-- code is optional and codeSystem recommended to be from the
+                Healthcare Provider Taxonomy (HIPAA) -->
+            <code code="207QA0505X" displayName="Adult Medicine" codeSystem="2.16.840.1.113883.6.101"
+                codeSystemName="Healthcare Provider Taxonomy"/> <!-- @code and @displayName DYNAMIC -->
+            
+            <!-- Can have multiple addresses but must have at least one
+                Since this is required to be a US Realm Address the 
+                streetAddressLine and city are required everything else
+                is optional but recommended -->
+            <addr>
+                <streetAddressLine>2222 Healthcare Street</streetAddressLine> <!-- DYNAMIC -->
+                <city>Lakewood</city> <!-- DYNAMIC -->
+                <state>CO</state>   <!-- DYNAMIC -->
+                <postalCode>80232</postalCode>  <!-- DYNAMIC -->
+                <country>US</country>   <!-- DYNAMIC -->
+            </addr>
+            
+            <!-- Can have multiple telecoms but should have at least one and use is recommended -->
+            <telecom use="WP" value="tel:(303)555-1003"/> <!-- @use and @value DYNAMIC -->
+            
+            <!-- Must have an assignedPerson -->
+            <assignedPerson>
+                <!-- Can have multiple but must have at least one name -->
+                <name>
+                    <given>Virgil</given>     <!-- DYNAMIC -->
+                    <family>Verify</family> <!-- DYNAMIC -->
+                    <suffix>MD</suffix>    <!-- DYNAMIC -->
+                </name>
+            </assignedPerson>
+        </assignedEntity>
+    </authenticator>
+    
+    <!-- participant
+        The participant element identifies supporting entities, including parents, relatives,
+        caregivers, insurance policyholders, guarantors, and others related in some way to the patient.
+        A supporting person or organization is an individual or an organization with a relationship to
+        the patient. A supporting person who is playing multiple roles would be recorded in multiple
+        participants (e.g., emergency contact and next-of-kin).
+        participant is optional and there can be multiple -->
+    <participant typeCode="IND">    <!-- typeCode "IND" represents an individual -->
+        <!-- time is optional -->
+        <time value="20160729"/> <!-- @value DYNAMIC -->
+        
+        <!-- Must have an associatedEntity -->
+        <associatedEntity classCode="NOK">  <!-- classCode "NOK" represents the patient's next of kin-->
+            <!-- Must have either an associatedPerson or scopingOrganization or both -->
+            <associatedPerson>
+                <name>
+                    <given>Diane</given>    <!-- DYNAMIC -->
+                    <family>Betterhalf</family> <!-- DYNAMIC -->
+                </name>
+            </associatedPerson>
+        </associatedEntity>
+    </participant>
+    
+    <!-- documentationOf is optional -->
+    <documentationOf typeCode="DOC">
+        <!-- Must have a serviceEvent. A serviceEvent represents the main act being documented,
+            such as a colonoscopy or a cardiac stress study. In a provision of healthcare serviceEvent,
+            the care providers, PCP, or other longitudinal providers, are recorded within the serviceEvent. -->
+        <serviceEvent classCode="PCPR"> <!-- classCode="PCPR" means care provision -->
+            <!-- Must have an effectiveTime -->
+            <effectiveTime>
+                <!-- Must have a low time -->
+                <low value="20160809"/> <!-- @value DYNAMIC -->
+            </effectiveTime>
+            <!-- Must have a performer and you can include multiple performers,
+                each with an NPI, TIN, CCN.
+                The performer participant represents clinicians who actually and principally carry
+                out the serviceEvent. In a transfer of care this represents the healthcare providers
+                involved in the current or pertinent historical care of the patient. Preferably, the
+                patient’s key healthcare care team members would be listed, particularly their primary
+                physician and any active consulting physicians, therapists, and counselors.
+                parformer must have a @typeCode="PRF" -->
+            <performer typeCode="PRF"> 
+                <!-- functionCode is optional but there may be one -->
+                <functionCode code="PCP"/> <!-- @code DYNAMIC -->
+                
+                <!-- time is optional -->
+                <time>
+                    <low value="20160809"/>     <!-- @value DYNAMIC -->
+                    <high value="20160809"/>    <!-- @value DYNAMIC -->
+                </time>
+                
+                <!-- Must have an assignedEntity -->
+                <assignedEntity>
+                    <!-- Can have multiple ids but must have at least one and it is recommended
+                        that the one id be NPI -->
+                    <id root="2.16.840.1.113883.4.6" extension="123456789"/> <!-- @extension DYNAMIC -->
+                    
+                    <!-- code is optional but recommended and codeSystem recommended to be from the
+                        Healthcare Provider Taxonomy (HIPAA) -->
+                    <code code="207QA0505X" displayName="Adult Medicine" codeSystem="2.16.840.1.113883.6.101"
+                        codeSystemName="Healthcare Provider Taxonomy"/> <!-- @code and @displayName DYNAMIC -->
+                    
+                    <!-- Must have a representedOrganization -->
+                    <representedOrganization>
+                        <!-- id is optional but it is recommended to have both TIN and CCN ids -->
+                        <!-- This is the organization TIN -->
+                        <id root="2.16.840.1.113883.4.2" extension="1234567"/>  <!-- @extension DYNAMIC -->
+                        <!-- This is the organization CCN -->
+                        <id root="2.16.840.1.113883.4.336" extension="54321"/>  <!-- @extension DYNAMIC -->
+                    </representedOrganization>
+                </assignedEntity>
+            </performer>
+        </serviceEvent>
+    </documentationOf>
+    
+    <!-- authorization
+        The authorization element represents information about the patient’s consent.
+        The type of consent is conveyed in consent/code. Consents in the header have been finalized
+        (consent/statusCode must equal Completed) and should be on file. This specification does not
+        address how 'Privacy Consent' is represented, but does not preclude the inclusion of
+        ‘Privacy Consent’.
+        The authorization consent is used for referring to consents that are documented elsewhere in
+        the EHR or medical record for a health condition and/or treatment that is described in the
+        CDA document.
+        authorization is optional -->
+    <authorization>
+        <!-- Must have a consent -->
+        <consent>
+            <!-- Can have multiple ids but they are optional -->
+            <id root="84613250-e75e-11e1-aff1-0800200c9a66"/>   <!-- @root DYNAMIC -->
+            
+            <!-- code is optional but should convey the type of consent -->
+            <code code="425691002" displayName="consent given for electronic record sharing"
+                codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"/>    <!-- @code and @displayName DYNAMIC -->
+            
+            <!-- Must have a statusCode with a @code="completed" -->"
+            <statusCode code="completed"/>    
+        </consent>
+    </authorization>
+    
+    <!-- ***********************
+        QRDA Category I Body
+    **************************** -->
+    
+    <!-- Must have a component -->
+    <component>
+        <!-- Must have a structuredBody -->
+        <structuredBody>
+            <!--
+                MEASURE SECTION
+            -->
+            
+            <!-- Must have a Measure Section and Measure Section QDM -->
+            <component>
+                <section>
+                    <!-- Must have a templateId with root="2.16.840.1.113883.10.20.24.2.2" to be a
+                        Measure Section -->
+                    <templateId root="2.16.840.1.113883.10.20.24.2.2"/>
+                    
+                    <!-- Must have a templateId with root="2.16.840.1.113883.10.20.24.2.3" to be a
+                        Measure Section QDM -->
+                    <templateId root="2.16.840.1.113883.10.20.24.2.3"/>
+                    
+                    <!-- Must have a code with @code="55186-1" and @codeSystem="2.16.840.1.113883.6.1" -->
+                    <code code="55186-1" codeSystem="2.16.840.1.113883.6.1"/>
+                    
+                    <!-- Must have a title that is "Measure Section" -->
+                    <title>Measure Section</title>
+                    
+                    <!-- Must have text
+                        text is designed to be the human readable version of what is in the section
+                        and you can use HTML syntax in the text element 
+                        The entire text entry is DYNAMIC -->
+                    <text>
+                        <table border="1" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>eMeasure Title</th>
+                                    <th>Version neutral identifier</th>
+                                    <th>NQF eMeasure Number</th>
+                                    <th>eMeasure Identifier (MAT)</th>
+                                    <th>Version specific identifier</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Diabetes: Foot Exam</td>
+                                    <td>c0d72444-7c26-4863-9b51-8080f8928a85</td>
+                                    <td>0056</td>
+                                    <td>123</td>
+                                    <td>40280381-51f0-825b-0152-229b7b2f16f9</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    
+                    <!-- Must have at least one entry but can have multiple
+                        The entries are the Measure Reference and eMeasure Reference QDM -->
+                    <entry>
+                        <!-- Must have an organizer with @classCode="CLUSTER" and @moodCode="EVN" -->
+                        <organizer classCode="CLUSTER" moodCode="EVN">
+                            <!-- Must have a templateId with root="2.16.840.1.113883.10.20.24.3.98"
+                                This is the templateId for Measure Reference -->
+                            <templateId root="2.16.840.1.113883.10.20.24.3.98"/>
+                            
+                            <!-- Must have a templateId with root="2.16.840.1.113883.10.20.24.3.97"
+                                This is the templateId for eMeasure Reference QDM -->
+                            <templateId root="2.16.840.1.113883.10.20.24.3.97"/>
+                            
+                            <!-- Must have at least one id but can have multiple -->
+                            <id root="128e654-7c26-4863-9b51-8080f8928a85"/>   <!-- @root DYNAMIC -->
+                            
+                            <!-- Must have statusCode with @code="completed" -->"
+                            <statusCode code="completed"/>
+                            
+                            <!-- Must have reference with @typeCode="REFR" -->
+                            <reference typeCode="REFR">
+                                <!-- Must have externalDocument with @classCode="DOC" -->
+                                <externalDocument classCode="DOC">
+                                    <!-- Must have at least one id that references the id of the measure
+                                        but can have multiple.
+                                        The eMeasure id with @root="2.16.840.1.113883.4.738" is required
+                                        This is the version specific identifier for the measure -->
+                                    <id root="2.16.840.1.113883.4.738" extension="40280381-51f0-825b-0152-229b7b2f16f9"/>  <!-- @extension DYNAMIC -->
+                                    <!-- This is the NQF Number, root is an NQF OID and for eMeasure Number and extension is the eMeasure's NQF number -->
+                                    <id root="2.16.840.1.113883.3.560.1" extension="0056"/> <!-- @extension DYNAMIC -->
+                                    <!-- eMeasure Measure Authoring Tool Identifier -->
+                                    <id root="2.16.840.1.113883.3.560.101.2" extension="123"/>   <!-- @extension DYNAMIC -->
+                                    
+                                    <!-- code is optional but it is recommended to have one with
+                                        @code="57024-2" and @codeSystem="2.16.840.1.113883.6.1" -->
+                                    <code code="57024-2" displayName="Health Quality Mesaure Document"
+                                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                                    
+                                    <!-- text is optional but recommended and should be the title of the
+                                        eMeasure. text is DYNAMIC -->
+                                    <text>
+                                        Diabetes: Foot Exam
+                                    </text>
+                                    
+                                    <!-- setId is optional but recommended and is the eMeasure version neutral id -->
+                                    <setId root="c0d72444-7c26-4863-9b51-8080f8928a85"/>
+                                </externalDocument>
+                            </reference>
+                            
+                            <!-- component is optional but the observation within it explains if the patient meets criteria or not -->
+                            <component>
+                                <!-- Must have an observation that asserts whether the patient did/didn't meet the criteria
+                                    Set negationInd="false" to assert true (that the criteria are met by the included data)
+                                    Set negationInd="true" to assert false (that the criteria are not met by the included data)-->
+                                <observation classCode="OBS" moodCode="EVN" negationInd="false"> <!-- @negationInd DYNAMIC -->
+                                    <!-- Must have a code with @code="ASSERTION" and @codeSystem="2.16.840.1.113883.5.4" -->
+                                    <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                    
+                                    <!-- Must have a value with @xsi:type="CD" -->
+                                    <value xsi:type="CD" code="IPOP" codeSystem="2.16.840.1.113883.5.4"
+                                        codeSystemName="ActCode" displayName="initial population"/>  <!-- @code and @displayName DYNAMIC -->
+                                    
+                                    <!-- Must have a reference with @typeCode="REFR" -->
+                                    <reference typeCode="REFR">
+                                        <!-- Must have an externalObservation with @classCode="OBS" and @moodCode="EVN" -->
+                                        <externalObservation classCode="OBS" moodCode="EVN">
+                                            <!-- Must have an id
+                                                This identifier SHALL be equal to a population criterion identifier in the referenced eMeasure.
+                                                (This is necessary because a referenced eMeasure can have multiple numerator populations) -->
+                                            <id root="9AB84D25-5883-4D85-A868-0D702403F250"/> <!-- @root DYNAMIC -->
+                                        </externalObservation>
+                                    </reference>
+                                </observation>
+                            </component>
+                        </organizer>
+                    </entry>
+                </section>
+            </component>
+            
+            <!--
+                REPORTING PARAMETERS SECTION
+            -->
+            
+            <!-- Must have a Reporting Parameters Section -->
+            <component>
+                <section>
+                    <!-- Must have a templateId with root="2.16.840.1.113883.10.20.17.2.1" -->
+                    <templateId root="2.16.840.1.113883.10.20.17.2.1"/>
+                    
+                    <!-- Must have a code with @code="55187-9" and @codeSystem="2.16.840.1.113883.6.1" -->
+                    <code code="55187-9" codeSystem="2.16.840.1.113883.6.1"/>
+                    
+                    <!-- Must have a title set to "Reporting Parameters" -->
+                    <title>Reporting Parameters</title>
+                    
+                    <!-- Must have text
+                        text is designed to be the human readable version of what is in the section
+                        and you can use HTML syntax in the text element 
+                        The entire text entry is DYNAMIC -->
+                    <text>
+                        <list>
+                            <item>Reporting period: 01 Jan 2016 - 31 Dec 2016</item>
+                        </list>
+                    </text>
+                    
+                    <!-- Must have an entry with a @typecode="DRIV" that contains a
+                        Reporting Parameters Act -->
+                    <entry typeCode="DRIV">
+                        <!-- Must have an act with @classCode="ACT" and @moodCode="EVN" -->
+                        <act classCode="ACT" moodCode="EVN">
+                            <!-- Must have a templateId with @root="2.16.840.1.113883.10.20.17.3.8"
+                                This is the templateId for Reporting Parameters Act -->
+                            <templateId root="2.16.840.1.113883.10.20.17.3.8"/>
+                            
+                            <!-- Must have at least one id but can have multiple -->
+                            <id root="f3f35288-643b-41d3-b4d9-f5e557c12278"/>   <!-- @root DYNAMIC -->
+                            
+                            <!-- Must have a code with @code="252116004" and @codeSystem="2.16.840.1.113883.6.96" -->
+                            <code code="252116004" codeSystem="2.16.840.1.113883.6.96"
+                                displayName="Observation Parameters"/>
+                            
+                            <!-- Must have an effectiveTime
+                                The reporting parameter time interval refers to the data being sent in the
+                                document and may differ from the quality measure's measurement period or valid
+                                dates for the data set -->
+                            <effectiveTime>
+                                <!-- Must have a low
+                                    This is the start of the data date range -->
+                                <low value="20160809"/> <!-- @value DYNAMIC -->
+                                
+                                <!-- Must have a high
+                                    This is the end of the data date range -->
+                                <high value="20160810"/>    <!-- @value DYNAMIC -->
+                            </effectiveTime>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+            
+            <!--
+                PATIENT DATA SECTION
+            -->
+            
+            <!-- Must have a Patient Data Section and Patient Data Section QDM V4 -->
+            <component>
+                <section>
+                    <!-- Must have a templateId with root="2.16.840.1.113883.10.20.17.2.4"
+                        This is the Patient Data Section templateId -->
+                    <templateId root="2.16.840.1.113883.10.20.17.2.4"/>
+                    
+                    <!-- Must have a templateId with root="2.16.840.1.113883.10.20.24.2.1" and @extension="2016-08-01"
+                        This is the Patient Data Section QDM V4 templateId -->
+                    <templateId root="2.16.840.1.113883.10.20.24.2.1" extension="2016-08-01"/>
+                    
+                    <!-- Must have a code with @code="55188-7" @codeSystem="2.16.840.1.113883.6.1" -->
+                    <code code="55188-7" codeSystem="2.16.840.1.113883.6.1"/>
+                    
+                    <!-- Must have a title set to "Patient Data" -->
+                    <title>Patient Data</title>
+                    
+                    <!-- Must have text
+                        text is designed to be the human readable version of what is in the section
+                        and you can use HTML syntax in the text element 
+                        The entire text entry is DYNAMIC -->
+                    <text>
+                        <table border="1" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Data Element</th>
+                                    <th>Value</th>
+                                    <th>Date/Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Encounter Performed</td>
+                                    <td>Office visit</td>
+                                    <td>08/09/2016 4:00 - 08/09/2016 5:30</td>
+                                </tr>
+                                <tr>
+                                    <td>Procedure Performed</td>
+                                    <td>Visual foot exam</td>
+                                    <td>08/09/2016 4:00 - 08/09/2016 4:15</td>
+                                </tr>
+                                <tr>
+                                    <td>Procedure Performed</td>
+                                    <td>Sensory foot exam</td>
+                                    <td>08/09/2016 4:15 - 08/09/2016 4:30</td>
+                                </tr>
+                                <tr>
+                                    <td>Procedure Performed</td>
+                                    <td>Pulse foot exam</td>
+                                    <td>08/09/2016 4:30 - 08/09/2016 4:45</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    
+                    <!-- Must have at least one entry with a @typecode="DRIV" and can
+                        have multiple entries. The entries here would be determined by the data
+                        needed to be submitted for the measure. -->
+                        
+                    <!-- For this measure we first need a diagnosis of diabetes.
+                        This is a Diagnosis Concern Act V2 entry for that -->
+                    <entry typeCode="DRIV">
+                        <!-- Must have an act with @classCode="ACT" and @moodCode="EVN"
+                            Diagnosis Concern Act V2: Diabetes diagnosis -->
+                        <act classCode="ACT" moodCode="EVN">
+                            <!-- Must have a templateId with root="2.16.840.1.113883.10.20.22.4.3" and extension="2015-08-01"
+                                This is the templateId for Problem Concern Act V3 which is the parent for
+                                Diagnosis Concern Act V2 -->
+                            <templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2015-08-01"/>
+                            
+                            <!-- Must have a templateId with root="2.16.840.1.113883.10.20.24.3.137" and extension ="2016-08-01"
+                                Diagnosis Concern Act V2 templateId -->
+                            <templateId root="2.16.840.1.113883.10.20.24.3.137" extension="2016-08-01"/>
+                            
+                            <!-- Must have at least one id but can have multiple -->
+                            <id root="65ffa345-ed4b-4f7e-82c3-e98e58b45de7"/>   <!-- @root DYNAMIC -->
+                            
+                            <!-- Must have a code with code="CONC" and codeSystem="2.16.840.1.113883.5.6" -->
+                            <code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern"/>
+                            
+                            <!-- Must have a statusCode with @code -->
+                            <statusCode code="active"/> <!-- @code DYNAMIC -->
+                            
+                            <!-- Must have an effectiveTime -->
+                            <effectiveTime>
+                                <!-- Must have a low value that indicates when the diagnosis was initially made -->
+                                <low value="19810109"/> <!-- @value DYNAMIC -->
+                            </effectiveTime>
+                            
+                            <!-- Must have an entryRelationship with @typeCode="SUBJ" -->
+                            <entryRelationship typeCode="SUBJ">
+                                <!-- As a Problem Concern Act it must have a Problem Observation V3 -->
+                                <!-- As a Diagnosis Concern Act it must contain a Diagnosis
+                                    which must have an observation with @classCode="OBS" and @moodCode="EVN" -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Must have the problem observation V3 templateId with
+                                        root="2.16.840.1.113883.10.20.22.4.4" and extension="2015-08-01" -->
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01"/>
+                                    
+                                    <!-- Must have the diagnosis templateId with root="2.16.840.1.113883.10.20.24.3.135" -->
+                                    <templateId root="2.16.840.1.113883.10.20.24.3.135"/>
+                                    
+                                    <!-- Must have at least one id but can have multiple -->
+                                    <id root="12b34a51-ed4b-4f7e-82c3-e98e58b45de7"/>   <!-- @root DYNAMIC -->
+                                    
+                                    <!-- Must have a code with @code="29308-4" and @codeSystem="2.16.840.1.113883.6.1" -->
+                                    <code code="29308-4" codeSystem="2.16.840.1.113883.6.1">
+                                        <translation code="64572001" displayName="Disease (disorder)"
+                                            codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+                                            sdtc:valueSet="2.16.840.1.113883.3.88.12.3221.7.2"/>
+                                    </code>
+                                    
+                                    <!-- Must have a statusCode with code="completed" -->
+                                    <statusCode code="completed"/>
+                                    
+                                    <!-- Must have an effectiveTime -->
+                                    <effectiveTime>
+                                        <!-- Must have a low value that asserts when the condition became biologically active -->
+                                        <low value="19700402"/>
+                                    </effectiveTime>
+                                    
+                                    <!-- Must have a value with @xsi:type="CD" and @sdtc:valueSet -->
+                                    <value xsi:type="CD" code="199229001" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED-CT" displayName="Pre-existing type 1 diabetes mellitus (disorder)"
+                                        sdtc:valueSet="2.16.840.1.113883.3.464.1003.103.12.1001"/>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    
+                    <!-- Then we need an encounter performed as a part of a visit to a doctor
+                        This is an Encounter Performed Act -->
+                    <entry typeCode="DRIV">
+                        <!-- Must have an act with @classCode="ACT" and @moodCode="EVN"
+                            Encounter performed: Office Visit -->
+                        <act classCode="ACT" moodCode="EVN">
+                            <!-- Must have a templateId with @root="2.16.840.1.113883.10.20.24.3.133"
+                                Encounter performed Act templateId-->
+                            <templateId root="2.16.840.1.113883.10.20.24.3.133"/>
+                            
+                            <!-- Must have at least one id but can have multiple -->
+                            <id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>   <!-- @root DYNAMIC -->
+                            
+                            <!-- Must have an entryRelationship with @typeCode="SUBJ"
+                                that contains an Encounter Performed V3 encounter -->
+                            <entryRelationship typeCode="SUBJ">
+                                <!-- Must have an encounter with @classCode="ENC" and @moodCode="EVN" -->
+                                <encounter classCode="ENC" moodCode="EVN">
+                                    <!-- Must have a templateId with root="2.16.840.1.113883.10.20.22.4.49" and extension="2015-08-01"
+                                        since Encounter Activity V3 is the parent of Encounter Performed V3 -->
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.49" extension="2015-08-01"/>
+                                    
+                                    <!-- Must have a templateId with @root="2.16.840.1.113883.10.20.24.3.23" and @extension="2016-02-01"
+                                        Encounter Performed (V3) templateId-->
+                                    <templateId root="2.16.840.1.113883.10.20.24.3.23" extension="2016-02-01"/>
+                                    
+                                    <!-- Must have at least one id but can have multiple -->
+                                    <id root="abb234f1-ed4b-4f7e-82c3-e98e58b45de7"/>   <!-- @root DYNAMIC -->
+                                    
+                                    <!-- Must have a code with @sdtc:valueSet -->
+                                    <code code="G0439" displayName="Annual wellness visit"
+                                        codeSystem="2.16.840.1.113883.6.285" codeSystemName="HCPCS"
+                                        sdtc:valueSet="2.16.840.1.113883.3.526.3.1240"/> <!-- All attributes DYNAMIC -->
+                                    
+                                    <!-- text is optional and all text is DYNAMIC -->
+                                    <text>Encounter, Performed: Annual wellness visit</text>
+                                    
+                                    <!-- Must have a statusCode with @code="completed" -->"
+                                    <statusCode code="completed"/>
+                                    
+                                    <!-- Must have an effectiveTime -->
+                                    <effectiveTime>
+                                        <!-- Must have a low that is the admission datetime -->
+                                        <low value="20160809160000-0600"/>  <!-- @value DYNAMIC -->
+                                        <!-- Must have a high that is the discharge datetime -->
+                                        <high value="20160809173000-0600"/> <!-- @value DYNAMIC -->
+                                    </effectiveTime>
+                                    
+                                    <!-- participant is optional but recommended and must have @typeCode="LOC"
+                                        and contain a Service Delivery Location so @classCode="SDLOC" -->
+                                    <participant typeCode="LOC" classCode="SDLOC">
+                                        <!-- Must have a templateId with root="2.16.840.1.113883.10.20.22.4.32" -->
+                                        <templateId root="2.16.840.1.113883.10.20.22.4.32"/>    <!-- @root DYNAMIC -->
+                                        
+                                        <!-- Must have a code that represents the type of facility this procedure
+                                            took place in -->
+                                        <code code="1116-3" codeSystem="2.16.840.1.113883.6.259"
+                                            displayName="Endocrinology clinic"/>    <!-- @code and @displayName DYNAMIC -->
+                                        
+                                        <!-- addr is optional but recommended and can have multiple -->
+                                        <addr>
+                                            <streetAddressLine>2222 Healthcare Street</streetAddressLine> <!-- DYNAMIC -->
+                                            <city>Lakewood</city> <!-- DYNAMIC -->
+                                            <state>CO</state>   <!-- DYNAMIC -->
+                                            <postalCode>80232</postalCode>  <!-- DYNAMIC -->
+                                            <country>US</country>   <!-- DYNAMIC -->
+                                        </addr>
+                                        
+                                        <!-- telecom is optional but recommended and can have multiple -->
+                                        <telecom use="WP" value="tel:(303)555-1003"/> <!-- @use and @value DYNAMIC -->
+                                    </participant>
+                                </encounter>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    
+                    <!-- Then we need the actual procedures that were performed that fit the measure
+                        This is a Procedure Performed V3 foot exam-->
+                    <entry>
+                        <!-- Must have a procedure with @classCode="PROC" and @moodCode="EVN" -->
+                        <procedure classCode="PROC" moodCode="EVN">
+                            <!-- Must have a templateId with root="2.16.840.1.113883.10.20.22.4.14" and extension="2014-06-09"
+                                since Procedure Activity Procedure V2 is the parent of Procedure Performed V3 -->
+                            <templateId root="2.16.840.1.113883.10.20.22.4.14" extension="2014-06-09"/>
+                            
+                            <!-- Must contain the Procedure Performed V3 templateId -->
+                            <templateId root="2.16.840.1.113883.10.20.24.3.64" extension="2016-02-01"/>
+                            
+                            <!-- Must have at least one id but can have multiple -->
+                            <id root="754cd128-ed4b-4f7e-82c3-e98e58b45de7"/>   <!-- @root DYNAMIC -->
+                            
+                            <!-- Must have a code with @sdtc:valueSet -->
+                            <code code="401191002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                displayName="Diabetic foot examination"
+                                sdtc:valueSet="2.16.840.1.113883.3.464.1003.103.12.1013"/> <!-- All attributes DYNAMIC -->
+                            
+                            <!-- Must have a statusCode with @code="completed" -->
+                            <statusCode code="completed"/>
+                            
+                            <!-- Must have an effectiveTime -->
+                            <effectiveTime>
+                                <!-- Must have a low that is the start time of the procedure -->
+                                <low value="20160809160000-0600"/>  <!-- @value DYNAMIC -->
+                                
+                                <!-- Must have a high that is the stop time of the procedure -->
+                                <high value="20160809161500-0600"/> <!-- @value DYNAMIC -->
+                            </effectiveTime>
+                            
+                            <!-- targetSiteCode is optional but recommended -->
+                            <targetSiteCode code="302545001" codeSystem="2.16.840.1.113883.6.96"
+                                codeSystemName="SNOMED-CT" displayName="Entire foot"
+                                sdtc:valueSet="2.16.840.1.113883.3.88.12.3221.8.9"/> <!-- All attributes DYNAMIC -->
+                            
+                            <!-- performer is optional but recommended and can have multiple -->
+                            <performer>
+                                <!-- Must have an assignedEntity -->
+                                <assignedEntity>
+                                    <!-- Must have at least one id but can have multiple -->
+                                    <id root="236abe23-ed4b-4f7e-82c3-e98e58b45de7"/>   <!-- @root DYNAMIC -->
+                                    
+                                    <!-- Must have at least one addr but can have multiple -->
+                                    <addr>
+                                        <streetAddressLine>2222 Healthcare Street</streetAddressLine> <!-- DYNAMIC -->
+                                        <city>Lakewood</city> <!-- DYNAMIC -->
+                                        <state>CO</state>   <!-- DYNAMIC -->
+                                        <postalCode>80232</postalCode>  <!-- DYNAMIC -->
+                                        <country>US</country>   <!-- DYNAMIC -->
+                                    </addr>
+                                    
+                                    <!-- Must have at least one telecom but can have multiple -->
+                                    <telecom use="WP" value="tel:(303)555-1003"/> <!-- @use and @value DYNAMIC -->
+                                    
+                                    <!-- representedOrganization is optional but recommended -->
+                                    <representedOrganization>
+                                        <!-- id is optional but recommended and can have multiple -->
+                                        <id root="aa436748-ed4b-4f7e-82c3-e98e58b45de7"/>   <!-- @root DYNAMIC -->
+                                        
+                                        <!-- Must have at least one addr but can have multiple -->
+                                        <addr>
+                                            <streetAddressLine>2222 Healthcare Street</streetAddressLine> <!-- DYNAMIC -->
+                                            <city>Lakewood</city> <!-- DYNAMIC -->
+                                            <state>CO</state>   <!-- DYNAMIC -->
+                                            <postalCode>80232</postalCode>  <!-- DYNAMIC -->
+                                            <country>US</country>   <!-- DYNAMIC -->
+                                        </addr>
+                                        
+                                        <!-- Must have at least one telecom but can have multiple -->
+                                        <telecom use="WP" value="tel:(303)555-1003"/> <!-- @use and @value DYNAMIC -->
+                                    </representedOrganization>
+                                </assignedEntity>
+                            </performer>
+                        </procedure>
+                    </entry>
+                    
+                    <!-- Sensory foot exam -->
+                    <entry>
+                        <!-- Must have a procedure with @classCode="PROC" and @moodCode="EVN" -->
+                        <procedure classCode="PROC" moodCode="EVN">
+                            <!-- Must have a templateId with root="2.16.840.1.113883.10.20.22.4.14" and extension="2014-06-09"
+                                since Procedure Activity Procedure V2 is the parent of Procedure Performed V3 -->
+                            <templateId root="2.16.840.1.113883.10.20.22.4.14" extension="2014-06-09"/>
+                            
+                            <!-- Must contain the Procedure Performed V3 templateId -->
+                            <templateId root="2.16.840.1.113883.10.20.24.3.64" extension="2016-02-01"/>
+                            
+                            <!-- Must have at least one id but can have multiple -->
+                            <id root="754cd128-ed4b-4f7e-82c3-e98e58b45de7"/>   <!-- @root DYNAMIC -->
+                            
+                            <!-- Must have a code with @sdtc:valueSet -->
+                            <code code="134388005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                displayName="Monofilament foot sensation test"
+                                sdtc:valueSet="2.16.840.1.113883.3.464.1003.103.12.1014"/> <!-- All attributes DYNAMIC -->
+                            
+                            <!-- Must have a statusCode with @code="completed" -->
+                            <statusCode code="completed"/>
+                            
+                            <!-- Must have an effectiveTime -->
+                            <effectiveTime>
+                                <!-- Must have a low that is the start time of the procedure -->
+                                <low value="20160809161500-0600"/>  <!-- @value DYNAMIC -->
+                                
+                                <!-- Must have a high that is the stop time of the procedure -->
+                                <high value="20160809163000-0600"/> <!-- @value DYNAMIC -->
+                            </effectiveTime>
+                            
+                            <!-- targetSiteCode is optional but recommended -->
+                            <targetSiteCode code="302545001" codeSystem="2.16.840.1.113883.6.96"
+                                codeSystemName="SNOMED-CT" displayName="Entire foot"
+                                sdtc:valueSet="2.16.840.1.113883.3.88.12.3221.8.9"/>    <!-- All attributes DYNAMIC -->
+                            
+                            <!-- performer is optional but recommended and can have multiple -->
+                            <performer>
+                                <!-- Must have an assignedEntity -->
+                                <assignedEntity>
+                                    <!-- Must have at least one id but can have multiple -->
+                                    <id root="236abe23-ed4b-4f7e-82c3-e98e58b45de7"/>   <!-- @root DYNAMIC -->
+                                    
+                                    <!-- Must have at least one addr but can have multiple -->
+                                    <addr>
+                                        <streetAddressLine>2222 Healthcare Street</streetAddressLine> <!-- DYNAMIC -->
+                                        <city>Lakewood</city> <!-- DYNAMIC -->
+                                        <state>CO</state>   <!-- DYNAMIC -->
+                                        <postalCode>80232</postalCode>  <!-- DYNAMIC -->
+                                        <country>US</country>   <!-- DYNAMIC -->
+                                    </addr>
+                                    
+                                    <!-- Must have at least one telecom but can have multiple -->
+                                    <telecom use="WP" value="tel:(303)555-1003"/> <!-- @use and @value DYNAMIC -->
+                                    
+                                    <!-- representedOrganization is optional but recommended -->
+                                    <representedOrganization>
+                                        <!-- id is optional but recommended and can have multiple -->
+                                        <id root="aa436748-ed4b-4f7e-82c3-e98e58b45de7"/>   <!-- @root DYNAMIC -->
+                                        
+                                        <!-- Must have at least one addr but can have multiple -->
+                                        <addr>
+                                            <streetAddressLine>2222 Healthcare Street</streetAddressLine> <!-- DYNAMIC -->
+                                            <city>Lakewood</city> <!-- DYNAMIC -->
+                                            <state>CO</state>   <!-- DYNAMIC -->
+                                            <postalCode>80232</postalCode>  <!-- DYNAMIC -->
+                                            <country>US</country>   <!-- DYNAMIC -->
+                                        </addr>
+                                        
+                                        <!-- Must have at least one telecom but can have multiple -->
+                                        <telecom use="WP" value="tel:(303)555-1003"/> <!-- @use and @value DYNAMIC -->
+                                    </representedOrganization>
+                                </assignedEntity>
+                            </performer>
+                        </procedure>
+                    </entry>
+                    
+                    <!-- Pulse foot exam -->
+                    <entry>
+                        <!-- Must have a procedure with @classCode="PROC" and @moodCode="EVN" -->
+                        <procedure classCode="PROC" moodCode="EVN">
+                            <!-- Must have a templateId with root="2.16.840.1.113883.10.20.22.4.14" and extension="2014-06-09"
+                                since Procedure Activity Procedure V2 is the parent of Procedure Performed V3 -->
+                            <templateId root="2.16.840.1.113883.10.20.22.4.14" extension="2014-06-09"/>
+                            
+                            <!-- Must contain the Procedure Performed V3 templateId -->
+                            <templateId root="2.16.840.1.113883.10.20.24.3.64" extension="2016-02-01"/>
+                            
+                            <!-- Must have at least one id but can have multiple -->
+                            <id root="94659fe1-ed4b-4f7e-82c3-e98e58b45de7"/>   <!-- @root DYNAMIC -->
+                            
+                            <!-- Must have a code with @sdtc:valueSet -->
+                            <code code="91161007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                displayName="Pedal pulse taking"
+                                sdtc:valueSet="2.16.840.1.113883.3.464.1003.103.12.1015"/> <!-- All attributes DYNAMIC -->
+                            
+                            <!-- Must have a statusCode with @code="completed" -->
+                            <statusCode code="completed"/>
+                            
+                            <!-- Must have an effectiveTime -->
+                            <effectiveTime>
+                                <!-- Must have a low that is the start time of the procedure -->
+                                <low value="20160809163000-0600"/>  <!-- @value DYNAMIC -->
+                                
+                                <!-- Must have a high that is the stop time of the procedure -->
+                                <high value="20160809164500-0600"/> <!-- @value DYNAMIC -->
+                            </effectiveTime>
+                            
+                            <!-- targetSiteCode is optional but recommended -->
+                            <targetSiteCode code="302545001" codeSystem="2.16.840.1.113883.6.96"
+                                codeSystemName="SNOMED-CT" displayName="Entire foot"
+                                sdtc:valueSet="2.16.840.1.113883.3.88.12.3221.8.9"/>    <!-- All attributes DYNAMIC -->
+                            
+                            <!-- performer is optional but recommended and can have multiple -->
+                            <performer>
+                                <!-- Must have an assignedEntity -->
+                                <assignedEntity>
+                                    <!-- Must have at least one id but can have multiple -->
+                                    <id root="236abe23-ed4b-4f7e-82c3-e98e58b45de7"/>   <!-- @root DYNAMIC -->
+                                    
+                                    <!-- Must have at least one addr but can have multiple -->
+                                    <addr>
+                                        <streetAddressLine>2222 Healthcare Street</streetAddressLine> <!-- DYNAMIC -->
+                                        <city>Lakewood</city> <!-- DYNAMIC -->
+                                        <state>CO</state>   <!-- DYNAMIC -->
+                                        <postalCode>80232</postalCode>  <!-- DYNAMIC -->
+                                        <country>US</country>   <!-- DYNAMIC -->
+                                    </addr>
+                                    
+                                    <!-- Must have at least one telecom but can have multiple -->
+                                    <telecom use="WP" value="tel:(303)555-1003"/> <!-- @use and @value DYNAMIC -->
+                                    
+                                    <!-- representedOrganization is optional but recommended -->
+                                    <representedOrganization>
+                                        <!-- id is optional but recommended and can have multiple -->
+                                        <id root="aa436748-ed4b-4f7e-82c3-e98e58b45de7"/>   <!-- @root DYNAMIC -->
+                                        
+                                        <!-- Must have at least one addr but can have multiple -->
+                                        <addr>
+                                            <streetAddressLine>2222 Healthcare Street</streetAddressLine> <!-- DYNAMIC -->
+                                            <city>Lakewood</city> <!-- DYNAMIC -->
+                                            <state>CO</state>   <!-- DYNAMIC -->
+                                            <postalCode>80232</postalCode>  <!-- DYNAMIC -->
+                                            <country>US</country>   <!-- DYNAMIC -->
+                                        </addr>
+                                        
+                                        <!-- Must have at least one telecom but can have multiple -->
+                                        <telecom use="WP" value="tel:(303)555-1003"/> <!-- @use and @value DYNAMIC -->
+                                    </representedOrganization>
+                                </assignedEntity>
+                            </performer>
+                        </procedure>
+                    </entry>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>

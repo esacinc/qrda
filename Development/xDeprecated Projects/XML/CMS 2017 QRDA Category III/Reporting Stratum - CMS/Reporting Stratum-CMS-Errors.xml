@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
+<!-- 		
+    Title:  Reporting Stratum - CMS
+    Author: Maya Zuhl
+    Date:   11-04-2016
+    
+    Total Errors Expected: 14
+		Failure a-1109-17575-error Wrong classCode
+		Failure a-1109-17576-error Wrong moodCode
+		Failure a-1109-711274-error Multiple templateId
+		Failure a-1109-18093-error No templateId
+		Failure a-1109-17577-error Multiple code
+		Failure a-1109-17578-error Wrong code
+		Failure a-1109-21169-error Wrong codeSystem
+		Failure a-1109-17579-error Multiple statusCode
+		Failure a-1109-18201-error Wrong code
+		Failure a-1109-17581-error Multiple entryRelationship
+		Failure a-1109-18204-error Multiple reference
+		Failure a-1109-18205-error Wrong typeCode
+		Failure a-1109-18206-error Multiple externalObservation
+		Failure a-1109-18207-error Multiple id
+    Total Warnings Expected: 1
+		Failure a-1109-17580-warning Multiple value
+-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../HL7/Standards%20Documentation/00_QRDA/CDAR2IG_QRDAIII_DSTUR2_Errata_2014JUL/Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc">
+		<structuredBody>
+			<component>
+				<section>
+					<entry>
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<component>
+									<!-- MAY 0..* Reporting Stratum template-->
+									<!-- The strata are defined once in the HQMF, with one ID. Copy the 
+									reference in each population, for IPP, etc. -->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBSERR" moodCode="EVNERR"> <!-- Failure a-1109-17575-error Wrong classCode, Failure a-1109-17576-error Wrong moodCode -->
+											<!-- Reporting Startum - CMS template -->
+											<templateId root="2.16.840.1.113883.10.20.27.3.20"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.20"/><!-- Failure a-1109-711274-error Multiple templateId -->
+											<!-- Reporting Stratum template (QRDA III) -->
+											<!--<templateId root="2.16.840.1.113883.10.20.27.3.4"/> --> <!-- Failure a-1109-18093-error No templateId -->
+											<code code="ASSERTION"
+												codeSystem="2.16.840.1.113883.5.4"
+												displayName="Assertion" codeSystemName="ActCode"/>
+											<code code="ERROR"
+												codeSystem="2.16.840.1.113883.0.0.0.0"
+												displayName="Assertion" codeSystemName="ActCode"/> <!--Failure a-1109-17577-error Multiple code, Failure a-1109-17578-error Wrong code, Failure a-1109-21169-error Wrong codeSystem -->
+											<statusCode code="completed"/>
+											<statusCode code="completedError"/><!-- Failure a-1109-17579-error Multiple statusCode, Failure a-1109-18201-error Wrong code -->
+											<value xsi:type="CD" nullFlavor="OTH">
+												<originalText>Stratum</originalText>
+											</value>
+											<value xsi:type="CD" nullFlavor="OTH"> <!-- Failure a-1109-17580-warning Multiple value -->
+												<originalText>Stratum</originalText>
+											</value>
+											<entryRelationship typeCode="SUBJ" inversionInd="true">
+												<observation classCode="OBS" moodCode="EVN">
+													<!-- SHALL 1..1 Aggregate Count - CMS template -->
+													<templateId root="2.16.840.1.113883.10.20.27.3.24"/>
+													<code code="MSRAGG" displayName="rate aggregation"
+															codeSystem="2.16.840.1.113883.5.4"
+															codeSystemName="ActCode"/>
+													<!--  SHALL value xsi:type="INT"-->
+													<value xsi:type="INT" value="150"/>
+													<methodCode code="COUNT" displayName="Count"
+																codeSystem="2.16.840.1.113883.5.84"
+																codeSystemName="ObservationMethod"/>
+												</observation>
+											</entryRelationship> 
+											<entryRelationship typeCode="SUBJ" inversionInd="true"> <!-- Failure a-1109-17581-error Multiple entryRelationship -->
+												<observation classCode="OBS" moodCode="EVN">
+													<!-- SHALL 1..1 Aggregate Count - CMS template -->
+													<templateId root="2.16.840.1.113883.10.20.27.3.24"/>
+													<code code="MSRAGG" displayName="rate aggregation"
+															codeSystem="2.16.840.1.113883.5.4"
+															codeSystemName="ActCode"/>
+													<!--  SHALL value xsi:type="INT"-->
+													<value xsi:type="INT" value="150"/>
+													<methodCode code="COUNT" displayName="Count"
+																codeSystem="2.16.840.1.113883.5.84"
+																codeSystemName="ObservationMethod"/>
+												</observation>
+											</entryRelationship>
+											<reference typeCode="REFR">
+												<!-- reference to the relevant strata in the eMeasure -->
+												<externalObservation classCode="OBS" moodCode="EVN">
+												<!-- Reference to the first defined Stratum -->
+												<id root="B767CA2B-EE59-4354-AE60-3F701A12700A"/>
+												</externalObservation>
+											</reference>
+											<reference typeCode="REFRERROR"> <!-- Failure a-1109-18204-error Multiple reference, Failure a-1109-18205-error Wrong typeCode -->
+												<!-- reference to the relevant strata in the eMeasure -->
+												<externalObservation classCode="OBS" moodCode="EVN">
+													<!-- Reference to the first defined Stratum -->
+													<id root="B767CA2B-EE59-4354-AE60-3F701A12700A"/>
+												</externalObservation>
+												<externalObservation classCode="OBS" moodCode="EVN"> <!-- Failure a-1109-18206-error Multiple externalObservation -->
+													<!-- Reference to the first defined Stratum -->
+													<id root="B767CA2B-EE59-4354-AE60-3F701A12700A"/>
+													<id root="B767CA2B-EE59-4354-AE60-3F701A12700A"/> <!-- Failure a-1109-18207-error Multiple id -->
+												</externalObservation>
+											</reference>
+										</observation>
+									</entryRelationship>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+</ClinicalDocument>

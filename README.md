@@ -1,7 +1,13 @@
 <h1>QRDA</h1>
 The QRDA repository is for storing the schematron files, test data, and any testing tools for validating the changes
-made to the schematron files as a part of the eCQM project. The schematron files here are considered work in progress
-and are not necessarily ready for release. Released HL7 schematrons will be published to the HL7 GForge SVN.
+made to the schematron files as a part of the eCQM project. 
+
+This repository contains two main areas:  <b>Development</b> and <b>Published Schematrons</b>.   
+
+Everything under the <b>Development</b> section of the repository is considered work in progress. These files and projects
+are not necessarily ready for release. 
+
+The <b>Published Schematrons</b> section of the repository contains the HL7 and CMS QRDA I and QRDA III schematron files (and related supporting files) that have been officially released to the HL7 GForge SVN.
 
 Links:
 <ul>

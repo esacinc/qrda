@@ -1,3 +1,9 @@
+<h2>ESAC Schematron Validator</h2>
+
+The ESAC-Schematron-Validator is a web application that allows users to upload schematron files and corresponding test data files into the application, and then validate those data files agains the schematron. Validation results are displayed in an easy to understand UI. 
+
+<h3>How to set up the ESAC-Schematron-Validator</h3>
+
 ESAC-Schematron-Validator has been developed for and tested with Apache Tomcat v 8.0.30
 on MS Windows 10 and Ubuntu 14.04.4 (Linux 4.2.0-27)
 

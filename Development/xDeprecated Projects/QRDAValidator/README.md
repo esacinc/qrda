@@ -1,4 +1,4 @@
-Please note: The QRDA-Validator project has been deprecated in favor of the Schematron Validator project. Please use that project. This project is no longer used or maintained by ESAC
+<b>Please note:</b> The QRDA-Validator project has been deprecated in favor of the Schematron Validator project. Please use that project. This project is no longer used or maintained by ESAC
 
 QRDA-Validator has been developed for and tested with Apache Tomcat v 8.0.30
 on MS Windows 10 and Ubuntu 14.04.4 (Linux 4.2.0-27)

@@ -6,12 +6,16 @@
     Date: 03-07-2017
     Update: 06-05-2018  New conformance test for a-1098-7514-warning per TJC
                         JIRA: https://tracker.esacinc.com/browse/QRDA-429 
+    Update: 04-25-2019  Added Failure a-1098-32950-warning
+                        JIRA: https://tracker.esacinc.com/browse/QRDA-435
 
     Total Errors Expected: 1
             Failure a-1098-7516-error SHALL contain exactly one [1..1] doseQuantity (CONF:1098-7516).
-	Total Warnings Expected: 2
+	Total Warnings Expected: 3
 			Failure a-1098-30800-warning SHOULD include doseQuantity OR rateQuantity (CONF:1098-30800). 
 			Failure a-1098-7514-warning SHOULD contain zero or one [0..1] routeCode, but only if parent act has no negationInd or negationInd="false" (CONF:1098-7514).
+			Failure a-1098-32950-warning The routeCode, if present, SHOULD contain zero or more [0..*] translation, which SHALL be selected from ValueSet Medication Route urn:oid:2.16.840.1.113762.1.4.1099.12 DYNAMIC (CONF:1098-32950). 
+
 
 -->
 
@@ -46,6 +50,7 @@
 						</assignedAuthor>
 					</author>
 					<!-- QDM Attribute: Route -->
+					<!-- Failure a-1098-32950-warning routeCode missing translation -->
 					<routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" displayName="ORAL" sdtc:valueSet="1.2.9999"/>
 					<!-- QDM Attribute: Dose -->
 					<!-- Failure a-1098-30800-warning SHOULD include doseQuantity OR rateQuantity (CONF:1098-30800). -->

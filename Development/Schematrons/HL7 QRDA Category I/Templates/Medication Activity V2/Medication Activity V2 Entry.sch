@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- Warning rule forn CONF: 1098-32950 added 04/25/2019  https://tracker.esacinc.com/browse/QRDA-435 -->
+
 <sch:schema xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
 	<sch:ns prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance" />
 	<sch:ns prefix="sdtc" uri="urn:hl7-org:sdtc" />
@@ -55,9 +57,14 @@
 			<!-- <sch:assert id="a-1098-7514-warning" test="count(cda:routeCode) = 1">SHOULD contain zero or one [0..1] routeCode (CONF:1098-7514).</sch:assert> -->
 			<!-- New conformance test for a-1098-7514-warning per TJC: https://tracker.esacinc.com/browse/QRDA-429 -->
 			<sch:assert id="a-1098-7514-warning" test="((not(parent::node()[parent::node()[parent::node()[cda:act[@negationInd]]]]) or parent::node()[parent::node()[parent::node()[cda:act[@negationInd='false']]]]) and count(cda:routeCode) = 1)	or parent::node()[parent::node()[parent::node()[cda:act[@negationInd='true']]]]">SHOULD contain zero or one [0..1] routeCode (CONF:1098-7514).</sch:assert>
-			<sch:assert id="a-1098-31150-warning" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']]) &gt; 0">SHOULD contain zero or more [0..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-31150).</sch:assert>
-			
+			<sch:assert id="a-1098-31150-warning" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']]) &gt; 0">SHOULD contain zero or more [0..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-31150).</sch:assert>		
 			<sch:assert id="a-1098-30800-warning" test="(count(cda:doseQuantity) &gt; 0) or (count(cda:rateQuantity) &gt; 0)">Medication Activity SHOULD include doseQuantity OR rateQuantity (CONF:1098-30800).</sch:assert>
 		</sch:rule>
+		
+		<!-- Warning rule forn CONF: 1098-32950 added 04/25/2019  https://tracker.esacinc.com/browse/QRDA-435 -->
+		<sch:rule id="Medication_Activity-routeCode-warnings" context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]/cda:routeCode">
+			<sch:assert id="a-1098-32950-warning" test="count(cda:translation) &gt;= 1">The routeCode, if present, SHOULD contain zero or more [0..*] translation, which SHALL be selected from ValueSet Medication Route urn:oid:2.16.840.1.113762.1.4.1099.12 DYNAMIC (CONF:1098-32950). </sch:assert>
+		</sch:rule>
+		
 	</sch:pattern>
 </sch:schema>

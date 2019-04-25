@@ -41,7 +41,9 @@
 						</assignedAuthor>
 					</author>
 					<!-- QDM Attribute: Route -->
-					<routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" displayName="ORAL" sdtc:valueSet="1.2.9999"/> 
+					<routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" displayName="ORAL" sdtc:valueSet="1.2.9999">
+						<translation code="26643006" codeSystem="2.16.840.1.113762.1.4.1099.12" codeSystemName="SNOMETDCT" displayName="Oral Route (qualifier value)"/>
+					</routeCode> 
 					<!-- QDM Attribute: Dose -->
 					<doseQuantity value="1" unit="ml"/>
 					<consumable>
@@ -100,7 +102,9 @@
 						</assignedAuthor>
 					</author>
 					<!-- QDM Attribute: Route -->
-					<routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" displayName="ORAL" sdtc:valueSet="1.2.9999"/> 
+					<routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" displayName="ORAL" sdtc:valueSet="1.2.9999">
+						<translation code="26643006" codeSystem="2.16.840.1.113762.1.4.1099.12" codeSystemName="SNOMETDCT" displayName="Oral Route (qualifier value)"/>
+					</routeCode> 
 					<!-- QDM Attribute: Dose -->
 					<doseQuantity value="1" unit="ml"/>
 					<consumable>

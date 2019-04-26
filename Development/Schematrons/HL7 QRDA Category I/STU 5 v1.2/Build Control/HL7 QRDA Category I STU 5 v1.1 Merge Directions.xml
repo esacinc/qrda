@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    
+<mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" doValidation="true" stopOnError="false">
+ 
+    <title>HL7 QRDA 1 STU 5 schematron</title>
+    <version>1.2</version>
+    
+    <generatedFilename>
+        c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/Published/HL7 QRDA Category I STU 5 v1.1 Apr 2019.sch
+    </generatedFilename>
+    <finalTestFilename>
+        c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/TestFiles/CDAR2_IG_QRDA_I_R1_STU5_Sample.xml 
+    </finalTestFilename>
+    
+	<compareSchematronFilename>
+		C:\Development\QRDA-git\qrda\Published Schematrons\HL7 QRDA I\STU 5\HL7 QRDA Category I STU 5 - Dec 2017\Schematron\HL7 QRDA Category I STU 5  v1.0 Dec_2017.sch
+	</compareSchematronFilename>
+	
+    <fileHeader>
+        THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+        THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+        IN NO EVENT SHALL ESAC INC., OR ANY OF THEIR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+        SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+        GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+        THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+        ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    
+        Changes in this version from the STU 5 v1.1 schematron:
+        
+        - Diagnosis V2 template: removed conformance 3343-28886 requiring a  translation element in code
+        - Family History Observation V3 template: removed conformance 1198-32847 requiring a translation element in code
+        - Problem Observation V3: removed conformance 1198-32848 requiring a translation element in code
+        
+    </fileHeader>
+    
+    <errorsHeader>ERROR Patterns and Assertions</errorsHeader>
+    <warningsHeader>WARNING Patterns and Assertions</warningsHeader>
+    
+    <mergeReportFilename>c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/Build Control/mergeReport.txt</mergeReportFilename>
+    
+    <!-- All schematrons expected to be under a single main directory -->
+    <sourceMainDirectory>
+        c:/Development/QRDA-git/qrda/Development/Schematrons/
+    </sourceMainDirectory>
+    
+    <!-- Specify the schematrons to use in the merge below, separated by the templates found in each fo the source directories listed. -->
+    <!--    Note that the directoryName tags refer to directories relative to the sourceMainDirectory tag, above. -->
+    <!--    selector='all' means use all the schematron subdirectories found under directoryName, except for those listed in the 'exclude' tags. -->
+    <!--    selector='some' means only use the directoryName subdirectories listed in the 'include' tags --> 
+
+    <sourceDirectory selector='some'>  
+        <directoryName>HL7 QRDA Category I/Templates/</directoryName>
+        <!-- Document templates -->
+        <include>QDM Based QRDA V5</include>
+        <include>QRDA Category I Framework V4</include>
+        <include>US Realm Header V3</include>
+        <!-- Section templates -->
+        <include>Measure Section</include>
+        <include>Measure Section QDM</include>
+        <include>Patient Data Section</include>
+        <include>Patient Data Section QDM V5</include>
+        <include>Reporting Parameters Section</include>
+        <!-- Entry templates -->
+        <include>Admission Source</include>
+        <include>Adverse Event</include>
+        <include>Adverse Event Cause Observation Assertion</include>
+        <include>Age Observation</include>
+        <include>Allergy Intolerance</include>
+        <include>Allergy Status Observation</include>
+        <include>Assessment Performed V2</include>
+        <include>Assessment Recommended V2</include>
+        <include>Care Goal V4</include>
+        <include>Communication from Patient to Provider V4</include>
+        <include>Communication from Provider to Patient V4</include>
+        <include>Communication from Provider to Provider V4</include>
+        <include>Component</include>
+        <include>Deceased Observation V3</include>
+        <include>Device Applied V4</include>
+        <include>Device Order V4</include>
+        <include>Device Order Act V2</include>
+        <include>Device Recommended V4</include>
+        <include>Device Recommended Act V2</include>
+        <include>Diagnosis V2</include>
+        <include>Diagnosis Concern Act V3</include>
+        <include>Diagnostic Study Order V4</include>
+        <include>Diagnostic Study Performed V4</include>
+        <include>Diagnostic Study Recommended V4</include>
+        <include>Discharge Medication V3</include>
+        <include>Drug Monitoring Act</include>
+        <include>Drug Vehicle</include>
+        <include>eMeasure Reference QDM</include>
+        <include>Encounter Activity V3</include>
+        <include>Encounter Diagnosis V3</include>
+        <include>Encounter Order Act V2</include>
+        <include>Encounter Order V4</include>
+        <include>Encounter Performed V4</include>
+        <include>Encounter Performed Act V2</include>
+        <include>Encounter Recommended V4</include>
+        <include>Encounter Recommended Act V2</include>
+        <include>Entry Reference</include>
+        <include>External Document Reference</include>
+        <include>Family History Death Observation</include>
+        <include>Family History Observation V3</include>
+        <include>Family History Observation QDM V3</include>
+        <include>Family History Organizer V3</include>
+        <include>Family History Organizer QDM V4</include>
+        <include>Goal Observation</include>
+        <include>Immunization Activity V2</include>
+        <include>Immunization Administered V2</include>
+        <include>Immunization Medication Information V2</include>
+        <include>Immunization Order V2</include>
+        <include>Immunization Refusal Reason</include>
+        <include>Incision Datetime</include>
+        <include>Indication V2</include>
+        <include>Instruction V2</include>
+        <include>Intervention Order V4</include>
+        <include>Intervention Performed V4</include>
+        <include>Intervention Recommended V4</include>
+        <include>Laboratory Test Order V4</include>
+        <include>Laboratory Test Performed V4</include>
+        <include>Laboratory Test Recommended V4</include>
+        <include>Measure Reference</include>
+        <include>Medication Active V4</include>
+        <include>Medication Activity V2</include>
+        <include>Medication Administered V4</include>
+        <include>Medication Dispense V2</include>
+        <include>Medication Dispensed V4</include>
+        <include>Medication Dispensed Act V2</include>
+        <include>Medication Free Text Sig</include>
+        <include>Medication Information V2</include>
+        <include>Medication Order V4</include>
+        <include>Medication Supply Order V2</include>
+        <include>Medication Supply Request V2</include>
+        <include>Patient Care Experience V4</include>
+        <include>Patient Characteristic Clinical Trial Participant V4</include>
+        <include>Program Participation</include> <!-- Changed template name from Patient Characteristic Coverage Type, per QDM review -->
+        <include>Patient Characteristic Expired V3</include>
+        <include>Patient Characteristic Observation Assertion V4</include>
+        <include>Patient Characteristic Payer</include>
+        <include>Physical Exam Order V4</include>
+        <include>Physical Exam Performed V4</include>
+        <include>Physical Exam Recommended V4</include>
+        <include>Planned Act V2</include>
+        <include>Planned Coverage</include>
+        <include>Planned Encounter V2</include>
+        <include>Planned Immunization Activity</include>
+        <include>Planned Medication Activity V2</include>
+        <include>Planned Observation V2</include>
+        <include>Planned Procedure V2</include>
+        <include>Planned Supply V2</include>
+        <include>Precondition for Substance Administration V2</include>
+        <include>Principal Diagnosis</include>
+        <include>Priority Preference</include>
+        <include>Problem Concern Act V3</include>
+        <include>Problem Observation V3</include>
+        <include>Problem Status</include>
+        <include>Procedure Activity Act V2</include>
+        <include>Procedure Activity Observation V2</include>
+        <include>Procedure Activity Procedure V2</include>
+        <include>Procedure Order V4</include>
+        <include>Procedure Performed V4</include>
+        <include>Procedure Recommended V4</include>
+        <include>Product Instance</include>
+        <include>Prognosis Observation</include>
+        <include>Provider Care Experience V4</include>
+        <include>Provider Characteristic Observation Assertion V3</include>
+        <include>Reaction Observation V2</include>
+        <include>Reason V3</include>
+        <include>Related To</include>
+        <include>Reporting Parameters Act</include>
+        <include>Result Observation V3</include>
+        <include>Service Delivery Location</include>
+        <include>Severity Observation V2</include>
+        <include>Status</include>
+        <include>Substance Administered Act</include>
+        <include>Substance or Device Allergy - Intolerance Observation V2</include>
+        <include>Substance Recommended V4</include>
+        <include>Symptom V2</include>
+        <include>Symptom Concern Act V3</include>
+        <include>Target Outcome V2</include>
+        <!-- Subentry templates -->
+        <include>Facility Location V2</include>
+        <!-- <include>Fulfills V2</include>  Fulfills is no longer an attribute. Remove -->
+        <!-- Other templates -->
+		<include>Author</include>
+        <include>Author Participation</include>
+        <include>US Realm Address</include>
+        <include>US Realm Date and Time</include>
+        <include>US Realm Patient Name</include>
+        <include>US Realm Person Name</include>
+    </sourceDirectory>
+
+</mergeProfile>

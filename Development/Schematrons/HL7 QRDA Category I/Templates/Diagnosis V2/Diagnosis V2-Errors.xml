@@ -6,8 +6,10 @@
     Date: 08-08-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-252
     Update: 12-06-2017 Changes per QDM review
+    Update: 04-25-2019 Remove translation requirement 3343-28886, https://tracker.esacinc.com/browse/QRDA-573 
+
   
-    Total Errors Expected: 10
+    Total Errors Expected: 9
             Failure a-3343-28510-error SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-28510).
             Failure a-3343-28511-error SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-28511).
             Failure a-3343-28512-error SHALL NOT contain [0..0] @negationInd (CONF:3343-28512).
@@ -16,8 +18,7 @@
             Failure a-3343-28885-error This template SHALL be contained by a Diagnosis Concern Act (V3) (CONF:3343-28885).
             Failure a-3343-28505-error This code SHALL contain exactly one [1..1] @code="29308-4" diagnosis (CONF:3343-28505). 
             Failure a-3343-28506-error This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3343-28506).
-            Failure a-3343-28886-error This code SHALL contain exactly one [1..1] translation (CONF:3343-28886).
-            Failure a-3343-28888-error This translation SHALL contain exactly one [1..1] @code="282291009" 2.16.840.1.113883.6.96 (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:3343-28888).
+            Failure a-3343-28888-error This translation, if present, SHALL contain exactly one [1..1] @code="282291009" 2.16.840.1.113883.6.96 (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:3343-28888).
     
     Total Warnings Expected: 0
   -->
@@ -51,7 +52,6 @@
         <!-- Failure a-3343-28499-error SHALL contain exactly one [1..1] code -->
         <!-- Failure a-3343-28505-error This code SHALL contain exactly one [1..1] @code="29308-4" -->
         <!-- Failure a-3343-28506-error This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" -->
-        <!-- Failure a-3343-28886-error This code SHALL contain exactly one [1..1] translation -->
         <code code="29308-4Err" >
           <!-- <translation code="282291009" displayName="diagnosis" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/> -->
         </code>

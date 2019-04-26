@@ -1,21 +1,27 @@
 # List the merge instruction files to process here.
 #
-#C:\Development\QRDA-git\qrda\Developement\Schematrons\CMS QRDA Category I\EH CMS 2018\\EH CMS 2018 QRDA Category I Merge Directions.xml
+#C:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category I\EH CMS 2018\\EH CMS 2018 QRDA Category I Merge Directions.xml
 
-#C:\Development\QRDA-git\qrda\Developement\Schematrons\HL7 QRDA Category I\STU 4\HL7 QRDA Category I STU 4 Merge Directions.xml
+#C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\STU 4\HL7 QRDA Category I STU 4 Merge Directions.xml
 
-#C:\\Development\\QRDA-git\\qrda\\Developement\\Schematrons\\CMS QRDA Category III\\EC CMS 2018\\EP CMS 2018 QRDA Category III Merge Directions.xml
+#C:\\Development\\QRDA-git\\qrda\\Development\\Schematrons\\CMS QRDA Category III\\EC CMS 2018\\EP CMS 2018 QRDA Category III Merge Directions.xml
 
-#C:\\Development\\QRDA-git\\qrda\\Developement\\Schematrons\\CMS QRDA Category III\\EC CMS 2018 - V2\\EP CMS 2018 QRDA Category III V2 Merge Directions.xml
+#C:\\Development\\QRDA-git\\qrda\\Development\\Schematrons\\CMS QRDA Category III\\EC CMS 2018 - V2\\EP CMS 2018 QRDA Category III V2 Merge Directions.xml
 
-#C:\Development\QRDA-git\qrda\Developement\Schematrons\CMS QRDA Category III\CMS QRDA III 2019\\CMS 2019 QRDA Category III Merge Directions.xml
+#C:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category III\CMS QRDA III 2019\\CMS 2019 QRDA Category III Merge Directions.xml
 
 #C:\Development\CQL\GIT Repositories\CQL-based-HQMF-Schematron\QDM Templates for CQL-based HQMF\2018 CQL-HQMF QDM Version 3\QDM Templates for CQL-based HQMF Merge Directions.xml
 
-# C:\Development\QRDA-git\qrda\Developement\Schematrons\HL7 QRDA Category I\STU 5.1\HL7 QRDA Category I STU 5.1 Merge Directions.xml
+# C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\STU 5.1\HL7 QRDA Category I STU 5.1 Merge Directions.xml
 
-#C:\Development\QRDA-git\qrda\Developement\Schematrons\CMS QRDA Category I\EH CMS 2019\EH CMS 2019 QRDA Category I Merge Directions.xml
+#C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category III\STU 2.2\HL7 QRDA Category III STU 2.2 Merge Directions.xml
+#C:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category III\CMS QRDA III 2020\Build Control\CMS 2020 QRDA Category III Merge Directions.xml
 
-#C:\Development\QRDA-git\qrda\Developement\Schematrons\HL7 QRDA Category III\STU 2.2\HL7 QRDA Category III STU 2.2 Merge Directions.xml
-C:\Development\QRDA-git\qrda\Developement\Schematrons\CMS QRDA Category I\EH CMS 2020\EH CMS 2020 QRDA Category I Merge Directions.xml
+#C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\STU 5 v1.1\Build Control\HL7 QRDA Category I STU 5 v1.1 Merge Directions.xml
+#C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\STU 5\Build Control\HL7 QRDA Category I STU 5 Merge Directions.xml
+#C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\STU 5.1 v1.1\Build Control\HL7 QRDA Category I STU 5.1 v1.1 Merge Directions.xml
+
+# C:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category I\EH CMS 2019\2019 CMS QRDA Category I v1.1\Build Control\EH CMS 2019 QRDA Category I v1.1  Merge Directions.xml
+
+C:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category I\EH CMS 2020\Build Control\EH CMS 2020 QRDA Category I Merge Directions.xml
 

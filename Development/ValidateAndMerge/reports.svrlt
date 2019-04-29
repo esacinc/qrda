@@ -1022,24 +1022,18 @@
                         name="Problem-Observation-pattern-errors"/>
    <svrl:fired-rule context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]"
                     id="Problem-Observation-errors"/>
-   <svrl:fired-rule context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]/cda:code"
-                    id="Problem-Observation-code-errors"/>
    <svrl:fired-rule context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]/cda:statusCode"
                     id="Problem-Observation-statusCode-errors"/>
    <svrl:fired-rule context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]/cda:effectiveTime"
                     id="Problem-Observation-effectiveTime-errors"/>
    <svrl:fired-rule context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]"
                     id="Problem-Observation-errors"/>
-   <svrl:fired-rule context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]/cda:code"
-                    id="Problem-Observation-code-errors"/>
    <svrl:fired-rule context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]/cda:statusCode"
                     id="Problem-Observation-statusCode-errors"/>
    <svrl:fired-rule context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]/cda:effectiveTime"
                     id="Problem-Observation-effectiveTime-errors"/>
    <svrl:fired-rule context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]"
                     id="Problem-Observation-errors"/>
-   <svrl:fired-rule context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]/cda:code"
-                    id="Problem-Observation-code-errors"/>
    <svrl:fired-rule context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]/cda:statusCode"
                     id="Problem-Observation-statusCode-errors"/>
    <svrl:fired-rule context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]/cda:effectiveTime"
@@ -3229,8 +3223,6 @@
    <svrl:active-pattern document=""
                         id="Reporting-Parameters-Act-CMS-pattern-errors"
                         name="Reporting-Parameters-Act-CMS-pattern-errors"/>
-   <svrl:fired-rule context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1'][@extension='2016-03-01']]"
-                    id="Reporting-Parameters-Act-CMS-errors"/>
    <svrl:fired-rule context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1'][@extension='2016-03-01']]/cda:effectiveTime/cda:low"
                     id="Reporting-Parameters-Act-CMS-effectiveTime-low-errors"/>
    <svrl:fired-rule context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1'][@extension='2016-03-01']]/cda:effectiveTime/cda:high"

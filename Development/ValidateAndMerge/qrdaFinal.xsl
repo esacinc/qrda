@@ -17463,7 +17463,7 @@
 
 	  <!--RULE Problem-Observation-errors-->
    <xsl:template match="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]"
-                 priority="1003"
+                 priority="1002"
                  mode="M105">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]"
@@ -17583,16 +17583,6 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M105"/>
-   </xsl:template>
-
-	  <!--RULE Problem-Observation-code-errors-->
-   <xsl:template match="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]/cda:code"
-                 priority="1002"
-                 mode="M105">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]/cda:code"
-                       id="Problem-Observation-code-errors"/>
       <xsl:apply-templates select="*" mode="M105"/>
    </xsl:template>
 
@@ -26025,16 +26015,6 @@
 
    <!--PATTERN Reporting-Parameters-Act-CMS-pattern-errors-->
 
-
-	  <!--RULE Reporting-Parameters-Act-CMS-errors-->
-   <xsl:template match="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1'][@extension='2016-03-01']]"
-                 priority="1002"
-                 mode="M157">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1'][@extension='2016-03-01']]"
-                       id="Reporting-Parameters-Act-CMS-errors"/>
-      <xsl:apply-templates select="*" mode="M157"/>
-   </xsl:template>
 
 	  <!--RULE Reporting-Parameters-Act-CMS-effectiveTime-low-errors-->
    <xsl:template match="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1'][@extension='2016-03-01']]/cda:effectiveTime/cda:low"

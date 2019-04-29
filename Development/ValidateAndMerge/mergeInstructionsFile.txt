@@ -23,5 +23,6 @@
 
 # C:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category I\EH CMS 2019\2019 CMS QRDA Category I v1.1\Build Control\EH CMS 2019 QRDA Category I v1.1  Merge Directions.xml
 
-C:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category I\EH CMS 2020\Build Control\EH CMS 2020 QRDA Category I Merge Directions.xml
+ C:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category I\EH CMS 2020\Build Control\EH CMS 2020 QRDA Category I Merge Directions.xml
 
+# C:\Development\Sandbox\EmptyRule\EmptyRuleMergeDirections.xml

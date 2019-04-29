@@ -277,12 +277,12 @@ public class SchematronMerge {
 	 * @param documents an array of Document objects
 	 * @return an array of Schematron objects
 	 */
-	private Schematron[] createSchematronRep(Document[] documents){
+	private Schematron[] createSchematronRep(Document[] documents, MergeInstructions mergeInstructions){
 		Schematron[] sReps = new Schematron[documents.length];
 		for(int i = 0; i < documents.length; i++){
 			if (documents[i] != null) {
 				//System.out.println("Created internal schematron rep for  " + documents[i].getBaseURI());
-				sReps[i] = new Schematron(documents[i]);
+				sReps[i] = new Schematron(documents[i], mergeInstructions);
 				//System.out.println("Created internal schematron rep for  " + sReps[i]);
 			}
 		}
@@ -421,7 +421,7 @@ public class SchematronMerge {
 		File xmlFiles[] = createFiles(files);
 		Document documents[] = createDocuments(xmlFiles);
 
-		Schematron[] sReps = createSchematronRep(documents);
+		Schematron[] sReps = createSchematronRep(documents, instructions);
 		Schematron firstSchematron = sReps[0];
 		Element root = firstSchematron.getRoot();
 		Element top = new Element(root.getName(), root.getNamespace());

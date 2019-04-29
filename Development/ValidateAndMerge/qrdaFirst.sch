@@ -33,6 +33,12 @@ Version 1.0
         Template Family History Observation V3
             - Removed conformance 1198-32847 requiring a translation element in code
     
+        Template Problem Observation V3
+            - Removed empty rule Problem-Observation-code-errors
+			
+        Template Reporting Parameters Act CMS
+            - Removed empty rule Reporting-Parameters-Act-CMS-errors
+			
         Added template Assessment Order
         Added template Communication Performed
         Added template Days Supplied
@@ -61,7 +67,7 @@ Version 1.0
             - Communication from Provider to Patient V4    
             - Communication from Provider to Provider V4 
 
-Fri Apr 26 10:32:14 MDT 2019
+Mon Apr 29 14:07:12 MDT 2019
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron"
             xmlns="urn:hl7-org:v3"
@@ -1251,12 +1257,6 @@ Fri Apr 26 10:32:14 MDT 2019
          <sch:assert id="a-1198-8590-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:1198-8590).</sch:assert>
          <sch:assert id="a-1198-8591-error" test="count(cda:value[@xsi:type='CD'])=1">SHALL contain exactly one [1..1] value with @xsi:type="CD", where the code SHALL be selected from ValueSet Problem urn:oid:2.16.840.1.113883.3.88.12.3221.7.4 DYNAMIC (CONF:1198-8591).</sch:assert>
       </sch:rule>
-      <!-- 04-25-2019 Remove translation requirement 1198-32847,  https://tracker.esacinc.com/browse/QRDA-573 -->
-      <!--
-		<sch:rule id="Family_History_Observation_V3-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.46'][@extension='2015-08-01']]/cda:code">
-			<sch:assert id="a-1198-32847-error" test="count(cda:translation) &gt; 0">This code SHALL contain at least one [1..*] translation, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2014-09-02 (CONF:1198-32847).</sch:assert>
-		</sch:rule>
-		-->
       <sch:rule id="Family_History_Observation_V3-statusCode-errors"
                 context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.46'][@extension='2015-08-01']]/cda:statusCode">
          <sch:assert id="a-1198-19098-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:1198-19098).</sch:assert>
@@ -1789,17 +1789,6 @@ Fri Apr 26 10:32:14 MDT 2019
          <sch:assert id="a-4388-28908-error"
                      test="count(../../cda:templateId[@root='2.16.840.1.113883.10.20.24.3.139'][@extension='2018-10-01']) = 1">This template SHALL be contained by a Medication Dispensed Act (V2) (CONF:4388-28908).</sch:assert>
       </sch:rule>
-      <!-- QRDA-505 Author sub-rules no longer used -->
-      <!--
-		<sch:rule id="Medication_Dispensed-author-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2018-10-01']]/cda:author">
-			<sch:assert id="a-4388-29011-error" test="count(cda:time) = 1">This author SHALL contain exactly one [1..1] time (CONF:4388-29011).</sch:assert>
-			<sch:assert id="a-4388-29010-error" test="count(cda:assignedAuthor) = 1">This author SHALL contain exactly one [1..1] assignedAuthor (CONF:4388-29010).</sch:assert>
-		</sch:rule>
-		
-		<sch:rule id="Medication_Dispensed-author-assignedAuthor-errors" context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2018-10-01']]/cda:author/cda:assignedAuthor">
-			<sch:assert id="a-4388-29012-error" test="count(cda:id) &gt;= 1"> This assignedAuthor SHALL contain at least one [1..*] id (CONF:4388-29012).</sch:assert>
-		</sch:rule>
-		-->
       <sch:rule id="Medication_Dispensed-statuscode-errors"
                 context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2018-10-01']]/cda:statusCode">
          <sch:assert id="a-4388-19441-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:4388-19441).</sch:assert>
@@ -1809,7 +1798,6 @@ Fri Apr 26 10:32:14 MDT 2019
          <sch:assert id="a-4388-29216-error" test="count(cda:low)=1">The effectiveTime, if present, SHALL contain exactly one [1..1] low (CONF:4388-29216).</sch:assert>
          <sch:assert id="a-4388-29217-error" test="count(cda:high)=1">The effectiveTime, if present, SHALL contain exactly one [1..1] high (CONF:4388-29217).</sch:assert>
       </sch:rule>
-      <!-- Added a-4388-29223-error for STU 5.1 -->
       <sch:rule id="Medication_Dispensed-participant-participantRole-errors"
                 context="cda:supply[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.45'][@extension='2018-10-01']]/cda:participant/cda:participantRole">
          <sch:assert id="a-4388-29223-error" test="count(cda:id) &gt;= 1">This participantRole SHALL contain at least one [1..*] id (CONF:4388-29223).</sch:assert>
@@ -2397,11 +2385,6 @@ Fri Apr 26 10:32:14 MDT 2019
          <sch:assert id="a-1198-9050-error" test="count(cda:effectiveTime)=1">SHALL contain exactly one [1..1] effectiveTime (CONF:1198-9050).</sch:assert>
          <sch:assert id="a-1198-9058-error" test="count(cda:value[@xsi:type='CD'])=1">SHALL contain exactly one [1..1] value with @xsi:type="CD", where the code SHOULD be selected from ValueSet Problem urn:oid:2.16.840.1.113883.3.88.12.3221.7.4 DYNAMIC (CONF:1198-9058).</sch:assert>
       </sch:rule>
-      <sch:rule id="Problem-Observation-code-errors"
-                context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]/cda:code">
-      <!--  Removed, see JIRA https://tracker.esacinc.com/browse/QRDA-196 -->
-      <!--  <sch:assert id="a-1198-32848-error" test="count(cda:translation) &gt;= 1">This code SHALL contain at least one [1..*] translation, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 2014-09-02 (CONF:1198-32848).</sch:assert> -->
-    </sch:rule>
       <sch:rule id="Problem-Observation-statusCode-errors"
                 context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]/cda:statusCode">
          <sch:assert id="a-1198-19112-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:1198-19112).</sch:assert>
@@ -2597,16 +2580,6 @@ Fri Apr 26 10:32:14 MDT 2019
          <sch:assert id="a-4388-27352-error"
                      test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.155'][@extension='2017-08-01']]) = 1">SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:4388-27352).</sch:assert>
       </sch:rule>
-      <!-- author sub rules not present in Procedure Recommended V5 -->
-      <!--
-        <sch:rule id="Procedure-Recommended-author-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.65'][@extension='2018-10-01']]/cda:author">
-            <sch:assert id="a-4388-29059-error" test="count(cda:time)=1">This author SHALL contain exactly one [1..1] time (CONF:4388-29059).</sch:assert>
-            <sch:assert id="a-4388-29058-error" test="count(cda:assignedAuthor)=1">This author SHALL contain exactly one [1..1] assignedAuthor (CONF:4388-29058). </sch:assert>
-        </sch:rule> 
-        <sch:rule id="Procedure-Recommended-author-assignedAuthor-errors" context="cda:procedure[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.65'][@extension='2018-10-01']]/cda:author/cda:assignedAuthor">
-            <sch:assert id="a-4388-29060-warning" test="count(cda:id)&gt;=1">This assignedAuthor SHALL contain at least one [1..*] id (CONF:4388-29060).</sch:assert>
-        </sch:rule> 
-        -->
   </sch:pattern>
   <sch:pattern id="Product-Instance-pattern-errors">
       <sch:rule id="Product-Instance-errors"
@@ -2759,7 +2732,6 @@ Fri Apr 26 10:32:14 MDT 2019
                 context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2018-10-01']]/cda:informationRecipient/cda:intendedRecipient">
          <sch:assert id="a-4388-16705-error" test="count(cda:id) &gt; 0">This intendedRecipient SHALL contain at least one [1..*] id (CONF:4388-16705).</sch:assert>
       </sch:rule>
-      <!-- Added constraint to insure component has only one structured body -->
       <sch:rule id="QDM_based_QRDA-component-errors"
                 context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.2'][@extension='2018-10-01']]/cda:component">
       <!-- QRDA-501 Fixed incorrect test -->
@@ -3574,12 +3546,6 @@ Fri Apr 26 10:32:14 MDT 2019
          <sch:assert id="a-CMS_0006-error" test="@root='2.16.840.1.113883.3.2074.1'">This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" CMS EHR Certification Identification Number (CONF:CMS_0006).</sch:assert>
          <sch:assert id="a-CMS_0008-error" test="@extension">This id SHALL contain exactly one [1..1] @extension (CONF:CMS_0008).</sch:assert>
       </sch:rule>
-      <!-- QRDA-502 Removed assertion for 4388-16591 as it is present already in QDM Based QRDA template in HL7 templates -->
-      <!--
-        <sch:rule id="QRDA_Category_I_Report_CMS-documentationOf-serviceEvent-performer-assignedEntity-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2019-02-01']]/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity">
-            <sch:assert id="a-4388-16591-error" test="count(cda:representedOrganization)=1">This assignedEntity SHALL contain exactly one [1..1] representedOrganization (CONF:4388-16591).</sch:assert>
-        </sch:rule>
-        -->
       <sch:rule id="QRDA_Category_I_Report_CMS-documentationOf-serviceEvent-performer-assignedEntity-representedOrganization-id-errors"
                 context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2019-02-01']]/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity/cda:representedOrganization/cda:id">
          <sch:assert id="a-4388-16593-error" test="@root='2.16.840.1.113883.4.2'">The id, if present, SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.2" Tax ID Number (CONF:4388-16593).</sch:assert>
@@ -3600,8 +3566,6 @@ Fri Apr 26 10:32:14 MDT 2019
       </sch:rule>
   </sch:pattern>
   <sch:pattern id="Reporting-Parameters-Act-CMS-pattern-errors">
-      <sch:rule id="Reporting-Parameters-Act-CMS-errors"
-                context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1'][@extension='2016-03-01']]"/>
       <sch:rule id="Reporting-Parameters-Act-CMS-effectiveTime-low-errors"
                 context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1'][@extension='2016-03-01']]/cda:effectiveTime/cda:low">
          <sch:assert id="a-CMS_0048-error" test="@value">This low SHALL contain exactly one [1..1] @value (CONF:CMS_0048).</sch:assert>
@@ -3725,7 +3689,6 @@ Fri Apr 26 10:32:14 MDT 2019
          <sch:assert id="a-1198-32427-v-warning"
                      test="@code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.3221.7.2']/voc:code/@value">SHALL contain exactly one [1..1] code, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2012-06-01 (CONF:1198-32427).</sch:assert>
       </sch:rule>
-      <!-- 04-25-2019 Make translation valueSet warning separate from requirement 1198-32847,  https://tracker.esacinc.com/browse/QRDA-573 -->
       <sch:rule id="Family_History_Observation_V3-code-translation-warnings"
                 context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.46'][@extension='2015-08-01']]/cda:code/cda:translation">
          <sch:assert id="a-1198-32847-warning"
@@ -3815,7 +3778,6 @@ Fri Apr 26 10:32:14 MDT 2019
          <sch:assert id="a-1098-30800-warning"
                      test="(count(cda:doseQuantity) &gt; 0) or (count(cda:rateQuantity) &gt; 0)">Medication Activity SHOULD include doseQuantity OR rateQuantity (CONF:1098-30800).</sch:assert>
       </sch:rule>
-      <!-- Warning rule forn CONF: 1098-32950 added 04/25/2019  https://tracker.esacinc.com/browse/QRDA-435 -->
       <sch:rule id="Medication_Activity-routeCode-warnings"
                 context="cda:substanceAdministration[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.16'][@extension='2014-06-09']]/cda:routeCode">
          <sch:assert id="a-1098-32950-warning" test="count(cda:translation) &gt;= 1">The routeCode, if present, SHOULD contain zero or more [0..*] translation, which SHALL be selected from ValueSet Medication Route urn:oid:2.16.840.1.113762.1.4.1099.12 DYNAMIC (CONF:1098-32950).</sch:assert>
@@ -3944,7 +3906,6 @@ Fri Apr 26 10:32:14 MDT 2019
       </sch:rule>
   </sch:pattern>
   <sch:pattern id="Problem-Observation-pattern-warnings">
-    <!-- Corrected cda:observation, was incorrectly prefixed with cda:act -->
       <sch:rule id="Problem-Observation-participant-participantRole-warnings"
                 context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.4'][@extension='2015-08-01']]">
          <sch:assert id="a-1198-31147-warning"

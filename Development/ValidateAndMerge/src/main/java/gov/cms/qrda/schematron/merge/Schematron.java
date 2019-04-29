@@ -54,19 +54,21 @@ public class Schematron {
 	private Document document  = null;
 	private Element rootNode = null;
 	
-	public Document getDocument() {
+	private MergeInstructions instructions = null;
+	
+	public Document getDocument() { 
 		return document;
 	}
 	
 	public void setDocument(Document val) {
 		document = val;
 	}
-	public Schematron(Document document) {
+	public Schematron(Document document, MergeInstructions instructions) {
 		setDocument(document);
 		Element e1 = this.rootNode = document.getRootElement();
 
 		rootNode = e1;
-
+		this.instructions = instructions;
 		/*
 
 		System.out.println("In Schematron constructor");
@@ -88,6 +90,7 @@ public class Schematron {
 		List<Element>newElems = new ArrayList<Element>();
 
 		for (int temp = 0; temp < elems.size(); temp++) {  
+			//System.out.println("Detach: " + elems.get(temp));
 			Element e1 = elems.get(temp).detach();
 			e1.removeContent();
 			newElems.add(e1);
@@ -110,22 +113,31 @@ public class Schematron {
 			String eName = el.getName();
 
 			if (eName.equals("pattern")) {
-
-				List<Content> rules = el.getContent();
+				List<Content> items = el.getContent();
 				String idAttribute = el.getAttribute("id").getValue();
 				Element elp = makePatternElement(idAttribute );
 				elp.detach();
-
-				for (Content c : rules) {
+				
+				int elementCnt = 0;
+				for (Content c : items) {
 					Content cc = c.clone();
-					// System.out.println("Added rule " + cc);
-					elp.addContent(cc.detach());
+					// If this content is an Element, check to see if has any rules in it or not.
+					// If not, then don't include it.
+					if (isContentElement(c)) {
+						elementCnt++;
+					}
+					if (!isContentRuleEmpty(c)) {
+						elp.addContent(cc.detach());
+					}
+					else if (c instanceof Element){
+						instructions.addResult(MergeInstructions.INDENT4 + "ALERT: Rule " + ((Element)c).getAttributeValue("id") + " has NO asserts. Not including in merged schematron");
+					}
 				}
-
-
+				// If there were no rules in this pattern, flag it in the report, but included it in the schematron.
+				if (elementCnt == 0) {
+					instructions.addResult(MergeInstructions.INDENT4 + "Alert: Pattern " + idAttribute + " has NO rules. Included in merged schematron, but QA recommended");
+				}
 				patternTable.put(idAttribute, elp.detach()); 
-
-
 			}
 		}
 
@@ -137,6 +149,26 @@ public class Schematron {
      	 }
 		 */ 
 		return (patternTable);
+	}
+
+	private boolean isContentElement(Content c) {
+		return (c instanceof Element);
+	}
+
+	private boolean isContentRuleEmpty(Content c) {
+		boolean res = true; // assume empty
+		if (c instanceof Element) {
+			// If content is an element, then not empty. Unless...
+			if ("rule".equals(((Element)c).getName())) {
+				//..the element is a rule that has no children. Then it is empty.
+				List<Element> kids = ((Element)c).getChildren();
+				if (kids.size() > 0) res = false;
+			} else {
+				res = false;
+			}
+		}
+		
+		return res;
 	}
 
 	public Element makePhaseElement( String phaseId){
@@ -236,7 +268,7 @@ public class Schematron {
 						String pattern = elP.getAttribute("pattern").getValue();
 
 						//System.out.println("pattern = " + pattern);
-						//System.out.println("elP = " + elP);
+						//System.out.println("elP = " + elP.getName());
 
 						eTable.put(pattern, elP);   
 					}

@@ -20,8 +20,11 @@
         </sch:rule>
     </sch:pattern>
     <sch:pattern id="Reporting-Parameters-Act-CMS-pattern-errors">
+        <!-- Empty rule removed 04-29-2019 -->
+        <!--
          <sch:rule id="Reporting-Parameters-Act-CMS-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1'][@extension='2016-03-01']]">
-          </sch:rule>
+         </sch:rule>
+        -->
         <sch:rule id="Reporting-Parameters-Act-CMS-effectiveTime-low-errors" context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8.1'][@extension='2016-03-01']]/cda:effectiveTime/cda:low">
             <sch:assert id="a-CMS_0048-error" test="@value">This low SHALL contain exactly one [1..1] @value (CONF:CMS_0048).</sch:assert>
             <sch:assert id="a-CMS_0027-error" test="string-length(@value)&gt;=8">SHALL be precise to day (CONF:CMS_0027).</sch:assert>

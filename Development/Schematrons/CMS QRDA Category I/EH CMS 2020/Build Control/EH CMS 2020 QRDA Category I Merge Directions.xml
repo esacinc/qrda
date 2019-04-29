@@ -44,6 +44,12 @@
         Template Family History Observation V3
             - Removed conformance 1198-32847 requiring a translation element in code
     
+        Template Problem Observation V3
+            - Removed empty rule Problem-Observation-code-errors
+			
+        Template Reporting Parameters Act CMS
+            - Removed empty rule Reporting-Parameters-Act-CMS-errors
+			
         Added template Assessment Order
         Added template Communication Performed
         Added template Days Supplied

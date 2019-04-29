@@ -7,7 +7,7 @@
     Instructions file: C:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category I\EH CMS 2020\Build Control\EH CMS 2020 QRDA Category I Merge Directions.xml
     Title: EH CMS 2020 QRDA Category I
     Version: 1.0
-    Generated on Fri Apr 26 10:31:59 MDT 2019
+    Generated on Mon Apr 29 14:06:57 MDT 2019
     Verbose Reporting is turned on
     Merged file: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Published/2020_CMS_QRDA_I-v1.0-Apr_2019.sch
         All Error patterns are generated before all Warning patterns
@@ -5551,7 +5551,7 @@
         Merging files into file "C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Published/2020_CMS_QRDA_I-v1.0-Apr_2019.sch".
             Generating all Error patterns first, then all Warning patterns.
         Wrote merged Schematron file to "C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Published/2020_CMS_QRDA_I-v1.0-Apr_2019.sch".
-            Generated 1440 asserts in generated (merged) file C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Published/2020_CMS_QRDA_I-v1.0-Apr_2019.sch
+            Generated 1431 asserts in generated (merged) file C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Published/2020_CMS_QRDA_I-v1.0-Apr_2019.sch
 
 
     Testing merged file C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Published/2020_CMS_QRDA_I-v1.0-Apr_2019.sch using: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/TestFiles/2020_CMS_QRDA_I_Sample_File-Apr_2019.xml
@@ -5812,10 +5812,9 @@
                     Such ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-16822).
                 Warning: a-1198-14842-warning at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf']/*[local-name()='serviceEvent']/*[local-name()='performer']/*[local-name()='assignedEntity']: count(cda:code)=1
                     This assignedEntity SHOULD contain zero or one [0..1] code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy (HIPAA) urn:oid:2.16.840.1.114222.4.11.1066 DYNAMIC (CONF:1198-14842).
-                C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/TestFiles/2020_CMS_QRDA_I_Sample_File-Apr_2019.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 0) (Warnings: expected 121, actual 125)
             
-            (Errors: expected 0, actual 0) (Warnings: expected 121, actual 125)
-            Schematron validation of test file results did not match expected results.
+            (Errors: expected 0, actual 0) (Warnings: expected 125, actual 125)
+            Schematron validation of test file results as expected (or no expected error count provided).
  
     Merge Complete in 16 seconds
 **************************************** end merge report ************************************************************************

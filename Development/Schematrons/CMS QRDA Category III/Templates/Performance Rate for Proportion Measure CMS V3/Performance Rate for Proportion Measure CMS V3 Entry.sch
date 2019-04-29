@@ -35,25 +35,21 @@
 			<sch:assert id="a-3259-19653_C01" test="count(cda:externalObservation)=1">This reference SHALL contain exactly one [1..1] externalObservation (CONF:3259-19653_C01).</sch:assert>
 		</sch:rule>
 
-		<sch:rule id="Performance_Rate_for_Proportion_Measure_CMS-externalObservation-errors" context="cda:observation[cda:templateId[@root = '2.16.840.1.113883.10.20.27.3.25'][@extension = '2018-05-01']]/cda:reference/cda:externalObservation">
-			<!--  Following conformance numbers exist in base HL7 IG already 
+        <!-- Removed the following 3 empty rules 04-29-2019 -->
+		<!-- Following conformance numbers in the commented out rules below exist in base HL7 IG already --> 
+		<!-- 
+		<sch:rule id="Performance_Rate_for_Proportion_Measure_CMS-externalObservation-errors" context="cda:observation[cda:templateId[@root = '2.16.840.1.113883.10.20.27.3.25'][@extension = '2018-05-01']]/cda:reference/cda:externalObservation"> 
 			<sch:assert id="a-3259-19654-error" test="@classCode">This externalObservation SHALL contain exactly one [1..1] @classCode (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3259-19654).</sch:assert>
 			<sch:assert id="a-3259-19655-error" test="count(cda:id)=1">This externalObservation SHALL contain exactly one [1..1] id (CONF:3259-19655).</sch:assert>
 			<sch:assert id="a-3259-19657-error" test="count(cda:code)=1">This externalObservation SHALL contain exactly one [1..1] code (CONF:3259-19657).</sch:assert>
-			-->
 		</sch:rule>
-		
 		<sch:rule id="Performance_Rate_for_Proportion_Measure_CMS-id-errors" context="cda:observation[cda:templateId[@root = '2.16.840.1.113883.10.20.27.3.25'][@extension = '2018-05-01']]/cda:reference/cda:externalObservation/cda:id">
-			<!-- Following conformance numbers exist in base HL7 IG already 
-				<sch:assert id="a-3259-19656-error" test="@root">This id SHALL contain exactly one [1..1] @root (CONF:3259-19656).</sch:assert>
-			-->
+			<sch:assert id="a-3259-19656-error" test="@root">This id SHALL contain exactly one [1..1] @root (CONF:3259-19656).</sch:assert>
 		</sch:rule>
-
 		<sch:rule id="Performance_Rate_for_Proportion_Measure_CMS-externalObservation-code-errors" context="cda:observation[cda:templateId[@root = '2.16.840.1.113883.10.20.27.3.25'][@extension = '2018-05-01']]/cda:reference/cda:externalObservation/cda:code">
-			<!-- Following conformance numbers exist in base HL7 IG already 
-			   <sch:assert id="a-3259-19658-error" test="@code='NUMER'">This code SHALL contain exactly one [1..1] @code="NUMER" Numerator (CONF:3259-19658).</sch:assert>
-			   <sch:assert id="a-3259-21180-error" test="@codeSystem='2.16.840.1.113883.5.4'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.5.4" (CodeSystem: ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:3259-21180).</sch:assert>
-		    -->
+			<sch:assert id="a-3259-19658-error" test="@code='NUMER'">This code SHALL contain exactly one [1..1] @code="NUMER" Numerator (CONF:3259-19658).</sch:assert>
+			<sch:assert id="a-3259-21180-error" test="@codeSystem='2.16.840.1.113883.5.4'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.5.4" (CodeSystem: ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:3259-21180).</sch:assert>
 		</sch:rule>
+		-->
 	</sch:pattern>
 </sch:schema>

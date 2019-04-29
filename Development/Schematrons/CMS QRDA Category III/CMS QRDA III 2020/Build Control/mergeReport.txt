@@ -7,7 +7,7 @@
     Instructions file: C:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category III\CMS QRDA III 2020\Build Control\CMS 2020 QRDA Category III Merge Directions.xml
     Title: CMS 2020 QRDA Category III
     Version: 1.0
-    Generated on Mon Apr 29 14:42:54 MDT 2019
+    Generated on Mon Apr 29 14:56:20 MDT 2019
     Verbose Reporting is turned on
     Merged file: c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Published/2020_CMS_QRDA_Category_III-v1-Apr_2019.sch
         All Error patterns are generated before all Warning patterns

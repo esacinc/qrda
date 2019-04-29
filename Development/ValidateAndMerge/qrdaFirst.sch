@@ -18,7 +18,8 @@ Version 1.0
                   -	Added -2020 to all CMS conformance Ids...e.g CMS_1 to CMS-_1
                   - Updated 2.16.840.1.113883.10.20.27.1.2 template to have extension 2019-05-01
                   - Updated conformance id prefix from 3338 to 4437 in a-3338-17281_C01, a-3338-21394_C01
-                  - Updated 2.16.840.1.113883.10.20.27.2.3 template to have extension 2019-05-01 in 4427-21394_C01				  
+                  - Updated 2.16.840.1.113883.10.20.27.2.3 template to have extension 2019-05-01 in 4427-21394_C01	
+                  - Removed empty rules (containing no asserts) 				  
            
             Section-level templates:
                 -  QRDA Category III Measure Section - CMS V4  
@@ -35,9 +36,11 @@ Version 1.0
                 - Measure Reference and Results - CMS V4
                   - Updated extension for template 2.16.840.1.113883.10.20.27.3.17 to 2019-05-01 throughout template
                   - Added -2020 to all CMS_ conformance ids
-                  - Replaced conformance id prefix of 3259- with 4427- throughout template 
+                  - Replaced conformance id prefix of 3259- with 4427- throughout template
+                - Performance Rate for Proportion Measure CMS V3
+                  - Removed empyt rules (containing no asserts) 
 
-Mon Apr 29 14:43:00 MDT 2019
+Mon Apr 29 14:56:26 MDT 2019
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron"
             xmlns="urn:hl7-org:v3"

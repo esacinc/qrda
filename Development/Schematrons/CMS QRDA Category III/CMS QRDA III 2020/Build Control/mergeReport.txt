@@ -7,9 +7,9 @@
     Instructions file: C:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category III\CMS QRDA III 2020\Build Control\CMS 2020 QRDA Category III Merge Directions.xml
     Title: CMS 2020 QRDA Category III
     Version: 1.0
-    Generated on Mon Apr 29 14:56:20 MDT 2019
+    Generated on Wed May 01 15:24:23 MDT 2019
     Verbose Reporting is turned on
-    Merged file: c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Published/2020_CMS_QRDA_Category_III-v1-Apr_2019.sch
+    Merged file: c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Published/2020_CMS_QRDA_Category_III-v1-May_2019.sch
         All Error patterns are generated before all Warning patterns
     ALERT: Failed to locate element: <compareSchematronFilename>
         Compare generated schematron asserts to asserts in file: null
@@ -578,7 +578,7 @@
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V4\QRDA Category III Report CMS V4 Document Errors.xml
                 Error: a-CMS_1-error at /*[local-name()='ClinicalDocument']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2019-05-01'])=1
-                    SHALL contain exactly one [1..1] templateId (CONF:CMS_1) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.2" (CONF:CMS_2).SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_3). 
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_1) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.2" (CONF:CMS_2).SHALL contain exactly one [1..1] @extension="2019-05-01" (CONF:CMS_3). 
                 Error: a-4427-17238_C01-error at /*[local-name()='ClinicalDocument']: count(cda:confidentialityCode)=1
                     SHALL contain exactly one [1..1] confidentialityCode (CONF:4427-17238_C01).
                 Error: a-CMS_7-error at /*[local-name()='ClinicalDocument']: count(cda:informationRecipient)=1
@@ -662,7 +662,7 @@
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category III\Templates\QRDA Category III Report CMS V4\QRDA Category III Report CMS V4 Document-NoTemplate.xml
                 Error: a-CMS_1-error at /*[local-name()='ClinicalDocument']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2019-05-01'])=1
-                    SHALL contain exactly one [1..1] templateId (CONF:CMS_1) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.2" (CONF:CMS_2).SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_3). 
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_1) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.2" (CONF:CMS_2).SHALL contain exactly one [1..1] @extension="2019-05-01" (CONF:CMS_3). 
             
             (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
     _______________________________________________________________
@@ -1565,17 +1565,17 @@
     0 schematron template(s) had no associated test files.
      
     Merge Process Results....
-        Merging files into file "c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Published/2020_CMS_QRDA_Category_III-v1-Apr_2019.sch".
+        Merging files into file "c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Published/2020_CMS_QRDA_Category_III-v1-May_2019.sch".
             Generating all Error patterns first, then all Warning patterns.
-        Wrote merged Schematron file to "c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Published/2020_CMS_QRDA_Category_III-v1-Apr_2019.sch".
-            Generated 374 asserts in generated (merged) file c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Published/2020_CMS_QRDA_Category_III-v1-Apr_2019.sch
+        Wrote merged Schematron file to "c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Published/2020_CMS_QRDA_Category_III-v1-May_2019.sch".
+            Generated 380 asserts in generated (merged) file c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Published/2020_CMS_QRDA_Category_III-v1-May_2019.sch
 
 
-    Testing merged file c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Published/2020_CMS_QRDA_Category_III-v1-Apr_2019.sch using: c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/TestFiles/MIPS_GROUP_Sample_QRDA_III_Informative-2019.xml
+    Testing merged file c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Published/2020_CMS_QRDA_Category_III-v1-May_2019.sch using: c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/TestFiles/MIPS_GROUP_Sample_QRDA_III_Informative-2019.xml
         No XML Validation performed
         Schematron Validation:
     _______________________________________________________________
-    SCHEMATRON: c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Published/2020_CMS_QRDA_Category_III-v1-Apr_2019.sch
+    SCHEMATRON: c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Published/2020_CMS_QRDA_Category_III-v1-May_2019.sch
          
         TEST FILE: c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/TestFiles/MIPS_GROUP_Sample_QRDA_III_Informative-2019.xml
                 Error: a-CMS_41-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']/*[local-name()='entry'][2]/*[local-name()='organizer']/*[local-name()='component'][1]/*[local-name()='observation']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.16'][@extension='2019-05-01'])=1
@@ -1731,7 +1731,7 @@
                 Error: a-CMS_64-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3'][@extension='2019-05-01'])=1
                     SHALL contain exactly one [1..1] templateId (CONF:CMS_64) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.2.3" (CONF:CMS_65). SHALL contain exactly one [1..1] @extension="2019-05-01" (CONF:CMS_66).
                 Error: a-CMS_1-error at /*[local-name()='ClinicalDocument']: count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2019-05-01'])=1
-                    SHALL contain exactly one [1..1] templateId (CONF:CMS_1) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.2" (CONF:CMS_2).SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_3).
+                    SHALL contain exactly one [1..1] templateId (CONF:CMS_1) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.2" (CONF:CMS_2).SHALL contain exactly one [1..1] @extension="2019-05-01" (CONF:CMS_3).
                 Warning: a-3259-18353-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']/*[local-name()='entry'][2]/*[local-name()='organizer']: count(cda:reference[count(cda:externalObservation[count(cda:id)=1][count(cda:code[@code='55185-3'][@codeSystem='2.16.840.1.113883.6.1'])=1][count(cda:text)=1])=1])=1
                     SHOULD contain exactly one [1..1] reference (CONF:3259-18353) such that it SHALL contain exactly one [1..1] externalObservation (CONF:3259-18354). This externalObservation SHALL contain at least one [1..*] id (CONF:3259-18355). This externalObservation SHALL contain exactly one [1..1] code (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1 STATIC) (CONF:3259-18357). This code SHALL contain exactly one [1..1] @code="55185-3" measure set (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3259-19554). This externalObservation SHALL contain exactly one [1..1] text (CONF:3259-18358).
                 Warning: a-3259-18353-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']/*[local-name()='entry'][3]/*[local-name()='organizer']: count(cda:reference[count(cda:externalObservation[count(cda:id)=1][count(cda:code[@code='55185-3'][@codeSystem='2.16.840.1.113883.6.1'])=1][count(cda:text)=1])=1])=1

@@ -7,13 +7,13 @@
     Instructions file: C:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category I\EH CMS 2019\2019 CMS QRDA Category I v1.1\Build Control\EH CMS 2019 QRDA Category I v1.1  Merge Directions.xml
     Title: EH CMS 2019 QRDA Category I
     Version: 1.1
-    Generated on Wed May 01 15:24:31 MDT 2019
+    Generated on Wed May 01 15:12:53 MDT 2019
     Verbose Reporting is turned on
-    Merged file: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Published/2019_CMS_QRDA_I-v1.1-May_2019.sch
+    Merged file: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Published/2019_CMS_QRDA_I-v1.1-Apr_2019 xx.sch
         All Error patterns are generated before all Warning patterns
     ALERT: Failed to locate element: <compareSchematronFilename>
         Compare generated schematron asserts to asserts in file: null
-    Merge report file located at: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Build Control/mergeReport.txt
+    Merge report file located at: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Build Control/mergeReport xx.txt
     Validation is turned on
         Validate final merged file using: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/TestFiles/EH_Sample_QRDA_I_2019-Informative.xml
             XML XSD validation of test file is turned on
@@ -5585,18 +5585,18 @@
     0 schematron template(s) had no associated test files.
      
     Merge Process Results....
-        Merging files into file "C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Published/2019_CMS_QRDA_I-v1.1-May_2019.sch".
+        Merging files into file "C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Published/2019_CMS_QRDA_I-v1.1-Apr_2019 xx.sch".
             Generating all Error patterns first, then all Warning patterns.
-        Wrote merged Schematron file to "C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Published/2019_CMS_QRDA_I-v1.1-May_2019.sch".
-            Generated 1455 asserts in generated (merged) file C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Published/2019_CMS_QRDA_I-v1.1-May_2019.sch
+        Wrote merged Schematron file to "C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Published/2019_CMS_QRDA_I-v1.1-Apr_2019 xx.sch".
+            Generated 1455 asserts in generated (merged) file C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Published/2019_CMS_QRDA_I-v1.1-Apr_2019 xx.sch
 
 
-    Testing merged file C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Published/2019_CMS_QRDA_I-v1.1-May_2019.sch using: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/TestFiles/EH_Sample_QRDA_I_2019-Informative.xml
+    Testing merged file C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Published/2019_CMS_QRDA_I-v1.1-Apr_2019 xx.sch using: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/TestFiles/EH_Sample_QRDA_I_2019-Informative.xml
         Test file XML Validation using XSD file: Schema\CDA\infrastructure\cda\CDA_SDTC.xsd
             Successful XML validation against Schema\CDA\infrastructure\cda\CDA_SDTC.xsd
         Schematron Validation:
     _______________________________________________________________
-    SCHEMATRON: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Published/2019_CMS_QRDA_I-v1.1-May_2019.sch
+    SCHEMATRON: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Published/2019_CMS_QRDA_I-v1.1-Apr_2019 xx.sch
          
         TEST FILE: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/TestFiles/EH_Sample_QRDA_I_2019-Informative.xml
                 Warning: a-3343-28750-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][1]/*[local-name()='observation']: count(cda:entryRelationship[@typeCode='MFST'][@inversionInd='true'][count(cda:observation/cda:templateId[@root='2.16.840.1.113883.10.20.22.4.9'][@extension='2014-06-09'])=1])=1

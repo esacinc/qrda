@@ -8,7 +8,7 @@
     <version>1.0</version>
     
      <generatedFilename>
-         c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Published/2020_CMS_QRDA_Category_III-v1-Apr_2019.sch
+         c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Published/2020_CMS_QRDA_Category_III-v1-May_2019.sch
     </generatedFilename>
     
 	<!-- Change or edit final test file once test file is built -->
@@ -52,7 +52,7 @@
                   - Added -2020 to all CMS_ conformance ids
                   - Replaced conformance id prefix of 3259- with 4427- throughout template
                 - Performance Rate for Proportion Measure CMS V3
-                  - Removed empyt rules (containing no asserts)
+                  - Removed empty rules (containing no asserts)
 				  
 				  
     </fileHeader>

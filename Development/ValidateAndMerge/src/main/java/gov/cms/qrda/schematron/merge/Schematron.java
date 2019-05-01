@@ -126,7 +126,10 @@ public class Schematron {
 					if (isContentElement(c)) {
 						elementCnt++;
 					}
-					if (!isContentRuleEmpty(c)) {
+					else { // If not an element, then go ahead and add it to the merge.
+						elp.addContent(cc.detach());
+					}
+					if (!isContentRuleEmpty(c) ) {
 						elp.addContent(cc.detach());
 					}
 					else if (c instanceof Element){

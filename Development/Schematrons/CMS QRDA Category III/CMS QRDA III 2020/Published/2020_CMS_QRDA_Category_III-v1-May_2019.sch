@@ -38,9 +38,9 @@ Version 1.0
                   - Added -2020 to all CMS_ conformance ids
                   - Replaced conformance id prefix of 3259- with 4427- throughout template
                 - Performance Rate for Proportion Measure CMS V3
-                  - Removed empyt rules (containing no asserts) 
+                  - Removed empty rules (containing no asserts) 
 
-Mon Apr 29 14:56:26 MDT 2019
+Wed May 01 15:24:30 MDT 2019
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
@@ -192,6 +192,7 @@ Mon Apr 29 14:56:26 MDT 2019
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="Improvement_Activity_Performed_Measure_Reference_and_Results-template-pattern-errors">
+    <!-- New rule. JIRA https://tracker.esacinc.com/browse/QRDA-444 -->
     <sch:rule id="Improvement_Activity_Performed_Reference_and_Result-template-errors" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.33'][@extension='2016-09-01']]">
       <sch:assert id="a-CMS_71-error" test="count(cda:templateId[@root='2.16.840.1.113883.3.249.20.3.1'][@extension='2018-05-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:CMS_71) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.20.3.1" (CONF:CMS_72). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_73).</sch:assert>
     </sch:rule>
@@ -254,6 +255,22 @@ Mon Apr 29 14:56:26 MDT 2019
       <sch:assert id="a-3259-19652_C01-error" test="@typeCode='REFR'">This reference SHALL contain exactly one [1..1] @typeCode="REFR" refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3259-19652_C01).</sch:assert>
       <sch:assert id="a-3259-19653_C01" test="count(cda:externalObservation)=1">This reference SHALL contain exactly one [1..1] externalObservation (CONF:3259-19653_C01).</sch:assert>
     </sch:rule>
+    <!-- Removed the following 3 empty rules 04-29-2019 -->
+    <!-- Following conformance numbers in the commented out rules below exist in base HL7 IG already -->
+    <!-- 
+		<sch:rule id="Performance_Rate_for_Proportion_Measure_CMS-externalObservation-errors" context="cda:observation[cda:templateId[@root = '2.16.840.1.113883.10.20.27.3.25'][@extension = '2018-05-01']]/cda:reference/cda:externalObservation"> 
+			<sch:assert id="a-3259-19654-error" test="@classCode">This externalObservation SHALL contain exactly one [1..1] @classCode (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3259-19654).</sch:assert>
+			<sch:assert id="a-3259-19655-error" test="count(cda:id)=1">This externalObservation SHALL contain exactly one [1..1] id (CONF:3259-19655).</sch:assert>
+			<sch:assert id="a-3259-19657-error" test="count(cda:code)=1">This externalObservation SHALL contain exactly one [1..1] code (CONF:3259-19657).</sch:assert>
+		</sch:rule>
+		<sch:rule id="Performance_Rate_for_Proportion_Measure_CMS-id-errors" context="cda:observation[cda:templateId[@root = '2.16.840.1.113883.10.20.27.3.25'][@extension = '2018-05-01']]/cda:reference/cda:externalObservation/cda:id">
+			<sch:assert id="a-3259-19656-error" test="@root">This id SHALL contain exactly one [1..1] @root (CONF:3259-19656).</sch:assert>
+		</sch:rule>
+		<sch:rule id="Performance_Rate_for_Proportion_Measure_CMS-externalObservation-code-errors" context="cda:observation[cda:templateId[@root = '2.16.840.1.113883.10.20.27.3.25'][@extension = '2018-05-01']]/cda:reference/cda:externalObservation/cda:code">
+			<sch:assert id="a-3259-19658-error" test="@code='NUMER'">This code SHALL contain exactly one [1..1] @code="NUMER" Numerator (CONF:3259-19658).</sch:assert>
+			<sch:assert id="a-3259-21180-error" test="@codeSystem='2.16.840.1.113883.5.4'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.5.4" (CodeSystem: ActCode urn:oid:2.16.840.1.113883.5.4) (CONF:3259-21180).</sch:assert>
+		</sch:rule>
+		-->
   </sch:pattern>
   <sch:pattern id="QRDA_Category_III_Measure_Section-template-pattern-errors">
     <sch:rule id="QRDA_Category_III_Measure-template-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.1'][@extension='2017-06-01']]">
@@ -268,7 +285,7 @@ Mon Apr 29 14:56:26 MDT 2019
   </sch:pattern>
   <sch:pattern id="QRDA_Category_III-template-pattern-errors">
     <sch:rule id="QRDA_Category_III_Report-template-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.1'][@extension='2017-06-01']]">
-      <sch:assert id="a-CMS_1-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2019-05-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:CMS_1) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.2" (CONF:CMS_2).SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_3).</sch:assert>
+      <sch:assert id="a-CMS_1-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2019-05-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:CMS_1) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.1.2" (CONF:CMS_2).SHALL contain exactly one [1..1] @extension="2019-05-01" (CONF:CMS_3).</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="QRDA_Category_III_CMS-pattern-errors">
@@ -315,6 +332,15 @@ Mon Apr 29 14:56:26 MDT 2019
     <sch:rule id="QRDA_Category_III_CMS-documentationOf-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2019-05-01']]/cda:documentationOf">
       <sch:assert id="a-4427-18171_C01-error" test="count(cda:serviceEvent)=1">his documentationOf SHALL contain exactly one [1..1] serviceEvent (CONF:4427-18171_C01).</sch:assert>
     </sch:rule>
+    <!-- Removed the following empty rules 04-29-2019 -->
+    <!--
+            <sch:rule id="QRDA_Category_III_CMS-documentationOf-serviceEvent-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2019-05-01']]/cda:documentationOf/cda:serviceEvent">
+            </sch:rule>
+            <sch:rule id="QRDA_Category_III_CMS-documentationOf-serviceEvent-performer-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2019-05-01']]/cda:documentationOf/cda:serviceEvent/cda:performer">
+            </sch:rule>
+            <sch:rule id="QRDA_Category_III_CMS-component-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2019-05-01']]/cda:component">
+            </sch:rule>
+       -->
     <sch:rule id="QRDA_Category_III_CMS-documentationOf-serviceEvent-performer-assignedEntity-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2019-05-01']]/cda:documentationOf/cda:serviceEvent/cda:performer/cda:assignedEntity">
       <sch:assert id="a-4427-18177_C01-error" test="count(cda:id[@root='2.16.840.1.113883.4.6'])=1">This assignedEntity SHALL contain exactly one [1..1] id (CONF:4427-18177_C01) such that it  MAY contain zero or one [0..1] @nullFlavor (CONF:CMS_29). SHALL contain exactly one [1..1] @root="2.16.840.1.113883.4.6" National Provider ID (CONF:3338-18178_C01).  MAY contain zero or one [0..1] @extension (CONF:3338-18247).</sch:assert>
       <sch:assert id="a-4427-18180_C01-error" test="count(cda:representedOrganization)=1">This assignedEntity SHALL contain exactly one [1..1] representedOrganization (CONF:4427-18180_C01).</sch:assert>

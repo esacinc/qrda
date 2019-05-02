@@ -6,7 +6,7 @@
     <version>1.1</version>
     
     <generatedFilename>
-        c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5.1 v1.1/Published/HL7 QRDA Category I STU 5.1 v1.1 Apr_2019.sch
+        c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5.1 v1.1/Schematron/HL7 QRDA Category I STU 5.1 v1.1 May_2019.sch
     </generatedFilename>
     <finalTestFilename>
         c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5.1 v1.1/TestFiles/CDAR2_IG_QRDA_I_R1_STU5_1_Sample.xml 
@@ -27,8 +27,10 @@
         
         Changes from HL7 QRDA Category I STU 5 v1.0 Schematron:
         
-        - Diagnosis V2 template: removed conformance 3343-28886 requiring a  translation element in code
-        - Family History Observation V3 template: removed conformance 1198-32847 requiring a translation element in code
+        - Family History Observation template: Made translation valueSet warning separate from requirement 1198-32847 
+        - Incision template: Removed conformance 67-26984, SHALL contain at least one [1..*] id 
+        - Medication Activity template: Added 1098-32950 The routeCode, if present, SHOULD contain zero or more [0..*] translation, which SHALL be selected from ValueSet Medication Route urn:oid:2.16.840.1.113762.1.4.1099.12 DYNAMIC (CONF:1098-32950).
+        - Problem Observation V3 template: Removed empty rule resulting from priorremoval of conformance 1198-32848 requiring a translation element in code
                      
     </fileHeader>
     

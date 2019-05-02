@@ -6,7 +6,7 @@
     <version>1.1</version>
     
     <generatedFilename>
-        C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Published/2019_CMS_QRDA_I-v1.1-May_2019.sch
+        C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Schematron/2019_CMS_QRDA_I-v1.1-May_2019.sch
     </generatedFilename>
     
     <finalTestFilename>
@@ -26,8 +26,6 @@
     
     Additions and changes from version 1.0
     
-        - Diagnosis V2 template: removed conformance 3343-28886 requiring a  translation element in code
-        - Family History Observation V3 template: removed conformance 1198-32847 requiring a translation element in code
         - Problem Observation V3: removed conformance 1198-32848 requiring a translation element in code 
         - Removed empty rule Problem-Observation-code-errors
         - Removed empty rule Reporting-Parameters-Act-CMS-errors

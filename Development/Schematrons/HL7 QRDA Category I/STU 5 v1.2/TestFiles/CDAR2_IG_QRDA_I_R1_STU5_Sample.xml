@@ -14,7 +14,7 @@
    
     Expected Schematron Validation results against schematron file "HL7 QRDA Category I STU 5 Dec2017.sch":
         Total Errors Expected:   0
-        Total Warnings Expected: 118
+        Total Warnings Expected: 122
         
   -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

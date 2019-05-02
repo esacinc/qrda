@@ -6,14 +6,17 @@
     <version>1.2</version>
     
     <generatedFilename>
-        c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/Published/HL7 QRDA Category I STU 5 v1.1 Apr 2019.sch
+        c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.2/Schematron/HL7 QRDA Category I STU 5 v1.2 May 2019.sch
     </generatedFilename>
     <finalTestFilename>
-        c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/TestFiles/CDAR2_IG_QRDA_I_R1_STU5_Sample.xml 
+        c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.2/TestFiles/CDAR2_IG_QRDA_I_R1_STU5_Sample.xml 
     </finalTestFilename>
     
+	<vocabFilename>
+		c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.2/Vocabulary/voc.xml
+	</vocabFilename>
 	<compareSchematronFilename>
-		C:\Development\QRDA-git\qrda\Published Schematrons\HL7 QRDA I\STU 5\HL7 QRDA Category I STU 5 - Dec 2017\Schematron\HL7 QRDA Category I STU 5  v1.0 Dec_2017.sch
+		<!-- C:\Development\QRDA-git\qrda\Published Schematrons\HL7 QRDA I\STU 5\Older Versions\HL7 QRDA Category I STU 5 v1.1 - Dec 2017\Schematron\HL7 QRDA Category I STU 5 v1.0 Dec_2017.sch -->
 	</compareSchematronFilename>
 	
     <fileHeader>
@@ -26,17 +29,15 @@
         ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
         Changes in this version from the STU 5 v1.1 schematron:
-        
-        - Diagnosis V2 template: removed conformance 3343-28886 requiring a  translation element in code
-        - Family History Observation V3 template: removed conformance 1198-32847 requiring a translation element in code
-        - Problem Observation V3: removed conformance 1198-32848 requiring a translation element in code
+         - QDM Based QRDA V5:      Removed 3343-16595 as it is now a "MAY such that" rather than a SHOULD
+         - Problem Observation V3: Removed conformance 1198-32848 requiring a translation element in code
         
     </fileHeader>
     
     <errorsHeader>ERROR Patterns and Assertions</errorsHeader>
     <warningsHeader>WARNING Patterns and Assertions</warningsHeader>
     
-    <mergeReportFilename>c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/Build Control/mergeReport.txt</mergeReportFilename>
+    <mergeReportFilename>c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.2/Build Control/mergeReport.txt</mergeReportFilename>
     
     <!-- All schematrons expected to be under a single main directory -->
     <sourceMainDirectory>

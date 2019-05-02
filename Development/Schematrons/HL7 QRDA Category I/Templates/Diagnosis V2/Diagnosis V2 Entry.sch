@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- 04-25-2019 Remove translation requirement3343-28886,  https://tracker.esacinc.com/browse/QRDA-573 -->
-
 <sch:schema xmlns:voc="http://www.lantanagroup.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
     <sch:ns prefix="svs" uri="urn:ihe:iti:svs:2008" />
@@ -25,8 +23,7 @@
         <sch:rule id="Diagnosis-code-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.135'][@extension='2017-08-01']]/cda:code">
             <sch:assert id="a-3343-28505-error" test="@code='29308-4'">This code SHALL contain exactly one [1..1] @code="29308-4" diagnosis (CONF:3343-28505). </sch:assert>
             <sch:assert id="a-3343-28506-error" test="@codeSystem='2.16.840.1.113883.6.1'">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3343-28506).</sch:assert>
-            <!-- Remove translation requirement https://tracker.esacinc.com/browse/QRDA-573 -->
-            <!-- <sch:assert id="a-3343-28886-error" test="count(cda:translation)=1">This code SHALL contain exactly one [1..1] translation (CONF:3343-28886).</sch:assert> -->
+            <sch:assert id="a-3343-28886-error" test="count(cda:translation)=1">This code SHALL contain exactly one [1..1] translation (CONF:3343-28886).</sch:assert>
         </sch:rule>
         <sch:rule id="Diagnosis-code-translation-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.135'][@extension='2017-08-01']]/cda:code/cda:translation">
             <sch:assert id="a-3343-28888-error" test="@code='282291009'">This translation, if present, SHALL contain exactly one [1..1] @code="282291009" 2.16.840.1.113883.6.96 (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:3343-28888).</sch:assert>

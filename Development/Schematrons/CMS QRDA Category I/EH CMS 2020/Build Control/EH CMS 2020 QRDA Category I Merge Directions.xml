@@ -6,7 +6,7 @@
     <version>1.0</version>
     
     <generatedFilename>
-        C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Published/2020_CMS_QRDA_I-v1.0-Apr_2019.sch
+        C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Schematron/2020_CMS_QRDA_I-v1.0-May_2019.sch
     </generatedFilename>
     
     <finalTestFilename>
@@ -38,14 +38,9 @@
             - Updated 2.16.840.1.113883.10.20.24.2.1 (referenced conformant base template) extension to 2018-10-01 from 2017-08-01
             - Updated conf. prefix from 3343 to 4388 throughout
         
-        Template Diagnosis V2
-            - Removed conformance 3343-28886 requiring a  translation element in code
-        
-        Template Family History Observation V3
-            - Removed conformance 1198-32847 requiring a translation element in code
-    
+   
         Template Problem Observation V3
-            - Removed empty rule Problem-Observation-code-errors
+            - Removed empty rule Problem-Observation-code-errors resulting from prior removal of 1198-32848
 			
         Template Reporting Parameters Act CMS
             - Removed empty rule Reporting-Parameters-Act-CMS-errors

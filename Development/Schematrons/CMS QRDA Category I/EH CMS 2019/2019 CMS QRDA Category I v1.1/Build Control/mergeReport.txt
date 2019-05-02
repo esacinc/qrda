@@ -7,7 +7,7 @@
     Instructions file: C:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category I\EH CMS 2019\2019 CMS QRDA Category I v1.1\Build Control\EH CMS 2019 QRDA Category I v1.1  Merge Directions.xml
     Title: EH CMS 2019 QRDA Category I
     Version: 1.1
-    Generated on Wed May 01 15:24:31 MDT 2019
+    Generated on Thu May 02 14:51:03 MDT 2019
     Verbose Reporting is turned on
     Merged file: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2019/2019 CMS QRDA Category I v1.1/Published/2019_CMS_QRDA_I-v1.1-May_2019.sch
         All Error patterns are generated before all Warning patterns
@@ -1745,8 +1745,11 @@
                     This code SHALL contain exactly one [1..1] @code="29308-4" diagnosis (CONF:3343-28505). 
                 Error: a-3343-28506-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='observation']/*[local-name()='code'][2]: @codeSystem='2.16.840.1.113883.6.1'
                     This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3343-28506).
+                Error: a-3343-28886-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='observation']/*[local-name()='code'][2]: count(cda:translation)=1
+                    This code SHALL contain exactly one [1..1] translation (CONF:3343-28886).
+                C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Diagnosis V2\Diagnosis V2-Errors.xml: Failure count inconsistent with expectations for this file. (Errors: expected 9, actual 10) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 9, actual 9) (Warnings: expected 0, actual 0)
+            (Errors: expected 9, actual 10) (Warnings: expected 0, actual 0)
          
         TEST FILE: C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Diagnosis V2\Diagnosis V2-Good.xml
             
@@ -2337,15 +2340,17 @@
                     SHALL contain exactly one [1..1] statusCode (CONF:1198-8590).
                 Error: a-1198-8591-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:value[@xsi:type='CD'])=1
                     SHALL contain exactly one [1..1] value with @xsi:type="CD", where the code SHALL be selected from ValueSet Problem urn:oid:2.16.840.1.113883.3.88.12.3221.7.4 DYNAMIC (CONF:1198-8591).
+                Error: a-1198-32847-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='code'][2]: count(cda:translation) > 0
+                    This code SHALL contain at least one [1..*] translation, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2014-09-02 (CONF:1198-32847).
                 Error: a-1198-19098-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='statusCode'][2]: @code='completed'
                     This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:1198-19098).
                 Warning: a-1198-8593-warning at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:effectiveTime)=1
                     SHOULD contain zero or one [0..1] effectiveTime (CONF:1198-8593).
                 Warning: a-1198-32427-v-warning at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='code'][2]: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.3221.7.2']/voc:code/@value
                     SHALL contain exactly one [1..1] code, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2012-06-01 (CONF:1198-32427).
-                C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Family History Observation V3\Family_History_Observation_V3-Errors.xml: Failure count inconsistent with expectations for this file. (Errors: expected 8, actual 8) (Warnings: expected 3, actual 2)
+                C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Family History Observation V3\Family_History_Observation_V3-Errors.xml: Failure count inconsistent with expectations for this file. (Errors: expected 8, actual 9) (Warnings: expected 3, actual 2)
             
-            (Errors: expected 8, actual 8) (Warnings: expected 3, actual 2)
+            (Errors: expected 8, actual 9) (Warnings: expected 3, actual 2)
          
         TEST FILE: C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Family History Observation V3\Family_History_Observation_V3-Good.xml
             
@@ -5581,7 +5586,7 @@
             (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
             _______________________________________________________________
         
-    Found 4 schematron template(s) that did not process test files as expected
+    Found 5 schematron template(s) that did not process test files as expected
     0 schematron template(s) had no associated test files.
      
     Merge Process Results....
@@ -5837,6 +5842,6 @@
             (Errors: expected 0, actual 0) (Warnings: expected 117, actual 117)
             Schematron validation of test file results as expected (or no expected error count provided).
  
-    Merge Complete in 12 seconds
+    Merge Complete in 17 seconds
 **************************************** end merge report ************************************************************************
  

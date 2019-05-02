@@ -4,21 +4,21 @@
 ************************************************************************************************************
     ALERT: Failed to locate element: <useXSDFilename>
     ALERT: Failed to locate element: <headerFormat>
-    Instructions file: C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\STU 5 v1.1\Build Control\HL7 QRDA Category I STU 5 v1.1 Merge Directions.xml
+    Instructions file: C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\STU 5 v1.2\Build Control\HL7 QRDA Category I STU 5 v1.2 Merge Directions.xml
     Title: HL7 QRDA 1 STU 5 schematron
-    Version: 1.1
-    Generated on Thu Apr 25 17:15:18 MDT 2019
+    Version: 1.2
+    Generated on Thu May 02 14:17:16 MDT 2019
     Verbose Reporting is turned on
-    Merged file: c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/Published/HL7 QRDA Category I STU 5 v1.1 Apr 2019.sch
+    Merged file: c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.2/Published/HL7 QRDA Category I STU 5 v1.2 May 2019.sch
         All Error patterns are generated before all Warning patterns
-        Compare generated schematron asserts to asserts in file: C:\Development\QRDA-git\qrda\Published Schematrons\HL7 QRDA I\STU 5\HL7 QRDA Category I STU 5 - Dec 2017\Schematron\HL7 QRDA Category I STU 5  v1.0 Dec_2017.sch
-    Merge report file located at: c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/Build Control/mergeReport.txt
+        Compare generated schematron asserts to asserts in file: 
+    Merge report file located at: c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.2/Build Control/mergeReport.txt
     Validation is turned on
-        Validate final merged file using: c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/TestFiles/CDAR2_IG_QRDA_I_R1_STU5_Sample.xml
+        Validate final merged file using: c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.2/TestFiles/CDAR2_IG_QRDA_I_R1_STU5_Sample.xml
             XML XSD validation of test file is turned off
         Merge Process will not stop when validation inconsistencies are encountered in the template schematrons
-    ALERT: Failed to locate element: <vocabFilename>
-        No vocabFilename specified.
+        vocabFilename is c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.2/Vocabulary/voc.xml
+            Copied vocabulary file: c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.2/Vocabulary/voc.xml into project space as 'voc.xml'
     Collect schematron template information from source directories...
         Processing template directory: c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/Templates/, selector: some
             Located schematron file: Admission Source Entry.sch
@@ -1660,8 +1660,11 @@
                     This code SHALL contain exactly one [1..1] @code="29308-4" diagnosis (CONF:3343-28505). 
                 Error: a-3343-28506-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='observation']/*[local-name()='code'][2]: @codeSystem='2.16.840.1.113883.6.1'
                     This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3343-28506).
+                Error: a-3343-28886-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='observation']/*[local-name()='code'][2]: count(cda:translation)=1
+                    This code SHALL contain exactly one [1..1] translation (CONF:3343-28886).
+                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Diagnosis V2\Diagnosis V2-Errors.xml: Failure count inconsistent with expectations for this file. (Errors: expected 9, actual 10) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 9, actual 9) (Warnings: expected 0, actual 0)
+            (Errors: expected 9, actual 10) (Warnings: expected 0, actual 0)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Diagnosis V2\Diagnosis V2-Good.xml
             
@@ -2252,23 +2255,21 @@
                     SHALL contain exactly one [1..1] statusCode (CONF:1198-8590).
                 Error: a-1198-8591-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:value[@xsi:type='CD'])=1
                     SHALL contain exactly one [1..1] value with @xsi:type="CD", where the code SHALL be selected from ValueSet Problem urn:oid:2.16.840.1.113883.3.88.12.3221.7.4 DYNAMIC (CONF:1198-8591).
+                Error: a-1198-32847-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='code'][2]: count(cda:translation) > 0
+                    This code SHALL contain at least one [1..*] translation, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2014-09-02 (CONF:1198-32847).
                 Error: a-1198-19098-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='statusCode'][2]: @code='completed'
                     This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:1198-19098).
                 Warning: a-1198-8593-warning at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:effectiveTime)=1
                     SHOULD contain zero or one [0..1] effectiveTime (CONF:1198-8593).
-                Warning: a-1198-32427-v-warning at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='code'][1]: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.3221.7.2']/voc:code/@value
-                    SHALL contain exactly one [1..1] code, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2012-06-01 (CONF:1198-32427).
                 Warning: a-1198-32427-v-warning at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='code'][2]: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.3221.7.2']/voc:code/@value
                     SHALL contain exactly one [1..1] code, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2012-06-01 (CONF:1198-32427).
+                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Family History Observation V3\Family_History_Observation_V3-Errors.xml: Failure count inconsistent with expectations for this file. (Errors: expected 8, actual 9) (Warnings: expected 3, actual 2)
             
-            (Errors: expected 8, actual 8) (Warnings: expected 3, actual 3)
+            (Errors: expected 8, actual 9) (Warnings: expected 3, actual 2)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Family History Observation V3\Family_History_Observation_V3-Good.xml
-                Warning: a-1198-32427-v-warning at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='code']: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.3221.7.2']/voc:code/@value
-                    SHALL contain exactly one [1..1] code, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2012-06-01 (CONF:1198-32427).
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Family History Observation V3\Family_History_Observation_V3-Good.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 0) (Warnings: expected 0, actual 1)
             
-            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 1)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Family History Organizer QDM V4\Family History Organizer QDM V4 Entry.sch
          
@@ -2459,11 +2460,8 @@
             (Errors: expected 9, actual 9) (Warnings: expected 5, actual 5)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Immunization Activity V2\Immunization Activity V2-Good.xml
-                Error: a-1098-8827-error at /*[local-name()='ClinicalDocument']/*[local-name()='substanceAdministration']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.18']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet MoodCodeEvnInt urn:oid:2.16.840.1.113883.11.20.9.18 STATIC 2014-09-01 (CONF:1098-8827).
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Immunization Activity V2\Immunization Activity V2-Good.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Immunization Administered V2\Immunization Administered V2 Entry.sch
          
@@ -2891,30 +2889,22 @@
     SCHEMATRON: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Activity V2\Medication Activity V2 Entry.sch
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Activity V2\Medication Activity V2-ERRORS-2.xml
-                Error: a-1098-7497-v-error at /*[local-name()='ClinicalDocument']/*[local-name()='entry']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='substanceAdministration'][1]: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.18']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet MoodCodeEvnInt urn:oid:2.16.840.1.113883.11.20.9.18 STATIC 2011-04-03 (CONF:1098-7497).
                 Error: a-1098-7516-error at /*[local-name()='ClinicalDocument']/*[local-name()='entry']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='substanceAdministration'][1]: count(cda:doseQuantity) = 1
                     SHALL contain exactly one [1..1] doseQuantity (CONF:1098-7516).
-                Error: a-1098-7497-v-error at /*[local-name()='ClinicalDocument']/*[local-name()='entry']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='substanceAdministration'][2]: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.18']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet MoodCodeEvnInt urn:oid:2.16.840.1.113883.11.20.9.18 STATIC 2011-04-03 (CONF:1098-7497).
                 Warning: a-1098-30800-warning at /*[local-name()='ClinicalDocument']/*[local-name()='entry']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='substanceAdministration'][1]: (count(cda:doseQuantity) > 0) or (count(cda:rateQuantity) > 0)
                     Medication Activity SHOULD include doseQuantity OR rateQuantity (CONF:1098-30800).
                 Warning: a-1098-32950-warning at /*[local-name()='ClinicalDocument']/*[local-name()='entry']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='substanceAdministration'][1]/*[local-name()='routeCode']: count(cda:translation) >= 1
                     The routeCode, if present, SHOULD contain zero or more [0..*] translation, which SHALL be selected from ValueSet Medication Route urn:oid:2.16.840.1.113762.1.4.1099.12 DYNAMIC (CONF:1098-32950). 
                 Warning: a-1098-7514-warning at /*[local-name()='ClinicalDocument']/*[local-name()='entry']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='substanceAdministration'][2]: ((not(parent::node()[parent::node()[parent::node()[cda:act[@negationInd]]]]) or parent::node()[parent::node()[parent::node()[cda:act[@negationInd='false']]]]) and count(cda:routeCode) = 1) or parent::node()[parent::node()[parent::node()[cda:act[@negationInd='true']]]]
                     SHOULD contain zero or one [0..1] routeCode (CONF:1098-7514).
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Activity V2\Medication Activity V2-ERRORS-2.xml: Failure count inconsistent with expectations for this file. (Errors: expected 1, actual 3) (Warnings: expected 3, actual 3)
             
-            (Errors: expected 1, actual 3) (Warnings: expected 3, actual 3)
+            (Errors: expected 1, actual 1) (Warnings: expected 3, actual 3)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Activity V2\Medication Activity V2-ERRORS-3.xml
-                Error: a-1098-7497-v-error at /*[local-name()='ClinicalDocument']/*[local-name()='entry']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='substanceAdministration']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.18']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet MoodCodeEvnInt urn:oid:2.16.840.1.113883.11.20.9.18 STATIC 2011-04-03 (CONF:1098-7497).
                 Warning: a-1098-7514-warning at /*[local-name()='ClinicalDocument']/*[local-name()='entry']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='substanceAdministration']: ((not(parent::node()[parent::node()[parent::node()[cda:act[@negationInd]]]]) or parent::node()[parent::node()[parent::node()[cda:act[@negationInd='false']]]]) and count(cda:routeCode) = 1) or parent::node()[parent::node()[parent::node()[cda:act[@negationInd='true']]]]
                     SHOULD contain zero or one [0..1] routeCode (CONF:1098-7514).
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Activity V2\Medication Activity V2-ERRORS-3.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 1, actual 1)
             
-            (Errors: expected 0, actual 1) (Warnings: expected 1, actual 1)
+            (Errors: expected 0, actual 0) (Warnings: expected 1, actual 1)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Activity V2\Medication Activity V2-ERRORS.xml
                 Error: a-1098-7496-error at /*[local-name()='ClinicalDocument']/*[local-name()='entry']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='substanceAdministration']: @classCode='SBADM'
@@ -2953,13 +2943,8 @@
             (Errors: expected 13, actual 13) (Warnings: expected 3, actual 3)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Activity V2\Medication Activity V2-GOOD.xml
-                Error: a-1098-7497-v-error at /*[local-name()='ClinicalDocument']/*[local-name()='entry']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='substanceAdministration'][1]: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.18']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet MoodCodeEvnInt urn:oid:2.16.840.1.113883.11.20.9.18 STATIC 2011-04-03 (CONF:1098-7497).
-                Error: a-1098-7497-v-error at /*[local-name()='ClinicalDocument']/*[local-name()='entry']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='substanceAdministration'][2]: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.18']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet MoodCodeEvnInt urn:oid:2.16.840.1.113883.11.20.9.18 STATIC 2011-04-03 (CONF:1098-7497).
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Activity V2\Medication Activity V2-GOOD.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 2) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 0, actual 2) (Warnings: expected 0, actual 0)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Administered V4\Medication Administered V4 Entry.sch
          
@@ -3010,10 +2995,6 @@
                     
 				A supply act SHALL contain one product/Medication Information OR one product/Immunization Medication Information template (CONF:1098-9333).	
 			
-                Error: a-1098-32361-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']/*[local-name()='statusCode'][1]: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.80.64']/voc:code/@value
-                    
-				This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet Medication Fill Status urn:oid:2.16.840.1.113883.3.88.12.80.64 STATIC 2014-04-23 (CONF:1098-32361).
-			
                 Error: a-1098-32361-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']/*[local-name()='statusCode'][2]: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.80.64']/voc:code/@value
                     
 				This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet Medication Fill Status urn:oid:2.16.840.1.113883.3.88.12.80.64 STATIC 2014-04-23 (CONF:1098-32361).
@@ -3034,122 +3015,76 @@
                     
 				SHOULD contain zero or one [0..1] quantity (CONF:1098-7458).
 			
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Error1.xml: Failure count inconsistent with expectations for this file. (Errors: expected 8, actual 9) (Warnings: expected 3, actual 3)
             
-            (Errors: expected 8, actual 9) (Warnings: expected 3, actual 3)
+            (Errors: expected 8, actual 8) (Warnings: expected 3, actual 3)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Error2.xml
                 Error: a-1098-9333-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']: (cda:product[count(cda:manufacturedProduct)=1]) and (count(cda:product[cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.23'][@extension='2014-06-09']] or cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.54'][@extension='2014-06-09']]]) = 1)
                     
 				A supply act SHALL contain one product/Medication Information OR one product/Immunization Medication Information template (CONF:1098-9333).	
 			
-                Error: a-1098-32361-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']/*[local-name()='statusCode']: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.80.64']/voc:code/@value
-                    
-				This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet Medication Fill Status urn:oid:2.16.840.1.113883.3.88.12.80.64 STATIC 2014-04-23 (CONF:1098-32361).
-			
                 Warning: a-1098-7468-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']/*[local-name()='performer']/*[local-name()='assignedEntity']: count(cda:addr) = 1
                     
 				This assignedEntity SHOULD contain zero or one [0..1] US Realm Address (AD.US.FIELDED) (identifier: urn:oid:2.16.840.1.113883.10.20.22.5.2) (CONF:1098-7468).
 			
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Error2.xml: Failure count inconsistent with expectations for this file. (Errors: expected 1, actual 2) (Warnings: expected 1, actual 1)
             
-            (Errors: expected 1, actual 2) (Warnings: expected 1, actual 1)
+            (Errors: expected 1, actual 1) (Warnings: expected 1, actual 1)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Error3.xml
                 Error: a-1098-9333-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']: (cda:product[count(cda:manufacturedProduct)=1]) and (count(cda:product[cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.23'][@extension='2014-06-09']] or cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.54'][@extension='2014-06-09']]]) = 1)
                     
 				A supply act SHALL contain one product/Medication Information OR one product/Immunization Medication Information template (CONF:1098-9333).	
 			
-                Error: a-1098-32361-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']/*[local-name()='statusCode']: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.80.64']/voc:code/@value
-                    
-				This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet Medication Fill Status urn:oid:2.16.840.1.113883.3.88.12.80.64 STATIC 2014-04-23 (CONF:1098-32361).
-			
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Error3.xml: Failure count inconsistent with expectations for this file. (Errors: expected 1, actual 2) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 1, actual 2) (Warnings: expected 0, actual 0)
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Error4.xml
                 Error: a-1098-9333-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']: (cda:product[count(cda:manufacturedProduct)=1]) and (count(cda:product[cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.23'][@extension='2014-06-09']] or cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.54'][@extension='2014-06-09']]]) = 1)
                     
 				A supply act SHALL contain one product/Medication Information OR one product/Immunization Medication Information template (CONF:1098-9333).	
 			
-                Error: a-1098-32361-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']/*[local-name()='statusCode']: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.80.64']/voc:code/@value
-                    
-				This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet Medication Fill Status urn:oid:2.16.840.1.113883.3.88.12.80.64 STATIC 2014-04-23 (CONF:1098-32361).
-			
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Error4.xml: Failure count inconsistent with expectations for this file. (Errors: expected 1, actual 2) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 1, actual 2) (Warnings: expected 0, actual 0)
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Error5.xml
                 Error: a-1098-9333-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']: (cda:product[count(cda:manufacturedProduct)=1]) and (count(cda:product[cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.23'][@extension='2014-06-09']] or cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.54'][@extension='2014-06-09']]]) = 1)
                     
 				A supply act SHALL contain one product/Medication Information OR one product/Immunization Medication Information template (CONF:1098-9333).	
 			
-                Error: a-1098-32361-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']/*[local-name()='statusCode']: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.80.64']/voc:code/@value
-                    
-				This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet Medication Fill Status urn:oid:2.16.840.1.113883.3.88.12.80.64 STATIC 2014-04-23 (CONF:1098-32361).
-			
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Error5.xml: Failure count inconsistent with expectations for this file. (Errors: expected 1, actual 2) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 1, actual 2) (Warnings: expected 0, actual 0)
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Error6.xml
                 Error: a-1098-9333-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']: (cda:product[count(cda:manufacturedProduct)=1]) and (count(cda:product[cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.23'][@extension='2014-06-09']] or cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.54'][@extension='2014-06-09']]]) = 1)
                     
 				A supply act SHALL contain one product/Medication Information OR one product/Immunization Medication Information template (CONF:1098-9333).	
 			
-                Error: a-1098-32361-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']/*[local-name()='statusCode']: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.80.64']/voc:code/@value
-                    
-				This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet Medication Fill Status urn:oid:2.16.840.1.113883.3.88.12.80.64 STATIC 2014-04-23 (CONF:1098-32361).
-			
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Error6.xml: Failure count inconsistent with expectations for this file. (Errors: expected 1, actual 2) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 1, actual 2) (Warnings: expected 0, actual 0)
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Error7.xml
                 Error: a-1098-9333-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']: (cda:product[count(cda:manufacturedProduct)=1]) and (count(cda:product[cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.23'][@extension='2014-06-09']] or cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.54'][@extension='2014-06-09']]]) = 1)
                     
 				A supply act SHALL contain one product/Medication Information OR one product/Immunization Medication Information template (CONF:1098-9333).	
 			
-                Error: a-1098-32361-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']/*[local-name()='statusCode']: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.80.64']/voc:code/@value
-                    
-				This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet Medication Fill Status urn:oid:2.16.840.1.113883.3.88.12.80.64 STATIC 2014-04-23 (CONF:1098-32361).
-			
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Error7.xml: Failure count inconsistent with expectations for this file. (Errors: expected 1, actual 2) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 1, actual 2) (Warnings: expected 0, actual 0)
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Error8.xml
                 Error: a-1098-9333-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']: (cda:product[count(cda:manufacturedProduct)=1]) and (count(cda:product[cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.23'][@extension='2014-06-09']] or cda:manufacturedProduct[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.54'][@extension='2014-06-09']]]) = 1)
                     
 				A supply act SHALL contain one product/Medication Information OR one product/Immunization Medication Information template (CONF:1098-9333).	
 			
-                Error: a-1098-32361-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']/*[local-name()='statusCode']: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.80.64']/voc:code/@value
-                    
-				This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet Medication Fill Status urn:oid:2.16.840.1.113883.3.88.12.80.64 STATIC 2014-04-23 (CONF:1098-32361).
-			
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Error8.xml: Failure count inconsistent with expectations for this file. (Errors: expected 1, actual 2) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 1, actual 2) (Warnings: expected 0, actual 0)
+            (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Good1.xml
-                Error: a-1098-32361-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']/*[local-name()='statusCode']: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.80.64']/voc:code/@value
-                    
-				This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet Medication Fill Status urn:oid:2.16.840.1.113883.3.88.12.80.64 STATIC 2014-04-23 (CONF:1098-32361).
-			
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2 - Good1.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2.xml
-                Error: a-1098-32361-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']/*[local-name()='statusCode']: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.80.64']/voc:code/@value
-                    
-				This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet Medication Fill Status urn:oid:2.16.840.1.113883.3.88.12.80.64 STATIC 2014-04-23 (CONF:1098-32361).
-			
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispense V2\Medication Dispense V2.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Dispensed Act V2\Medication Dispensed Act V2 Entry.sch
          
@@ -3260,11 +3195,8 @@
             (Errors: expected 14, actual 14) (Warnings: expected 1, actual 1)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Free Text Sig\Medication Free Text Sig-GOOD.xml
-                Error: a-1198-32771-error at /*[local-name()='ClinicalDocument']/*[local-name()='substanceAdministration']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.18']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet MoodCodeEvnInt urn:oid:2.16.840.1.113883.11.20.9.18 STATIC 2011-04-03 (CONF:1198-32771).
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Free Text Sig\Medication Free Text Sig-GOOD.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Medication Information V2\Medication Information V2 Entry.sch
          
@@ -3661,11 +3593,8 @@
             (Errors: expected 7, actual 7) (Warnings: expected 3, actual 3)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Act V2\Planned Act V2-GOOD.xml
-                Error: a-1098-8539-error at /*[local-name()='ClinicalDocument']/*[local-name()='entry']/*[local-name()='act']: @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.23']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Act/Encounter/Procedure) urn:oid:2.16.840.1.113883.11.20.9.23 STATIC 2011-09-30 (CONF:1098-8539).
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Act V2\Planned Act V2-GOOD.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Coverage\Planned Coverage Entry.sch
          
@@ -3734,11 +3663,8 @@
             (Errors: expected 6, actual 6) (Warnings: expected 3, actual 3)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Encounter V2\Planned Encounter V2-Good.xml
-                Error: a-1098-8565-error at /*[local-name()='ClinicalDocument']/*[local-name()='entry']/*[local-name()='encounter']: @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.23']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Act/Encounter/Procedure) urn:oid:2.16.840.1.113883.11.20.9.23 STATIC 2011-09-30 (CONF:1098-8565).
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Encounter V2\Planned Encounter V2-Good.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Immunization Activity\Planned Immunization Activity Entry.sch
          
@@ -3767,11 +3693,8 @@
             (Errors: expected 9, actual 9) (Warnings: expected 1, actual 1)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Immunization Activity\Planned Immunization Activity-Good.xml
-                Error: a-1098-32097-error at /*[local-name()='ClinicalDocument']/*[local-name()='substanceAdministration']: @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.24']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (SubstanceAdministration/Supply) urn:oid:2.16.840.1.113883.11.20.9.24 STATIC 2014-09-01 (CONF:1098-32097).
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Immunization Activity\Planned Immunization Activity-Good.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Medication Activity V2\Planned Medication Activity V2 Entry.sch
          
@@ -3808,11 +3731,8 @@
             (Errors: expected 11, actual 11) (Warnings: expected 3, actual 3)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Medication Activity V2\Planned Mediaction Activity V2-Good.xml
-                Error: a-1098-8573-error at /*[local-name()='ClinicalDocument']/*[local-name()='substanceAdministration']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.24']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (SubstanceAdministration/Supply) urn:oid:2.16.840.1.113883.11.20.9.24 STATIC 2011-09-30 (CONF:1098-8573).
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Medication Activity V2\Planned Mediaction Activity V2-Good.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Observation V2\Planned Observation V2 Entry.sch
          
@@ -3841,11 +3761,8 @@
             (Errors: expected 7, actual 7) (Warnings: expected 3, actual 3)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Observation V2\Planned Observation V2-GOOD.xml
-                Error: a-1098-8582-error at /*[local-name()='ClinicalDocument']/*[local-name()='entry']/*[local-name()='observation']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.25']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Observation) urn:oid:2.16.840.1.113883.11.20.9.25 STATIC 2011-09-30 (CONF:1098-8582).
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Observation V2\Planned Observation V2-GOOD.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Procedure V2\Planned Procedure V2 Entry.sch
          
@@ -3872,11 +3789,8 @@
             (Errors: expected 7, actual 7) (Warnings: expected 2, actual 2)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Procedure V2\Planned Procedure V2-GOOD.xml
-                Error: a-1098-8569-error at /*[local-name()='ClinicalDocument']/*[local-name()='entry']/*[local-name()='procedure']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.23']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Act/Encounter/Procedure) urn:oid:2.16.840.1.113883.11.20.9.23 STATIC 2011-09-30 (CONF:1098-8569).
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Procedure V2\Planned Procedure V2-GOOD.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Supply V2\Planned Supply V2 Entry.sch
          
@@ -3903,11 +3817,8 @@
             (Errors: expected 6, actual 6) (Warnings: expected 3, actual 3)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Supply V2\Planned Supply V2-GOOD.xml
-                Error: a-1098-8578-error at /*[local-name()='ClinicalDocument']/*[local-name()='entryRelationship']/*[local-name()='supply']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.24']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (SubstanceAdministration/Supply) urn:oid:2.16.840.1.113883.11.20.9.24 STATIC 2011-09-30 (CONF:1098-8578).
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Planned Supply V2\Planned Supply V2-GOOD.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Precondition for Substance Administration V2\Precondition For Substance Administration V2 Entry.sch
          
@@ -3982,11 +3893,8 @@
             (Errors: expected 8, actual 8) (Warnings: expected 2, actual 2)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Priority Preference\Priority Preference-GOOD.xml
-                Error: a-1098-30957-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:value[@xsi:type='CD' and @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.60']/voc:code/@value or @nullFlavor])=1
-                    SHALL contain exactly one [1..1] value with @xsi:type="CD", where the code SHALL be selected from ValueSet Priority Level urn:oid:2.16.840.1.113883.11.20.9.60 STATIC 2014-06-11 (CONF:1098-30957).
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Priority Preference\Priority Preference-GOOD.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Problem Concern Act V3\Problem Concern Act V3 Entry.sch
          
@@ -5283,11 +5191,8 @@
             (Errors: expected 79, actual 79) (Warnings: expected 28, actual 28)
          
         TEST FILE: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\US Realm Header V3\US Realm Header V3 Document-GOOD.xml
-                Error: a-1198-14840-error at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf']/*[local-name()='serviceEvent']/*[local-name()='performer']: @typeCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.1.11.19601']/voc:code/@value
-                    The performer, if present, SHALL contain exactly one [1..1] @typeCode, which SHALL be selected from ValueSet x_ServiceEventPerformer urn:oid:2.16.840.1.113883.1.11.19601 STATIC (CONF:1198-14840).
-                c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\US Realm Header V3\US Realm Header V3 Document-GOOD.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 0, actual 1) (Warnings: expected 0, actual 0)
+            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: c:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\US Realm Patient Name\US Realm Patient Name Participation.sch
          
@@ -5326,84 +5231,23 @@
             (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
             _______________________________________________________________
         
-    Found 26 schematron template(s) that did not process test files as expected
+    Found 3 schematron template(s) that did not process test files as expected
     0 schematron template(s) had no associated test files.
      
     Merge Process Results....
-        Merging files into file "c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/Published/HL7 QRDA Category I STU 5 v1.1 Apr 2019.sch".
+        Merging files into file "c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.2/Published/HL7 QRDA Category I STU 5 v1.2 May 2019.sch".
             Generating all Error patterns first, then all Warning patterns.
-        Wrote merged Schematron file to "c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/Published/HL7 QRDA Category I STU 5 v1.1 Apr 2019.sch".
-            Found 1393 asserts in comparison (original) file C:\Development\QRDA-git\qrda\Published Schematrons\HL7 QRDA I\STU 5\HL7 QRDA Category I STU 5 - Dec 2017\Schematron\HL7 QRDA Category I STU 5  v1.0 Dec_2017.sch
-            Generated 1395 asserts in generated (merged) file c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/Published/HL7 QRDA Category I STU 5 v1.1 Apr 2019.sch
-                1: Did  not find assert a-3343-28218-warning in destination c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/Published/HL7 QRDA Category I STU 5 v1.1 Apr 2019.sch
-                2: Did  not find assert a-3343-16595-warning in destination c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/Published/HL7 QRDA Category I STU 5 v1.1 Apr 2019.sch
+        Wrote merged Schematron file to "c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.2/Published/HL7 QRDA Category I STU 5 v1.2 May 2019.sch".
+            Generated 1395 asserts in generated (merged) file c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.2/Published/HL7 QRDA Category I STU 5 v1.2 May 2019.sch
 
 
-    Testing merged file c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/Published/HL7 QRDA Category I STU 5 v1.1 Apr 2019.sch using: c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/TestFiles/CDAR2_IG_QRDA_I_R1_STU5_Sample.xml
+    Testing merged file c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.2/Published/HL7 QRDA Category I STU 5 v1.2 May 2019.sch using: c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.2/TestFiles/CDAR2_IG_QRDA_I_R1_STU5_Sample.xml
         No XML Validation performed
         Schematron Validation:
     _______________________________________________________________
-    SCHEMATRON: c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/Published/HL7 QRDA Category I STU 5 v1.1 Apr 2019.sch
+    SCHEMATRON: c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.2/Published/HL7 QRDA Category I STU 5 v1.2 May 2019.sch
          
-        TEST FILE: c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/TestFiles/CDAR2_IG_QRDA_I_R1_STU5_Sample.xml
-                Error: a-1098-8827-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][52]/*[local-name()='substanceAdministration']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.18']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet MoodCodeEvnInt urn:oid:2.16.840.1.113883.11.20.9.18 STATIC 2014-09-01 (CONF:1098-8827).
-                Error: a-1098-7497-v-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][33]/*[local-name()='substanceAdministration']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.18']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet MoodCodeEvnInt urn:oid:2.16.840.1.113883.11.20.9.18 STATIC 2011-04-03 (CONF:1098-7497).
-                Error: a-1098-7497-v-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][34]/*[local-name()='substanceAdministration']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.18']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet MoodCodeEvnInt urn:oid:2.16.840.1.113883.11.20.9.18 STATIC 2011-04-03 (CONF:1098-7497).
-                Error: a-1098-7497-v-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][35]/*[local-name()='substanceAdministration']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.18']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet MoodCodeEvnInt urn:oid:2.16.840.1.113883.11.20.9.18 STATIC 2011-04-03 (CONF:1098-7497).
-                Error: a-1098-7497-v-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][36]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='substanceAdministration']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.18']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet MoodCodeEvnInt urn:oid:2.16.840.1.113883.11.20.9.18 STATIC 2011-04-03 (CONF:1098-7497).
-                Error: a-1098-7497-v-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][48]/*[local-name()='substanceAdministration']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.18']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet MoodCodeEvnInt urn:oid:2.16.840.1.113883.11.20.9.18 STATIC 2011-04-03 (CONF:1098-7497).
-                Error: a-1098-32361-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][37]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']/*[local-name()='statusCode']: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.80.64']/voc:code/@value
-                    This statusCode SHALL contain exactly one [1..1] @code, which SHALL be selected from ValueSet Medication Fill Status urn:oid:2.16.840.1.113883.3.88.12.80.64 STATIC 2014-04-23 (CONF:1098-32361).
-                Error: a-1098-8539-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][26]/*[local-name()='act']: @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.23']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Act/Encounter/Procedure) urn:oid:2.16.840.1.113883.11.20.9.23 STATIC 2011-09-30 (CONF:1098-8539).
-                Error: a-1098-8539-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][29]/*[local-name()='act']: @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.23']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Act/Encounter/Procedure) urn:oid:2.16.840.1.113883.11.20.9.23 STATIC 2011-09-30 (CONF:1098-8539).
-                Error: a-1098-8565-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][17]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='encounter']: @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.23']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Act/Encounter/Procedure) urn:oid:2.16.840.1.113883.11.20.9.23 STATIC 2011-09-30 (CONF:1098-8565).
-                Error: a-1098-8565-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][20]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='encounter']: @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.23']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Act/Encounter/Procedure) urn:oid:2.16.840.1.113883.11.20.9.23 STATIC 2011-09-30 (CONF:1098-8565).
-                Error: a-1098-32097-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][53]/*[local-name()='substanceAdministration']: @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.24']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (SubstanceAdministration/Supply) urn:oid:2.16.840.1.113883.11.20.9.24 STATIC 2014-09-01 (CONF:1098-32097).
-                Error: a-1098-8573-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][38]/*[local-name()='substanceAdministration']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.24']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (SubstanceAdministration/Supply) urn:oid:2.16.840.1.113883.11.20.9.24 STATIC 2011-09-30 (CONF:1098-8573).
-                Error: a-1098-8573-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][49]/*[local-name()='substanceAdministration']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.24']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (SubstanceAdministration/Supply) urn:oid:2.16.840.1.113883.11.20.9.24 STATIC 2011-09-30 (CONF:1098-8573).
-                Error: a-1098-8573-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][50]/*[local-name()='substanceAdministration']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.24']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (SubstanceAdministration/Supply) urn:oid:2.16.840.1.113883.11.20.9.24 STATIC 2011-09-30 (CONF:1098-8573).
-                Error: a-1098-8582-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][14]/*[local-name()='observation']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.25']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Observation) urn:oid:2.16.840.1.113883.11.20.9.25 STATIC 2011-09-30 (CONF:1098-8582).
-                Error: a-1098-8582-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][16]/*[local-name()='observation']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.25']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Observation) urn:oid:2.16.840.1.113883.11.20.9.25 STATIC 2011-09-30 (CONF:1098-8582).
-                Error: a-1098-8582-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][30]/*[local-name()='observation']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.25']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Observation) urn:oid:2.16.840.1.113883.11.20.9.25 STATIC 2011-09-30 (CONF:1098-8582).
-                Error: a-1098-8582-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][32]/*[local-name()='observation']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.25']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Observation) urn:oid:2.16.840.1.113883.11.20.9.25 STATIC 2011-09-30 (CONF:1098-8582).
-                Error: a-1098-8582-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][39]/*[local-name()='observation']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.25']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Observation) urn:oid:2.16.840.1.113883.11.20.9.25 STATIC 2011-09-30 (CONF:1098-8582).
-                Error: a-1098-8582-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][41]/*[local-name()='observation']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.25']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Observation) urn:oid:2.16.840.1.113883.11.20.9.25 STATIC 2011-09-30 (CONF:1098-8582).
-                Error: a-1098-8582-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][47]/*[local-name()='observation']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.25']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Observation) urn:oid:2.16.840.1.113883.11.20.9.25 STATIC 2011-09-30 (CONF:1098-8582).
-                Error: a-1098-8569-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][42]/*[local-name()='procedure']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.23']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Act/Encounter/Procedure) urn:oid:2.16.840.1.113883.11.20.9.23 STATIC 2011-09-30 (CONF:1098-8569).
-                Error: a-1098-8569-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][44]/*[local-name()='procedure']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.23']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (Act/Encounter/Procedure) urn:oid:2.16.840.1.113883.11.20.9.23 STATIC 2011-09-30 (CONF:1098-8569).
-                Error: a-1098-8578-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][12]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.24']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (SubstanceAdministration/Supply) urn:oid:2.16.840.1.113883.11.20.9.24 STATIC 2011-09-30 (CONF:1098-8578).
-                Error: a-1098-8578-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][13]/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='supply']: @moodCode and @moodCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.24']/voc:code/@value
-                    SHALL contain exactly one [1..1] @moodCode, which SHALL be selected from ValueSet Planned moodCode (SubstanceAdministration/Supply) urn:oid:2.16.840.1.113883.11.20.9.24 STATIC 2011-09-30 (CONF:1098-8578).
-                Error: a-1098-30957-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][5]/*[local-name()='observation']/*[local-name()='entryRelationship'][2]/*[local-name()='observation']: count(cda:value[@xsi:type='CD' and @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.60']/voc:code/@value or @nullFlavor])=1
-                    SHALL contain exactly one [1..1] value with @xsi:type="CD", where the code SHALL be selected from ValueSet Priority Level urn:oid:2.16.840.1.113883.11.20.9.60 STATIC 2014-06-11 (CONF:1098-30957).
-                Error: a-1098-30957-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][5]/*[local-name()='observation']/*[local-name()='entryRelationship'][3]/*[local-name()='observation']: count(cda:value[@xsi:type='CD' and @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.11.20.9.60']/voc:code/@value or @nullFlavor])=1
-                    SHALL contain exactly one [1..1] value with @xsi:type="CD", where the code SHALL be selected from ValueSet Priority Level urn:oid:2.16.840.1.113883.11.20.9.60 STATIC 2014-06-11 (CONF:1098-30957).
-                Error: a-1198-14840-error at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf']/*[local-name()='serviceEvent']/*[local-name()='performer']: @typeCode=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.1.11.19601']/voc:code/@value
-                    The performer, if present, SHALL contain exactly one [1..1] @typeCode, which SHALL be selected from ValueSet x_ServiceEventPerformer urn:oid:2.16.840.1.113883.1.11.19601 STATIC (CONF:1198-14840).
+        TEST FILE: c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.2/TestFiles/CDAR2_IG_QRDA_I_R1_STU5_Sample.xml
                 Warning: a-3343-28750-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][1]/*[local-name()='observation']: count(cda:entryRelationship[@typeCode='MFST'][@inversionInd='true'][count(cda:observation/cda:templateId[@root='2.16.840.1.113883.10.20.22.4.9'][@extension='2014-06-09'])=1])=1
                     SHOULD contain zero or one [0..1] entryRelationship (CONF:3343-28750) such that it SHALL contain exactly one [1..1] @typeCode="MFST" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3343-28759). SHALL contain exactly one [1..1] @inversionInd="true" (CONF:3343-28760). SHALL contain exactly one [1..1] Reaction Observation (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.9:2014-06-09) (CONF:3343-28758).
                 Warning: a-1098-31671-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][5]/*[local-name()='observation']/*[local-name()='author'][1]/*[local-name()='assignedAuthor']: count(cda:code)=1
@@ -5428,8 +5272,6 @@
                     This participantRole SHOULD contain zero or more [0..*] telecom (CONF:3343-13380).
                 Warning: a-1198-8593-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][10]/*[local-name()='organizer']/*[local-name()='component']/*[local-name()='observation']: count(cda:effectiveTime)=1
                     SHOULD contain zero or one [0..1] effectiveTime (CONF:1198-8593).
-                Warning: a-1198-32427-v-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][10]/*[local-name()='organizer']/*[local-name()='component']/*[local-name()='observation']/*[local-name()='code']: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.3221.7.2']/voc:code/@value
-                    SHALL contain exactly one [1..1] code, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2012-06-01 (CONF:1198-32427).
                 Warning: a-1198-32847-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][10]/*[local-name()='organizer']/*[local-name()='component']/*[local-name()='observation']/*[local-name()='code']/*[local-name()='translation']: @sdtc:valueSet='2.16.840.1.113883.3.88.12.3221.7.2'
                     This translation, if present, SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2014-09-02 (CONF:1198-32847).
                 Warning: a-1198-15248-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][10]/*[local-name()='organizer']/*[local-name()='subject']/*[local-name()='relatedSubject']: count(cda:subject) = 1
@@ -5650,11 +5492,10 @@
                     If more precise than day, SHOULD include time-zone offset (CONF:81-10130).
                 Warning: a-1198-5579-warning at /*[local-name()='ClinicalDocument']: count(cda:legalAuthenticator)=1
                     SHOULD contain zero or one [0..1] legalAuthenticator (CONF:1198-5579).
-                c:/Development/QRDA-git/qrda/Development/Schematrons/HL7 QRDA Category I/STU 5 v1.1/TestFiles/CDAR2_IG_QRDA_I_R1_STU5_Sample.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 29) (Warnings: expected 118, actual 123)
             
-            (Errors: expected 0, actual 29) (Warnings: expected 118, actual 123)
-            Schematron validation of test file results did not match expected results.
+            (Errors: expected 0, actual 0) (Warnings: expected 122, actual 122)
+            Schematron validation of test file results as expected (or no expected error count provided).
  
-    Merge Complete in 21 seconds
+    Merge Complete in 15 seconds
 **************************************** end merge report ************************************************************************
  

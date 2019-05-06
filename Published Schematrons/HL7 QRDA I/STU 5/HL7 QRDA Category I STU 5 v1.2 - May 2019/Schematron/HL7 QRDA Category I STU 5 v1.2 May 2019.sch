@@ -2,6 +2,7 @@
 <!--
 HL7 QRDA 1 STU 5 schematron
 Version 1.2 
+Reporting Period 2019
 
     THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
         THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -11,6 +12,8 @@ Version 1.2
         THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
         ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
+        Reporting period 2020
+        
         Changes in this version from the STU 5 v1.1 schematron:
          - QDM Based QRDA V5:      Removed 3343-16595 as it is now a "MAY such that" rather than a SHOULD
          - Problem Observation V3: Removed conformance 1198-32848 requiring a translation element in code 

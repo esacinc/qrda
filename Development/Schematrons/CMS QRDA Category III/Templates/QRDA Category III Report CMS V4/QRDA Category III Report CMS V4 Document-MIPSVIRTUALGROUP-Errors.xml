@@ -11,7 +11,7 @@
 		JIRA https://tracker.esacinc.com/browse/QRDA-575
 		
 		Total Errors Expected: 1
-           Failure a-CMS-_83-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_VIRTUALGROUP", then this representedOrganization SHALL contain exactly one 1..1] id, which is the virtual group's Virtual Group Identifier (CONF:CMS-_83). 
+           Failure a-CMS_83-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_VIRTUALGROUP", then this representedOrganization SHALL contain exactly one 1..1] id, which is the virtual group's Virtual Group Identifier (CONF:CMS_83). 
           
     	Total Warnings Expected: 0
  
@@ -73,7 +73,7 @@
 					<telecom value="mailto:user@hostname"/>
 					<representedOrganization>
 						<!-- This is the organization TIN, required for MIPS_GROUP -->
-						<!-- Failure a-CMS-_83-error If intended recipient is "MIPS_VIRTUALGROUP", then this representedOrganization SHALL contain exactly one 1..1] id, which is the group's Virtual Group Identifier (CONF:CMS-_83).  -->
+						<!-- Failure a-CMS_83-error If intended recipient is "MIPS_VIRTUALGROUP", then this representedOrganization SHALL contain exactly one 1..1] id, which is the group's Virtual Group Identifier (CONF:CMS_83).  -->
 						<!-- <id root="2.16.840.1.113883.3.249.5.2" extension="1234567" assigningAuthorityName="Virtual group ID"/> -->
 						
 					</representedOrganization>

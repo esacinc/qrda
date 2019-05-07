@@ -8,7 +8,7 @@
 		JIRA https://tracker.esacinc.com/browse/QRDA-575
 		
 		Total Errors Expected: 2
-           Failure a-CMS-_64-error SHALL contain exactly one [1..1] templateId (CONF:CMS-_64) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.2.3" (CONF:CMS_65). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_66). </sch:assert>
+           Failure a-CMS_64-error SHALL contain exactly one [1..1] templateId (CONF:CMS_64) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.2.3" (CONF:CMS_65). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_66). </sch:assert>
            Failure a-4427-17906_C01-error SHALL contain at least one [1..*] entry (CONF:4427-17906-C01) such that it SHALL contain exactly one [1..1] Measure Reference and Results - CMS (V4) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.17:2019-05-01) (CONF:4427-17907_C01). </sch:assert>
     
     Total Warnings Expected: 0
@@ -37,7 +37,7 @@
 		<templateId root="2.16.840.1.113883.10.20.27.2.1" extension="2017-06-01"/>
 		<!-- QRDA Category III Measure Section - CMS (V4) template ID -->
 		<templateId root="2.16.840.1.113883.10.20.27.2.3" extension="2019-05-01"/>
-		<!-- Failure a-CMS-_64-error Multiple main template ID -->
+		<!-- Failure a-CMS_64-error Multiple main template ID -->
 		<templateId root="2.16.840.1.113883.10.20.27.2.3" extension="2019-05-01"/>
 		<code code="55186-1" codeSystem="2.16.840.1.113883.6.1"/>
 		<title>Measure Section</title>

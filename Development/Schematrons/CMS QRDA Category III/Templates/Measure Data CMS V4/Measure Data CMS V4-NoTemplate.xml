@@ -9,7 +9,7 @@
           - Updated 2.16.840.1.113883.10.20.27.3.16 extension to 2019-05-01
     
     Total Errors Expected: 1
-    	Failure a-CMS-_41-error Missing main template
+    	Failure a-CMS_41-error Missing main template
     	
     Total Warnings Expected: 0
 -->

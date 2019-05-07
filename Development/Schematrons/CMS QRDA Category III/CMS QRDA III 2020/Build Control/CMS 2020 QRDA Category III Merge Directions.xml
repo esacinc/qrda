@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- See JIRA https://tracker.esacinc.com/browse/QRDA-575
+              https://tracker.esacinc.com/browse/QRDA-575
               https://tracker.esacinc.com/browse/QRDA-583 
 --> 
 
@@ -10,7 +11,7 @@
     <version>1.0</version>
     
      <generatedFilename>
-         c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Schematron/2020_CMS_QRDA_Category_III-v1-May_2019.sch
+         c:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category III/CMS QRDA III 2020/Schematron/2020_CMS_QRDA_Category_III-v1.0-May_2019.sch
     </generatedFilename>
     
 	<!-- Change or edit final test file once test file is built -->
@@ -35,18 +36,15 @@
                   - Updated conformance id prefix from 3338 to 4437 in a-3338-17281_C01, a-3338-21394_C01
                   - Updated 2.16.840.1.113883.10.20.27.2.3 template to have extension 2019-05-01 in 4427-21394_C01	
                   - Removed empty rules (i.e schematron rules elements containing no asserts) 				  
-           
+                  - Added conformance statement CMS_92
+                  
             Section-level templates:
-                - Improvement Activity Section - CMS
-                  - Removed entire template
-                -  QRDA Category III Measure Section - CMS V4  
+               -  QRDA Category III Measure Section - CMS V4  
                   - Updated template 2.16.840.1.113883.10.20.27.2.3 extension to 2019-05-01 throughout template
                   - Updated template 2.16.840.1.113883.10.20.27.2.17 extension to 2019-05-01 throughout template
                   - Updated conformance id prefix from 3338 to 4427 in 4427-17906_C01		   
             
             Entry-level templates:
-                - Improvement Activity Performed Measure Reference and Results CMS
-                  - Removed entire template
                 - Measure Data - CMS V4
                   - Updated extension for template 2.16.840.1.113883.10.20.27.3.16 to 2019-05-01 throughout template
                   - Replaced conformance id prefix of 3259- with 4427- throughout template
@@ -81,9 +79,9 @@
                 <include>QRDA Category III Report CMS V4</include>                                            <!-- updated from V3 -->
             <!-- Section level templates -->
                 <include>QRDA Category III Measure Section CMS V4</include>                                   <!-- updated from V3 --> 
-                <!-- <include>Improvement Activity Section CMS</include>  -->                                 <!-- removed for 2020 --> 
+                <include>Improvement Activity Section CMS</include>                              
             <!-- Entry level templates -->
-                <!-- <include>Improvement Activity Performed Measure Reference and Results CMS</include> -->  <!-- removed for 2020 -->
+                <include>Improvement Activity Performed Measure Reference and Results CMS</include> 
                 <include>Measure Data CMS V4</include>                                                        <!-- updated from V3 -->
                 <include>Measure Reference and Results CMS V4</include>                                       <!-- updated from V3 -->
                 <include>Payer Supplemental Data Element CMS V3</include>                           

@@ -11,7 +11,7 @@
 		JIRA https://tracker.esacinc.com/browse/QRDA-575
 		
 		Total Errors Expected: 1
-           Failure a-CMS-_82-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_GROUP", then this representedOrganization SHALL contain exactly one 1..1] id, which is the group's TIN (CONF:CMS-_82). 
+           Failure a-CMS_82-error If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_GROUP", then this representedOrganization SHALL contain exactly one 1..1] id, which is the group's TIN (CONF:CMS_82). 
           
     	Total Warnings Expected: 0
  

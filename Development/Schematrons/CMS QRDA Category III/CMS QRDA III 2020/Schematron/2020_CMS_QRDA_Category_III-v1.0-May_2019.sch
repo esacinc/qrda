@@ -19,18 +19,15 @@ Version 1.0
                   - Updated conformance id prefix from 3338 to 4437 in a-3338-17281_C01, a-3338-21394_C01
                   - Updated 2.16.840.1.113883.10.20.27.2.3 template to have extension 2019-05-01 in 4427-21394_C01	
                   - Removed empty rules (i.e schematron rules elements containing no asserts) 				  
-           
+                  - Added conformance statement CMS_92
+                  
             Section-level templates:
-                - Improvement Activity Section - CMS
-                  - Removed entire template
-                -  QRDA Category III Measure Section - CMS V4  
+               -  QRDA Category III Measure Section - CMS V4  
                   - Updated template 2.16.840.1.113883.10.20.27.2.3 extension to 2019-05-01 throughout template
                   - Updated template 2.16.840.1.113883.10.20.27.2.17 extension to 2019-05-01 throughout template
                   - Updated conformance id prefix from 3338 to 4427 in 4427-17906_C01		   
             
             Entry-level templates:
-                - Improvement Activity Performed Measure Reference and Results CMS
-                  - Removed entire template
                 - Measure Data - CMS V4
                   - Updated extension for template 2.16.840.1.113883.10.20.27.3.16 to 2019-05-01 throughout template
                   - Replaced conformance id prefix of 3259- with 4427- throughout template
@@ -40,7 +37,7 @@ Version 1.0
                 - Performance Rate for Proportion Measure CMS V3
                   - Removed empty rules (i.e schematron rules elements containing no asserts) 
 
-Thu May 02 11:29:00 MDT 2019
+Tue May 07 15:26:04 MDT 2019
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
@@ -62,6 +59,9 @@ Thu May 02 11:29:00 MDT 2019
     <sch:active pattern="p-validate_TS-errors" />
     <sch:active pattern="p-validate_TZ-errors" />
     <sch:active pattern="p-CMS-QRDA-III-templateId-errors" />
+    <sch:active pattern="Improvement_Activity_Performed_Measure_Reference_and_Results-template-pattern-errors" />
+    <sch:active pattern="Improvement_Activity_Section-template-pattern-errors" />
+    <sch:active pattern="Improvement_Activity_Section_CMS-pattern-errors" />
     <sch:active pattern="Measure_data-template-pattern-errors" />
     <sch:active pattern="Measure_data_CMS-pattern-errors" />
     <sch:active pattern="Measure_Reference_and_Results-template-pattern-errors" />
@@ -190,6 +190,30 @@ Thu May 02 11:29:00 MDT 2019
       <sch:assert id="a-CMS_QRDA-Category-III-Report-CMS-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'])=1">This document SHALL contain exactly one QRDA Category IIII Report - CMS templateId (@root='2.16.840.1.113883.10.20.27.1.2') with appropriate @extension (version) of the form 'yyyy-mm-dd'.</sch:assert>
     </sch:rule>
   </sch:pattern>
+  <sch:pattern id="Improvement_Activity_Performed_Measure_Reference_and_Results-template-pattern-errors">
+    <!-- New rule. JIRA https://tracker.esacinc.com/browse/QRDA-444 -->
+    <sch:rule id="Improvement_Activity_Performed_Reference_and_Result-template-errors" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.33'][@extension='2016-09-01']]">
+      <sch:assert id="a-CMS_71-error" test="count(cda:templateId[@root='2.16.840.1.113883.3.249.20.3.1'][@extension='2018-05-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:CMS_71) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.20.3.1" (CONF:CMS_72). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_73).</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="Improvement_Activity_Section-template-pattern-errors">
+    <sch:rule id="Improvement_Activity-template-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.4'][@extension='2017-06-01']]">
+      <sch:assert id="a-3377-711342-error" test="count(cda:templateId[@root='2.16.840.1.113883.3.249.20.2.1'][@extension='2018-05-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3377-711342) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.20.2.1" (CONF:CMS_70). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_76).</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern id="Improvement_Activity_Section_CMS-pattern-errors">
+    <sch:let name="intendedRecipient-IA" value="/cda:ClinicalDocument/cda:informationRecipient/cda:intendedRecipient/cda:id/@extension" />
+    <sch:rule id="Improvement_Activity_Section_CMS-errors" context="cda:section[cda:templateId[@root='2.16.840.1.113883.3.249.20.2.1'][@extension='2018-05-01']]">
+      <!-- <sch:assert id="a-3377-711342-error" test="count(cda:templateId[@root='2.16.840.1.113883.3.249.20.2.1'][@extension='2018-05-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3377-711342) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.20.2.1" (CONF:CMS_70). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_76). </sch:assert> -->
+      <sch:assert id="a-3259-21181-error" test="count(cda:entry[count(cda:organizer[cda:templateId[@root='2.16.840.1.113883.3.249.20.3.1'][@extension='2018-05-01']])=1]) &gt; 0">SHALL contain at least one [1..*] entry (CONF:3259-21181) such that it SHALL contain exactly one [1..1] Improvement Activity Performed Measure Reference and Results - CMS (identifier: urn:hl7ii:2.16.840.1.113883.3.249.20.3.1:2018-05-01) (CONF:3259-21436_C01).</sch:assert>
+      <!-- Remove performance period prohibition at category level. https://tracker.esacinc.com/browse/QRDA-465 -->
+      <!--
+            <sch:assert id="a-CMS_77-error" test="$intendedRecipient-IA != 'MIPS_INDIV'   or ($intendedRecipient-IA='MIPS_INDIV' and count(cda:entry[cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]])=0)">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_INDIV", then SHALL NOT contain [0..0] entry Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_77). </sch:assert>
+            <sch:assert id="a-CMS_78-error" test="$intendedRecipient-IA != 'MIPS_GROUP'   or ($intendedRecipient-IA='MIPS_GROUP' and count(cda:entry[cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]])=0)">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_GROUP", then SHALL NOT contain [0..0] entry Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_78). </sch:assert>
+            <sch:assert id="a-CMS_84-error" test="$intendedRecipient-IA != 'MIPS_VIRTUALGROUP' or ($intendedRecipient-IA='MIPS_VIRTUALGROUP' and count(cda:entry[cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.17.3.8']]])=0)">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="MIPS_VIRTUALGROUP", then SHALL NOT contain [0..0] entry Reporting Parameters Act (identifier: urn:oid:2.16.840.1.113883.10.20.17.3.8) (CONF:CMS_84). </sch:assert>
+            -->
+    </sch:rule>
+  </sch:pattern>
   <sch:pattern id="Measure_data-template-pattern-errors">
     <sch:rule id="Measure_data-template-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.5'][@extension='2016-09-01']]">
       <sch:assert id="a-CMS_41-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.27.3.16'][@extension='2019-05-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:CMS_41) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.16" (CONF:CMS_42). SHALL contain exactly one [1..1] @extension="2019-05-01" (CONF:CMS_43).</sch:assert>
@@ -307,6 +331,7 @@ Thu May 02 11:29:00 MDT 2019
       <sch:assert id="a-CMS_12-error" test="(@extension='CPCPLUS' and ../../../cda:participant[@typeCode='LOC']) or @extension!='CPCPLUS'">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then ClinicalDocument/participant/@typeCode="LOC" SHALL be present (CONF:CMS_12).</sch:assert>
       <sch:assert id="a-CMS_13-error" test="(@extension='CPCPLUS' and count(../../../cda:component/cda:structuredBody/cda:component/cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3'][@extension='2019-05-01']])=1) or @extension!='CPCPLUS'">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then QRDA Category III Measure Section – CMS (V4) SHALL be present (CONF:CMS_13).</sch:assert>
       <sch:assert id="a-CMS_14-error" test="(@extension='CPCPLUS' and count(../../../cda:component/cda:structuredBody/cda:component/cda:section/cda:entry/cda:organizer/cda:component/cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.27.3.25'][@extension='2018-05-01']]) &gt; 0) or @extension!='CPCPLUS'">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then Performance Rate for Proportion Measure – CMS (V3) SHALL be present (CONF:CMS_14).</sch:assert>
+      <sch:assert id="a-CMS_92-error" test="(@extension='CPCPLUS' and count(/cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2019-05-01']]/cda:participant[@typeCode='DEV']/cda:associatedEntity/cda:id[@root='2.16.840.1.113883.3.2074.1'][@extension]) &gt; 0) or @extension!='CPCPLUS'">If ClinicalDocument/informationRecipient/intendedRecipient/id/@extension="CPCPLUS", then CMS Certification ID SHALL be present (CONF:CMS_92)</sch:assert>
     </sch:rule>
     <sch:rule id="QRDA_Category_III_CMS-participant-LOC-associatedEntity-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2019-05-01']]/cda:participant[@typeCode='LOC']/cda:associatedEntity">
       <sch:assert id="a-CMS_18-error" test="@classCode='SDLOC'">This associatedEntity SHALL contain exactly one [1..1] @classCode="SDLOC" Service Delivery Location (CONF:CMS_18).</sch:assert>
@@ -354,7 +379,7 @@ Thu May 02 11:29:00 MDT 2019
     </sch:rule>
     <sch:rule id="QRDA_Category_III_CMS-component-structuredBody-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.27.1.2'][@extension='2019-05-01']]/cda:component/cda:structuredBody">
       <sch:assert id="a-4427-17281_C01-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.2']])=1])=0">This structuredBody SHALL NOT contain [0..0] component (CONF:4427-17281_C01) such that it  SHALL contain exactly one [1..1] QRDA Category III Reporting Parameters Section (identifier: urn:oid:2.16.840.1.113883.10.20.27.2.2) (CONF:4427-17282).</sch:assert>
-      <sch:assert id="a-4427-21394_C01-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3'][@extension='2019-05-01']])=1])=1 or count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.4'][@extension='2017-06-01']])=1])=1 or count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.5'][@extension='2017-06-01']])=1])=1">This structuredBody SHALL contain at least a QRDA Category III Measure Section - CMS (V4), or a Promoting Interoperability Section (V2) (CONF:4427-21394_C01).</sch:assert>
+      <sch:assert id="a-4427-21394_C01-error" test="count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.3'][@extension='2019-05-01']])=1])=1 or count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.4'][@extension='2017-06-01']])=1])=1 or count(cda:component[count(cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.27.2.5'][@extension='2017-06-01']])=1])=1">This structuredBody SHALL contain at least a QRDA Category III Measure Section - CMS (V4), or an Improvement Activity Section (V2), or a Promoting Interoperability Section (V2) (CONF:4427-21394_C01).</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="Aggregate_count-pattern-errors">

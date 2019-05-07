@@ -9,6 +9,7 @@
 		Date: 05-23-2019
 		Author: Dan Donahue
 		JIRA https://tracker.esacinc.com/browse/QRDA-575
+		Update 05-07-2019  Added  a-CMS_92 condition
 		
 		Total Errors Expected: 0
           
@@ -49,6 +50,16 @@
 			</addr>
 		</associatedEntity>
 	</participant>
+	<participant typeCode="DEV">
+		<associatedEntity classCode="RGPR">     
+			<!-- This is an example CMS EHR Certification ID. CMS EHR Certification ID must be 15 alpha numeric characters in length -->  
+			<id root="2.16.840.1.113883.3.2074.1" extension="0015EUK17H3DCM9"/>
+			<code code="129465004" 
+				displayName="medical record, device"
+				codeSystem="2.16.840.1.113883.6.96"
+				codeSystemName="SNOMED-CT"/>
+		</associatedEntity>
+	</participant>	
 	<!-- SHALL contain one documentationOf -->
 	<documentationOf >
 		<serviceEvent classCode="PCPR">

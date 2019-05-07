@@ -10,7 +10,7 @@
 		 - Updated 2.16.840.1.113883.10.20.27.3.16 extension to 2019-05-01
     
     Total Errors Expected: 5
-           Failure a-CMS-_41-error SHALL contain exactly one [1..1] templateId (CONF:CMS-_41) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.16" (CONF:CMS-_42). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS-_43). 
+           Failure a-CMS_41-error SHALL contain exactly one [1..1] templateId (CONF:CMS_41) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.27.3.16" (CONF:CMS_42). SHALL contain exactly one [1..1] @extension="2018-05-01" (CONF:CMS_43). 
            Failure a-4427-18141_C01-error SHALL contain at least one [1..*] entryRelationship (CONF:4427-18141_C01) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:4427-18146). SHALL contain exactly one [1..1] Payer Supplemental Data Element - CMS (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.18:2018-05-01) (CONF:4427-18151_C01). 
            Failure a-4427-18136_C01-error SHALL contain at least one [1..*] entryRelationship (CONF:4427-18136_C01) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:4427-18137). SHALL contain exactly one [1..1] Sex Supplemental Data Element (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.6:2016-09-01) (CONF:4427-18138). 
            Failure a-4427-18140_C01-error SHALL contain at least one [1..*] entryRelationship (CONF:4427-18140_C01) such that it SHALL contain exactly one [1..1] @typeCode="COMP" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:4427-18150). SHALL contain exactly one [1..1] Race Supplemental Data Element (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.27.3.8:2016-09-01) (CONF:4427-18150). 
@@ -29,7 +29,7 @@
 		<templateId root="2.16.840.1.113883.10.20.27.3.5" extension="2016-09-01"/>
 		<!-- Measure Data - CMS (V4) template ID -->
 		<templateId root="2.16.840.1.113883.10.20.27.3.16" extension="2019-05-01"/>
-		<!-- Failure a-CMS-_41-error Multiple main template ID -->
+		<!-- Failure a-CMS_41-error Multiple main template ID -->
 		<templateId root="2.16.840.1.113883.10.20.27.3.16" extension="2019-05-01"/>
 		<!-- Payer Supplemental Data Element - CMS (V3)-->
 		<entryRelationship typeCode="COMP">

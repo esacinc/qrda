@@ -7,9 +7,9 @@
     Instructions file: C:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category I\EH CMS 2020\Build Control\EH CMS 2020 QRDA Category I Merge Directions.xml
     Title: EH CMS 2020 QRDA Category I
     Version: 1.0
-    Generated on Thu May 02 15:00:47 MDT 2019
+    Generated on Thu May 09 12:34:55 MDT 2019
     Verbose Reporting is turned on
-    Merged file: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Published/2020_CMS_QRDA_I-v1.0-May_2019.sch
+    Merged file: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Schematron/2020_CMS_QRDA_I-v1.0-May_2019.sch
         All Error patterns are generated before all Warning patterns
     ALERT: Failed to locate element: <compareSchematronFilename>
         Compare generated schematron asserts to asserts in file: null
@@ -1264,6 +1264,8 @@
                     SHALL contain exactly one [1..1] code (CONF:3343-28656).
                 Error: a-3343-28653-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:statusCode)=1
                     SHALL contain exactly one [1..1] statusCode (CONF:3343-28653).
+                Error: a-3343-28783-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']: count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.155'][@extension='2017-08-01']]) = 1
+                    SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:3343-28783). 
                 Error: a-3343-28662-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='statusCode'][2]: @code='completed'
                     This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-28662).
                 Error: a-3343-28986-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='author']: count(cda:time)=1
@@ -1273,7 +1275,7 @@
                 Error: a-3343-28987-error at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='author']/*[local-name()='assignedAuthor'][2]: count(cda:id) > 0
                     This assignedAuthor SHALL contain at least one [1..*] id (CONF:3343-28987).
             
-            (Errors: expected 9, actual 9) (Warnings: expected 0, actual 0)
+            (Errors: expected 10, actual 10) (Warnings: expected 0, actual 0)
          
         TEST FILE: C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Assessment Performed V2\Assessment Performed V2-GOOD.xml
             
@@ -1374,26 +1376,22 @@
                     SHALL contain exactly one [1..1] templateId (CONF:4388-29143) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.156" (CONF:4388-29151) SHALL contain exactly one [1..1] @extension="2018-10-01" (CONF:4388-29152). 
                 Error: a-4388-29162-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']: count(cda:id)>=1
                     SHALL contain at least one [1..*] id (CONF:4388-29162).
-                Error: a-4388-29159-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']: count(cda:code)=1
-                    SHALL contain exactly one [1..1] code (CONF:4388-29159).  
                 Error: a-4388-29163-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']: count(cda:statusCode[@code='completed'])=1
                     SHALL contain exactly one [1..1] statusCode="completed", which SHALL be selected from CodeSystem HL7ActStatus (urn:oid:2.16.840.1.113883.5.14) (CONF:4388-29163). 
                 Error: a-4388-29149-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']: count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.155'][@extension='2017-08-01']]) = 1
                     SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:4388-29149).
+                Error: a-4388-29168-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']: count(cda:entryRelationship[@typeCode='PCRN'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2017-08-01']])=1]) = 1
+                    SHALL contain exactly one [1..1] entryRelationship (CONF:4388-29168) such that it SHALL contain exactly one [1..1] @typeCode="PCRN" Has reason (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:4388-29175)  SHALL contain exactly one [1..1] Reason (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.88:2017-08-01) (CONF:4388-29169). 
                 Error: a-4388-29170-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='effectiveTime']: count(cda:low)=1
                     The effectiveTime, if present, SHALL contain exactly one [1..1] low (CONF:4388-29170).
                 Error: a-4388-29146-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='participant'][1]/*[local-name()='participantRole']: count(cda:code)=1
                     This participantRole SHALL contain exactly one [1..1] code (CONF:4388-29146).  
-                Error: a-4388-29153-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='participant'][1]/*[local-name()='participantRole']/*[local-name()='code'][2]: @code='158965000'
-                    This code SHALL contain exactly one [1..1] @code="158965000" Medical practitioner (CONF:4388-29153). 
-                Error: a-4388-29154-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='participant'][1]/*[local-name()='participantRole']/*[local-name()='code'][2]: @codeSystem='2.16.840.1.113883.6.96'
-                    This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:4388-29154). 
                 Error: a-4388-29172-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='participant'][2]/*[local-name()='participantRole']: count(cda:code)=1
                     This participantRole SHALL contain exactly one [1..1] code (CONF:4388-29172).  
                 Error: a-4388-29174-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='participant'][3]/*[local-name()='participantRole']: count(cda:code)=1
                     This participantRole SHALL contain exactly one [1..1] code (CONF:4388-29174).  
             
-            (Errors: expected 13, actual 13) (Warnings: expected 0, actual 0)
+            (Errors: expected 11, actual 11) (Warnings: expected 0, actual 0)
          
         TEST FILE: C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Communication Performed\Communication Performed-Good.xml
             
@@ -1686,35 +1684,8 @@
             (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
     _______________________________________________________________
     SCHEMATRON: C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Diagnosis V2\Diagnosis V2 Entry.sch
-         
-        TEST FILE: C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Diagnosis V2\Diagnosis V2-Errors.xml
-                Error: a-3343-28510-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='observation']: @classCode='OBS'
-                    SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-28510).
-                Error: a-3343-28511-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='observation']: @moodCode='EVN'
-                    SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-28511).
-                Error: a-3343-28512-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='observation']: not(@negationInd)
-                    SHALL NOT contain [0..0] @negationInd (CONF:3343-28512).
-                Error: a-3343-28498-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='observation']: count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.135'][@extension='2017-08-01'])=1
-                    SHALL contain exactly one [1..1] templateId (CONF:3343-28498) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.135" (CONF:3343-28503). SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-28887).
-                Error: a-3343-28499-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='observation']: count(cda:code)=1
-                    SHALL contain exactly one [1..1] code (CONF:3343-28499).
-                Error: a-3343-28885-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='observation']: count(../../cda:templateId[@root='2.16.840.1.113883.10.20.24.3.137'][@extension='2017-08-01'])=1
-                    This template SHALL be contained by a Diagnosis Concern Act (V3) (CONF:3343-28885).
-                Error: a-3343-28888-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='observation']/*[local-name()='code'][1]/*[local-name()='translation']: @code='282291009'
-                    This translation, if present, SHALL contain exactly one [1..1] @code="282291009" 2.16.840.1.113883.6.96 (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:3343-28888).
-                Error: a-3343-28505-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='observation']/*[local-name()='code'][2]: @code='29308-4'
-                    This code SHALL contain exactly one [1..1] @code="29308-4" diagnosis (CONF:3343-28505). 
-                Error: a-3343-28506-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='observation']/*[local-name()='code'][2]: @codeSystem='2.16.840.1.113883.6.1'
-                    This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3343-28506).
-                Error: a-3343-28886-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='entryRelationship']/*[local-name()='observation']/*[local-name()='code'][2]: count(cda:translation)=1
-                    This code SHALL contain exactly one [1..1] translation (CONF:3343-28886).
-                C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Diagnosis V2\Diagnosis V2-Errors.xml: Failure count inconsistent with expectations for this file. (Errors: expected 9, actual 10) (Warnings: expected 0, actual 0)
-            
-            (Errors: expected 9, actual 10) (Warnings: expected 0, actual 0)
-         
-        TEST FILE: C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Diagnosis V2\Diagnosis V2-Good.xml
-            
-            (Errors: expected 0, actual 0) (Warnings: expected 0, actual 0)
+            TransformerException: org.xml.sax.SAXParseException; lineNumber: 58; columnNumber: 15; The string "--" is not permitted within comments.
+            SAXException Error processing the report file reports.svrlt, Premature end of file.
     _______________________________________________________________
     SCHEMATRON: C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Diagnostic Study Order V4\Diagnostic Study Order V4 Entry.sch
          
@@ -2309,9 +2280,8 @@
                     SHOULD contain zero or one [0..1] effectiveTime (CONF:1198-8593).
                 Warning: a-1198-32427-v-warning at /*[local-name()='ClinicalDocument']/*[local-name()='observation']/*[local-name()='code'][2]: @code=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.88.12.3221.7.2']/voc:code/@value
                     SHALL contain exactly one [1..1] code, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2012-06-01 (CONF:1198-32427).
-                C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Family History Observation V3\Family_History_Observation_V3-Errors.xml: Failure count inconsistent with expectations for this file. (Errors: expected 8, actual 9) (Warnings: expected 3, actual 2)
             
-            (Errors: expected 8, actual 9) (Warnings: expected 3, actual 2)
+            (Errors: expected 9, actual 9) (Warnings: expected 2, actual 2)
          
         TEST FILE: C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Family History Observation V3\Family_History_Observation_V3-Good.xml
             
@@ -2626,9 +2596,8 @@
                     SHALL contain exactly one [1..1] effectiveTime (CONF:67-14561).
                 Error: a-67-27014-error at /*[local-name()='ClinicalDocument']/*[local-name()='procedure']/*[local-name()='code'][2]: @codeSystem='2.16.840.1.113883.6.96'
                     This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:67-27014).
-                C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Incision Datetime\Incision Datetime-Errors.xml: Failure count inconsistent with expectations for this file. (Errors: expected 7, actual 6) (Warnings: expected 0, actual 0)
             
-            (Errors: expected 7, actual 6) (Warnings: expected 0, actual 0)
+            (Errors: expected 6, actual 6) (Warnings: expected 0, actual 0)
          
         TEST FILE: C:\Development\QRDA-git\qrda\Development\Schematrons\HL7 QRDA Category I\Templates\Incision Datetime\Incision Datetime-Good.xml
             
@@ -5472,13 +5441,13 @@
                 Error: a-CMS_0025-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient'][1]/*[local-name()='intendedRecipient']/*[local-name()='id'][2]: @root='2.16.840.1.113883.3.249.7'
                     This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.7" (CONF:CMS_0025).
                 Error: a-CMS_0026-error at /*[local-name()='ClinicalDocument']/*[local-name()='informationRecipient'][1]/*[local-name()='intendedRecipient']/*[local-name()='id'][2]: @extension=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.249.14.103']/voc:code/@value
-                    This id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet QRDA-I CMS Program Name urn:oid:2.16.840.1.113883.3.249.14.103 STATIC 2019-02-01 (CONF:CMS_0026).
+                    This id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet QRDA I CMS Program Name urn:oid:2.16.840.1.113883.3.249.14.103 STATIC 2019-02-01 (CONF:CMS_0026).
                 Error: a-CMS_0004-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant'][1]: count(cda:associatedEntity)=1
                     This participant SHALL contain exactly one [1..1] associatedEntity (CONF:CMS_0004).
                 Error: a-CMS_0005-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant'][1]/*[local-name()='associatedEntity'][2]: count(cda:id)=1
                     This associatedEntity SHALL contain exactly one [1..1] id (CONF:CMS_0005).
                 Error: a-CMS_0006-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant'][1]/*[local-name()='associatedEntity'][2]/*[local-name()='id'][2]: @root='2.16.840.1.113883.3.2074.1'
-                    This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" CMS EHR Certification Identification Number (CONF:CMS_0006).
+                    This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" CMS EHR Certification ID (CONF:CMS_0006).
                 Error: a-CMS_0008-error at /*[local-name()='ClinicalDocument']/*[local-name()='participant'][1]/*[local-name()='associatedEntity'][2]/*[local-name()='id'][2]: @extension
                     This id SHALL contain exactly one [1..1] @extension (CONF:CMS_0008).
                 Error: a-4388-16593-error at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf']/*[local-name()='serviceEvent']/*[local-name()='performer']/*[local-name()='assignedEntity']/*[local-name()='representedOrganization']/*[local-name()='id']: @root='2.16.840.1.113883.4.2'
@@ -5549,24 +5518,26 @@
             (Errors: expected 1, actual 1) (Warnings: expected 0, actual 0)
             _______________________________________________________________
         
-    Found 3 schematron template(s) that did not process test files as expected
+    Found 0 schematron template(s) that did not process test files as expected
     0 schematron template(s) had no associated test files.
      
     Merge Process Results....
-        Merging files into file "C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Published/2020_CMS_QRDA_I-v1.0-May_2019.sch".
+        Merging files into file "C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Schematron/2020_CMS_QRDA_I-v1.0-May_2019.sch".
             Generating all Error patterns first, then all Warning patterns.
-        Wrote merged Schematron file to "C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Published/2020_CMS_QRDA_I-v1.0-May_2019.sch".
-            Generated 1440 asserts in generated (merged) file C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Published/2020_CMS_QRDA_I-v1.0-May_2019.sch
+        Wrote merged Schematron file to "C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Schematron/2020_CMS_QRDA_I-v1.0-May_2019.sch".
+            Generated 1442 asserts in generated (merged) file C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Schematron/2020_CMS_QRDA_I-v1.0-May_2019.sch
 
 
-    Testing merged file C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Published/2020_CMS_QRDA_I-v1.0-May_2019.sch using: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/TestFiles/2020_CMS_QRDA_I_Sample_File-Apr_2019.xml
+    Testing merged file C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Schematron/2020_CMS_QRDA_I-v1.0-May_2019.sch using: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/TestFiles/2020_CMS_QRDA_I_Sample_File-Apr_2019.xml
         Test file XML Validation using XSD file: Schema\CDA\infrastructure\cda\CDA_SDTC.xsd
             Successful XML validation against Schema\CDA\infrastructure\cda\CDA_SDTC.xsd
         Schematron Validation:
     _______________________________________________________________
-    SCHEMATRON: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Published/2020_CMS_QRDA_I-v1.0-May_2019.sch
+    SCHEMATRON: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Schematron/2020_CMS_QRDA_I-v1.0-May_2019.sch
          
         TEST FILE: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/TestFiles/2020_CMS_QRDA_I_Sample_File-Apr_2019.xml
+                Error: a-4388-29168-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][7]/*[local-name()='act']: count(cda:entryRelationship[@typeCode='PCRN'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2017-08-01']])=1]) = 1
+                    SHALL contain exactly one [1..1] entryRelationship (CONF:4388-29168) such that it SHALL contain exactly one [1..1] @typeCode="PCRN" Has reason (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:4388-29175)  SHALL contain exactly one [1..1] Reason (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.88:2017-08-01) (CONF:4388-29169).
                 Warning: a-3343-28750-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][1]/*[local-name()='observation']: count(cda:entryRelationship[@typeCode='MFST'][@inversionInd='true'][count(cda:observation/cda:templateId[@root='2.16.840.1.113883.10.20.22.4.9'][@extension='2014-06-09'])=1])=1
                     SHOULD contain zero or one [0..1] entryRelationship (CONF:3343-28750) such that it SHALL contain exactly one [1..1] @typeCode="MFST" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3343-28759). SHALL contain exactly one [1..1] @inversionInd="true" (CONF:3343-28760). SHALL contain exactly one [1..1] Reaction Observation (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.9:2014-06-09) (CONF:3343-28758).
                 Warning: a-67-12864-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']/*[local-name()='entry'][1]/*[local-name()='organizer']/*[local-name()='reference']/*[local-name()='externalDocument']: count(cda:code)=1
@@ -5817,10 +5788,11 @@
                     Such ids SHOULD contain zero or one [0..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:1198-16822).
                 Warning: a-1198-14842-warning at /*[local-name()='ClinicalDocument']/*[local-name()='documentationOf']/*[local-name()='serviceEvent']/*[local-name()='performer']/*[local-name()='assignedEntity']: count(cda:code)=1
                     This assignedEntity SHOULD contain zero or one [0..1] code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy (HIPAA) urn:oid:2.16.840.1.114222.4.11.1066 DYNAMIC (CONF:1198-14842).
+                C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/TestFiles/2020_CMS_QRDA_I_Sample_File-Apr_2019.xml: Failure count inconsistent with expectations for this file. (Errors: expected 0, actual 1) (Warnings: expected 121, actual 125)
             
-            (Errors: expected 0, actual 0) (Warnings: expected 125, actual 125)
-            Schematron validation of test file results as expected (or no expected error count provided).
+            (Errors: expected 0, actual 1) (Warnings: expected 121, actual 125)
+            Schematron validation of test file results did not match expected results.
  
-    Merge Complete in 16 seconds
+    Merge Complete in 20 seconds
 **************************************** end merge report ************************************************************************
  

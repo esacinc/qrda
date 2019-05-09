@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    
+
+<!-- 
+    https://tracker.esacinc.com/browse/QRDA-585
+-->
 <mergeProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" verboseDebug="true" summaryOnly="false" applyXSD="true" doValidation="true" stopOnError="false">
  
     <title>EH CMS 2020 QRDA Category I</title>
@@ -24,21 +27,32 @@
         
     Version 1.0
     
-    Additions and changes for version 1.0.0 of CMS QRDA I 2020 schematorn
+    Additions and changes for version 1.0 of CMS QRDA I 2020 schematorn
     https://tracker.esacinc.com/browse/QRDA-543
     https://tracker.esacinc.com/browse/QRDA-573
+    https://tracker.esacinc.com/browse/QRDA-585
     
         Template QRDA Category I Report CMS V6:
             - Updated 2.16.840.1.113883.10.20.24.1.3 extension to 2019-02-01 throughout
             - Updated conf. prefix from 3343 to 4388 throughout
             - STATIC version in CMS_0026 changed to 2019-02-01 to reflect removal of CDAC_HQR_EHR program name from voc.xml
-    
+            - Removed "-" from Value set name "QRDA-I CMS Program Name" in CMS_0006
+            - Changed "CMS EHR Certification Identification Number" to "CMS EHR Certification ID" in CMS_0006 rule text
+            
         Template Patient Data Section QDM V6 CMS
             - Updated 2.16.840.1.113883.10.20.24.2.1.1 extension to 2019-02-01 throughout
             - Updated 2.16.840.1.113883.10.20.24.2.1 (referenced conformant base template) extension to 2018-10-01 from 2017-08-01
             - Updated conf. prefix from 3343 to 4388 throughout
         
-   
+        Template Assessment Performed V2
+            -  Added a-3343-28783 as it was changed from 'MAY' to 'SHALL' in the IG. http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1787
+            
+        Template Communication Performend
+            -  Removed a-4388-29159 as it was changed from SHALL to MAY in the IG.  http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1788
+            -  Added a-4388-29168 as it was changed from 'MAY' to 'SHALL' in the IG. http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1788
+            -  Removed a-4388-29153 and a-4388-29154 as directed in http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1783
+            -  Changed typeCode test from RSON to PCRN in  a-4388-29175 per  http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1781 
+            
         Template Problem Observation V3
             - Removed empty rule Problem-Observation-code-errors resulting from prior removal of 1198-32848
 			
@@ -54,6 +68,7 @@
             - In value set 2.16.840.1.113883.3.249.14.103 "QRDA-I CMS Program Name"
                   - Removed errant trailing space from valueSetName
                   - Removed CDAC_HQR_EHR from value set
+                  - Removed "-" from Value set name "QRDA-I CMS Program Name" 
                   
         Base IG templates that had been changed prior to this version
             - QDM Based QRDA V6  (was V5)

@@ -1162,7 +1162,8 @@
     <code value="cancelled" displayName="Cancelled" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
   </system>
   <!-- 02-28-2019: Removed errant trailing space from valueSetName, below -->
-  <system valueSetOid="2.16.840.1.113883.3.249.14.103" valueSetName="QRDA-I CMS Program Name">
+  <!-- 05-09-2019: Remove "-" from the value set name QRDA-I CMS Program Name -->
+  <system valueSetOid="2.16.840.1.113883.3.249.14.103" valueSetName="QRDA I CMS Program Name">
     <code value="HQR_PI" displayName="Hospital Quality Reporting for the Promoting Interoperability Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
     <code value="HQR_IQR" displayName="Hospital Quality Reporting for the Inpatient Quality Reporting Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
     <code value="HQR_PI_IQR" displayName="Hospital Quality Reporting for the Promoting Interoperability Program and the Inpatient Quality Reporting Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />

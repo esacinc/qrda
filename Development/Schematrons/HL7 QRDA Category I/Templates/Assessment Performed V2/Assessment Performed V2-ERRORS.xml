@@ -4,13 +4,15 @@
     Title:  Assessment Performed, Minimal sample, with Errors
     Author: Michael Holck
     Date:   08-01-2017
+    Update: 05-09-2019 Added test for a-3343-28783, (http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1787)  
     
-    Total Errors Expected: 9
+    Total Errors Expected: 10
        Failure a-3343-28670-error SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:3343-28670)
        Failure a-3343-28669-error SHALL contain exactly one [1..1] @moodCode="EVN" (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001) (CONF:3343-28669)
        Failure a-3343-28652-error SHALL contain exactly one [1..1] templateId (CONF:3343-28652) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.144" (CONF:3343-28660) SHALL contain exactly one [1..1] @extension="2016-08-01" (CONF:3343-28701)
        Failure a-3343-28656-error SHALL contain exactly one [1..1] code (CONF:3343-28656)
        Failure a-3343-28653-error SHALL contain exactly one [1..1] statusCode (CONF:3343-28653)
+       Failure a-3343-28783-error SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:3343-28783). 
        Failure a-3343-28662-error statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-28662)
  	   Failure a-3343-28986-error The author, if present, SHALL contain exactly one [1..1] time (CONF:3343-28986).</sch:assert>
        Failure a-3343-28985-error The author, if present, SHALL contain exactly one [1..1] assignedAuthor (CONF:3343-28985).</sch:assert>
@@ -36,6 +38,7 @@
 		<!-- Failure a-3343-28653-error Zero or multiple statusCode -->
 		<!-- Failure a-3343-28662-error missing or bad @code="completed" -->
 		<statusCode code="completedErr" />
+		<!-- Failure a-3343-28783-error SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:3343-28783). -->
 		<author>
 			<!-- Failure a-3343-28986-error Missing or multiple time -->
 			<assignedAuthor>

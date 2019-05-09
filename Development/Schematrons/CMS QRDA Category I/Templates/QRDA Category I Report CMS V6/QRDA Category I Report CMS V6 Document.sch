@@ -12,6 +12,10 @@
                            Updated 2.16.840.1.113883.10.20.24.1.3 extension to 2019-02-01 throughout
                            Updated conf. prefix from 3343 to 4388 throughout
                            STATIC version in CMS_0026 changed to 2019-02-01 to reflect removal of CDAC_HQR_EHR program name from voc.xml
+        Updated 05-09-2019 for https://tracker.esacinc.com/browse/QRDA-585
+                           Removed "-" from Value set name "QRDA-I CMS Program Name" in CMS_0006
+                           Removed "-" from Value set name "QRDA-I CMS Program Name" in voc.xml
+                           Changed "CMS EHR Certification Identification Number" to "CMS EHR Certification ID" in CMS_0006 rule text
     -->
     
     <sch:phase id="errors">
@@ -54,7 +58,8 @@
         <sch:rule id="QRDA_Category_I_Report_CMS-informationRecipient-intendedRecipient-id-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2019-02-01']]/cda:informationRecipient/cda:intendedRecipient/cda:id">
             <sch:assert id="a-CMS_0025-error" test="@root='2.16.840.1.113883.3.249.7'">This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.249.7" (CONF:CMS_0025).</sch:assert>
             <!-- STATIC version in CMS_0026 changed to 2019-02-01 to reflect removal of CDAC_HQR_EHR program name from voc.xml --> 
-            <sch:assert id="a-CMS_0026-error" test="@extension=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.249.14.103']/voc:code/@value">This id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet QRDA-I CMS Program Name urn:oid:2.16.840.1.113883.3.249.14.103 STATIC 2019-02-01 (CONF:CMS_0026).</sch:assert>
+            <!-- Removed "-" from value set name "QRDA-I CMS Program Name" -->
+            <sch:assert id="a-CMS_0026-error" test="@extension=document('voc.xml')/voc:systems/voc:system[@valueSetOid='2.16.840.1.113883.3.249.14.103']/voc:code/@value">This id SHALL contain exactly one [1..1] @extension, which SHALL be selected from ValueSet QRDA I CMS Program Name urn:oid:2.16.840.1.113883.3.249.14.103 STATIC 2019-02-01 (CONF:CMS_0026).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-participant-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2019-02-01']]/cda:participant">
             <sch:assert id="a-CMS_0004-error" test="count(cda:associatedEntity)=1">This participant SHALL contain exactly one [1..1] associatedEntity (CONF:CMS_0004).</sch:assert>
@@ -63,7 +68,8 @@
             <sch:assert id="a-CMS_0005-error" test="count(cda:id)=1">This associatedEntity SHALL contain exactly one [1..1] id (CONF:CMS_0005).</sch:assert>
         </sch:rule>
         <sch:rule id="QRDA_Category_I_Report_CMS-participant-associatedEntity-id-errors" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2019-02-01']]/cda:participant/cda:associatedEntity/cda:id">
-            <sch:assert id="a-CMS_0006-error" test="@root='2.16.840.1.113883.3.2074.1'">This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" CMS EHR Certification Identification Number (CONF:CMS_0006).</sch:assert>
+            <!-- Change from "CMS EHR Certification Identification Number" to "CMS EHR Certification ID" in rule text -->
+            <sch:assert id="a-CMS_0006-error" test="@root='2.16.840.1.113883.3.2074.1'">This id SHALL contain exactly one [1..1] @root="2.16.840.1.113883.3.2074.1" CMS EHR Certification ID (CONF:CMS_0006).</sch:assert>
             <sch:assert id="a-CMS_0008-error" test="@extension">This id SHALL contain exactly one [1..1] @extension (CONF:CMS_0008).</sch:assert>
         </sch:rule>
         <!-- QRDA-502 Removed assertion for 4388-16591 as it is present already in QDM Based QRDA template in HL7 templates -->

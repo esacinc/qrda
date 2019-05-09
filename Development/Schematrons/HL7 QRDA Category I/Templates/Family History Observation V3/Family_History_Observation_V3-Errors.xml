@@ -6,8 +6,9 @@
     Date: 09-25-2017
     JIRA: https://tracker.esacinc.com/browse/QRDA-299
     Update: 04-25-2019 Remove translation requirement 1198-32847,  https://tracker.esacinc.com/browse/QRDA-573
+    Update: 05-09-2019 Nope. Undo the 04-25-2109 update
  
-    Total Errors Expected: 8 
+    Total Errors Expected: 9 
 			Failure a-1198-8586-error SHALL contain exactly one [1..1] @classCode="OBS" Observation (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1198-8586).
 			Failure a-1198-8587-error SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:1198-8587).
 			Failure a-1198-8599-error SHALL contain exactly one [1..1] templateId (CONF:1198-8599) such that it  SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.46" (CONF:1198-10496). SHALL contain exactly one [1..1] @extension="2015-08-01" (CONF:1198-32605).
@@ -15,11 +16,11 @@
 			Failure a-1198-32427-error SHALL contain exactly one [1..1] code, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2012-06-01 (CONF:1198-32427).
 			Failure a-1198-8590-error SHALL contain exactly one [1..1] statusCode (CONF:1198-8590).
 			Failure a-1198-8591-error SHALL contain exactly one [1..1] value with @xsi:type="CD", where the code SHALL be selected from ValueSet Problem urn:oid:2.16.840.1.113883.3.88.12.3221.7.4 DYNAMIC (CONF:1198-8591).
+			Failure a-1198-32847-error This code SHALL contain at least one [1..*] translation, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2014-09-02 (CONF:1198-32847).
 		    Failure a-1198-19098-error This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:1198-19098).
 	
-	Total Warnings Expected: 3
+	Total Warnings Expected: 2
 			Failure a-1198-32427-v-warning SHALL contain exactly one [1..1] code, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2012-06-01 (CONF:1198-32427).
-			Failure a-1198-32847-warning This code SHALL contain at least one [1..*] translation, which SHOULD be selected from ValueSet Problem Type urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2014-09-02 (CONF:1198-32847).
 		    Failure a-1198-8593-warning SHOULD contain zero or one [0..1] effectiveTime (CONF:1198-8593).
 
   -->

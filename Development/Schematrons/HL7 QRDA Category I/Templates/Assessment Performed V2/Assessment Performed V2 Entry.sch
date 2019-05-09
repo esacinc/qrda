@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!--     
+         05-09-2019: Changes due to http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1787
+-->
+
 <sch:schema xmlns:voc="http://www.lantanagroup.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc" />
     <sch:ns prefix="svs" uri="urn:ihe:iti:svs:2008" />
@@ -18,6 +22,8 @@
             <sch:assert id="a-3343-28652-error" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.24.3.144'][@extension='2017-08-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:3343-28652) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.24.3.144" (CONF:3343-28660) SHALL contain exactly one [1..1] @extension="2017-08-01" (CONF:3343-28701).</sch:assert>
             <sch:assert id="a-3343-28656-error" test="count(cda:code)=1">SHALL contain exactly one [1..1] code (CONF:3343-28656).</sch:assert>
             <sch:assert id="a-3343-28653-error" test="count(cda:statusCode)=1">SHALL contain exactly one [1..1] statusCode (CONF:3343-28653).</sch:assert>
+            <!-- Added 33443-28783 as it was changde from MAY to SHALL in IG. http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1787 -->
+            <sch:assert id="a-3343-28783-error" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.155'][@extension='2017-08-01']]) = 1">SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:3343-28783). </sch:assert>
         </sch:rule>
         <sch:rule id="Assessment_performed-statusCode-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.144'][@extension='2017-08-01']]/cda:statusCode">
             <sch:assert id="a-3343-28662-error" test="@code='completed'">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: ActStatus urn:oid:2.16.840.1.113883.5.14) (CONF:3343-28662).</sch:assert>

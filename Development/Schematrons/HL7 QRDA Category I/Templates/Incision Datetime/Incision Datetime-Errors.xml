@@ -4,12 +4,13 @@
     Title: Incision Datetime minimal sample file with errors
     Author: Dan Donahue
     Date: 09-28-2017
+    Update: 04-04-2019 Removed conformance 67-26984 https://tracker.esacinc.com/browse/QRDA-568
 
-    Total Errors Expected: 7
+    Total Errors Expected: 6
           Failure a-67-14559-error Bad Class Code
           Failure a-67-11401-error Bad Moode Code
           Failure a-67-11402-error Multiple  main templateId
-          Failure a-67-26984-error Missing id
+          Remove: Failure a-67-26984-error Missing id
           Failure a-67-14562-error Missing or multiple code
           Failure a-67-27014-error Missing or bad code @codeSystem="2.16.840.1.113883.6.96"
           Failure a-67-14561-error Missing or multiple effectiveTime
@@ -27,10 +28,7 @@
       <templateId root="2.16.840.1.113883.10.20.24.3.89"/>
       <!-- a-67-11402-error Multiple  main templateId -->
       <templateId root="2.16.840.1.113883.10.20.24.3.89"/>
-      <!-- a-67-26984-error Missing id -->
-      <!-- 
-        <id root="2d5dc123-13ca-477d-9263-4a9c504186a1"/>
-      -->
+      <id root="2d5dc123-13ca-477d-9263-4a9c504186a1"/>
       <code code="34896006" codeSystem="2.16.840.1.113883.6.96"
         codeSystemName="SNOMED CT" displayName="incision"/>
       <!-- a-67-14562-error Missing or multiple code -->

@@ -5,6 +5,7 @@
     Author: Dan Donahue
     Date: 09-26-2017
     New template  for STU 5.1 - https://tracker.esacinc.com/browse/QRDA-460
+    Update 05-09-2019 Added QDM Reason, required per http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1788
     
     Total Errors Expected: 0
     
@@ -17,6 +18,7 @@
   <act classCode="ACT" moodCode="EVN">
     <templateId root="2.16.840.1.113883.10.20.24.3.156" extension="2018-10-01"/>
     <id root="2d5075da-2ffc-47a9-a350-4a24e6b052d1"/>
+    <!-- Code no longer required per http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1788 -->
     <code code="401270003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="E-mail received from patient (event)"/>
     <statusCode code="completed"/>
     <author>
@@ -46,6 +48,22 @@
         <sdtc:id root="1fad091f-7b4e-4661-b61c-53f9a82515b6"/>
       </sdtc:actReference>
     </sdtc:inFulfillmentOf1>
+    <!-- QDM Attribute: Reason -->
+    <entryRelationship typeCode="PCRN">
+      <observation classCode="OBS" moodCode="EVN">
+        <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2017-08-01"/>
+        <id root="aa348c15-ce6b-4988-b33b-7ae730c710e2"/>
+        <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
+          displayName="Reason care action performed or not" codeSystemName="LOINC"/>
+        <statusCode code="completed"/>
+        <effectiveTime>
+          <low value="20150605"/>
+        </effectiveTime>
+        <value xsi:type="CD" code="125629006" codeSystem="2.16.840.1.113883.6.96"
+          codeSystemName="SNOMED CT" displayName="Injury of colon"
+          sdtc:valueSet="2.16.840.1.113883.3.464.1003.113.12.1036"/>
+      </observation>
+    </entryRelationship>
   </act>
   
 

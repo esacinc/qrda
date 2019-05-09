@@ -16,9 +16,10 @@
     CMS190v8   0372     Intensive Care Unit Venous Thromboembolism Prophylaxis     40280382-6963-bf5e-0169-df3a02da3a73
 
     
-    
+    Schematron validaton:
     Total Errors Expected: 0 
-    Total Warnings Expected: 125 	
+    Total Warnings Expected: 121 	
+    
   -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"

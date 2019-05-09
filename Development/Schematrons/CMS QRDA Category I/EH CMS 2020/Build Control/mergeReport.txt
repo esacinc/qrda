@@ -7,7 +7,7 @@
     Instructions file: C:\Development\QRDA-git\qrda\Development\Schematrons\CMS QRDA Category I\EH CMS 2020\Build Control\EH CMS 2020 QRDA Category I Merge Directions.xml
     Title: EH CMS 2020 QRDA Category I
     Version: 1.0
-    Generated on Thu May 09 12:34:55 MDT 2019
+    Generated on Thu May 09 15:33:51 MDT 2019
     Verbose Reporting is turned on
     Merged file: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/Schematron/2020_CMS_QRDA_I-v1.0-May_2019.sch
         All Error patterns are generated before all Warning patterns
@@ -1381,7 +1381,7 @@
                 Error: a-4388-29149-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']: count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.155'][@extension='2017-08-01']]) = 1
                     SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:4388-29149).
                 Error: a-4388-29168-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']: count(cda:entryRelationship[@typeCode='PCRN'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2017-08-01']])=1]) = 1
-                    SHALL contain exactly one [1..1] entryRelationship (CONF:4388-29168) such that it SHALL contain exactly one [1..1] @typeCode="PCRN" Has reason (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:4388-29175)  SHALL contain exactly one [1..1] Reason (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.88:2017-08-01) (CONF:4388-29169). 
+                    SHALL contain exactly one [1..1] entryRelationship (CONF:4388-29168) such that it SHALL contain exactly one [1..1] @typeCode="PCRN" Has precondition (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:4388-29175)  SHALL contain exactly one [1..1] Reason (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.88:2017-08-01) (CONF:4388-29169). 
                 Error: a-4388-29170-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='effectiveTime']: count(cda:low)=1
                     The effectiveTime, if present, SHALL contain exactly one [1..1] low (CONF:4388-29170).
                 Error: a-4388-29146-error at /*[local-name()='ClinicalDocument']/*[local-name()='act']/*[local-name()='participant'][1]/*[local-name()='participantRole']: count(cda:code)=1
@@ -5537,7 +5537,7 @@
          
         TEST FILE: C:/Development/QRDA-git/qrda/Development/Schematrons/CMS QRDA Category I/EH CMS 2020/TestFiles/2020_CMS_QRDA_I_Sample_File-Apr_2019.xml
                 Error: a-4388-29168-error at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][7]/*[local-name()='act']: count(cda:entryRelationship[@typeCode='PCRN'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2017-08-01']])=1]) = 1
-                    SHALL contain exactly one [1..1] entryRelationship (CONF:4388-29168) such that it SHALL contain exactly one [1..1] @typeCode="PCRN" Has reason (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:4388-29175)  SHALL contain exactly one [1..1] Reason (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.88:2017-08-01) (CONF:4388-29169).
+                    SHALL contain exactly one [1..1] entryRelationship (CONF:4388-29168) such that it SHALL contain exactly one [1..1] @typeCode="PCRN" Has precondition (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:4388-29175)  SHALL contain exactly one [1..1] Reason (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.88:2017-08-01) (CONF:4388-29169).
                 Warning: a-3343-28750-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][3]/*[local-name()='section']/*[local-name()='entry'][1]/*[local-name()='observation']: count(cda:entryRelationship[@typeCode='MFST'][@inversionInd='true'][count(cda:observation/cda:templateId[@root='2.16.840.1.113883.10.20.22.4.9'][@extension='2014-06-09'])=1])=1
                     SHOULD contain zero or one [0..1] entryRelationship (CONF:3343-28750) such that it SHALL contain exactly one [1..1] @typeCode="MFST" (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:3343-28759). SHALL contain exactly one [1..1] @inversionInd="true" (CONF:3343-28760). SHALL contain exactly one [1..1] Reaction Observation (V2) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.9:2014-06-09) (CONF:3343-28758).
                 Warning: a-67-12864-warning at /*[local-name()='ClinicalDocument']/*[local-name()='component']/*[local-name()='structuredBody']/*[local-name()='component'][1]/*[local-name()='section']/*[local-name()='entry'][1]/*[local-name()='organizer']/*[local-name()='reference']/*[local-name()='externalDocument']: count(cda:code)=1

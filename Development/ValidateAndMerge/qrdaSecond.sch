@@ -488,7 +488,7 @@
          
          
          <sch:assert id="a-4388-29168-error"
-                     test="count(cda:entryRelationship[@typeCode='PCRN'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2017-08-01']])=1]) = 1">SHALL contain exactly one [1..1] entryRelationship (CONF:4388-29168) such that it SHALL contain exactly one [1..1] @typeCode="PCRN" Has reason (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:4388-29175)  SHALL contain exactly one [1..1] Reason (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.88:2017-08-01) (CONF:4388-29169).</sch:assert>
+                     test="count(cda:entryRelationship[@typeCode='PCRN'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2017-08-01']])=1]) = 1">SHALL contain exactly one [1..1] entryRelationship (CONF:4388-29168) such that it SHALL contain exactly one [1..1] @typeCode="PCRN" Has precondition (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:4388-29175)  SHALL contain exactly one [1..1] Reason (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.88:2017-08-01) (CONF:4388-29169).</sch:assert>
       </sch:rule>
       <sch:rule id="Communication_Performed-effectivTime-errors"
                 context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.156'][@extension='2018-10-01']]/cda:effectiveTime">

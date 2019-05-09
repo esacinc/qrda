@@ -48,7 +48,7 @@
         <sdtc:id root="1fad091f-7b4e-4661-b61c-53f9a82515b6"/>
       </sdtc:actReference>
     </sdtc:inFulfillmentOf1>
-    <!-- QDM Attribute: Reason -->
+    <!-- QDM Attribute: Precondition -->
     <entryRelationship typeCode="PCRN">
       <observation classCode="OBS" moodCode="EVN">
         <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2017-08-01"/>

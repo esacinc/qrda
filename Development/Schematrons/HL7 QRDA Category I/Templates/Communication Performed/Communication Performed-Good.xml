@@ -49,7 +49,7 @@
       </sdtc:actReference>
     </sdtc:inFulfillmentOf1>
     <!-- QDM Attribute: Precondition -->
-    <entryRelationship typeCode="PCRN">
+    <entryRelationship typeCode="REFR">
       <observation classCode="OBS" moodCode="EVN">
         <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2017-08-01"/>
         <id root="aa348c15-ce6b-4988-b33b-7ae730c710e2"/>

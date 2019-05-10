@@ -37,7 +37,7 @@ Version 1.0
             -  Removed a-4388-29159 as it was changed from SHALL to MAY in the IG.  http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1788
             -  Added a-4388-29168 as it was changed from 'MAY' to 'SHALL' in the IG. http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1788
             -  Removed a-4388-29153 and a-4388-29154 as directed in http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1783
-            -  Changed typeCode test from RSON to PCRN in  a-4388-29175 per  http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1781 
+            -  Changed typeCode test from RSON to REFR in  a-4388-29175 per  http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1781 
             
         Template Problem Observation V3
             - Removed empty rule Problem-Observation-code-errors resulting from prior removal of 1198-32848
@@ -74,7 +74,7 @@ Version 1.0
             - Communication from Provider to Patient V4    
             - Communication from Provider to Provider V4 
 
-Thu May 09 15:34:10 MDT 2019
+Fri May 10 08:11:56 MDT 2019
 -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron"
             xmlns="urn:hl7-org:v3"
@@ -565,9 +565,9 @@ Thu May 09 15:34:10 MDT 2019
          <sch:assert id="a-4388-29149-error"
                      test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.155'][@extension='2017-08-01']]) = 1">SHALL contain exactly one [1..1] Author (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.155:2017-08-01) (CONF:4388-29149).</sch:assert>
          <!-- Added a-4388-29168 as it was changed from 'MAY' to 'SHALL' in the IG. http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1788 -->
-         <!-- Changed typeCode test from RSON to PCRN in  a-4388-29175 per  http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1781 -->
+         <!-- Changed typeCode test from RSON to REFR in  a-4388-29175 per  http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1781 -->
          <sch:assert id="a-4388-29168-error"
-                     test="count(cda:entryRelationship[@typeCode='PCRN'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2017-08-01']])=1]) = 1">SHALL contain exactly one [1..1] entryRelationship (CONF:4388-29168) such that it SHALL contain exactly one [1..1] @typeCode="PCRN" Has precondition (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:4388-29175)  SHALL contain exactly one [1..1] Reason (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.88:2017-08-01) (CONF:4388-29169).</sch:assert>
+                     test="count(cda:entryRelationship[@typeCode='REFR'][count(cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.88'][@extension='2017-08-01']])=1]) = 1">SHALL contain exactly one [1..1] entryRelationship (CONF:4388-29168) such that it SHALL contain exactly one [1..1] @typeCode="REFR" Has reference (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:4388-29175)  SHALL contain exactly one [1..1] Reason (V3) (identifier: urn:hl7ii:2.16.840.1.113883.10.20.24.3.88:2017-08-01) (CONF:4388-29169).</sch:assert>
       </sch:rule>
       <sch:rule id="Communication_Performed-effectivTime-errors"
                 context="cda:act[cda:templateId[@root='2.16.840.1.113883.10.20.24.3.156'][@extension='2018-10-01']]/cda:effectiveTime">

@@ -51,7 +51,7 @@
             -  Removed a-4388-29159 as it was changed from SHALL to MAY in the IG.  http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1788
             -  Added a-4388-29168 as it was changed from 'MAY' to 'SHALL' in the IG. http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1788
             -  Removed a-4388-29153 and a-4388-29154 as directed in http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1783
-            -  Changed typeCode test from RSON to PCRN in  a-4388-29175 per  http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1781 
+            -  Changed typeCode test from RSON to REFR in  a-4388-29175 per  http://www.hl7.org/dstucomments/showdetail_comment.cfm?commentid=1781 
             
         Template Problem Observation V3
             - Removed empty rule Problem-Observation-code-errors resulting from prior removal of 1198-32848

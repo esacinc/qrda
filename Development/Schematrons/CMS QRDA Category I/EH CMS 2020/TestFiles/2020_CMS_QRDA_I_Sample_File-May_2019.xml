@@ -77,8 +77,7 @@
         <!-- if the patient's race is unknown, use nullFlavor="UNK" -->
         <!-- <raceCode nullFlavor="UNK"/> -->
         <!-- Use sdtc:raceCode only if the patient has more than one race category -->
-        <sdtc:raceCode code="2054-5" displayName="Black or African American" codeSystem="2.16.840.1.113883.6.238"
-          sdtc:valueSet="2.16.840.1.114222.4.11.836"/> 
+        <sdtc:raceCode code="2054-5" displayName="Black or African American" codeSystem="2.16.840.1.113883.6.238"/> 
         <ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.113883.6.238" displayName="Not Hispanic or Latino" />
         <!-- if the patient declined to specify his/her ethnicity, use nullFlavor="ASKU" -->
         <!-- <ethnicGroupCode nullFlavor="ASKU"/> -->
@@ -531,10 +530,12 @@
           <!-- =============================================== -->
           <!-- QDM Category: Communication Performed -->
           <!-- =============================================== -->
+          <!-- Communication Performed not done -->
           <entry>
-            <act classCode="ACT" moodCode="EVN">
+            <act classCode="ACT" moodCode="EVN" negationInd="true">
               <templateId root="2.16.840.1.113883.10.20.24.3.156" extension="2018-10-01"/>
               <id root="2d5075da-2ffc-47a9-a350-4a24e6b052d1"/>
+              <!-- QDM Attribute: category -->
               <code code="401270003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="E-mail received from patient (event)"/>
               <statusCode code="completed"/>
               <author>
@@ -544,18 +545,39 @@
                   <id nullFlavor="NA"/>
                 </assignedAuthor>
               </author>
-              <participant typeCode="AUT">
-                <participantRole>
-                  <code code="116154003" codeSystem="2.16.840.1.113883.6.96"
-                    codeSystemName="SNOMED CT" displayName="Patient"/>
-                </participantRole>
-              </participant>
-              <participant typeCode="IRCP">
-                <participantRole>
-                  <code code="158965000" codeSystem="2.16.840.1.113883.6.96"
-                    codeSystemName="SNOMED CT" displayName="Medical Practitioner"/>
-                </participantRole>
-              </participant>
+              <!-- communication performed not done asthma action plan -->
+              <!-- QDM Attribute: Code  -->
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2017-08-01"/>
+                  <id root="aa348c15-ce6b-4988-b33b-7ae730c710e2"/>
+                  <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
+                    displayName="Reason care action performed or not" codeSystemName="LOINC"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="2020020101030"/>
+                  </effectiveTime>
+                  <!-- direct reference code. Therefore, not using nullFlavor="NA" and sdtc:valueSet for specifying not done -->
+                  <value xsi:type="CD" code="69981-9" codeSystem="2.16.840.1.113883.6.1"
+                    codeSystemName="SNOMED CT" displayName="Asthma action plan"/>
+                </observation>
+              </entryRelationship>  
+              <!-- reason for not done -->
+              <!-- QDM Attribute: Reason  -->
+              <entryRelationship typeCode="RSON">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2017-08-01"/>
+                  <id root="aa348c15-ce6b-4988-b33b-7ae730c710e2"/>
+                  <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
+                    displayName="Reason care action performed or not" codeSystemName="LOINC"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="2020020101030"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="371138003" codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Refusal of treatment by parents (situation)"/>
+                </observation>
+              </entryRelationship>   
               <!-- QDM Attribute: Related to -->
               <sdtc:inFulfillmentOf1 typeCode="FLFS">
                 <sdtc:templateId root="2.16.840.1.113883.10.20.24.3.150" extension="2017-08-01"/>
@@ -564,23 +586,6 @@
                   <sdtc:id root="1fad091f-7b4e-4661-b61c-53f9a82515b6"/>
                 </sdtc:actReference>
               </sdtc:inFulfillmentOf1>
-              <!-- QDM Attribute: Reason -->
-              <entryRelationship typeCode="PCRN">
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.24.3.88" extension="2017-08-01"/>
-                  <id root="aa348c15-ce6b-4988-b33b-7ae730c710e2"/>
-                  <code code="77301-0" codeSystem="2.16.840.1.113883.6.1"
-                    displayName="Reason care action performed or not" codeSystemName="LOINC"/>
-                  <statusCode code="completed"/>
-                  <effectiveTime>
-                    <low value="20150605"/>
-                  </effectiveTime>
-                  <value xsi:type="CD" code="125629006" codeSystem="2.16.840.1.113883.6.96"
-                    codeSystemName="SNOMED CT" displayName="Injury of colon"
-                    sdtc:valueSet="2.16.840.1.113883.3.464.1003.113.12.1036"/>
-                </observation>
-              </entryRelationship>
-              
             </act>
           </entry>
           
@@ -1110,8 +1115,7 @@
                   <templateId root="2.16.840.1.113883.10.20.24.3.23" extension="2017-08-01"/>
                   <id root="dccf424e-18dd-4058-887f-a81514eaaa55"/>
                   <code code="32485007" displayName="hospital admission"
-                    codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
-                    sdtc:valueSet="2.16.840.1.113883.3.117.1.7.1.23"/>
+                    codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                   <text>Encounter, Performed: hospital admission</text>
                   <statusCode code="completed"/>
                   <effectiveTime>
@@ -1241,8 +1245,7 @@
                   <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
                     codeSystemName="HL7ActCode">
                     <translation code="854981" displayName="Condition family member HL7.CCDAR2"
-                      codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"
-                      sdtc:valueSet="2.16.840.1.113883.3.88.12.3221.7.2"/>
+                      codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"/>
                   </code>
                   <statusCode code="completed"/>
                   <effectiveTime>
@@ -1272,8 +1275,7 @@
               </effectiveTime>
               <!-- Payer -->
               <value xsi:type="CD" code="1" codeSystem="2.16.840.1.113883.3.221.5"
-                codeSystemName="Source of Payment Typology" displayName="Medicare"
-                sdtc:valueSet="2.16.840.1.114222.4.11.3591"/>
+                codeSystemName="Source of Payment Typology" displayName="Medicare"/>
             </observation>
           </entry>
           

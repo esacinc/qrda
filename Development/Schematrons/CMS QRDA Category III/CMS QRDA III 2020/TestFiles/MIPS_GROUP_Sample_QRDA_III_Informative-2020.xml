@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
 <!-- 
-	Title: Merit-based Incentive Payment System (MIPS) Group Reporting Sample QRDA III 2019 Performance Period (Informative)
-	Filename: MIPS_GROUP_Sample_QRDA_III_Informative-2019.xml
-	Version: 1.1
-	Revision History:  10/05/2018 version 1.0 Created 
-	                   02/06/2019 version 1.1 Updated for the 2019 CMS QRDA III IG Addendum: 
-	                                          1) Updated measure title for PI_PEA_1 per the Addendum
-	                                          2) Added ClinicalDocument/participant in the header to include example for CMS EHR Certification ID 
-	Description: 1) This QRDA-III sample file is valid for MIPS group reporting (MIPS_GROUP) 2019 performance period and is informative only. 
+	Title: Merit-based Incentive Payment System (MIPS) Group Reporting Sample QRDA III 2020 Performance Period (Informative)
+	Filename: MIPS_GROUP_Sample_QRDA_III_Informative-2020.xml
+	Version: 1.0
+	Revision History:  05/15/2019 version 1.0 Created 
+
+Description: 1) This QRDA-III sample file is valid for MIPS group reporting (MIPS_GROUP) 2020 performance period and is informative only. 
 	             2) This sample file correctly validates against the conformance statements specified in the 
-	             2019 CMS Implementation Guide for Quality Reporting Document Architecture Category III
-	             Eligible Clinicians and Eligible Professionals Programs, Published 10/08/2018
+	             2020 CMS Implementation Guide for Quality Reporting Document Architecture Category III Eligible Clinicians and Eligible Professionals Programs
 		         3) Includes examples (shown as commented out) to demonstrate if were submitting as MIPS virtual group rather than MIPS group
 		         4) Includes examples (shown as commented out) to demonstrate if were submitting performance period for Quality at the individual eCQM level
 		         5) Includes examples(shown as commented out) to demonstrate if were submitting performance period for Improvement Activities at the individual activity level
@@ -19,24 +16,24 @@
    THIS SAMPLE FILE IS INFORMATIVE ONLY.
    
    Total Errors Expected: 0
-   Total Warnings Expected: 13 
-         (All eCQMs in this sample file do not belong to a measure set, the warnings for CONF:3259-18354 are expected)
-   =====================================================================================================================================================     
+   Total Warnings Expected: 0 
+ 
+ =====================================================================================================================================================     
    eCQMs included are:
    MeasureID		NQF ID   Measure Name	                                    eCQM version specific id (UUID)         NQS Domain
    ____________________________________________________________________________________________________________________________________________________   
-   CMS125v7			2372     Breast Cancer Screening			                40280382-6258-7581-0162-927500b514ef	Effective Clinical Care     
-   CMS130v7	        0034     Colorectal Cancer Screening		                40280382-6258-7581-0162-92959376159d    Effective Clinical Care
-   CMS165v7	        0018     Controlling High Blood Pressure	                40280382-6258-7581-0162-92d6e6db1680    Effective Clinical Care
-   CMS122v7			0059     Diabeties Hemoglobin A1c			                40280382-6258-7581-0162-9249c8ab1447    Effective Clinical Care
-   CMS68v8		    0419     Doc of Current Medications			                40280382-5fa6-fe85-0160-0ea3e0012376    Patient Safety
-   CMS139v7			0101     Screening for Future Fall Risk		                40280382-6258-7581-0162-9208ce991364    Patient Safety
-   CMS144v7			0083     HF: Beta-Blocker Therapy for LVSD	                40280382-6240-b6b9-0162-547042330ba8    Effective Clinical Care (multiple performance rates)
-   CMS127v7	          -      Pneumococcal Vaccination Status	                40280382-6258-7581-0162-92877e281530    Community/Population Health
-   CMS147v8			0041     Influenza Immunization				                40280382-6240-b6b9-0162-5096917708e0    Community/Population Health
-   CMS2v8			0418     Screening for Depression and Follow-up plan        40280382-5fa6-fe85-0160-0ed2838423ca	Community/Population Health
-   CMS138v7			0028     Tobacco Use: Screening/Cessation Intervention      40280382-6240-b6b9-0162-54815a310c2c    Community/Population Health (multiple performance rates)
-   CMS136v8			0108     Follow-up for Children Prescribed ADHA Medication	40280382-6258-7581-0162-929d3fb415c3	Effective Clinical Care (multiple performance rates)
+   CMS125v8			2372     Breast Cancer Screening			                40280382-6963-bf5e-0169-da4fbfb93891	Effective Clinical Care     
+   CMS130v8	        0034     Colorectal Cancer Screening		                40280382-6963-bf5e-0169-da566ea338a5    Effective Clinical Care
+   CMS165v8	        0018     Controlling High Blood Pressure	                40280382-6963-bf5e-0169-da5e74be38bf    Effective Clinical Care
+   CMS122v8			0059     Diabeties Hemoglobin A1c			                40280382-6963-bf5e-0169-da3833273869    Effective Clinical Care
+   CMS68v9		    0419     Doc of Current Medications			                40280382-68d3-a5fe-0169-0c589537118f    Patient Safety
+   CMS139v8			0101     Screening for Future Fall Risk		                40280382-68d3-a5fe-0169-53832b023431    Patient Safety
+   CMS144v8			0083     HF: Beta-Blocker Therapy for LVSD	                40280382-6963-bf5e-0169-6e5d8c750401    Effective Clinical Care (multiple performance rates)
+   CMS127v8	          -      Pneumococcal Vaccination Status	                40280382-68d3-a5fe-0168-e79c6f8e0583    Community/Population Health
+   CMS147v9			0041     Influenza Immunization				                40280382-6963-bf5e-0169-6dbc990502f4    Community/Population Health
+   CMS2v9			0418     Screening for Depression and Follow-up plan        40280382-68d3-a5fe-0169-0c9018ca11d2	Community/Population Health
+   CMS138v8			0028     Tobacco Use: Screening/Cessation Intervention      40280382-6963-bf5e-0169-6d717fd50298    Community/Population Health (multiple performance rates)
+   CMS136v9			0108     Follow-up for Children Prescribed ADHA Medication	40280382-68d3-a5fe-0168-e9118c0c0726	Effective Clinical Care (multiple performance rates)
    =====================================================================================================================================================   
    Promoting Interoperability measures included are:
    MeasureID    Measure Name																Type
@@ -61,7 +58,7 @@
 	<realmCode code="US"/>
 	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
 	<templateId root="2.16.840.1.113883.10.20.27.1.1" extension="2017-06-01"/>
-	<templateId root="2.16.840.1.113883.10.20.27.1.2" extension="2018-05-01"/>
+	<templateId root="2.16.840.1.113883.10.20.27.1.2" extension="2019-05-01"/>
 	<id root="58682145-45bf-4569-ae0b-3c3a48adeb33"/>
 	<code code="55184-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
 		displayName="Quality Reporting Document Architecture Calculated Summary Report"/>
@@ -69,6 +66,7 @@
 	<effectiveTime value="20200111061231"/>
 	<confidentialityCode codeSystem="2.16.840.1.113883.5.25" code="N"/>
 	<languageCode code="en"/>
+	<versionNumber value="1"/>
 	<recordTarget>
 		<patientRole>
 			<id nullFlavor="NA"/>
@@ -181,7 +179,7 @@
 		<structuredBody>
 			<!--
 			********************************************************
-			QRDA Category III Measure Section - CMS (V3)
+			QRDA Category III Measure Section - CMS (V4)
 			********************************************************
 			-->
 			<component>
@@ -190,13 +188,13 @@
 					<templateId root="2.16.840.1.113883.10.20.24.2.2"/>
 					<!-- QRDA Category III Measure Section (V4) -->
 					<templateId root="2.16.840.1.113883.10.20.27.2.1" extension="2017-06-01"/>
-					<!-- QRDA Category III Measure Section - CMS (V3) -->
-					<templateId root="2.16.840.1.113883.10.20.27.2.3" extension="2018-05-01"/>
+					<!-- QRDA Category III Measure Section - CMS (V4) -->
+					<templateId root="2.16.840.1.113883.10.20.27.2.3" extension="2019-05-01"/>
 					<code code="55186-1" codeSystem="2.16.840.1.113883.6.1"
 						displayName="measure section"/>
 					<title>Measure Section</title>
 					<text>
-						<!--NQF 0018/ CMS165v7 -->
+						<!--NQF 0018/ CMS165v8 -->
 						<table border="1" width="100%">
 							<thead>
 								<tr>
@@ -207,7 +205,7 @@
 							<tbody>
 								<tr>
 									<td>Controlling High Blood Pressure</td>
-									<td>40280382-6258-7581-0162-92d6e6db1680</td>
+									<td>40280382-6963-bf5e-0169-da5e74be38bf</td>
 								</tr>
 							</tbody>
 						</table>
@@ -372,7 +370,7 @@
 								</list>
 							</item>
 						</list>
-						<!--NQF 0028/ CMS138v7 -->
+						<!--NQF 0028/ CMS138v8 -->
 						<table border="1" width="100%">
 							<thead>
 								<tr>
@@ -384,7 +382,7 @@
 								<tr>
 									<td>Preventive Care and Screening: Tobacco Use: Screening and
 										Cessation Intervention</td>
-									<td>40280382-6240-b6b9-0162-54815a310c2c</td>
+									<td>40280382-6963-bf5e-0169-6d717fd50298</td>
 								</tr>
 							</tbody>
 						</table>
@@ -867,7 +865,7 @@
 								</list>
 							</item>
 						</list>
-						<!--NQF 2372 / CMS125v7 -->
+						<!--NQF 2372 / CMS125v8 -->
 						<table border="1" width="100%">
 							<thead>
 								<tr>
@@ -878,7 +876,7 @@
 							<tbody>
 								<tr>
 									<td>Breast Cancer Screening</td>
-									<td>40280382-6258-7581-0162-927500b514ef</td>
+									<td>40280382-6963-bf5e-0169-da4fbfb93891</td>
 								</tr>
 							</tbody>
 						</table>
@@ -1043,7 +1041,7 @@
 								</list>
 							</item>
 						</list>
-						<!--NQF 0034/ CMS130v7 -->
+						<!--NQF 0034/ CMS130v8 -->
 						<table border="1" width="100%">
 							<thead>
 								<tr>
@@ -1054,7 +1052,7 @@
 							<tbody>
 								<tr>
 									<td>Colorectal Cancer Screening</td>
-									<td>40280382-6258-7581-0162-92959376159d</td>
+									<td>40280382-6963-bf5e-0169-da566ea338a5</td>
 								</tr>
 							</tbody>
 						</table>
@@ -1219,7 +1217,7 @@
 								</list>
 							</item>
 						</list>
-						<!--NQF 0041/ CMS147v8 -->
+						<!--NQF 0041/ CMS147v9 -->
 						<table border="1" width="100%">
 							<thead>
 								<tr>
@@ -1230,7 +1228,7 @@
 							<tbody>
 								<tr>
 									<td>Preventive Care and Screening: Influenza Immunization</td>
-									<td>40280382-6240-b6b9-0162-5096917708e0</td>
+									<td>40280382-6963-bf5e-0169-6dbc990502f4</td>
 								</tr>
 							</tbody>
 						</table>
@@ -1395,7 +1393,7 @@
 								</list>
 							</item>
 						</list>
-						<!--NQF 0043/ CMS127v7 -->
+						<!--NQF 0043/ CMS127v8 -->
 						<table border="1" width="100%">
 							<thead>
 								<tr>
@@ -1406,7 +1404,7 @@
 							<tbody>
 								<tr>
 									<td>Pneumonia Vaccination Status for Older Adults</td>
-									<td>40280382-6258-7581-0162-92877e281530</td>
+									<td>40280382-68d3-a5fe-0168-e79c6f8e0583</td>
 								</tr>
 							</tbody>
 						</table>
@@ -1532,7 +1530,7 @@
 								</list>
 							</item>
 						</list>
-						<!--NQF 0059/ CMS122v7 -->
+						<!--NQF 0059/ CMS122v8 -->
 						<table border="1" width="100%">
 							<thead>
 								<tr>
@@ -1543,7 +1541,7 @@
 							<tbody>
 								<tr>
 									<td>Diabetes: Hemoglobin A1c Poor Control</td>
-									<td>40280382-6258-7581-0162-9249c8ab1447</td>
+									<td>40280382-6963-bf5e-0169-da3833273869</td>
 								</tr>
 							</tbody>
 						</table>
@@ -1669,7 +1667,7 @@
 								</list>
 							</item>
 						</list>				
-						<!--NQF 0083/ CMS144v7 -->
+						<!--NQF 0083/ CMS144v8 -->
 						<table border="1" width="100%">
 							<thead>
 								<tr>
@@ -1681,7 +1679,7 @@
 								<tr>
 									<td>Heart Failure (HF): Beta-Blocker Therapy for Left
 										Ventricular Systolic Dysfunction (LVSD)</td>
-									<td>40280382-6240-b6b9-0162-547042330ba8</td>
+									<td>40280382-6963-bf5e-0169-6e5d8c750401</td>
 								</tr>
 							</tbody>
 						</table>
@@ -2007,7 +2005,7 @@
 								</list>
 							</item>
 						</list>						
-						<!--NQF 0101/ CMS139v7 -->
+						<!--NQF 0101/ CMS139v8 -->
 						<table border="1" width="100%">
 							<thead>
 								<tr>
@@ -2018,7 +2016,7 @@
 							<tbody>
 								<tr>
 									<td>Falls: Screening for Future Fall Risk</td>
-									<td>40280382-6258-7581-0162-9208ce991364</td>
+									<td>40280382-68d3-a5fe-0169-53832b023431</td>
 								</tr>
 							</tbody>
 						</table>
@@ -2183,7 +2181,7 @@
 								</list>
 							</item>
 						</list>
-						<!--NQF 0418/ CMS2v8 -->
+						<!--NQF 0418/ CMS2v9 -->
 						<table border="1" width="100%">
 							<thead>
 								<tr>
@@ -2195,7 +2193,7 @@
 								<tr>
 									<td>Preventive Care and Screening: Screening for Clinical
 										Depression and Follow-Up Plan</td>
-									<td>40280382-5fa6-fe85-0160-0ed2838423ca</td>
+									<td>40280382-68d3-a5fe-0169-0c9018ca11d2</td>
 								</tr>
 							</tbody>
 						</table>
@@ -2399,7 +2397,7 @@
 								</list>
 							</item>
 						</list>
-						<!--NQF 0419/ CMS68v8 -->
+						<!--NQF 0419/ CMS68v9 -->
 						<table border="1" width="100%">
 							<thead>
 								<tr>
@@ -2411,7 +2409,7 @@
 								<tr>
 									<td>Documentation of Current Medications in the Medical
 										Record</td>
-									<td>40280382-5fa6-fe85-0160-0ea3e0012376</td>
+									<td>40280382-68d3-a5fe-0169-0c589537118f</td>
 								</tr>
 							</tbody>
 						</table>
@@ -2576,7 +2574,7 @@
 								</list>
 							</item>
 						</list>
-						<!--NQF 0108/ CMS136v8 -->
+						<!--NQF 0108/ CMS136v9 -->
 						<table border="1" width="100%">
 							<thead>
 								<tr>
@@ -2588,7 +2586,7 @@
 								<tr>
 									<td>ADHD: Follow-Up Care for Children Prescribed Attention-Deficit/Hyperactivity
 										Disorder (ADHD) Medication</td>
-									<td>40280382-6258-7581-0162-929d3fb415c3</td>
+									<td>40280382-68d3-a5fe-0168-e9118c0c0726</td>
 								</tr>
 							</tbody>
 						</table>
@@ -2915,28 +2913,40 @@
 						</act>
 					</entry>
 
-					<!--Measure Entry for NQF 0018/CMS165v7 -->
+					<!--Measure Entry for NQF 0018/CMS165v8 -->
 					<entry>
 						<organizer classCode="CLUSTER" moodCode="EVN">
 							<!-- Measure Reference -->
 							<templateId root="2.16.840.1.113883.10.20.24.3.98"/>
 							<!-- Measure Reference and Results (V3) -->
 							<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2016-09-01"/>
-							<!-- Measure Reference and Results - CMS (V3) -->
+							<!-- Measure Reference and Results - CMS (V4) -->
 							<templateId root="2.16.840.1.113883.10.20.27.3.17"
-								extension="2018-05-01"/>
+								extension="2019-05-01"/>
 							<id root="95944FB9-241B-11E5-1027-09173F13E4C5"/>
 							<statusCode code="completed"/>
 							<reference typeCode="REFR">
 								<externalDocument classCode="DOC" moodCode="EVN">
 									<id root="2.16.840.1.113883.4.738"
-										extension="40280382-6258-7581-0162-92d6e6db1680"/>
+										extension="40280382-6963-bf5e-0169-da5e74be38bf"/>
 									<code code="57024-2" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC"
 										displayName="Health Quality Measure Document"/>
 									<text>Controlling High Blood Pressure</text>
 								</externalDocument>
-							</reference>						
+							</reference>	
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b1306406-18fd-4e52-a411-fea0d2d39283"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set"
+										codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set</text>
+								</externalObservation>
+							</reference>
 <!-- Performance Period for Quality specified at the individual eCQM level -->
 <!-- Note: performance period for Quality could be specified either at the performance category level or individual eCQM level, but not both. -->									
 <!--						<component>
@@ -2958,9 +2968,9 @@
 									<!-- Measure Data -->
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
-									<!-- Measure Data - CMS (V3) -->
+									<!-- Measure Data - CMS (V43) -->
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -3431,7 +3441,7 @@
 									<!--IPOP Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="A096B729-ECCA-4C7A-9CA0-A601D8D70396"/>
+											<id root="1A3C24A5-7E9E-461B-BEB8-834822CC0942"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -3442,7 +3452,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -3905,7 +3915,7 @@
 									<!--DENEX Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="4A61F526-AFFA-465F-89C9-B2DB8E6ECEBC"/>
+											<id root="965140D9-663B-4B08-99F9-19E14AE0CB5C"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -3916,7 +3926,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -4379,7 +4389,7 @@
 									<!--DENOM Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="BA4CB92A-1635-4E1B-BC23-1ED7B967072A"/>
+											<id root="E822DECB-5DD1-421D-BFCE-F5DA550EE238"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -4390,7 +4400,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -4853,36 +4863,49 @@
 									<!--NUMER Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="A815D9EA-5CE0-4AD8-A703-BC69D19E360B"/>
+											<id root="9306E83B-3C3B-4CDF-B3EA-F99AEFC55F87"/>
 										</externalObservation>
 									</reference>
 								</observation>
 							</component>
 						</organizer>
 					</entry>
-					<!--Measure Entry for NQF 0028/CMS138v7 -->
+					<!--Measure Entry for NQF 0028/CMS138v8 -->
 					<entry>
 						<organizer classCode="CLUSTER" moodCode="EVN">
 							<!-- Measure Reference -->
 							<templateId root="2.16.840.1.113883.10.20.24.3.98"/>
 							<!-- Measure Reference and Results (V3) -->
 							<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2016-09-01"/>
-							<!-- Measure Reference and Results - CMS (V3) -->
+							<!-- Measure Reference and Results - CMS (V4) -->
 							<templateId root="2.16.840.1.113883.10.20.27.3.17"
-								extension="2018-05-01"/>
+								extension="2019-05-01"/>
 							<id root="95944FB9-241B-11E5-1027-09173F13E4C5"/>
 							<statusCode code="completed"/>
 							<reference typeCode="REFR">
 								<externalDocument classCode="DOC" moodCode="EVN">
 									<id root="2.16.840.1.113883.4.738"
-										extension="40280382-6240-b6b9-0162-54815a310c2c"/>
+										extension="40280382-6963-bf5e-0169-6d717fd50298"/>
 									<code code="57024-2" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC"
 										displayName="Health Quality Measure Document"/>
 									<text>Preventive Care and Screening: Tobacco Use: Screening and
 										Cessation Intervention</text>
 								</externalDocument>
-							</reference>						
+							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b1306406-18fd-4e52-a411-fea0d2d39283"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set"
+										codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set</text>
+								</externalObservation>
+							</reference>
+							
 <!-- Performance Period for Quality specified at the individual eCQM level -->
 <!-- Note: performance period for Quality could be specified either at the performance category level or individual eCQM level, but not both. -->									
 <!--						<component>
@@ -4900,12 +4923,12 @@
 							</component> -->						
 							<!--IPOP 1 Population-->
 							<component>
-								<!-- Measure Data - CMS (V3) -->
+								<!-- Measure Data - CMS (V4) -->
 								<observation classCode="OBS" moodCode="EVN">
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -5369,7 +5392,7 @@
 									<!--IPOP 1 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="D03DA272-DBB3-4F46-B19B-CF3262A23C2E"/>
+											<id root="D8C43D40-88C5-4CBE-B13F-B340ED7B6F5E"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -5380,7 +5403,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -5843,7 +5866,7 @@
 									<!--DENEXCEP 1 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="A8DBEC91-05EF-4897-80E4-39400B23F030"/>
+											<id root="E19C7C19-F358-4A0C-B506-A3EF104E43F5"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -5854,7 +5877,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -6317,7 +6340,7 @@
 									<!--DENOM 1 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="0F1384E0-350D-43B9-8C17-1140837F342E"/>
+											<id root="10BBDBA1-A63C-4B66-8788-D193D9F9C462"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -6328,7 +6351,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -6791,7 +6814,7 @@
 									<!--NUMER 1 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="1356052C-4C82-4859-85B4-D04ACF269564"/>
+											<id root="6EA80A06-9FEB-4A7C-A879-D37017E022D8"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -6802,7 +6825,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -7266,7 +7289,7 @@
 									<!--IPOP 2 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="C4D32BC0-8DBE-4766-BF47-7718D1569C79"/>
+											<id root="4A5E0CA8-23F4-4B40-B521-B0EB98DE4C19"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -7277,7 +7300,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -7740,7 +7763,7 @@
 									<!--DENEXCEP 2 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="29CD08BD-BFA6-4208-80C6-24DD96862EB4"/>
+											<id root="21B0D1D6-E5CE-4D50-899E-9665897FFCF2"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -7751,7 +7774,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -8214,7 +8237,7 @@
 									<!--DENOM 2 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="C1195308-7F73-409B-A4FF-8F17A4AA772E"/>
+											<id root="E2AC3364-ECF8-4B9A-BC7E-88F0638C9EF2"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -8225,7 +8248,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -8688,7 +8711,7 @@
 									<!--NUMER 2 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="D10D6789-32F2-4A72-9588-611C4765FC13"/>
+											<id root="65501208-ACA6-49D3-A44C-2E65A46FD0C5"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -8699,7 +8722,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -9163,7 +9186,7 @@
 									<!--IPOP 3 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="1D17B8A9-4DBF-448A-BB7F-879223A0A825"/>
+											<id root="664B4D06-0934-4A6E-BD9B-569460958414"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -9174,7 +9197,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -9637,7 +9660,7 @@
 									<!--DENEXCEP 3 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="EA9FE5F4-3057-495E-B5E5-83554CE39944"/>
+											<id root="FF00F193-4EC5-4B3A-BD1F-6ACD6784E52D"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -9648,7 +9671,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -10111,7 +10134,7 @@
 									<!--DENOM 3 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="C33FDC75-14E2-4A57-A18E-130D26411C92"/>
+											<id root="FCC62D91-8CD7-4627-B01D-5D92888D8EDD"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -10122,7 +10145,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -10585,32 +10608,45 @@
 									<!--NUMER 3 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="98958164-44A0-4759-AF5C-86EFB56AF1BA"/>
+											<id root="0E3F6868-3C2B-4372-B67B-42A15973D824"/>
 										</externalObservation>
 									</reference>
 								</observation>
 							</component>
 						</organizer>
 					</entry>
-					<!--Measure Entry for NQF 2372 / CMS125v7 -->
+					<!--Measure Entry for NQF 2372 / CMS125v8 -->
 					<entry>
 						<organizer classCode="CLUSTER" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.24.3.98"/>
 							<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2016-09-01"/>
 							<templateId root="2.16.840.1.113883.10.20.27.3.17"
-								extension="2018-05-01"/>
+								extension="2019-05-01"/>
 							<id root="95944FB9-241B-11E5-1027-09173F13E4C5"/>
 							<statusCode code="completed"/>
 							<reference typeCode="REFR">
 								<externalDocument classCode="DOC" moodCode="EVN">
 									<id root="2.16.840.1.113883.4.738"
-										extension="40280382-6258-7581-0162-927500b514ef"/>
+										extension="40280382-6963-bf5e-0169-da4fbfb93891"/>
 									<code code="57024-2" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC"
 										displayName="Health Quality Measure Document"/>
 									<text>Breast Cancer Screening</text>
 								</externalDocument>
-							</reference>							
+							</reference>	
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b1306406-18fd-4e52-a411-fea0d2d39283"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set"
+										codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set</text>
+								</externalObservation>
+							</reference>
+							
 <!-- Performance Period for Quality specified at the individual eCQM level -->
 <!-- Note: performance period for Quality could be specified either at the performance category level or individual eCQM level, but not both. -->									
 <!--						<component>
@@ -10632,7 +10668,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -11096,7 +11132,7 @@
 									<!--IPOP Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="9CA3765E-674E-48DC-BAB3-AF1841F10436"/>
+											<id root="655077CB-1920-4299-95B3-C24026C1F644"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -11107,7 +11143,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -11570,7 +11606,7 @@
 									<!--DENEX Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="F7FA46A4-D0DE-4BCD-A111-E85DEC1226DC"/>
+											<id root="76407883-BC98-41EC-98CD-18126D901774"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -11581,7 +11617,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -12044,7 +12080,7 @@
 									<!--DENOM Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="765F291C-E122-4258-BA57-CD2036C1E9DD"/>
+											<id root="43EC65FF-15C5-4B3E-8DBD-AD792A9D0B0B"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -12055,7 +12091,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -12518,33 +12554,46 @@
 									<!--NUMER Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="7C63166F-CAFA-4786-A469-E8DE4942AD5C"/>
+											<id root="66B40C8B-36FB-49E4-93D6-D60F35E1801D"/>
 										</externalObservation>
 									</reference>
 								</observation>
 							</component>
 						</organizer>
 					</entry>
-					<!--Measure Entry for NQF 0034/CMS130v7-->
+					<!--Measure Entry for NQF 0034/CMS130v8-->
 					<entry>
 						<organizer classCode="CLUSTER" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.24.3.98"/>
 							<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2016-09-01"/>
 							<templateId root="2.16.840.1.113883.10.20.27.3.17"
-								extension="2018-05-01"/>
+								extension="2019-05-01"/>
 							<id root="95944FB9-241B-11E5-1027-09173F13E4C5"/>
 							<statusCode code="completed"/>
 							<!--Measure Reference and Results-->
 							<reference typeCode="REFR">
 								<externalDocument classCode="DOC" moodCode="EVN">
 									<id root="2.16.840.1.113883.4.738"
-										extension="40280382-6258-7581-0162-92959376159d"/>
+										extension="40280382-6963-bf5e-0169-da566ea338a5"/>
 									<code code="57024-2" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC"
 										displayName="Health Quality Measure Document"/>
 									<text>Colorectal Cancer Screening</text>
 								</externalDocument>
-							</reference>						
+							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b1306406-18fd-4e52-a411-fea0d2d39283"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set"
+										codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set</text>
+								</externalObservation>
+							</reference>
+							
 <!-- Performance Period for Quality specified at the individual eCQM level -->
 <!-- Note: performance period for Quality could be specified either at the performance category level or individual eCQM level, but not both. -->									
 <!--        				<component>
@@ -12566,7 +12615,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -13030,7 +13079,7 @@
 									<!--IPOP Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="92842C82-25C1-4262-BD71-537BB8400E96"/>
+											<id root="E9E3FABC-E0FB-4F58-800D-4D5925AC0382"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -13041,7 +13090,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -13504,7 +13553,7 @@
 									<!--DENEX Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="79DF7019-7CD4-4D38-BFA0-6C6DFC261B53"/>
+											<id root="93D5A552-8925-4D67-AFE3-FD3CBB679FCB"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -13515,7 +13564,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -13978,7 +14027,7 @@
 									<!--DENOM Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="F2257E5C-85C1-41BC-8F9D-FC5118FA7363"/>
+											<id root="2C9DB74A-24A4-4E9B-BA08-4B4D1216B683"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -13989,7 +14038,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -14452,26 +14501,26 @@
 									<!--NUMER Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="A537E11B-5A76-4A55-8DDE-6FB83FEC87FB"/>
+											<id root="1D18C7AB-CFD7-48E7-99F0-583C1719496D"/>
 										</externalObservation>
 									</reference>
 								</observation>
 							</component>
 						</organizer>
 					</entry>
-					<!--Measure Entry for NQF 0041/CMS147v8-->
+					<!--Measure Entry for NQF 0041/CMS147v9-->
 					<entry>
 						<organizer classCode="CLUSTER" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.24.3.98"/>
 							<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2016-09-01"/>
 							<templateId root="2.16.840.1.113883.10.20.27.3.17"
-								extension="2018-05-01"/>
-							<id root="95944FB9-241B-11E5-1027-09173F13E4C5"/>
+								extension="2019-05-01"/>
+							<id root="40280382-6963-bf5e-0169-6dbc990502f4"/>
 							<statusCode code="completed"/>
 							<reference typeCode="REFR">
 								<externalDocument classCode="DOC" moodCode="EVN">
 									<id root="2.16.840.1.113883.4.738"
-										extension="40280382-6240-b6b9-0162-5096917708e0"/>
+										extension="40280382-6963-bf5e-0169-6dbc990502f4"/>
 									<code code="57024-2" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC"
 										displayName="Health Quality Measure Document"/>
@@ -14479,6 +14528,19 @@
 										Immunization</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b1306406-18fd-4e52-a411-fea0d2d39283"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set"
+										codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set</text>
+								</externalObservation>
+							</reference>
+							
 <!-- Performance Period for Quality specified at the individual eCQM level -->
 <!-- Note: performance period for Quality could be specified either at the performance category level or individual eCQM level, but not both. -->									
 <!--						<component>
@@ -14500,7 +14562,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -14964,7 +15026,7 @@
 									<!--IPOP Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="4034509E-A7C9-4067-AEC6-B356CA0DD2F5"/>
+											<id root="C0858490-CEC2-40F2-AD1E-35C39A8D2CF4"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -14975,7 +15037,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -15438,7 +15500,7 @@
 									<!--DENEXCEP Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="F9FF5A51-8FBE-4DAC-92CD-17F295496456"/>
+											<id root="060851E7-2D73-434A-A37B-8C59034E715D"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -15449,7 +15511,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -15912,7 +15974,7 @@
 									<!--DENOM Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="4AE15148-711D-4785-8433-4385D9D257DC"/>
+											<id root="CC8CE048-1026-49FF-82F8-0CA0D1AC44F7"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -15923,7 +15985,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -16386,32 +16448,45 @@
 									<!--NUMER Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="CAD38C39-7093-4BA4-B8BD-5A297079F1CF"/>
+											<id root="9429BD6E-104C-4C06-ABAB-55D09B0EF823"/>
 										</externalObservation>
 									</reference>
 								</observation>
 							</component>
 						</organizer>
 					</entry>
-					<!--Measure Entry for NQF 0043/CMS127v7-->
+					<!--Measure Entry for NQF 0043/CMS127v8-->
 					<entry>
 						<organizer classCode="CLUSTER" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.24.3.98"/>
 							<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2016-09-01"/>
 							<templateId root="2.16.840.1.113883.10.20.27.3.17"
-								extension="2018-05-01"/>
+								extension="2019-05-01"/>
 							<id root="95944FB9-241B-11E5-1027-09173F13E4C5"/>
 							<statusCode code="completed"/>
 							<reference typeCode="REFR">
 								<externalDocument classCode="DOC" moodCode="EVN">
 									<id root="2.16.840.1.113883.4.738"
-										extension="40280382-6258-7581-0162-92877e281530"/>
+										extension="40280382-68d3-a5fe-0168-e79c6f8e0583"/>
 									<code code="57024-2" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC"
 										displayName="Health Quality Measure Document"/>
 									<text>Pneumonia Vaccination Status for Older Adults</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b1306406-18fd-4e52-a411-fea0d2d39283"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set"
+										codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set</text>
+								</externalObservation>
+							</reference>
+							
 <!-- Performance Period for Quality specified at the individual eCQM level -->
 <!-- Note: performance period for Quality could be specified either at the performance category level or individual eCQM level, but not both. -->									
 <!--						<component>
@@ -16433,7 +16508,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -16897,18 +16972,493 @@
 									<!--IPOP Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="AD7E66D5-D06C-4079-8086-8B2978CA1AEF"/>
+											<id root="5CD22B31-3037-49F6-8846-4D66B44D4702"/>
 										</externalObservation>
 									</reference>
 								</observation>
 							</component>
-							<!--DENOM Population-->
+							<!--DENEX Population-->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
+									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
+										codeSystemName="ActCode" displayName="Assertion"/>
+									<statusCode code="completed"/>
+									<value xsi:type="CD" code="DENEX"
+										codeSystem="2.16.840.1.113883.5.1063"
+										codeSystemName="ObservationValue"/>
+									<!--DENEX Count-->
+									<entryRelationship typeCode="SUBJ" inversionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
+											<code code="MSRAGG" codeSystem="2.16.840.1.113883.5.4"
+												codeSystemName="ActCode"
+												displayName="rate aggregation"/>
+											<statusCode code="completed"/>
+											<value xsi:type="INT" value="50"/>
+											<methodCode code="COUNT"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"
+												displayName="Count"/>
+										</observation>
+									</entryRelationship>
+									<!--Gender Supplemental Data Element - Male-->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.27.3.6"
+												extension="2016-09-01"/>
+											<id root="959451CA-241B-11E5-1027-09173F13E4C5"/>
+											<code code="76689-9" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"
+												displayName="Sex assigned at birth"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CD" code="M"
+												codeSystem="2.16.840.1.113883.5.1"
+												codeSystemName="AdministrativeGenderCode"
+												displayName="Male"/>
+											<entryRelationship typeCode="SUBJ" inversionInd="true">
+												<observation classCode="OBS" moodCode="EVN">
+												<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
+												<code code="MSRAGG"
+												codeSystem="2.16.840.1.113883.5.4"
+												codeSystemName="ActCode"
+												displayName="rate aggregation"/>
+												<statusCode code="completed"/>
+												<value xsi:type="INT" value="30"/>
+												<methodCode code="COUNT"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"
+												displayName="Count"/>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+									<!--Gender Supplemental Data Element - Female-->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.27.3.6"
+												extension="2016-09-01"/>
+											<id root="959451CB-241B-11E5-1027-09173F13E4C5"/>
+											<code code="76689-9" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"
+												displayName="Sex assigned at birth"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CD" code="F"
+												codeSystem="2.16.840.1.113883.5.1"
+												codeSystemName="AdministrativeGenderCode"
+												displayName="Female"/>
+											<entryRelationship typeCode="SUBJ" inversionInd="true">
+												<observation classCode="OBS" moodCode="EVN">
+												<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
+												<code code="MSRAGG"
+												codeSystem="2.16.840.1.113883.5.4"
+												codeSystemName="ActCode"
+												displayName="rate aggregation"/>
+												<statusCode code="completed"/>
+												<value xsi:type="INT" value="20"/>
+												<methodCode code="COUNT"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"
+												displayName="Count"/>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+									<!--Ethnicity Supplemental Data Element - Not Hispanic or Latino-->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.27.3.7"
+												extension="2016-09-01"/>
+											<id root="959451CC-241B-11E5-1027-09173F13E4C5"/>
+											<code code="69490-1" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC" displayName="Ethnic"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CD" code="2186-5"
+												codeSystem="2.16.840.1.113883.6.238"
+												codeSystemName="Race &amp; Ethnicity - CDC"
+												displayName="Not Hispanic or Latino"/>
+											<entryRelationship typeCode="SUBJ" inversionInd="true">
+												<observation classCode="OBS" moodCode="EVN">
+												<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
+												<code code="MSRAGG"
+												codeSystem="2.16.840.1.113883.5.4"
+												codeSystemName="ActCode"
+												displayName="rate aggregation"/>
+												<statusCode code="completed"/>
+												<value xsi:type="INT" value="40"/>
+												<methodCode code="COUNT"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"
+												displayName="Count"/>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+									<!--Ethnicity Supplemental Data Element - Hispanic or Latino-->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.27.3.7"
+												extension="2016-09-01"/>
+											<id root="959451CD-241B-11E5-1027-09173F13E4C5"/>
+											<code code="69490-1" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC" displayName="Ethnic"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CD" code="2135-2"
+												codeSystem="2.16.840.1.113883.6.238"
+												codeSystemName="Race &amp; Ethnicity - CDC"
+												displayName="Hispanic or Latino"/>
+											<entryRelationship typeCode="SUBJ" inversionInd="true">
+												<observation classCode="OBS" moodCode="EVN">
+												<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
+												<code code="MSRAGG"
+												codeSystem="2.16.840.1.113883.5.4"
+												codeSystemName="ActCode"
+												displayName="rate aggregation"/>
+												<statusCode code="completed"/>
+												<value xsi:type="INT" value="10"/>
+												<methodCode code="COUNT"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"
+												displayName="Count"/>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+									<!--Race Supplemental Data Element - Black or African American-->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
+											<id root="959451CE-241B-11E5-1027-09173F13E4C5"/>
+											<code code="72826-1" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC" displayName="Race"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CD" code="2054-5"
+												codeSystem="2.16.840.1.113883.6.238"
+												codeSystemName="Race &amp; Ethnicity - CDC"
+												displayName="Black or African American"/>
+											<entryRelationship typeCode="SUBJ" inversionInd="true">
+												<observation classCode="OBS" moodCode="EVN">
+												<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
+												<code code="MSRAGG"
+												codeSystem="2.16.840.1.113883.5.4"
+												codeSystemName="ActCode"
+												displayName="rate aggregation"/>
+												<statusCode code="completed"/>
+												<value xsi:type="INT" value="10"/>
+												<methodCode code="COUNT"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"
+												displayName="Count"/>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+									<!--Race Supplemental Data Element - White-->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
+											<id root="959451CF-241B-11E5-1027-09173F13E4C5"/>
+											<code code="72826-1" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC" displayName="Race"/>
+											<statusCode code="completed"/>
+
+											<value xsi:type="CD" code="2106-3"
+												codeSystem="2.16.840.1.113883.6.238"
+												codeSystemName="Race &amp; Ethnicity - CDC"
+												displayName="White"/>
+											<entryRelationship typeCode="SUBJ" inversionInd="true">
+												<observation classCode="OBS" moodCode="EVN">
+												<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
+												<code code="MSRAGG"
+												codeSystem="2.16.840.1.113883.5.4"
+												codeSystemName="ActCode"
+												displayName="rate aggregation"/>
+												<statusCode code="completed"/>
+												<value xsi:type="INT" value="20"/>
+												<methodCode code="COUNT"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"
+												displayName="Count"/>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+									<!--Race Supplemental Data Element - Asian-->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
+											<id root="959451D0-241B-11E5-1027-09173F13E4C5"/>
+											<code code="72826-1" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC" displayName="Race"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CD" code="2028-9"
+												codeSystem="2.16.840.1.113883.6.238"
+												codeSystemName="Race &amp; Ethnicity - CDC"
+												displayName="Asian"/>
+											<entryRelationship typeCode="SUBJ" inversionInd="true">
+												<observation classCode="OBS" moodCode="EVN">
+												<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
+												<code code="MSRAGG"
+												codeSystem="2.16.840.1.113883.5.4"
+												codeSystemName="ActCode"
+												displayName="rate aggregation"/>
+												<statusCode code="completed"/>
+												<value xsi:type="INT" value="20"/>
+												<methodCode code="COUNT"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"
+												displayName="Count"/>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+									<!--Race Supplemental Data Element - American Indian or Alaska Native-->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
+											<id root="959451D1-241B-11E5-1027-09173F13E4C5"/>
+											<code code="72826-1" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC" displayName="Race"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CD" code="1002-5"
+												codeSystem="2.16.840.1.113883.6.238"
+												codeSystemName="Race &amp; Ethnicity - CDC"
+												displayName="American Indian or Alaska Native"/>
+											<entryRelationship typeCode="SUBJ" inversionInd="true">
+												<observation classCode="OBS" moodCode="EVN">
+												<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
+												<code code="MSRAGG"
+												codeSystem="2.16.840.1.113883.5.4"
+												codeSystemName="ActCode"
+												displayName="rate aggregation"/>
+												<statusCode code="completed"/>
+												<value xsi:type="INT" value="0"/>
+												<methodCode code="COUNT"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"
+												displayName="Count"/>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+									<!--Race Supplemental Data Element - Native Hawaiian or Other Pacific Islander-->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
+											<id root="95944FC0-241B-11E5-1027-09173F13E4C5"/>
+											<code code="72826-1" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC" displayName="Race"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CD" code="2076-8"
+												codeSystem="2.16.840.1.113883.6.238"
+												codeSystemName="Race &amp; Ethnicity - CDC"
+												displayName="Native Hawaiian or Other Pacific Islander"/>
+											<entryRelationship typeCode="SUBJ" inversionInd="true">
+												<observation classCode="OBS" moodCode="EVN">
+													<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
+													<code code="MSRAGG"
+														codeSystem="2.16.840.1.113883.5.4"
+														codeSystemName="ActCode"
+														displayName="rate aggregation"/>
+													<statusCode code="completed"/>
+													<value xsi:type="INT" value="0"/>
+													<methodCode code="COUNT"
+														codeSystem="2.16.840.1.113883.5.84"
+														codeSystemName="ObservationMethod"
+														displayName="Count"/>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+									<!--Race Supplemental Data Element - Other -->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.27.3.8"
+												extension="2016-09-01"/>
+											<id root="95944FC0-241B-11E5-1027-09173F13E4C5"/>
+											<code code="72826-1" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC" displayName="Race"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CD" code="2131-1"
+												codeSystem="2.16.840.1.113883.6.238"
+												codeSystemName="Race &amp; Ethnicity - CDC"
+												displayName="Other Race"/>
+											<entryRelationship typeCode="SUBJ" inversionInd="true">
+												<observation classCode="OBS" moodCode="EVN">
+													<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
+													<code code="MSRAGG"
+														codeSystem="2.16.840.1.113883.5.4"
+														codeSystemName="ActCode"
+														displayName="rate aggregation"/>
+													<statusCode code="completed"/>
+													<value xsi:type="INT" value="0"/>
+													<methodCode code="COUNT"
+														codeSystem="2.16.840.1.113883.5.84"
+														codeSystemName="ObservationMethod"
+														displayName="Count"/>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+									<!--Payer Supplemental Data Element - Medicare-->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.27.3.9"
+												extension="2016-02-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.18"
+												extension="2018-05-01"/>
+											<id root="959451D2-241B-11E5-1027-09173F13E4C5"/>
+											<code code="48768-6" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC" displayName="Payment Source"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CD" nullFlavor="OTH">
+												<translation code="A"
+												codeSystem="2.16.840.1.113883.3.249.12"
+												codeSystemName="CMS Clinical Codes"
+												displayName="Medicare"/>
+											</value>
+											<entryRelationship typeCode="SUBJ" inversionInd="true">
+												<observation classCode="OBS" moodCode="EVN">
+												<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
+												<code code="MSRAGG"
+												codeSystem="2.16.840.1.113883.5.4"
+												codeSystemName="ActCode"
+												displayName="rate aggregation"/>
+												<statusCode code="completed"/>
+												<value xsi:type="INT" value="15"/>
+												<methodCode code="COUNT"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"
+												displayName="Count"/>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+									<!--Payer Supplemental Data Element - Medicaid-->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.27.3.9"
+												extension="2016-02-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.18"
+												extension="2018-05-01"/>
+											<id root="959451D3-241B-11E5-1027-09173F13E4C5"/>
+											<code code="48768-6" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC" displayName="Payment Source"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CD" nullFlavor="OTH">
+												<translation code="B"
+												codeSystem="2.16.840.1.113883.3.249.12"
+												codeSystemName="CMS Clinical Codes"
+												displayName="Medicaid"/>
+											</value>
+											<entryRelationship typeCode="SUBJ" inversionInd="true">
+												<observation classCode="OBS" moodCode="EVN">
+												<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
+												<code code="MSRAGG"
+												codeSystem="2.16.840.1.113883.5.4"
+												codeSystemName="ActCode"
+												displayName="rate aggregation"/>
+												<statusCode code="completed"/>
+												<value xsi:type="INT" value="10"/>
+												<methodCode code="COUNT"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"
+												displayName="Count"/>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+									<!--Payer Supplemental Data Element - Private Health Insurance-->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.27.3.9"
+												extension="2016-02-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.18"
+												extension="2018-05-01"/>
+											<id root="959451D4-241B-11E5-1027-09173F13E4C5"/>
+											<code code="48768-6" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC" displayName="Payment Source"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CD" nullFlavor="OTH">
+												<translation code="C"
+												codeSystem="2.16.840.1.113883.3.249.12"
+												codeSystemName="CMS Clinical Codes"
+												displayName="Private Health Insurance"/>
+											</value>
+											<entryRelationship typeCode="SUBJ" inversionInd="true">
+												<observation classCode="OBS" moodCode="EVN">
+												<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
+												<code code="MSRAGG"
+												codeSystem="2.16.840.1.113883.5.4"
+												codeSystemName="ActCode"
+												displayName="rate aggregation"/>
+												<statusCode code="completed"/>
+												<value xsi:type="INT" value="15"/>
+												<methodCode code="COUNT"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"
+												displayName="Count"/>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+									<!--Payer Supplemental Data Element - Other-->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.27.3.9"
+												extension="2016-02-01"/>
+											<templateId root="2.16.840.1.113883.10.20.27.3.18"
+												extension="2018-05-01"/>
+											<id root="959451D5-241B-11E5-1027-09173F13E4C5"/>
+											<code code="48768-6" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC" displayName="Payment Source"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CD" nullFlavor="OTH">
+												<translation code="D"
+												codeSystem="2.16.840.1.113883.3.249.12"
+												codeSystemName="CMS Clinical Codes"
+												displayName="Other"/>
+											</value>
+											<entryRelationship typeCode="SUBJ" inversionInd="true">
+												<observation classCode="OBS" moodCode="EVN">
+												<templateId root="2.16.840.1.113883.10.20.27.3.3"/>
+												<code code="MSRAGG"
+												codeSystem="2.16.840.1.113883.5.4"
+												codeSystemName="ActCode"
+												displayName="rate aggregation"/>
+												<statusCode code="completed"/>
+												<value xsi:type="INT" value="10"/>
+												<methodCode code="COUNT"
+												codeSystem="2.16.840.1.113883.5.84"
+												codeSystemName="ObservationMethod"
+												displayName="Count"/>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+									<!--DENEX Population ID from eCQM-->
+									<reference typeCode="REFR">
+										<externalObservation classCode="OBS" moodCode="EVN">
+											<id root="CBFE14F2-8A5B-420A-99B7-C7B99A34D3F4"/>
+										</externalObservation>
+									</reference>
+								</observation>
+							</component>
+			                <!--DENOM Population-->
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.27.3.5"
+										extension="2016-09-01"/>
+									<templateId root="2.16.840.1.113883.10.20.27.3.16"
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -17371,7 +17921,7 @@
 									<!--DENOM Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="FC166E13-A380-466E-8E38-2E86261ADB21"/>
+											<id root="88D5A954-25B2-4157-9ECB-4AE3FA7DC795"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -17382,7 +17932,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -17845,31 +18395,44 @@
 									<!--NUMER Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="BE0E99DE-0998-4E13-AEE7-8012513CF47E"/>
+											<id root="D657E70B-8B2B-442A-A887-E172B4A58280"/>
 										</externalObservation>
 									</reference>
 								</observation>
 							</component>
 						</organizer>
 					</entry>
-					<!--Measure Entry for NQF 0059/CMS122v7-->
+					<!--Measure Entry for NQF 0059/CMS122v8-->
 					<entry>
 						<organizer classCode="CLUSTER" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.24.3.98"/>
 							<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2016-09-01"/>
-							<templateId root="2.16.840.1.113883.10.20.27.3.17" extension="2018-05-01"/>
+							<templateId root="2.16.840.1.113883.10.20.27.3.17" extension="2019-05-01"/>
 							<id root="95944FB9-241B-11E5-1027-09173F13E4C5"/>
 							<statusCode code="completed"/>
 							<reference typeCode="REFR">
 								<externalDocument classCode="DOC" moodCode="EVN">
 									<id root="2.16.840.1.113883.4.738"
-										extension="40280382-6258-7581-0162-9249c8ab1447"/>
+										extension="40280382-6963-bf5e-0169-da3833273869"/>
 									<code code="57024-2" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC"
 										displayName="Health Quality Measure Document"/>
 									<text>Diabetes: Hemoglobin A1c Poor Control</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b1306406-18fd-4e52-a411-fea0d2d39283"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set"
+										codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set</text>
+								</externalObservation>
+							</reference>
+							
 <!-- Performance Period for Quality specified at the individual eCQM level -->
 <!-- Note: performance period for Quality could be specified either at the performance category level or individual eCQM level, but not both. -->									
 <!--						<component>
@@ -17891,7 +18454,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -18355,7 +18918,7 @@
 									<!--IPOP Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="A15C0CC7-E072-4D9F-BB29-80429C6335DB"/>
+											<id root="1DAA17CC-1F6C-4883-9887-C1F1F72589B9"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -18366,7 +18929,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -18840,7 +19403,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -19310,18 +19873,18 @@
 							</component>
 						</organizer>
 					</entry>
-					<!--Measure Entry for NQF 0083/CMS144v7-->
+					<!--Measure Entry for NQF 0083/CMS144v8-->
 					<entry>
 						<organizer classCode="CLUSTER" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.24.3.98"/>
 							<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2016-09-01"/>
-							<templateId root="2.16.840.1.113883.10.20.27.3.17" extension="2018-05-01"/>
+							<templateId root="2.16.840.1.113883.10.20.27.3.17" extension="2019-05-01"/>
 							<id root="95944FB9-241B-11E5-1027-09173F13E4C5"/>
 							<statusCode code="completed"/>
 							<reference typeCode="REFR">
 								<externalDocument classCode="DOC" moodCode="EVN">
 									<id root="2.16.840.1.113883.4.738"
-										extension="40280382-6240-b6b9-0162-547042330ba8"/>
+										extension="40280382-6963-bf5e-0169-6e5d8c750401"/>
 									<code code="57024-2" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC"
 										displayName="Health Quality Measure Document"/>
@@ -19329,6 +19892,19 @@
 										Ventricular Systolic Dysfunction (LVSD)</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b1306406-18fd-4e52-a411-fea0d2d39283"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set"
+										codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set</text>
+								</externalObservation>
+							</reference>
+							
 <!-- Performance Period for Quality specified at the individual eCQM level -->
 <!-- Note: performance period for Quality could be specified either at the performance category level or individual eCQM level, but not both. -->									
 <!--						<component>
@@ -19350,7 +19926,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -19814,7 +20390,7 @@
 									<!--IPOP 1 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="FF41D325-76E0-4566-A25A-8C408AC1EE7C"/>
+											<id root="B5BA2AAA-23BB-4873-985C-A6CF186DAE36"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -19825,7 +20401,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -20288,7 +20864,7 @@
 									<!--DENEXCEP 1 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="920C2B5A-5F6B-4A32-8A5B-0DB7D4BFFDE4"/>
+											<id root="4A1D8928-D27C-4A03-BC51-660480D1D079"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -20299,7 +20875,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -20762,7 +21338,7 @@
 									<!--DENOM 1 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="D9E6BC34-DBAA-4C4D-BC38-DC1B4FD99FD1"/>
+											<id root="525A2333-CBF9-47F7-8665-157C5425DF64"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -20773,7 +21349,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -21236,7 +21812,7 @@
 									<!--NUMER 1 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="26D7073D-0C8C-4848-9B80-BEE422A2C581"/>
+											<id root="A016DE53-2DA9-40D5-8239-EB7624D02EE9"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -21247,7 +21823,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -21711,7 +22287,7 @@
 									<!--IPOP 2 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="F7EE681D-64D5-48BB-9F93-D88A36A24647"/>
+											<id root="86AA2F89-6850-4754-A747-56414EB7DD3A"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -21722,7 +22298,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -22185,7 +22761,7 @@
 									<!--DENEXCEP 2 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="9BDB3B97-C1C7-4F35-9BA0-A354C204369B"/>
+											<id root="F207DF88-E439-4567-B2E0-72041833A6B4"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -22196,7 +22772,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -22659,7 +23235,7 @@
 									<!--DENOM 2 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="68E9F779-6446-4FE1-A120-4CF69F1F782B"/>
+											<id root="FE9D45B5-7F09-4122-8FCF-7285A91506BE"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -22670,7 +23246,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -23133,33 +23709,46 @@
 									<!--NUMER 2 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="973E2DFA-192A-474E-A963-A93D691380B3"/>
+											<id root="20080AEE-B52B-4295-B77D-E97CFAF4C65E"/>
 										</externalObservation>
 									</reference>
 								</observation>
 							</component>							
 						</organizer>
 					</entry>
-					<!--Measure Entry for NQF 0101/CMS139v6-->
+					<!--Measure Entry for NQF 0101/CMS139v8-->
 					<entry>
 						<organizer classCode="CLUSTER" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.24.3.98"/>
 							<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2016-09-01"/>
 							<templateId root="2.16.840.1.113883.10.20.27.3.17"
-								extension="2018-05-01"/>
+								extension="2019-05-01"/>
 							<id root="95944FB9-241B-11E5-1027-09173F13E4C5"/>
 							<statusCode code="completed"/>
 							<!--Measure Reference and Results-->
 							<reference typeCode="REFR">
 								<externalDocument classCode="DOC" moodCode="EVN">
 									<id root="2.16.840.1.113883.4.738"
-										extension="40280382-6258-7581-0162-9208ce991364"/>
+										extension="40280382-68d3-a5fe-0169-53832b023431"/>
 									<code code="57024-2" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC"
 										displayName="Health Quality Measure Document"/>
 									<text>Falls: Screening for Future Fall Risk</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b1306406-18fd-4e52-a411-fea0d2d39283"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set"
+										codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set</text>
+								</externalObservation>
+							</reference>
+							
 <!-- Performance Period for Quality specified at the individual eCQM level -->
 <!-- Note: performance period for Quality could be specified either at the performance category level or individual eCQM level, but not both. -->									
 							<!--						<component>
@@ -23181,7 +23770,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -23645,7 +24234,7 @@
 									<!--IPOP Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="6BB57058-1BA6-4CC8-82A0-36DDE72E01D3"/>
+											<id root="91BB31AA-6984-414D-9960-D57F983EDB50"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -23656,7 +24245,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -24119,7 +24708,7 @@
 									<!--DENEX Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="794FFEE9-6FB6-4DF7-A723-9BABEDEA8E23"/>
+											<id root="63896800-A1A4-4162-9417-FDF7135643B0"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -24130,7 +24719,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -24593,7 +25182,7 @@
 									<!--DENOM Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="8586069F-F8C7-44C1-B3A6-1078F5F5936E"/>
+											<id root="80CB02DB-5D1B-4167-A2F7-4737728EAE03"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -24604,7 +25193,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -25067,26 +25656,26 @@
 									<!--NUMER Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="726DED9F-9CBC-4FEE-B261-4AB16657126D"/>
+											<id root="23D5306B-3B40-42CA-8377-92CEA6A1802B"/>
 										</externalObservation>
 									</reference>
 								</observation>
 							</component>
 						</organizer>
 					</entry>
-					<!--Measure Entry for NQF 0418/CMS2v8-->
+					<!--Measure Entry for NQF 0418/CMS2v9-->
 					<entry>
 						<organizer classCode="CLUSTER" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.24.3.98"/>
 							<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2016-09-01"/>
 							<templateId root="2.16.840.1.113883.10.20.27.3.17"
-								extension="2018-05-01"/>
+								extension="2019-05-01"/>
 							<id root="95944FB9-241B-11E5-1027-09173F13E4C5"/>
 							<statusCode code="completed"/>
 							<reference typeCode="REFR">
 								<externalDocument classCode="DOC" moodCode="EVN">
 									<id root="2.16.840.1.113883.4.738"
-										extension="40280382-5fa6-fe85-0160-0ed2838423ca"/>
+										extension="40280382-68d3-a5fe-0169-0c9018ca11d2"/>
 									<code code="57024-2" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC"
 										displayName="Health Quality Measure Document"/>
@@ -25094,13 +25683,26 @@
 										Depression and Follow-Up Plan</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b1306406-18fd-4e52-a411-fea0d2d39283"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set"
+										codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set</text>
+								</externalObservation>
+							</reference>
+							
 							<!--IPOP Population-->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -25564,7 +26166,7 @@
 									<!--IPOP Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="8D585C42-FBE0-4483-A76B-AAE1B438D49F"/>
+											<id root="45D03089-5245-44A4-A3BC-744E775E3755"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -25575,7 +26177,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -26039,7 +26641,7 @@
 									<!--DENEX Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="39E39011-497D-4623-A7BB-3CCC2FBFA645"/>
+											<id root="FAEEC269-82F2-4BEB-B39B-2500AA230BF6"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -26050,7 +26652,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -26513,7 +27115,7 @@
 									<!--DENEXCEP Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="3EAECEB3-06CB-468B-9226-A6E0FFB5AE4F"/>
+											<id root="0C0CEB34-509A-4FBC-9AF5-322AF53E7C80"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -26524,7 +27126,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -26987,7 +27589,7 @@
 									<!--DENOM Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="39E39011-497D-4623-A7BB-3CCC2FBFA645"/>
+											<id root="21AAC89C-A927-4A71-8DF7-129EFD51DA08"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -26998,7 +27600,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -27461,27 +28063,27 @@
 									<!--NUMER Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="6B246B02-74B6-4BEC-B86D-678A8EECDD66"/>
+											<id root="658634EE-4328-4BA2-AC9B-A6499EF49FD1"/>
 										</externalObservation>
 									</reference>
 								</observation>
 							</component>
 						</organizer>
 					</entry>
-					<!--Measure Entry for NQF 0419/CMS68v8-->
+					<!--Measure Entry for NQF 0419/CMS68v9-->
 					<entry>
 						<organizer classCode="CLUSTER" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.24.3.98"/>
 							<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2016-09-01"/>
 							<templateId root="2.16.840.1.113883.10.20.27.3.17"
-								extension="2018-05-01"/>
+								extension="2019-05-01"/>
 							<id root="95944FB9-241B-11E5-1027-09173F13E4C5"/>
 							<statusCode code="completed"/>
 							<!--Measure Reference and Results-->
 							<reference typeCode="REFR">
 								<externalDocument classCode="DOC" moodCode="EVN">
 									<id root="2.16.840.1.113883.4.738"
-										extension="40280382-5fa6-fe85-0160-0ea3e0012376"/>
+										extension="40280382-68d3-a5fe-0169-0c589537118f"/>
 									<code code="57024-2" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC"
 										displayName="Health Quality Measure Document"/>
@@ -27489,6 +28091,19 @@
 										Record</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b1306406-18fd-4e52-a411-fea0d2d39283"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set"
+										codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set</text>
+								</externalObservation>
+							</reference>
+							
 <!-- Performance Period for Quality specified at the individual eCQM level -->
 <!-- Note: performance period for Quality could be specified either at the performance category level or individual eCQM level, but not both. -->									
 <!--						<component>
@@ -27510,7 +28125,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -27974,7 +28589,7 @@
 									<!--IPOP Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="2C662755-088C-4C75-8401-FF2DA63A971E"/>
+											<id root="A6DABDC3-2E60-435D-BC94-888561EA383B"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -27985,7 +28600,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -28448,7 +29063,7 @@
 									<!--DENEXCEP Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="146E4DDD-4E52-492D-B150-61DF3BE52676"/>
+											<id root="D8B84799-2481-4AE1-965C-D8EA597173D1"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -28459,7 +29074,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -28922,7 +29537,7 @@
 									<!--DENOM Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="D4D2DEE7-385A-4C28-A09C-884A062A97AA"/>
+											<id root="AC6813F8-2411-4D4E-ACCD-3BCE094D8218"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -28933,7 +29548,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -29396,29 +30011,29 @@
 									<!--NUMER Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="4E058941-CA3D-48BF-BABC-358F3A9FE2AF"/>
+											<id root="E64BD324-C96C-4287-A515-D16B17778480"/>
 										</externalObservation>
 									</reference>
 								</observation>
 							</component>					
 						</organizer>
 					</entry>
-					<!--Measure Entry for NQF 0108/CMS136v8 -->
+					<!--Measure Entry for NQF 0108/CMS136v9 -->
 					<entry>
 						<organizer classCode="CLUSTER" moodCode="EVN">
 							<!-- Measure Reference -->
 							<templateId root="2.16.840.1.113883.10.20.24.3.98"/>
 							<!-- Measure Reference and Results V3 -->
 							<templateId root="2.16.840.1.113883.10.20.27.3.1" extension="2016-09-01"/>
-							<!-- Measure Reference and Results - CMS (V3) -->
+							<!-- Measure Reference and Results - CMS (V4) -->
 							<templateId root="2.16.840.1.113883.10.20.27.3.17"
-								extension="2018-05-01"/>
+								extension="2019-05-01"/>
 							<id root="95944FB9-241B-11E5-1027-09173F13E4C5"/>
 							<statusCode code="completed"/>
 							<reference typeCode="REFR">
 								<externalDocument classCode="DOC" moodCode="EVN">
 									<id root="2.16.840.1.113883.4.738"
-										extension="40280382-6258-7581-0162-929d3fb415c3"/>
+										extension="40280382-68d3-a5fe-0168-e9118c0c0726"/>
 									<code code="57024-2" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC"
 										displayName="Health Quality Measure Document"/>
@@ -29426,15 +30041,28 @@
 										Disorder (ADHD) Medication</text>
 								</externalDocument>
 							</reference>
+							<!-- SHOULD Reference the measure set it is a member of-->
+							<reference typeCode="REFR">
+								<externalObservation>
+									<!-- SHALL contain id -->
+									<id root="b1306406-18fd-4e52-a411-fea0d2d39283"/>
+									<!-- SHALL single value binding -->
+									<code code="55185-3" displayName="measure set"
+										codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<!-- SHALL text which should be the title of the measures set -->
+									<text>Clinical Quality Measure Set</text>
+								</externalObservation>
+							</reference>
+							
 							<!-- IPOP Population 1 -->
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
 									<!-- Measure Data -->
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
-									<!-- Measure Data - CMS (V3) -->
+									<!-- Measure Data - CMS (V4) -->
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -29905,7 +30533,7 @@
 									<!--IPOP Population 1 ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="F5F4C658-6848-4004-B5B8-AF2C5DC0A1C1"/>
+											<id root="683F5905-CC36-4B82-AC22-38904C8298BD"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -29916,7 +30544,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -30379,7 +31007,7 @@
 									<!--DENEX 1 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="38CA7B94-B1BC-4B89-8093-BE3C175F0BE1"/>
+											<id root="822CC41D-1864-4A27-9F66-012187A9E33F"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -30390,7 +31018,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -30854,7 +31482,7 @@
 									<!--DENOM 1 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="8184F88D-D587-4DEC-B64C-E222741965D1"/>
+											<id root="E13D81BB-8FD5-4CE0-9885-B9BD988E1CFD"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -30865,7 +31493,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -31328,7 +31956,7 @@
 									<!-- NUMER 1 Population ID from eCQM -->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="42F25D08-0B43-4388-B256-BA276FDE48B8"/>
+											<id root="2720C875-C4E5-40EB-A4AE-A7B032EA9D6C"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -31339,9 +31967,9 @@
 									<!-- Measure Data -->
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
-									<!-- Measure Data - CMS (V3) -->
+									<!-- Measure Data - CMS (V4) -->
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -31812,7 +32440,7 @@
 									<!--IPOP Population 2 ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="C6C60AD7-0901-4140-9C55-6870E043D311"/>
+											<id root="2F7B388C-C3BC-4A25-AF3E-E30389970BAC"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -31823,7 +32451,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -32286,7 +32914,7 @@
 									<!--DENEX 2 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="DE032C8E-7AA3-479A-9BCA-9597A80CCAE0"/>
+											<id root="D7278999-1937-4CBF-B72F-F359AAD7C97B"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -32297,7 +32925,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -32760,7 +33388,7 @@
 									<!--DENOM 2 Population ID from eCQM-->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="39641D8A-C01D-4AB3-B92A-52C1B94E34CC"/>
+											<id root="2D0AB075-53D3-4183-9809-81E3C69E7A53"/>
 										</externalObservation>
 									</reference>
 								</observation>
@@ -32771,7 +33399,7 @@
 									<templateId root="2.16.840.1.113883.10.20.27.3.5"
 										extension="2016-09-01"/>
 									<templateId root="2.16.840.1.113883.10.20.27.3.16"
-										extension="2018-05-01"/>
+										extension="2019-05-01"/>
 									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"
 										codeSystemName="ActCode" displayName="Assertion"/>
 									<statusCode code="completed"/>
@@ -33234,7 +33862,7 @@
 									<!-- NUMER 2 Population ID from eCQM -->
 									<reference typeCode="REFR">
 										<externalObservation classCode="OBS" moodCode="EVN">
-											<id root="226956ED-22B1-4722-9179-EBD7C4AC9ECC"/>
+											<id root="1792D093-5FDD-49E0-BD81-0E31783F35A0"/>
 										</externalObservation>
 									</reference>
 								</observation>

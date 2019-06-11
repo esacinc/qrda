@@ -5,7 +5,7 @@ made to the schematron files as a part of the eCQM project.
 As of June 11, 2019 this repository contains a single directory: <b>Published Schematrons</b>.   
 
 (Prior to June 11, 2019 an additional directory, <b>Development</b> contained work in progress for schematrons and other internal application development. All
-such development files have been re-located to another ESAC repository with limited access.)
+such development files have been re-located to another ESAC repository with limited access at https://github.com/esacinc/QRDA-Development)
 
 The <b>Published Schematrons</b> section of the repository contains the HL7 and CMS QRDA I and QRDA III schematron files (and related supporting files) that have been officially released to the HL7 GForge SVN.
 

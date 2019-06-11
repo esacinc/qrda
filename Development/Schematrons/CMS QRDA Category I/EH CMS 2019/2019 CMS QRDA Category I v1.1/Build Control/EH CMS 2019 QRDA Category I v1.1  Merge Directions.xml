@@ -29,6 +29,8 @@
         - Problem Observation V3: removed conformance 1198-32848 requiring a translation element in code 
         - Removed empty rule Problem-Observation-code-errors
         - Removed empty rule Reporting-Parameters-Act-CMS-errors
+        - Fixed typo in assertion text for a-CMS_US-Header-error, incorrect template root.  https://oncprojectracking.healthit.gov/support/browse/QRDA-795 
+        
 			
     
     </fileHeader>

@@ -284,7 +284,7 @@
               <code code="252116004" codeSystem="2.16.840.1.113883.6.96" displayName="Observation Parameters" />
               <effectiveTime>
                 <low value="20200101" />
-                <high value="20200301" />
+                <high value="20200331" />
               </effectiveTime>
             </act>
           </entry>

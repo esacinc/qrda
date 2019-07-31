@@ -9,7 +9,7 @@ This section contains schematron that validate data files adhering to the follow
 <li>HL7 QRDA Category I </li>
 <li>HL7 QRDA Category III </li>
 <li>CMS QRDA Category I </li>
-<li<CMS QRDA Category III </li>
+<li>CMS QRDA Category III </li>
 </ul>
 
 For comprehensive information regarding QRDA (and other quality standards), visit the <a href="https://ecqi.healthit.gov/">eCQI Resource Center</a>

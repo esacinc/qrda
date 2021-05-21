@@ -1,0 +1,5 @@
+May 11, 2021
+
+Skipping v1.2 forthe schematron because the current IG is v1.3.  
+
+The idea is to make the schematron version the same as the IG version.

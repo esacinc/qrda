@@ -2,11 +2,13 @@
 <?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
 <!-- 
 	Title: Merit-based Incentive Payment System (MIPS) APP Group Reporting Sample QRDA III 2022 Performance Period (Informative)
-	Filename: 2022MIPSAPPGroupSampleQRDA-III-v1.0.xml
+	File Name: 2022MIPSAPPGroupSampleQRDA-III-v1.0.xml
 	Version: 1.0
-	Revision History:  July 2021 version 1.0 
+	History:  
+		July 2021 version 1.0
+		December 2021 revision:	Updated following the publication of the CMS CY 2022 Medicare Physician Fee Schedule Final Rule. Updates made to the header comments only.   
 	
-	Description: 1) This QRDA-III sample file is valid for MIPS APP group reporting (MIPS_APP1_GROUP) 2021 performance period and is informative only. 
+	Description: 1) This QRDA-III sample file is valid for MIPS APP group reporting (MIPS_APP1_GROUP) 2022 performance period and is informative only. 
 	         	 2) This sample file correctly validates against the conformance statements specified in the 
 	                2022 CMS Implementation Guide for Quality Reporting Document Architecture Category III Eligible Clinicians and Eligible Professionals Programs 
 	             3) This sample file uses the CMS program name code MIPS_APP1_GROUP. 
@@ -26,16 +28,12 @@
    	CMS147v10		0041e    Influenza Immunization				                2c928085-7198-38ee-0171-98a8ea4d0169    Community/Population Health
    	CMS2v11			0418e    Screening for Depression and Follow-up plan        2c928082-7505-caf9-0175-1e6f57410551	Community/Population Health
    	=====================================================================================================================================================
-    Note that Promoting Interoperaiblity measures in this sample file are from the 2021 performance period and are included for information only. 
-   	Promoting Interoperability measures will be updated in subsequent sample file update with publication of the 2022 Physician Fee Schedule Rule:
    	MeasureID    Measure Name																Type
    	____________________________________________________________________________________________________________________________________________________   
    	PI_EP_2      Query of the Prescription Drug Monitoring Program (PDMP) 			   		boolean
    	PI_EP_1	     ePrescribing																Proportion
    	PI_PEA_1     Provide Patients Electronic Access to their Health Information			    Proportion
    	=====================================================================================================================================================     	
-   	Note that Improvement Activities in this sample file are from the 2021 performance period and are included for information only. 
-   	Improvement Activities will be updated in subsequent sample file update with publication of the 2022 Physician Fee Schedule Rule:
    	Activity ID  Activity Name
    	____________________________________________________________________________________________________________________________________________________   
    	IA_EPA_3     Collection and use of patient experience and satisfaction data on access
@@ -55,7 +53,7 @@
 	<id root="df98cafe-a24e-4412-aed6-ad238e78f08b"/>
 	<code code="55184-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
 		displayName="Quality Reporting Document Architecture Calculated Summary Report"/>
-	<title>CMS Eligible Clinicians and Eligible Professionals MIPS APP Group Sample QRDA III 2021 Performance Period (Informative)</title>
+	<title>CMS Eligible Clinicians and Eligible Professionals MIPS APP Group Sample QRDA III 2022 Performance Period (Informative)</title>
 	<effectiveTime value="20230111061231"/>
 	<confidentialityCode codeSystem="2.16.840.1.113883.5.25" code="N"/>
 	<languageCode code="en"/>

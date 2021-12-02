@@ -2,9 +2,11 @@
 <?xml-stylesheet type="text/xsl" href="qrda.xsl"?>
 <!-- 
 	Title: Merit-based Incentive Payment System (MIPS) Group Reporting Sample QRDA III 2022 Performance Period (Informative)
-	Filename: 2022MIPSGroupSampleQRDA-III-v1.0.xml
+	File Name: 2022MIPSGroupSampleQRDA-III-v1.0.xml
    	Version: 1.0
-   	Revision History:  July 2021 version 1.0 
+   	History:  
+		July 2021 version 1.0 
+		December 2021 revision:	Updated following the publication of the CMS CY 2022 Medicare Physician Fee Schedule Final Rule. Updates made to the header comments only.   
 
    	Description: 1) This QRDA-III sample file is valid for MIPS group reporting (MIPS_GROUP) 2022 performance period and is informative only. 
 	             2) This sample file correctly validates against the conformance statements specified in the
@@ -34,16 +36,12 @@
    	CMS136v11		  -      Follow-up for Children Prescribed ADHA Medication	2c928082-7871-00de-0178-7f552a2e01eb	Effective Clinical Care (multiple performance rates)  
    	CMS159v10		0710e	 Depression Remission at Twelve Months				2c928082-7836-bbff-0178-37a7532700cf	Effective Clinical Care 
    	=====================================================================================================================================================   
-   	Note that Promoting Interoperaiblity measures in this sample file are from the 2021 performance period and are included for information only. 
-   	Promoting Interoperability measures will be updated in subsequent sample file update with publication of the 2022 Physician Fee Schedule Rule:
    	MeasureID    Measure Name																Type
    	____________________________________________________________________________________________________________________________________________________   
    	PI_EP_2      Query of the Prescription Drug Monitoring Program (PDMP) 			   		boolean
    	PI_EP_1	     e-Prescribing																Proportion
    	PI_PEA_1     Provide Patients Electronic Access to their Health Information			    Proportion
    	=====================================================================================================================================================   
-   	Note that Improvement Activities in this sample file are from the 2021 performance period and are included for information only. 
-   	Improvement Activities will be updated in subsequent sample file update with publication of the 2022 Physician Fee Schedule Rule:
    	Activity ID  Activity Name
    	____________________________________________________________________________________________________________________________________________________   
    	IA_EPA_3     Collection and use of patient experience and satisfaction data on access
@@ -63,7 +61,7 @@
 	<id root="df98cafe-a24e-4412-aed6-ad238e78f08b"/>
 	<code code="55184-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
 		displayName="Quality Reporting Document Architecture Calculated Summary Report"/>
-	<title>CMS Eligible Clinicians and Eligible Professionals MIPS Group Sample QRDA III 2021 Performance Period (Informative)</title>
+	<title>CMS Eligible Clinicians and Eligible Professionals MIPS Group Sample QRDA III 2022 Performance Period (Informative)</title>
 	<effectiveTime value="20230111061231"/>
 	<confidentialityCode codeSystem="2.16.840.1.113883.5.25" code="N"/>
 	<languageCode code="en"/>

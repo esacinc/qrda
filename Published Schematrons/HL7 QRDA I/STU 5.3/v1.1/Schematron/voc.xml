@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <systems xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.lantanagroup.com/voc">
   <system valueSetOid="2.16.840.1.113883.1.11.15913" valueSetName="EntityNameUse">
-    <code value="A" displayName="Artist/Stage" codeSystemName="EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
-    <code value="ABC" displayName="Alphabetic" codeSystemName="EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
-    <code value="ASGN" displayName="Assigned" codeSystemName="EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
-    <code value="C" displayName="License" codeSystemName="EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
-    <code value="I" displayName="Indigenous/Tribal" codeSystemName="EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
-    <code value="IDE" displayName="Ideographic" codeSystemName="EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
-    <code value="L" displayName="Legal" codeSystemName="EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
-    <code value="P" displayName="Pseudonym" codeSystemName="EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
-    <code value="PHON" displayName="Phonetic" codeSystemName="EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
-    <code value="R" displayName="Religious" codeSystemName="EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
-    <code value="SNDX" displayName="Soundex" codeSystemName="EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
-    <code value="SRCH" displayName="Search" codeSystemName="EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
-    <code value="SYL" displayName="Syllabic" codeSystemName="EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
+    <code value="A" displayName="Artist/Stage" codeSystemName="HL7EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
+    <code value="ABC" displayName="Alphabetic" codeSystemName="HL7EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
+    <code value="ASGN" displayName="Assigned" codeSystemName="HL7EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
+    <code value="C" displayName="License" codeSystemName="HL7EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
+    <code value="I" displayName="Indigenous/Tribal" codeSystemName="HL7EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
+    <code value="IDE" displayName="Ideographic" codeSystemName="HL7EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
+    <code value="L" displayName="Legal" codeSystemName="HL7EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
+    <code value="P" displayName="Pseudonym" codeSystemName="HL7EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
+    <code value="PHON" displayName="Phonetic" codeSystemName="HL7EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
+    <code value="R" displayName="Religious" codeSystemName="HL7EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
+    <code value="SNDX" displayName="Soundex" codeSystemName="HL7EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
+    <code value="SRCH" displayName="Search" codeSystemName="HL7EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
+    <code value="SYL" displayName="Syllabic" codeSystemName="HL7EntityNameUse" codeSystem="2.16.840.1.113883.5.45" />
   </system>
   <system valueSetOid="2.16.840.1.113883.11.20.9.26" valueSetName="EntityPersonNamePartQualifier">
-    <code value="AC" displayName="academic" codeSystemName="EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
-    <code value="AD" displayName="adopted" codeSystemName="EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
-    <code value="BR" displayName="birth" codeSystemName="EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
-    <code value="CL" displayName="callme" codeSystemName="EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
-    <code value="IN" displayName="initial" codeSystemName="EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
-    <code value="NB" displayName="nobility" codeSystemName="EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
-    <code value="PR" displayName="professional" codeSystemName="EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
-    <code value="SP" displayName="spouse" codeSystemName="EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
-    <code value="TITLE" displayName="title" codeSystemName="EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
-    <code value="VV" displayName="voorvoegsel" codeSystemName="EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
+    <code value="AC" displayName="academic" codeSystemName="HL7EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
+    <code value="AD" displayName="adopted" codeSystemName="HL7EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
+    <code value="BR" displayName="birth" codeSystemName="HL7EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
+    <code value="CL" displayName="callme" codeSystemName="HL7EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
+    <code value="IN" displayName="initial" codeSystemName="HL7EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
+    <code value="NB" displayName="nobility" codeSystemName="HL7EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
+    <code value="PR" displayName="professional" codeSystemName="HL7EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
+    <code value="SP" displayName="spouse" codeSystemName="HL7EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
+    <code value="TITLE" displayName="title" codeSystemName="HL7EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
+    <code value="VV" displayName="voorvoegsel" codeSystemName="HL7EntityNamePartQualifier" codeSystem="2.16.840.1.113883.5.43" />
   </system>
   <system valueSetOid="2.16.840.1.114222.4.11.1066" valueSetName="Healthcare Provider Taxonomy (HIPAA)">
     <code value="171100000X" displayName="Acupuncturist" codeSystemName="Healthcare Provider Taxonomy (HIPAA)" codeSystem="2.16.840.1.113883.6.101" />
@@ -1030,25 +1030,25 @@
     <code value="1159-3" displayName="Wound ostomy continence clinic" codeSystemName="HL7 HealthcareServiceLocation" codeSystem="2.16.840.1.113883.6.259" />
   </system>
   <system valueSetOid="2.16.840.1.113883.1.11.16926" valueSetName="HL7 BasicConfidentialityKind">
-    <code value="N" displayName="normal" codeSystemName="ConfidentialityCode" codeSystem="2.16.840.1.113883.5.25" />
-    <code value="R" displayName="restricted" codeSystemName="ConfidentialityCode" codeSystem="2.16.840.1.113883.5.25" />
-    <code value="V" displayName="very restricted" codeSystemName="ConfidentialityCode" codeSystem="2.16.840.1.113883.5.25" />
+    <code value="N" displayName="normal" codeSystemName="HL7Confidentiality" codeSystem="2.16.840.1.113883.5.25" />
+    <code value="R" displayName="restricted" codeSystemName="HL7Confidentiality" codeSystem="2.16.840.1.113883.5.25" />
+    <code value="V" displayName="very restricted" codeSystemName="HL7Confidentiality" codeSystem="2.16.840.1.113883.5.25" />
   </system>
   <system valueSetOid="2.16.840.1.113883.11.20.9.33" valueSetName="INDRoleclassCodes">
-    <code value="PRS" displayName="personal relationship" codeSystemName="RoleClass" codeSystem="2.16.840.1.113883.5.110" />
-    <code value="NOK" displayName="next of kin" codeSystemName="RoleClass" codeSystem="2.16.840.1.113883.5.110" />
-    <code value="CAREGIVER" displayName="caregiver" codeSystemName="RoleClass" codeSystem="2.16.840.1.113883.5.110" />
-    <code value="AGNT" displayName="agent" codeSystemName="RoleClass" codeSystem="2.16.840.1.113883.5.110" />
-    <code value="GUAR" displayName="guarantor" codeSystemName="RoleClass" codeSystem="2.16.840.1.113883.5.110" />
-    <code value="ECON" displayName="emergency contact" codeSystemName="RoleClass" codeSystem="2.16.840.1.113883.5.110" />
+    <code value="PRS" displayName="personal relationship" codeSystemName="HL7RoleClass" codeSystem="2.16.840.1.113883.5.110" />
+    <code value="NOK" displayName="next of kin" codeSystemName="HL7RoleClass" codeSystem="2.16.840.1.113883.5.110" />
+    <code value="CAREGIVER" displayName="caregiver" codeSystemName="HL7RoleClass" codeSystem="2.16.840.1.113883.5.110" />
+    <code value="AGNT" displayName="agent" codeSystemName="HL7RoleClass" codeSystem="2.16.840.1.113883.5.110" />
+    <code value="GUAR" displayName="guarantor" codeSystemName="HL7RoleClass" codeSystem="2.16.840.1.113883.5.110" />
+    <code value="ECON" displayName="emergency contact" codeSystemName="HL7RoleClass" codeSystem="2.16.840.1.113883.5.110" />
   </system>
   <system valueSetOid="2.16.840.1.113883.3.88.12.80.64" valueSetName="Medication Fill Status">
-    <code value="aborted" displayName="Aborted" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
-    <code value="completed" displayName="Completed" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
+    <code value="aborted" displayName="Aborted" codeSystemName="HL7ActStatus" codeSystem="2.16.840.1.113883.5.14" />
+    <code value="completed" displayName="Completed" codeSystemName="HL7ActStatus" codeSystem="2.16.840.1.113883.5.14" />
   </system>
   <system valueSetOid="2.16.840.1.113883.11.20.9.18" valueSetName="MoodCodeEvnInt">
-    <code value="EVN" displayName="Event" codeSystemName="ActMood" codeSystem="2.16.840.1.113883.5.1001" />
-    <code value="INT" displayName="Intent" codeSystemName="ActMood" codeSystem="2.16.840.1.113883.5.1001" />
+    <code value="EVN" displayName="Event" codeSystemName="HL7ActMood" codeSystem="2.16.840.1.113883.5.1001" />
+    <code value="INT" displayName="Intent" codeSystemName="HL7ActMood" codeSystem="2.16.840.1.113883.5.1001" />
   </system>
   <system valueSetOid="2.16.840.1.113883.1.11.78" valueSetName="Observation Interpretation (HL7)">
     <code value="A" displayName="abnormal" codeSystemName="HITSP-CS-83" codeSystem="2.16.840.1.113883.5.83" />
@@ -1079,52 +1079,99 @@
     <code value="L" displayName="low" codeSystemName="HITSP-CS-83" codeSystem="2.16.840.1.113883.5.83" />
   </system>
   <system valueSetOid="2.16.840.1.113883.1.11.10267" valueSetName="ParticipationFunction">
-    <code value="SNRS" displayName="Scrub nurse" codeSystemName="participationFunction" codeSystem="2.16.840.1.113883.5.88" />
-    <code value=" SASST " displayName="Second assistant surgeon" codeSystemName="participationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="SNRS" displayName="Scrub nurse" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value=" SASST " displayName="Second assistant surgeon" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="_AuthorizedParticipationFunction" displayName="AuthorizedParticipationFunction" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="_AuthorizedReceiverParticipationFunction" displayName="AuthorizedReceiverParticipationFunction" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="AUCG" displayName="caregiver information receiver" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="AULR" displayName="legitimate relationship information receiver" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="AUTM" displayName="care team information receiver" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="AUWA" displayName="work area information receiver" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="_ConsenterParticipationFunction" displayName="ConsenterParticipationFunction" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="GRDCON" displayName="legal guardian consent author" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="POACON" displayName="healthcare power of attorney consent author" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="PRCON" displayName="personal representative consent author" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="PROMSK" displayName="authorized provider masking author" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="SUBCON" displayName="subject of consent author" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="_OverriderParticipationFunction" displayName="OverriderParticipationFunction" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="AUCOV" displayName="consent overrider" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="AUEMROV" displayName="emergency overrider" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="_CoverageParticipationFunction" displayName="CoverageParticipationFunction" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="_PayorParticipationFunction" displayName="PayorParticipationFunction" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="CLMADJ" displayName="claims adjudication" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="ENROLL" displayName="enrollment broker" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="FFSMGT" displayName="ffs management" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="MCMGT" displayName="managed care management" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="PROVMGT" displayName="provider management" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="UMGT" displayName="utilization management" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="_SponsorParticipationFunction" displayName="SponsorParticipationFunction" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="FULINRD" displayName="fully insured" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="SELFINRD" displayName="self insured" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="_UnderwriterParticipationFunction" displayName="UnderwriterParticipationFunction" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="PAYORCNTR" displayName="payor contracting" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="REINS" displayName="reinsures" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="RETROCES" displayName="retrocessionaires" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="SUBCTRT" displayName="subcontracting risk" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="UNDERWRTNG" displayName="underwriting" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="ADMPHYS" displayName="admitting physician" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="ANEST" displayName="anesthesist" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="ANRS" displayName="anesthesia nurse" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="ASSEMBLER" displayName="assembly software" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="ATTPHYS" displayName="attending physician" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="COMPOSER " displayName="composer software" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="DISPHYS" displayName="discharging physician" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="FASST" displayName="first assistant surgeon" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="MDWF" displayName="midwife" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="NASST" displayName="nurse assistant" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="PCP" displayName="primary care physician" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="PRISURG" displayName="primary surgeon" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="REVIEWER" displayName="reviewer" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="RNDPHYS" displayName="rounding physician" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
+    <code value="TASST" displayName="third assistant" codeSystemName="HL7ParticipationFunction" codeSystem="2.16.840.1.113883.5.88" />
   </system>
   <system valueSetOid="2.16.840.1.113883.11.20.12.1" valueSetName="Personal And Legal Relationship Role Type">
-    <code value="SELF" displayName="self" codeSystemName="RoleCode" codeSystem="2.16.840.1.113883.5.111" />
-    <code value="MTH" displayName="mother" codeSystemName="RoleCode" codeSystem="2.16.840.1.113883.5.111" />
-    <code value="FTH" displayName="father" codeSystemName="RoleCode" codeSystem="2.16.840.1.113883.5.111" />
-    <code value="DAU" displayName="natural daughter" codeSystemName="RoleCode" codeSystem="2.16.840.1.113883.5.111" />
-    <code value="SON" displayName="natural son" codeSystemName="RoleCode" codeSystem="2.16.840.1.113883.5.111" />
-    <code value="DAUINLAW" displayName="daughter in-law" codeSystemName="RoleCode" codeSystem="2.16.840.1.113883.5.111" />
-    <code value="SONINLAW" displayName="son in-law" codeSystemName="RoleCode" codeSystem="2.16.840.1.113883.5.111" />
-    <code value="GUARD" displayName="guardian  " codeSystemName="RoleCode" codeSystem="2.16.840.1.113883.5.111" />
-    <code value="HPOWATT" displayName="healthcare power of attorney" codeSystemName="RoleCode" codeSystem="2.16.840.1.113883.5.111" />
+    <code value="SELF" displayName="self" codeSystemName="HL7RoleCode" codeSystem="2.16.840.1.113883.5.111" />
+    <code value="MTH" displayName="mother" codeSystemName="HL7RoleCode" codeSystem="2.16.840.1.113883.5.111" />
+    <code value="FTH" displayName="father" codeSystemName="HL7RoleCode" codeSystem="2.16.840.1.113883.5.111" />
+    <code value="DAU" displayName="natural daughter" codeSystemName="HL7RoleCode" codeSystem="2.16.840.1.113883.5.111" />
+    <code value="SON" displayName="natural son" codeSystemName="HL7RoleCode" codeSystem="2.16.840.1.113883.5.111" />
+    <code value="DAUINLAW" displayName="daughter in-law" codeSystemName="HL7RoleCode" codeSystem="2.16.840.1.113883.5.111" />
+    <code value="SONINLAW" displayName="son in-law" codeSystemName="HL7RoleCode" codeSystem="2.16.840.1.113883.5.111" />
+    <code value="GUARD" displayName="guardian  " codeSystemName="HL7RoleCode" codeSystem="2.16.840.1.113883.5.111" />
+    <code value="HPOWATT" displayName="healthcare power of attorney" codeSystemName="HL7RoleCode" codeSystem="2.16.840.1.113883.5.111" />
   </system>
   <system valueSetOid="2.16.840.1.113883.11.20.9.23" valueSetName="Planned moodCode (Act/Encounter/Procedure)">
-    <code value="INT" displayName="Intent" codeSystemName="ActMood" codeSystem="2.16.840.1.113883.5.1001" />
-    <code value="ARQ" displayName="Appointment Request" codeSystemName="ActMood" codeSystem="2.16.840.1.113883.5.1001" />
-    <code value="PRMS" displayName="Promise" codeSystemName="ActMood" codeSystem="2.16.840.1.113883.5.1001" />
-    <code value="PRP" displayName="Proposal" codeSystemName="ActMood" codeSystem="2.16.840.1.113883.5.1001" />
-    <code value="RQO" displayName="Request" codeSystemName="ActMood" codeSystem="2.16.840.1.113883.5.1001" />
-    <code value="APT" displayName="Appointment" codeSystemName="ActMood" codeSystem="2.16.840.1.113883.5.1001" />
+    <code value="INT" displayName="Intent" codeSystemName="HL7ActMood" codeSystem="2.16.840.1.113883.5.1001" />
+    <code value="ARQ" displayName="Appointment Request" codeSystemName="HL7ActMood" codeSystem="2.16.840.1.113883.5.1001" />
+    <code value="PRMS" displayName="Promise" codeSystemName="HL7ActMood" codeSystem="2.16.840.1.113883.5.1001" />
+    <code value="PRP" displayName="Proposal" codeSystemName="HL7ActMood" codeSystem="2.16.840.1.113883.5.1001" />
+    <code value="RQO" displayName="Request" codeSystemName="HL7ActMood" codeSystem="2.16.840.1.113883.5.1001" />
+    <code value="APT" displayName="Appointment" codeSystemName="HL7ActMood" codeSystem="2.16.840.1.113883.5.1001" />
   </system>
   <system valueSetOid="2.16.840.1.113883.11.20.9.25" valueSetName="Planned moodCode (Observation)">
-    <code value="INT" displayName="Intent" codeSystemName="ActMood" codeSystem="2.16.840.1.113883.5.1001" />
-    <code value="PRMS" displayName="Promise" codeSystemName="ActMood" codeSystem="2.16.840.1.113883.5.1001" />
-    <code value="PRP" displayName="Proposal" codeSystemName="ActMood" codeSystem="2.16.840.1.113883.5.1001" />
-    <code value="RQO" displayName="Request" codeSystemName="ActMood" codeSystem="2.16.840.1.113883.5.1001" />
+    <code value="INT" displayName="Intent" codeSystemName="HL7ActMood" codeSystem="2.16.840.1.113883.5.1001" />
+    <code value="PRMS" displayName="Promise" codeSystemName="HL7ActMood" codeSystem="2.16.840.1.113883.5.1001" />
+    <code value="PRP" displayName="Proposal" codeSystemName="HL7ActMood" codeSystem="2.16.840.1.113883.5.1001" />
+    <code value="RQO" displayName="Request" codeSystemName="HL7ActMood" codeSystem="2.16.840.1.113883.5.1001" />
   </system>
   <system valueSetOid="2.16.840.1.113883.11.20.9.24" valueSetName="Planned moodCode (SubstanceAdministration/Supply)">
-    <code value="INT" displayName="Intent" codeSystemName="ActMood" codeSystem="2.16.840.1.113883.5.1001" />
-    <code value="PRMS" displayName="Promise" codeSystemName="ActMood" codeSystem="2.16.840.1.113883.5.1001" />
-    <code value="PRP" displayName="Proposal" codeSystemName="ActMood" codeSystem="2.16.840.1.113883.5.1001" />
-    <code value="RQO" displayName="Request" codeSystemName="ActMood" codeSystem="2.16.840.1.113883.5.1001" />
+    <code value="INT" displayName="Intent" codeSystemName="HL7ActMood" codeSystem="2.16.840.1.113883.5.1001" />
+    <code value="PRMS" displayName="Promise" codeSystemName="HL7ActMood" codeSystem="2.16.840.1.113883.5.1001" />
+    <code value="PRP" displayName="Proposal" codeSystemName="HL7ActMood" codeSystem="2.16.840.1.113883.5.1001" />
+    <code value="RQO" displayName="Request" codeSystemName="HL7ActMood" codeSystem="2.16.840.1.113883.5.1001" />
   </system>
   <system valueSetOid="2.16.840.1.113883.1.11.10637" valueSetName="PostalAddressUse">
-    <code value="BAD" displayName="bad address" codeSystemName="AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
-    <code value="CONF" displayName="confidential" codeSystemName="AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
-    <code value="DIR" displayName="direct" codeSystemName="AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
-    <code value="H" displayName="home address" codeSystemName="AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
-    <code value="HP" displayName="primary home" codeSystemName="AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
-    <code value="HV" displayName="vacation home" codeSystemName="AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
-    <code value="PHYS" displayName="physical visit address" codeSystemName="AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
-    <code value="PST" displayName="postal address" codeSystemName="AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
-    <code value="PUB" displayName="public" codeSystemName="AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
-    <code value="TMP" displayName="temporary" codeSystemName="AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
-    <code value="WP" displayName="work place" codeSystemName="AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
+    <code value="BAD" displayName="bad address" codeSystemName="HL7AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
+    <code value="CONF" displayName="confidential" codeSystemName="HL7AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
+    <code value="DIR" displayName="direct" codeSystemName="HL7AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
+    <code value="H" displayName="home address" codeSystemName="HL7AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
+    <code value="HP" displayName="primary home" codeSystemName="HL7AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
+    <code value="HV" displayName="vacation home" codeSystemName="HL7AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
+    <code value="PHYS" displayName="physical visit address" codeSystemName="HL7AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
+    <code value="PST" displayName="postal address" codeSystemName="HL7AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
+    <code value="PUB" displayName="public" codeSystemName="HL7AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
+    <code value="TMP" displayName="temporary" codeSystemName="HL7AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
+    <code value="WP" displayName="work place" codeSystemName="HL7AddressUse" codeSystem="2.16.840.1.113883.5.1119" />
   </system>
   <system valueSetOid="2.16.840.1.113883.11.20.9.60" valueSetName="Priority Level">
     <code value="394849002" displayName="High priority" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" />
@@ -1135,11 +1182,11 @@
     <code value="75326-9" displayName="Problem HL7.CCDAR2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" />
     <code value="75325-1" displayName="Symptom HL7.CCDAR2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" />
     <code value="75324-4" displayName="Diagnosis" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" />
-    <code value="75275-8" displayName="Clinical finding HL7.CCDAR2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" />
+    <code value="75321-0" displayName="Clinical finding HL7.CCDAR2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" />
     <code value="75323-6" displayName="Condition HL7.CCDAR2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" />
     <code value="29308-4" displayName="Complaint HL7.CCDAR2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" />
     <code value="75322-8" displayName="Functional performance HL7.CCDAR2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" />
-    <code value="75321-0" displayName="Cognitive Function HL7.CCDAR2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" />
+    <code value="75275-8" displayName="Cognitive Function HL7.CCDAR2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" />
     <code value="75318-6" displayName="Problem family member HL7.CCDAR2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" />
     <code value="75319-4" displayName="Symptom family member HL7.CCDAR2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" />
     <code value="75317-8" displayName="Diagnosis family member HL7.CCDAR2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" />
@@ -1150,42 +1197,28 @@
     <code value="75312-9" displayName="Cognitive function family member HL7.CCDAR2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" />
   </system>
   <system valueSetOid="2.16.840.1.113883.11.20.9.19" valueSetName="ProblemAct statusCode">
-    <code value="completed" displayName="Completed" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
-    <code value="aborted" displayName="Aborted" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
-    <code value="active" displayName="Active" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
-    <code value="suspended" displayName="Suspended" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
+    <code value="completed" displayName="Completed" codeSystemName="HL7ActStatus" codeSystem="2.16.840.1.113883.5.14" />
+    <code value="aborted" displayName="Aborted" codeSystemName="HL7ActStatus" codeSystem="2.16.840.1.113883.5.14" />
+    <code value="active" displayName="Active" codeSystemName="HL7ActStatus" codeSystem="2.16.840.1.113883.5.14" />
+    <code value="suspended" displayName="Suspended" codeSystemName="HL7ActStatus" codeSystem="2.16.840.1.113883.5.14" />
   </system>
   <system valueSetOid="2.16.840.1.113883.11.20.9.22" valueSetName="ProcedureAct statusCode">
-    <code value="completed" displayName="Completed" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
-    <code value="active" displayName="Active" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
-    <code value="aborted" displayName="Aborted" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
-    <code value="cancelled" displayName="Cancelled" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
-  </system>
-  <system valueSetOid="2.16.840.1.113883.3.249.14.103" valueSetName="QRDA-I CMS Program Name ">
-    <code value="MIPS_INDIVIDUAL" displayName="MIPS Individual" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
-    <code value="MIPS_GROUP" displayName="MIPS Group" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
-    <code value="CEC" displayName="Comprehensive End-Stage Renal Disease CARE Initiative" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
-    <code value="HQR_EHR" displayName="Hospital Quality Reporting for the EHR Incentive Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
-    <code value="HQR_IQR" displayName="Hospital Quality Reporting for the Inpatient Quality Reporting Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
-    <code value="HQR_EHR_IQR" displayName="Hospital Quality Reporting for the EHR Incentive Program and the IQR Program" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
-    <code value="CDAC_HQR_EHR" displayName="CDAC_HQR_EHR" codeSystemName="CMS Program" codeSystem="2.16.840.1.113883.3.249.7" />
+    <code value="completed" displayName="Completed" codeSystemName="HL7ActStatus" codeSystem="2.16.840.1.113883.5.14" />
+    <code value="active" displayName="Active" codeSystemName="HL7ActStatus" codeSystem="2.16.840.1.113883.5.14" />
+    <code value="aborted" displayName="Aborted" codeSystemName="HL7ActStatus" codeSystem="2.16.840.1.113883.5.14" />
+    <code value="cancelled" displayName="Cancelled" codeSystemName="HL7ActStatus" codeSystem="2.16.840.1.113883.5.14" />
   </system>
   <system valueSetOid="2.16.840.1.113883.11.20.9.39" valueSetName="Result Status">
-    <code value="aborted" displayName="aborted" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
-    <code value="active" displayName="active" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
-    <code value="cancelled" displayName="cancelled" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
-    <code value="completed" displayName="completed" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
-    <code value="held" displayName="held" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
-    <code value="suspended" displayName="suspended" codeSystemName="ActStatus" codeSystem="2.16.840.1.113883.5.14" />
+    <code value="aborted" displayName="aborted" codeSystemName="HL7ActStatus" codeSystem="2.16.840.1.113883.5.14" />
+    <code value="active" displayName="active" codeSystemName="HL7ActStatus" codeSystem="2.16.840.1.113883.5.14" />
+    <code value="cancelled" displayName="cancelled" codeSystemName="HL7ActStatus" codeSystem="2.16.840.1.113883.5.14" />
+    <code value="completed" displayName="completed" codeSystemName="HL7ActStatus" codeSystem="2.16.840.1.113883.5.14" />
+    <code value="held" displayName="held" codeSystemName="HL7ActStatus" codeSystem="2.16.840.1.113883.5.14" />
+    <code value="suspended" displayName="suspended" codeSystemName="HL7ActStatus" codeSystem="2.16.840.1.113883.5.14" />
   </system>
   <system valueSetOid="2.16.840.1.113883.1.11.19601" valueSetName="x_ServiceEventPerformer">
     <code value="PRF" displayName="performer" codeSystemName="HL7ParticipationType" codeSystem="2.16.840.1.113883.5.90" />
     <code value="SPRF" displayName="secondary performer" codeSystemName="HL7ParticipationType" codeSystem="2.16.840.1.113883.5.90" />
     <code value="PPRF" displayName="primary performer" codeSystemName="HL7ParticipationType" codeSystem="2.16.840.1.113883.5.90" />
-  </system>
-  <system valueSetOid="2.16.840.1.113883.1.11.20549" valueSetName="Criticality Observation">
-    <code value="CRITL" displayName="Low Criticality" codeSystemName="Observation Value" codeSystem="2.16.840.1.113883.5.1063" />
-    <code value="CRITH" displayName="High Criticality" codeSystemName="Observation Value" codeSystem="2.16.840.1.113883.5.1063" />
-    <code value="CRITU" displayName="Unable to assess criticality" codeSystemName="Observation Value" codeSystem="2.16.840.1.113883.5.1063" />
   </system>
 </systems>

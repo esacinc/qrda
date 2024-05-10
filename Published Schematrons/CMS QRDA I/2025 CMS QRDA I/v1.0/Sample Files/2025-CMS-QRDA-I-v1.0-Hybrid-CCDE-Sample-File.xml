@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+<!--	
+    Title: Sample QRDA Category I Report for Core Clinical Data Elements for the Hybrid Measures     
+    1. This is an sample file for the Hybrid Measure Core Clinical Data Elements Voluntary Submission.   
+    2. This sample file validates the 2025 CMS QRDA Category I Implementation Guide for Hospital Quality Reporting (HQR) version 1.0 
+    
+    This sample file contains sample measure data for the following:
+    
+    CMS #            Name                                                                                                                                         Version UUID
+    CMS529v5         Core Clinical Data Elements for the Hybrid Hospital-Wide Readmission (HWR) Measure with Claims and Electronic Health Record Data             8a6d0454-8df0-2d9f-018e-68a1046135de     
+    CMS844v5         Core Clinical Data Elements for the Hybrid Hospital-Wide (All-Condition, All-Procedure) Risk-Standardized Mortality Measure (HWM)            8a6d0454-8df0-2d9f-018e-689f88c035cc
+
+    Change History
+    Version 1.0    Date: May 2024
+    * Initial version 
+       
+    Schematron validaton:
+    Total Errors Expected: 0
+    Total Warnings Expected: 70	
+    
+    NOTE: Sample files may be updated after initial publication to address stakeholder or policy requirements. 
+          Be sure to revisit the eCQI Resource Center (https://ecqi.healthit.gov/) for updated resources prior to use.    
+  -->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+  xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <realmCode code="US"/>
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/> 
+  <!-- US Realm Header (V3) -->
+  <templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2015-08-01"/>
+  <!-- QRDA Category I Framework (V4) -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2017-08-01"/>
+  <!-- QDM-based QRDA (V8) -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.2" extension="2021-08-01"/>
+  <!-- QRDA Category I Report - CMS (V8) -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.3" extension="2022-02-01"/>
+  <id root="203e0b60-0c5c-4881-9f65-82338b201c60"/>
+  <code code="55182-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+    displayName="Quality Measure Report"/>
+  <title>Sample QRDA Category I Report for the 2025 Reporting Period CCDE and Hybrid Measure Voluntary Submission</title>
+  <effectiveTime value="20260701124411"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+  <languageCode code="en"/>
+  <!-- reported patient -->
+  <recordTarget>
+    <patientRole>
+      <!-- This is an example Patient Identifier Number -->
+      <!-- The root OID for patient identifer may vary for different organizations. It must be different from the root OID used to identify Medicare HIC number or MBI --> 
+      <id root="2.16.840.1.113883.3.249.15" extension="patient_identifier_goes_here" />
+      <!-- Medicare Beneficiary Identifier (MBI) number is required for hybrid measure submission. -->
+      <id root="2.16.840.1.113883.4.927" extension="Medicare_Beneficiary_Identifier_goes_here"/>
+      <addr use="H">
+        <streetAddressLine>2222 Home Street</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="HP" value="tel:(781)555-1212"/>
+      <telecom use="HP" value="mailto:me@email.com"/>  
+      <patient>
+        <name>
+          <given>Eve</given>
+          <family>Everygirl</family>
+        </name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+        <!-- If the patient administrative sex is unknown, use nullFlavor="UNK" -->
+        <!-- <administrativeGenderCode nullFlavor="UNK"/> -->
+        <birthTime value="19850212" />
+        <maritalStatusCode code="M" displayName="Married" codeSystem="2.16.840.1.113883.5.2"
+          codeSystemName="MaritalStatusCode" />
+        <!-- raceCode "2131-1 (Other Race)" shall not be used for either raceCode or sdtc:raceCode -->
+        <raceCode code="2106-3" codeSystem="2.16.840.1.113883.6.238" displayName="White"/>
+        <!-- if the patient declined to specify his/her race, use nullFlavor="ASKU" -->
+        <!-- <raceCode nullFlavor="ASKU"/> -->
+        <!-- if the patient's race is unknown, use nullFlavor="UNK" -->
+        <!-- <raceCode nullFlavor="UNK"/> -->
+        <!-- Use sdtc:raceCode only if the patient has more than one race category -->
+        <sdtc:raceCode code="2054-5" displayName="Black or African American" codeSystem="2.16.840.1.113883.6.238"/> 
+        <ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.113883.6.238" displayName="Not Hispanic or Latino" />
+        <!-- if the patient declined to specify his/her ethnicity, use nullFlavor="ASKU" -->
+        <!-- <ethnicGroupCode nullFlavor="ASKU"/> -->
+        <!-- if the patient's ethnicity is unknown, use nullFlavor="UNK" -->
+        <!-- <ethnicGroupCode nullFlavor="UNK"/> -->
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <!-- Example of an author who is a person -->
+  <author>
+    <time value="20260701"/>
+    <assignedAuthor>
+      <id root="2.16.840.1.113883.4.6" extension="1234567893"/>
+      <code code="200000000X" codeSystem="2.16.840.1.113883.6.101" displayName="Allopathic &amp; Osteopathic Physicians"/>
+      <addr use="WP">
+        <streetAddressLine>1020 Healthcare Drive</streetAddressLine>
+        <streetAddressLine>Suite 500</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="WP" value="tel:(555)555-1003" />
+      <!-- Quality Manager -->
+      <assignedPerson>
+        <name>
+          <given>Ann</given>
+          <family>Quality</family>
+          <suffix>RN</suffix>
+        </name>
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+  <!-- Example of an author who is a device -->
+  <author>
+    <time value="20260701124411" />
+    <assignedAuthor>
+      <id extension="KP00017dev" root="2.16.840.1.113883.19.5" />
+      <addr use="WP">
+        <streetAddressLine>21 North Ave.</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="WP" value="tel:(555)555-1003" />
+      <assignedAuthoringDevice>
+        <manufacturerModelName>Good Health Medical Device</manufacturerModelName>
+        <softwareName>Good Health Report Generator</softwareName>
+      </assignedAuthoringDevice>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <!-- CMS Certification Number (CCN) -->
+        <id root="2.16.840.1.113883.4.336" extension="800890" /> 
+        <name>Good Health Hospital</name>
+        <telecom use="WP" value="tel:(555)555-1003" />
+        <addr use="WP">
+          <streetAddressLine>21 North Ave.</streetAddressLine>
+          <city>Burlington</city>
+          <state>MA</state>
+          <postalCode>02368</postalCode>
+          <country>US</country>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <informationRecipient>
+    <intendedRecipient>
+      <id root="2.16.840.1.113883.3.249.7" extension="HQR_IQR" />
+    </intendedRecipient>
+  </informationRecipient>
+  <participant typeCode="DEV">
+    <associatedEntity classCode="RGPR">
+      <!-- CMS EHR Certification Number  -->
+      <id root="2.16.840.1.113883.3.2074.1" extension="0015HBC1D1EFG1H"/>
+    </associatedEntity>
+  </participant>
+  <!-- QRDA Body -->
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <!-- 						 
+            ***************************************************************** 						 
+            Measure Section 						
+            ***************************************************************** 					 
+          -->
+          <!-- This is the templateId for Measure Section -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.2"/>
+          <!-- This is the templateId for Measure Section QDM -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.3"/>
+          <!-- This is the LOINC code for "Measure document". This stays the same for all measure section required by QRDA standard -->
+          <code code="55186-1" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Measure Section</title>
+          <text>
+            <table border="1" width="100%">
+              <thead>
+                <tr>
+                  <th>eCQM Title</th>
+                  <th>Version specific identifier</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Core Clinical Data Elements for the Hybrid Hospital-Wide Readmission (HWR) Measure with Claims and Electronic Health Record Data</td>
+                  <td>8a6d0454-8df0-2d9f-018e-68a1046135de</td>  
+                </tr>
+                <tr>
+                  <td>Core Clinical Data Elements for the Hybrid Hospital-Wide (All-Condition, All-Procedure) Risk-Standardized Mortality Measure (HWM)</td>
+                  <td>8a6d0454-8df0-2d9f-018e-689f88c035cc</td>  
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- 1..* Organizers, each containing a reference to an eCQM -->
+          <entry>
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <!-- This is the templateId for Measure Reference -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.98" />
+              <!-- This is the templateId for eMeasure Reference QDM -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.97" />
+              <id root="7511717d-2498-43ec-99c9-766490421aa0" />
+              <statusCode code="completed" />
+              <reference typeCode="REFR">
+                <externalDocument classCode="DOC" moodCode="EVN">
+                  <!-- This is the version specific identifier for the eCQM: CMS529v5 -->
+                  <id root="2.16.840.1.113883.4.738" extension="8a6d0454-8df0-2d9f-018e-68a1046135de" />  
+                  <!-- This is the title of the eMeasure -->
+                  <text>Core Clinical Data Elements for the Hybrid Hospital-Wide Readmission (HWR) Measure with Claims and Electronic Health Record Data</text>
+                </externalDocument>
+              </reference>       
+            </organizer>
+          </entry>
+          <entry>
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <!-- This is the templateId for Measure Reference -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.98" />
+              <!-- This is the templateId for eMeasure Reference QDM -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.97" />
+              <id root="970ce8a8-88f5-4f0e-a7c8-4a2d9abba86c" />
+              <statusCode code="completed" />
+              <reference typeCode="REFR">
+                <externalDocument classCode="DOC" moodCode="EVN">
+                  <!-- This is the version specific identifier for the eCQM: CMS844v5 -->
+                  <id root="2.16.840.1.113883.4.738" extension="8a6d0454-8df0-2d9f-018e-689f88c035cc" />  
+                  <!-- This is the title of the eMeasure -->
+                  <text>Core Clinical Data Elements for the Hybrid Hospital-Wide (All-Condition, All-Procedure) Risk-Standardized Mortality Measure (HWM)</text>
+                </externalDocument>
+              </reference>       
+            </organizer>
+          </entry>
+        </section>
+      </component>
+      <!-- 				 
+        ***************************************************************** 				 
+        Reporting Parameters Section 				 
+        ***************************************************************** 			 
+      -->
+      <component>
+        <section>
+          <!-- Reporting Parameters section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.1" />
+          <!-- Reporting Parameters section CMS -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.1.1" extension="2016-03-01"/>
+          <code code="55187-9" codeSystem="2.16.840.1.113883.6.1" />
+          <title>Reporting Parameters</title>
+          <text><list>
+            <item>Reporting period: 01 July 2025 - 30 June 2026</item>
+          </list></text>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <!-- Reporting Parameters Act -->
+              <templateId root="2.16.840.1.113883.10.20.17.3.8" />
+              <!-- Reporting Parameters Act CMS -->
+              <templateId root="2.16.840.1.113883.10.20.17.3.8.1" extension="2016-03-01" />
+              <id root="4731a580-9397-4446-8926-75358370e042" />
+              <code code="252116004" codeSystem="2.16.840.1.113883.6.96" displayName="Observation Parameters" />
+              <effectiveTime>
+                <low value="20250701"/>
+                <high value="20260630"/>
+              </effectiveTime>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <!-- 				 
+        ***************************************************************** 				 
+        Patient Data Section QDM (V8) 				 
+        ***************************************************************** 			 
+      -->
+      <component>
+        <section>
+          <!-- Patient Data Section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.4" />
+          <!-- Patient Data Section QDM (V8) -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.1" extension="2021-08-01" />
+          <!-- Patient Data Section QDM (V8) - CMS -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.1.1" extension="2022-02-01" />
+          <code code="55188-7" codeSystem="2.16.840.1.113883.6.1" />
+          <title>Patient Data</title>          
+          <text />
+          <!-- =============================================== -->
+          <!--  Encounter -->
+          <!-- =============================================== -->
+          <!-- QDM Datatype: Encounter, Performed -->
+          <entry typeCode="DRIV">
+            <encounter classCode="ENC" moodCode="EVN">
+              <!-- Conforms to C-CDA R2.1 Encounter Activity (V3) -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.49" extension="2015-08-01"/>
+              <!-- Encounter Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.23" extension="2021-08-01"/>
+              <id root="ddad3e1f-b009-41c7-ba86-3c922e9dfdb6" extension="episode-123"/>
+              <!-- QDM Attribute: Code -->
+              <code code="32485007" displayName="Hospital admission (procedure)" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+              <text>Encounter, Performed: Hospital Admission</text>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <!-- QDM Attribute: relevantPeriod startTime - admission datetime -->
+                <low value="20250708090000"/>
+                <!-- QDM Attribute: relevantPeriod stopTime - discharge datetime -->
+                <high value="20250712090000"/>
+              </effectiveTime>
+              <!-- QDM Attribute: Diagnoses -->
+              <entryRelationship typeCode="REFR">
+                <!-- Encounter Dianosis QDM (V2) -->
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.24.3.168" extension="2021-08-01"/>
+                  <code code="29308-4" displayName="diagnosis" codeSystem="2.16.840.1.113883.6.1" />
+                  <value xsi:type="CD" code="274100004" displayName="Cerebral hemorrhage (disorder)" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED"/>
+                  <!-- QDM Attribute: Diagnosis - Rank (Principal diagnosis is indicated with a rank of 1 -->                      
+                  <entryRelationship typeCode="REFR">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.24.3.166" extension="2019-12-01"/>
+                      <code code="263486008" displayName="Rank" codeSystem="2.16.840.1.113883.6.96"/>
+                      <value xsi:type="INT" value="1"/>
+                    </observation>
+                  </entryRelationship>
+                </observation>
+              </entryRelationship>
+            </encounter>
+          </entry>          
+          <!-- =============================================== -->
+          <!-- Core Clinical Data Elements - Labs              -->
+          <!-- =============================================== -->
+          <!-- Bicarbonate Lab Test -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Laboratory Test Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.38" extension="2021-08-01" />
+              <id root="1fad091f-7b4e-4661-b61c-53f9a82515b6" />
+              <!-- QDM Attribute: Code -->
+              <code code="14627-4" displayName="Bicarbonate [Moles/volume] in Venous blood" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+              <text>Laboratory Test, Bicarbonate</text>
+              <statusCode code="completed" />
+              <effectiveTime value="20250708153000"/>
+              <!-- QDM Attribute: Result -->
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conforms to C-CDA R2.1 Result Observation (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                  <!-- Result (V4) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2019-12-01"/>
+                  <id root="a810b98e-dd69-461f-a09b-751ef86eaae2"/>
+                  <code code="14627-4" displayName="Bicarbonate [Moles/volume] in Venous blood" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <statusCode code="completed"/>
+                  <!-- QDM Attribute: Result dateTime -->
+                  <effectiveTime value="20250708153000"/>
+                  <value xsi:type="PQ" value="24" unit="mmol/L"/>
+                </observation>
+              </entryRelationship>           
+            </observation>
+          </entry>      
+          <!-- Creatinine Lab Test -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Laboratory Test Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.38" extension="2021-08-01" />
+              <id root="dc0c28fa-05d0-458c-a284-742d8fd07edf" />
+              <!-- QDM Attribute: Code -->
+              <code code="14682-9" displayName="Creatinine [Moles/volume] in Serum or Plasma" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+              <text>Laboratory Test, Creatinine</text>
+              <statusCode code="completed" />
+              <effectiveTime value="20250708153000"/>
+              <!-- QDM Attribute: Result -->
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conforms to C-CDA R2.1 Result Observation (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                  <!-- Result (V4) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2019-12-01"/>
+                  <id root="2829e9f1-4024-4b09-98ca-4e67b4f0a44a"/>
+                  <code code="14682-9" displayName="Creatinine [Moles/volume] in Serum or Plasma" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <statusCode code="completed"/>
+                  <!-- QDM Attribute: Result dateTime -->
+                  <effectiveTime value="20250708153000"/>
+                  <value xsi:type="PQ" value="1.2" unit="mg/dL"/>
+                </observation>
+              </entryRelationship>          
+            </observation>
+          </entry>
+          <!-- Glucose Lab Test -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Laboratory Test Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.38" extension="2021-08-01"/>
+              <id root="08c13d29-b797-498e-94d3-744b881c0dfc" />
+              <!-- QDM Attribute: Code -->
+              <code code="15074-8" displayName="Glucose [Moles/volume] in Blood" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+              <text>Laboratory Test, Glucose</text>
+              <statusCode code="completed" />
+              <effectiveTime value="20250708153000"/>
+              <!-- QDM Attribute: Result -->
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conforms to C-CDA R2.1 Result Observation (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                  <!-- Result (V4) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2019-12-01"/>
+                  <id root="5e2b76f6-d0a8-40e9-8a86-1639e2086b79"/>
+                  <code code="15074-8" displayName="Glucose [Moles/volume] in Blood" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <statusCode code="completed"/>
+                  <!-- QDM Attribute: Result dateTime -->
+                  <effectiveTime value="20250708153000"/>
+                  <value xsi:type="PQ" value="1.2" unit="mg/dL"/>
+                </observation>
+              </entryRelationship>                  
+            </observation>
+          </entry>
+          <!-- Hematocrit Lab Test -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Laboratory Test Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.38" extension="2021-08-01"/>
+              <id root="47585ea7-bc1c-436e-bdb6-a201ffd613c9" />
+              <!-- QDM Attribute: Code -->
+              <code code="20570-8" displayName="Hematocrit [Volume Fraction] of Blood" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+              <text>Laboratory Test, Hematocrit</text>
+              <statusCode code="completed" />
+              <effectiveTime value="20250708153000" />
+              <!-- QDM Attribute: Result -->
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conforms to C-CDA R2.1 Result Observation (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                  <!-- Result (V4) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2019-12-01"/>
+                  <id root="58ae21c0-151a-4a24-8c88-2ba6bbd9741d"/>
+                  <code code="20570-8" displayName="Hematocrit [Volume Fraction] of Blood" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <statusCode code="completed"/>
+                  <!-- QDM Attribute: Result dateTime -->
+                  <effectiveTime value="20250708153000"/>
+                  <value xsi:type="PQ" value="40" unit="%"/>
+                </observation>
+              </entryRelationship>                 
+            </observation>
+          </entry>
+          <!-- Potassium  Lab Test -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Laboratory Test Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.38" extension="2021-08-01"/>
+              <id root="91dc03b2-486d-405d-b05e-00a98840ba2f" />
+              <!-- QDM Attribute: Code -->
+              <code code="2823-3" displayName="Potassium [Moles/volume] in Serum or Plasma" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+              <text>Laboratory Test, Potassium</text>
+              <statusCode code="completed" />
+              <effectiveTime value="20250708153000"/>
+              <!-- QDM Attribute: Result -->
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conforms to C-CDA R2.1 Result Observation (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                  <!-- Result (V4) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2019-12-01"/>
+                  <id root="99c72e04-3581-4569-8f0a-de84f99499d0"/>
+                  <code code="2823-3" displayName="Potassium [Moles/volume] in Serum or Plasma" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <statusCode code="completed"/>
+                  <!-- QDM Attribute: Result dateTime -->
+                  <effectiveTime value="20250708153000"/>
+                  <value xsi:type="PQ" value="3.8" unit="mmol/L"/>
+                </observation>
+              </entryRelationship>                    
+            </observation>
+          </entry>
+          <!-- Sodium Lab Test -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Laboratory Test Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.38" extension="2021-08-01"/>
+              <id root="f5ef8c35-454b-48f6-9a30-36202bc33011" />
+              <!-- QDM Attribute: Code -->
+              <code code="2951-2" displayName="Sodium [Moles/volume] in Serum or Plasma" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+              <text>Laboratory Test, Sodium</text>
+              <statusCode code="completed" />
+              <effectiveTime value="20250708153000"/>
+              <!-- QDM Attribute: Result -->
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conforms to C-CDA R2.1 Result Observation (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                  <!-- Result (V4) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2019-12-01"/>
+                  <id root="22d6709a-ae57-457e-8928-859fa1899e2a"/>
+                  <code code="2951-2" displayName="Sodium [Moles/volume] in Serum or Plasma" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <statusCode code="completed"/>
+                  <!-- QDM Attribute: Result dateTime -->
+                  <effectiveTime value="20250708153000"/>
+                  <value xsi:type="PQ" value="140" unit="meq/L"/>
+                </observation>
+              </entryRelationship>                   
+            </observation>
+          </entry>
+          <!-- White Blood Cells Count Lab Test -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Laboratory Test Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.38" extension="2021-08-01"/>
+              <id root="99d96326-d29e-4fc0-a9ed-e69e545be119" />
+              <!-- QDM Attribute: Code -->
+              <code code="26464-8" displayName="Leukocytes [#/volume] in Blood" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+              <text>Laboratory Test, White Blood Cells Count</text>
+              <statusCode code="completed" />
+              <effectiveTime value="20250708153000"/>
+              <!-- QDM Attribute: Result -->
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conforms to C-CDA R2.1 Result Observation (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                  <!-- Result (V4) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2019-12-01"/>
+                  <id root="899c7d66-845f-4838-83a5-c3be9341ce13"/>
+                  <code code="26464-8" displayName="Leukocytes [#/volume] in Blood" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <statusCode code="completed"/>
+                  <!-- QDM Attribute: Result dateTime -->
+                  <effectiveTime value="20250708153000"/>
+                  <value xsi:type="PQ" value="10.2" unit="10*3/uL"/>
+                </observation>
+              </entryRelationship>                  
+            </observation>
+          </entry>
+          <!-- Platelet Count Lab Test -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Laboratory Test Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.38" extension="2021-08-01"/>
+              <id root="cf23be91-615b-4747-86c6-505f043ecf02" />
+              <!-- QDM Attribute: Code -->
+              <code code="26515-7" displayName="Platelets [#/volume] in Blood" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+              <text>Laboratory Test, Platelet Count</text>
+              <statusCode code="completed" />
+              <effectiveTime value="20250708153000"/>
+              <!-- QDM Attribute: Result -->
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conforms to C-CDA R2.1 Result Observation (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                  <!-- Result (V4) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2019-12-01"/>
+                  <id root="dc3a80fd-c499-48c2-9e71-ca33c0d042ab"/>
+                  <code code="26515-7" displayName="Platelets [#/volume] in Blood" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <statusCode code="completed"/>
+                  <!-- QDM Attribute: Result dateTime -->
+                  <effectiveTime value="20250708153000"/>
+                  <value xsi:type="PQ" value="218" unit="10*3/uL"/>
+                </observation>
+              </entryRelationship>                   
+            </observation>
+          </entry>
+          <!-- =============================================== -->
+          <!-- Core Clinical Data Elements - Physical Exams    -->
+          <!-- =============================================== -->
+          <!-- Body Weight -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conforms to C-CDA R2 Procedure Activity Observation (V2) -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09"/>
+              <!-- Physical Exam Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.59" extension="2021-08-01"/>
+              <id root="7050f2bc-2db3-453e-bd68-1342f7360468"/>
+              <!-- QDM Attribute: Code -->
+              <!-- Physical Exam: Body Weight -->
+              <code xsi:type="CD" code="29463-7" codeSystem="2.16.840.1.113883.6.1" displayName="Body weight" codeSystemName="LOINC"/>
+              <statusCode code="completed"/>
+              <!-- QDM Attribute: Relevant dateTime -->
+              <effectiveTime value="20250708094500"/>
+              <!-- QDM Attribute: Result -->
+              <value xsi:type="PQ" value="79" unit="kg"/>                   
+            </observation>
+          </entry>
+          <!-- Body Temperature -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conforms to C-CDA R2 Procedure Activity Observation (V2) -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09"/>
+              <!-- Physical Exam Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.59" extension="2021-08-01"/>
+              <id root="6ed63138-b81a-4354-80b0-63557c1f20c8"/>
+              <!-- QDM Attribute: Code -->
+              <!-- Physical Exam: Body Temperature -->
+              <code xsi:type="CD" code="8310-5" codeSystem="2.16.840.1.113883.6.1" displayName="Body temperature" codeSystemName="LOINC"/>
+              <statusCode code="completed"/>
+              <!-- QDM Attribute: Relevant dateTime -->
+              <effectiveTime value="20250708094500"/>
+              <!-- QDM Attribute: Result -->
+              <value xsi:type="PQ" value="98.2" unit="[degF]"/>                 
+            </observation>
+          </entry>
+          <!-- Heart Rate -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conforms to C-CDA R2 Procedure Activity Observation (V2) -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09"/>
+              <!-- Physical Exam Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.59" extension="2021-08-01"/>
+              <id root="b772b0f9-d400-4a03-863e-456004fe604c"/>
+              <!-- QDM Attribute: Code -->
+              <!-- Physical Exam: Heart Rate -->
+              <code xsi:type="CD" code="8867-4" codeSystem="2.16.840.1.113883.6.1" displayName="Heart rate" codeSystemName="LOINC"/>
+              <statusCode code="completed"/>
+              <!-- QDM Attribute: Relevant dateTime -->
+              <effectiveTime value="20250708094500"/>
+              <!-- QDM Attribute: Result -->
+              <value xsi:type="PQ" value="72" unit="{Beats}/min"/>                 
+            </observation>
+          </entry>
+          <!-- Oxygen saturation in Arterial blood by Pulse oximetry -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conforms to C-CDA R2 Procedure Activity Observation (V2) -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09"/>
+              <!-- Physical Exam Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.59" extension="2021-08-01"/>
+              <id root="a6969a73-b8b8-48c2-b09a-23ea95a0cb8c"/>
+              <!-- QDM Attribute: Code -->
+              <!-- Physical Exam: Oxygen Saturation -->
+              <code xsi:type="CD" code="59408-5" codeSystem="2.16.840.1.113883.6.1" displayName="Oxygen saturation in Arterial blood by Pulse oximetry" codeSystemName="LOINC"/>
+              <statusCode code="completed"/>
+              <!-- QDM Attribute: Relevant dateTime -->
+              <effectiveTime value="20250708094500"/>
+              <!-- QDM Attribute: Result -->
+              <value xsi:type="PQ" value="95" unit="%{Oxygen}"/>                  
+            </observation>
+          </entry>
+          <!-- Respiratory Rate -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conforms to C-CDA R2 Procedure Activity Observation (V2) -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09"/>
+              <!-- Physical Exam Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.59" extension="2021-08-01"/>
+              <id root="09982a50-a3f7-422b-9eb2-d9e26ad6448b"/>
+              <!-- QDM Attribute: Code -->
+              <!-- Physical Exam: Respiratory Rate -->
+              <code xsi:type="CD" code="9279-1" codeSystem="2.16.840.1.113883.6.1" displayName="Respiratory rate" codeSystemName="LOINC"/>
+              <statusCode code="completed"/>
+              <!-- QDM Attribute: Relevant dateTime -->
+              <effectiveTime value="20250708094500"/>
+              <!-- QDM Attribute: Result -->
+              <value xsi:type="PQ" value="21" unit="{Breaths}/min"/>                 
+            </observation>
+          </entry>
+          <!-- Systolic Blood Pressure -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conforms to C-CDA R2 Procedure Activity Observation (V2) -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09"/>
+              <!-- Physical Exam Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.59" extension="2021-08-01"/>
+              <id root="79a4b695-e894-4e1b-8281-47f12c23568e"/>
+              <!-- QDM Attribute: Code -->
+              <!-- Physical Exam: Systolic Blood Pressure -->
+              <code xsi:type="CD" code="8480-6" codeSystem="2.16.840.1.113883.6.1" displayName="Systolic blood pressure" codeSystemName="LOINC"/>
+              <statusCode code="completed"/>
+              <!-- QDM Attribute: Relevant dateTime -->
+              <effectiveTime value="20250708094500"/>
+              <!-- QDM Attribute: Result -->
+              <value xsi:type="PQ" value="120" unit="mm[Hg]"/>                 
+            </observation>
+          </entry>
+          <!-- =============================================== -->
+          <!-- Supplemental Data Element: Payer -->
+          <!-- =============================================== -->
+          <!-- QDM Datatype: Patient Characteristic, Payer -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Patient Characteristic Payer -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.55"/>
+              <id root="4ddf1cc3-e325-472e-ad76-b2c66a5ee164"/>
+              <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                displayName="Payment source"/>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <low value="20250701"/>
+                <high value="20260630"/>
+              </effectiveTime>
+              <!-- QDM Attribute: Code -->
+              <!-- Payer -->
+              <value xsi:type="CD" code="1" codeSystem="2.16.840.1.113883.3.221.5"
+                codeSystemName="Source of Payment Typology" displayName="Medicare"/>
+            </observation>
+          </entry>  
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

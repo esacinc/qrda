@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?> 
+<!-- 		
+    Title: CMS1074v2 Sample QRDA Category I Report for the 2025 Reporting Period for HQR 
+    1. This sample file validates the 2025 CMS QRDA Category I Implementation Guide for Hospital Quality Reporting (HQR) version 1.0
+    2. This sample file is to provide an example to show diagnostic study performed is used for reporting CMS1074v2	 
+    3. This sample file contains no narrative. 	 
+    4. This sample file is not clinically valid - it is for use by implementers to see a valid (syntactically not clinically) example for reporting CMS1074v2. 	 
+    5. This sample file is informative only. 	
+    
+    This sample file contains sample measure data for the following:   
+    
+    CMS #       Name                                                                                                                      Version UUID
+    CMS1074v2   Excessive Radiation Dose or Inadequate Image Quality for Diagnostic Computed Tomography (CT) in Adults (Facility IQR)     8a6d044d-8db3-0572-018d-d65db35c0720
+    
+    Change History
+    Version 1.0    Date: May 2024
+    * Initial version
+    
+    Schematron validaton:
+    Total Errors Expected: 0 
+    Total Warnings Expected: 30
+    
+    NOTE: Sample files may be updated after initial publication to address stakeholder or policy requirements. 
+          Be sure to revisit the eCQI Resource Center (https://ecqi.healthit.gov/) for updated resources prior to use.
+  -->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/CDA/infrastructure/cda/CDA_SDTC.xsd"
+  xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+  <realmCode code="US"/>
+  <typeId root="2.16.840.1.113883.1.3"  extension="POCD_HD000040"/>
+  <!-- US Realm Header (V3) -->
+  <templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2015-08-01"/>
+  <!-- QRDA Category I Framework (V4) -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.1" extension="2017-08-01"/>
+  <!-- QDM-based QRDA (V8) -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.2" extension="2021-08-01"/>
+  <!-- QRDA Category I Report - CMS (V8) -->
+  <templateId root="2.16.840.1.113883.10.20.24.1.3" extension="2022-02-01"/>
+  <!-- This is the globally unique identifier for this QRDA I document -->
+  <id root="0afb627f-892f-4d9d-8a1c-46ba7c70171c"/>
+  <code code="55182-0" codeSystem="2.16.840.1.113883.6.1" 
+    codeSystemName="LOINC" displayName="Quality Measure Report"/>
+  <title>Sample QRDA Category I Report for the 2025 Reporting Period - CMS1074v2</title>
+  <!-- This is the document creation time -->
+  <effectiveTime value="20250402091000"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="HL7Confidentiality"/>
+  <languageCode code="en"/>
+  <!-- reported patient -->
+  <recordTarget>
+    <patientRole>
+      <!-- This is an example Patient Identifier Number -->
+      <!-- The root OID for patient identifer may vary for different organizations. It must be different from the root OID used to identify Medicare HIC number or MBI --> 
+      <id root="2.16.840.1.113883.3.249.15" extension="patient_identifier_goes_here" />
+      <!-- Medicare HIC Number is not required for HQR but should be submitted if the payer is Medicare and the patient has an HIC number assigned. -->
+      <id root="2.16.840.1.113883.4.572" extension="HIC_number_goes_here" />
+      <!-- Medicare Beneficiary Identifier (MBI) is not required for HQR but should be submitted if the payer is Medicare and the patient has an MBI number assigned. -->
+      <id root="2.16.840.1.113883.4.927" extension="Medicare_Beneficiary_Identifier_goes_here"/>
+      <addr use="H">
+        <streetAddressLine>2222 Home Street</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="HP" value="tel:(781)555-1212"/>
+      <telecom use="HP" value="mailto:me@email.com"/>        
+      <patient>
+        <name>
+          <given>Beth</given>
+          <family>Everygirl</family>
+        </name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+        <!-- If the patient administrative sex is unknown, use nullFlavor="UNK" -->
+        <!-- <administrativeGenderCode nullFlavor="UNK"/> -->
+        <birthTime value="19910312"/>
+        <maritalStatusCode code="M" displayName="Married" codeSystem="2.16.840.1.113883.5.2" codeSystemName="MaritalStatusCode"/>
+        <!-- raceCode "2131-1 (Other Race)" shall not be used for either raceCode or sdtc:raceCode -->
+        <raceCode code="2106-3" codeSystem="2.16.840.1.113883.6.238" displayName="White"/>
+        <!-- if the patient declined to specify his/her race, use nullFlavor="ASKU" -->
+        <!-- <raceCode nullFlavor="ASKU"/> -->
+        <!-- if the patient's race is unknown, use nullFlavor="UNK" -->
+        <!-- <raceCode nullFlavor="UNK"/> -->
+        <!-- Use sdtc:raceCode only if the patient has more than one race category -->
+        <ethnicGroupCode code="2186-5" displayName="Not Hispanic or Latino" codeSystem="2.16.840.1.113883.6.238"/>
+        <!-- if the patient declined to specify his/her ethnicity, use nullFlavor="ASKU" -->
+        <!-- <ethnicGroupCode nullFlavor="ASKU"/> -->
+        <!-- if the patient's ethnicity is unknown, use nullFlavor="UNK" -->
+        <!-- <ethnicGroupCode nullFlavor="UNK"/> -->
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <!-- Example of an author who is a person -->
+  <author>
+    <time value="20250331124411"/>
+    <assignedAuthor>
+      <id root="2.16.840.1.113883.4.6" extension="1234567893" />
+      <code code="200000000X" codeSystem="2.16.840.1.113883.6.101" displayName="Allopathic &amp; Osteopathic Physicians"/>
+      <addr use="WP">
+        <streetAddressLine>1020 Healthcare Drive</streetAddressLine>
+        <streetAddressLine>Suite 500</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="WP" value="tel:(555)555-1003"/>
+      <!-- Quality Manager -->
+      <assignedPerson>
+        <name>
+          <given>Ann</given>
+          <family>Quality</family>
+          <suffix>RN</suffix>
+        </name>
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+  <!-- Example of an author who is a device -->
+  <author>
+    <time value="20250329224411"/>
+    <assignedAuthor>
+      <id extension="KP00017dev" root="2.16.840.1.113883.19.5"/>
+      <addr use="WP">
+        <streetAddressLine>21 North Ave.</streetAddressLine>
+        <city>Burlington</city>
+        <state>MA</state>
+        <postalCode>02368</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom use="WP" value="tel:(555)555-1003"/>
+      <assignedAuthoringDevice>
+        <manufacturerModelName>Good Health Medical Device</manufacturerModelName>
+        <softwareName>Good Health Report Generator</softwareName>
+      </assignedAuthoringDevice>
+    </assignedAuthor>
+  </author>
+  <!-- This is an example for QRDA I test submission to HQR_IQR. CCN is required for HQR submissions.-->
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <!-- @extension attribute contains the submitter's CCN. @nullFlavor is not allowed. -->
+        <id root="2.16.840.1.113883.4.336" extension="800890"/>
+        <name>Good Health Hospital</name>
+        <telecom value="tel:(555)555-1212" use="WP"/>
+        <addr use="WP">
+          <streetAddressLine>17 Daws Rd.</streetAddressLine>
+          <city>Blue Bell</city>
+          <state>MA</state>
+          <postalCode>02368</postalCode>
+          <country>US</country>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <!-- This example shows the @extension attribute with a value of "HQR_IQR", which indicates that this QRDA-I report is submitted to the Hospital Quality Reporting for the Inpatient Quality Reporting Program -->  
+  <informationRecipient>
+    <intendedRecipient>
+      <!-- CMS Program Name is required. @nullFlavor is not allowed -->
+      <id root="2.16.840.1.113883.3.249.7" extension="HQR_IQR"/>
+    </intendedRecipient>
+  </informationRecipient>
+  <participant typeCode="DEV">
+    <associatedEntity classCode="RGPR">
+      <!-- CMS EHR Certification Number  -->
+      <id root="2.16.840.1.113883.3.2074.1" extension="0015HBC1D1EFG1H"/>
+    </associatedEntity>
+  </participant> 
+  <!-- QRDA Body -->
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <!-- 						 
+            ***************************************************************** 						 
+            Measure Section 						
+            ***************************************************************** 					 
+          -->
+          <!-- This is the templateId for Measure Section -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.2"/>
+          <!-- This is the templateId for Measure Section QDM -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.3"/>
+          <!-- This is the LOINC code for "Measure document" -->
+          <code code="55186-1" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Measure Section</title>
+          <text>
+            <table border="1" width="100%">
+              <thead>
+                <tr>
+                  <th>eCQM Title</th>
+                  <th>Version specific identifier</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Excessive Radiation Dose or Inadequate Image Quality for Diagnostic Computed Tomography (CT) in Adults (Facility IQR)</td>
+                  <td>8a6d044d-8db3-0572-018d-d65db35c0720</td>  
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- 1..* Organizers, each containing a reference to an eCQM -->
+          <entry>
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <!-- This is the templateId for Measure Reference -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.98" />
+              <!-- This is the templateId for eMeasure Reference QDM -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.97"/>
+              <id root="c1d2ae49-1b10-4871-a07b-26bb1d89415d"/>
+              <statusCode code="completed"/>
+              <reference typeCode="REFR">
+                <externalDocument classCode="DOC" moodCode="EVN">
+                  <!-- This is the version specific identifier for the eCQM: CMS1074v2 -->
+                  <id root="2.16.840.1.113883.4.738" extension="8a6d044d-8db3-0572-018d-d65db35c0720"/>  
+                  <!-- This is the title of the eCQM -->
+                  <text>Excessive Radiation Dose or Inadequate Image Quality for Diagnostic Computed Tomography (CT) in Adults (Facility IQR)</text>
+                </externalDocument>
+              </reference>       
+            </organizer>
+          </entry>
+        </section>
+      </component>
+      <!-- 				 
+        ***************************************************************** 				 
+        Reporting Parameters Section 				 
+        ***************************************************************** 			 
+      -->
+      <component>
+        <section>
+          <!-- Reporting Parameters section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.1"/>
+          <!-- Reporting Parameters section CMS -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.1.1" extension="2016-03-01"/>
+          <code code="55187-9" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Reporting Parameters</title>
+          <text><list>
+            <item>Reporting period: 01 Jan 2025 - 31 Mar 2025</item>
+          </list></text>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <!-- Reporting Parameters Act -->
+              <templateId root="2.16.840.1.113883.10.20.17.3.8" />
+              <!-- Reporting Parameters Act CMS -->
+              <templateId root="2.16.840.1.113883.10.20.17.3.8.1" extension="2016-03-01"/>
+              <id root="0f520b61-1e46-4995-b9cc-e1da3e2acb7a"/>
+              <code code="252116004" codeSystem="2.16.840.1.113883.6.96" displayName="Observation Parameters"/>
+              <effectiveTime>
+                <low value="20250101"/>
+                <high value="20250331"/>
+              </effectiveTime>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <!-- 				 
+        ***************************************************************** 				 
+        Patient Data Section QDM (V8) 				 
+        ***************************************************************** 			 
+      -->
+      <component>
+        <section>
+          <!-- Patient Data Section -->
+          <templateId root="2.16.840.1.113883.10.20.17.2.4" />
+          <!-- Patient Data Section QDM (V8) -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.1" extension="2021-08-01" />
+          <!-- Patient Data Section QDM (V8) - CMS -->
+          <templateId root="2.16.840.1.113883.10.20.24.2.1.1" extension="2022-02-01" />
+          <code code="55188-7" codeSystem="2.16.840.1.113883.6.1" />
+          <title>Patient Data</title>
+          <text />     
+          <!-- QDM Datatype: Diagnostic Study, Performed -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conforms to C-CDA R2.1 Procedure Activity Observation (V2) -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09"/>
+              <!-- Diagnostic Study Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.18" extension="2021-08-01"/>
+              <id root="44fec623-5fb2-4128-ab8c-528f3ca728ce"/>
+              <!-- QDM Attribute: Code -->
+              <code code="96914-7" codeSystem="2.16.840.1.113883.6.1"
+                displayName="CT dose and image quality category" codeSystemName="LOINC"/>
+              <text>Diagnostic Study, Performed: CT dose and image quality category</text>
+              <statusCode code="completed"/>
+              <!-- QDM Attribute: Relevant Datetime -->              
+              <effectiveTime value="202503181030"/>              
+              <value xsi:type="CD" nullFlavor="NA"/>
+              <!-- QDM Attribute: Result -->
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conforms to C-CDA R2.1 Result Observation (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                  <!-- Result (V4) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2019-12-01"/>
+                  <id root="60b353ea-fee5-4b1d-9788-80b3d8bda386"/>
+                  <code code="96914-7" codeSystem="2.16.840.1.113883.6.1"
+                    displayName="CT dose and image quality category" codeSystemName="LOINC"/>
+                  <statusCode code="completed" />
+                  <!-- QDM Attribute: Result dateTime -->
+                  <effectiveTime value="202503181030"/>              
+                  <!-- result of CT scan with CT Dose and Image Quality Category (LOINC: 96914-7). Result with LOINC answer code: LA31768-7 -->  
+                  <value xsi:type="CD" code="LA31768-7" codeSystem="2.16.840.1.113883.6.1"
+                    displayName="Simultaneous Chest and Abdomen and Pelvis"
+                    codeSystemName="LOINC"/>   
+                </observation>                
+              </entryRelationship>
+              <!-- CT Scan with a Calculated CT global noise value -->
+              <entryRelationship typeCode="REFR">
+                <!-- Component -->
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.24.3.149" extension="2017-08-01"/>
+                  <id root="63bb6f9e-fb84-4b2b-a1aa-780d2c021c13"/>
+                  <code code="96912-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Calculated CT global noise"/>
+                  <value xsi:type="PQ" value="25" unit="[hnsf'U]"/>
+                </observation>
+              </entryRelationship>
+              <!-- CT Scan with a Calculated CT Size-Adjusted Dose value -->           
+              <entryRelationship typeCode="REFR">
+                <!-- Component -->
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.24.3.149" extension="2017-08-01"/>
+                  <id root="63bb6f9e-fb84-4b2b-a1aa-780d2c021c14"/>
+                  <code code="96913-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Calculated CT size-adjusted dose"/>
+                  <value xsi:type="PQ" value="1592" unit="mGy.cm"/>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>          
+          <!-- QDM Datatype: Encounter, Performed -->
+          <entry typeCode="DRIV">
+              <encounter classCode="ENC" moodCode="EVN">
+                <!-- Conforms to C-CDA R2.1 Encounter Activity (V3) -->
+                <templateId root="2.16.840.1.113883.10.20.22.4.49" extension="2015-08-01"/>
+                <!-- Encounter Performed (V6) -->
+                <templateId root="2.16.840.1.113883.10.20.24.3.23" extension="2021-08-01"/>
+                <id root="814a6439-2b2d-4c91-885c-9f6ca1f2d520" extension="1234"/>
+                <!-- QDM Attribute: Code -->
+                <code code="32485007" displayName="Hospital admission (procedure)" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96"/>
+                <text>Encounter, Performed: Hospital admission (procedure)</text>
+                <statusCode code="completed"/>
+                <effectiveTime>
+                  <!-- QDM Attribute: Relevant Period - admission datetime -->
+                  <low value="202503171530"/>
+                  <!-- QDM Attribute: Relevant Period - discharge datetime -->
+                  <high value="202503221030"/>
+                </effectiveTime>
+              </encounter>
+          </entry>
+          
+          <!-- QDM Datatype: Diagnostic Study, Performed -->
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conforms to C-CDA R2.1 Procedure Activity Observation (V2) -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.13" extension="2014-06-09"/>
+              <!-- Diagnostic Study Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.18" extension="2021-08-01"/>
+              <id root="44fec623-5fb2-4128-ab8c-528f3ca728ce"/>
+              <!-- QDM Attribute: Code -->
+              <code code="96914-7" codeSystem="2.16.840.1.113883.6.1"
+                displayName="CT dose and image quality category" codeSystemName="LOINC"/>
+              <text>Diagnostic Study, Performed: CT dose and image quality category</text>
+              <statusCode code="completed"/>
+              <!-- QDM Attribute: Relevant Datetime -->              
+              <effectiveTime value="202508041430"/>
+              <value xsi:type="CD" nullFlavor="NA"/>
+              <!-- QDM Attribute: Result -->
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conforms to C-CDA R2.1 Result Observation (V3) -->
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                  <!-- Result (V4) -->
+                  <templateId root="2.16.840.1.113883.10.20.24.3.87" extension="2019-12-01"/>
+                  <id root="60b353ea-fee5-4b1d-9788-80b3d8bda386"/>
+                  <code code="96914-7" codeSystem="2.16.840.1.113883.6.1"
+                    displayName="CT dose and image quality category" codeSystemName="LOINC"/>
+                  <statusCode code="completed" />
+                  <!-- QDM Attribute: Result dateTime -->
+                  <effectiveTime value="202508041430"/>
+                  <!-- result of CT scan with CT Dose and Image Quality Category (LOINC: 96914-7). Result with LOINC answer code: LA31771-1 -->  
+                  <value xsi:type="CD" code="LA31771-1" codeSystem="2.16.840.1.113883.6.1" displayName="Full Body" codeSystemName="LOINC"/>   
+                </observation>                
+              </entryRelationship>
+              <!-- CT Scan with a Calculated CT global noise value -->
+              <entryRelationship typeCode="REFR">
+                <!-- Component -->
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.24.3.149" extension="2017-08-01"/>
+                  <id root="63bb6f9e-fb84-4b2b-a1aa-780d2c021c13"/>
+                  <code code="96912-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Calculated CT global noise"/>
+                  <value xsi:type="PQ" value="29" unit="[hnsf'U]"/>
+                </observation>
+              </entryRelationship>
+              <!-- CT Scan with a Calculated CT Size-Adjusted Dose value -->           
+              <entryRelationship typeCode="REFR">
+                <!-- Component -->
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.24.3.149" extension="2017-08-01"/>
+                  <id root="63bb6f9e-fb84-4b2b-a1aa-780d2c021c14"/>
+                  <code code="96913-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Calculated CT size-adjusted dose"/>
+                  <value xsi:type="PQ" value="2105" unit="mGy.cm"/>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>          
+          <!-- QDM Datatype: Encounter, Performed -->
+          <entry typeCode="DRIV">
+            <encounter classCode="ENC" moodCode="EVN">
+              <!-- Conforms to C-CDA R2.1 Encounter Activity (V3) -->
+              <templateId root="2.16.840.1.113883.10.20.22.4.49" extension="2015-08-01"/>
+              <!-- Encounter Performed (V6) -->
+              <templateId root="2.16.840.1.113883.10.20.24.3.23" extension="2021-08-01"/>
+              <id root="814a6439-2b2d-4c91-885c-9f6ca1f2d520" extension="1234"/>
+              <!-- QDM Attribute: Code -->
+              <code code="32485007" displayName="Hospital admission (procedure)" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96"/>
+              <text>Encounter, Performed: Hospital admission (procedure)</text>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <!-- QDM Attribute: Relevant Period - admission datetime -->
+                <low value="202508010930"/>
+                <!-- QDM Attribute: Relevant Period - discharge datetime -->
+                <high value="202508051130"/>
+              </effectiveTime>
+            </encounter>
+          </entry>
+          
+          <!-- QDM Datatype: Patient Characteristic, Payer-->
+          <entry typeCode="DRIV">
+            <!-- Patient Characteristic Payer -->
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.24.3.55"/>
+              <id root="f7756a79-01e1-49ab-b135-dacfbe0237dd"/>
+              <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                displayName="Payment source"/>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <!-- QDM Attribute: Relevant Period - Start datetime -->
+                <low value="20250101"/>
+                <!-- QDM Attribute: Relevant Period - Stop datetime -->
+                <high value="20251231"/>
+              </effectiveTime>
+              <!-- QDM Attribute: Code -->
+              <value xsi:type="CD" code="1" codeSystem="2.16.840.1.113883.3.221.5"
+                codeSystemName="Source of Payment Typology" displayName="Medicare"/>
+            </observation>
+          </entry>        
+      </section>
+     </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

@@ -4175,7 +4175,7 @@ Wed Apr 30 15:06:02 MDT 2025
       <sch:assert id="a-CMS_0133-warning" test="count(cda:telecom[@use and starts-with(@value,'tel:')] ) &gt;= 1">This patientRole SHOULD contain zero or more [0..*] telecom (CONF:CMS_0133) such that it SHALL contain exactly one [1..1] @value (CONF:CMS_0134). This value SHALL begin with "tel:" which is the telephone of the patient (CONF:CMS_0135).</sch:assert>
     </sch:rule>
     <sch:rule id="QRDA_Category_I_Report_CMS-recordTarget-patientRole-patient-administrativeCode-warnings" context="cda:ClinicalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.24.1.3'][@extension='2025-03-01']]/cda:recordTarget/cda:patientRole/cda:patient/cda:administrativeGenderCode">
-      <sch:assert id="a-CMS_0123-warning" test="count(cda:translation)=1">This administrativeCode SHOULD contain zero or one [0..1] translation (CONF:CMS_0123).</sch:assert>
+      <sch:assert id="a-CMS_0123-warning" test="count(cda:translation)=1">This administrativeGenderCode SHOULD contain zero or one [0..1] translation (CONF:CMS_0123).</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>
